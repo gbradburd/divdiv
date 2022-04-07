@@ -10,6 +10,7 @@
 
 runWM <- function(stanMod,dataBlock,nChains,nIter,prefix){
 	initPars <- lapply(1:nChains,function(i){generateInitPars(dataBlock=dataBlock)})
+	save(initPars,file="initPars.Robj")
 	fit <- sampling(object = stanMod,
 				 data = dataBlock,
 				 iter = nIter,
@@ -35,16 +36,13 @@ makeParaHom <- function(s,m,k,nbhd,inDeme,nugget,geoDist){
 }
 
 generateInitPars <- function(dataBlock,breakLimit=1e4,nChains){
-	scl_min <- min(dataBlock$hom)
+	scl_min <- min(dataBlock$hom)-0.0005
 	scl_max <- max(dataBlock$hom-scl_min)
 	posdef <- FALSE
 	counter <- 0
 	while(!posdef & counter < breakLimit){
 		k <- dataBlock$k
-		s <- rbeta(1,0.8,0.2)
-			while(s==1){
-				s <- rbeta(1,0.8,0.2)			
-			}
+		s <- runif(1,min=scl_min,max=1)
 		m <- abs(rnorm(1,0.1,0.1))
 		nbhd <- abs(rnorm(1,1,10))
 		inDeme <- rbeta(1,0.9,0.5)
@@ -61,8 +59,8 @@ generateInitPars <- function(dataBlock,breakLimit=1e4,nChains){
 				 	 "m"=m,
 				 	 "nbhd"=nbhd,
 				 	 "inDeme"=inDeme,
-				 	 "nugget"=nugget)
-	save(initPars,file="initPars.Robj")
+				 	 "nugget"=nugget,
+				 	 "parHom"=parHom)
 	return(initPars)
 }
 

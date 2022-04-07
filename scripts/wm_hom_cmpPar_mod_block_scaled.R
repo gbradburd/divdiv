@@ -32,7 +32,7 @@ transformed data {
 	matrix[N,N] Lhom_scl;				// n.loci multiplied by the sample covariance
 	real<lower=0> scl_min;
 	real<lower=0> scl_max;
-	scl_min = min(hom);
+	scl_min = min(hom)-0.0005;
 	scl_max = max(hom-scl_min);
 	hom_scl = (hom-scl_min)/scl_max;
 	Lhom_scl  = L * hom_scl;
@@ -40,7 +40,7 @@ transformed data {
 parameters {
 	real<lower=0> nbhd;				// Wright's neighborhood size
 	real<lower=0> m;					// scaled migration rate
-	real<lower=0> inDeme;				// within deme p(IBD)
+	real<lower=0,upper=1> inDeme;				// within deme p(IBD)
 	real<lower=0,upper=1> s;			// minimum rate of IBD
 	real<lower=0> nugget;				// nugget
 }
