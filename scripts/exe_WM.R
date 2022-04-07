@@ -32,7 +32,7 @@ outdir = args[4] #outdir
 minPropIndivsScoredin = as.numeric(args[5]) #percent of indivs that locus must be scored in to save
 
 #for local testing
-#indir="/path_to_input_files_and_scripts/for_troubleshooting"
+#indir="/path_to_input_files_and_scripts"
 #outdir="/path_for_outputs"
 #run_name="bioprj_PRJNA294760_Amphiprion-bicinctus"
 #minPropIndivsScoredin = 0.5
@@ -126,7 +126,7 @@ for (loop.iter in 1:length(popgenfiles_list)) {
         dataBlock = dataBlock,
         nChains = 3,
         nIter = 4e3,
-        prefix = run_name))
+        prefix = paste0("WMfit-",run_name)))
 
 }
 
