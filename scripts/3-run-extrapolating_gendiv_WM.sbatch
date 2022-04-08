@@ -54,8 +54,7 @@ then
 	#define output directory for R for this job
 	OUTDIR_FINAL=$OUTDIR
 	OUTDIR_SUFFIX=$(echo $OUTDIR | rev | cut -d "/" -f1 | rev)
-	OUTDIR=$WORKDIR/$OUTDIR_SUFFIX
-	if [ ! -d $OUTDIR ]; then mkdir $OUTDIR; fi
+	OUTDIR=$WORKDIR
 		
 fi
 
