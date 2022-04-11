@@ -10,7 +10,7 @@
 
 runWM <- function(stanMod,dataBlock,nChains,nIter,prefix){
 	initPars <- lapply(1:nChains,function(i){generateInitPars(dataBlock=dataBlock)})
-	save(initPars,file="initPars.Robj")
+	save(initPars,file=paste0(prefix,"_initPars.Robj"))
 	fit <- sampling(object = stanMod,
 				 data = dataBlock,
 				 iter = nIter,
@@ -24,6 +24,8 @@ runWM <- function(stanMod,dataBlock,nChains,nIter,prefix){
 				"fit" = fit)
 	save(out,file=paste0(prefix,"_out.Robj"))
 	vizWMout(wmOutfile=paste0(prefix,"_out.Robj"),outPrefix=prefix)
+	saveOut(fit,prefix)
+	return(invisible("done"))
 }
 
 
@@ -79,6 +81,28 @@ getPhom <- function(model.fit,chain.no,N){
 	return(par.cov)
 }
 
+saveOut <- function(fit,outPrefix){
+	s <- rstan::extract(fit,"s",inc_warmup=FALSE)
+	nugget <- rstan::extract(fit,"nugget",inc_warmup=FALSE)
+	m <- rstan::extract(fit,"m",inc_warmup=FALSE)
+	nbhd <- rstan::extract(fit,"nbhd",inc_warmup=FALSE)
+	inDeme <- rstan::extract(fit,"inDeme",inc_warmup=FALSE)
+	ptEsts <- list("s" = mean(s[[1]]),
+				   "nugget" = mean(s[[1]]),
+				   "m" = mean(m[[1]]),
+				   "nbhd" = mean(nbhd[[1]]),
+				   "inDeme" = mean(inDeme[[1]]))
+	postDist <- list("s" = s,
+		 			 "nugget" = nugget,
+					 "m" = m,
+					 "nbhd" = nbhd,
+					 "inDeme" = inDeme)
+	outPars <- list("pt" = ptEsts,
+					"post" = postDist)
+	save(outPars,file=paste0(outPrefix,"_pars.Robj"))
+	return(invisible("saved"))
+}
+
 ################################
 # visualizing output
 ################################
@@ -130,12 +154,13 @@ makeCmpParPlots <- function(post,m,nbhd,s,nugget,inDeme,chainCols){
 }
 
 plotFit <- function(out,pHom,chainCol){
-	plot(out$dataBlock$geoDist,out$myData$hom,
-			ylim=range(c(pHom,out$dataBlock$hom)),type='n',
-			xlab="pairwise distance",ylab="pairwise homozygosity")
+	ut <- upper.tri(out$dataBlock$geoDist,diag=TRUE)
+	plot(out$dataBlock$geoDist[ut],out$dataBlock$hom[ut],
+			ylim=range(c(pHom,out$dataBlock$hom)),
+			xlab="pairwise distance",ylab="pairwise homozygosity",
+			pch=19,col=adjustcolor(1,0.05))
 		invisible(
 			lapply(seq(1,250,length.out=25),function(i){
-				points(out$dataBlock$geoDist,pHom[i,,],pch=20,col=adjustcolor(chainCol,0.05))
+				points(out$dataBlock$geoDist[ut],pHom[i,,][ut],pch=20,col=adjustcolor(chainCol,0.05))
 			}))
-	points(out$dataBlock$geoDist,out$dataBlock$hom)
 }
