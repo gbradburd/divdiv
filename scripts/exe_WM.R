@@ -126,7 +126,7 @@ for (loop.iter in 1:length(popgenfiles_list)) {
         dataBlock = dataBlock,
         nChains = 3,
         nIter = 4e3,
-        prefix = paste0("WMfit-",run_name)))
+        prefix = paste0("WMfit-",run_name,"_stacks_",stacksparams)))
 
 }
 

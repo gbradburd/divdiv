@@ -76,14 +76,15 @@ du -a
 if [ $COPY_FILES_TO_EXECUTE_NODE = yes ]
 then
 	
-	cp -r $OUTDIR/* $OUTDIR_FINAL
+	cp -r $OUTDIR/WMfit* $OUTDIR_FINAL
 	#cp -r $OUTDIR/plots* $FIGDIR
 	
 	#create dir to store all genetic files associated with r80 optimal params in if it doesn't already exist
 	ALLR80DIR=$STORAGENODE/ALL_r80_gendiv_data
 	if [ ! -d $ALLR80DIR ]; then mkdir $ALLR80DIR; fi
 	R80PARAMS=$(less $STORAGENODE/$RUN_NAME/popgen/r80params.txt)
-	cp -r $OUTDIR/*${R80PARAMS}* $ALLR80DIR
+	echo R80PARAMS value is $R80PARAMS
+	cp -r $OUTDIR/WMfit-${RUN_NAME}"_stacks_"${R80PARAMS}* $ALLR80DIR
 	
 	wait
 	rm -rf $WORKDIR
