@@ -12,7 +12,7 @@ cpus=2 #number of CPUs to request/use per dataset
 ram_per_cpu=8G #amount of RAM to request/use per CPU
 time=168:00:00
 
-list_of_datasets=list-mpg.txt #name of dataset that we want to process
+list_of_datasets=list-WMtry1.txt #name of dataset that we want to process
 
 copy_files_to_execute_node=yes #yes to copy input folder to tmp dir on execute node and load files into R from there, no to load files into R directly from where they live on cluster aka $indir below in this file
 minpropindivsscoredin=0.5 #percent of indivs that a locus must be present in to save
