@@ -6,7 +6,7 @@
 
 
 # load libraries and source relevant functions
-library(rstan, warn.conflicts = FALSE, quietly = TRUE)
+suppressMessages(library(rstan, warn.conflicts = FALSE, quietly = TRUE))
 library(plyr, quietly = TRUE, warn.conflicts = FALSE)
 library(dplyr, quietly = TRUE, warn.conflicts = FALSE)
 library(tidyr, quietly = TRUE, warn.conflicts = FALSE)
