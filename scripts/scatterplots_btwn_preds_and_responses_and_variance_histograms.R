@@ -23,7 +23,9 @@ preds <- c("meanlat.gbif","n_ECOREGIONS.all","maxgbif.sea_km","Body_Size",
 df <- df %>% dplyr::select(species, all_of(preds), s, nbhd, inDeme)
 df <- df %>% pivot_longer(., names_to = "predictor", values_to = "value", cols = 2:12)
 
-#plot
+
+
+# plot scatterplots -------
 #response = s
 df %>% ggplot(aes(x = value, y = s)) + 
   geom_point() +
@@ -61,6 +63,21 @@ df %>% ggplot(aes(x = value, y = inDeme)) +
   facet_wrap(~ predictor, scales = "free")
 
 ggsave(paste0("figures/scatterplot-inDeme_vs_preds.pdf"), width = 280, height = 216, dpi = 600, units = c("mm"))
+
+
+
+# plot histograms of variation in each predictor -------
+
+#rearrange data
+df <- df %>% pivot_wider(., names_from = "predictor", values_from = "value") %>% 
+  pivot_longer(., names_to = "predictor", values_to = "value", cols = 5:15) %>% 
+  dplyr::select(species, predictor, value) %>% distinct()
+
+df %>% ggplot() + geom_histogram(aes(x = value)) + 
+  facet_wrap(~predictor, scales = "free")
+
+ggsave(paste0("figures/histograms-variation_in_preds.pdf"), width = 280, height = 216, dpi = 600, units = c("mm"))
+
 
 
 
