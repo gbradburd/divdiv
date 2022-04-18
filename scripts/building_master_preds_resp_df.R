@@ -29,6 +29,10 @@ lat %>% ggplot() + geom_histogram(aes(x = meanlat.gbif)) + scale_x_continuous(li
 lat <- lat %>% mutate(meanlat.gbif = abs(meanlat.gbif))
 lat %>% ggplot() + geom_histogram(aes(x = meanlat.gbif)) + scale_x_continuous(limits = c(-90,90))
 
+#sync some species names
+biotic$species[biotic$species == "Exaiptasia_pallida"] = "Exaiptasia_diaphana" 
+biotic$species[biotic$species == "Seriola_dorsalis"] = "Seriola_lalandi_dorsalis" 
+
 #name issues to correct/sync
 #Exaiptasia diaphana in gbif ecor
 #Exaiptasia diaphana in gbif mean/min/max latitudes
@@ -39,7 +43,18 @@ lat %>% ggplot() + geom_histogram(aes(x = meanlat.gbif)) + scale_x_continuous(li
 #Seriola lalandi dorsalis in gbif mean/min/max latitudes
 
 
-#merge
+#do fake merge first to check that name mismatches are corrected
+df <- merge(lat, ecor, by = "species", all = T)
+df <- merge(df, rangesize, by = "link", all = T)
+df <- merge(df, biotic, by = "species", all = T)
+df <- merge(df, popg, by = "link", all = T)
+df %>% filter(grepl("Exaiptasia",link)) %>% dplyr::select(link,species)
+df %>% filter(grepl("Exaiptasia",species)) %>% dplyr::select(link,species)
+df %>% filter(grepl("Seriola",link)) %>% dplyr::select(link,species)
+df %>% filter(grepl("Seriola",species)) %>% dplyr::select(link,species)
+
+
+#do real merge
 df <- merge(lat, ecor, by = "species", all = F)
 df <- merge(df, rangesize, by = "link", all = F)
 df <- merge(df, biotic, by = "species", all = F)
@@ -47,7 +62,6 @@ df.preds <- df
 df <- merge(df, popg, by = "link", all = F)
 
 names(df)
-
 
 
 #save
