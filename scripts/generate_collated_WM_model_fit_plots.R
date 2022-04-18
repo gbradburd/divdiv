@@ -4,6 +4,7 @@
 #load libraries
 library(dplyr)
 library(tidyr)
+library(grid)
 
 rm(list = ls())
 gc()
@@ -42,10 +43,7 @@ plotFit <- function(out,pHom,chainCol,run_name,stacksparams){
 }
 
 
-#open PDF to save all plots to
-pdf(file = "figures/WM_collated_model_fits-chain1.pdf", width = 14, height = 10)
-
-#generate model fit plots
+#generate model fit plots ---------
 for ( wmOutfile in file_list ) {
   
   load(wmOutfile)
@@ -67,6 +65,9 @@ for ( wmOutfile in file_list ) {
   nChains <- length(post)
   chainCols <- c("blue","goldenrod1","red","forestgreen","purple","black")[1:nChains]
   
+  #write out one jpeg per dataset
+  jpeg(file = paste0("figures/WM_model_fits-chain1-",run_name,".jpeg"), width = 14, height = 10, units = c("in"), res = 72)
+  
   #make plot
   #change below to 1:length(post) to make a plot for each chain
   for(i in 1:1){
@@ -74,10 +75,19 @@ for ( wmOutfile in file_list ) {
     try(plotFit(out,pHom[[i]],chainCols[i],run_name,stacksparams))
   }
   
+  #save pdf
+  dev.off()
+  
 }
 
-#save pdf
+
+
+#combine all the jpeg outputs into one master "pdf" doc -----------
+lf = file_list <- list.files(path = "figures", pattern = "jpeg", full.names = TRUE) # image filenames
+
+jpegs = lapply(lf, jpeg::readJPEG)
+
+pdf(file = "figures/WM_collated_model_fits-chain1.pdf", width = 14, height = 10)
+grid.raster(jpegs[[1]])
+lapply(jpegs[-1], function(x) {grid.newpage() ; grid.raster(x)} ) -> bquiet
 dev.off()
-
-
-
