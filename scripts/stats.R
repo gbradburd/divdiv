@@ -156,7 +156,12 @@ calcPWP <- function(ind1,ind2,L){
         which(ind2==0.5 & !is.na(ind1)))
     )
   )
-  return((diff.homs + hets/2)/L)
+  piHat <- (diff.homs + hets/2)/L
+  piVec <- c(rep(1,diff.homs),rep(0.5,hets),rep(0,(L-(diff.homs+hets))))
+  se <- sqrt( sum( (piVec-piHat)^2 ) / (L*(L-1)))
+  pwpList <- list("pwp" = piHat,
+  				  "se" = se)
+  return(pwpList)
 }
 
 #' Calculate pairwise pi between all pairs of individuals in a dataset
@@ -193,6 +198,7 @@ freqs2pairwisePi <- function(freqs,coGeno=NULL,quiet=FALSE){
 	}
 	n <- nrow(freqs)
 	pwp <- matrix(NA,n,n)
+	se <- matrix(NA,n,n)
 	if(!quiet){
 		prog <- utils::txtProgressBar(min=0,max=n+(n*(n-1))/2,char="*",style=3)
 	}
@@ -201,17 +207,24 @@ freqs2pairwisePi <- function(freqs,coGeno=NULL,quiet=FALSE){
 			if(!quiet){
 				utils::setTxtProgressBar(prog,(i-1)*n+j-(i*(i-1)/2))
 			}
-			pwp[i,j] <- calcPWP(freqs[i,],freqs[j,],coGeno[i,j])
+			piList <- calcPWP(freqs[i,],freqs[j,],coGeno[i,j])
+			pwp[i,j] <- piList$pwp
+			se[i,j] <- piList$se
 			if(i == j){
 				pwp[i,i] <- 2 * pwp[i,i]
 			} else if(i != j){
 				pwp[j,i] <- pwp[i,j]
+				se[j,i] <- se[i,j]
 			}
 		}
 	}
 	row.names(pwp) <- row.names(coGeno)
 	colnames(pwp) <- row.names(coGeno)
-	return(pwp)
+	row.names(se) <- row.names(se)
+	colnames(se) <- row.names(se)
+	pwpList <- list("pwp" = pwp,
+					"se" = se)
+	return(pwpList)
 }
 
 #' Calculate a bunch of popgen stats from a VCF file

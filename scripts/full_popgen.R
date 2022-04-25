@@ -180,7 +180,9 @@ for (gtfile in gt_files){
   
   #calc popgen stats
   thetaW <- calcThetaW(gt=gt,lociDistn=BPstats$lociDistn)
-  pwp <- freqs2pairwisePi(freqs=gt/2,coGeno=BPstats$coGeno,quiet=TRUE)
+  pwpList <- freqs2pairwisePi(freqs=gt/2,coGeno=BPstats$coGeno,quiet=TRUE)
+  pwp <- pwpList$pwp
+  se <- pwpList$se
   globalPi <- mean(pwp[upper.tri(pwp,diag=TRUE)])
   if (length(which(BPstats$coGeno == 0)) > 0) {
     print("skipping PCA bc at least one instance of no cogenotyped bps btwn indivs")
@@ -192,6 +194,7 @@ for (gtfile in gt_files){
   
   popgenstats <- list("thetaW" = thetaW,
                       "pwp" = pwp,
+                      "se" = se,
                       "globalPi" = globalPi,
                       "pcs" = pcs,
                       "het" = het)
@@ -201,6 +204,8 @@ for (gtfile in gt_files){
   rm(popgenstats)
   rm(thetaW)
   rm(pwp)
+  rm(pwpList)
+  rm(se)
   rm(pcs)
   rm(globalPi)
   rm(gt)
