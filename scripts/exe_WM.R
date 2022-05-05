@@ -40,7 +40,7 @@ minPropIndivsScoredin = as.numeric(args[5]) #percent of indivs that locus must b
 #source our functions/load models
 source(paste0(indir,"/wm_lib.R"))
 
-stanFile <- "wm_hom_cmpPar_mod_block_scaled.R"
+stanFile <- "wm_hom_cmpPar_cmpLnL_mod_block.R"
 source(paste0(indir,"/",stanFile))
 ibsMod <- stan_model(model_code=stanBlock)
 
@@ -84,15 +84,17 @@ for (loop.iter in 1:length(popgenfiles_list)) {
   # add inbreeding
   diag(hom) <- 1
   
+  se <- popgenstats$se
+  
   #get number of polymorphic loci
   load(paste0(indir, "/bpstats.", minPropIndivsScoredin, ".", run_name, "_stacks_", stacksparams, "_BPstats.Robj"))
   Npolyloci = BPstats$nLoci
   
   # rename geoDist, keep just samps in pwp, and order to match pwp
   #keep just distances for samples in pwp matrix
-  geoDistnames <- colnames(geoDist) %>% as.data.frame() %>% rename("run_acc_sra" = ".") %>% 
-    mutate(order = 1:n()) %>% 
-    merge(., sampkey %>% dplyr::select(run_acc_sra,sampid_assigned_for_bioinf), by = "run_acc_sra", all.x = T) %>% 
+  geoDistnames <- colnames(geoDist) %>% as.data.frame() %>% dplyr::rename("run_acc_sra" = ".") %>% 
+    dplyr::mutate(order = 1:dplyr::n()) %>% 
+    base::merge(., sampkey %>% dplyr::select(run_acc_sra,sampid_assigned_for_bioinf), by = "run_acc_sra", all.x = T) %>% 
     arrange(order)
   geoDistnames <- geoDistnames$sampid_assigned_for_bioinf
   colnames(geoDist) <- geoDistnames
@@ -109,24 +111,38 @@ for (loop.iter in 1:length(popgenfiles_list)) {
     print("ERROR ! - names and/or order of rownames for pwp and geoDist do not match!")
   }
   
-  # make dataBlock for stan
+  # make dataBlock for stan og way
   # N = number of samples
   # L = number of loci
   # hom = pairwise homozygosity
   # k = geographic distance w/in which W-M breaks down, (should be ~2*sigma)
   # geoDist = pairwise geographic distance
-  dataBlock <- list("N"=nrow(pwp),
-                    "L" = Npolyloci,
-                    "hom"=hom,
-                    "k" = 0.25,
-                    "geoDist"=geoDist)
+  # dataBlock <- list("N"=nrow(pwp),
+  #                   "L" = Npolyloci,
+  #                   "hom"=hom,
+  #                   "k" = 0.25,
+  #                   "geoDist"=geoDist)
+  # # run inference
+  # try(runWM(stanMod = ibsMod,
+  #           dataBlock = dataBlock,
+  #           nChains = 3,
+  #           nIter = 4e3,
+  #           prefix = paste0("WMfit-",run_name,"_stacks_",stacksparams)))
   
+  ut = upper.tri(hom, diag=FALSE)
+  
+  #composite likelihood way
+  dataBlock <- list("lut" = length(hom[ut]),
+                    "obsHom" = hom[ut],
+                    "k" = 0.25,
+                    "geoDist" = geoDist[ut],
+                    "se" = se[ut])
   # run inference
-  try(runWM(stanMod = ibsMod,
-        dataBlock = dataBlock,
-        nChains = 3,
-        nIter = 4e3,
-        prefix = paste0("WMfit-",run_name,"_stacks_",stacksparams)))
+  try(runWM_cmpLnl(stanMod = ibsMod,
+                   dataBlock = dataBlock,
+                   nChains = 3,
+                   nIter = 4e3,
+                   prefix = paste0("WMfitcmpLnl-",run_name,"_stacks_",stacksparams)))
 
 }
 
