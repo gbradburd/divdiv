@@ -32,10 +32,10 @@ outdir = args[4] #outdir
 minPropIndivsScoredin = as.numeric(args[5]) #percent of indivs that locus must be scored in to save
 
 #for local testing
-#indir="/path_to_input_files_and_scripts"
-#outdir="/path_for_outputs"
-#run_name="bioprj_PRJNA294760_Amphiprion-bicinctus"
-#minPropIndivsScoredin = 0.5
+# indir="../scripts/"
+# outdir="../troubleshooting"
+# run_name="bioprj_PRJNA294760_Amphiprion-bicinctus"
+# minPropIndivsScoredin = 0.5
 
 #source our functions/load models
 source(paste0(indir,"/wm_lib.R"))
@@ -133,7 +133,7 @@ for (loop.iter in 1:length(popgenfiles_list)) {
   
   #composite likelihood way
   dataBlock <- list("lut" = length(hom[ut]),
-                    "obsHom" = hom[ut],
+                    "hom" = hom[ut],
                     "k" = 0.25,
                     "geoDist" = geoDist[ut],
                     "se" = se[ut])
