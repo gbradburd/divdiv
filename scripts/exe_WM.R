@@ -57,7 +57,9 @@ options(warn=1)
 
 #get pwp and distance matrices --------------
 
-popgenfiles_list <- list.files(path = paste0(indir), pattern = "popgenstats", full.names = TRUE)
+popgenfiles_list <- list.files(path = paste0(indir), pattern = paste0("popgenstats.",minPropIndivsScoredin), full.names = TRUE)
+print("popgenfiles_list contains:")
+print(popgenfiles_list)
 
 for (loop.iter in 1:length(popgenfiles_list)) {
   

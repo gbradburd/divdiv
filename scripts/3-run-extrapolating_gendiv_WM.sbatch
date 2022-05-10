@@ -85,7 +85,7 @@ then
 	if [ ! -d $ALLR80DIR ]; then mkdir $ALLR80DIR; fi
 	R80PARAMS=$(less $STORAGENODE/$RUN_NAME/popgen/r80params.txt)
 	echo R80PARAMS value is $R80PARAMS
-	cp -r $OUTDIR/WMfit-${RUN_NAME}"_stacks_"${R80PARAMS}* $ALLR80DIR
+	cp -r $OUTDIR/WMfitcmpLnl-${RUN_NAME}"_stacks_"${R80PARAMS}* $ALLR80DIR
 	
 	wait
 	rm -rf $WORKDIR
