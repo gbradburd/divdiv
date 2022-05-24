@@ -1,4 +1,3 @@
-
 #' Generate genotyped base-pair statistics
 #'
 #' @param stacksFAfile The filename (with necessary path) of the 
@@ -23,6 +22,23 @@
 #'						samples \emph{i} and \emph{j}.
 #'			}
 #' @export
+
+#find sample with most 0's in coGeno matrix, drop, keep going until all samples in coGeno are cogenotyped at at least 1 bp
+#this function gets used in getBPstats()
+findCoGenoBadApples <- function(coGeno){
+  badApples <- apply(coGeno,1,function(x){length(which(x==0))})
+  toPrune <- which.max(badApples)
+  while(sum(badApples)>0){
+    cg <- coGeno[-toPrune,-toPrune]
+    badApples <- apply(cg,1,function(x){length(which(x==0))})
+    worstApple <- match(names(which.max(badApples)),rownames(coGeno))
+    names(worstApple) <- names(which.max(badApples))
+    toPrune <- c(toPrune,worstApple)
+  }
+  return(toPrune[1:(length(toPrune)-1)])
+}
+
+
 getBPstats <- function(stacksFAfile,outPath,minPropIndivsScoredin,checkforlowcovsamps=FALSE,sampstodrop=NULL){
   . <- V1 <- allele <- b <- clocus <- info <- label <- locus <- n.bp <- n_basepairs_in_locus <- n_samps_genoed <- sample.internal <- w <- x <- y <- z <- df.wide <- NULL	
   `%>%` <- magrittr::`%>%`
@@ -58,6 +74,10 @@ getBPstats <- function(stacksFAfile,outPath,minPropIndivsScoredin,checkforlowcov
   #filter to just loci scored in at least X proportion of indivs
   nindivsthreshold <- round(Nindivs*minPropIndivsScoredin,0)
   df <- df %>% dplyr::filter(n_samps_genoed >= nindivsthreshold)
+  
+  if ( nrow(df)==0 ) {
+    print(paste0("ERROR - there were no loci left in samples.fa file after filtering by minPropIndivsScoredin"))
+  } else {
   #get new total number of individuals in dataset after filtering
   Nindivs <- length(unique(df$sample))
   #get position of Ns in sequences
@@ -134,6 +154,17 @@ samps <- colnames(coGeno)
 print("here 12")
   #add (back) number of individuals genotyped per every locus
   df <- df %>% dplyr::add_count(clocus, name = "n_samps_genoed")
+  
+  #find remaining samples that have coGeno = 0
+  badApples <- findCoGenoBadApples(coGeno=coGeno)
+  if(length(badApples) > 0) {
+    alerts <- rep(0,4)
+    alerts[1] <- 1
+    #drop any samples that have coGeno = 0 until all remaining samples have coGeno's of > 0
+    coGeno <- coGeno[!rownames(coGeno) %in% names(badApples), !colnames(coGeno) %in% names(badApples)]
+    df <- df %>% filter(!sample %in% names(badApples))
+  }
+  
   #get number of loci in dataset
   #this number matches that reported in populations.log at least for test dataset (with no filtering), yay!
   Nloci = df %>% dplyr::distinct(clocus) %>% nrow()
@@ -177,45 +208,51 @@ print("here 12")
                         sum(n_indiv_per_locus$n.bp[which(n_indiv_per_locus$n_samps_genoed==i)])
                       })
   
-	# do checks on data - if we want
+	# do checks for low cov samples - if we want
   if(checkforlowcovsamps) {
-	alerts <- rep(0,3)
 	# check for absolutely low genotyped bp
 	if(any(diag(coGeno) < 250)){
-		alerts[1] <- 1
+		alerts[2] <- 1
 	}
 	# check for relatively low genotyped bp
 	if(any(diag(coGeno) < median(diag(coGeno))*0.3)){
-		alerts[2] <- 1
+		alerts[3] <- 1
 	}
 	# check for relatively low mean coGeno
 	if(any(rowMeans(coGeno) < median(rowMeans(coGeno))*0.3)){
-		alerts[3] <- 1
+		alerts[4] <- 1
 	}
+  }
 	# print alert file
 	if(any(alerts==1)){
 		alertFile <- paste0(outPath,"_ALERT")
 		file.create(alertFile)
 		if(alerts[1]){
+		  problemChildren <- names(badApples)
+		  alertMsg <- sprintf("these sample(s) had 0 cogenotyped bps with at least one other sample after all other filtering and were dropped:\n %s \n",
+		                      paste0(problemChildren,collapse="\n"))
+		  cat(alertMsg,file=alertFile,append=TRUE)
+		}
+		if(alerts[2]){
 			problemChildren <- names(diag(coGeno))[which(diag(coGeno)<250)]
 			alertMsg <- sprintf("these sample(s) have fewer than 250 genotyped base-pairs:\n %s \n",
 											paste0(problemChildren,collapse="\n"))
 			cat(alertMsg,file=alertFile,append=TRUE)
 		}
-		if(alerts[2]){
+		if(alerts[3]){
 			problemChildren <- names(diag(coGeno))[which(diag(coGeno) < median(diag(coGeno))*0.3)]
 			alertMsg <- sprintf("these sample(s) have less than 30 percent of the median number of genotyped base-pairs:\n %s \n",
 											paste0(problemChildren,collapse="\n"))
 			cat(alertMsg,file=alertFile,append=TRUE)
 		}
-		if(alerts[3]){
+		if(alerts[4]){
 			problemChildren <- names(diag(coGeno))[which(rowMeans(coGeno) < median(rowMeans(coGeno))*0.3)]
 			alertMsg <- sprintf("these sample(s) have less than 30 percent of the median number of co-genotyped base-pairs:\n %s \n",
 											paste0(problemChildren,collapse="\n"))
 			cat(alertMsg,file=alertFile,append=TRUE)
 		}
 	}
-  }
+
   
   #save relevant outputs
   BPstats <- list("lociDistn" = lociDistn,
@@ -227,8 +264,8 @@ print("here 12")
                   "sampIDskept" = sampIDskept)
   save(BPstats,file=paste0(outPath,"_BPstats.Robj"))
   return(invisible("BP stats generated!"))
+  }
 }
-
 
 #' Load a VCF file into R
 #'

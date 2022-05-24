@@ -81,12 +81,12 @@ for (loop.iter in 1:length(popgenfiles_list)) {
   cat(paste0("working on run_name ", run_name, " and Stacks params ", stacksparams, " now\n"), file = stderr())
   
   load(popgenfile)
-  pwp <- popgenstats$pwp
+  pwp <- popgenstats$pwp$pwp
   hom <- 1-pwp
   # add inbreeding
   diag(hom) <- 1
   
-  se <- popgenstats$se
+  se <- popgenstats$pwp$se
   
   #get number of polymorphic loci
   load(paste0(indir, "/bpstats.", minPropIndivsScoredin, ".", run_name, "_stacks_", stacksparams, "_BPstats.Robj"))

@@ -12,7 +12,7 @@ cpus=2 #number of CPUs to request/use per dataset
 ram_per_cpu=8G #amount of RAM to request/use per CPU
 time=168:00:00
 
-list_of_datasets=list-WMtry1.txt #name of dataset that we want to process
+list_of_datasets=list-allfinal136.txt #name of dataset that we want to process
 
 copy_files_to_execute_node=yes #yes to copy input folder to tmp dir on execute node and load files into R from there, no to load files into R directly from where they live on cluster aka $indir below in this file
 minpropindivsscoredin=0.5 #percent of indivs that a locus must be present in to save
@@ -36,6 +36,12 @@ do
 	indir=$storagenode/$run_name
 	outdir=$storagenode/$run_name/gendiv_data
 	figdir=$storagenode/gendiv-figures
+	
+	#if directory to popgen r80 input files is empty; print warning, otherwise process the files that are there
+	n_files=($(ls $indir/r80_outputs/popgenstats* | wc -l))
+	if [ $n_files = 0 ]
+	then echo WARNING - there are no popgen input files for $run_name, go investigate
+	else
 
 	#submit job to cluster
 	sbatch --job-name=$jobname \
@@ -48,5 +54,6 @@ do
 			$executable
 			
 	echo submitted dataset $run_name from $list_of_datasets
-		
+	fi
+	
 done < ./master_keys/$list_of_datasets
