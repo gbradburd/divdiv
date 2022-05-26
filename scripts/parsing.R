@@ -47,6 +47,9 @@ findCoGenoBadApples <- function(coGeno){
 getBPstats <- function(stacksFAfile,outPath,minPropIndivsScoredin,checkforlowcovsamps=FALSE,sampstodrop=NULL){
   . <- V1 <- allele <- b <- clocus <- info <- label <- locus <- n.bp <- n_basepairs_in_locus <- n_samps_genoed <- sample.internal <- w <- x <- y <- z <- df.wide <- NULL	
   `%>%` <- magrittr::`%>%`
+  #make alerts file in case we need it
+  alerts <- rep(0,4)
+  #get data
   df <- utils::read.table(stacksFAfile, header = F, skip = 1, sep = "\n")
   #add two dummy columns so we can rearrange single column of alternating data into two side-by-side cols
   df <- df %>% dplyr::mutate(label = as.character(rep(1:2, nrow(.)/2))) %>% 
@@ -163,7 +166,6 @@ print("here 12")
   #find remaining samples that have coGeno = 0
   badApples <- findCoGenoBadApples(coGeno=coGeno)
   if(length(badApples) > 0) {
-    alerts <- rep(0,4)
     alerts[1] <- 1
     #drop any samples that have coGeno = 0 until all remaining samples have coGeno's of > 0
     coGeno <- coGeno[!rownames(coGeno) %in% names(badApples), !colnames(coGeno) %in% names(badApples)]
