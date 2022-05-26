@@ -27,15 +27,20 @@
 #this function gets used in getBPstats()
 findCoGenoBadApples <- function(coGeno){
   badApples <- apply(coGeno,1,function(x){length(which(x==0))})
-  toPrune <- which.max(badApples)
-  while(sum(badApples)>0){
-    cg <- coGeno[-toPrune,-toPrune]
-    badApples <- apply(cg,1,function(x){length(which(x==0))})
-    worstApple <- match(names(which.max(badApples)),rownames(coGeno))
-    names(worstApple) <- names(which.max(badApples))
-    toPrune <- c(toPrune,worstApple)
+  if ( sum(badApples) > 0 ) {
+    toPrune <- which.max(badApples)
+    while(sum(badApples)>0){
+      cg <- coGeno[-toPrune,-toPrune]
+      badApples <- apply(cg,1,function(x){length(which(x==0))})
+      worstApple <- match(names(which.max(badApples)),rownames(coGeno))
+      names(worstApple) <- names(which.max(badApples))
+      toPrune <- c(toPrune,worstApple)
+    }
+    return(toPrune[1:(length(toPrune)-1)])
+  } else {
+    print("no badApples (aka samples that still have coGenos = 0 after all other filtering) to remove")
+    return(NULL)
   }
-  return(toPrune[1:(length(toPrune)-1)])
 }
 
 

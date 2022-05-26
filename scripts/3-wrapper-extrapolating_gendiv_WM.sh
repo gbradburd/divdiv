@@ -17,6 +17,8 @@ list_of_datasets=list-allfinal136.txt #name of dataset that we want to process
 copy_files_to_execute_node=yes #yes to copy input folder to tmp dir on execute node and load files into R from there, no to load files into R directly from where they live on cluster aka $indir below in this file
 minpropindivsscoredin=0.5 #percent of indivs that a locus must be present in to save
 
+model_flavor=wishart #value of wishart or cmplnl for which version/flavor of WM model we want to run
+
 #---------------------------------------------------------
 
 #check if logfiles directory has been created in submit dir yet; if not, make one
@@ -45,7 +47,7 @@ do
 
 	#submit job to cluster
 	sbatch --job-name=$jobname \
-			--export=CPUS=$cpus,RUN_NAME=$run_name,STORAGENODE=$storagenode,INDIR=$indir,OUTDIR=$outdir,LOGFILESDIR=$logfilesdir,FIGDIR=$figdir,COPY_FILES_TO_EXECUTE_NODE=$copy_files_to_execute_node,MINPROPINDIVSSCOREDIN=$minpropindivsscoredin \
+			--export=CPUS=$cpus,RUN_NAME=$run_name,STORAGENODE=$storagenode,INDIR=$indir,OUTDIR=$outdir,LOGFILESDIR=$logfilesdir,FIGDIR=$figdir,COPY_FILES_TO_EXECUTE_NODE=$copy_files_to_execute_node,MINPROPINDIVSSCOREDIN=$minpropindivsscoredin,MODEL_FLAVOR=$model_flavor \
 			--cpus-per-task=$cpus \
 			--mem-per-cpu=$ram_per_cpu \
 			--output=./$logfilesdir/${jobname}_${run_name}_%A.out \

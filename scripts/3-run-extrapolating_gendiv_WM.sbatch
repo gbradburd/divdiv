@@ -64,7 +64,7 @@ echo "files currently where I am working from are"
 du -a
 
 #run R, with the name of my R script
-Rscript $WORKDIR/exe_WM.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $MINPROPINDIVSSCOREDIN
+Rscript $WORKDIR/exe_WM.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $MINPROPINDIVSSCOREDIN $MODEL_FLAVOR
 wait
 echo "done with exe_WM.R"
 
@@ -85,7 +85,7 @@ then
 	if [ ! -d $ALLR80DIR ]; then mkdir $ALLR80DIR; fi
 	R80PARAMS=$(less $STORAGENODE/$RUN_NAME/popgen/r80params.txt)
 	echo R80PARAMS value is $R80PARAMS
-	cp -r $OUTDIR/WMfitcmpLnl-${RUN_NAME}"_stacks_"${R80PARAMS}* $ALLR80DIR
+	cp -r $OUTDIR/WMfit${MODEL_FLAVOR}-${RUN_NAME}"_stacks_"${R80PARAMS}* $ALLR80DIR
 	
 	wait
 	rm -rf $WORKDIR

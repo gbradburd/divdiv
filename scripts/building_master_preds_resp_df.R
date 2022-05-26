@@ -7,6 +7,7 @@ library(tidyr)
 rm(list = ls())
 gc()
 
+setwd("/Users/rachel/Desktop/DivDiv/divdiv")
 
 #read in data
 lat <- read.csv("data/abiotic/mean_min_max_latitude_stats-wide.csv") %>% dplyr::select(-X) %>% mutate(link = paste0("bioprj_",link))

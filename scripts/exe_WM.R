@@ -30,6 +30,7 @@ run_name = args[1] #dataset name
 indir = args[3] #indir
 outdir = args[4] #outdir
 minPropIndivsScoredin = as.numeric(args[5]) #percent of indivs that locus must be scored in to save
+model_flavor = args[6] #flavor of WM model to run
 
 #for local testing
 # indir="../scripts/"
@@ -40,7 +41,9 @@ minPropIndivsScoredin = as.numeric(args[5]) #percent of indivs that locus must b
 #source our functions/load models
 source(paste0(indir,"/wm_lib.R"))
 
-stanFile <- "wm_hom_cmpPar_cmpLnL_mod_block.R"
+if (model_flavor == "wishart") { stanFile <- "wm_hom_cmpPar_mod_block_scaled.R" }
+if (model_flavor == "cmplnl") { stanFile <- "wm_hom_cmpPar_cmpLnL_mod_block.R" }
+print(paste0("using stanFile: ", stanFile))
 source(paste0(indir,"/",stanFile))
 ibsMod <- stan_model(model_code=stanBlock)
 
@@ -113,38 +116,46 @@ for (loop.iter in 1:length(popgenfiles_list)) {
     print("ERROR ! - names and/or order of rownames for pwp and geoDist do not match!")
   }
   
-  # make dataBlock for stan og way
-  # N = number of samples
-  # L = number of loci
-  # hom = pairwise homozygosity
-  # k = geographic distance w/in which W-M breaks down, (should be ~2*sigma)
-  # geoDist = pairwise geographic distance
-  # dataBlock <- list("N"=nrow(pwp),
-  #                   "L" = Npolyloci,
-  #                   "hom"=hom,
-  #                   "k" = 0.25,
-  #                   "geoDist"=geoDist)
-  # # run inference
-  # try(runWM(stanMod = ibsMod,
-  #           dataBlock = dataBlock,
-  #           nChains = 3,
-  #           nIter = 4e3,
-  #           prefix = paste0("WMfit-",run_name,"_stacks_",stacksparams)))
+  if (model_flavor == "wishart") {
+    
+    # make dataBlock for stan
+    # N = number of samples
+    # L = number of loci
+    # hom = pairwise homozygosity
+    # k = geographic distance w/in which W-M breaks down, (should be ~2*sigma)
+    # geoDist = pairwise geographic distance
+    dataBlock <- list("N"=nrow(pwp),
+                      "L" = Npolyloci,
+                      "hom"=hom,
+                      "k" = 0.25,
+                      "geoDist"=geoDist)
+    # run inference
+    try(runWM(stanMod = ibsMod,
+              dataBlock = dataBlock,
+              nChains = 3,
+              nIter = 4e3,
+              prefix = paste0("WMfit",model_flavor,"-",run_name,"_stacks_",stacksparams)))
+    
+  }
   
-  ut = upper.tri(hom, diag=FALSE)
-  
-  #composite likelihood way
-  dataBlock <- list("lut" = length(hom[ut]),
-                    "hom" = hom[ut],
-                    "k" = 0.25,
-                    "geoDist" = geoDist[ut],
-                    "se" = se[ut])
-  # run inference
-  try(runWM_cmpLnl(stanMod = ibsMod,
-                   dataBlock = dataBlock,
-                   nChains = 3,
-                   nIter = 4e3,
-                   prefix = paste0("WMfitcmpLnl-",run_name,"_stacks_",stacksparams)))
+  if (model_flavor == "cmplnl") {
+    
+    ut = upper.tri(hom, diag=FALSE)
+    
+    dataBlock <- list("lut" = length(hom[ut]),
+                      "hom" = hom[ut],
+                      "k" = 0.25,
+                      "geoDist" = geoDist[ut],
+                      "se" = se[ut])
+    # run inference
+    try(runWM_cmpLnl(stanMod = ibsMod,
+                     dataBlock = dataBlock,
+                     nChains = 3,
+                     nIter = 4e3,
+                     prefix = paste0("WMfit",model_flavor,"-",run_name,"_stacks_",stacksparams)))
+    
+  }
+
 
 }
 
