@@ -23,10 +23,6 @@ sps <- read.csv("data/master_df.csv") %>% filter(is.na(s.wish)==FALSE) %>% dplyr
 
 # build df of label info for tree plotting aesthetics and order it same as phy tips
 finaltreetips <- phy$tip.label %>% as.data.frame() %>% rename("tip.label"=".") %>% mutate(tiporder = 1:n())
-lbs <- merge(ourspp, finaltreetips, by.x = "organism_biosamp", by.y = "tip.label", all.y = T) %>% 
-  merge(., missing.spp, by.x = "organism_biosamp", by.y = "label", all.x = T) %>% 
-  distinct() %>% mutate(sub_category = ifelse(is.na(sub_category), "sp in TT directly", sub_category)) %>% 
-  arrange(tiporder)
 
 p <- ggtree(phy, size=0.2) #make object and set line thickness
 p %<+% finaltreetips + #leftjoin labels for aesthetics onto phy
