@@ -24,7 +24,7 @@ sps <- read.csv("data/master_df.csv") %>% filter(is.na(s.wish)==FALSE) %>% dplyr
 # build df of label info for tree plotting aesthetics and order it same as phy tips
 finaltreetips <- phy$tip.label %>% as.data.frame() %>% rename("tip.label"=".") %>% mutate(tiporder = 1:n())
 
-cladeCols <- brewer.pal(10,"Paired")
+cladeCols <- RColorBrewer::brewer.pal(10,"Paired")
 
 p <- ggtree(phy, size=0.2,layout="circular") #make object and set line thickness
 p %<+% finaltreetips + #leftjoin labels for aesthetics onto phy
@@ -53,8 +53,5 @@ p %<+% finaltreetips + #leftjoin labels for aesthetics onto phy
 	geom_hilight(node=MRCA(phy,"Fucus vesiculosus","Sargassum muticum"),fill=cladeCols[10],alpha=0.3) #ochrophyta
 
 ggsave(filename = "figures/phylo_distn.pdf", width = 15, height = 15, units = c("cm"))
-	
-#have to save manually using export point and click
-#8.18 x 5.80 inches
 
 
