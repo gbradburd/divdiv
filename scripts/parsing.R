@@ -170,6 +170,8 @@ print("here 12")
     #drop any samples that have coGeno = 0 until all remaining samples have coGeno's of > 0
     coGeno <- coGeno[!rownames(coGeno) %in% names(badApples), !colnames(coGeno) %in% names(badApples)]
     df <- df %>% filter(!sample %in% names(badApples))
+    positions <- positions %>% filter(!sample %in% names(badApples))
+    Nindivs <- length(unique(df$sample))
   }
   
   #get number of loci in dataset

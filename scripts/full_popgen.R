@@ -71,7 +71,7 @@ for (stacksFAfile in stacksFA_files){
   rm(tempfileprefix)
   
   #***********************************
-  #NO FILTERING (indivs or loci)
+  #NO FILTERING (indivs or loci, !!! NOTE !!! = this means rows in gt might be longer than all stats/objects in BPstats if badApples dropped in BPstats)
   #get N loci matrix
   print(paste("NO FILTERING - starting to process samples.fa file",stacksFAfile, sep = " "))
   getBPstats(stacksFAfile = stacksFAfile, minPropIndivsScoredin = 0,
@@ -123,7 +123,7 @@ for (stacksFAfile in stacksFA_files){
   load(bpstats)
   gt <- gt[which(rownames(gt) %in% BPstats$sampIDskept$sample), ]
   #toss SNPs in loci in gt that we already tossed from coGeno (bc loci were scored in few indivs)
-  #note - even if minPropIndivsScoredin = 0 may lose some SNPs here - aka SNPs only scored in low cov samps that were dropped in preceeding step
+  #note - even if minPropIndivsScoredin = 0 may lose some SNPs here - aka SNPs only scored in low cov samps that were dropped in preceding step
   gt <- gt[ ,stringr::str_detect(colnames(gt), stringr::str_c(BPstats$lociIDskept$clocus, collapse = "|"))]
   save(gt,file=paste(outdir,"/gt.",minPropIndivsScoredin,".",fileprefix,"_gt.Robj",sep=""))
   # ********
@@ -178,9 +178,12 @@ for (gtfile in gt_files){
   bpstats <- list.files(outdir, pattern=paste("bpstats.",fileprefix,"_BPstats.Robj",sep = ""), full.names = TRUE)
   load(bpstats)
   
+  #make sure we have same samples in all objects/inputs
+  
   #calc popgen stats
   thetaW <- calcThetaW(gt=gt,lociDistn=BPstats$lociDistn)
-  pwpList <- freqs2pairwisePi(freqs=gt/2,coGeno=BPstats$coGeno,quiet=TRUE)
+    pwp.gt = gt[rownames(BPstats$coGeno),]  
+  pwpList <- freqs2pairwisePi(freqs=pwp.gt/2,coGeno=BPstats$coGeno,quiet=TRUE)
   pwp <- pwpList$pwp
   se <- pwpList$se
   globalPi <- mean(pwp[upper.tri(pwp,diag=TRUE)])
@@ -188,9 +191,10 @@ for (gtfile in gt_files){
     print("skipping PCA bc at least one instance of no cogenotyped bps btwn indivs")
     pcs = NULL
   } else {
-    pcs <- doPCA(gt=gt,nPCs=nPCs)
+    pcs = NULL
+    try(pcs <- doPCA(gt=gt,nPCs=nPCs))
   }
-  het <- calcHet(gt=gt,nLoci=diag(BPstats$coGeno))
+  het <- calcHet(gt=pwp.gt,nLoci=diag(BPstats$coGeno))
   
   popgenstats <- list("thetaW" = thetaW,
                       "pwp" = pwp,
