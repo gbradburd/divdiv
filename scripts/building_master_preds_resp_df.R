@@ -19,6 +19,7 @@ biotic <- read.csv("data/biotic/cleaned_numeric_biotic_traits.csv") %>% dplyr::r
 
 popg <- read.csv("data/popgen/r80_popgen_WM_stats-wide.csv") %>% dplyr::rename("link"="run_name") %>% dplyr::select(-species)
 
+taxcolorkey <- read.csv("data/master_tax_color_key.csv") %>% mutate(species = gsub(" ","_",species))
 
 #keep just traits in hypoth bingo
 biotic <- biotic %>% dplyr::select(species, Body_Size, Fecundity_EggSize, Generational_Structure, 
@@ -63,6 +64,9 @@ df.preds <- df
 df <- merge(df, popg, by = "link", all = F)
 
 names(df)
+
+#add colors for tax. groups (that match phy)
+df <- merge(df, taxcolorkey, by = "species", all = F)
 
 
 #save

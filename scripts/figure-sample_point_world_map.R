@@ -50,11 +50,6 @@ load("data/earth_map_objects.RData")
 # 
 # #get list of all datasets
 # sites.all <- sites %>% filter(link %in% using$link)
-# 
-# #get list of datasets with wishart values
-# havewishart <- read.csv("data/master_df.csv") %>% filter(is.na(s.wish)==FALSE) %>% dplyr::select(link) %>% mutate(link = gsub("bioprj_","",link))
-# sites.pg <- sites %>% filter(link %in% havewishart$link)
-
 
 
 # *** OPTION 2 *** : load pre=saved files (works for anyone with /divdiv repo) ---------
@@ -62,54 +57,15 @@ load("data/earth_map_objects.RData")
 #get all divdiv lat/longs
 sites <- read.csv("data/all_divdiv_lat_long_tables_for_genetic_samps.csv")
 
+# *** END CHOOSE YOUR OWN ADVENTURE *** 
+
+
+
 #add clade groups on for coloring
-
-#set taxonomic/clade colors (to match phy: figure-phylogeny_of_species.R)
-cladeCols <- RColorBrewer::brewer.pal(10,"Paired")
-
-load("data/phylo/divdiv_phy_from_timetreebeta5.Robj")
-
-#bony fishes
-des <- ape::getMRCA(phy,c("Anguilla rostrata","Sebastes diaconus")) %>% phytools::getDescendants(phy,.)
-des <- des[des<ape::Ntip(phy)] # get rid of internal nodes and just keep tip "nodes"
-df1 <- phy$tip.label[des] %>% as.data.frame() %>% rename("species"=".") %>% mutate(taxclade = "bony fishes")
-#chondrichthyes
-des <- ape::getMRCA(phy,c("Bathyraja parmifera","Sphyrna tiburo")) %>% phytools::getDescendants(phy,.)
-des <- des[des<ape::Ntip(phy)]
-df2 <- phy$tip.label[des] %>% as.data.frame() %>% rename("species"=".") %>% mutate(taxclade = "chondrichthyes")
-#sauropsida
-des <- ape::getMRCA(phy,c("Pygoscelis papua","Caretta caretta")) %>% phytools::getDescendants(phy,.)
-des <- des[des<ape::Ntip(phy)]
-df3 <- phy$tip.label[des] %>% as.data.frame() %>% rename("species"=".") %>% mutate(taxclade = "sauropsida")
-#mammals
-des <- ape::getMRCA(phy,c("Phocoena sinus","Halichoerus grypus atlantica")) %>% phytools::getDescendants(phy,.)
-des <- des[des<ape::Ntip(phy)]
-df4 <- phy$tip.label[des] %>% as.data.frame() %>% rename("species"=".") %>% mutate(taxclade = "mammals")
-#echinoderms
-des <- ape::getMRCA(phy,c("Apostichopus californicus","Pisaster ochraceus")) %>% phytools::getDescendants(phy,.)
-des <- des[des<ape::Ntip(phy)]
-df5 <- phy$tip.label[des] %>% as.data.frame() %>% rename("species"=".") %>% mutate(taxclade = "echinoderms")
-#molluscs
-des <- ape::getMRCA(phy,c("Bathymodiolus platifrons","Nautilus pompilius")) %>% phytools::getDescendants(phy,.)
-des <- des[des<ape::Ntip(phy)]
-df6 <- phy$tip.label[des] %>% as.data.frame() %>% rename("species"=".") %>% mutate(taxclade = "molluscs")
-#crustacea
-des <- ape::getMRCA(phy,c("Callinectes sapidus","Isocladus armatus")) %>% phytools::getDescendants(phy,.)
-des <- des[des<ape::Ntip(phy)]
-df7 <- phy$tip.label[des] %>% as.data.frame() %>% rename("species"=".") %>% mutate(taxclade = "crustacea")
-#cnidarians
-des <- ape::getMRCA(phy,c("Galaxea horrescens","Ectopleura larynx")) %>% phytools::getDescendants(phy,.)
-des <- des[des<ape::Ntip(phy)]
-df8 <- phy$tip.label[des] %>% as.data.frame() %>% rename("species"=".") %>% mutate(taxclade = "cnidarians")
-#vascular plants
-des <- ape::getMRCA(phy,c("Rhizophora mangle","Laguncularia racemosa")) %>% phytools::getDescendants(phy,.)
-des <- des[des<ape::Ntip(phy)]
-df9 <- phy$tip.label[des] %>% as.data.frame() %>% rename("species"=".") %>% mutate(taxclade = "vascular plants")
-#ochrophyta
-des <- ape::getMRCA(phy,c("Fucus vesiculosus","Sargassum muticum")) %>% phytools::getDescendants(phy,.)
-des <- des[des<ape::Ntip(phy)]
-df10 <- phy$tip.label[des] %>% as.data.frame() %>% rename("species"=".") %>% mutate(taxclade = "ochrophyta")
-taxcladelbs <- rbind(df1,df2,df3,df4,df5,df6,df7,df8,df9,df10)
+taxcolorkey <- read.csv("data/master_tax_color_key.csv")
+sites <- merge(sites %>% separate(., link, into = c("garbage","species"), sep = "_", remove = F) %>% dplyr::select(-garbage) %>% mutate(species = gsub("-","_",species)), 
+               taxcolorkey %>% mutate(species = gsub(" ","_",species)), 
+               by = "species", all.x = T)
 
 #get list of datasets with wishart values
 havewishart <- read.csv("data/master_df.csv") %>% filter(is.na(s.wish)==FALSE) %>% dplyr::select(link) %>% mutate(link = gsub("bioprj_","",link))
@@ -142,12 +98,11 @@ sites.df  = sites.pg
 prj.coord <- project(cbind(sites.df$long, sites.df$lat), proj = PROJ)
 sites.df.prj <- cbind(prj.coord, sites.df)
 names(sites.df.prj)[1:2] <- c("X.prj","Y.prj")
-#add tax coloring on
-sites.df.prj <- merge(sites.df.prj %>% tidyr::separate(., link, into = c("garbage","species.temp"), sep="_") %>% mutate(species = gsub("-"," ",species.temp)) %>% dplyr::select(-species.temp,-garbage), 
-                      taxcladelbs, 
-                      by = "species", all.x = T)
+
 
 jitter <- position_jitter(width = 10, height = 10)
+
+
 
 # plot ----------------------
 ggplot() +
@@ -170,7 +125,7 @@ ggplot() +
                colour = "gray50", fill = "gray90", size = .25) +
   
   ## add locations (points)
-  geom_point(data = sites.df.prj, aes(x = X.prj, y = Y.prj, fill = taxclade), shape=21, colour="black", size = 4, alpha = 0.5) +
+  geom_point(data = sites.df.prj, aes(x = X.prj, y = Y.prj, fill = taxclade), shape=21, colour="black", size = 4, alpha = 0.5, position = jitter) +
   scale_fill_manual(values = c("#A6CEE3","#FF7F00","#FDBF6F","#B2DF8A","#E31A1C","#1F78B4","#CAB2D6")) +
   
   ## Set empty theme
