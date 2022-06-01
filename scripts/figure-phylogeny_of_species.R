@@ -14,31 +14,30 @@ gc()
 # load phylogeny (built from /DivDiv/divdiv_collecting_genetic_data/marine/scripts/building_marine_tree_from_TimeTree.R)
 load(file="data/phylo/divdiv_phy_from_timetreebeta5.Robj")
 
-# ! NOTE ! - don't remember the best way to subset tree to just species we have popgen data so far
-# but here is list of which species those are
-sps <- read.csv("data/master_df.csv") %>% filter(is.na(s.wish)==FALSE) %>% dplyr::select(species) %>% mutate(species = gsub("_"," ",species))
-
-
-#phy <- drop.tip(which(phy$tip.label %in% sps$species)
-# ! NOTE ! - right now below builds a phy for all sps in divdiv
-
 # build df of label info for tree plotting aesthetics and order it same as phy tips
 finaltreetips <- phy$tip.label %>% as.data.frame() %>% rename("tip.label"=".") %>% mutate(tiporder = 1:n())
+havewishart <- read.csv("data/master_df.csv") %>% mutate(havewishart = ifelse(is.na(s.wish)==F, "yes", "no")) %>% 
+  mutate(tip.label = gsub("_"," ",species)) %>% dplyr::select(tip.label, havewishart)
+finaltreetips <- merge(finaltreetips, havewishart, by = "tip.label", all.x = T) %>% 
+  mutate(havewishart = ifelse(is.na(havewishart)==T, "no", havewishart))
 
 cladeCols <- RColorBrewer::brewer.pal(10,"Paired")
 
 p <- ggtree(phy, size=0.2,layout="circular") #make object and set line thickness
 p %<+% finaltreetips + #leftjoin labels for aesthetics onto phy
-  geom_tiplab2(size = 2, #text size
-              color = "black", # color for label font
+  geom_tiplab(size = 2, #text size
+              #color = "black", # color for label font
+              aes(color = havewishart),
               #geom = "label",  # labels not text
+              #alpha = 0.5,
               #label.padding = unit(0.03, "lines"), # amount of padding around the labels
               #label.size = 0,
               fontface = "bold") + # size of label border
   scale_x_continuous(limits = c(0,1800), breaks = seq(0,max(phy$edge.length)+200,200), expand = c(0, 0)) + #change limits max to make space for tip labels
+  scale_color_manual(values = c("black","blue")) + #set text colors for if we have wishart or not
   theme(legend.position = c(0.3,0.85),
         legend.text = element_text(size = 5),
-        legend.title = element_text(size = 5, ),
+        legend.title = element_text(size = 5),
         #axis.line.x = element_line(size = 0.2), #build scale bar
         axis.ticks.x = element_line(), #build scale bar
         axis.text.x = element_text(size = 2)) + #plot ranges between 0 and 1
@@ -52,6 +51,8 @@ p %<+% finaltreetips + #leftjoin labels for aesthetics onto phy
 	geom_hilight(node=MRCA(phy,"Galaxea horrescens","Ectopleura larynx"),fill=cladeCols[8],alpha=0.3) + #cnidarians
 	geom_hilight(node=MRCA(phy,"Rhizophora mangle","Laguncularia racemosa"),fill=cladeCols[9],alpha=0.3) + #vascular plants
 	geom_hilight(node=MRCA(phy,"Fucus vesiculosus","Sargassum muticum"),fill=cladeCols[10],alpha=0.3) #ochrophyta
+
+ggsave(filename = "figures/testphy.pdf", width = 15, height = 15, units = c("cm"))
 
 ggsave(filename = "figures/phylo_distn.pdf", width = 15, height = 15, units = c("cm"))
 
