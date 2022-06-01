@@ -34,6 +34,7 @@ mvn <- stan_model(model_code=mvn)
 ################################
 z <- read.csv("../data/master_df.csv",header=TRUE,stringsAsFactors=FALSE)
 z <- z[-which(z$species=="Pocillopora_damicornis"),]
+z <- z[-which(is.na(z$s.wish)),]
 
 load("../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
 sampPhy <- phy
@@ -64,7 +65,7 @@ for(i in 1:nrow(md)){
 ################################
 
 # modeling collecting phase pi
-s <- (z$s - min(z$s))/max((z$s - min(z$s)))
+s <- (z$s.wish - min(z$s.wish))/max((z$s.wish - min(z$s.wish)))
 db_s <- list("N" = nrow(phyStr),
 		   	 "Y" = s,
 		   	 "nX"= nrow(predictors),
@@ -168,3 +169,25 @@ pdf(file="divdiv_nbhd.pdf",width=12,height=8)
 dev.off()
 
 plot(colMeans(b_s[,1,]))
+
+################################
+# visualize data
+################################
+
+pdf(file="../figures/pi_across_spp.pdf",width=10,height=5,pointsize=12)
+par(mar=c(10,5,3,1))
+	plot(z$s.wish[order(z$s.wish)],
+			xlab="",ylab=expression(paste("deep-time ",pi)),
+			xaxt='n',pch=19,cex=2,main="Genetic diversity",
+			ylim=range(z$s.wish)+c(-0.001,0.001))
+	text(1:length(z$s.wish),par("usr")[3],labels=gsub("_"," ",z$species[order(z$s.wish)]),srt=50,adj=c(1.1,1.1),xpd=TRUE)
+dev.off()
+
+pdf(file="../figures/nbhd_across_spp.pdf",width=10,height=5,pointsize=12)
+par(mar=c(10,5,3,1))
+	plot(z$nbhd.wish[order(z$nbhd.wish)],
+			xlab="",ylab="neighborhood size",
+			xaxt='n',pch=19,cex=2,main="Neighborhood size",
+			ylim=range(z$nbhd.wish)+c(-3,5))
+	text(1:length(z$nbhd.wish),par("usr")[3],labels=gsub("_"," ",z$species[order(z$nbhd.wish)]),srt=50,adj=c(1.1,1.1),xpd=TRUE)
+dev.off()
