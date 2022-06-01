@@ -179,7 +179,7 @@ par(mar=c(10,5,3,1))
 	plot(z$s.wish[order(z$s.wish)],
 			xlab="",ylab=expression(paste("deep-time ",pi)),
 			xaxt='n',pch=19,cex=2,main="Genetic diversity",
-			ylim=range(z$s.wish)+c(-0.001,0.001))
+			ylim=range(z$s.wish)+c(-0.001,0.001),col=z$cladecolor[order(z$s.wish)])
 	text(1:length(z$s.wish),par("usr")[3],labels=gsub("_"," ",z$species[order(z$s.wish)]),srt=50,adj=c(1.1,1.1),xpd=TRUE)
 dev.off()
 
@@ -188,6 +188,6 @@ par(mar=c(10,5,3,1))
 	plot(z$nbhd.wish[order(z$nbhd.wish)],
 			xlab="",ylab="neighborhood size",
 			xaxt='n',pch=19,cex=2,main="Neighborhood size",
-			ylim=range(z$nbhd.wish)+c(-3,5))
+			ylim=range(z$nbhd.wish)+c(-3,5),col=z$cladecolor[order(z$nbhd.wish)])
 	text(1:length(z$nbhd.wish),par("usr")[3],labels=gsub("_"," ",z$species[order(z$nbhd.wish)]),srt=50,adj=c(1.1,1.1),xpd=TRUE)
 dev.off()
