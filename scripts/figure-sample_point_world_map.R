@@ -147,6 +147,7 @@ sites.df.prj <- merge(sites.df.prj %>% tidyr::separate(., link, into = c("garbag
                       taxcladelbs, 
                       by = "species", all.x = T)
 
+jitter <- position_jitter(width = 10, height = 10)
 
 # plot ----------------------
 ggplot() +
@@ -169,15 +170,16 @@ ggplot() +
                colour = "gray50", fill = "gray90", size = .25) +
   
   ## add locations (points)
-  geom_point(data = sites.df.prj, aes(x = X.prj, y = Y.prj, colour = taxclade), size = 2, alpha = 1) +
-  scale_colour_manual(values = c("#A6CEE3","#FF7F00","#FDBF6F","#B2DF8A","#E31A1C","#1F78B4","#CAB2D6")) +
+  geom_point(data = sites.df.prj, aes(x = X.prj, y = Y.prj, fill = taxclade), shape=21, colour="black", size = 4, alpha = 0.5) +
+  scale_fill_manual(values = c("#A6CEE3","#FF7F00","#FDBF6F","#B2DF8A","#E31A1C","#1F78B4","#CAB2D6")) +
   
   ## Set empty theme
   theme_void() + # remove the default background, gridlines & default gray color around legend's symbols
   theme(
-    legend.text = element_text(size = 20),
-    legend.title = element_blank(),
-    plot.margin = unit(c(t=0, r=3, b=0, l=0), unit="cm"), # adjust margins
+    legend.position = "none",
+    #legend.text = element_text(size = 20),
+    #legend.title = element_blank(),
+    #plot.margin = unit(c(t=0, r=3, b=0, l=0), unit="cm"), # adjust margins
     panel.background = element_rect(fill = "white"),
     plot.background = element_rect(fill = "white")
   )

@@ -19,6 +19,7 @@ load(file="data/phylo/divdiv_phy_from_timetreebeta5.Robj")
 sps <- read.csv("data/master_df.csv") %>% filter(is.na(s.wish)==FALSE) %>% dplyr::select(species) %>% mutate(species = gsub("_"," ",species))
 
 
+#phy <- drop.tip(which(phy$tip.label %in% sps$species)
 # ! NOTE ! - right now below builds a phy for all sps in divdiv
 
 # build df of label info for tree plotting aesthetics and order it same as phy tips
