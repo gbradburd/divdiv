@@ -88,6 +88,16 @@ for (loop.iter in 1:length(popgenfiles_list)) {
   hom <- 1-pwp
   # add inbreeding
   diag(hom) <- 1
+  posdefcheck <- any(eigen(hom)$values < 0)
+  flag <- 0
+  while(posdefcheck & flag < 100){
+  	diag(hom) <- diag(hom) + 1e-3
+	posdefcheck <- any(eigen(hom)$values < 0)
+	flag <- flag + 1
+  }
+  if(posdefcheck){
+	  cat("error: I couldn't get the dataset to be positive definite\n")
+  }
   
   se <- popgenstats$pwp$se
   
