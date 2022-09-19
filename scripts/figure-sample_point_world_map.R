@@ -66,10 +66,11 @@ taxcolorkey <- read.csv("data/master_tax_color_key.csv")
 sites <- merge(sites %>% separate(., link, into = c("garbage","species"), sep = "_", remove = F) %>% dplyr::select(-garbage) %>% mutate(species = gsub("-","_",species)), 
                taxcolorkey %>% mutate(species = gsub(" ","_",species)), 
                by = "species", all.x = T)
+sites.pg <- sites
 
 #get list of datasets with wishart values
-havewishart <- read.csv("data/master_df.csv") %>% filter(is.na(s.wish)==FALSE) %>% dplyr::select(link) %>% mutate(link = gsub("bioprj_","",link))
-sites.pg <- sites %>% filter(link %in% havewishart$link)
+#havewishart <- read.csv("data/master_df.csv") %>% filter(is.na(s.wish)==FALSE) %>% dplyr::select(link) %>% mutate(link = gsub("bioprj_","",link))
+#sites.pg <- sites %>% filter(link %in% havewishart$link)
 
 
 
@@ -126,7 +127,7 @@ ggplot() +
   
   ## add locations (points)
   geom_point(data = sites.df.prj, aes(x = X.prj, y = Y.prj, fill = taxclade), shape=21, colour="black", size = 4, alpha = 0.5, position = jitter) +
-  scale_fill_manual(values = c("#A6CEE3","#FF7F00","#FDBF6F","#B2DF8A","#E31A1C","#1F78B4","#CAB2D6")) +
+  scale_fill_manual(values = c("#A6CEE3","#33A02C","#FF7F00","#FDBF6F","#FB9A99","#B2DF8A","#E31A1C","#C2C0C0","#6A3D9A","#1F78B4","#CAB2D6")) +
   
   ## Set empty theme
   theme_void() + # remove the default background, gridlines & default gray color around legend's symbols
@@ -135,11 +136,11 @@ ggplot() +
     #legend.text = element_text(size = 20),
     #legend.title = element_blank(),
     #plot.margin = unit(c(t=0, r=3, b=0, l=0), unit="cm"), # adjust margins
-    panel.background = element_rect(fill = "white"),
-    plot.background = element_rect(fill = "white")
+    panel.background = element_rect(fill = "transparent"),
+    plot.background = element_rect(fill = "transparent")
   )
 
-ggsave(filename = "figures/world_map_wishart_pts.pdf", width = 30, height = 15, units = c("cm"))
+ggsave(filename = "figures/world_map_all_pts.pdf", width = 30, height = 15, units = c("cm"))
 
 
 
