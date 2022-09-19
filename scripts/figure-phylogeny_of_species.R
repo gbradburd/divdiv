@@ -34,8 +34,8 @@ p %<+% finaltreetips + #leftjoin labels for aesthetics onto phy
               #label.size = 0,
               fontface = "bold") + # size of label border
   scale_x_continuous(limits = c(0,1800), breaks = seq(0,max(phy$edge.length)+200,200), expand = c(0, 0)) + #change limits max to make space for tip labels
-  scale_color_manual(values = c("black","blue")) + #set text colors for if we have wishart or not
-  theme(legend.position = c(0.3,0.85),
+  scale_color_manual(values = c("black","red")) + #set text colors for if we have wishart or not
+  theme(legend.position = "none",
         legend.text = element_text(size = 5),
         legend.title = element_text(size = 5),
         #axis.line.x = element_line(size = 0.2), #build scale bar
@@ -50,10 +50,8 @@ p %<+% finaltreetips + #leftjoin labels for aesthetics onto phy
 	geom_hilight(node=MRCA(phy,"Callinectes sapidus","Isocladus armatus"),fill=cladeCols[7],alpha=0.3) + #crustacea
 	geom_hilight(node=MRCA(phy,"Galaxea horrescens","Ectopleura larynx"),fill=cladeCols[8],alpha=0.3) + #cnidarians
 	geom_hilight(node=MRCA(phy,"Rhizophora mangle","Laguncularia racemosa"),fill=cladeCols[9],alpha=0.3) + #vascular plants
-	geom_hilight(node=MRCA(phy,"Fucus vesiculosus","Sargassum muticum"),fill=cladeCols[10],alpha=0.3) #ochrophyta
-
-ggsave(filename = "figures/testphy.pdf", width = 15, height = 15, units = c("cm"))
-
+	geom_hilight(node=MRCA(phy,"Fucus vesiculosus","Sargassum muticum"),fill=cladeCols[10],alpha=0.3) #ochrophyta + 
+	theme_classic() #remove box
 ggsave(filename = "figures/phylo_distn.pdf", width = 15, height = 15, units = c("cm"))
 
 

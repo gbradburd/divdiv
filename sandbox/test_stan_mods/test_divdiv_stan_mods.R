@@ -26,7 +26,6 @@ colFunc <- function (x, cols, nCols, valRange){
 ################################
 source("../../analyses/trait_mod_stan_block.R")
 mvn <- stan_model(model_code=mvn)
-bin <- stan_model(model_code=bin)
 
 ################################
 # get phylo structure
@@ -61,10 +60,10 @@ dev.off()
 ################################
 
 x <- runif(nrow(phyStr))
-
+alpha <- abs(rnorm(1,0,0.1))
 beta <- rexp(1,0.5)
-simTrt <- MASS::mvrnorm(1,mu=beta*x,Sigma=phyStr)
-plot(x,simTrt,pch=19)
+simTrt <- MASS::mvrnorm(1,mu=beta*x,Sigma=alpha*phyStr)
+#plot(x,simTrt,pch=19)
 
 db <- list("N" = nrow(phyStr),
 		   "Y" = simTrt,
@@ -77,7 +76,17 @@ fit <- sampling(object=mvn,
 				iter=2e3,
 				chains=1)
 b <- rstan::extract(fit,"beta",permute=FALSE)
-plot(b,type='l') ; abline(h=beta,col="red")
+mu <- rstan::extract(fit,"mu",permute=FALSE)
+#plot(b,type='l') ; abline(h=beta,col="red")
+parMeans <- extract(fit,"meanVec",permute=FALSE,inc_warmup=TRUE)[,1,]
+pmci <- apply(parMeans,2,function(x){quantile(x,c(0.025,0.975))})
+plot(0,type='n',xlim=range(db$X),ylim=range(pmci),ylab="",xlab="")
+abline(mean(mu),mean(b),col="red",lty=2,lwd=2)
+	segments(x0=db$X,x1=db$X,
+			 y0=pmci[1,],y1=pmci[2,])
+	points(db$X,db$Y,pch=19,cex=2)
+
+
 
 
 ################################
