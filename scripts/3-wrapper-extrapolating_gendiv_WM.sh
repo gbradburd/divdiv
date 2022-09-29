@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #define variables:
-storagenode=/mnt/research/bradburd_lab/divdiv_working_popgen #path to main node where input files live
+storagenode=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen/ #path to main node where input files live
 
 executable=3-run-extrapolating_gendiv_WM.sbatch #script to run
 
