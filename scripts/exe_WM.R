@@ -137,13 +137,13 @@ for (loop.iter in 1:length(popgenfiles_list)) {
     dataBlock <- list("N"=nrow(pwp),
                       "L" = Npolyloci,
                       "hom"=hom,
-                      "k" = 0.25,
+                      "k" = 1,
                       "geoDist"=geoDist)
     # run inference
     try(runWM(stanMod = ibsMod,
               dataBlock = dataBlock,
-              nChains = 3,
-              nIter = 4e3,
+              nChains = 5,
+              nIter = 5e3,
               prefix = paste0("WMfit",model_flavor,"-",run_name,"_stacks_",stacksparams)))
     
   }
