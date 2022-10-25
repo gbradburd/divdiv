@@ -84,27 +84,33 @@ for (loop.iter in 1:length(popgenfiles_list)) {
   cat(paste0("working on run_name ", run_name, " and Stacks params ", stacksparams, " now\n"), file = stderr())
   
   load(popgenfile)
-  pwp <- popgenstats$pwp$pwp
+  #pwp <- popgenstats$pwp$pwp
+  pwp <- popgenstats$pwp
   hom <- 1-pwp
+cat("here1\n", file = stderr())
   # add inbreeding
   diag(hom) <- 1
-  posdefcheck <- any(eigen(hom)$values < 0)
   flag <- 0
+  scl_min <- min(hom)
+  scl_max <- max(hom-scl_min)
+  tmphom <- (hom-scl_min)/scl_max
+  posdefcheck <- any(eigen(tmphom)$values < 0)
   while(posdefcheck & flag < 100){
   	diag(hom) <- diag(hom) + 1e-3
-	posdefcheck <- any(eigen(hom)$values < 0)
+    tmphom <- (hom-scl_min)/scl_max
+	posdefcheck <- any(eigen(tmphom)$values < 0)
 	flag <- flag + 1
   }
   if(posdefcheck){
 	  cat("error: I couldn't get the dataset to be positive definite\n")
   }
-  
-  se <- popgenstats$pwp$se
+  cat("here2\n", file = stderr())
+  #se <- popgenstats$pwp$se
   
   #get number of polymorphic loci
   load(paste0(indir, "/bpstats.", minPropIndivsScoredin, ".", run_name, "_stacks_", stacksparams, "_BPstats.Robj"))
   Npolyloci = BPstats$nLoci
-  
+ cat("here3\n", file = stderr())  
   # rename geoDist, keep just samps in pwp, and order to match pwp
   #keep just distances for samples in pwp matrix
   geoDistnames <- colnames(geoDist) %>% as.data.frame() %>% dplyr::rename("run_acc_sra" = ".") %>% 
@@ -112,7 +118,8 @@ for (loop.iter in 1:length(popgenfiles_list)) {
     base::merge(., sampkey %>% dplyr::select(run_acc_sra,sampid_assigned_for_bioinf), by = "run_acc_sra", all.x = T) %>% 
     arrange(order)
   geoDistnames <- geoDistnames$sampid_assigned_for_bioinf
-  colnames(geoDist) <- geoDistnames
+ cat("here4\n", file = stderr()) 
+ colnames(geoDist) <- geoDistnames
   rownames(geoDist) <- geoDistnames
   geoDist <- geoDist[rownames(geoDist) %in% rownames(pwp), colnames(geoDist) %in% rownames(pwp)]
   #make sure all matrices are ordered the same
@@ -125,7 +132,7 @@ for (loop.iter in 1:length(popgenfiles_list)) {
   } else {
     print("ERROR ! - names and/or order of rownames for pwp and geoDist do not match!")
   }
-  
+   cat("here5\n", file = stderr())
   if (model_flavor == "wishart") {
     
     # make dataBlock for stan
@@ -144,7 +151,8 @@ for (loop.iter in 1:length(popgenfiles_list)) {
               dataBlock = dataBlock,
               nChains = 5,
               nIter = 5e3,
-              prefix = paste0("WMfit",model_flavor,"-",run_name,"_stacks_",stacksparams)))
+              prefix = paste0("WMfit",model_flavor,"-",run_name,"_stacks_",stacksparams),
+              MLjumpstart = FALSE))
     
   }
   
