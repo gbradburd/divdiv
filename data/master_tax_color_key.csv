@@ -1,0 +1,120 @@
+species,taxclade,cladecolor
+Engraulis encrasicolus,bony fishes,#A6CEE3
+Galaxias maculatus,bony fishes,#A6CEE3
+Mallotus villosus,bony fishes,#A6CEE3
+Seriola lalandi dorsalis,bony fishes,#A6CEE3
+Paralichthys dentatus,bony fishes,#A6CEE3
+Platichthys flesus,bony fishes,#A6CEE3
+Istiblennius lineatus,bony fishes,#A6CEE3
+Zenarchopterus dunckeri,bony fishes,#A6CEE3
+Poecilia latipinna,bony fishes,#A6CEE3
+Fundulus heteroclitus,bony fishes,#A6CEE3
+Fundulus grandis,bony fishes,#A6CEE3
+Dascyllus trimaculatus,bony fishes,#A6CEE3
+Amphiprion bicinctus,bony fishes,#A6CEE3
+Amphiprion clarkii,bony fishes,#A6CEE3
+Stegastes beebei,bony fishes,#A6CEE3
+Stegastes leucorus,bony fishes,#A6CEE3
+Holacanthus passer,bony fishes,#A6CEE3
+Pomacanthus maculosus,bony fishes,#A6CEE3
+Larimichthys polyactis,bony fishes,#A6CEE3
+Lutjanus fulvus,bony fishes,#A6CEE3
+Lutjanus campechanus,bony fishes,#A6CEE3
+Acanthurus olivaceus,bony fishes,#A6CEE3
+Zebrasoma scopas,bony fishes,#A6CEE3
+Zebrasoma flavescens,bony fishes,#A6CEE3
+Paracirrhites forsteri,bony fishes,#A6CEE3
+Lateolabrax maculatus,bony fishes,#A6CEE3
+Gasterosteus aculeatus,bony fishes,#A6CEE3
+Trachidermus fasciatus,bony fishes,#A6CEE3
+Sebastiscus marmoratus,bony fishes,#A6CEE3
+Sebastes ruberrimus,bony fishes,#A6CEE3
+Sebastes rastrelliger,bony fishes,#A6CEE3
+Sebastes pinniger,bony fishes,#A6CEE3
+Sebastes paucispinis,bony fishes,#A6CEE3
+Sebastes diaconus,bony fishes,#A6CEE3
+Symphodus tinca,bony fishes,#A6CEE3
+Ctenolabrus rupestris,bony fishes,#A6CEE3
+Symphodus melops,bony fishes,#A6CEE3
+Bathygobius cocosensis,bony fishes,#A6CEE3
+Siphamia tubifer,bony fishes,#A6CEE3
+Fibramia amboinensis,bony fishes,#A6CEE3
+Scomber scombrus,bony fishes,#A6CEE3
+Thunnus thynnus,bony fishes,#A6CEE3
+Coryphaenoides rupestris,bony fishes,#A6CEE3
+Gadus morhua,bony fishes,#A6CEE3
+Gadus macrocephalus,bony fishes,#A6CEE3
+Anguilla rostrata,bony fishes,#A6CEE3
+Anguilla anguilla,bony fishes,#A6CEE3
+Sphyrna tiburo,chondrichthyes,#33A02C
+Bathyraja aleutica,chondrichthyes,#33A02C
+Bathyraja panthera,chondrichthyes,#33A02C
+Bathyraja parmifera,chondrichthyes,#33A02C
+Ectopleura larynx,cnidarians,#FF7F00
+Leptopsammia pruvoti,cnidarians,#FF7F00
+Agaricia fragilis,cnidarians,#FF7F00
+Agaricia undata,cnidarians,#FF7F00
+Porites compressa,cnidarians,#FF7F00
+Porites astreoides,cnidarians,#FF7F00
+Oculina patagonica,cnidarians,#FF7F00
+Orbicella faveolata,cnidarians,#FF7F00
+Galaxea fascicularis,cnidarians,#FF7F00
+Galaxea horrescens,cnidarians,#FF7F00
+Pocillopora damicornis,cnidarians,#FF7F00
+Stephanocoenia intersepta,cnidarians,#FF7F00
+Montipora capitata,cnidarians,#FF7F00
+Acropora cervicornis,cnidarians,#FF7F00
+Acropora prolifera,cnidarians,#FF7F00
+Acropora millepora,cnidarians,#FF7F00
+Acropora palmata,cnidarians,#FF7F00
+Exaiptasia pallida,cnidarians,#FF7F00
+Exaiptasia brasiliensis,cnidarians,#FF7F00
+Bartholomea annulata,cnidarians,#FF7F00
+Nematostella vectensis,cnidarians,#FF7F00
+Anthopleura elegantissima,cnidarians,#FF7F00
+Isocladus armatus,crustacea,#FDBF6F
+Idotea baltica,crustacea,#FDBF6F
+Penaeus duorarum,crustacea,#FDBF6F
+Robustosergia robusta,crustacea,#FDBF6F
+Acanthephyra purpurea,crustacea,#FDBF6F
+Systellaspis debilis,crustacea,#FDBF6F
+Homarus americanus,crustacea,#FDBF6F
+Planes minutus,crustacea,#FDBF6F
+Callinectes sapidus,crustacea,#FDBF6F
+Pisaster ochraceus,echinoderms,#FB9A99
+Paracentrotus lividus,echinoderms,#FB9A99
+Apostichopus californicus,echinoderms,#FB9A99
+Halichoerus grypus atlantica,mammals,#B2DF8A
+Arctocephalus forsteri,mammals,#B2DF8A
+Zalophus wollebaeki,mammals,#B2DF8A
+Delphinapterus leucas,mammals,#B2DF8A
+Phocoena phocoena,mammals,#B2DF8A
+Phocoena sinus,mammals,#B2DF8A
+Lagenorhynchus acutus,mammals,#B2DF8A
+Lagenorhynchus albirostris,mammals,#B2DF8A
+Nautilus pompilius,molluscs,#E31A1C
+Vampyroteuthis infernalis,molluscs,#E31A1C
+Cranchia scabra,molluscs,#E31A1C
+Pyroteuthis margaritifera,molluscs,#E31A1C
+Ostrea lurida,molluscs,#E31A1C
+Placopecten magellanicus,molluscs,#E31A1C
+Mytilus galloprovincialis,molluscs,#E31A1C
+Bathymodiolus platifrons,molluscs,#E31A1C
+Chlorostoma funebralis,molluscs,#E31A1C
+Strombus pugilis,molluscs,#E31A1C
+Sargassum muticum,ochrophyta,#6A3D9A
+Caretta caretta,sauropsida,#1F78B4
+Aythya marila,sauropsida,#1F78B4
+Eudyptes chrysolophus,sauropsida,#1F78B4
+Aptenodytes patagonicus,sauropsida,#1F78B4
+Pygoscelis adeliae,sauropsida,#1F78B4
+Pygoscelis antarcticus,sauropsida,#1F78B4
+Pygoscelis papua,sauropsida,#1F78B4
+Uria aalge,sauropsida,#1F78B4
+Uria lomvia,sauropsida,#1F78B4
+Laguncularia racemosa,vascular plants,#CAB2D6
+Rhizophora mangle,vascular plants,#CAB2D6
+Eukrohnia hamata,not assigned,#C2C0C0
+Exaiptasia diaphana,cnidarians,#FF7F00
+Fucus vesiculosus,ochrophyta,#6A3D9A
+Nymphon australe,not assigned,#C2C0C0

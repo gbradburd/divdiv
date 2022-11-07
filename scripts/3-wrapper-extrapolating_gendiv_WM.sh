@@ -1,9 +1,8 @@
 #!/bin/bash
 
 #define variables:
-storagenode=/mnt/research/bradburd_lab/divdiv_working_popgen #path to main node where input files live
+storagenode=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen #path to main node where input files live
 
-jobname=run-gendivextrapWM #label for SLURM book-keeping
 executable=3-run-extrapolating_gendiv_WM.sbatch #script to run
 
 logfilesdir=logfiles_gendivextrap_WM #name of directory to create and then write log files to
@@ -18,6 +17,8 @@ copy_files_to_execute_node=yes #yes to copy input folder to tmp dir on execute n
 minpropindivsscoredin=0.5 #percent of indivs that a locus must be present in to save
 
 model_flavor=wishart #value of wishart or cmplnl for which version/flavor of WM model we want to run
+
+jobname=run-gendivextrapWM-${model_flavor} #label for SLURM book-keeping
 
 #---------------------------------------------------------
 
