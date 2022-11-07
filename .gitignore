@@ -1,2 +1,4 @@
 *.Rapp.history
 *.DS_Store
+*.RData
+analyses/loo/*.Robj
