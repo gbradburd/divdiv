@@ -109,7 +109,7 @@ for (loop.iter in 1:length(popgenfiles_list)) {
                       by = "samp", all.x = T, all.y = T) %>% 
     filter(is.na(x)==F & is.na(y)==F) %>% 
     arrange(samp)
-  sampstouse <- sampstouse$samp
+  sampstouse <- as.character(sampstouse$samp)
   #keep just samps in both geog and pwp matrices
   geoDist <- geoDist[rownames(geoDist) %in% sampstouse, colnames(geoDist) %in% sampstouse]
   pwp <- pwp[rownames(pwp) %in% sampstouse, colnames(pwp) %in% sampstouse]
