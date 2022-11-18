@@ -1,0 +1,2 @@
+bioprj_PRJNA299372_Aythya-marila X
+bioprj_PRJNA559677_Caretta-caretta X
