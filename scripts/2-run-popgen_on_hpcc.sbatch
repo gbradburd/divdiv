@@ -44,7 +44,7 @@ echo "files currently where I am working from are"
 du -a
 
 #run R, with the name of my R script
-Rscript $SLURM_SUBMIT_DIR/full_popgen.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $NPCS $MINPROPINDIVSSCOREDIN $KEYSDIR
+Rscript $SLURM_SUBMIT_DIR/full_popgen.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $NPCS $MINPROPINDIVSSCOREDIN $KEYSDIR $SLURM_SUBMIT_DIR
 wait
 
 Rscript $SLURM_SUBMIT_DIR/comparing_assemblies_and_IDing_r80_params.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $MINPROPINDIVSSCOREDIN
