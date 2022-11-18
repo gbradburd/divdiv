@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #define variables:
-storagenode=/mnt/research/bradburd_lab/divdiv_working_popgen #path to main node to write fastq files to
+storagenode=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen #path to main node to write fastq files to
 
 jobname=run-popgenstats #label for SLURM book-keeping
 executable=2-run-popgen_on_hpcc.sbatch #script to run
