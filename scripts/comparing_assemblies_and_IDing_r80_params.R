@@ -34,14 +34,16 @@ print("we are printing the contents of the vector args to show all variables pas
 print("arguments passed:")
 cat(args, sep = "\n")
 
-#source our functions 
-source("/mnt/home/rhtoczyd/popgen-marine/parsing.R")
-source("/mnt/home/rhtoczyd/popgen-marine/stats.R")
 #define some variables (pulled in from bash script)
 run_name = args[1] #dataset name
 indir = args[3] #indir
 outdir = args[4] #outdir
 minPropIndivsScoredin = as.numeric(args[5]) #percent of indivs that locus must be scored in to save
+workdir = args[6] #directory on execute node where work is being done
+
+#source our functions
+source(paste0(workdir,"/parsing.R"))
+source(paste0(workdir,"/stats.R"))
 
 #print objects loaded in R (so we can see functions and variables were correctly loaded)
 print("----------------------------------------------------------------------------------------")

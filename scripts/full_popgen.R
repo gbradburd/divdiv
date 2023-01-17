@@ -37,11 +37,11 @@ outdir = args[4] #outdir
 keysdir = args[7] #keydir - where samplename and lat/long live
 nPCs = as.numeric(args[5]) #n principal components to save
 minPropIndivsScoredin = as.numeric(args[6]) #percent of indivs that locus must be scored in to save
-submitdir = args[8] #directory script launched to slurm from, variable defined by slurm
+workdir = args[8] #directory on execute node where work is being done
 
 #source our functions 
-source(paste0(submitdir,"/parsing.R"))
-source(paste0(submitdir,"/stats.R"))
+source(paste0(workdir,"/parsing.R"))
+source(paste0(workdir,"/stats.R"))
 
 #print objects loaded in R (so we can see functions and variables were correctly loaded)
 print("----------------------------------------------------------------------------------------")

@@ -23,6 +23,10 @@ then
 	
 	#copy input files to tmpdir to speed up run time
 	cp -r $INDIR $WORKDIR
+	cp $SLURM_SUBMIT_DIR/parsing.R $WORKDIR
+	cp $SLURM_SUBMIT_DIR/stats.R $WORKDIR
+	cp $SLURM_SUBMIT_DIR/full_popgen.R $WORKDIR
+	cp $SLURM_SUBMIT_DIR/comparing_assemblies_and_IDing_r80_params.R $WORKDIR
 	wait
 	
 	#move to execute node
@@ -35,7 +39,7 @@ then
 	OUTDIR_FINAL=$OUTDIR
 	OUTDIR_SUFFIX=$(echo $OUTDIR | rev | cut -d "/" -f1 | rev)
 	OUTDIR=$WORKDIR/$OUTDIR_SUFFIX
-	if [ ! -d $OUTDIR ]; then mkdir $OUTDIR; fi
+	if [ ! -d $OUTDIR ]; then mkdir -p $OUTDIR; fi
 		
 fi
 
@@ -44,10 +48,10 @@ echo "files currently where I am working from are"
 du -a
 
 #run R, with the name of my R script
-Rscript $SLURM_SUBMIT_DIR/full_popgen.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $NPCS $MINPROPINDIVSSCOREDIN $KEYSDIR $SLURM_SUBMIT_DIR
+Rscript $WORKDIR/full_popgen.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $NPCS $MINPROPINDIVSSCOREDIN $KEYSDIR $WORKDIR
 wait
 
-Rscript $SLURM_SUBMIT_DIR/comparing_assemblies_and_IDing_r80_params.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $MINPROPINDIVSSCOREDIN
+Rscript $WORKDIR/comparing_assemblies_and_IDing_r80_params.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $MINPROPINDIVSSCOREDIN $WORKDIR
 wait
 
 #print files currently on execute node
@@ -74,9 +78,6 @@ then
 	rm -rf $WORKDIR
 fi
 
-# write output back to submit node (files are individually too small to put on /staging)
-#cp *.csv /mnt/gluster/toczydlowski/betadiv_output_on_gluster
-#rm *.csv
 
 #print some environment variables to stdout for records
 echo ----------------------------------------------------------------------------------------
