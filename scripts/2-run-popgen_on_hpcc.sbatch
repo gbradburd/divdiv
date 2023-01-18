@@ -23,10 +23,6 @@ then
 	
 	#copy input files to tmpdir to speed up run time
 	cp -r $INDIR $WORKDIR
-	cp $SLURM_SUBMIT_DIR/parsing.R $WORKDIR
-	cp $SLURM_SUBMIT_DIR/stats.R $WORKDIR
-	cp $SLURM_SUBMIT_DIR/full_popgen.R $WORKDIR
-	cp $SLURM_SUBMIT_DIR/comparing_assemblies_and_IDing_r80_params.R $WORKDIR
 	wait
 	
 	#move to execute node
@@ -40,8 +36,15 @@ then
 	OUTDIR_SUFFIX=$(echo $OUTDIR | rev | cut -d "/" -f1 | rev)
 	OUTDIR=$WORKDIR/$OUTDIR_SUFFIX
 	if [ ! -d $OUTDIR ]; then mkdir -p $OUTDIR; fi
-		
+	
 fi
+
+#copy R scripts to execute node (so it runs faster)
+cp $SLURM_SUBMIT_DIR/parsing.R $WORKDIR
+cp $SLURM_SUBMIT_DIR/stats.R $WORKDIR
+cp $SLURM_SUBMIT_DIR/full_popgen.R $WORKDIR
+cp $SLURM_SUBMIT_DIR/comparing_assemblies_and_IDing_r80_params.R $WORKDIR
+wait
 
 #print files currently on execute node
 echo "files currently where I am working from are"

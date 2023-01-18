@@ -43,6 +43,8 @@ workdir = args[8] #directory on execute node where work is being done
 source(paste0(workdir,"/parsing.R"))
 source(paste0(workdir,"/stats.R"))
 
+print("here1")
+
 #print objects loaded in R (so we can see functions and variables were correctly loaded)
 print("----------------------------------------------------------------------------------------")
 print("----------------------------------------------------------------------------------------")
