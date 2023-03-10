@@ -1,0 +1,17 @@
+bioprj_PRJNA280774_Poecilia-latipinna X
+bioprj_PRJNA299372_Aythya-marila X
+bioprj_PRJNA319656_Seriola-lalandi-dorsalis X
+bioprj_PRJNA343012_Aptenodytes-patagonicus X
+bioprj_PRJNA348572_Zalophus-wollebaeki X
+bioprj_PRJNA369717_Nautilus-pompilius X
+bioprj_PRJNA544861_Montipora-capitata X
+bioprj_PRJNA553554_Istiblennius-lineatus X
+bioprj_PRJNA554161_Penaeus-duorarum X
+bioprj_PRJNA559677_Caretta-caretta X
+bioprj_PRJNA564451_Uria-aalge X
+bioprj_PRJNA564451_Uria-lomvia X
+bioprj_PRJNA600652_Paralichthys-dentatus X
+bioprj_PRJNA640135_Paracirrhites-forsteri X
+bioprj_PRJNA646172_Bathyraja-panthera X
+bioprj_PRJNA659918_Phocoena-phocoena X
+bioprj_PRJNA659918_Phocoena-sinus X

@@ -38,8 +38,11 @@ do
 	#and where clean/processed reads should be written to
 	indir=$storagenode/$run_name
 	outdir=$storagenode/$run_name/gendiv_data
+	#outdir=/mnt/research/Fitz_Lab/bradburd/$run_name/gendiv_data
 	figdir=$storagenode/gendiv-figures
 	
+	if [ ! -d $outdir ]; then mkdir -p $outdir; fi
+
 	#if directory to popgen r80 input files is empty; print warning, otherwise process the files that are there
 	n_files=($(ls $indir/r80_outputs/popgenstats* | wc -l))
 	if [ $n_files = 0 ]
