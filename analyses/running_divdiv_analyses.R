@@ -29,11 +29,19 @@ expPhyReg <- stan_model(model_code=expPhyReg)
 ################################
 z <- read.csv("../data/master_df.csv",header=TRUE,stringsAsFactors=FALSE)
 z <- z[-which(z$species=="Pocillopora_damicornis"),]
-z <- z[-which(is.na(z$s.wish)),]
+if(any(is.na(z$s))){
+	z <- z[!which(is.na(z$s)),]	
+}
+dupes <- names(which(table(z$species) > 1))
+
+i <- 3
+z$maxgenetic.sea[which(z$species==dupes[i])]
+z$nbhd[which(z$species==dupes[i])]
+z$s[which(z$species==dupes[i])]
+z$link[which(z$species==dupes[i])]
 
 load("../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
-sampPhy <- phy
-sampPhy <- ape::keep.tip(sampPhy,gsub("_"," ",z$species))
+sampPhy <- ape::keep.tip(phy,gsub("_"," ",z$species))
 phyStr <- ape::vcv(sampPhy,corr=TRUE)
 
 predictors <- rbind(z[["meanlat.gbif"]],
