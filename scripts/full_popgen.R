@@ -32,6 +32,7 @@ cat(args, sep = "\n")
 
 #define some variables (pulled in from bash script)
 run_name = args[1] #dataset name
+storagenode = args[2] #head directory where final files are copied to/stored
 indir = args[3] #indir
 outdir = args[4] #outdir
 keysdir = args[7] #keydir - where samplename and lat/long live
@@ -152,11 +153,16 @@ for (stacksFAfile in stacksFA_files){
     
 
 }
-rm(stacksFA_files)
-rm(stacksFAfile)
+rm(stacksFA_files, stacksFAfile)
 
 Sys.time()
 
+#copy files to final location, in case job breaks or runs out of time, so we don't lose everything
+#will still try to do a final copy in the bash script after R script completely finishes to be safe
+workdirfiles = list.files(indir, pattern="meanreaddepth|gt|bpstats", full.names = TRUE)
+file.copy(from=workdirfiles, to=paste0(storagenode,"/genetic_data/"), 
+          overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
+rm(workdirfiles)
 
 
 
@@ -195,8 +201,11 @@ for (gtfile in gt_files){
     print("skipping PCA bc at least one instance of no cogenotyped bps btwn indivs")
     pcs = NULL
   } else {
+    cat("\n", file = stderr())
     pcs = NULL
+    cat("I am trying to run PCA\n", file = stderr())
     try(pcs <- doPCA(gt=gt,nPCs=nPCs))
+    cat("I am done trying to run PCA\n", file = stderr())
   }
   het <- calcHet(gt=pwp.gt,nLoci=diag(BPstats$coGeno))
   
@@ -209,20 +218,24 @@ for (gtfile in gt_files){
   
   save(popgenstats,file=paste0(outdir,"/popgenstats.",fileprefix,"_popgenstats.Robj"))
   
-  rm(popgenstats, thetaW, pwp, pwpList, se, pcs,
-     globalPi, gt, BPstats, het, bpstats)
+  rm(popgenstats, thetaW, pwp, pwpList, se, pcs, globalPi, gt, BPstats, het, bpstats)
   
   print(paste("finished processing",fileprefix, sep = " "))
   rm(fileprefix)
   
 }
-rm(gt_files)
-rm(gtfile)
+rm(gt_files, gtfile)
 
 Sys.time()
 
 print(paste0("ALL DONE WITH PARSING AND POPGEN STATS FOR ", run_name))
 
+#copy files to final location, in case job breaks or runs out of time, so we don't lose everything
+#will still try to do a final copy in the bash script after R script completely finishes to be safe
+workdirfiles = list.files(indir, pattern="popgenstats", full.names = TRUE)
+file.copy(from=workdirfiles, to=paste0(storagenode,"/genetic_data/"), 
+          overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
+rm(workdirfiles)
 
 
 
@@ -237,6 +250,7 @@ vcf_files <- list.files(indir, pattern="populations.snps.vcf", full.names = TRUE
 for (vcfFile in vcf_files){
   
   print(paste("starting to make plots with file",vcfFile, sep = " "))
+  cat(paste("\nstarting to make plots with file",vcfFile,"\n", sep = " "), file = stderr())
   
   #get file prefix to use in naming output
   tempfileprefix <- vcfFile %>% strsplit(., split = "/") %>% as.data.frame()
@@ -277,6 +291,7 @@ for (vcfFile in vcf_files){
   #filter out the NAs - aka uncalled SNPs, and make historgram of how many indivs each SNP is scored in
   #N indivs each SNP is scored in
   #no filtering
+  cat("\nstarting explore sample coverage plots\n", file = stderr())
   snpdistrib.plot1 <- gt.long %>% filter(is.na(genotype)==F) %>% group_by(SNPid) %>% summarise(n=n()) %>% 
     mutate(nsamps = Nindivs.nof) %>% mutate(percscoredin = ((n/nsamps)*100)) %>% 
     ggplot() +
@@ -306,6 +321,7 @@ for (vcfFile in vcf_files){
   
   
   # HETEROZYGOSITY -----------------------------------------------------------------
+  cat("\nstarting heterozygosity plot section\n", file = stderr())
   load(paste(outdir,"/popgenstats.",minPropIndivsScoredin,".",fileprefix,"_popgenstats.Robj",sep=""))
   het.means.f <- mean(popgenstats$het)
   het.f <- popgenstats$het %>% as.data.frame() %>% rename("het" = ".")
@@ -364,6 +380,7 @@ for (vcfFile in vcf_files){
   rm(het, het.f, het.means, het.means.f, het.both, gt, gtfile)
   
   # SFS -----------------------------------------------------------------
+  cat("\nstarting SFS plot section\n", file = stderr())
   #get a dataframe of genotype frequencies grouped by SNP (across all indvs/pops)
   freq.perSNP.f <- gt.long.f %>% group_by(SNPid,genotype) %>% summarise(N=n()) %>% ungroup() %>% na.omit()
   freq.perSNP.f <- freq.perSNP.f %>% tidyfast::dt_pivot_wider(., names_from = genotype, values_from = N) %>% as.data.frame()
@@ -428,6 +445,7 @@ for (vcfFile in vcf_files){
   print(sfs.zoom.plot)
   
   # HWE -----------------------------------------------------------------
+  cat("\nstarting HWE plot section\n", file = stderr())
   #filtered to loci scored in X prop. of indivs
   hwe.f.plot <- freq.perSNP.f %>% ggplot(aes(x = count_minor, y = propindivshet)) +
     geom_point(shape = 21) +
@@ -468,6 +486,7 @@ for (vcfFile in vcf_files){
   rm(gt.long.f, gt, Nindivs, Nindivs.nof, gtfile, popgenstats)
   
   # IBD and PCA -------------------------------------------------------------------------------
+  cat("\nstarting IBD and PCA plot section\n", file = stderr())
   #using data filtered to positions scored in at least X prop. of indivs
   # Load data
   #get lat/long table
@@ -494,12 +513,12 @@ for (vcfFile in vcf_files){
   df <- merge(dp.mean, sampkey, by = "sampid", all.x = T)
   df <- merge(df, latlong, by = "run_acc_sra", all.x = T)
   df <- merge(df, nbp %>% rename("sampid" = "sampid_assigned_for_bioinf"), by = "sampid", all.x = T)
-  #get pcs
-  pcs <- popgenstats$pcs %>% as.data.frame() %>% mutate(sampid = row.names(.))
-  if (is.null(pcs) == TRUE) {
+  if (is.null(popgenstats$pcs) == TRUE) {
     print("popgenstats$pcs is empty")
   } else {
     print("popgenstats$pcs is not empty")
+    #get pcs
+    pcs <- popgenstats$pcs %>% as.data.frame() %>% mutate(sampid = row.names(.))
     df <- merge(df, pcs, by = "sampid", all.x = T)
   }
   df <- df %>% dplyr::arrange(sampid)
@@ -568,9 +587,9 @@ for (vcfFile in vcf_files){
   print(bpVgeno.plot)
   #PCA plots if present
   if (is.null(pcs) == TRUE) {
-    print("popgenstats$pcs is empty so skipping PCA plots")
+    print("popgenstats$pcs is NULL so skipping PCA plots")
   } else {
-    print("starting to make PCA plots")
+    cat("\nstarting to build PCA plots\n", file = stderr())
     #plot PCA colored by lat
     pc1 <- df %>% ggplot(aes(x = V1, y = V2)) + 
       geom_point(aes(fill = lat), size = 2, shape = 21, colour = "black") +
@@ -689,6 +708,7 @@ for (vcfFile in vcf_files){
      BPstats, dp.mean, popgenstats, coords)
   
   # READ DEPTH VS ALLELE FREQS/SINGLETONS -----------------------------------------------------------------
+  cat("\nstarting to make read depth vs allele freq plots\n", file = stderr())
   # Get read depths
   vcf <- vcfR::read.vcfR(paste(indir,"/",fileprefix,"_populations.snps.vcf",sep=""), verbose = FALSE)
   #get depth per locus at indiv level 
@@ -794,8 +814,8 @@ for (vcfFile in vcf_files){
   
   print(paste("finished processing",fileprefix, sep = " "))
   
-  rm(dp.singletons1.plot, dp.singletons2.plot, dp.singletons3.plot, dp.singletons4.plot, dp.singletons5.plot,
-     map.ngeno.plot, map.ngeno.5.plot)
+  rm(dp.singletons1.plot, dp.singletons2.plot, dp.singletons3.plot, 
+     dp.singletons4.plot, dp.singletons5.plot, map.ngeno.plot, map.ngeno.5.plot)
   rm(bpVgeno.plot, df, dp.long, freq.perSNP, freq.perSNP.f, geogVgeno.plot, gt.long, 
      het.plot1, het.plot2, het.plot3, hwe.f.plot, hwe.plot, IBD.plot, latlong, means.locus, 
      nbp, sampkey, sfs.plot, sfs.zoom.plot, snpdistrib.plot, 
