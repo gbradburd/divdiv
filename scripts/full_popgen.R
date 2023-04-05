@@ -209,17 +209,8 @@ for (gtfile in gt_files){
   
   save(popgenstats,file=paste0(outdir,"/popgenstats.",fileprefix,"_popgenstats.Robj"))
   
-  rm(popgenstats)
-  rm(thetaW)
-  rm(pwp)
-  rm(pwpList)
-  rm(se)
-  rm(pcs)
-  rm(globalPi)
-  rm(gt)
-  rm(BPstats)
-  rm(het)
-  rm(bpstats)
+  rm(popgenstats, thetaW, pwp, pwpList, se, pcs,
+     globalPi, gt, BPstats, het, bpstats)
   
   print(paste("finished processing",fileprefix, sep = " "))
   rm(fileprefix)
@@ -476,36 +467,42 @@ for (vcfFile in vcf_files){
   
   rm(gt.long.f, gt, Nindivs, Nindivs.nof, gtfile, popgenstats)
   
-  # PCA -------------------------------------------------------------------------------
+  # IBD and PCA -------------------------------------------------------------------------------
   #using data filtered to positions scored in at least X prop. of indivs
   # Load data
   #get lat/long table
   latlong <- read.delim(paste(keysdir,"/lat_long_table-",run_name,".txt",sep="")) %>% dplyr::select(-link) %>% distinct()
-  #get pcs
-  load(paste(outdir,"/popgenstats.",minPropIndivsScoredin,".",fileprefix,"_popgenstats.Robj",sep=""))
-  pcs <- popgenstats$pcs %>% as.data.frame() %>% mutate(sampid = row.names(.))
   #get read depth
   dp.mean <- read.delim(paste(outdir,"/meanreaddepth.",minPropIndivsScoredin,".",fileprefix,"_readDepth.txt",sep=""), sep = " ")
-  # Merge
-  df <- merge(pcs, sampkey, by.x = "sampid", by.y = "sampid_assigned_for_bioinf", all.x = T)
-  df <- merge(df, latlong, by = "run_acc_sra", all.x = T)
-  df <- merge(df, nbp %>% rename("sampid" = "sampid_assigned_for_bioinf"), by = "sampid", all.x = T)
-  df <- merge(df, dp.mean, by = "sampid", all.x = T)
-  df <- df %>% dplyr::arrange(sampid)
   #get coGeno
   cogeno <- BPstats$coGeno
-  
+  #get pi and pcs if present
+  load(paste(outdir,"/popgenstats.",minPropIndivsScoredin,".",fileprefix,"_popgenstats.Robj",sep=""))
+  #reformat
   coords <- cbind(df$long,df$lat)
   geoDist <- fields::rdist.earth(coords,miles=FALSE)
   rownames(geoDist) <- df$sampid
   colnames(geoDist) <- df$sampid
   diag(geoDist) <- NA
+  geoDist <- as.vector(geoDist)
   pwp <- popgenstats$pwp %>% as.matrix()
   diag(pwp) <- NA
-  geoDist <- as.vector(geoDist)
   pwp <- as.vector(pwp)
   diag(cogeno) <- NA
   cogeno <- as.vector(cogeno)
+  #merge
+  df <- merge(dp.mean, sampkey, by = "sampid", all.x = T)
+  df <- merge(df, latlong, by = "run_acc_sra", all.x = T)
+  df <- merge(df, nbp %>% rename("sampid" = "sampid_assigned_for_bioinf"), by = "sampid", all.x = T)
+  #get pcs
+  pcs <- popgenstats$pcs %>% as.data.frame() %>% mutate(sampid = row.names(.))
+  if (is.null(pcs) == TRUE) {
+    print("popgenstats$pcs is empty")
+  } else {
+    print("popgenstats$pcs is not empty")
+    df <- merge(df, pcs, by = "sampid", all.x = T)
+  }
+  df <- df %>% dplyr::arrange(sampid)
   
   # Plot
   #pwp vs geog dist
@@ -518,120 +515,8 @@ for (vcfFile in vcf_files){
          title = "IBD - Pairwise pi vs. geog. distance",
          subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
   print(IBD.plot)
-  #plot PCA colored by lat
-  pc1 <- df %>% ggplot(aes(x = V1, y = V2)) + 
-    geom_point(aes(fill = lat), size = 2, shape = 21, colour = "black") +
-    scale_fill_gradientn(colours = topo.colors(10)) +
-    theme_bw() +
-    theme(panel.grid = element_blank()) +
-    labs(x = "PC1",
-         y = "PC2",
-         title = "PC1 and 2 colored by Lat.",
-         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
-  print(pc1)
-  #plot PCA colored by long
-  pc2 <- df %>% ggplot(aes(x = V1, y = V2)) + 
-    geom_point(aes(fill = long), size = 2, shape = 21, colour = "black") +
-    scale_fill_gradientn(colours = topo.colors(10)) +
-    theme_bw() +
-    theme(panel.grid = element_blank()) +
-    labs(x = "PC1",
-         y = "PC2",
-         title = "PC1 and 2 colored by Long.",
-         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
-  print(pc2)
-  #plot PCA colored by raw read count
-  pc3 <- df %>% ggplot(aes(x = V1, y = V2)) + 
-    geom_point(aes(fill = total_reads_written_to_final_fastq), size = 2, shape = 21, colour = "black") +
-    scale_fill_gradientn(colours = topo.colors(10)) +
-    theme_bw() +
-    theme(panel.grid = element_blank()) +
-    labs(x = "PC1",
-         y = "PC2",
-         title = "PC1 and 2 colored by raw read count",
-         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
-  print(pc3)
-  #plot PCA colored by n genotyped bps
-  pc4 <- df %>% ggplot(aes(x = V1, y = V2)) + 
-    geom_point(aes(fill = n.bp.genoed), size = 2, shape = 21, colour = "black") +
-    scale_fill_gradientn(colours = topo.colors(10)) +
-    theme_bw() +
-    theme(panel.grid = element_blank()) +
-    labs(x = "PC1",
-         y = "PC2",
-         title = "PC1 and 2 colored by N. genotyped bps",
-         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
-  print(pc4)
-  #plot PCA colored by proportion of total genotyped bps that are missing in each indiv
-  pc5 <- df %>% ggplot(aes(x = V1, y = V2)) + 
-    geom_point(aes(fill = prop.missing.bps), size = 2, shape = 21, colour = "black") +
-    scale_fill_gradientn(colours = topo.colors(10)) +
-    theme_bw() +
-    theme(panel.grid = element_blank()) +
-    labs(x = "PC1",
-         y = "PC2",
-         title = "PC1 and 2 colored by proportion of missing genotyped bps",
-         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
-  print(pc5)
-  #plot PCA colored by mean read depth (of genotyped bps)
-  pc6 <- df %>% ggplot(aes(x = V1, y = V2)) + 
-    geom_point(aes(fill = meanReadDepth), size = 2, shape = 21, colour = "black") +
-    scale_fill_gradientn(colours = topo.colors(10)) +
-    theme_bw() +
-    theme(panel.grid = element_blank()) +
-    labs(x = "PC1",
-         y = "PC2",
-         title = "PC1 and 2 colored by mean read depth at SNP positions",
-         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
-  print(pc6)
-  #plot map colored by PC1
-  pc7 <- df %>% ggplot(aes(x = long, y = lat)) +
-    geom_point(aes(fill = V1), size = 2, shape = 21, colour = "black") +
-    scale_fill_gradientn(colours = topo.colors(10)) +
-    #geom_jitter(aes(colour = V1)) +
-    theme_bw() +
-    labs(x = "Longitude",
-         y = "Latitude",
-         title = "Map colored by PC1",
-         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""),
-         fill = "PC1")
-  print(pc7)
-  #plot map colored by PC1 - JITTERED
-  pc7.5 <- df %>% ggplot(aes(x = long, y = lat)) +
-    geom_beeswarm(priority='density',cex=1.25,groupOnX=TRUE,aes(fill = V1),shape = 21, colour = "black",size=2) +
-    scale_fill_gradientn(colours = topo.colors(10)) +
-    theme_bw() +
-    labs(x = "Longitude",
-         y = "Latitude",
-         title = "Map colored by PC1 - JITTERED",
-         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""),
-         fill = "PC1")
-  print(pc7.5)
-  #plot map colored by PC2
-  pc8 <- df %>% ggplot(aes(x = long, y = lat)) +
-    geom_point(aes(fill = V2), size = 2, shape = 21, colour = "black") +
-    scale_fill_gradientn(colours = topo.colors(10)) +
-    #geom_jitter(aes(colour = V2)) +
-    theme_bw() +
-    labs(x = "Longitude",
-         y = "Latitude",
-         title = "Map colored by PC2",
-         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""),
-         fill = "PC2")
-  print(pc8)
-  #plot map colored by PC2 - JITTERED
-  pc8.5 <- df %>% ggplot(aes(x = long, y = lat)) +
-    geom_beeswarm(priority='density',cex=1.25,groupOnX=TRUE,aes(fill = V2),shape = 21, colour = "black",size=2) +
-    scale_fill_gradientn(colours = topo.colors(10)) +
-    theme_bw() +
-    labs(x = "Longitude",
-         y = "Latitude",
-         title = "Map colored by PC2 - JITTERED",
-         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""),
-         colour = "PC2")
-  print(pc8.5)
   #plot map colored by n genotyped bps
-  pc9 <- df %>% ggplot(aes(x = long, y = lat)) +
+  map.ngeno.plot <- df %>% ggplot(aes(x = long, y = lat)) +
     geom_point(aes(fill = n.bp.genoed), size = 2, shape = 21, colour = "black") +
     scale_fill_gradientn(colours = topo.colors(10)) +
     #geom_jitter(aes(colour = n.bp.genoed)) +
@@ -640,9 +525,9 @@ for (vcfFile in vcf_files){
          y = "Latitude",
          title = "Map colored by N. genotyped bps",
          subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
-  print(pc9)
+  print(map.ngeno.plot)
   #plot map colored by n genotyped bps - JITTERED
-  pc9.5 <- df %>% ggplot(aes(x = long, y = lat)) +
+  map.ngeno.5.plot <- df %>% ggplot(aes(x = long, y = lat)) +
     geom_beeswarm(priority='density',cex=1.25,groupOnX=TRUE,aes(fill = n.bp.genoed),shape = 21, colour = "black",size=2) +
     scale_fill_gradientn(colours = topo.colors(10)) +
     theme_bw() +
@@ -650,7 +535,7 @@ for (vcfFile in vcf_files){
          y = "Latitude",
          title = "Map colored by N. genotyped bps - JITTERED",
          subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
-  print(pc9.5)
+  print(map.ngeno.5.plot)
   #plot geogDist vs. coGeno (are samples further away from each other genotyped at fewer shared loci?)
   coGeno.forplotting <- BPstats$coGeno
   diag(coGeno.forplotting) <- NA
@@ -681,17 +566,127 @@ for (vcfFile in vcf_files){
          title = "N raw reads vs. mean N cogenotyped bps",
          subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
   print(bpVgeno.plot)
-  
-  rm(geoDist)
-  rm(coGenolong)
-  rm(coGeno.forplotting, ncoGeno)
-  rm(pwp)
-  rm(pcs)
-  rm(df)
-  rm(BPstats)
-  rm(dp.mean)
-  rm(popgenstats)
-  rm(coords)
+  #PCA plots if present
+  if (is.null(pcs) == TRUE) {
+    print("popgenstats$pcs is empty so skipping PCA plots")
+  } else {
+    print("starting to make PCA plots")
+    #plot PCA colored by lat
+    pc1 <- df %>% ggplot(aes(x = V1, y = V2)) + 
+      geom_point(aes(fill = lat), size = 2, shape = 21, colour = "black") +
+      scale_fill_gradientn(colours = topo.colors(10)) +
+      theme_bw() +
+      theme(panel.grid = element_blank()) +
+      labs(x = "PC1",
+           y = "PC2",
+           title = "PC1 and 2 colored by Lat.",
+           subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
+    print(pc1)
+    #plot PCA colored by long
+    pc2 <- df %>% ggplot(aes(x = V1, y = V2)) + 
+      geom_point(aes(fill = long), size = 2, shape = 21, colour = "black") +
+      scale_fill_gradientn(colours = topo.colors(10)) +
+      theme_bw() +
+      theme(panel.grid = element_blank()) +
+      labs(x = "PC1",
+           y = "PC2",
+           title = "PC1 and 2 colored by Long.",
+           subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
+    print(pc2)
+    #plot PCA colored by raw read count
+    pc3 <- df %>% ggplot(aes(x = V1, y = V2)) + 
+      geom_point(aes(fill = total_reads_written_to_final_fastq), size = 2, shape = 21, colour = "black") +
+      scale_fill_gradientn(colours = topo.colors(10)) +
+      theme_bw() +
+      theme(panel.grid = element_blank()) +
+      labs(x = "PC1",
+           y = "PC2",
+           title = "PC1 and 2 colored by raw read count",
+           subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
+    print(pc3)
+    #plot PCA colored by n genotyped bps
+    pc4 <- df %>% ggplot(aes(x = V1, y = V2)) + 
+      geom_point(aes(fill = n.bp.genoed), size = 2, shape = 21, colour = "black") +
+      scale_fill_gradientn(colours = topo.colors(10)) +
+      theme_bw() +
+      theme(panel.grid = element_blank()) +
+      labs(x = "PC1",
+           y = "PC2",
+           title = "PC1 and 2 colored by N. genotyped bps",
+           subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
+    print(pc4)
+    #plot PCA colored by proportion of total genotyped bps that are missing in each indiv
+    pc5 <- df %>% ggplot(aes(x = V1, y = V2)) + 
+      geom_point(aes(fill = prop.missing.bps), size = 2, shape = 21, colour = "black") +
+      scale_fill_gradientn(colours = topo.colors(10)) +
+      theme_bw() +
+      theme(panel.grid = element_blank()) +
+      labs(x = "PC1",
+           y = "PC2",
+           title = "PC1 and 2 colored by proportion of missing genotyped bps",
+           subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
+    print(pc5)
+    #plot PCA colored by mean read depth (of genotyped bps)
+    pc6 <- df %>% ggplot(aes(x = V1, y = V2)) + 
+      geom_point(aes(fill = meanReadDepth), size = 2, shape = 21, colour = "black") +
+      scale_fill_gradientn(colours = topo.colors(10)) +
+      theme_bw() +
+      theme(panel.grid = element_blank()) +
+      labs(x = "PC1",
+           y = "PC2",
+           title = "PC1 and 2 colored by mean read depth at SNP positions",
+           subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
+    print(pc6)
+    #plot map colored by PC1
+    pc7 <- df %>% ggplot(aes(x = long, y = lat)) +
+      geom_point(aes(fill = V1), size = 2, shape = 21, colour = "black") +
+      scale_fill_gradientn(colours = topo.colors(10)) +
+      #geom_jitter(aes(colour = V1)) +
+      theme_bw() +
+      labs(x = "Longitude",
+           y = "Latitude",
+           title = "Map colored by PC1",
+           subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""),
+           fill = "PC1")
+    print(pc7)
+    #plot map colored by PC1 - JITTERED
+    pc7.5 <- df %>% ggplot(aes(x = long, y = lat)) +
+      geom_beeswarm(priority='density',cex=1.25,groupOnX=TRUE,aes(fill = V1),shape = 21, colour = "black",size=2) +
+      scale_fill_gradientn(colours = topo.colors(10)) +
+      theme_bw() +
+      labs(x = "Longitude",
+           y = "Latitude",
+           title = "Map colored by PC1 - JITTERED",
+           subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""),
+           fill = "PC1")
+    print(pc7.5)
+    #plot map colored by PC2
+    pc8 <- df %>% ggplot(aes(x = long, y = lat)) +
+      geom_point(aes(fill = V2), size = 2, shape = 21, colour = "black") +
+      scale_fill_gradientn(colours = topo.colors(10)) +
+      #geom_jitter(aes(colour = V2)) +
+      theme_bw() +
+      labs(x = "Longitude",
+           y = "Latitude",
+           title = "Map colored by PC2",
+           subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""),
+           fill = "PC2")
+    print(pc8)
+    #plot map colored by PC2 - JITTERED
+    pc8.5 <- df %>% ggplot(aes(x = long, y = lat)) +
+      geom_beeswarm(priority='density',cex=1.25,groupOnX=TRUE,aes(fill = V2),shape = 21, colour = "black",size=2) +
+      scale_fill_gradientn(colours = topo.colors(10)) +
+      theme_bw() +
+      labs(x = "Longitude",
+           y = "Latitude",
+           title = "Map colored by PC2 - JITTERED",
+           subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""),
+           colour = "PC2")
+    print(pc8.5)
+    rm(pcs,pc1,pc2,pc3,pc4,pc5,pc6,pc7,pc7.5,pc8,pc8.5)
+  }
+  rm(geoDist, coGenolong, coGeno.forplotting, ncoGeno, pwp, df,
+     BPstats, dp.mean, popgenstats, coords)
   
   # READ DEPTH VS ALLELE FREQS/SINGLETONS -----------------------------------------------------------------
   # Get read depths
@@ -799,8 +794,8 @@ for (vcfFile in vcf_files){
   
   print(paste("finished processing",fileprefix, sep = " "))
   
-  rm(pc1,pc2,pc3,pc4,pc5,pc6,pc7,pc8,pc9,pc7.5,pc8.5,pc9.5,
-     dp.singletons1.plot, dp.singletons2.plot, dp.singletons3.plot, dp.singletons4.plot, dp.singletons5.plot)
+  rm(dp.singletons1.plot, dp.singletons2.plot, dp.singletons3.plot, dp.singletons4.plot, dp.singletons5.plot,
+     map.ngeno.plot, map.ngeno.5.plot)
   rm(bpVgeno.plot, df, dp.long, freq.perSNP, freq.perSNP.f, geogVgeno.plot, gt.long, 
      het.plot1, het.plot2, het.plot3, hwe.f.plot, hwe.plot, IBD.plot, latlong, means.locus, 
      nbp, sampkey, sfs.plot, sfs.zoom.plot, snpdistrib.plot, 
