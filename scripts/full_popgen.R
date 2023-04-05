@@ -177,6 +177,7 @@ gt_files <- list.files(outdir, pattern="_gt.Robj", full.names = TRUE)
 for (gtfile in gt_files){
   
   print(paste("starting to process gt file",gtfile, sep = " "))
+  cat(paste("\nstarting to process gt file",gtfile,"\n", sep = " "), file = stderr())
   
   #get file prefix to use in naming output
   tempfileprefix <- gtfile %>% strsplit(., split = "/") %>% as.data.frame()
@@ -483,7 +484,7 @@ for (vcfFile in vcf_files){
                           \nred line = mean FIS; ", round(mean(freq.perSNP.f$FIS, na.rm = T),4), sep=""))
   print(fis.f.plot)
   
-  rm(gt.long.f, gt, Nindivs, Nindivs.nof, gtfile, popgenstats)
+  rm(gt.long.f, Nindivs, Nindivs.nof, popgenstats)
   
   # IBD and PCA -------------------------------------------------------------------------------
   cat("\nstarting IBD and PCA plot section\n", file = stderr())
@@ -497,18 +498,6 @@ for (vcfFile in vcf_files){
   cogeno <- BPstats$coGeno
   #get pi and pcs if present
   load(paste(outdir,"/popgenstats.",minPropIndivsScoredin,".",fileprefix,"_popgenstats.Robj",sep=""))
-  #reformat
-  coords <- cbind(df$long,df$lat)
-  geoDist <- fields::rdist.earth(coords,miles=FALSE)
-  rownames(geoDist) <- df$sampid
-  colnames(geoDist) <- df$sampid
-  diag(geoDist) <- NA
-  geoDist <- as.vector(geoDist)
-  pwp <- popgenstats$pwp %>% as.matrix()
-  diag(pwp) <- NA
-  pwp <- as.vector(pwp)
-  diag(cogeno) <- NA
-  cogeno <- as.vector(cogeno)
   #merge
   df <- merge(dp.mean, sampkey, by = "sampid", all.x = T)
   df <- merge(df, latlong, by = "run_acc_sra", all.x = T)
@@ -522,6 +511,18 @@ for (vcfFile in vcf_files){
     df <- merge(df, pcs, by = "sampid", all.x = T)
   }
   df <- df %>% dplyr::arrange(sampid)
+  #reformat
+  coords <- cbind(df$long,df$lat)
+  geoDist <- fields::rdist.earth(coords,miles=FALSE)
+  rownames(geoDist) <- df$sampid
+  colnames(geoDist) <- df$sampid
+  diag(geoDist) <- NA
+  geoDist <- as.vector(geoDist)
+  pwp <- popgenstats$pwp %>% as.matrix()
+  diag(pwp) <- NA
+  pwp <- as.vector(pwp)
+  diag(cogeno) <- NA
+  cogeno <- as.vector(cogeno)
   
   # Plot
   #pwp vs geog dist
