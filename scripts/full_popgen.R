@@ -499,7 +499,7 @@ for (vcfFile in vcf_files){
   #get pi and pcs if present
   load(paste(outdir,"/popgenstats.",minPropIndivsScoredin,".",fileprefix,"_popgenstats.Robj",sep=""))
   #merge
-  df <- merge(dp.mean, sampkey, by = "sampid", all.x = T)
+  df <- merge(dp.mean, sampkey %>% rename("sampid" = "sampid_assigned_for_bioinf"), by = "sampid", all.x = T)
   df <- merge(df, latlong, by = "run_acc_sra", all.x = T)
   df <- merge(df, nbp %>% rename("sampid" = "sampid_assigned_for_bioinf"), by = "sampid", all.x = T)
   if (is.null(popgenstats$pcs) == TRUE) {
