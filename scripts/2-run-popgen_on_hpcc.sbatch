@@ -71,7 +71,7 @@ then
 	
 	#create dir to store all genetic files associated with r80 optimal params in if it doesn't already exist
 	R80DIR=$STORAGENODE/$RUN_NAME/r80_outputs
-	if [ ! -d $R80DIR ]; then mkdir $R80DIR; fi
+	if [ ! -d $R80DIR ]; then mkdir -p $R80DIR; fi
 	R80PARAMS=$(less $OUTDIR/r80params.txt)
 	
 	#cp $INDIR/*${R80PARAMS}* $R80DIR
