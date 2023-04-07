@@ -63,11 +63,13 @@ gt_files
 
 #loop through all gt files and calculate summary statistics for each parameter set
 print("CALCING SUMMARY STATS ACROSS PARAM COMBOS")
+cat(paste("\nCALCING SUMMARY STATS ACROSS PARAM COMBOS\n", sep = " "), file = stderr())
 for (gtFile in gt_files){
   
   load(gtFile)
   
   print(paste("processing gt file",gtFile, sep = " "))
+  cat(paste("\nprocessing gt file", gtFile, "\n", sep = " "), file = stderr())
   #get file prefix to use in naming output
   tempfileprefix <- gtFile %>% strsplit(., split = "/") %>% as.data.frame()
   fileprefix = tempfileprefix[nrow(tempfileprefix),] %>% gsub("_gt.Robj","",.) %>% gsub(paste0("gt.",minPropIndivsScoredin,"."),"",.)
@@ -191,6 +193,7 @@ for (gtFile in gt_files){
 
 #************************* Collect all data into one clean dataframe to plot - loci summary stats *************************
 print("MERGING AND SAVING ALL SUMMARY STATS")
+cat(paste("\nMERGING AND SAVING ALL SUMMARY STATS\n", sep = " "), file = stderr())
 #bind all dataframes together
 full.data <- do.call(rbind, mget(grep("hetero.df",names(.GlobalEnv),value=TRUE)))
 full.data.1 <- do.call(rbind, mget(grep("nonpoly.df",names(.GlobalEnv),value=TRUE)))
@@ -269,6 +272,7 @@ rm(full.data, full.data.graph)
 
 # --------------- PLOTTING ---------------
 print("MAKING FINAL PLOTS COMPARING PARAMS")
+cat(paste("\nMAKING FINAL PLOTS COMPARING PARAMS\n", sep = " "), file = stderr())
 #open PDF for param picking plots
 pdf(file = paste(outdir,"/plots.ALL.",run_name,".plots.pdf",sep=""), width = 11, height = 8.5)
 
@@ -580,4 +584,6 @@ write.table(r80, paste0(outdir,"/r80params.txt"), col.names = FALSE, row.names =
 
 
 print("ALL DONE MAKING COMBO PLOTS")
+cat(paste("\nALL DONE MAKING COMBO PLOTS\n", sep = " "), file = stderr())
+
 print("--------- THIS IS THE END OF THE R SCRIPTS ---------")

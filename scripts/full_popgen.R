@@ -39,6 +39,7 @@ keysdir = args[7] #keydir - where samplename and lat/long live
 nPCs = as.numeric(args[5]) #n principal components to save
 minPropIndivsScoredin = as.numeric(args[6]) #percent of indivs that locus must be scored in to save
 workdir = args[8] #directory on execute node where work is being done
+outdir_final = args[9] #directory on storage node where final files are stored
 
 #source our functions 
 source(paste0(workdir,"/parsing.R"))
@@ -160,7 +161,7 @@ Sys.time()
 #copy files to final location, in case job breaks or runs out of time, so we don't lose everything
 #will still try to do a final copy in the bash script after R script completely finishes to be safe
 workdirfiles = list.files(indir, pattern="meanreaddepth|gt|bpstats", full.names = TRUE)
-file.copy(from=workdirfiles, to=paste0(storagenode,"/genetic_data/"), 
+file.copy(from=workdirfiles, to=paste0(outdir_final,"/"), 
           overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
 rm(workdirfiles)
 
@@ -234,7 +235,7 @@ print(paste0("ALL DONE WITH PARSING AND POPGEN STATS FOR ", run_name))
 #copy files to final location, in case job breaks or runs out of time, so we don't lose everything
 #will still try to do a final copy in the bash script after R script completely finishes to be safe
 workdirfiles = list.files(indir, pattern="popgenstats", full.names = TRUE)
-file.copy(from=workdirfiles, to=paste0(storagenode,"/genetic_data/"), 
+file.copy(from=workdirfiles, to=paste0(outdir_final,"/"), 
           overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
 rm(workdirfiles)
 
@@ -826,6 +827,7 @@ for (vcfFile in vcf_files){
 rm(vcf_files)
 
 print(paste0("ALL DONE WITH FULL_POPGEN.R FOR ", run_name))
+cat(paste("\nALL DONE WITH FULL_POPGEN.R FOR", run_name,"\n", sep = " "), file = stderr())
 
 #END
 
