@@ -8,9 +8,9 @@ module load foss/2020a
 module load R/4.0.3
 
 #create output dir if it doesn't already exist
-if [ ! -d $OUTDIR ]; then mkdir $OUTDIR; fi
+if [ ! -d $OUTDIR ]; then mkdir -p $OUTDIR; fi
 #create output dir to copy all figures into
-if [ ! -d $FIGDIR ]; then mkdir $FIGDIR; fi
+if [ ! -d $FIGDIR ]; then mkdir -p $FIGDIR; fi
 
 
 #set up work environment for job depending on if you want to load files from where they live on cluster or from tmp dir on execute node
@@ -19,7 +19,7 @@ then
 	
 	#make unique working directory on execute node
 	WORKDIR=/tmp/local/$SLURM_JOB_ID #working dir on (remote) execute node
-	if [ ! -d $WORKDIR ]; then mkdir $WORKDIR; fi
+	if [ ! -d $WORKDIR ]; then mkdir -p $WORKDIR; fi
 	
 	#copy input files to tmpdir to speed up run time
 	cp -r $INDIR $WORKDIR
