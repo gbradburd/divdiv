@@ -107,7 +107,7 @@ for (stacksFAfile in stacksFA_files){
     if (length(which(grepl("co-genotyped", lowcovsamps$V1)))==0) {
       print("I did not make a list of samples to filter out")
     }  else {
-      lowcovsamps <- lowcovsamps[(which(grepl("co-genotyped", lowcovsamps$V1)) + 1):nrow(lowcovsamps),]
+      lowcovsamps <- unique(lowcovsamps[which(grepl("^sample", lowcovsamps$V1)),])
       cat(paste("Removing sample: ",lowcovsamps,"\n",sep = ""))
     }
     
