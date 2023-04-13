@@ -1,7 +1,8 @@
 #!/bin/bash
 
 #define variables:
-storagenode=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen #path to main node to write fastq files to
+#storagenode=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen #path to main node to write fastq files to
+storagenode=/mnt/scratch/$USER
 
 jobname=run-popgenstats #label for SLURM book-keeping
 executable=2-run-popgen_on_hpcc.sbatch #script to run
@@ -9,11 +10,12 @@ executable=2-run-popgen_on_hpcc.sbatch #script to run
 logfilesdir=logfiles_popgenstats #name of directory to create and then write log files to
 
 cpus=2 #number of CPUs to request/use per dataset
-ram_per_cpu=20G #amount of RAM to request/use per CPU
+ram_per_cpu=66G #amount of RAM to request/use per CPU
 time=168:00:00
 
 #list_of_datasets=list-allfinal136.txt #name of dataset that we want to process
-list_of_datasets=list-test.txt #name of dataset that we want to process
+#list_of_datasets=list-test.txt #name of dataset that we want to process
+list_of_datasets=list-highmempopgen.txt #name of dataset that we want to process
 
 nPCs=4 #number of principal component axes to save
 minpropindivsscoredin=0.5 #percent of indivs that a locus must be present in to save
@@ -36,11 +38,13 @@ do
 
 	#define path to where downloaded raw/unprocessed sequence data live for this dataset
 	#and where clean/processed reads should be written to
-	indir=$storagenode/$run_name/genetic_data
+	#indir=$storagenode/$run_name/genetic_data
+	indir=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen/$run_name/genetic_data
 	outdir=$storagenode/$run_name/popgen
 	figdir=$storagenode/popgen-figures
-	keysdir=$storagenode/$run_name
-	
+	#keysdir=$storagenode/$run_name
+	keysdir=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen/$run_name	
+
 	##if directory to downloaded files doesn't contain at least 1 .gz file; print warning, otherwise process the files that are there
 	n_gzfiles=($(ls $indir/*.snps.vcf | wc -l))
 	if [ $n_gzfiles = 0 ]

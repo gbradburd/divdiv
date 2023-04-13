@@ -9,7 +9,7 @@ logdirtosearch=logfiles_popgenstats
 
 # create output file:
 
-logfile=log_summary.txt
+logfile=log_summary-${logdirtosearch}.txt
 
 if [ -f ./$logfile ]; then
     echo "$logfile already exists, removing and creating new one"
