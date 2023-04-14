@@ -10,12 +10,14 @@ executable=2-run-popgen_on_hpcc.sbatch #script to run
 logfilesdir=logfiles_popgenstats #name of directory to create and then write log files to
 
 cpus=2 #number of CPUs to request/use per dataset
-ram_per_cpu=66G #amount of RAM to request/use per CPU
+#ram_per_cpu=66G #amount of RAM to request/use per CPU
+ram_per_cpu=20G #amount of RAM to request/use per CPU
 time=168:00:00
 
 #list_of_datasets=list-allfinal136.txt #name of dataset that we want to process
 #list_of_datasets=list-test.txt #name of dataset that we want to process
-list_of_datasets=list-highmempopgen.txt #name of dataset that we want to process
+#list_of_datasets=list-highmempopgen.txt #name of dataset that we want to process
+list_of_datasets=list-lowmempopgen.txt #name of dataset that we want to process
 
 nPCs=4 #number of principal component axes to save
 minpropindivsscoredin=0.5 #percent of indivs that a locus must be present in to save
