@@ -8,17 +8,20 @@ library(ggplot2)
 rm(list = ls())
 gc()
 
-setwd("/Users/rachel/Desktop/DivDiv/divdiv")
+setwd("/Users/rachel/divdiv")
 
 #read in data
 lat <- read.csv("data/abiotic/mean_min_max_latitude_stats-wide.csv") %>% dplyr::select(-X) %>% mutate(link = paste0("bioprj_",link))
 ecor <- read.csv("data/abiotic/number_of_ecoregions_stats-wide.csv") %>% mutate(species = gsub(" ","_",species))
 rangesize <- read.csv("data/abiotic/range_lengths_and_ratios.csv") %>% dplyr::rename("link"="run_name")
+methods <- read.csv("data/methodological/methodological_predictors-wide.csv") %>% dplyr::rename("link"="run_name")
 
 biotic <- read.csv("data/biotic/cleaned_numeric_biotic_traits.csv") %>% dplyr::rename("species"="organism_biosamp") %>% 
   mutate(species = gsub(" ","_",species))
 
-popg <- read.csv("data/popgen/r80_popgen_WM_stats-wide.csv") %>% dplyr::rename("link"="run_name") %>% dplyr::select(-species)
+popgWM <- read.csv("data/popgen/r80_WM_stats-wide.csv") %>% dplyr::rename("link"="run_name") %>% dplyr::select(-species)
+popgsummary <- read.csv("data/popgen/r80_popgen_stats-wide.csv") %>% dplyr::rename("link"="run_name") %>% 
+  dplyr::select(-species) %>% dplyr::select(-stacksparams)
 
 taxcolorkey <- read.csv("data/master_tax_color_key.csv") %>% mutate(species = gsub(" ","_",species))
 
@@ -50,7 +53,7 @@ biotic$species[biotic$species == "Seriola_dorsalis"] = "Seriola_lalandi_dorsalis
 df <- merge(lat, ecor, by = "species", all = T)
 df <- merge(df, rangesize, by = "link", all = T)
 df <- merge(df, biotic, by = "species", all = T)
-df <- merge(df, popg, by = "link", all = T)
+df <- merge(df, popgWM, by = "link", all = T)
 df %>% filter(grepl("Exaiptasia",link)) %>% dplyr::select(link,species)
 df %>% filter(grepl("Exaiptasia",species)) %>% dplyr::select(link,species)
 df %>% filter(grepl("Seriola",link)) %>% dplyr::select(link,species)
@@ -61,18 +64,31 @@ df %>% filter(grepl("Seriola",species)) %>% dplyr::select(link,species)
 df <- merge(lat, ecor, by = "species", all = F)
 df <- merge(df, rangesize, by = "link", all = F)
 df <- merge(df, biotic, by = "species", all = F)
+df <- merge(df, methods, by = "link", all = F)
 df.preds <- df
-df <- merge(df, popg, by = "link", all = F)
-
-names(df)
-
+df <- merge(df, popgWM, by = "link", all = F)
+df <- merge(df, popgsummary, by = "link", all = F)
 #add colors for tax. groups (that match phy)
 df <- merge(df, taxcolorkey, by = "species", all = F)
+names(df)
 
 
 #save
 #write.csv(df, paste0("data/master_df-",Sys.Date(),".csv"), row.names = FALSE)
 write.csv(df, "data/master_df.csv", row.names = FALSE)
+
+
+
+#**********************************************
+#first look at methology preds vs responses -------
+
+temp <- df %>% dplyr::select(link,species,n_samples,mean_raw_read_cnt,read_length,mean_locus_depth,s,nbhd,thetaW,globalPi,meanHet)
+temp <- temp %>% pivot_longer(., names_to = "pred", values_to = "value", cols = 3:7)
+temp %>% ggplot() + 
+  geom_point(aes(x=value, y=thetaW)) +
+  geom_smooth(aes(x=value,y=thetaW), formula = y~x, method = "lm") +
+  facet_wrap(~ pred, scales = "free")
+  
 
 
 

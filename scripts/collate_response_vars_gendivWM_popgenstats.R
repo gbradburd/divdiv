@@ -9,10 +9,12 @@ rm(list = ls())
 gc()
 
 
+
+# collate response variables/data from WM models ----------
 #load("/Users/rachel/WMfit-bioprj_PRJNA294760_Amphiprion-bicinctus_stacks_littlem_3_bigm_3_n2_nis1lessthanM_pars.Robj")
 
 indir="/Users/rachel/Desktop/DivDiv/divdiv_data_analysis/ALL_r80_gendiv_data"
-indir = "/Users/rachel/ALL_r80_gendiv_data"
+indir = "/Volumes/mnemo2/base_rachel/ALL_r80_gendiv_data"
 
 
 #get WM og aka Wishart
@@ -42,7 +44,46 @@ for (loop.iter in 1:length(file_list)) {
 df <- df %>% filter(is.na(run_name)==F)
 
 #save
-write.csv(df, "data/popgen/r80_popgen_WM_stats-wide.csv", row.names = FALSE)
+write.csv(df, "data/popgen/r80_WM_stats-wide.csv", row.names = FALSE)
+
+
+
+
+# collate response variables/data from popgen stats ----------
+#load("/Users/rachel/popgenstats.0.5.bioprj_PRJNA294760_Amphiprion-bicinctus_stacks_littlem_3_bigm_3_n2_nis1lessthanM_popgenstats.Robj")
+
+indir="/Users/rachel/ALL_r80_popgen_data"
+
+#get WM og aka Wishart
+file_list <- list.files(indir, pattern="popgenstats.0.5", full.names = TRUE)
+
+df <- data.frame("species"=NA, "run_name"=NA, "thetaW"=NA, "globalPi"=NA, "meanHet"=NA, "stacksparams"=NA)
+
+for (loop.iter in 1:length(file_list)) {
+  
+  popgenFile <- file_list[loop.iter]
+  dataset = popgenFile %>% strsplit(., "/") %>% as.data.frame() %>% .[nrow(.),] %>% 
+    strsplit(., "\\.") %>% as.data.frame() %>% .[4,]
+  run_name = dataset %>% gsub("_popgenstats","",.) %>% strsplit(., "_") %>% unlist() %>% .[1:3] %>% 
+    paste(., sep="", collapse="_")
+  print(paste0("run_name ", run_name,"; loop ", loop.iter, " of ", length(file_list )))
+  stacksparams = dataset %>% gsub("_popgenstats","",.) %>% strsplit(., "_") %>% unlist() %>% .[5:10] %>% 
+    paste(., sep="", collapse="_")
+  species = dataset %>% gsub("_popgenstats","",.) %>% strsplit(., "_") %>% unlist() %>% .[3] %>% gsub("-"," ",.)
+  popgenFile <- load(popgenFile)
+  popgenFile <- data.frame(species = species, run_name = run_name,
+                           thetaW = popgenstats$thetaW, globalPi = popgenstats$globalPi, meanHet = mean(popgenstats$het), 
+                           stacksparams = stacksparams)
+  df <- rbind(df, popgenFile)
+  
+}
+df <- df %>% filter(is.na(run_name)==F)
+
+#save
+write.csv(df, "data/popgen/r80_popgen_stats-wide.csv", row.names = FALSE)
+
+
+
 
 
 
