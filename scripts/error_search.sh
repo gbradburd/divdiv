@@ -2,10 +2,10 @@
 
 # pick logfiles dir to search for errors in
 
-#logdirtosearch=logfiles_gendivextrap_WM
+logdirtosearch=logfiles_gendivextrap_WM
 #logdirtosearch=logfiles_marmapdists
 #logdirtosearch=logfiles_ecoregions
-logdirtosearch=logfiles_popgenstats
+#logdirtosearch=logfiles_popgenstats
 
 # create output file:
 
