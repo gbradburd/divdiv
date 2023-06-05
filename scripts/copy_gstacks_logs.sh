@@ -1,13 +1,14 @@
 #!/bin/bash
 
 #define variables
-list_of_datasets=list-allfinal136.txt
+#list_of_datasets=list-allfinal136.txt
+list_of_datasets=list-allfinal115.txt
 storagenode=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen
 tempdir=/mnt/home/$USER/tempcopydir
 outdir=/mnt/home/$USER/all_r80_gstacksoutlogs
 
-if [ ! -d $tempdir ]; then mkdir -p $tempdir; fi
-if [ ! -d $outdir ]; then mkdir -p $outdir; fi
+mkdir -p $tempdir
+mkdir -p $outdir
 
 #grab gstacks logfile for r80 params for each dataset
 while read dataset
