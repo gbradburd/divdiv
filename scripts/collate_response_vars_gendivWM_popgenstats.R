@@ -1,4 +1,5 @@
-#idea pull in all the .Robjs to get genetic diversity extrapolated values, to build master df for downstream modeling
+#idea pull in all the .Robjs to get genetic diversity extrapolated values, 
+#to build master df for downstream modeling
 
 #load libraries
 library(dplyr)
@@ -13,8 +14,9 @@ gc()
 # collate response variables/data from WM models ----------
 #load("/Users/rachel/WMfit-bioprj_PRJNA294760_Amphiprion-bicinctus_stacks_littlem_3_bigm_3_n2_nis1lessthanM_pars.Robj")
 
-indir="/Users/rachel/Desktop/DivDiv/divdiv_data_analysis/ALL_r80_gendiv_data"
+indir = "/Users/rachel/Desktop/DivDiv/divdiv_data_analysis/ALL_r80_gendiv_data"
 indir = "/Volumes/mnemo2/base_rachel/ALL_r80_gendiv_data"
+indir = "/Users/rachel/ALL_r80_gendiv_data"
 
 
 #get WM og aka Wishart
