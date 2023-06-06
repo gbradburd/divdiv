@@ -1,7 +1,8 @@
 #idea: trying to make a density ridge plot to show leave-one-out fit	
 
-library(ggplot)
+library(ggplot2)
 library(ggridges)
+library(dplyr)
 
 rm(list = ls())
 gc()
@@ -38,6 +39,7 @@ setwd("/Users/rachel/Desktop/DivDiv/divdiv/sandbox/troubleshooting")
 	df %>% ggplot() + 
 	  geom_density_ridges(aes(x=cns,y=species,fill=cnf), scale=2,rel_min_height=0.01) +
 		geom_segment(aes(x=s, xend=s, y=o, yend=o+2), colour="red") + 
+	  geom_density_ridges(aes(x=cns,y=species,fill=cnf), scale=2,rel_min_height=0.01) +
 	  xlim(c(0.97,1.02)) +
 	  theme_bw() +
 	  theme(panel.grid = element_blank()) +

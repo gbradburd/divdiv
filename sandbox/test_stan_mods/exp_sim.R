@@ -2,10 +2,12 @@ library(rstan)
 library(ape)
 library(MASS)
 
-
-load("../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
+load("../../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
 phyStr <- ape::vcv(phy,corr=TRUE)
 
+source("../../analyses/trait_mod_stan_blocks.R")
+#betaPhyReg <- stan_model(model_code=betaPhyReg)
+expPhyReg <- stan_model(model_code=expPhyReg)
 
 n <- nrow(phyStr)
 x <- rnorm(n,sd=10)
@@ -22,13 +24,15 @@ sim <- rexp(n,lnk_mn)
 # plot(x,lnk_beta_mean,ylim=c(0.99,1))
 # plot(x,sim,ylim=c(0.99,1))
 
+
+
 db <- list("N" = nrow(phyStr),
 		   "Y" = sim,
 		   "nX"= 1,
 		   "X" = matrix(x,nrow=1,ncol=nrow(phyStr)),
 		   "relMat" = phyStr)
 
-fit <- sampling(object=e,
+fit <- sampling(object=expPhyReg,
 				data=db,
 				iter=5e3,
 				chains=1)

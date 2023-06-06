@@ -290,3 +290,62 @@ dev.off()
 pdf(file="betas_beta_s_scld.pdf",width=12,height=10)
 	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL)
 dev.off()
+
+
+phylooViz <- function(db,CNsamples,tree,xlim){
+	library(dplyr)
+	library(ggplot2)
+	library(ggridges)
+	library(ape)
+	tree <- ladderize(tree,right=FALSE)
+	tipOrder <- getTipOrder(tree)
+	plot(tree)
+	load("db_MVN_unscaled_s.Robj")
+	db <- db[[4]]
+	load("s_mvn_body_size_loo_CNsamples.Robj")
+	CNsamples <- looCNsamples
+	
+	spNames <- row.names(db$relMat)
+	cnFits <- unlist(
+				lapply(1:db$N,
+					function(n){
+						2*(abs(0.5-ecdf(CNsamples[[n]])(db$Y[n])))
+				}))
+	df <- Reduce("rbind",
+			lapply(1:length(CNsamples[[1]]),
+				function(i){data.frame("species"=spNames,
+									   "cns"=unlist(lapply(CNsamples,"[[",i)),
+									   "cnf"=cnFits,
+									   "s"=db$Y)}))
+	df <- df %>% arrange(species) %>% group_by(species) %>% mutate(o = cur_group_id()) %>% arrange(tipOrder)
+
+	tp <- ggtree(tree) + xlim(c(0,1.5e3)) + geom_tiplab(size=2)
+	df %>% ggplot() + 
+  			geom_density_ridges(aes(x=cns,y=species,fill=cnf), scale=2,rel_min_height=0.05) +
+  			geom_segment(aes(x=s, xend=s, y=o, yend=o+1.5), colour="red") + 
+  			xlim(c(0.973,1.001)) +
+  			theme_bw() +
+  			theme(panel.grid = element_blank()) +
+  			labs(y = "Species")
+	tp + 
+	geom_facet(panel="CV fit") + 
+
+	
+	p1 <- ggtree(tree)
+	p2 <- facet_plot(p1,panel="CV fit",data=df,geom_joy,mapping=aes(x=))
+
+	ggtree(tree) + 
+		xlim(c(0,2e3)) + 
+		geom_tiplab(offset=500,hjust=0,align=FALSE,size=1.8) + 
+		geom_facet(panel="CV fit",data=df,geom=geom_col,
+					aes(x=df$cnFits),orientation="y",width=0.6)
+	
+}
+
+
+
+
+
+
+
+
