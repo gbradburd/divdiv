@@ -30,9 +30,6 @@ print("we are printing the contents of the vector args to show all variables pas
 print("arguments passed:")
 cat(args, sep = "\n")
 
-#source our functions 
-source("/mnt/home/rhtoczyd/popgen-marine/parsing.R")
-source("/mnt/home/rhtoczyd/popgen-marine/stats.R")
 #define some variables (pulled in from bash script)
 run_name = args[1] #dataset name
 storagenode = args[2] #head directory where final files are copied to/stored
@@ -41,6 +38,14 @@ outdir = args[4] #outdir
 keysdir = args[7] #keydir - where samplename and lat/long live
 nPCs = as.numeric(args[5]) #n principal components to save
 minPropIndivsScoredin = as.numeric(args[6]) #percent of indivs that locus must be scored in to save
+workdir = args[8] #directory on execute node where work is being done
+outdir_final = args[9] #directory on storage node where final files are stored
+
+#source our functions 
+source(paste0(workdir,"/parsing.R"))
+source(paste0(workdir,"/stats.R"))
+
+print("here1")
 
 #print objects loaded in R (so we can see functions and variables were correctly loaded)
 print("----------------------------------------------------------------------------------------")
@@ -102,7 +107,7 @@ for (stacksFAfile in stacksFA_files){
     if (length(which(grepl("co-genotyped", lowcovsamps$V1)))==0) {
       print("I did not make a list of samples to filter out")
     }  else {
-      lowcovsamps <- lowcovsamps[(which(grepl("co-genotyped", lowcovsamps$V1)) + 1):nrow(lowcovsamps),]
+      lowcovsamps <- unique(lowcovsamps[which(grepl("^sample", lowcovsamps$V1)),])
       cat(paste("Removing sample: ",lowcovsamps,"\n",sep = ""))
     }
     
@@ -156,7 +161,7 @@ Sys.time()
 #copy files to final location, in case job breaks or runs out of time, so we don't lose everything
 #will still try to do a final copy in the bash script after R script completely finishes to be safe
 workdirfiles = list.files(indir, pattern="meanreaddepth|gt|bpstats", full.names = TRUE)
-file.copy(from=workdirfiles, to=paste0(storagenode,"/genetic_data/"), 
+file.copy(from=workdirfiles, to=paste0(outdir_final,"/"), 
           overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
 rm(workdirfiles)
 
@@ -173,6 +178,7 @@ gt_files <- list.files(outdir, pattern="_gt.Robj", full.names = TRUE)
 for (gtfile in gt_files){
   
   print(paste("starting to process gt file",gtfile, sep = " "))
+  cat(paste("\nstarting to process gt file",gtfile,"\n", sep = " "), file = stderr())
   
   #get file prefix to use in naming output
   tempfileprefix <- gtfile %>% strsplit(., split = "/") %>% as.data.frame()
@@ -229,7 +235,7 @@ print(paste0("ALL DONE WITH PARSING AND POPGEN STATS FOR ", run_name))
 #copy files to final location, in case job breaks or runs out of time, so we don't lose everything
 #will still try to do a final copy in the bash script after R script completely finishes to be safe
 workdirfiles = list.files(indir, pattern="popgenstats", full.names = TRUE)
-file.copy(from=workdirfiles, to=paste0(storagenode,"/genetic_data/"), 
+file.copy(from=workdirfiles, to=paste0(outdir_final,"/"), 
           overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
 rm(workdirfiles)
 
@@ -491,22 +497,30 @@ for (vcfFile in vcf_files){
   dp.mean <- read.delim(paste(outdir,"/meanreaddepth.",minPropIndivsScoredin,".",fileprefix,"_readDepth.txt",sep=""), sep = " ")
   #get coGeno
   cogeno <- BPstats$coGeno
-  #get pcs
+  #get pi and pcs if present
   load(paste(outdir,"/popgenstats.",minPropIndivsScoredin,".",fileprefix,"_popgenstats.Robj",sep=""))
-  # Merge
-  df <- merge(sampkey, latlong, by = "run_acc_sra", all.x = T)
-  df <- merge(df, nbp, by = "sampid_assigned_for_bioinf", all.x = T)
-  df <- merge(df %>% rename("sampid"="sampid_assigned_for_bioinf"), dp.mean, by = "sampid", all.x = T)
+  #merge
+  df <- merge(dp.mean, sampkey %>% rename("sampid" = "sampid_assigned_for_bioinf"), by = "sampid", all.x = T)
+  df <- merge(df, latlong, by = "run_acc_sra", all.x = T)
+  df <- merge(df, nbp %>% rename("sampid" = "sampid_assigned_for_bioinf"), by = "sampid", all.x = T)
+  if (is.null(popgenstats$pcs) == TRUE) {
+    print("popgenstats$pcs is empty")
+  } else {
+    print("popgenstats$pcs is not empty")
+    #get pcs
+    pcs <- popgenstats$pcs %>% as.data.frame() %>% mutate(sampid = row.names(.))
+    df <- merge(df, pcs, by = "sampid", all.x = T)
+  }
   df <- df %>% dplyr::arrange(sampid)
-  
+  #reformat
   coords <- cbind(df$long,df$lat)
   geoDist <- fields::rdist.earth(coords,miles=FALSE)
   rownames(geoDist) <- df$sampid
   colnames(geoDist) <- df$sampid
   diag(geoDist) <- NA
+  geoDist <- as.vector(geoDist)
   pwp <- popgenstats$pwp %>% as.matrix()
   diag(pwp) <- NA
-  geoDist <- as.vector(geoDist)
   pwp <- as.vector(pwp)
   diag(cogeno) <- NA
   cogeno <- as.vector(cogeno)
@@ -522,18 +536,62 @@ for (vcfFile in vcf_files){
          title = "IBD - Pairwise pi vs. geog. distance",
          subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
   print(IBD.plot)
-  
-  if ( is.null(popgenstats$pcs)==TRUE ) {
-    
+  #plot map colored by n genotyped bps
+  map.ngeno.plot <- df %>% ggplot(aes(x = long, y = lat)) +
+    geom_point(aes(fill = n.bp.genoed), size = 2, shape = 21, colour = "black") +
+    scale_fill_gradientn(colours = topo.colors(10)) +
+    #geom_jitter(aes(colour = n.bp.genoed)) +
+    theme_bw() +
+    labs(x = "Longitude",
+         y = "Latitude",
+         title = "Map colored by N. genotyped bps",
+         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
+  print(map.ngeno.plot)
+  #plot map colored by n genotyped bps - JITTERED
+  map.ngeno.5.plot <- df %>% ggplot(aes(x = long, y = lat)) +
+    geom_beeswarm(priority='density',cex=1.25,groupOnX=TRUE,aes(fill = n.bp.genoed),shape = 21, colour = "black",size=2) +
+    scale_fill_gradientn(colours = topo.colors(10)) +
+    theme_bw() +
+    labs(x = "Longitude",
+         y = "Latitude",
+         title = "Map colored by N. genotyped bps - JITTERED",
+         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
+  print(map.ngeno.5.plot)
+  #plot geogDist vs. coGeno (are samples further away from each other genotyped at fewer shared loci?)
+  coGeno.forplotting <- BPstats$coGeno
+  diag(coGeno.forplotting) <- NA
+  coGeno.forplotting <- as.vector(coGeno.forplotting)
+  geogVgeno.plot <- ggplot() + 
+    geom_point(aes(x = geoDist, y = coGeno.forplotting), shape = 21, fill = NA, colour = "black", size = 2) +
+    geom_smooth(aes(x = geoDist, y = coGeno.forplotting), formula = y~x, method = "lm") + 
+    theme_bw() +
+    labs(x = "Geographic distance (km)",
+         y = "N cogenotyped bps",
+         title = "Geog. distance vs. N cogenotyped bps",
+         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
+  print(geogVgeno.plot)
+  #plot raw read count vs. coGeno (do samples with few coGenotyped bps just have low read counts?)
+  coGenolong <- BPstats$coGeno %>% as.data.frame()
+  coGenolong$sampid <- row.names(coGenolong)
+  coGenolong <- coGenolong %>% dplyr::select(sampid,everything())
+  coGenolong <- coGenolong %>% tidyfast::dt_pivot_longer(.,names_to="sampid2",values_to="ncogeno",cols=2:ncol(coGenolong), factor_key = T)
+  coGenolong <- coGenolong %>% filter(sampid != sampid2)
+  coGenolong <- coGenolong %>% group_by(sampid) %>% summarise(meancogeno = mean(ncogeno))
+  coGenolong <- merge(coGenolong, sampkey %>% dplyr::select(sampid_assigned_for_bioinf,total_reads_written_to_final_fastq) %>% rename("sampid" = "sampid_assigned_for_bioinf"),
+                      by = "sampid", all.x = T)
+  bpVgeno.plot <- ggplot() + 
+    geom_point(data = coGenolong, aes(x = total_reads_written_to_final_fastq, y = meancogeno), shape = 21, fill = NA, colour = "black", size = 2) +
+    geom_smooth(data = coGenolong, aes(x = total_reads_written_to_final_fastq, y = meancogeno), formula = y~x, method = "lm") + 
+    theme_bw() +
+    labs(y = "mean N cogenotyped bps",
+         title = "N raw reads vs. mean N cogenotyped bps",
+         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
+  print(bpVgeno.plot)
+  #PCA plots if present
+  if (is.null(pcs) == TRUE) {
     print("popgenstats$pcs is NULL so skipping PCA plots")
-    
   } else {
-    
     cat("\nstarting to build PCA plots\n", file = stderr())
-    pcs <- popgenstats$pcs %>% as.data.frame() %>% mutate(sampid = row.names(.))
-    df <- merge(df, pcs, by = "sampid", all.x = T)
-    df <- df %>% dplyr::arrange(sampid)
-    
     #plot PCA colored by lat
     pc1 <- df %>% ggplot(aes(x = V1, y = V2)) + 
       geom_point(aes(fill = lat), size = 2, shape = 21, colour = "black") +
@@ -646,64 +704,10 @@ for (vcfFile in vcf_files){
            subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""),
            colour = "PC2")
     print(pc8.5)
-    
+    rm(pcs,pc1,pc2,pc3,pc4,pc5,pc6,pc7,pc7.5,pc8,pc8.5)
   }
-  
-  #plot map colored by n genotyped bps
-  pc9 <- df %>% ggplot(aes(x = long, y = lat)) +
-    geom_point(aes(fill = n.bp.genoed), size = 2, shape = 21, colour = "black") +
-    scale_fill_gradientn(colours = topo.colors(10)) +
-    #geom_jitter(aes(colour = n.bp.genoed)) +
-    theme_bw() +
-    labs(x = "Longitude",
-         y = "Latitude",
-         title = "Map colored by N. genotyped bps",
-         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
-  print(pc9)
-  #plot map colored by n genotyped bps - JITTERED
-  pc9.5 <- df %>% ggplot(aes(x = long, y = lat)) +
-    geom_beeswarm(priority='density',cex=1.25,groupOnX=TRUE,aes(fill = n.bp.genoed),shape = 21, colour = "black",size=2) +
-    scale_fill_gradientn(colours = topo.colors(10)) +
-    theme_bw() +
-    labs(x = "Longitude",
-         y = "Latitude",
-         title = "Map colored by N. genotyped bps - JITTERED",
-         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
-  print(pc9.5)
-  #plot geogDist vs. coGeno (are samples further away from each other genotyped at fewer shared loci?)
-  coGeno.forplotting <- BPstats$coGeno
-  diag(coGeno.forplotting) <- NA
-  coGeno.forplotting <- as.vector(coGeno.forplotting)
-  geogVgeno.plot <- ggplot() + 
-    geom_point(aes(x = geoDist, y = coGeno.forplotting), shape = 21, fill = NA, colour = "black", size = 2) +
-    geom_smooth(aes(x = geoDist, y = coGeno.forplotting), formula = y~x, method = "lm") + 
-    theme_bw() +
-    labs(x = "Geographic distance (km)",
-         y = "N cogenotyped bps",
-         title = "Geog. distance vs. N cogenotyped bps",
-         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
-  print(geogVgeno.plot)
-  #plot raw read count vs. coGeno (do samples with few coGenotyped bps just have low read counts?)
-  coGenolong <- BPstats$coGeno %>% as.data.frame()
-  coGenolong$sampid <- row.names(coGenolong)
-  coGenolong <- coGenolong %>% dplyr::select(sampid,everything())
-  coGenolong <- coGenolong %>% tidyfast::dt_pivot_longer(.,names_to="sampid2",values_to="ncogeno",cols=2:ncol(coGenolong), factor_key = T)
-  coGenolong <- coGenolong %>% filter(sampid != sampid2)
-  coGenolong <- coGenolong %>% group_by(sampid) %>% summarise(meancogeno = mean(ncogeno))
-  coGenolong <- merge(coGenolong, sampkey %>% dplyr::select(sampid_assigned_for_bioinf,total_reads_written_to_final_fastq) %>% rename("sampid" = "sampid_assigned_for_bioinf"),
-                      by = "sampid", all.x = T)
-  bpVgeno.plot <- ggplot() + 
-    geom_point(data = coGenolong, aes(x = total_reads_written_to_final_fastq, y = meancogeno), shape = 21, fill = NA, colour = "black", size = 2) +
-    geom_smooth(data = coGenolong, aes(x = total_reads_written_to_final_fastq, y = meancogeno), formula = y~x, method = "lm") + 
-    theme_bw() +
-    labs(y = "mean N cogenotyped bps",
-         title = "N raw reads vs. mean N cogenotyped bps",
-         subtitle = paste(fileprefix, ", filtered to SNPs in at least ", minPropIndivsScoredin*100, "% of indivs", sep=""))
-  print(bpVgeno.plot)
-  
-  rm(geoDist, coGenolong, coGeno.forplotting,
-     pwp, pcs, df, BPstats, dp.mean,
-     popgenstats, coords)
+  rm(geoDist, coGenolong, coGeno.forplotting, ncoGeno, pwp, df,
+     BPstats, dp.mean, popgenstats, coords)
   
   # READ DEPTH VS ALLELE FREQS/SINGLETONS -----------------------------------------------------------------
   cat("\nstarting to make read depth vs allele freq plots\n", file = stderr())
@@ -812,8 +816,8 @@ for (vcfFile in vcf_files){
   
   print(paste("finished processing",fileprefix, sep = " "))
   
-  rm(pc1,pc2,pc3,pc4,pc5,pc6,pc7,pc8,pc9,pc7.5,pc8.5,pc9.5,
-     dp.singletons1.plot, dp.singletons2.plot, dp.singletons3.plot, dp.singletons4.plot, dp.singletons5.plot)
+  rm(dp.singletons1.plot, dp.singletons2.plot, dp.singletons3.plot, 
+     dp.singletons4.plot, dp.singletons5.plot, map.ngeno.plot, map.ngeno.5.plot)
   rm(bpVgeno.plot, df, dp.long, freq.perSNP, freq.perSNP.f, geogVgeno.plot, gt.long, 
      het.plot1, het.plot2, het.plot3, hwe.f.plot, hwe.plot, IBD.plot, latlong, means.locus, 
      nbp, sampkey, sfs.plot, sfs.zoom.plot, snpdistrib.plot, 
@@ -823,6 +827,7 @@ for (vcfFile in vcf_files){
 rm(vcf_files)
 
 print(paste0("ALL DONE WITH FULL_POPGEN.R FOR ", run_name))
+cat(paste("\nALL DONE WITH FULL_POPGEN.R FOR", run_name,"\n", sep = " "), file = stderr())
 
 #END
 

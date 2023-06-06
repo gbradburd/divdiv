@@ -1,0 +1,275 @@
+#!/bin/bash
+
+echo starting bioprj_PRJNA553831_Acanthephyra-purpurea
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA553831_Acanthephyra-purpurea/r80_outputs divdiv_datafiles:bioprj_PRJNA553831_Acanthephyra-purpurea/r80_outputs -P
+echo starting bioprj_PRJNA371502_Acanthurus-olivaceus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA371502_Acanthurus-olivaceus/r80_outputs divdiv_datafiles:bioprj_PRJNA371502_Acanthurus-olivaceus/r80_outputs -P
+echo starting bioprj_PRJNA473816_Acropora-cervicornis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA473816_Acropora-cervicornis/r80_outputs divdiv_datafiles:bioprj_PRJNA473816_Acropora-cervicornis/r80_outputs -P
+echo starting bioprj_PRJNA523382_Acropora-cervicornis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA523382_Acropora-cervicornis/r80_outputs divdiv_datafiles:bioprj_PRJNA523382_Acropora-cervicornis/r80_outputs -P
+echo starting bioprj_PRJNA434194_Acropora-millepora
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA434194_Acropora-millepora/r80_outputs divdiv_datafiles:bioprj_PRJNA434194_Acropora-millepora/r80_outputs -P
+echo starting bioprj_PRJNA593014_Acropora-millepora
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA593014_Acropora-millepora/r80_outputs divdiv_datafiles:bioprj_PRJNA593014_Acropora-millepora/r80_outputs -P
+echo starting bioprj_PRJNA473816_Acropora-palmata
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA473816_Acropora-palmata/r80_outputs divdiv_datafiles:bioprj_PRJNA473816_Acropora-palmata/r80_outputs -P
+echo starting bioprj_PRJNA473816_Acropora-prolifera
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA473816_Acropora-prolifera/r80_outputs divdiv_datafiles:bioprj_PRJNA473816_Acropora-prolifera/r80_outputs -P
+echo starting bioprj_PRJNA361144_Agaricia-fragilis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA361144_Agaricia-fragilis/r80_outputs divdiv_datafiles:bioprj_PRJNA361144_Agaricia-fragilis/r80_outputs -P
+echo starting bioprj_PRJNA385083_Agaricia-undata
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA385083_Agaricia-undata/r80_outputs divdiv_datafiles:bioprj_PRJNA385083_Agaricia-undata/r80_outputs -P
+echo starting bioprj_PRJNA294760_Amphiprion-bicinctus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA294760_Amphiprion-bicinctus/r80_outputs divdiv_datafiles:bioprj_PRJNA294760_Amphiprion-bicinctus/r80_outputs -P
+echo starting bioprj_PRJNA563695_Amphiprion-clarkii
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA563695_Amphiprion-clarkii/r80_outputs divdiv_datafiles:bioprj_PRJNA563695_Amphiprion-clarkii/r80_outputs -P
+echo starting bioprj_PRJNA295681_Anguilla-anguilla
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA295681_Anguilla-anguilla/r80_outputs divdiv_datafiles:bioprj_PRJNA295681_Anguilla-anguilla/r80_outputs -P
+echo starting bioprj_PRJNA295681_Anguilla-rostrata
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA295681_Anguilla-rostrata/r80_outputs divdiv_datafiles:bioprj_PRJNA295681_Anguilla-rostrata/r80_outputs -P
+echo starting bioprj_PRJNA632874_Anthopleura-elegantissima
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA632874_Anthopleura-elegantissima/r80_outputs divdiv_datafiles:bioprj_PRJNA632874_Anthopleura-elegantissima/r80_outputs -P
+echo starting bioprj_PRJNA436919_Apostichopus-californicus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA436919_Apostichopus-californicus/r80_outputs divdiv_datafiles:bioprj_PRJNA436919_Apostichopus-californicus/r80_outputs -P
+echo starting bioprj_PRJNA343012_Aptenodytes-patagonicus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA343012_Aptenodytes-patagonicus/r80_outputs divdiv_datafiles:bioprj_PRJNA343012_Aptenodytes-patagonicus/r80_outputs -P
+echo starting bioprj_PRJNA419445_Arctocephalus-forsteri
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA419445_Arctocephalus-forsteri/r80_outputs divdiv_datafiles:bioprj_PRJNA419445_Arctocephalus-forsteri/r80_outputs -P
+echo starting bioprj_PRJNA299372_Aythya-marila
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA299372_Aythya-marila/r80_outputs divdiv_datafiles:bioprj_PRJNA299372_Aythya-marila/r80_outputs -P
+echo starting bioprj_PRJNA542967_Bartholomea-annulata
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA542967_Bartholomea-annulata/r80_outputs divdiv_datafiles:bioprj_PRJNA542967_Bartholomea-annulata/r80_outputs -P
+echo starting bioprj_PRJNA595396_Bathygobius-cocosensis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA595396_Bathygobius-cocosensis/r80_outputs divdiv_datafiles:bioprj_PRJNA595396_Bathygobius-cocosensis/r80_outputs -P
+echo starting bioprj_PRJNA473646_Bathymodiolus-platifrons
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA473646_Bathymodiolus-platifrons/r80_outputs divdiv_datafiles:bioprj_PRJNA473646_Bathymodiolus-platifrons/r80_outputs -P
+echo starting bioprj_PRJNA646172_Bathyraja-aleutica
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA646172_Bathyraja-aleutica/r80_outputs divdiv_datafiles:bioprj_PRJNA646172_Bathyraja-aleutica/r80_outputs -P
+echo starting bioprj_PRJNA646172_Bathyraja-panthera
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA646172_Bathyraja-panthera/r80_outputs divdiv_datafiles:bioprj_PRJNA646172_Bathyraja-panthera/r80_outputs -P
+echo starting bioprj_PRJNA646172_Bathyraja-parmifera
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA646172_Bathyraja-parmifera/r80_outputs divdiv_datafiles:bioprj_PRJNA646172_Bathyraja-parmifera/r80_outputs -P
+echo starting bioprj_PRJNA340157_Callinectes-sapidus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA340157_Callinectes-sapidus/r80_outputs divdiv_datafiles:bioprj_PRJNA340157_Callinectes-sapidus/r80_outputs -P
+echo starting bioprj_PRJNA559677_Caretta-caretta
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA559677_Caretta-caretta/r80_outputs divdiv_datafiles:bioprj_PRJNA559677_Caretta-caretta/r80_outputs -P
+echo starting bioprj_PRJNA286949_Chlorostoma-funebralis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA286949_Chlorostoma-funebralis/r80_outputs divdiv_datafiles:bioprj_PRJNA286949_Chlorostoma-funebralis/r80_outputs -P
+echo starting bioprj_PRJNA430030_Coryphaenoides-rupestris
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA430030_Coryphaenoides-rupestris/r80_outputs divdiv_datafiles:bioprj_PRJNA430030_Coryphaenoides-rupestris/r80_outputs -P
+echo starting bioprj_PRJNA430094_Coryphaenoides-rupestris
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA430094_Coryphaenoides-rupestris/r80_outputs divdiv_datafiles:bioprj_PRJNA430094_Coryphaenoides-rupestris/r80_outputs -P
+echo starting bioprj_PRJNA573759_Cranchia-scabra
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA573759_Cranchia-scabra/r80_outputs divdiv_datafiles:bioprj_PRJNA573759_Cranchia-scabra/r80_outputs -P
+echo starting bioprj_PRJNA508986_Ctenolabrus-rupestris
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA508986_Ctenolabrus-rupestris/r80_outputs divdiv_datafiles:bioprj_PRJNA508986_Ctenolabrus-rupestris/r80_outputs -P
+echo starting bioprj_PRJNA473382_Dascyllus-trimaculatus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA473382_Dascyllus-trimaculatus/r80_outputs divdiv_datafiles:bioprj_PRJNA473382_Dascyllus-trimaculatus/r80_outputs -P
+echo starting bioprj_PRJNA590458_Dascyllus-trimaculatus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA590458_Dascyllus-trimaculatus/r80_outputs divdiv_datafiles:bioprj_PRJNA590458_Dascyllus-trimaculatus/r80_outputs -P
+echo starting bioprj_PRJNA564823_Delphinapterus-leucas
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA564823_Delphinapterus-leucas/r80_outputs divdiv_datafiles:bioprj_PRJNA564823_Delphinapterus-leucas/r80_outputs -P
+echo starting bioprj_PRJNA420851_Ectopleura-larynx
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA420851_Ectopleura-larynx/r80_outputs divdiv_datafiles:bioprj_PRJNA420851_Ectopleura-larynx/r80_outputs -P
+echo starting bioprj_PRJNA311981_Engraulis-encrasicolus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA311981_Engraulis-encrasicolus/r80_outputs divdiv_datafiles:bioprj_PRJNA311981_Engraulis-encrasicolus/r80_outputs -P
+echo starting bioprj_PRJNA523574_Eudyptes-chrysolophus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA523574_Eudyptes-chrysolophus/r80_outputs divdiv_datafiles:bioprj_PRJNA523574_Eudyptes-chrysolophus/r80_outputs -P
+echo starting bioprj_PRJNA576675_Eukrohnia-hamata
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA576675_Eukrohnia-hamata/r80_outputs divdiv_datafiles:bioprj_PRJNA576675_Eukrohnia-hamata/r80_outputs -P
+echo starting bioprj_PRJNA394157_Exaiptasia-diaphana
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA394157_Exaiptasia-diaphana/r80_outputs divdiv_datafiles:bioprj_PRJNA394157_Exaiptasia-diaphana/r80_outputs -P
+echo starting bioprj_PRJDB7819_Fibramia-amboinensis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJDB7819_Fibramia-amboinensis/r80_outputs divdiv_datafiles:bioprj_PRJDB7819_Fibramia-amboinensis/r80_outputs -P
+echo starting bioprj_PRJNA629489_Fucus-vesiculosus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA629489_Fucus-vesiculosus/r80_outputs divdiv_datafiles:bioprj_PRJNA629489_Fucus-vesiculosus/r80_outputs -P
+echo starting bioprj_PRJNA437462_Fundulus-grandis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA437462_Fundulus-grandis/r80_outputs divdiv_datafiles:bioprj_PRJNA437462_Fundulus-grandis/r80_outputs -P
+echo starting bioprj_PRJNA428529_Fundulus-heteroclitus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA428529_Fundulus-heteroclitus/r80_outputs divdiv_datafiles:bioprj_PRJNA428529_Fundulus-heteroclitus/r80_outputs -P
+echo starting bioprj_PRJNA477712_Fundulus-heteroclitus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA477712_Fundulus-heteroclitus/r80_outputs divdiv_datafiles:bioprj_PRJNA477712_Fundulus-heteroclitus/r80_outputs -P
+echo starting bioprj_PRJNA558810_Gadus-macrocephalus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA558810_Gadus-macrocephalus/r80_outputs divdiv_datafiles:bioprj_PRJNA558810_Gadus-macrocephalus/r80_outputs -P
+echo starting bioprj_PRJNA521889_Gadus-morhua
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA521889_Gadus-morhua/r80_outputs divdiv_datafiles:bioprj_PRJNA521889_Gadus-morhua/r80_outputs -P
+echo starting bioprj_PRJNA528403_Gadus-morhua
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA528403_Gadus-morhua/r80_outputs divdiv_datafiles:bioprj_PRJNA528403_Gadus-morhua/r80_outputs -P
+echo starting bioprj_PRJNA560242_Gadus-morhua
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA560242_Gadus-morhua/r80_outputs divdiv_datafiles:bioprj_PRJNA560242_Gadus-morhua/r80_outputs -P
+echo starting bioprj_PRJNA576132_Galaxea-fascicularis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA576132_Galaxea-fascicularis/r80_outputs divdiv_datafiles:bioprj_PRJNA576132_Galaxea-fascicularis/r80_outputs -P
+echo starting bioprj_PRJNA576132_Galaxea-horrescens
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA576132_Galaxea-horrescens/r80_outputs divdiv_datafiles:bioprj_PRJNA576132_Galaxea-horrescens/r80_outputs -P
+echo starting bioprj_PRJNA564121_Galaxias-maculatus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA564121_Galaxias-maculatus/r80_outputs divdiv_datafiles:bioprj_PRJNA564121_Galaxias-maculatus/r80_outputs -P
+echo starting bioprj_PRJNA314185_Gasterosteus-aculeatus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA314185_Gasterosteus-aculeatus/r80_outputs divdiv_datafiles:bioprj_PRJNA314185_Gasterosteus-aculeatus/r80_outputs -P
+echo starting bioprj_PRJNA369168_Gasterosteus-aculeatus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA369168_Gasterosteus-aculeatus/r80_outputs divdiv_datafiles:bioprj_PRJNA369168_Gasterosteus-aculeatus/r80_outputs -P
+echo starting bioprj_PRJNA453151_Gasterosteus-aculeatus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA453151_Gasterosteus-aculeatus/r80_outputs divdiv_datafiles:bioprj_PRJNA453151_Gasterosteus-aculeatus/r80_outputs -P
+echo starting bioprj_PRJNA471834_Gasterosteus-aculeatus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA471834_Gasterosteus-aculeatus/r80_outputs divdiv_datafiles:bioprj_PRJNA471834_Gasterosteus-aculeatus/r80_outputs -P
+echo starting bioprj_PRJNA448438_Holacanthus-passer
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA448438_Holacanthus-passer/r80_outputs divdiv_datafiles:bioprj_PRJNA448438_Holacanthus-passer/r80_outputs -P
+echo starting bioprj_PRJNA281764_Homarus-americanus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA281764_Homarus-americanus/r80_outputs divdiv_datafiles:bioprj_PRJNA281764_Homarus-americanus/r80_outputs -P
+echo starting bioprj_PRJNA551577_Idotea-baltica
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA551577_Idotea-baltica/r80_outputs divdiv_datafiles:bioprj_PRJNA551577_Idotea-baltica/r80_outputs -P
+echo starting bioprj_PRJNA643849_Isocladus-armatus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA643849_Isocladus-armatus/r80_outputs divdiv_datafiles:bioprj_PRJNA643849_Isocladus-armatus/r80_outputs -P
+echo starting bioprj_PRJNA553554_Istiblennius-lineatus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA553554_Istiblennius-lineatus/r80_outputs divdiv_datafiles:bioprj_PRJNA553554_Istiblennius-lineatus/r80_outputs -P
+echo starting bioprj_PRJNA280898_Lagenorhynchus-acutus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA280898_Lagenorhynchus-acutus/r80_outputs divdiv_datafiles:bioprj_PRJNA280898_Lagenorhynchus-acutus/r80_outputs -P
+echo starting bioprj_PRJNA280898_Lagenorhynchus-albirostris
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA280898_Lagenorhynchus-albirostris/r80_outputs divdiv_datafiles:bioprj_PRJNA280898_Lagenorhynchus-albirostris/r80_outputs -P
+echo starting bioprj_PRJNA480409_Laguncularia-racemosa
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA480409_Laguncularia-racemosa/r80_outputs divdiv_datafiles:bioprj_PRJNA480409_Laguncularia-racemosa/r80_outputs -P
+echo starting bioprj_PRJNA533707_Larimichthys-polyactis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA533707_Larimichthys-polyactis/r80_outputs divdiv_datafiles:bioprj_PRJNA533707_Larimichthys-polyactis/r80_outputs -P
+echo starting bioprj_PRJNA314732_Lateolabrax-maculatus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA314732_Lateolabrax-maculatus/r80_outputs divdiv_datafiles:bioprj_PRJNA314732_Lateolabrax-maculatus/r80_outputs -P
+echo starting bioprj_PRJNA356786_Lateolabrax-maculatus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA356786_Lateolabrax-maculatus/r80_outputs divdiv_datafiles:bioprj_PRJNA356786_Lateolabrax-maculatus/r80_outputs -P
+echo starting bioprj_PRJNA521302_Leptopsammia-pruvoti
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA521302_Leptopsammia-pruvoti/r80_outputs divdiv_datafiles:bioprj_PRJNA521302_Leptopsammia-pruvoti/r80_outputs -P
+echo starting bioprj_PRJNA329407_Lutjanus-campechanus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA329407_Lutjanus-campechanus/r80_outputs divdiv_datafiles:bioprj_PRJNA329407_Lutjanus-campechanus/r80_outputs -P
+echo starting bioprj_PRJDB7819_Lutjanus-fulvus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJDB7819_Lutjanus-fulvus/r80_outputs divdiv_datafiles:bioprj_PRJDB7819_Lutjanus-fulvus/r80_outputs -P
+echo starting bioprj_PRJNA631144_Mallotus-villosus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA631144_Mallotus-villosus/r80_outputs divdiv_datafiles:bioprj_PRJNA631144_Mallotus-villosus/r80_outputs -P
+echo starting bioprj_PRJNA544861_Montipora-capitata
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA544861_Montipora-capitata/r80_outputs divdiv_datafiles:bioprj_PRJNA544861_Montipora-capitata/r80_outputs -P
+echo starting bioprj_PRJNA564770_Mytilus-galloprovincialis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA564770_Mytilus-galloprovincialis/r80_outputs divdiv_datafiles:bioprj_PRJNA564770_Mytilus-galloprovincialis/r80_outputs -P
+echo starting bioprj_PRJNA369717_Nautilus-pompilius
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA369717_Nautilus-pompilius/r80_outputs divdiv_datafiles:bioprj_PRJNA369717_Nautilus-pompilius/r80_outputs -P
+echo starting bioprj_PRJNA170681_Nematostella-vectensis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA170681_Nematostella-vectensis/r80_outputs divdiv_datafiles:bioprj_PRJNA170681_Nematostella-vectensis/r80_outputs -P
+echo starting bioprj_PRJNA430897_Nymphon-australe
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA430897_Nymphon-australe/r80_outputs divdiv_datafiles:bioprj_PRJNA430897_Nymphon-australe/r80_outputs -P
+echo starting bioprj_PRJNA343301_Oculina-patagonica
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA343301_Oculina-patagonica/r80_outputs divdiv_datafiles:bioprj_PRJNA343301_Oculina-patagonica/r80_outputs -P
+echo starting bioprj_PRJNA344385_Oculina-patagonica
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA344385_Oculina-patagonica/r80_outputs divdiv_datafiles:bioprj_PRJNA344385_Oculina-patagonica/r80_outputs -P
+echo starting bioprj_PRJNA508589_Orbicella-faveolata
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA508589_Orbicella-faveolata/r80_outputs divdiv_datafiles:bioprj_PRJNA508589_Orbicella-faveolata/r80_outputs -P
+echo starting bioprj_PRJNA371817_Ostrea-lurida
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA371817_Ostrea-lurida/r80_outputs divdiv_datafiles:bioprj_PRJNA371817_Ostrea-lurida/r80_outputs -P
+echo starting bioprj_PRJNA511386_Ostrea-lurida
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA511386_Ostrea-lurida/r80_outputs divdiv_datafiles:bioprj_PRJNA511386_Ostrea-lurida/r80_outputs -P
+echo starting bioprj_PRJNA373825_Paracentrotus-lividus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA373825_Paracentrotus-lividus/r80_outputs divdiv_datafiles:bioprj_PRJNA373825_Paracentrotus-lividus/r80_outputs -P
+echo starting bioprj_PRJNA640135_Paracirrhites-forsteri
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA640135_Paracirrhites-forsteri/r80_outputs divdiv_datafiles:bioprj_PRJNA640135_Paracirrhites-forsteri/r80_outputs -P
+echo starting bioprj_PRJNA477007_Paralichthys-dentatus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA477007_Paralichthys-dentatus/r80_outputs divdiv_datafiles:bioprj_PRJNA477007_Paralichthys-dentatus/r80_outputs -P
+echo starting bioprj_PRJNA600652_Paralichthys-dentatus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA600652_Paralichthys-dentatus/r80_outputs divdiv_datafiles:bioprj_PRJNA600652_Paralichthys-dentatus/r80_outputs -P
+echo starting bioprj_PRJNA554161_Penaeus-duorarum
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA554161_Penaeus-duorarum/r80_outputs divdiv_datafiles:bioprj_PRJNA554161_Penaeus-duorarum/r80_outputs -P
+echo starting bioprj_PRJNA450328_Halichoerus-grypus-atlantica
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA450328_Halichoerus-grypus-atlantica/r80_outputs divdiv_datafiles:bioprj_PRJNA450328_Halichoerus-grypus-atlantica/r80_outputs -P
+echo starting bioprj_PRJNA343959_Phocoena-phocoena
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA343959_Phocoena-phocoena/r80_outputs divdiv_datafiles:bioprj_PRJNA343959_Phocoena-phocoena/r80_outputs -P
+echo starting bioprj_PRJNA659918_Phocoena-phocoena
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA659918_Phocoena-phocoena/r80_outputs divdiv_datafiles:bioprj_PRJNA659918_Phocoena-phocoena/r80_outputs -P
+echo starting bioprj_PRJNA659918_Phocoena-sinus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA659918_Phocoena-sinus/r80_outputs divdiv_datafiles:bioprj_PRJNA659918_Phocoena-sinus/r80_outputs -P
+echo starting bioprj_PRJNA445895_Pisaster-ochraceus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA445895_Pisaster-ochraceus/r80_outputs divdiv_datafiles:bioprj_PRJNA445895_Pisaster-ochraceus/r80_outputs -P
+echo starting bioprj_PRJNA340326_Placopecten-magellanicus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA340326_Placopecten-magellanicus/r80_outputs divdiv_datafiles:bioprj_PRJNA340326_Placopecten-magellanicus/r80_outputs -P
+echo starting bioprj_PRJNA471559_Planes-minutus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA471559_Planes-minutus/r80_outputs divdiv_datafiles:bioprj_PRJNA471559_Planes-minutus/r80_outputs -P
+echo starting bioprj_PRJNA382467_Platichthys-flesus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA382467_Platichthys-flesus/r80_outputs divdiv_datafiles:bioprj_PRJNA382467_Platichthys-flesus/r80_outputs -P
+echo starting bioprj_PRJNA450871_Pocillopora-damicornis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA450871_Pocillopora-damicornis/r80_outputs divdiv_datafiles:bioprj_PRJNA450871_Pocillopora-damicornis/r80_outputs -P
+echo starting bioprj_PRJNA280774_Poecilia-latipinna
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA280774_Poecilia-latipinna/r80_outputs divdiv_datafiles:bioprj_PRJNA280774_Poecilia-latipinna/r80_outputs -P
+echo starting bioprj_PRJNA559876_Pomacanthus-maculosus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA559876_Pomacanthus-maculosus/r80_outputs divdiv_datafiles:bioprj_PRJNA559876_Pomacanthus-maculosus/r80_outputs -P
+echo starting bioprj_PRJNA379028_Porites-astreoides
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA379028_Porites-astreoides/r80_outputs divdiv_datafiles:bioprj_PRJNA379028_Porites-astreoides/r80_outputs -P
+echo starting bioprj_PRJNA544861_Porites-compressa
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA544861_Porites-compressa/r80_outputs divdiv_datafiles:bioprj_PRJNA544861_Porites-compressa/r80_outputs -P
+echo starting bioprj_PRJNA210803_Pygoscelis-adeliae
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA210803_Pygoscelis-adeliae/r80_outputs divdiv_datafiles:bioprj_PRJNA210803_Pygoscelis-adeliae/r80_outputs -P
+echo starting bioprj_PRJNA493660_Pygoscelis-adeliae
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA493660_Pygoscelis-adeliae/r80_outputs divdiv_datafiles:bioprj_PRJNA493660_Pygoscelis-adeliae/r80_outputs -P
+echo starting bioprj_PRJNA544154_Pygoscelis-adeliae
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA544154_Pygoscelis-adeliae/r80_outputs divdiv_datafiles:bioprj_PRJNA544154_Pygoscelis-adeliae/r80_outputs -P
+echo starting bioprj_PRJNA493660_Pygoscelis-antarcticus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA493660_Pygoscelis-antarcticus/r80_outputs divdiv_datafiles:bioprj_PRJNA493660_Pygoscelis-antarcticus/r80_outputs -P
+echo starting bioprj_PRJNA493660_Pygoscelis-papua
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA493660_Pygoscelis-papua/r80_outputs divdiv_datafiles:bioprj_PRJNA493660_Pygoscelis-papua/r80_outputs -P
+echo starting bioprj_PRJNA573759_Pyroteuthis-margaritifera
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA573759_Pyroteuthis-margaritifera/r80_outputs divdiv_datafiles:bioprj_PRJNA573759_Pyroteuthis-margaritifera/r80_outputs -P
+echo starting bioprj_PRJNA397667_Rhizophora-mangle
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA397667_Rhizophora-mangle/r80_outputs divdiv_datafiles:bioprj_PRJNA397667_Rhizophora-mangle/r80_outputs -P
+echo starting bioprj_PRJNA480308_Rhizophora-mangle
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA480308_Rhizophora-mangle/r80_outputs divdiv_datafiles:bioprj_PRJNA480308_Rhizophora-mangle/r80_outputs -P
+echo starting bioprj_PRJNA553831_Robustosergia-robusta
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA553831_Robustosergia-robusta/r80_outputs divdiv_datafiles:bioprj_PRJNA553831_Robustosergia-robusta/r80_outputs -P
+echo starting bioprj_PRJNA549138_Sargassum-muticum
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA549138_Sargassum-muticum/r80_outputs divdiv_datafiles:bioprj_PRJNA549138_Sargassum-muticum/r80_outputs -P
+echo starting bioprj_PRJNA253681_Scomber-scombrus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA253681_Scomber-scombrus/r80_outputs divdiv_datafiles:bioprj_PRJNA253681_Scomber-scombrus/r80_outputs -P
+echo starting bioprj_PRJNA560239_Sebastes-diaconus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA560239_Sebastes-diaconus/r80_outputs divdiv_datafiles:bioprj_PRJNA560239_Sebastes-diaconus/r80_outputs -P
+echo starting bioprj_PRJNA451040_Sebastes-paucispinis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA451040_Sebastes-paucispinis/r80_outputs divdiv_datafiles:bioprj_PRJNA451040_Sebastes-paucispinis/r80_outputs -P
+echo starting bioprj_PRJNA451040_Sebastes-pinniger
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA451040_Sebastes-pinniger/r80_outputs divdiv_datafiles:bioprj_PRJNA451040_Sebastes-pinniger/r80_outputs -P
+echo starting bioprj_PRJNA316872_Sebastes-rastrelliger
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA316872_Sebastes-rastrelliger/r80_outputs divdiv_datafiles:bioprj_PRJNA316872_Sebastes-rastrelliger/r80_outputs -P
+echo starting bioprj_PRJNA451040_Sebastes-ruberrimus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA451040_Sebastes-ruberrimus/r80_outputs divdiv_datafiles:bioprj_PRJNA451040_Sebastes-ruberrimus/r80_outputs -P
+echo starting bioprj_PRJNA359404_Sebastiscus-marmoratus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA359404_Sebastiscus-marmoratus/r80_outputs divdiv_datafiles:bioprj_PRJNA359404_Sebastiscus-marmoratus/r80_outputs -P
+echo starting bioprj_PRJNA392526_Sebastiscus-marmoratus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA392526_Sebastiscus-marmoratus/r80_outputs divdiv_datafiles:bioprj_PRJNA392526_Sebastiscus-marmoratus/r80_outputs -P
+echo starting bioprj_PRJNA319656_Seriola-lalandi-dorsalis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA319656_Seriola-lalandi-dorsalis/r80_outputs divdiv_datafiles:bioprj_PRJNA319656_Seriola-lalandi-dorsalis/r80_outputs -P
+echo starting bioprj_PRJNA385011_Siphamia-tubifer
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA385011_Siphamia-tubifer/r80_outputs divdiv_datafiles:bioprj_PRJNA385011_Siphamia-tubifer/r80_outputs -P
+echo starting bioprj_PRJNA286089_Sphyrna-tiburo
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA286089_Sphyrna-tiburo/r80_outputs divdiv_datafiles:bioprj_PRJNA286089_Sphyrna-tiburo/r80_outputs -P
+echo starting bioprj_PRJNA448430_Stegastes-beebei
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA448430_Stegastes-beebei/r80_outputs divdiv_datafiles:bioprj_PRJNA448430_Stegastes-beebei/r80_outputs -P
+echo starting bioprj_PRJNA448430_Stegastes-leucorus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA448430_Stegastes-leucorus/r80_outputs divdiv_datafiles:bioprj_PRJNA448430_Stegastes-leucorus/r80_outputs -P
+echo starting bioprj_PRJNA361144_Stephanocoenia-intersepta
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA361144_Stephanocoenia-intersepta/r80_outputs divdiv_datafiles:bioprj_PRJNA361144_Stephanocoenia-intersepta/r80_outputs -P
+echo starting bioprj_PRJNA655996_Strombus-pugilis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA655996_Strombus-pugilis/r80_outputs divdiv_datafiles:bioprj_PRJNA655996_Strombus-pugilis/r80_outputs -P
+echo starting bioprj_PRJNA354496_Symphodus-melops
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA354496_Symphodus-melops/r80_outputs divdiv_datafiles:bioprj_PRJNA354496_Symphodus-melops/r80_outputs -P
+echo starting bioprj_PRJNA361214_Symphodus-tinca
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA361214_Symphodus-tinca/r80_outputs divdiv_datafiles:bioprj_PRJNA361214_Symphodus-tinca/r80_outputs -P
+echo starting bioprj_PRJNA553831_Systellaspis-debilis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA553831_Systellaspis-debilis/r80_outputs divdiv_datafiles:bioprj_PRJNA553831_Systellaspis-debilis/r80_outputs -P
+echo starting bioprj_PRJNA432036_Thunnus-thynnus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA432036_Thunnus-thynnus/r80_outputs divdiv_datafiles:bioprj_PRJNA432036_Thunnus-thynnus/r80_outputs -P
+echo starting bioprj_PRJNA360511_Trachidermus-fasciatus
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA360511_Trachidermus-fasciatus/r80_outputs divdiv_datafiles:bioprj_PRJNA360511_Trachidermus-fasciatus/r80_outputs -P
+echo starting bioprj_PRJNA564451_Uria-aalge
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA564451_Uria-aalge/r80_outputs divdiv_datafiles:bioprj_PRJNA564451_Uria-aalge/r80_outputs -P
+echo starting bioprj_PRJNA564451_Uria-lomvia
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA564451_Uria-lomvia/r80_outputs divdiv_datafiles:bioprj_PRJNA564451_Uria-lomvia/r80_outputs -P
+echo starting bioprj_PRJNA573759_Vampyroteuthis-infernalis
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA573759_Vampyroteuthis-infernalis/r80_outputs divdiv_datafiles:bioprj_PRJNA573759_Vampyroteuthis-infernalis/r80_outputs -P
+echo starting bioprj_PRJNA348572_Zalophus-wollebaeki
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA348572_Zalophus-wollebaeki/r80_outputs divdiv_datafiles:bioprj_PRJNA348572_Zalophus-wollebaeki/r80_outputs -P
+echo starting bioprj_PRJNA449377_Zebrasoma-flavescens
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA449377_Zebrasoma-flavescens/r80_outputs divdiv_datafiles:bioprj_PRJNA449377_Zebrasoma-flavescens/r80_outputs -P
+echo starting bioprj_PRJNA449377_Zebrasoma-scopas
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJNA449377_Zebrasoma-scopas/r80_outputs divdiv_datafiles:bioprj_PRJNA449377_Zebrasoma-scopas/r80_outputs -P
+echo starting bioprj_PRJDB7819_Zenarchopterus-dunckeri
+rclone copy /mnt/scratch/rhtoczyd/bioprj_PRJDB7819_Zenarchopterus-dunckeri/r80_outputs divdiv_datafiles:bioprj_PRJDB7819_Zenarchopterus-dunckeri/r80_outputs -P
+
