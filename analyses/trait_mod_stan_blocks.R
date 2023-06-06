@@ -59,6 +59,7 @@ data {
 }
 transformed data {
 	real mnTrY=logit(mean(Y));			// mean transformed response variable
+	real varTrY=variance(Y);					// mean transformed response variable
 }
 parameters {
 	real<lower=0> alpha;			// effect of relatedness on similarity in response variable
@@ -75,7 +76,7 @@ transformed parameters {
 }
 model {
 	alpha ~ normal(0,10);									// prior on effect of relatedness matrix
-	phi ~ exponential(1/1e5);								// prior on effect of dispersion
+	phi ~ exponential(varTrY);								// prior on effect of dispersion
 	gamma ~ normal(mnTrY,1);									// prior on global mean
 	beta ~ normal(0,10);									// prior on effects of predictors
 	theta ~ multi_normal(meanVec,alpha * relMat);			// MVN likelihood of transformed p(response variable)
