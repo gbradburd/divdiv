@@ -20,7 +20,7 @@ list_of_datasets=list-extract.txt #name of dataset that we want to process
 
 tempdir=tempplacetoextractto
 
-inpath=/mnt/scratch/rhtoczyd/temp #main path to place where all input directories live
+inpath=/mnt/scratch/rhtoczyd #main path to place where all input directories live
 indir=stacks_final_output_from_populations	#directory that holds all of the .tar.gz output from Stacks' module populations
 outdir=genetic_data	#folder where all of the extracted populations.XXX files from each assembly parameter combo will be written to
 outpath=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen	#main path to place where all output directories should live
