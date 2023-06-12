@@ -12,11 +12,11 @@ rm(list=ls())
 gc()
 
 # load phylogeny (built from /DivDiv/divdiv_collecting_genetic_data/marine/scripts/building_marine_tree_from_TimeTree.R)
-load(file="data/phylo/divdiv_phy_from_timetreebeta5.Robj")
+load(file="../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
 
 # build df of label info for tree plotting aesthetics and order it same as phy tips
 finaltreetips <- phy$tip.label %>% as.data.frame() %>% rename("tip.label"=".") %>% mutate(tiporder = 1:n())
-havewishart <- read.csv("data/master_df.csv") %>% mutate(havewishart = ifelse(is.na(s.wish)==F, "yes", "no")) %>% 
+havewishart <- read.csv("../data/master_df.csv") %>% mutate(havewishart = ifelse(is.na(s)==F, "yes", "no")) %>% 
   mutate(tip.label = gsub("_"," ",species)) %>% dplyr::select(tip.label, havewishart)
 finaltreetips <- merge(finaltreetips, havewishart, by = "tip.label", all.x = T) %>% 
   mutate(havewishart = ifelse(is.na(havewishart)==T, "no", havewishart))
@@ -52,6 +52,6 @@ p %<+% finaltreetips + #leftjoin labels for aesthetics onto phy
 	geom_hilight(node=MRCA(phy,"Rhizophora mangle","Laguncularia racemosa"),fill=cladeCols[9],alpha=0.3) + #vascular plants
 	geom_hilight(node=MRCA(phy,"Fucus vesiculosus","Sargassum muticum"),fill=cladeCols[10],alpha=0.3) #ochrophyta + 
 	theme_classic() #remove box
-ggsave(filename = "figures/phylo_distn.pdf", width = 15, height = 15, units = c("cm"))
+ggsave(filename = "../figures/phylo_distn.pdf", width = 15, height = 15, units = c("cm"))
 
 

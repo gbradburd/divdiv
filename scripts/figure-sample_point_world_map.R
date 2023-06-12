@@ -14,7 +14,7 @@ gc()
 
 # load files for world map --------
 
-load("data/earth_map_objects.RData")
+load("../data/earth_map_objects.RData")
 
 ## This will load 5 R objects:
 ##   xbl.X & lbl.Y are two data.frames that contain labels for graticule lines
@@ -55,14 +55,14 @@ load("data/earth_map_objects.RData")
 # *** OPTION 2 *** : load pre=saved files (works for anyone with /divdiv repo) ---------
 
 #get all divdiv lat/longs
-sites <- read.csv("data/all_divdiv_lat_long_tables_for_genetic_samps.csv")
+sites <- read.csv("../data/all_divdiv_lat_long_tables_for_genetic_samps.csv")
 
 # *** END CHOOSE YOUR OWN ADVENTURE *** 
 
 
 
 #add clade groups on for coloring
-taxcolorkey <- read.csv("data/master_tax_color_key.csv")
+taxcolorkey <- read.csv("../data/master_tax_color_key.csv")
 sites <- merge(sites %>% separate(., link, into = c("garbage","species"), sep = "_", remove = F) %>% dplyr::select(-garbage) %>% mutate(species = gsub("-","_",species)), 
                taxcolorkey %>% mutate(species = gsub(" ","_",species)), 
                by = "species", all.x = T)
@@ -140,7 +140,7 @@ ggplot() +
     plot.background = element_rect(fill = "transparent")
   )
 
-ggsave(filename = "figures/world_map_all_pts.pdf", width = 30, height = 15, units = c("cm"))
+ggsave(filename = "../figures/world_map_all_pts.pdf", width = 30, height = 15, units = c("cm"))
 
 
 
