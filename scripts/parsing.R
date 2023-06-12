@@ -45,20 +45,26 @@ findCoGenoBadApples <- function(coGeno){
 
 
 getBPstats <- function(stacksFAfile,outPath,minPropIndivsScoredin,checkforlowcovsamps=FALSE,sampstodrop=NULL){
+  print("inside getBPstats 1")
   . <- V1 <- allele <- b <- clocus <- info <- label <- locus <- n.bp <- n_basepairs_in_locus <- n_samps_genoed <- sample.internal <- w <- x <- y <- z <- df.wide <- NULL	
   `%>%` <- magrittr::`%>%`
+  print("inside getBPstats 2")
   #make alerts file in case we need it
   alerts <- rep(0,4)
+  print("inside getBPstats 3")
   #get data
   df <- utils::read.table(stacksFAfile, header = F, skip = 1, sep = "\n")
+  print("inside getBPstats 4")
   #add two dummy columns so we can rearrange single column of alternating data into two side-by-side cols
   df <- df %>% dplyr::mutate(label = as.character(rep(1:2, nrow(.)/2))) %>% 
     dplyr::mutate(dummy.id = rep(1:(nrow(.)/2), each=2))
+  print("inside getBPstats 5")
   #build the 2 cols
   df <- df %>% 
     tidyr::pivot_wider(names_from = label, values_from = V1) %>% 
     dplyr::rename("info" = "1") %>% 
     dplyr::rename("sequence" = "2")
+  print("inside getBPstats 6")
   #pull out sample and locus ID info from info col into sep. cols.
   df <- df %>% tidyfast::dt_separate(., info, into = c("x","sample"), sep = " ", remove = F) %>% 
     dplyr::mutate(sample = gsub("\\[","",sample)) %>% 
@@ -67,6 +73,7 @@ getBPstats <- function(stacksFAfile,outPath,minPropIndivsScoredin,checkforlowcov
                           into = c("y","clocus","z","sample.internal","w","locus","b","allele"), 
                           sep = "_", remove = T) %>% 
     dplyr::select(-y,-z,-sample.internal,-w,-b)
+  print("inside getBPstats 7")
   
   # REMOVE SAMPLES WITH FEW CO-GENOTYPED LOCI (or others from a list)
   if (length(sampstodrop)>0){
@@ -74,28 +81,39 @@ getBPstats <- function(stacksFAfile,outPath,minPropIndivsScoredin,checkforlowcov
   } else {
     print("no samples were dropped for this dataset")
   }
+  print("inside getBPstats 8")
   
   #add number of individuals genotyped per every locus (divide by 2 bc still a row for each of 2 alleles at this point)
   df <- df %>% dplyr::add_count(clocus, name = "n_samps_genoed") %>% mutate(n_samps_genoed = n_samps_genoed/2)
+  print("inside getBPstats 9")
   #get total number of individuals in dataset
   Nindivs <- length(unique(df$sample))
+  print("inside getBPstats 10")
   #filter to just loci scored in at least X proportion of indivs
   nindivsthreshold <- round(Nindivs*minPropIndivsScoredin,0)
+  print("inside getBPstats 11")
   df <- df %>% dplyr::filter(n_samps_genoed >= nindivsthreshold)
+  print("inside getBPstats 12")
   
   if ( nrow(df)==0 ) {
     print(paste0("ERROR - there were no loci left in samples.fa file after filtering by minPropIndivsScoredin"))
   } else {
   #get new total number of individuals in dataset after filtering
   Nindivs <- length(unique(df$sample))
+  print("inside getBPstats 13")
   #get position of Ns in sequences
   positions <- df %>% dplyr::mutate(position = stringr::str_locate_all(string = sequence, pattern = "N")) %>% 
     dplyr::select(sample,locus,allele,position) %>% tidyr::unnest(.,position) %>% as.data.frame()
+  print("inside getBPstats 14")
   positions <- positions %>% dplyr::mutate(position_of_N = positions$position[,1]) %>% dplyr::select(-position)
+  print("inside getBPstats 15")
   positions <- positions %>% dplyr::select(-allele) %>% dplyr::distinct() %>% dplyr::mutate(N_ID = paste(locus,position_of_N,sep=":"))
+  print("inside getBPstats 16")
   #print percent of total bp positions that are N in at least one indiv
   n_N_positions = positions %>% dplyr::distinct(locus,position_of_N) %>% nrow()
+  print("inside getBPstats 17")
   n_bps = df %>% dplyr::mutate(n.positions = stringr::str_length(sequence)) %>% dplyr::distinct(clocus,n.positions) %>% dplyr::summarise(n=sum(n.positions))
+  print("inside getBPstats 18")
   print(paste("Percent of base positions with N for at least one indiv (after removing lowcov indivs and loci in <",
               minPropIndivsScoredin*100,"% of indivs): ",
               round((n_N_positions/n_bps$n)*100,2)," %",
