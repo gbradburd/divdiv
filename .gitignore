@@ -2,3 +2,5 @@
 *.DS_Store
 *.RData
 analyses/loo/*.Robj
+*.pdf
+analyses/loo/*.pdf
