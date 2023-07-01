@@ -345,7 +345,7 @@ phylooViz <- function(db,CNsamples,tree,xlim=c(0.95,1.01),valRange=NULL){
 			ylim=c(1,nSp)) #c(0,(length(cnDens)+1)*1.25))
 	axis(side=1,
 		at=c(xlim[1],(xlim[2]+xlim[1])/2,xlim[2]),
-		labels=round(c(xlim[1],(xlim[2]+xlim[1])/2,xlim[2]),1))
+		labels=round(c(xlim[1],(xlim[2]+xlim[1])/2,xlim[2]),2))
 	#abline(h=0:nSp,lty=2)
 	#text(x=xtext,y=(0.4 + 1:nSp)*1.25,labels=spNames[spOrder],srt=0)
 	invisible(

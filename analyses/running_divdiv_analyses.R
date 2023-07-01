@@ -28,39 +28,15 @@ expPhyReg <- stan_model(model_code=expPhyReg)
 # load master dataframe,
 #	create dataBlocks
 ################################
+
 z <- read.csv("../data/master_df.csv",header=TRUE,stringsAsFactors=FALSE)
-z <- z[-which(z$species=="Pocillopora_damicornis"),]
-if(any(is.na(z$s))){
-	z <- z[!which(is.na(z$s)),]	
-}
-
-#dupes <- names(which(table(z$species) > 1))
-
-# Gadus morhua
-#	sampling of PRJNA521889 is w/in range of PRJNA528403
-#	model fit looks equally reasonable
-#	keep PRJNA528403
-
-z <- z[-which(grepl("PRJNA528403",z$link)),]
-
-# Sebastiscus marmoratus
-#	more samples in PRJNA359404 than PRJNA392526
-#	model fit isn't amazing for either
-#	keep PRJNA359404
-
-z <- z[-which(grepl("PRJNA392526",z$link)),]
-
-# Lateolabrax maculatus
-# more samples from more locations in PRJNA356786 than PRJNA314732
-# model fit looks fine for PRJNA356786
-# keep PRJNA356786
-
-z <- z[-which(grepl("PRJNA314732",z$link)),]
-
+z$species[which(z$species=="Seriola_lalandi_dorsalis")] <- "Seriola_dorsalis"
 
 load("../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
+phy$tip.label[which(phy$tip.label=="Exaiptasia pallida")] <- "Exaiptasia diaphana"
 sampPhy <- ape::keep.tip(phy,gsub("_"," ",z$species))
 phyStr <- ape::vcv(sampPhy,corr=TRUE)
+
 
 predictors <- rbind(z[["meanlat.gbif"]],
 					z[["n_ECOREGIONS.all"]],
@@ -173,3 +149,34 @@ dev.off()
 
 
 
+#GRAVEYARD
+if(FALSE){
+
+z <- z[-which(z$species=="Pocillopora_damicornis"),]
+if(any(is.na(z$s))){
+	z <- z[!which(is.na(z$s)),]	
+}
+
+#dupes <- names(which(table(z$species) > 1))
+
+# Gadus morhua
+#	sampling of PRJNA521889 is w/in range of PRJNA528403
+#	model fit looks equally reasonable
+#	keep PRJNA528403
+
+z <- z[-which(grepl("PRJNA528403",z$link)),]
+
+# Sebastiscus marmoratus
+#	more samples in PRJNA359404 than PRJNA392526
+#	model fit isn't amazing for either
+#	keep PRJNA359404
+
+z <- z[-which(grepl("PRJNA392526",z$link)),]
+
+# Lateolabrax maculatus
+# more samples from more locations in PRJNA356786 than PRJNA314732
+# model fit looks fine for PRJNA356786
+# keep PRJNA356786
+
+z <- z[-which(grepl("PRJNA314732",z$link)),]
+}
