@@ -28,15 +28,13 @@ expPhyReg <- stan_model(model_code=expPhyReg)
 #	create dataBlocks
 ################################
 z <- read.csv("../../data/master_df.csv",header=TRUE,stringsAsFactors=FALSE)
-z <- z[-which(z$species=="Pocillopora_damicornis"),]
+z$species[which(z$species=="Seriola_lalandi_dorsalis")] <- "Seriola_dorsalis"
 if(any(is.na(z$s))){
 	z <- z[!which(is.na(z$s)),]	
 }
-z <- z[-which(grepl("PRJNA528403",z$link)),]
-z <- z[-which(grepl("PRJNA392526",z$link)),]
-z <- z[-which(grepl("PRJNA314732",z$link)),]
 
 load("../../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
+phy$tip.label[which(phy$tip.label=="Exaiptasia pallida")] <- "Exaiptasia diaphana"
 sampPhy <- phy
 sampPhy <- ape::keep.tip(sampPhy,gsub("_"," ",z$species))
 phyStr <- ape::vcv(sampPhy,corr=TRUE)
@@ -150,4 +148,12 @@ for(i in 1:length(predNames)){
 	pdf(file=paste0("phylooFit_nbhd_exp_",predNames[i],".pdf"),width=12,height=9)
 		phylooViz(db=db[[i]],CNsamples=looCNsamples,tree=phy,xlim=c(-10,500)+c(min(db[[i]]$Y),max(db[[i]]$Y)),valRange=c(0,500))
 	dev.off()
+}
+
+#GRAVEYARD
+if(FALSE){
+	# z <- z[-which(grepl("PRJNA528403",z$link)),]
+	# z <- z[-which(grepl("PRJNA392526",z$link)),]
+	# z <- z[-which(grepl("PRJNA314732",z$link)),]
+
 }
