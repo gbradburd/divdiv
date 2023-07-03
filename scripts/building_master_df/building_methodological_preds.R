@@ -12,7 +12,7 @@ gc()
 
 
 #get samp count and mean raw read count
-sampkeys <- list.files(path = "/Volumes/mnemo2/desktop/DivDiv/all_samplenamekeys/",
+sampkeys <- list.files(path = "data/all_samplenamekeys/",
                        pattern = "samplenamekey*",
                        full.names = TRUE)
 
@@ -84,6 +84,6 @@ locusd <- locusd %>% filter(is.na(run_name)==F)
 df <- merge(df, locusd, by = "run_name", all.x = T, all.y = T)
 
 #save
-write.csv(df, "/Volumes/mnemo2/desktop/DivDiv/divdiv/data/methodological/methodological_predictors-wide.csv", row.names = FALSE)
+write.csv(df, "data/methodological/methodological_predictors-wide.csv", row.names = FALSE)
 
 
