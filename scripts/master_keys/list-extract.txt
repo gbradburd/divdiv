@@ -1,1 +1,2 @@
-bioprj_PRJNA430030_Coryphaenoides-rupestris X
+bioprj_PRJNA643849_Isocladus-armatus X
+bioprj_PRJNA629489_Fucus-vesiculosus X
