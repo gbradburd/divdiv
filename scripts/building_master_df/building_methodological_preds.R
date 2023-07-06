@@ -12,7 +12,7 @@ gc()
 
 
 #get samp count and mean raw read count
-sampkeys <- list.files(path = "/Volumes/mnemo2/desktop/DivDiv/all_samplenamekeys/",
+sampkeys <- list.files(path = "data/all_samplenamekeys/",
                        pattern = "samplenamekey*",
                        full.names = TRUE)
 
@@ -35,15 +35,15 @@ df <- df %>% filter(is.na(run_name)==F)
 
 
 #get read length
-readl <- read.csv("/Volumes/mnemo2/desktop/DivDiv/divdiv_collecting_genetic_data/marine/sequence_level_data/master_bookkeeping_sheet-preStacks.csv") %>% 
+readl <- read.csv("data/master_bookkeeping_sheet-preStacks.csv") %>% 
   dplyr::select(run_name, trimlength) %>% 
   rename("read_length" = "trimlength")
 
-df <- merge(df, readl, by = "run_name", all.x = T, all.y = T)
+df <- merge(df, readl, by = "run_name", all.x = T)
 
 
 #get mean locus depth
-gstacklogs <- list.files(path = "/Volumes/mnemo2/desktop/DivDiv/all_r80_gstacksoutlogs",
+gstacklogs <- list.files(path = "data/all_r80_gstacksoutlogs",
                        pattern = "*.out",
                        full.names = TRUE)
 
@@ -84,6 +84,6 @@ locusd <- locusd %>% filter(is.na(run_name)==F)
 df <- merge(df, locusd, by = "run_name", all.x = T, all.y = T)
 
 #save
-write.csv(df, "/Volumes/mnemo2/desktop/DivDiv/divdiv/data/methodological/methodological_predictors-wide.csv", row.names = FALSE)
+write.csv(df, "data/methodological/methodological_predictors-wide.csv", row.names = FALSE)
 
 

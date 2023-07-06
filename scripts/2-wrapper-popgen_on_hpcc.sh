@@ -11,8 +11,9 @@ logfilesdir=logfiles_popgenstats #name of directory to create and then write log
 
 cpus=2 #number of CPUs to request/use per dataset
 #ram_per_cpu=66G #amount of RAM to request/use per CPU
-ram_per_cpu=250G #amount of RAM to request/use per CPU
+#ram_per_cpu=250G #amount of RAM to request/use per CPU
 #ram_per_cpu=20G #amount of RAM to request/use per CPU
+ram_per_cpu=491G #amount of RAM to request/use per CPU
 time=168:00:00
 
 #list_of_datasets=list-allfinal136.txt #name of dataset that we want to process
@@ -65,6 +66,7 @@ do
 			--output=./$logfilesdir/${jobname}_${run_name}_%A.out \
 			--error=./$logfilesdir/${jobname}_${run_name}_%A.err \
 			--time=$time \
+			--constraint="NOAUTO:lac|amr|skl" \
 			$executable
 			
 	echo submitted ID list with name $run_name from $list_of_datasets

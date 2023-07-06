@@ -10,6 +10,7 @@ gc()
 
 setwd("/Users/rachel/divdiv")
 
+#-----------------------------------------------------------------------------------------------------------------
 #read in data
 lat <- read.csv("data/abiotic/mean_min_max_latitude_stats-wide.csv") %>% dplyr::select(-X) %>% mutate(link = paste0("bioprj_",link))
 ecor <- read.csv("data/abiotic/number_of_ecoregions_stats-wide.csv") %>% mutate(species = gsub(" ","_",species))
@@ -24,6 +25,10 @@ popgsummary <- read.csv("data/popgen/r80_popgen_stats-wide.csv") %>% dplyr::rena
   dplyr::select(-species) %>% dplyr::select(-stacksparams)
 
 taxcolorkey <- read.csv("data/master_tax_color_key.csv") %>% mutate(species = gsub(" ","_",species))
+
+#-----------------------------------------------------------------------------------------------------------------
+
+
 
 #keep just traits in hypoth bingo
 biotic <- biotic %>% dplyr::select(species, Body_Size, Fecundity_EggSize, Generational_Structure, 
