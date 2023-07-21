@@ -42,7 +42,7 @@ readl <- read.csv("data/master_bookkeeping_sheet-preStacks.csv") %>%
 df <- merge(df, readl, by = "run_name", all.x = T)
 
 
-#get mean locus depth
+#get mean locus depth and stacks params
 gstacklogs <- list.files(path = "data/all_r80_gstacksoutlogs",
                        pattern = "*.out",
                        full.names = TRUE)
