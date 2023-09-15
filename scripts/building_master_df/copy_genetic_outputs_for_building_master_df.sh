@@ -48,7 +48,7 @@ do
 	
 	echo " "
 
-done < ./master_keys/$list_of_datasets
+done < ../master_keys/$list_of_datasets
 
 
 

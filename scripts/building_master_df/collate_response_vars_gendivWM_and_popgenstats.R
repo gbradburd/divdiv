@@ -11,7 +11,7 @@ library(tidyr)
 rm(list = ls())
 gc()
 
-
+setwd("/Users/rachel/divdiv")
 
 # collate response variables/data from WM models ----------
 #load("/Users/rachel/WMfit-bioprj_PRJNA294760_Amphiprion-bicinctus_stacks_littlem_3_bigm_3_n2_nis1lessthanM_pars.Robj")
