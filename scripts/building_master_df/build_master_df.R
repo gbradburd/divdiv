@@ -36,9 +36,9 @@ biotic <- biotic %>% dplyr::select(species, Body_Size, Fecundity_EggSize, Genera
                                    PLD_point2, isPlanktonic_atanypoint)
 
 #make all latitude values positive
-lat %>% ggplot() + geom_histogram(aes(x = meanlat.gbif)) + scale_x_continuous(limits = c(-90,90))
+lat %>% ggplot() + geom_histogram(aes(x = meanlat.gbif), bins = 30) + scale_x_continuous(limits = c(-90,90))
 lat <- lat %>% mutate(meanlat.gbif = abs(meanlat.gbif))
-lat %>% ggplot() + geom_histogram(aes(x = meanlat.gbif)) + scale_x_continuous(limits = c(-90,90))
+lat %>% ggplot() + geom_histogram(aes(x = meanlat.gbif), bins = 30) + scale_x_continuous(limits = c(-90,90))
 
 #sync some species names
 biotic$species[biotic$species == "Exaiptasia_pallida"] = "Exaiptasia_diaphana" 
@@ -77,8 +77,16 @@ df <- merge(df, popgsummary, by = "link", all = F)
 df <- merge(df, taxcolorkey, by = "species", all = F)
 names(df)
 
+#check if there are any duplicate rows/datasets
+df %>% group_by(link) %>% summarise(n=n()) %>% filter(n > 1)
 
-#save
+#change a few species names (AGAIN...), for our sanity
+df$species[df$species == "Seriola_lalandi_dorsalis"] = "Seriola_dorsalis"
+df$species[df$species == "Halichoerus-grypus-atlantica"] = "Halichoerus_grypus"
+
+
+
+# save --------
 #write.csv(df, paste0("data/master_df-",Sys.Date(),".csv"), row.names = FALSE)
 write.csv(df, "data/master_df.csv", row.names = FALSE)
 

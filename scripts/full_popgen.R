@@ -151,6 +151,14 @@ for (stacksFAfile in stacksFA_files){
   print(paste("FINISHED parsing for",fileprefix, sep = " "))
   
   rm(fileprefix)
+
+workdirfiles = list.files(indir, pattern="meanreaddepth|gt|bpstats", full.names = TRUE)
+print("workdirfiles are")
+workdirfiles
+print(paste("copying outputs to", outdir_final, sep = " "))
+file.copy(from=workdirfiles, to=paste0(outdir_final,"/"),
+          overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
+rm(workdirfiles)
     
 
 }
@@ -161,6 +169,9 @@ Sys.time()
 #copy files to final location, in case job breaks or runs out of time, so we don't lose everything
 #will still try to do a final copy in the bash script after R script completely finishes to be safe
 workdirfiles = list.files(indir, pattern="meanreaddepth|gt|bpstats", full.names = TRUE)
+print("workdirfiles are")
+workdirfiles
+print(paste("copying outputs to", outdir_final, sep = " "))
 file.copy(from=workdirfiles, to=paste0(outdir_final,"/"), 
           overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
 rm(workdirfiles)
