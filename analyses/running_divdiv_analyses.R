@@ -32,6 +32,16 @@ expPhyReg <- stan_model(model_code=expPhyReg)
 z <- read.csv("../data/master_df.csv",header=TRUE,stringsAsFactors=FALSE)
 z$species[which(z$species=="Seriola_lalandi_dorsalis")] <- "Seriola_dorsalis"
 
+# drop duplicates
+dups2drop <- c(which(z$link=="bioprj_PRJNA329407_Lutjanus-campechanus" & abs(z$nbhd - 246.8676)> 0.1),
+				which(z$link=="bioprj_PRJNA553831_Robustosergia-robusta" & abs(z$nbhd - 67.48)> 0.1))
+
+z <- z[-dups2drop,]
+
+z$PLD_point2[which(z$species=="Eukrohnia_hamata")] <- 730
+
+
+
 load("../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
 phy$tip.label[which(phy$tip.label=="Exaiptasia pallida")] <- "Exaiptasia diaphana"
 sampPhy <- ape::keep.tip(phy,gsub("_"," ",z$species))
@@ -49,6 +59,14 @@ predictors <- rbind(z[["meanlat.gbif"]],
 					z[["Larval_feeding"]],
 					z[["PLD_point2"]],
 					z[["isPlanktonic_atanypoint"]])
+
+
+#	nuisance predictors:
+#		ratio.sea.95
+#		n_samples
+#		mean_raw_read_cnt
+#		read_length
+#		mean_locus_depth
 
 if(FALSE){
 	tmp <- predictors
