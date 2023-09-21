@@ -77,6 +77,9 @@ df <- merge(df, popgsummary, by = "link", all = F)
 df <- merge(df, taxcolorkey, by = "species", all = F)
 names(df)
 
+#check if there are any duplicate rows/datasets
+df %>% group_by(run_name) %>% summarise(n=n()) %>% filter(n > 1)
+
 
 #save
 #write.csv(df, paste0("data/master_df-",Sys.Date(),".csv"), row.names = FALSE)
