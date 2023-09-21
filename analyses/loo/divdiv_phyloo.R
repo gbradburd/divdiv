@@ -29,14 +29,20 @@ expPhyReg <- stan_model(model_code=expPhyReg)
 ################################
 z <- read.csv("../../data/master_df.csv",header=TRUE,stringsAsFactors=FALSE)
 z$species[which(z$species=="Seriola_lalandi_dorsalis")] <- "Seriola_dorsalis"
-if(any(is.na(z$s))){
-	z <- z[!which(is.na(z$s)),]	
-}
+
+# drop duplicates
+dups2drop <- c(which(z$link=="bioprj_PRJNA329407_Lutjanus-campechanus" & abs(z$nbhd - 246.8676)> 0.1),
+				which(z$link=="bioprj_PRJNA553831_Robustosergia-robusta" & abs(z$nbhd - 67.48)> 0.1))
+
+z <- z[-dups2drop,]
+
+z$PLD_point2[which(z$species=="Eukrohnia_hamata")] <- 730
+
+
 
 load("../../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
 phy$tip.label[which(phy$tip.label=="Exaiptasia pallida")] <- "Exaiptasia diaphana"
-sampPhy <- phy
-sampPhy <- ape::keep.tip(sampPhy,gsub("_"," ",z$species))
+sampPhy <- ape::keep.tip(phy,gsub("_"," ",z$species))
 phyStr <- ape::vcv(sampPhy,corr=TRUE)
 
 predictors <- rbind(z[["meanlat.gbif"]],
