@@ -8,15 +8,6 @@
 #	read in metadata
 ################################
 z <- read.csv("~/Dropbox/divdiv/data/master_df.csv")
-z$species[which(z$species=="Seriola_lalandi_dorsalis")] <- "Seriola_dorsalis"
-
-# drop duplicates
-dups2drop <- c(which(z$link=="bioprj_PRJNA329407_Lutjanus-campechanus" & abs(z$nbhd - 246.8676)> 0.1),
-				which(z$link=="bioprj_PRJNA553831_Robustosergia-robusta" & abs(z$nbhd - 67.48)> 0.1))
-
-z <- z[-dups2drop,]
-
-z$PLD_point2[which(z$species=="Eukrohnia_hamata")] <- 730
 
 z <- z[,c("species","cladecolor","s","nbhd",
 			"meanlat.gbif",
@@ -36,8 +27,7 @@ z <- z[,c("species","cladecolor","s","nbhd",
 			"read_length",
 			"mean_locus_depth")]
 
-z[["Body_Size2"]] <- z[["Body_Size"]]
-z[["Body_Size2"]][z$species=="Cranchia_scabra"] <- NA
+z$Body_Size[z$species=="Cranchia_scabra"] <- 15
 z[["log(deep-time diversity)"]] <- log(1-z$s)
 
 pdf(file="../figures/variable_scatterplots.pdf",width=12,height=5,pointsize=11)
