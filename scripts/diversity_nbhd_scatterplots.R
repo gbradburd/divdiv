@@ -57,6 +57,33 @@ for(i in 4:ncol(z)){
 }
 dev.off()
 
+pdf(file="../figures/predictor_corrs.pdf",width=15,height=15,pointsize=11)
+	par(mar=c(8,5,3,1),mfrow=c(3,3))
+prs <- combn(4:ncol(z),2)
+for(i in 4:ncol(prs)){
+	x1 <- z[,prs[1,i]]
+	x2 <- z[,prs[2,i]]
+	if(any(is.na(c(x1,x2)))){
+		md <- unique(c(which(is.na(x1)),which(is.na(x2))))
+		x1 <- x1[-md]
+		x2 <- x2[-md]
+		sp <- z$species[-md]
+		spCols <- z$cladecolor[-md]
+	} else {
+		sp <- z$species
+		spCols <- z$cladecolor
+	}
+	plot(x1,x2,
+			pch=19,cex=2,
+			main=sprintf("%s x %s, cor = %s",
+							names(z)[prs[1,i]],
+							names(z)[prs[2,i]],
+							round(cor(x1,x2),3)),
+			col=adjustcolor(spCols,0.5),
+			xlab=names(z)[prs[1,i]],
+			ylab=names(z)[prs[2,i]])
+}
+dev.off()
 
 pdf(file="../figures/pi_across_spp.pdf",width=10,height=5,pointsize=11)
 par(mar=c(8,5,3,1))
