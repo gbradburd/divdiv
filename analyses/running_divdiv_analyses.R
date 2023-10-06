@@ -10,6 +10,7 @@
 #	useful functions
 ################################
 library(rstan)
+options(mc.cores=12)
 library(ape)
 library(doParallel)
 library(foreach)
@@ -30,43 +31,35 @@ expPhyReg <- stan_model(model_code=expPhyReg)
 ################################
 
 z <- read.csv("../data/master_df.csv",header=TRUE,stringsAsFactors=FALSE)
-z$species[which(z$species=="Seriola_lalandi_dorsalis")] <- "Seriola_dorsalis"
-
-# drop duplicates
-dups2drop <- c(which(z$link=="bioprj_PRJNA329407_Lutjanus-campechanus" & abs(z$nbhd - 246.8676)> 0.1),
-				which(z$link=="bioprj_PRJNA553831_Robustosergia-robusta" & abs(z$nbhd - 67.48)> 0.1))
-
-z <- z[-dups2drop,]
-
-z$PLD_point2[which(z$species=="Eukrohnia_hamata")] <- 730
+z$Body_Size[z$species=="Cranchia_scabra"] <- 15
+z[["log(deep-time diversity)"]] <- log(1-z$s)
 
 
 
 load("../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
-phy$tip.label[which(phy$tip.label=="Exaiptasia pallida")] <- "Exaiptasia diaphana"
 sampPhy <- ape::keep.tip(phy,gsub("_"," ",z$species))
 phyStr <- ape::vcv(sampPhy,corr=TRUE)
 
+# change ratio to absolute sampled range extent
+# predictors one by one with all nuisances included
 
-predictors <- rbind(z[["meanlat.gbif"]],
-					z[["n_ECOREGIONS.all"]],
-					z[["max.95.sea.gbif"]]/max(z[["max.95.sea.gbif"]]),
-					z[["Body_Size"]],
-					z[["Fecundity_EggSize"]],
-					z[["Generational_Structure"]],
-					z[["ReturnToSpawningGround"]],
-					z[["Spawning_mode"]],
-					z[["Larval_feeding"]],
-					z[["PLD_point2"]],
-					z[["isPlanktonic_atanypoint"]])
+predictors <- rbind(z[["meanlat.gbif"]],					# abiotic
+					z[["n_ECOREGIONS.all"]],				# abiotic
+					z[["max.95.sea.gbif"]]/max(z[["max.95.sea.gbif"]]),				# abiotic
+					z[["Body_Size"]],				# biotic
+					z[["Fecundity_EggSize"]],				# biotic
+					z[["Generational_Structure"]],				# biotic
+					z[["ReturnToSpawningGround"]],				# biotic
+					z[["Spawning_mode"]],				# biotic
+					z[["Larval_feeding"]],				# biotic
+					z[["PLD_point2"]],				# biotic
+					z[["isPlanktonic_atanypoint"]],				# biotic
+					z[["ratio.sea.95"]],					# nuisance
+					z[["n_samples"]],					# nuisance
+					z[["mean_raw_read_cnt"]]/1e7,					# nuisance
+					z[["read_length"]],					# nuisance
+					z[["mean_locus_depth"]])					# nuisance
 
-
-#	nuisance predictors:
-#		ratio.sea.95
-#		n_samples
-#		mean_raw_read_cnt
-#		read_length
-#		mean_locus_depth
 
 if(FALSE){
 	tmp <- predictors
@@ -82,7 +75,9 @@ predNames <- c("mean species latitude","number of ecoregions",
 			   "egg size","generational structure",
 			   "philopatry","spawning mode",
 			   "larval feeding","pelagic larval duration",
-			   "planktonicity")
+			   "planktonicity","ratio of range sampled : total",
+			   "number of samples","mean raw read count",
+			   "read length","mean locus depth")
 
 nIter <- 5e3
 
@@ -94,14 +89,15 @@ nIter <- 5e3
 
 db <- lapply(1:nrow(predictors),
 			function(i){
-				makeDB(predictors[i,],z$s,phyStr)
+				makeDB(predictors[i,],1-z$s,phyStr)
 		})
 names(db) <- predNames
 
-cl <- parallel::makeCluster(11)
+cl <- parallel::makeCluster(12)
 doParallel::registerDoParallel(cl)
 
 fits <- foreach::foreach(i = 1:nrow(predictors)) %dopar% {
+	message(sprintf("now analyzing predictor %s/%s",i,nrow(predictors)))
 	rstan::sampling(object=betaPhyReg,
 					data=db[[i]],
 					iter=nIter,
@@ -116,13 +112,48 @@ names(fits) <- predNames
 out <- list("db"=db,"fits"=fits)
 save(out,file="beta_s.Robj")
 
-pdf(file="beta_s.pdf",width=12,height=10)
-	par(mfrow=c(3,4)) ; for(i in 1:11){betaPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i])}
+pdf(file="beta_s.pdf",width=12,height=12)
+	par(mfrow=c(4,4)) ; for(i in 1:nrow(predictors)){betaPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i])}
 dev.off()
 
-pdf(file="betas_beta_s.pdf",width=12,height=10)
-	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL)
+pdf(file="betas_beta_s.pdf",width=14,height=10)
+	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE)
 dev.off()
+
+
+################################
+# analyze s with one biological predictor 
+#	and all the "nuisance" parameters
+#	beta model, unscaled s
+################################
+
+db <- lapply(1:nrow(predictors),
+			function(i){
+				makeDB(predictors[i,],1-z$s,phyStr)
+		})
+names(db) <- predNames
+
+cl <- parallel::makeCluster(12)
+doParallel::registerDoParallel(cl)
+
+fits <- foreach::foreach(i = 1:nrow(predictors)) %dopar% {
+	message(sprintf("now analyzing predictor %s/%s",i,nrow(predictors)))
+	rstan::sampling(object=betaPhyReg,
+					data=db[[i]],
+					iter=nIter,
+					thin=nIter/500,
+					chains=1,
+					control=setNames(list(15),"max_treedepth"))
+}
+
+parallel::stopCluster(cl)
+
+names(fits) <- predNames
+out <- list("db"=db,"fits"=fits)
+save(out,file="beta_s.Robj")
+
+#GRAVEYARD
+if(FALSE){
 
 ################################
 # analyze Nbhd with one predictor at a time
@@ -135,10 +166,11 @@ db <- lapply(1:nrow(predictors),
 		})
 names(db) <- predNames
 
-cl <- parallel::makeCluster(11)
+cl <- parallel::makeCluster(12)
 doParallel::registerDoParallel(cl)
 
 fits <- foreach::foreach(i = 1:nrow(predictors)) %dopar% {
+	message(sprintf("now analyzing predictor %s/%s",i,nrow(predictors)))
 	rstan::sampling(object=expPhyReg,
 					data=db[[i]],
 					iter=nIter,
@@ -154,21 +186,14 @@ names(fits) <- predNames
 out <- list("db"=db,"fits"=fits)
 save(out,file="exp_Nbhd.Robj")
 
-pdf(file="exp_Nbhd.pdf",width=12,height=10)
-	par(mfrow=c(3,4)) ; for(i in 1:11){expPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i])}
+pdf(file="exp_Nbhd.pdf",width=12,height=12)
+	par(mfrow=c(4,4)) ; for(i in 1:nrow(predictors)){expPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i])}
 dev.off()
 
-pdf(file="betas_exp_Nbhd.pdf",width=12,height=10)
+pdf(file="betas_exp_Nbhd.pdf",width=14,height=10)
 	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL)
 dev.off()
 
-
-
-
-
-
-#GRAVEYARD
-if(FALSE){
 
 z <- z[-which(z$species=="Pocillopora_damicornis"),]
 if(any(is.na(z$s))){

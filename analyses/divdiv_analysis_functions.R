@@ -155,11 +155,21 @@ checkSig <- function(beta){
 	return(sig)
 }
 
-postBetaPlot <- function(out,predNames,reorder=TRUE,cols=NULL,...){
+postBetaPlot <- function(out,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,...){
 	betas <- lapply(out$fits,
 				function(fit){
 					extract(fit,"beta",inc_warmup=FALSE,permute=FALSE)[,1,1]
 				})
+	if(stdize){
+		betas <- lapply(1:length(betas),
+						function(i){
+							if(length(unique(out$db[[i]]$X)) > 3){
+								betas[[i]] * sd(out$db[[i]]$X)								
+							} else {
+								betas[[i]]
+							}
+						})
+	}
 	meanBetas <- unlist(lapply(betas,mean))
 	nPredictors <- length(betas)
 	sig <- unlist(lapply(betas,function(beta){checkSig(beta)}))
@@ -177,7 +187,7 @@ postBetaPlot <- function(out,predNames,reorder=TRUE,cols=NULL,...){
 	}
 	plot(0,type='n',xlim=range(betas)+c(-diff(range(betas))/4,0),yaxt='n',xlab="effect size",ylab="",bty='n',ylim=c(0,(nPredictors+1)*1.25))
 		text(x=min(unlist(betas))-diff(range(betas))/8,y=(0.4 + 1:nPredictors)*1.25,labels=predNames[predOrder],srt=0,font=2,cex=1.3)
-		abline(v=0,lty=2,lwd=0.5)
+		abline(v=0,lty=2,lwd=0.5,col=adjustcolor(1,0.5))
 	invisible(
 		lapply(1:nPredictors,
 			function(i){
