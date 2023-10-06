@@ -1,0 +1,15 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA564823_Delphinapterus-leucas	SRR10241488	sample0	dummy	BioSample: SAMN12724224; Sample name: BB_1402; SRA: SRS5486901	ecotype: Bristol Bay, Alaska, USA	PAIRED	70187760	69262396
+PRJNA564823_Delphinapterus-leucas	SRR10241491	sample1	dummy	BioSample: SAMN12724234; Sample name: BB_1406; SRA: SRS5486900	ecotype: Bristol Bay, Alaska, USA	PAIRED	65411345	64579679
+PRJNA564823_Delphinapterus-leucas	SRR10241493	sample2	dummy	BioSample: SAMN12723975; Sample name: DL_CIB01; SRA: SRS5486914	ecotype: Cook Inlet, Alaska, USA	PAIRED	83358200	82295518
+PRJNA564823_Delphinapterus-leucas	SRR10241495	sample3	dummy	BioSample: SAMN12724023; Sample name: DL_CIB02; SRA: SRS5486913	ecotype: Cook Inlet, Alaska, USA	PAIRED	75016800	74057559
+PRJNA564823_Delphinapterus-leucas	SRR10241497	sample4	dummy	BioSample: SAMN12724024; Sample name: DL_CIB03; SRA: SRS5486912	ecotype: Cook Inlet, Alaska, USA	PAIRED	88180171	87044328
+PRJNA564823_Delphinapterus-leucas	SRR10241499	sample5	dummy	BioSample: SAMN12724025; Sample name: DL_CIB04; SRA: SRS5486911	ecotype: Cook Inlet, Alaska, USA	PAIRED	87705683	86605324
+PRJNA564823_Delphinapterus-leucas	SRR10241501	sample6	dummy	BioSample: SAMN12724052; Sample name: DL_CIB06; SRA: SRS5486910	ecotype: Cook Inlet, Alaska, USA	PAIRED	86066862	84990501
+PRJNA564823_Delphinapterus-leucas	SRR10241503	sample7	dummy	BioSample: SAMN12724098; Sample name: DL_CIB07; SRA: SRS5486909	ecotype: Cook Inlet, Alaska, USA	PAIRED	96828926	95244332
+PRJNA564823_Delphinapterus-leucas	SRR10241505	sample8	dummy	BioSample: SAMN12724105; Sample name: DL_CIB08; SRA: SRS5486908	ecotype: Cook Inlet, Alaska, USA	PAIRED	79077618	78270503
+PRJNA564823_Delphinapterus-leucas	SRR10241507	sample9	dummy	BioSample: SAMN12724146; Sample name: DL_CIB10; SRA: SRS5486907	ecotype: Cook Inlet, Alaska, USA	PAIRED	79261961	78457021
+PRJNA564823_Delphinapterus-leucas	SRR10241509	sample10	dummy	BioSample: SAMN12724179; Sample name: DL_CIB11; SRA: SRS5486906	ecotype: Cook Inlet, Alaska, USA	PAIRED	89760435	88840137
+PRJNA564823_Delphinapterus-leucas	SRR10241511	sample11	dummy	BioSample: SAMN12724182; Sample name: DL_CIB12; SRA: SRS5486905	ecotype: Cook Inlet, Alaska, USA	PAIRED	74980151	74228806
+PRJNA564823_Delphinapterus-leucas	SRR10241514	sample12	dummy	BioSample: SAMN12724195; Sample name: DL_CIB14; SRA: SRS5486903	ecotype: Cook Inlet, Alaska, USA	PAIRED	77507303	76718687
+PRJNA564823_Delphinapterus-leucas	SRR10241515	sample13	dummy	BioSample: SAMN12724205; Sample name: DL_CIB15; SRA: SRS5486902	ecotype: Cook Inlet, Alaska, USA	PAIRED	81612774	79546417

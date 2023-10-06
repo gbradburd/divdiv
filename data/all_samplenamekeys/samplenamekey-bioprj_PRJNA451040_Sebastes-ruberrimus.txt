@@ -1,0 +1,152 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA451040_Sebastes-ruberrimus	SRR7079333	sample0	dummy	BioSample: SAMN08991196; Sample name: YI_564; SRA: SRS3231195	isolate: Hood Canal	SINGLE	1044893	1044449
+PRJNA451040_Sebastes-ruberrimus	SRR7079341	sample1	dummy	BioSample: SAMN08991151; Sample name: YCan_741; SRA: SRS3231188	isolate: Vancouver Island	SINGLE	868698	861652
+PRJNA451040_Sebastes-ruberrimus	SRR7079342	sample2	dummy	BioSample: SAMN08991152; Sample name: YCan_8; SRA: SRS3231189	isolate: Gordon Channel	SINGLE	932198	925080
+PRJNA451040_Sebastes-ruberrimus	SRR7079343	sample3	dummy	BioSample: SAMN08991153; Sample name: YI_02; SRA: SRS3231191	isolate: San Juan Islands	SINGLE	682551	682289
+PRJNA451040_Sebastes-ruberrimus	SRR7079344	sample4	dummy	BioSample: SAMN08991154; Sample name: YI_1003; SRA: SRS3231190	isolate: San Juan Islands	SINGLE	1008338	994178
+PRJNA451040_Sebastes-ruberrimus	SRR7079345	sample5	dummy	BioSample: SAMN08991147; Sample name: YCan_7; SRA: SRS3231187	isolate: Gordon Channel	SINGLE	1265470	1256213
+PRJNA451040_Sebastes-ruberrimus	SRR7079346	sample6	dummy	BioSample: SAMN08991148; Sample name: YCan_738; SRA: SRS3231186	isolate: Vancouver Island	SINGLE	1531989	1515387
+PRJNA451040_Sebastes-ruberrimus	SRR7079347	sample7	dummy	BioSample: SAMN08991149; Sample name: YCan_739_CanYE2; SRA: SRS3231218	isolate: Vancouver Island	SINGLE	1171986	1161065
+PRJNA451040_Sebastes-ruberrimus	SRR7079348	sample8	dummy	BioSample: SAMN08991150; Sample name: YCan_740; SRA: SRS3231185	isolate: Vancouver Island	SINGLE	3415334	3385751
+PRJNA451040_Sebastes-ruberrimus	SRR7079349	sample9	dummy	BioSample: SAMN08991174; Sample name: YI_387; SRA: SRS3231181	isolate: Neah Bay	SINGLE	2490181	2402834
+PRJNA451040_Sebastes-ruberrimus	SRR7079350	sample10	dummy	BioSample: SAMN08991173; Sample name: YI_384; SRA: SRS3231182	isolate: Neah Bay	SINGLE	2485752	2416078
+PRJNA451040_Sebastes-ruberrimus	SRR7079351	sample11	dummy	BioSample: SAMN08991172; Sample name: YI_376; SRA: SRS3231183	isolate: Neah Bay	SINGLE	1794230	1774185
+PRJNA451040_Sebastes-ruberrimus	SRR7079352	sample12	dummy	BioSample: SAMN08991171; Sample name: YI_356; SRA: SRS3231184	isolate: Neah Bay	SINGLE	3514435	3402098
+PRJNA451040_Sebastes-ruberrimus	SRR7079353	sample13	dummy	BioSample: SAMN08991155; Sample name: YI_1010; SRA: SRS3231179	isolate: San Juan Islands	SINGLE	1988780	1959417
+PRJNA451040_Sebastes-ruberrimus	SRR7079354	sample14	dummy	BioSample: SAMN08991156; Sample name: YI_1022; SRA: SRS3231180	isolate: San Juan Islands	SINGLE	597486	587195
+PRJNA451040_Sebastes-ruberrimus	SRR7079355	sample15	dummy	BioSample: SAMN08991168; Sample name: YI_322; SRA: SRS3231178	isolate: Neah Bay	SINGLE	2722082	2638939
+PRJNA451040_Sebastes-ruberrimus	SRR7079356	sample16	dummy	BioSample: SAMN08991167; Sample name: YI_314; SRA: SRS3231177	isolate: Neah Bay	SINGLE	931441	920825
+PRJNA451040_Sebastes-ruberrimus	SRR7079357	sample17	dummy	BioSample: SAMN08991093; Sample name: YC_059; SRA: SRS3231176	isolate: Oregon coast	SINGLE	1283623	1268808
+PRJNA451040_Sebastes-ruberrimus	SRR7079358	sample18	dummy	BioSample: SAMN08991094; Sample name: YC_060; SRA: SRS3231217	isolate: Oregon coast	SINGLE	1051070	1037060
+PRJNA451040_Sebastes-ruberrimus	SRR7079359	sample19	dummy	BioSample: SAMN08991091; Sample name: YC_057; SRA: SRS3231175	isolate: California coast	SINGLE	953235	938984
+PRJNA451040_Sebastes-ruberrimus	SRR7079360	sample20	dummy	BioSample: SAMN08991092; Sample name: YC_058; SRA: SRS3231174	isolate: Oregon coast	SINGLE	979126	966990
+PRJNA451040_Sebastes-ruberrimus	SRR7079361	sample21	dummy	BioSample: SAMN08991089; Sample name: YC_055; SRA: SRS3231172	isolate: California coast	SINGLE	1338767	1320277
+PRJNA451040_Sebastes-ruberrimus	SRR7079362	sample22	dummy	BioSample: SAMN08991090; Sample name: YC_056; SRA: SRS3231173	isolate: California coast	SINGLE	961653	947954
+PRJNA451040_Sebastes-ruberrimus	SRR7079363	sample23	dummy	BioSample: SAMN08991087; Sample name: YC_053; SRA: SRS3231170	isolate: Washington coast	SINGLE	538188	531309
+PRJNA451040_Sebastes-ruberrimus	SRR7079364	sample24	dummy	BioSample: SAMN08991088; Sample name: YC_054; SRA: SRS3231171	isolate: Washington coast	SINGLE	711985	702931
+PRJNA451040_Sebastes-ruberrimus	SRR7079371	sample25	dummy	BioSample: SAMN08991095; Sample name: YC_061; SRA: SRS3231163	isolate: Oregon coast	SINGLE	602441	594721
+PRJNA451040_Sebastes-ruberrimus	SRR7079372	sample26	dummy	BioSample: SAMN08991096; Sample name: YC_062; SRA: SRS3231161	isolate: Oregon coast	SINGLE	717267	707940
+PRJNA451040_Sebastes-ruberrimus	SRR7079373	sample27	dummy	BioSample: SAMN08991129; Sample name: YCan_442_20130025_combined; SRA: SRS3231162	isolate: Mitlenatach Island	SINGLE	3085112	2975472
+PRJNA451040_Sebastes-ruberrimus	SRR7079374	sample28	dummy	BioSample: SAMN08991130; Sample name: YCan_442_20130026; SRA: SRS3231160	isolate: Mitlenatach Island	SINGLE	1149697	1142037
+PRJNA451040_Sebastes-ruberrimus	SRR7079375	sample29	dummy	BioSample: SAMN08991209; Sample name: YI_727; SRA: SRS3231159	isolate: San Juan Islands	SINGLE	2591252	2494592
+PRJNA451040_Sebastes-ruberrimus	SRR7079380	sample30	dummy	BioSample: SAMN08991140; Sample name: YCan_5; SRA: SRS3231152	isolate: Gordon Channel	SINGLE	1731407	1715797
+PRJNA451040_Sebastes-ruberrimus	SRR7079381	sample31	dummy	BioSample: SAMN08991139; Sample name: YCan_442_20130222_combined; SRA: SRS3231153	isolate: Saltspring Island	SINGLE	1972646	1916514
+PRJNA451040_Sebastes-ruberrimus	SRR7079382	sample32	dummy	BioSample: SAMN08991138; Sample name: YCan_442_20130221_combined; SRA: SRS3231154	isolate: Saltspring Island	SINGLE	2294635	2226656
+PRJNA451040_Sebastes-ruberrimus	SRR7079383	sample33	dummy	BioSample: SAMN08991137; Sample name: YCan_442_20130219_combined; SRA: SRS3231150	isolate: Saltspring Island	SINGLE	3176107	3088616
+PRJNA451040_Sebastes-ruberrimus	SRR7079384	sample34	dummy	BioSample: SAMN08991144; Sample name: YCan_58_combinedFINAL; SRA: SRS3231151	isolate: Upper Johnstone Strait	SINGLE	2564538	2532864
+PRJNA451040_Sebastes-ruberrimus	SRR7079385	sample35	dummy	BioSample: SAMN08991143; Sample name: YCan_57; SRA: SRS3231149	isolate: Upper Johnstone Strait	SINGLE	948940	940792
+PRJNA451040_Sebastes-ruberrimus	SRR7079386	sample36	dummy	BioSample: SAMN08991142; Sample name: YCan_56; SRA: SRS3231147	isolate: Upper Johnstone Strait	SINGLE	1141804	1132649
+PRJNA451040_Sebastes-ruberrimus	SRR7079387	sample37	dummy	BioSample: SAMN08991141; Sample name: YCan_55; SRA: SRS3231148	isolate: Upper Johnstone Strait	SINGLE	2097697	2083487
+PRJNA451040_Sebastes-ruberrimus	SRR7079388	sample38	dummy	BioSample: SAMN08991179; Sample name: YI_414; SRA: SRS3231146	isolate: Sekiu	SINGLE	3268100	3143927
+PRJNA451040_Sebastes-ruberrimus	SRR7079389	sample39	dummy	BioSample: SAMN08991180; Sample name: YI_416; SRA: SRS3231145	isolate: Sekiu	SINGLE	1067653	1059946
+PRJNA451040_Sebastes-ruberrimus	SRR7079390	sample40	dummy	BioSample: SAMN08991146; Sample name: YCan_6_CanYe5; SRA: SRS3231143	isolate: Gordon Channel	SINGLE	3227865	3209518
+PRJNA451040_Sebastes-ruberrimus	SRR7079391	sample41	dummy	BioSample: SAMN08991145; Sample name: YCan_59; SRA: SRS3231144	isolate: Upper Johnstone Strait	SINGLE	2166711	2149446
+PRJNA451040_Sebastes-ruberrimus	SRR7079392	sample42	dummy	BioSample: SAMN08991183; Sample name: YI_433; SRA: SRS3231141	isolate: Sekiu	SINGLE	2327982	2252436
+PRJNA451040_Sebastes-ruberrimus	SRR7079393	sample43	dummy	BioSample: SAMN08991184; Sample name: YI_437; SRA: SRS3231142	isolate: Sekiu	SINGLE	2631699	2539217
+PRJNA451040_Sebastes-ruberrimus	SRR7079394	sample44	dummy	BioSample: SAMN08991181; Sample name: YI_428; SRA: SRS3231140	isolate: Sekiu	SINGLE	2095172	2041993
+PRJNA451040_Sebastes-ruberrimus	SRR7079395	sample45	dummy	BioSample: SAMN08991182; Sample name: YI_430; SRA: SRS3231139	isolate: Sekiu	SINGLE	2119737	2047910
+PRJNA451040_Sebastes-ruberrimus	SRR7079396	sample46	dummy	BioSample: SAMN08991082; Sample name: YC_014; SRA: SRS3231138	isolate: Oregon coast	SINGLE	2084377	2054353
+PRJNA451040_Sebastes-ruberrimus	SRR7079397	sample47	dummy	BioSample: SAMN08991081; Sample name: YC_013; SRA: SRS3231137	isolate: Oregon coast	SINGLE	2695874	2657244
+PRJNA451040_Sebastes-ruberrimus	SRR7079398	sample48	dummy	BioSample: SAMN08991084; Sample name: YC_016; SRA: SRS3231136	isolate: Oregon coast	SINGLE	951766	938348
+PRJNA451040_Sebastes-ruberrimus	SRR7079399	sample49	dummy	BioSample: SAMN08991083; Sample name: YC_015; SRA: SRS3231135	isolate: Oregon coast	SINGLE	1053016	1040510
+PRJNA451040_Sebastes-ruberrimus	SRR7079400	sample50	dummy	BioSample: SAMN08991078; Sample name: YC_010; SRA: SRS3231134	isolate: Washington coast	SINGLE	1629562	1609238
+PRJNA451040_Sebastes-ruberrimus	SRR7079401	sample51	dummy	BioSample: SAMN08991077; Sample name: YC_009; SRA: SRS3231133	isolate: Washington coast	SINGLE	1028533	1014891
+PRJNA451040_Sebastes-ruberrimus	SRR7079402	sample52	dummy	BioSample: SAMN08991080; Sample name: YC_012; SRA: SRS3231132	isolate: Oregon coast	SINGLE	3032115	2991013
+PRJNA451040_Sebastes-ruberrimus	SRR7079403	sample53	dummy	BioSample: SAMN08991079; Sample name: YC_011; SRA: SRS3231131	isolate: Oregon coast	SINGLE	2140090	2112630
+PRJNA451040_Sebastes-ruberrimus	SRR7079404	sample54	dummy	BioSample: SAMN08991201; Sample name: YI_596; SRA: SRS3231130	isolate: Hood Canal	SINGLE	2135965	2062967
+PRJNA451040_Sebastes-ruberrimus	SRR7079405	sample55	dummy	BioSample: SAMN08991202; Sample name: YI_604; SRA: SRS3231129	isolate: Hood Canal	SINGLE	2829081	2746632
+PRJNA451040_Sebastes-ruberrimus	SRR7079406	sample56	dummy	BioSample: SAMN08991203; Sample name: YI_644; SRA: SRS3231128	isolate: Hood Canal	SINGLE	1922138	1855100
+PRJNA451040_Sebastes-ruberrimus	SRR7079407	sample57	dummy	BioSample: SAMN08991204; Sample name: YI_648; SRA: SRS3231127	isolate: Hood Canal	SINGLE	2126996	2060041
+PRJNA451040_Sebastes-ruberrimus	SRR7079408	sample58	dummy	BioSample: SAMN08991086; Sample name: YC_052; SRA: SRS3231126	isolate: Washington coast	SINGLE	736834	727422
+PRJNA451040_Sebastes-ruberrimus	SRR7079409	sample59	dummy	BioSample: SAMN08991085; Sample name: YC_051; SRA: SRS3231125	isolate: Washington coast	SINGLE	842696	832066
+PRJNA451040_Sebastes-ruberrimus	SRR7079410	sample60	dummy	BioSample: SAMN08991199; Sample name: YI_584_combined; SRA: SRS3231123	isolate: Hood Canal	SINGLE	1929227	1908542
+PRJNA451040_Sebastes-ruberrimus	SRR7079411	sample61	dummy	BioSample: SAMN08991200; Sample name: YI_586; SRA: SRS3231124	isolate: Hood Canal	SINGLE	1881696	1813819
+PRJNA451040_Sebastes-ruberrimus	SRR7079412	sample62	dummy	BioSample: SAMN08991216; Sample name: YI_96; SRA: SRS3231122	isolate: San Juan Islands	SINGLE	1194207	1185327
+PRJNA451040_Sebastes-ruberrimus	SRR7079415	sample63	dummy	BioSample: SAMN08991215; Sample name: YI_933; SRA: SRS3231120	isolate: Central Puget Sound	SINGLE	1698448	1688231
+PRJNA451040_Sebastes-ruberrimus	SRR7079425	sample64	dummy	BioSample: SAMN08991185; Sample name: YI_440; SRA: SRS3231109	isolate: Sekiu	SINGLE	2936876	2825961
+PRJNA451040_Sebastes-ruberrimus	SRR7079426	sample65	dummy	BioSample: SAMN08991195; Sample name: YI_554; SRA: SRS3231107	isolate: Hood Canal	SINGLE	3688841	3654294
+PRJNA451040_Sebastes-ruberrimus	SRR7079427	sample66	dummy	BioSample: SAMN08991210; Sample name: YI_728; SRA: SRS3231108	isolate: San Juan Islands	SINGLE	2704037	2612149
+PRJNA451040_Sebastes-ruberrimus	SRR7079428	sample67	dummy	BioSample: SAMN08991186; Sample name: YI_447; SRA: SRS3231105	isolate: Sekiu	SINGLE	1982629	1923843
+PRJNA451040_Sebastes-ruberrimus	SRR7079429	sample68	dummy	BioSample: SAMN08991188; Sample name: YI_48; SRA: SRS3231106	isolate: San Juan Islands	SINGLE	1813692	1800761
+PRJNA451040_Sebastes-ruberrimus	SRR7079430	sample69	dummy	BioSample: SAMN08991187; Sample name: YI_466; SRA: SRS3231103	isolate: San Juan Islands	SINGLE	3263817	3231857
+PRJNA451040_Sebastes-ruberrimus	SRR7079431	sample70	dummy	BioSample: SAMN08991190; Sample name: YI_507; SRA: SRS3231104	isolate: Hood Canal	SINGLE	3094646	2995246
+PRJNA451040_Sebastes-ruberrimus	SRR7079432	sample71	dummy	BioSample: SAMN08991189; Sample name: YI_482; SRA: SRS3231102	isolate: San Juan Islands	SINGLE	2088049	2066933
+PRJNA451040_Sebastes-ruberrimus	SRR7079433	sample72	dummy	BioSample: SAMN08991192; Sample name: YI_530; SRA: SRS3231101	isolate: San Juan Islands	SINGLE	1953282	1889852
+PRJNA451040_Sebastes-ruberrimus	SRR7079434	sample73	dummy	BioSample: SAMN08991191; Sample name: YI_519; SRA: SRS3231100	isolate: San Juan Islands	SINGLE	2791809	2696251
+PRJNA451040_Sebastes-ruberrimus	SRR7079435	sample74	dummy	BioSample: SAMN08991194; Sample name: YI_543; SRA: SRS3231099	isolate: Hood Canal	SINGLE	2728757	2645627
+PRJNA451040_Sebastes-ruberrimus	SRR7079436	sample75	dummy	BioSample: SAMN08991193; Sample name: YI_54; SRA: SRS3231098	isolate: San Juan Islands	SINGLE	1318551	1303943
+PRJNA451040_Sebastes-ruberrimus	SRR7079437	sample76	dummy	BioSample: SAMN08991107; Sample name: YC_2009_01_combined; SRA: SRS3231097	isolate: Washington coast	SINGLE	799557	792914
+PRJNA451040_Sebastes-ruberrimus	SRR7079438	sample77	dummy	BioSample: SAMN08991108; Sample name: YC_2009_02; SRA: SRS3231096	isolate: Washington coast	SINGLE	1837364	1775761
+PRJNA451040_Sebastes-ruberrimus	SRR7079439	sample78	dummy	BioSample: SAMN08991109; Sample name: YC_2009_03_R; SRA: SRS3231095	isolate: Washington coast	SINGLE	1050044	1011713
+PRJNA451040_Sebastes-ruberrimus	SRR7079440	sample79	dummy	BioSample: SAMN08991110; Sample name: YC_2009_1038; SRA: SRS3231094	isolate: Washington coast	SINGLE	1404814	1355016
+PRJNA451040_Sebastes-ruberrimus	SRR7079441	sample80	dummy	BioSample: SAMN08991111; Sample name: YC_20091036; SRA: SRS3231093	isolate: Washington coast	SINGLE	745559	738419
+PRJNA451040_Sebastes-ruberrimus	SRR7079442	sample81	dummy	BioSample: SAMN08991112; Sample name: YC_2010_01_combined; SRA: SRS3231092	isolate: Washington coast	SINGLE	1134989	1123249
+PRJNA451040_Sebastes-ruberrimus	SRR7079443	sample82	dummy	BioSample: SAMN08991113; Sample name: YC_2010_26; SRA: SRS3231091	isolate: Washington coast	SINGLE	1121655	1084574
+PRJNA451040_Sebastes-ruberrimus	SRR7079444	sample83	dummy	BioSample: SAMN08991114; Sample name: YC_2010_82; SRA: SRS3231090	isolate: Washington coast	SINGLE	489459	485492
+PRJNA451040_Sebastes-ruberrimus	SRR7079445	sample84	dummy	BioSample: SAMN08991115; Sample name: YC_2010_86; SRA: SRS3231088	isolate: Washington coast	SINGLE	759641	753669
+PRJNA451040_Sebastes-ruberrimus	SRR7079446	sample85	dummy	BioSample: SAMN08991116; Sample name: YC_2012_75_combined; SRA: SRS3231089	isolate: Washington coast	SINGLE	1606159	1593317
+PRJNA451040_Sebastes-ruberrimus	SRR7079447	sample86	dummy	BioSample: SAMN08991208; Sample name: YI_686; SRA: SRS3231087	isolate: Hood Canal	SINGLE	1698647	1651156
+PRJNA451040_Sebastes-ruberrimus	SRR7079448	sample87	dummy	BioSample: SAMN08991207; Sample name: YI_675; SRA: SRS3231086	isolate: Hood Canal	SINGLE	1108377	1096862
+PRJNA451040_Sebastes-ruberrimus	SRR7079449	sample88	dummy	BioSample: SAMN08991214; Sample name: YI_904_combinedFINAL; SRA: SRS3231085	isolate: Central Puget Sound	SINGLE	1551771	1533403
+PRJNA451040_Sebastes-ruberrimus	SRR7079450	sample89	dummy	BioSample: SAMN08991213; Sample name: YI_81; SRA: SRS3231084	isolate: San Juan Islands	SINGLE	1272817	1262340
+PRJNA451040_Sebastes-ruberrimus	SRR7079451	sample90	dummy	BioSample: SAMN08991212; Sample name: YI_789; SRA: SRS3231083	isolate: San Juan Islands	SINGLE	1016440	1010352
+PRJNA451040_Sebastes-ruberrimus	SRR7079452	sample91	dummy	BioSample: SAMN08991211; Sample name: YI_732; SRA: SRS3231080	isolate: San Juan Islands	SINGLE	790388	782005
+PRJNA451040_Sebastes-ruberrimus	SRR7079465	sample92	dummy	BioSample: SAMN08991177; Sample name: YI_409; SRA: SRS3231070	isolate: Sekiu	SINGLE	2875446	2769364
+PRJNA451040_Sebastes-ruberrimus	SRR7079466	sample93	dummy	BioSample: SAMN08991178; Sample name: YI_412; SRA: SRS3231068	isolate: Sekiu	SINGLE	3332921	3204660
+PRJNA451040_Sebastes-ruberrimus	SRR7079468	sample94	dummy	BioSample: SAMN08991219; Sample name: YI_L1; SRA: SRS3231066	isolate: San Juan Islands	SINGLE	1189950	1182751
+PRJNA451040_Sebastes-ruberrimus	SRR7079469	sample95	dummy	BioSample: SAMN08991220; Sample name: YPW_1; SRA: SRS3231065	isolate: SE Alaska	SINGLE	1120318	1114320
+PRJNA451040_Sebastes-ruberrimus	SRR7079470	sample96	dummy	BioSample: SAMN08991217; Sample name: YI_985; SRA: SRS3231064	isolate: Central Puget Sound	SINGLE	2369940	2356522
+PRJNA451040_Sebastes-ruberrimus	SRR7079471	sample97	dummy	BioSample: SAMN08991218; Sample name: YI_990; SRA: SRS3231063	isolate: Central Puget Sound	SINGLE	807212	801892
+PRJNA451040_Sebastes-ruberrimus	SRR7079481	sample98	dummy	BioSample: SAMN08991205; Sample name: YI_667; SRA: SRS3231053	isolate: Hood Canal	SINGLE	997116	987107
+PRJNA451040_Sebastes-ruberrimus	SRR7079485	sample99	dummy	BioSample: SAMN08991206; Sample name: YI_671; SRA: SRS3231048	isolate: Hood Canal	SINGLE	3416453	3289620
+PRJNA451040_Sebastes-ruberrimus	SRR7079488	sample100	dummy	BioSample: SAMN08991176; Sample name: YI_405; SRA: SRS3231046	isolate: Sekiu	SINGLE	2894146	2799289
+PRJNA451040_Sebastes-ruberrimus	SRR7079489	sample101	dummy	BioSample: SAMN08991197; Sample name: YI_571_R_CanYe4; SRA: SRS3231045	isolate: Hood Canal	SINGLE	1889409	1829079
+PRJNA451040_Sebastes-ruberrimus	SRR7079490	sample102	dummy	BioSample: SAMN08991175; Sample name: YI_40; SRA: SRS3231044	isolate: San Juan Islands	SINGLE	1027188	1018975
+PRJNA451040_Sebastes-ruberrimus	SRR7079491	sample103	dummy	BioSample: SAMN08991198; Sample name: YI_572; SRA: SRS3231043	isolate: Hood Canal	SINGLE	3381306	3276558
+PRJNA451040_Sebastes-ruberrimus	SRR7079499	sample104	dummy	BioSample: SAMN08991170; Sample name: YI_344_combinedFINAL; SRA: SRS3231034	isolate: Neah Bay	SINGLE	1798882	1773486
+PRJNA451040_Sebastes-ruberrimus	SRR7079503	sample105	dummy	BioSample: SAMN08991169; Sample name: YI_339; SRA: SRS3231030	isolate: Neah Bay	SINGLE	2559905	2531871
+PRJNA451040_Sebastes-ruberrimus	SRR7079504	sample106	dummy	BioSample: SAMN08991106; Sample name: YC_108; SRA: SRS3231031	isolate: Washington coast	SINGLE	1367955	1344825
+PRJNA451040_Sebastes-ruberrimus	SRR7079505	sample107	dummy	BioSample: SAMN08991105; Sample name: YC_077; SRA: SRS3231029	isolate: Oregon coast	SINGLE	813330	802272
+PRJNA451040_Sebastes-ruberrimus	SRR7079506	sample108	dummy	BioSample: SAMN08991104; Sample name: YC_076; SRA: SRS3231028	isolate: Oregon coast	SINGLE	1737068	1709294
+PRJNA451040_Sebastes-ruberrimus	SRR7079507	sample109	dummy	BioSample: SAMN08991103; Sample name: YC_075; SRA: SRS3231027	isolate: Oregon coast	SINGLE	3741938	3683806
+PRJNA451040_Sebastes-ruberrimus	SRR7079508	sample110	dummy	BioSample: SAMN08991102; Sample name: YC_074; SRA: SRS3231025	isolate: Oregon coast	SINGLE	2166629	2128682
+PRJNA451040_Sebastes-ruberrimus	SRR7079509	sample111	dummy	BioSample: SAMN08991101; Sample name: YC_073; SRA: SRS3231026	isolate: Oregon coast	SINGLE	1848736	1822795
+PRJNA451040_Sebastes-ruberrimus	SRR7079510	sample112	dummy	BioSample: SAMN08991100; Sample name: YC_072; SRA: SRS3231024	isolate: Oregon coast	SINGLE	2826824	2782523
+PRJNA451040_Sebastes-ruberrimus	SRR7079511	sample113	dummy	BioSample: SAMN08991099; Sample name: YC_071; SRA: SRS3231023	isolate: Oregon coast	SINGLE	4515505	4431153
+PRJNA451040_Sebastes-ruberrimus	SRR7079512	sample114	dummy	BioSample: SAMN08991098; Sample name: YC_067; SRA: SRS3231021	isolate: Oregon coast	SINGLE	533622	526190
+PRJNA451040_Sebastes-ruberrimus	SRR7079513	sample115	dummy	BioSample: SAMN08991097; Sample name: YC_063; SRA: SRS3231022	isolate: Oregon coast	SINGLE	639736	631178
+PRJNA451040_Sebastes-ruberrimus	SRR7079514	sample116	dummy	BioSample: SAMN08991157; Sample name: YI_14; SRA: SRS3231020	isolate: San Juan Islands	SINGLE	824520	816063
+PRJNA451040_Sebastes-ruberrimus	SRR7079515	sample117	dummy	BioSample: SAMN08991158; Sample name: YI_150; SRA: SRS3231019	isolate: San Juan Islands	SINGLE	893705	893296
+PRJNA451040_Sebastes-ruberrimus	SRR7079516	sample118	dummy	BioSample: SAMN08991159; Sample name: YI_18; SRA: SRS3231018	isolate: San Juan Islands	SINGLE	1298416	1287142
+PRJNA451040_Sebastes-ruberrimus	SRR7079517	sample119	dummy	BioSample: SAMN08991160; Sample name: YI_19; SRA: SRS3231017	isolate: San Juan Islands	SINGLE	1057448	1047764
+PRJNA451040_Sebastes-ruberrimus	SRR7079518	sample120	dummy	BioSample: SAMN08991161; Sample name: YI_205; SRA: SRS3231016	isolate: San Juan Islands	SINGLE	4804514	4771694
+PRJNA451040_Sebastes-ruberrimus	SRR7079519	sample121	dummy	BioSample: SAMN08991162; Sample name: YI_209; SRA: SRS3231013	isolate: San Juan Islands	SINGLE	618539	614485
+PRJNA451040_Sebastes-ruberrimus	SRR7079520	sample122	dummy	BioSample: SAMN08991163; Sample name: YI_211; SRA: SRS3231014	isolate: San Juan Islands	SINGLE	3246091	3225892
+PRJNA451040_Sebastes-ruberrimus	SRR7079521	sample123	dummy	BioSample: SAMN08991164; Sample name: YI_225; SRA: SRS3231015	isolate: San Juan Islands	SINGLE	2169467	2097203
+PRJNA451040_Sebastes-ruberrimus	SRR7079522	sample124	dummy	BioSample: SAMN08991165; Sample name: YI_228; SRA: SRS3231012	isolate: San Juan Islands	SINGLE	1811264	1740749
+PRJNA451040_Sebastes-ruberrimus	SRR7079523	sample125	dummy	BioSample: SAMN08991166; Sample name: YI_230; SRA: SRS3231011	isolate: San Juan Islands	SINGLE	1729613	1712718
+PRJNA451040_Sebastes-ruberrimus	SRR7079539	sample126	dummy	BioSample: SAMN08991135; Sample name: YCan_442_20130101; SRA: SRS3230996	isolate: Desolation Sound	SINGLE	2203629	2182318
+PRJNA451040_Sebastes-ruberrimus	SRR7079540	sample127	dummy	BioSample: SAMN08991136; Sample name: YCan_442_20130102; SRA: SRS3230994	isolate: Desolation Sound	SINGLE	2154908	2135309
+PRJNA451040_Sebastes-ruberrimus	SRR7079543	sample128	dummy	BioSample: SAMN08991127; Sample name: YCan_442_20130023; SRA: SRS3230991	isolate: Mitlenatach Island	SINGLE	3309737	3275676
+PRJNA451040_Sebastes-ruberrimus	SRR7079544	sample129	dummy	BioSample: SAMN08991128; Sample name: YCan_442_20130024; SRA: SRS3230990	isolate: Mitlenatach Island	SINGLE	1932507	1914265
+PRJNA451040_Sebastes-ruberrimus	SRR7079545	sample130	dummy	BioSample: SAMN08991133; Sample name: YCan_442_20130099; SRA: SRS3230989	isolate: Desolation Sound	SINGLE	1877060	1857579
+PRJNA451040_Sebastes-ruberrimus	SRR7079546	sample131	dummy	BioSample: SAMN08991134; Sample name: YCan_442_20130100; SRA: SRS3230988	isolate: Desolation Sound	SINGLE	2687497	2660841
+PRJNA451040_Sebastes-ruberrimus	SRR7079547	sample132	dummy	BioSample: SAMN08991131; Sample name: YCan_442_20130027; SRA: SRS3230986	isolate: Mitlenatach Island	SINGLE	955210	948249
+PRJNA451040_Sebastes-ruberrimus	SRR7079548	sample133	dummy	BioSample: SAMN08991132; Sample name: YCan_442_20130098; SRA: SRS3230987	isolate: Desolation Sound	SINGLE	1120164	1109598
+PRJNA451040_Sebastes-ruberrimus	SRR7079550	sample134	dummy	BioSample: SAMN08991075; Sample name: YC_007; SRA: SRS3230984	isolate: Washington coast	SINGLE	707694	698824
+PRJNA451040_Sebastes-ruberrimus	SRR7079551	sample135	dummy	BioSample: SAMN08991076; Sample name: YC_008; SRA: SRS3230983	isolate: Washington coast	SINGLE	1619911	1599152
+PRJNA451040_Sebastes-ruberrimus	SRR7079552	sample136	dummy	BioSample: SAMN08991071; Sample name: YC_002; SRA: SRS3230978	isolate: Washington coast	SINGLE	1501058	1482293
+PRJNA451040_Sebastes-ruberrimus	SRR7079553	sample137	dummy	BioSample: SAMN08991072; Sample name: YC_004; SRA: SRS3230981	isolate: Washington coast	SINGLE	1006971	993353
+PRJNA451040_Sebastes-ruberrimus	SRR7079554	sample138	dummy	BioSample: SAMN08991073; Sample name: YC_005; SRA: SRS3230980	isolate: Washington coast	SINGLE	833615	822162
+PRJNA451040_Sebastes-ruberrimus	SRR7079555	sample139	dummy	BioSample: SAMN08991074; Sample name: YC_006; SRA: SRS3230979	isolate: Washington coast	SINGLE	989263	975472
+PRJNA451040_Sebastes-ruberrimus	SRR7079559	sample140	dummy	BioSample: SAMN08991070; Sample name: YC_001; SRA: SRS3230974	isolate: Washington coast	SINGLE	623533	615894
+PRJNA451040_Sebastes-ruberrimus	SRR7079572	sample141	dummy	BioSample: SAMN08991126; Sample name: YCan_4; SRA: SRS3230961	isolate: Gordon Channel	SINGLE	2089114	2066171
+PRJNA451040_Sebastes-ruberrimus	SRR7079573	sample142	dummy	BioSample: SAMN08991125; Sample name: YCan_2; SRA: SRS3230959	isolate: Vancouver Island	SINGLE	1609291	1593191
+PRJNA451040_Sebastes-ruberrimus	SRR7079574	sample143	dummy	BioSample: SAMN08991118; Sample name: YC_2012_78; SRA: SRS3230960	isolate: Washington coast	SINGLE	570529	566255
+PRJNA451040_Sebastes-ruberrimus	SRR7079575	sample144	dummy	BioSample: SAMN08991117; Sample name: YC_2012_77_combined; SRA: SRS3230958	isolate: Washington coast	SINGLE	1305800	1294298
+PRJNA451040_Sebastes-ruberrimus	SRR7079576	sample145	dummy	BioSample: SAMN08991120; Sample name: YC_20120073; SRA: SRS3230957	isolate: Washington coast	SINGLE	839177	830768
+PRJNA451040_Sebastes-ruberrimus	SRR7079577	sample146	dummy	BioSample: SAMN08991119; Sample name: YC_2012_83; SRA: SRS3230956	isolate: Washington coast	SINGLE	606179	605876
+PRJNA451040_Sebastes-ruberrimus	SRR7079578	sample147	dummy	BioSample: SAMN08991122; Sample name: YC_2013_51; SRA: SRS3230954	isolate: Washington coast	SINGLE	852791	844554
+PRJNA451040_Sebastes-ruberrimus	SRR7079579	sample148	dummy	BioSample: SAMN08991121; Sample name: YC_2013_49; SRA: SRS3230955	isolate: Washington coast	SINGLE	2089266	2071482
+PRJNA451040_Sebastes-ruberrimus	SRR7079580	sample149	dummy	BioSample: SAMN08991124; Sample name: YC_503; SRA: SRS3230952	isolate: Washington coast	SINGLE	3641614	3574590
+PRJNA451040_Sebastes-ruberrimus	SRR7079581	sample150	dummy	BioSample: SAMN08991123; Sample name: YC_502; SRA: SRS3230953	isolate: Washington coast	SINGLE	4418036	4348227

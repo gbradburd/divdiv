@@ -1,0 +1,274 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA373825_Paracentrotus-lividus	SRR5266202	sample0	dummy	BioSample: SAMN06315316; Sample name: TUN_pl49; SRA: SRS1986545	isolate: Sample number 49 collected in Tunisia	SINGLE	5940595	5819004
+PRJNA373825_Paracentrotus-lividus	SRR5266203	sample1	dummy	BioSample: SAMN06315315; Sample name: TUN_pl48; SRA: SRS1986546	isolate: Sample number 48 collected in Tunisia	SINGLE	5738635	5629475
+PRJNA373825_Paracentrotus-lividus	SRR5266204	sample2	dummy	BioSample: SAMN06315314; Sample name: TUN_pl47; SRA: SRS1986547	isolate: Sample number 47 collected in Tunisia	SINGLE	5726882	5615851
+PRJNA373825_Paracentrotus-lividus	SRR5266205	sample3	dummy	BioSample: SAMN06315313; Sample name: TUN_pl46; SRA: SRS1986548	isolate: Sample number 46 collected in Tunisia	SINGLE	3606385	3519165
+PRJNA373825_Paracentrotus-lividus	SRR5266206	sample4	dummy	BioSample: SAMN06315312; Sample name: TUN_pl44; SRA: SRS1986549	isolate: Sample number 44 collected in Tunisia	SINGLE	3842814	3752916
+PRJNA373825_Paracentrotus-lividus	SRR5266207	sample5	dummy	BioSample: SAMN06315311; Sample name: TUN_pl42; SRA: SRS1986550	isolate: Sample number 42 collected in Tunisia	SINGLE	5275304	5169936
+PRJNA373825_Paracentrotus-lividus	SRR5266208	sample6	dummy	BioSample: SAMN06315310; Sample name: TUN_pl41; SRA: SRS1986551	isolate: Sample number 41 collected in Tunisia	SINGLE	5560147	5456688
+PRJNA373825_Paracentrotus-lividus	SRR5266209	sample7	dummy	BioSample: SAMN06315309; Sample name: TUN_pl39; SRA: SRS1986552	isolate: Sample number 39 collected in Tunisia	SINGLE	5251461	5148680
+PRJNA373825_Paracentrotus-lividus	SRR5266210	sample8	dummy	BioSample: SAMN06315308; Sample name: TUN_pl38; SRA: SRS1986553	isolate: Sample number 38 collected in Tunisia	SINGLE	4946210	4841463
+PRJNA373825_Paracentrotus-lividus	SRR5266211	sample9	dummy	BioSample: SAMN06315307; Sample name: TUN_pl36; SRA: SRS1986554	isolate: Sample number 36 collected in Tunisia	SINGLE	5095640	4995042
+PRJNA373825_Paracentrotus-lividus	SRR5266212	sample10	dummy	BioSample: SAMN06315306; Sample name: TUN_pl34; SRA: SRS1986555	isolate: Sample number 34 collected in Tunisia	SINGLE	5012490	4909778
+PRJNA373825_Paracentrotus-lividus	SRR5266213	sample11	dummy	BioSample: SAMN06315305; Sample name: TUN_pl33; SRA: SRS1986556	isolate: Sample number 33 collected in Tunisia	SINGLE	5194149	5085695
+PRJNA373825_Paracentrotus-lividus	SRR5266214	sample12	dummy	BioSample: SAMN06315304; Sample name: TUN_pl32; SRA: SRS1986557	isolate: Sample number 32 collected in Tunisia	SINGLE	3001515	2912016
+PRJNA373825_Paracentrotus-lividus	SRR5266215	sample13	dummy	BioSample: SAMN06315303; Sample name: TUN_pl30; SRA: SRS1986558	isolate: Sample number 30 collected in Tunisia	SINGLE	4724721	4631779
+PRJNA373825_Paracentrotus-lividus	SRR5266216	sample14	dummy	BioSample: SAMN06315302; Sample name: TUN_pl27; SRA: SRS1986559	isolate: Sample number 27 collected in Tunisia	SINGLE	3396107	3332199
+PRJNA373825_Paracentrotus-lividus	SRR5266217	sample15	dummy	BioSample: SAMN06315301; Sample name: TUN_pl25; SRA: SRS1986560	isolate: Sample number 25 collected in Tunisia	SINGLE	3840312	3755501
+PRJNA373825_Paracentrotus-lividus	SRR5266218	sample16	dummy	BioSample: SAMN06315300; Sample name: FR_be_pl6b; SRA: SRS1986561	isolate: Sample number 6b collected in France	SINGLE	5605201	5500414
+PRJNA373825_Paracentrotus-lividus	SRR5266219	sample17	dummy	BioSample: SAMN06315299; Sample name: FR_be_pl4b; SRA: SRS1986562	isolate: Sample number 4b collected in France	SINGLE	4909214	4815111
+PRJNA373825_Paracentrotus-lividus	SRR5266220	sample18	dummy	BioSample: SAMN06315298; Sample name: FR_be_pl2b; SRA: SRS1986563	isolate: Sample number 2b collected in France	SINGLE	3442445	3357362
+PRJNA373825_Paracentrotus-lividus	SRR5266221	sample19	dummy	BioSample: SAMN06315297; Sample name: FR_be_pl24b; SRA: SRS1986564	isolate: Sample number 24b collected in France	SINGLE	4816036	4717462
+PRJNA373825_Paracentrotus-lividus	SRR5266222	sample20	dummy	BioSample: SAMN06315296; Sample name: FR_be_pl21b; SRA: SRS1986565	isolate: Sample number 21b collected in France	SINGLE	5803776	5689735
+PRJNA373825_Paracentrotus-lividus	SRR5266223	sample21	dummy	BioSample: SAMN06315295; Sample name: FR_be_pl1b; SRA: SRS1986566	isolate: Sample number 1b collected in France	SINGLE	4031196	3946964
+PRJNA373825_Paracentrotus-lividus	SRR5266224	sample22	dummy	BioSample: SAMN06315294; Sample name: FR_be_pl19b; SRA: SRS1986567	isolate: Sample number 19b collected in France	SINGLE	4746716	4651719
+PRJNA373825_Paracentrotus-lividus	SRR5266225	sample23	dummy	BioSample: SAMN06315293; Sample name: FR_be_pl18b; SRA: SRS1986568	isolate: Sample number 18b collected in France	SINGLE	4963734	4872453
+PRJNA373825_Paracentrotus-lividus	SRR5266226	sample24	dummy	BioSample: SAMN06315292; Sample name: FR_be_pl17b; SRA: SRS1986569	isolate: Sample number 17b collected in France	SINGLE	4550671	4454301
+PRJNA373825_Paracentrotus-lividus	SRR5266227	sample25	dummy	BioSample: SAMN06315291; Sample name: FR_be_pl16b; SRA: SRS1986570	isolate: Sample number 16b collected in France	SINGLE	3777065	3701316
+PRJNA373825_Paracentrotus-lividus	SRR5266228	sample26	dummy	BioSample: SAMN06315290; Sample name: FR_be_pl12b; SRA: SRS1986571	isolate: Sample number 12b collected in France	SINGLE	4253085	4168079
+PRJNA373825_Paracentrotus-lividus	SRR5266229	sample27	dummy	BioSample: SAMN06315289; Sample name: FR_bd_pl9; SRA: SRS1986572	isolate: Sample number 9 collected in France	SINGLE	4307391	4203354
+PRJNA373825_Paracentrotus-lividus	SRR5266230	sample28	dummy	BioSample: SAMN06315288; Sample name: FR_bd_pl8; SRA: SRS1986573	isolate: Sample number 8 collected in France	SINGLE	4275810	4189822
+PRJNA373825_Paracentrotus-lividus	SRR5266231	sample29	dummy	BioSample: SAMN06315287; Sample name: FR_bd_pl6; SRA: SRS1986574	isolate: Sample number 6 collected in France	SINGLE	5653694	5538127
+PRJNA373825_Paracentrotus-lividus	SRR5266232	sample30	dummy	BioSample: SAMN06315286; Sample name: FR_bd_pl4; SRA: SRS1986575	isolate: Sample number 4 collected in France	SINGLE	5300582	5194519
+PRJNA373825_Paracentrotus-lividus	SRR5266233	sample31	dummy	BioSample: SAMN06315285; Sample name: FR_bd_pl26; SRA: SRS1986576	isolate: Sample number 26 collected in France	SINGLE	5736204	5622971
+PRJNA373825_Paracentrotus-lividus	SRR5266234	sample32	dummy	BioSample: SAMN06315284; Sample name: FR_bd_pl25; SRA: SRS1986577	isolate: Sample number 25 collected in France	SINGLE	3859499	3778874
+PRJNA373825_Paracentrotus-lividus	SRR5266235	sample33	dummy	BioSample: SAMN06315283; Sample name: FR_bd_pl23; SRA: SRS1986578	isolate: Sample number 23 collected in France	SINGLE	3630422	3557326
+PRJNA373825_Paracentrotus-lividus	SRR5266236	sample34	dummy	BioSample: SAMN06315282; Sample name: FR_bd_pl22; SRA: SRS1986579	isolate: Sample number 22 collected in France	SINGLE	4583969	4477524
+PRJNA373825_Paracentrotus-lividus	SRR5266237	sample35	dummy	BioSample: SAMN06315281; Sample name: FR_bd_pl21; SRA: SRS1986580	isolate: Sample number 21 collected in France	SINGLE	4762708	4666001
+PRJNA373825_Paracentrotus-lividus	SRR5266238	sample36	dummy	BioSample: SAMN06315280; Sample name: FR_bd_pl20; SRA: SRS1986581	isolate: Sample number 20 collected in France	SINGLE	4286573	4200833
+PRJNA373825_Paracentrotus-lividus	SRR5266239	sample37	dummy	BioSample: SAMN06315279; Sample name: FR_bd_pl1; SRA: SRS1986582	isolate: Sample number 1 collected in France	SINGLE	5097884	4985645
+PRJNA373825_Paracentrotus-lividus	SRR5266240	sample38	dummy	BioSample: SAMN06315278; Sample name: FR_bd_pl17; SRA: SRS1986583	isolate: Sample number 17 collected in France	SINGLE	4299784	4210171
+PRJNA373825_Paracentrotus-lividus	SRR5266241	sample39	dummy	BioSample: SAMN06315277; Sample name: FR_bd_pl12; SRA: SRS1986584	isolate: Sample number 12 collected in France	SINGLE	5335409	5233027
+PRJNA373825_Paracentrotus-lividus	SRR5266242	sample40	dummy	BioSample: SAMN06315276; Sample name: FR_bd_pl11; SRA: SRS1986585	isolate: Sample number 11 collected in France	SINGLE	5702996	5592201
+PRJNA373825_Paracentrotus-lividus	SRR5266243	sample41	dummy	BioSample: SAMN06315275; Sample name: FR_bd_pl10; SRA: SRS1986586	isolate: Sample number 10 collected in France	SINGLE	5067301	4960681
+PRJNA373825_Paracentrotus-lividus	SRR5266244	sample42	dummy	BioSample: SAMN06315274; Sample name: PC_pl34; SRA: SRS1986587	isolate: Sample number 34 collected in Porto cesareo	SINGLE	5258269	5154967
+PRJNA373825_Paracentrotus-lividus	SRR5266245	sample43	dummy	BioSample: SAMN06315273; Sample name: PC_pl33; SRA: SRS1986588	isolate: Sample number 33 collected in Porto cesareo	SINGLE	5371514	5267880
+PRJNA373825_Paracentrotus-lividus	SRR5266246	sample44	dummy	BioSample: SAMN06315272; Sample name: PC_pl32; SRA: SRS1986589	isolate: Sample number 32 collected in Porto cesareo	SINGLE	5252746	5137602
+PRJNA373825_Paracentrotus-lividus	SRR5266247	sample45	dummy	BioSample: SAMN06315271; Sample name: PC_pl31; SRA: SRS1986590	isolate: Sample number 31 collected in Porto cesareo	SINGLE	5485171	5373445
+PRJNA373825_Paracentrotus-lividus	SRR5266248	sample46	dummy	BioSample: SAMN06315270; Sample name: PC_pl21; SRA: SRS1986591	isolate: Sample number 21 collected in Porto cesareo	SINGLE	4063309	3969613
+PRJNA373825_Paracentrotus-lividus	SRR5266249	sample47	dummy	BioSample: SAMN06315269; Sample name: PC_pl18; SRA: SRS1986592	isolate: Sample number 18 collected in Porto cesareo	SINGLE	4600396	4496209
+PRJNA373825_Paracentrotus-lividus	SRR5266250	sample48	dummy	BioSample: SAMN06315268; Sample name: PC_pl17; SRA: SRS1986593	isolate: Sample number 17 collected in Porto cesareo	SINGLE	5538936	5439367
+PRJNA373825_Paracentrotus-lividus	SRR5266251	sample49	dummy	BioSample: SAMN06315267; Sample name: PC_pl16; SRA: SRS1986594	isolate: Sample number 16 collected in Porto cesareo	SINGLE	4887645	4795974
+PRJNA373825_Paracentrotus-lividus	SRR5266252	sample50	dummy	BioSample: SAMN06315266; Sample name: PC_PL9; SRA: SRS1986596	isolate: Sample number 9 collected in Porto cesareo	SINGLE	3968736	3885674
+PRJNA373825_Paracentrotus-lividus	SRR5266253	sample51	dummy	BioSample: SAMN06315265; Sample name: PC_PL7; SRA: SRS1986595	isolate: Sample number 7 collected in Porto cesareo	SINGLE	4081673	3988626
+PRJNA373825_Paracentrotus-lividus	SRR5266254	sample52	dummy	BioSample: SAMN06315264; Sample name: PC_PL5; SRA: SRS1986597	isolate: Sample number 5 collected in Porto cesareo	SINGLE	2576418	2568295
+PRJNA373825_Paracentrotus-lividus	SRR5266255	sample53	dummy	BioSample: SAMN06315263; Sample name: PC_PL4; SRA: SRS1986598	isolate: Sample number 4 collected in Porto cesareo	SINGLE	3103944	3039188
+PRJNA373825_Paracentrotus-lividus	SRR5266256	sample54	dummy	BioSample: SAMN06315262; Sample name: PC_PL3; SRA: SRS1986599	isolate: Sample number 3 collected in Porto cesareo	SINGLE	2954030	2895027
+PRJNA373825_Paracentrotus-lividus	SRR5266257	sample55	dummy	BioSample: SAMN06315261; Sample name: PC_PL37; SRA: SRS1986600	isolate: Sample number 37 collected in Porto cesareo	SINGLE	3383078	3324917
+PRJNA373825_Paracentrotus-lividus	SRR5266258	sample56	dummy	BioSample: SAMN06315260; Sample name: PC_PL36; SRA: SRS1986601	isolate: Sample number 36 collected in Porto cesareo	SINGLE	3443526	3379909
+PRJNA373825_Paracentrotus-lividus	SRR5266259	sample57	dummy	BioSample: SAMN06315259; Sample name: PC_PL35_REPL; SRA: SRS1986602	isolate: Technical replicate of the sample PC_PL35	SINGLE	3895128	3822855
+PRJNA373825_Paracentrotus-lividus	SRR5266260	sample58	dummy	BioSample: SAMN06315258; Sample name: PC_PL35; SRA: SRS1986604	isolate: Sample number 35 collected in Porto cesareo	SINGLE	3527917	3460993
+PRJNA373825_Paracentrotus-lividus	SRR5266261	sample59	dummy	BioSample: SAMN06315257; Sample name: PC_PL2; SRA: SRS1986603	isolate: Sample number 2 collected in Porto cesareo	SINGLE	2203518	2150567
+PRJNA373825_Paracentrotus-lividus	SRR5266262	sample60	dummy	BioSample: SAMN06315256; Sample name: PC_PL27; SRA: SRS1986605	isolate: Sample number 27 collected in Porto cesareo	SINGLE	3277284	3218483
+PRJNA373825_Paracentrotus-lividus	SRR5266263	sample61	dummy	BioSample: SAMN06315255; Sample name: PC_PL26; SRA: SRS1986606	isolate: Sample number 26 collected in Porto cesareo	SINGLE	4050999	3980114
+PRJNA373825_Paracentrotus-lividus	SRR5266264	sample62	dummy	BioSample: SAMN06315254; Sample name: PC_PL25; SRA: SRS1986607	isolate: Sample number 25 collected in Porto cesareo	SINGLE	2360275	2311459
+PRJNA373825_Paracentrotus-lividus	SRR5266265	sample63	dummy	BioSample: SAMN06315253; Sample name: PC_PL24; SRA: SRS1986608	isolate: Sample number 24 collected in Porto cesareo	SINGLE	3698486	3624811
+PRJNA373825_Paracentrotus-lividus	SRR5266266	sample64	dummy	BioSample: SAMN06315252; Sample name: PC_PL23; SRA: SRS1986609	isolate: Sample number 23 collected in Porto cesareo	SINGLE	3242902	3183728
+PRJNA373825_Paracentrotus-lividus	SRR5266267	sample65	dummy	BioSample: SAMN06315251; Sample name: PC_PL22; SRA: SRS1986610	isolate: Sample number 22 collected in Porto cesareo	SINGLE	3488007	3425800
+PRJNA373825_Paracentrotus-lividus	SRR5266268	sample66	dummy	BioSample: SAMN06315250; Sample name: PC_PL20; SRA: SRS1986611	isolate: Sample number 20 collected in Porto cesareo	SINGLE	3672924	3600405
+PRJNA373825_Paracentrotus-lividus	SRR5266269	sample67	dummy	BioSample: SAMN06315249; Sample name: PC_PL1; SRA: SRS1986612	isolate: Sample number 1 collected in Porto cesareo	SINGLE	2584992	2535558
+PRJNA373825_Paracentrotus-lividus	SRR5266270	sample68	dummy	BioSample: SAMN06315248; Sample name: PC_PL19; SRA: SRS1986613	isolate: Sample number 19 collected in Porto cesareo	SINGLE	2876811	2824943
+PRJNA373825_Paracentrotus-lividus	SRR5266271	sample69	dummy	BioSample: SAMN06315247; Sample name: PC_PL12; SRA: SRS1986614	isolate: Sample number 12 collected in Porto cesareo	SINGLE	6700220	6559725
+PRJNA373825_Paracentrotus-lividus	SRR5266272	sample70	dummy	BioSample: SAMN06315246; Sample name: PC_PL11; SRA: SRS1986615	isolate: Sample number 11 collected in Porto cesareo	SINGLE	8991771	8808696
+PRJNA373825_Paracentrotus-lividus	SRR5266273	sample71	dummy	BioSample: SAMN06315245; Sample name: PC_PL10; SRA: SRS1986616	isolate: Sample number 10 collected in Porto cesareo	SINGLE	11619723	11381984
+PRJNA373825_Paracentrotus-lividus	SRR5266274	sample72	dummy	BioSample: SAMN06315244; Sample name: OT_pl50; SRA: SRS1986617	isolate: Sample number 50 collected in Otranto	SINGLE	4755759	4659621
+PRJNA373825_Paracentrotus-lividus	SRR5266275	sample73	dummy	BioSample: SAMN06315243; Sample name: OT_pl49; SRA: SRS1986618	isolate: Sample number 49 collected in Otranto	SINGLE	3407975	3332356
+PRJNA373825_Paracentrotus-lividus	SRR5266276	sample74	dummy	BioSample: SAMN06315242; Sample name: OT_pl41; SRA: SRS1986619	isolate: Sample number 41 collected in Otranto	SINGLE	3986890	3910183
+PRJNA373825_Paracentrotus-lividus	SRR5266277	sample75	dummy	BioSample: SAMN06315241; Sample name: OT_pl34; SRA: SRS1986620	isolate: Sample number 34 collected in Otranto	SINGLE	5586406	5487220
+PRJNA373825_Paracentrotus-lividus	SRR5266278	sample76	dummy	BioSample: SAMN06315240; Sample name: OT_pl33; SRA: SRS1986621	isolate: Sample number 33 collected in Otranto	SINGLE	4876475	4762230
+PRJNA373825_Paracentrotus-lividus	SRR5266279	sample77	dummy	BioSample: SAMN06315239; Sample name: OT_pl30; SRA: SRS1986622	isolate: Sample number 30 collected in Otranto	SINGLE	4763246	4669081
+PRJNA373825_Paracentrotus-lividus	SRR5266280	sample78	dummy	BioSample: SAMN06315238; Sample name: OT_pl29; SRA: SRS1986623	isolate: Sample number 29 collected in Otranto	SINGLE	3811771	3673589
+PRJNA373825_Paracentrotus-lividus	SRR5266281	sample79	dummy	BioSample: SAMN06315237; Sample name: OT_pl27; SRA: SRS1986624	isolate: Sample number 27 collected in Otranto	SINGLE	5080574	4986860
+PRJNA373825_Paracentrotus-lividus	SRR5266282	sample80	dummy	BioSample: SAMN06315236; Sample name: OT_pl16; SRA: SRS1986625	isolate: Sample number 16 collected in Otranto	SINGLE	3573171	3497074
+PRJNA373825_Paracentrotus-lividus	SRR5266283	sample81	dummy	BioSample: SAMN06315235; Sample name: OT_pl15; SRA: SRS1986626	isolate: Sample number 15 collected in Otranto	SINGLE	3716381	3634934
+PRJNA373825_Paracentrotus-lividus	SRR5266284	sample82	dummy	BioSample: SAMN06315234; Sample name: OT_pl14; SRA: SRS1986627	isolate: Sample number 14 collected in Otranto	SINGLE	4723877	4623574
+PRJNA373825_Paracentrotus-lividus	SRR5266285	sample83	dummy	BioSample: SAMN06315233; Sample name: OT_PL9; SRA: SRS1986628	isolate: Sample number 9 collected in Otranto	SINGLE	3659502	3595105
+PRJNA373825_Paracentrotus-lividus	SRR5266286	sample84	dummy	BioSample: SAMN06315232; Sample name: OT_PL8; SRA: SRS1986629	isolate: Sample number 8 collected in Otranto	SINGLE	8984516	8792115
+PRJNA373825_Paracentrotus-lividus	SRR5266287	sample85	dummy	BioSample: SAMN06315231; Sample name: OT_PL7; SRA: SRS1986630	isolate: Sample number 7 collected in Otranto	SINGLE	3522421	3464374
+PRJNA373825_Paracentrotus-lividus	SRR5266288	sample86	dummy	BioSample: SAMN06315230; Sample name: OT_PL6; SRA: SRS1986631	isolate: Sample number 6 collected in Otranto	SINGLE	9289182	9080170
+PRJNA373825_Paracentrotus-lividus	SRR5266289	sample87	dummy	BioSample: SAMN06315229; Sample name: OT_PL5; SRA: SRS1986632	isolate: Sample number 5 collected in Otranto	SINGLE	3608022	3538207
+PRJNA373825_Paracentrotus-lividus	SRR5266290	sample88	dummy	BioSample: SAMN06315228; Sample name: OT_PL45; SRA: SRS1986633	isolate: Sample number 45 collected in Otranto	SINGLE	4031050	3959104
+PRJNA373825_Paracentrotus-lividus	SRR5266291	sample89	dummy	BioSample: SAMN06315227; Sample name: OT_PL39; SRA: SRS1986634	isolate: Sample number 39 collected in Otranto	SINGLE	3268814	3206227
+PRJNA373825_Paracentrotus-lividus	SRR5266292	sample90	dummy	BioSample: SAMN06315226; Sample name: OT_PL38; SRA: SRS1986635	isolate: Sample number 38 collected in Otranto	SINGLE	3464058	3394325
+PRJNA373825_Paracentrotus-lividus	SRR5266293	sample91	dummy	BioSample: SAMN06315225; Sample name: OT_PL32; SRA: SRS1986636	isolate: Sample number 32 collected in Otranto	SINGLE	2092196	2085359
+PRJNA373825_Paracentrotus-lividus	SRR5266294	sample92	dummy	BioSample: SAMN06315224; Sample name: OT_PL31; SRA: SRS1986637	isolate: Sample number 31 collected in Otranto	SINGLE	2926830	2855599
+PRJNA373825_Paracentrotus-lividus	SRR5266295	sample93	dummy	BioSample: SAMN06315223; Sample name: OT_PL26; SRA: SRS1986638	isolate: Sample number 26 collected in Otranto	SINGLE	3401166	3337652
+PRJNA373825_Paracentrotus-lividus	SRR5266296	sample94	dummy	BioSample: SAMN06315222; Sample name: OT_PL25; SRA: SRS1986639	isolate: Sample number 25 collected in Otranto	SINGLE	3349514	3273984
+PRJNA373825_Paracentrotus-lividus	SRR5266297	sample95	dummy	BioSample: SAMN06315221; Sample name: OT_PL23; SRA: SRS1986640	isolate: Sample number 23 collected in Otranto	SINGLE	4554811	4465716
+PRJNA373825_Paracentrotus-lividus	SRR5266298	sample96	dummy	BioSample: SAMN06315220; Sample name: OT_PL22; SRA: SRS1986641	isolate: Sample number 22 collected in Otranto	SINGLE	4275116	4190095
+PRJNA373825_Paracentrotus-lividus	SRR5266299	sample97	dummy	BioSample: SAMN06315219; Sample name: OT_PL20; SRA: SRS1986642	isolate: Sample number 20 collected in Otranto	SINGLE	2991808	2929538
+PRJNA373825_Paracentrotus-lividus	SRR5266300	sample98	dummy	BioSample: SAMN06315218; Sample name: OT_PL1; SRA: SRS1986643	isolate: Sample number 1 collected in Otranto	SINGLE	3634006	3565149
+PRJNA373825_Paracentrotus-lividus	SRR5266301	sample99	dummy	BioSample: SAMN06315217; Sample name: OT_PL19; SRA: SRS1986644	isolate: Sample number 19 collected in Otranto	SINGLE	2593913	2536418
+PRJNA373825_Paracentrotus-lividus	SRR5266302	sample100	dummy	BioSample: SAMN06315216; Sample name: OT_PL11; SRA: SRS1986645	isolate: Sample number 11 collected in Otranto	SINGLE	5851075	5730089
+PRJNA373825_Paracentrotus-lividus	SRR5266303	sample101	dummy	BioSample: SAMN06315215; Sample name: OT_PL10; SRA: SRS1986646	isolate: Sample number 10 collected in Otranto	SINGLE	2016364	2011999
+PRJNA373825_Paracentrotus-lividus	SRR5266304	sample102	dummy	BioSample: SAMN06315214; Sample name: TG_pl43; SRA: SRS1986647	isolate: Sample number 43 collected in Torre Guaceto	SINGLE	4719839	4629488
+PRJNA373825_Paracentrotus-lividus	SRR5266305	sample103	dummy	BioSample: SAMN06315213; Sample name: TG_pl42; SRA: SRS1986648	isolate: Sample number 42 collected in Torre Guaceto	SINGLE	4773812	4675400
+PRJNA373825_Paracentrotus-lividus	SRR5266306	sample104	dummy	BioSample: SAMN06315212; Sample name: TG_pl41; SRA: SRS1986649	isolate: Sample number 41 collected in Torre Guaceto	SINGLE	5438501	5334151
+PRJNA373825_Paracentrotus-lividus	SRR5266307	sample105	dummy	BioSample: SAMN06315211; Sample name: TG_pl40; SRA: SRS1986650	isolate: Sample number 40 collected in Torre Guaceto	SINGLE	4367810	4278881
+PRJNA373825_Paracentrotus-lividus	SRR5266308	sample106	dummy	BioSample: SAMN06315210; Sample name: TG_pl39; SRA: SRS1986651	isolate: Sample number 39 collected in Torre Guaceto	SINGLE	4842304	4742811
+PRJNA373825_Paracentrotus-lividus	SRR5266309	sample107	dummy	BioSample: SAMN06315209; Sample name: TG_pl38; SRA: SRS1986652	isolate: Sample number 38 collected in Torre Guaceto	SINGLE	5164357	5060177
+PRJNA373825_Paracentrotus-lividus	SRR5266310	sample108	dummy	BioSample: SAMN06315208; Sample name: TG_pl35; SRA: SRS1986653	isolate: Sample number 35 collected in Torre Guaceto	SINGLE	3969739	3882796
+PRJNA373825_Paracentrotus-lividus	SRR5266311	sample109	dummy	BioSample: SAMN06315207; Sample name: TG_pl34; SRA: SRS1986655	isolate: Sample number 34 collected in Torre Guaceto	SINGLE	4409305	4321591
+PRJNA373825_Paracentrotus-lividus	SRR5266312	sample110	dummy	BioSample: SAMN06315206; Sample name: TG_pl32; SRA: SRS1986654	isolate: Sample number 32 collected in Torre Guaceto	SINGLE	4378770	4283323
+PRJNA373825_Paracentrotus-lividus	SRR5266313	sample111	dummy	BioSample: SAMN06315205; Sample name: TG_pl31; SRA: SRS1986656	isolate: Sample number 31 collected in Torre Guaceto	SINGLE	5571983	5435289
+PRJNA373825_Paracentrotus-lividus	SRR5266314	sample112	dummy	BioSample: SAMN06315204; Sample name: TG_pl30; SRA: SRS1986657	isolate: Sample number 30 collected in Torre Guaceto	SINGLE	5159007	5048908
+PRJNA373825_Paracentrotus-lividus	SRR5266315	sample113	dummy	BioSample: SAMN06315203; Sample name: TG_pl29; SRA: SRS1986658	isolate: Sample number 29 collected in Torre Guaceto	SINGLE	3877548	3797037
+PRJNA373825_Paracentrotus-lividus	SRR5266316	sample114	dummy	BioSample: SAMN06315202; Sample name: TG_pl28; SRA: SRS1986659	isolate: Sample number 28 collected in Torre Guaceto	SINGLE	4961203	4864038
+PRJNA373825_Paracentrotus-lividus	SRR5266317	sample115	dummy	BioSample: SAMN06315201; Sample name: TG_PL9; SRA: SRS1986660	isolate: Sample number 9 collected in Torre Guaceto	SINGLE	8462855	8287981
+PRJNA373825_Paracentrotus-lividus	SRR5266318	sample116	dummy	BioSample: SAMN06315200; Sample name: TG_PL8; SRA: SRS1986661	isolate: Sample number 8 collected in Torre Guaceto	SINGLE	5527201	5411063
+PRJNA373825_Paracentrotus-lividus	SRR5266319	sample117	dummy	BioSample: SAMN06315199; Sample name: TG_PL7; SRA: SRS1986662	isolate: Sample number 7 collected in Torre Guaceto	SINGLE	4774487	4675679
+PRJNA373825_Paracentrotus-lividus	SRR5266320	sample118	dummy	BioSample: SAMN06315198; Sample name: TG_PL5; SRA: SRS1986663	isolate: Sample number 5 collected in Torre Guaceto	SINGLE	3582715	3511250
+PRJNA373825_Paracentrotus-lividus	SRR5266321	sample119	dummy	BioSample: SAMN06315197; Sample name: TG_PL27; SRA: SRS1986664	isolate: Sample number 27 collected in Torre Guaceto	SINGLE	3218339	3153951
+PRJNA373825_Paracentrotus-lividus	SRR5266322	sample120	dummy	BioSample: SAMN06315196; Sample name: TG_PL26; SRA: SRS1986665	isolate: Sample number 26 collected in Torre Guaceto	SINGLE	3347702	3288078
+PRJNA373825_Paracentrotus-lividus	SRR5266323	sample121	dummy	BioSample: SAMN06315195; Sample name: TG_PL25; SRA: SRS1986666	isolate: Sample number 25 collected in Torre Guaceto	SINGLE	3732293	3660473
+PRJNA373825_Paracentrotus-lividus	SRR5266324	sample122	dummy	BioSample: SAMN06315194; Sample name: TG_PL24; SRA: SRS1986667	isolate: Sample number 24 collected in Torre Guaceto	SINGLE	4339721	4261829
+PRJNA373825_Paracentrotus-lividus	SRR5266325	sample123	dummy	BioSample: SAMN06315193; Sample name: TG_PL23; SRA: SRS1986668	isolate: Sample number 23 collected in Torre Guaceto	SINGLE	3499610	3434467
+PRJNA373825_Paracentrotus-lividus	SRR5266326	sample124	dummy	BioSample: SAMN06315192; Sample name: TG_PL22; SRA: SRS1986669	isolate: Sample number 22 collected in Torre Guaceto	SINGLE	3969057	3899666
+PRJNA373825_Paracentrotus-lividus	SRR5266327	sample125	dummy	BioSample: SAMN06315191; Sample name: TG_PL20; SRA: SRS1986670	isolate: Sample number 20 collected in Torre Guaceto	SINGLE	3371083	3309301
+PRJNA373825_Paracentrotus-lividus	SRR5266328	sample126	dummy	BioSample: SAMN06315190; Sample name: TG_PL19; SRA: SRS1986671	isolate: Sample number 19 collected in Torre Guaceto	SINGLE	3751877	3680150
+PRJNA373825_Paracentrotus-lividus	SRR5266329	sample127	dummy	BioSample: SAMN06315189; Sample name: TG_PL18; SRA: SRS1986672	isolate: Sample number 18 collected in Torre Guaceto	SINGLE	3459823	3399979
+PRJNA373825_Paracentrotus-lividus	SRR5266330	sample128	dummy	BioSample: SAMN06315188; Sample name: TG_PL17; SRA: SRS1986673	isolate: Sample number 17 collected in Torre Guaceto	SINGLE	3482856	3417152
+PRJNA373825_Paracentrotus-lividus	SRR5266331	sample129	dummy	BioSample: SAMN06315187; Sample name: TG_PL16; SRA: SRS1986674	isolate: Sample number 16 collected in Torre Guaceto	SINGLE	3468981	3408088
+PRJNA373825_Paracentrotus-lividus	SRR5266332	sample130	dummy	BioSample: SAMN06315186; Sample name: TG_PL15; SRA: SRS1986675	isolate: Sample number 15 collected in Torre Guaceto	SINGLE	3349344	3289988
+PRJNA373825_Paracentrotus-lividus	SRR5266333	sample131	dummy	BioSample: SAMN06315185; Sample name: TG_PL12; SRA: SRS1986676	isolate: Sample number 12 collected in Torre Guaceto	SINGLE	9101622	8903829
+PRJNA373825_Paracentrotus-lividus	SRR5266334	sample132	dummy	BioSample: SAMN06315184; Sample name: TG_PL10; SRA: SRS1986677	isolate: Sample number 10 collected in Torre Guaceto	SINGLE	6440376	6318230
+PRJNA373825_Paracentrotus-lividus	SRR5266335	sample133	dummy	BioSample: SAMN06315183; Sample name: TR_pl43; SRA: SRS1986678	isolate: Sample number 43 collected in Tremiti islands	SINGLE	4341250	4249233
+PRJNA373825_Paracentrotus-lividus	SRR5266336	sample134	dummy	BioSample: SAMN06315182; Sample name: TR_pl41; SRA: SRS1986679	isolate: Sample number 41 collected in Tremiti islands	SINGLE	4391558	4291558
+PRJNA373825_Paracentrotus-lividus	SRR5266337	sample135	dummy	BioSample: SAMN06315181; Sample name: TR_pl37; SRA: SRS1986680	isolate: Sample number 37 collected in Tremiti islands	SINGLE	4488756	4398035
+PRJNA373825_Paracentrotus-lividus	SRR5266338	sample136	dummy	BioSample: SAMN06315180; Sample name: TR_pl34; SRA: SRS1986681	isolate: Sample number 34 collected in Tremiti islands	SINGLE	4610648	4523323
+PRJNA373825_Paracentrotus-lividus	SRR5266339	sample137	dummy	BioSample: SAMN06315179; Sample name: TR_pl29; SRA: SRS1986682	isolate: Sample number 29 collected in Tremiti islands	SINGLE	3289276	3216943
+PRJNA373825_Paracentrotus-lividus	SRR5266340	sample138	dummy	BioSample: SAMN06315178; Sample name: TR_pl28; SRA: SRS1986683	isolate: Sample number 28 collected in Tremiti islands	SINGLE	4742452	4647803
+PRJNA373825_Paracentrotus-lividus	SRR5266341	sample139	dummy	BioSample: SAMN06315177; Sample name: TR_pl19; SRA: SRS1986684	isolate: Sample number 19 collected in Tremiti islands	SINGLE	4551465	4425454
+PRJNA373825_Paracentrotus-lividus	SRR5266342	sample140	dummy	BioSample: SAMN06315176; Sample name: TR_PL9; SRA: SRS1986685	isolate: Sample number 9 collected in Tremiti islands	SINGLE	3064643	3006877
+PRJNA373825_Paracentrotus-lividus	SRR5266343	sample141	dummy	BioSample: SAMN06315175; Sample name: TR_PL8; SRA: SRS1986686	isolate: Sample number 8 collected in Tremiti islands	SINGLE	5452908	5325138
+PRJNA373825_Paracentrotus-lividus	SRR5266344	sample142	dummy	BioSample: SAMN06315174; Sample name: TR_PL7; SRA: SRS1986687	isolate: Sample number 7 collected in Tremiti islands	SINGLE	4165962	4073103
+PRJNA373825_Paracentrotus-lividus	SRR5266345	sample143	dummy	BioSample: SAMN06315173; Sample name: TR_PL6; SRA: SRS1986688	isolate: Sample number 6 collected in Tremiti islands	SINGLE	4689392	4587353
+PRJNA373825_Paracentrotus-lividus	SRR5266346	sample144	dummy	BioSample: SAMN06315172; Sample name: TR_PL48; SRA: SRS1986689	isolate: Sample number 48 collected in Tremiti islands	SINGLE	3822587	3751295
+PRJNA373825_Paracentrotus-lividus	SRR5266347	sample145	dummy	BioSample: SAMN06315171; Sample name: TR_PL47; SRA: SRS1986690	isolate: Sample number 47 collected in Tremiti islands	SINGLE	3645445	3576622
+PRJNA373825_Paracentrotus-lividus	SRR5266348	sample146	dummy	BioSample: SAMN06315170; Sample name: TR_PL3; SRA: SRS1986691	isolate: Sample number 3 collected in Tremiti islands	SINGLE	2745224	2689200
+PRJNA373825_Paracentrotus-lividus	SRR5266349	sample147	dummy	BioSample: SAMN06315169; Sample name: TR_PL39; SRA: SRS1986692	isolate: Sample number 39 collected in Tremiti islands	SINGLE	3509125	3449134
+PRJNA373825_Paracentrotus-lividus	SRR5266350	sample148	dummy	BioSample: SAMN06315168; Sample name: TR_PL33; SRA: SRS1986693	isolate: Sample number 33 collected in Tremiti islands	SINGLE	3190723	3132111
+PRJNA373825_Paracentrotus-lividus	SRR5266351	sample149	dummy	BioSample: SAMN06315167; Sample name: TR_PL31; SRA: SRS1986694	isolate: Sample number 31 collected in Tremiti islands	SINGLE	3765881	3700722
+PRJNA373825_Paracentrotus-lividus	SRR5266352	sample150	dummy	BioSample: SAMN06315166; Sample name: TR_PL30; SRA: SRS1986695	isolate: Sample number 30 collected in Tremiti islands	SINGLE	3574957	3512904
+PRJNA373825_Paracentrotus-lividus	SRR5266353	sample151	dummy	BioSample: SAMN06315165; Sample name: TR_PL2; SRA: SRS1986696	isolate: Sample number 2 collected in Tremiti islands	SINGLE	3498320	3423183
+PRJNA373825_Paracentrotus-lividus	SRR5266354	sample152	dummy	BioSample: SAMN06315164; Sample name: TR_PL27; SRA: SRS1986697	isolate: Sample number 27 collected in Tremiti islands	SINGLE	2999721	2941932
+PRJNA373825_Paracentrotus-lividus	SRR5266355	sample153	dummy	BioSample: SAMN06315163; Sample name: TR_PL26; SRA: SRS1986698	isolate: Sample number 26 collected in Tremiti islands	SINGLE	3056221	2992239
+PRJNA373825_Paracentrotus-lividus	SRR5266356	sample154	dummy	BioSample: SAMN06315162; Sample name: TR_PL24; SRA: SRS1986699	isolate: Sample number 24 collected in Tremiti islands	SINGLE	2527271	2473292
+PRJNA373825_Paracentrotus-lividus	SRR5266357	sample155	dummy	BioSample: SAMN06315161; Sample name: TR_PL23; SRA: SRS1986700	isolate: Sample number 23 collected in Tremiti islands	SINGLE	3559101	3497514
+PRJNA373825_Paracentrotus-lividus	SRR5266358	sample156	dummy	BioSample: SAMN06315160; Sample name: TR_PL22; SRA: SRS1986701	isolate: Sample number 22 collected in Tremiti islands	SINGLE	2914734	2856495
+PRJNA373825_Paracentrotus-lividus	SRR5266359	sample157	dummy	BioSample: SAMN06315159; Sample name: TR_PL20; SRA: SRS1986702	isolate: Sample number 20 collected in Tremiti islands	SINGLE	2802837	2745677
+PRJNA373825_Paracentrotus-lividus	SRR5266360	sample158	dummy	BioSample: SAMN06315158; Sample name: TR_PL17; SRA: SRS1986703	isolate: Sample number 17 collected in Tremiti islands	SINGLE	3536080	3479029
+PRJNA373825_Paracentrotus-lividus	SRR5266361	sample159	dummy	BioSample: SAMN06315157; Sample name: TR_PL16; SRA: SRS1986704	isolate: Sample number 16 collected in Tremiti islands	SINGLE	2849694	2795059
+PRJNA373825_Paracentrotus-lividus	SRR5266362	sample160	dummy	BioSample: SAMN06315156; Sample name: TR_PL14; SRA: SRS1986705	isolate: Sample number 14 collected in Tremiti islands	SINGLE	1511302	1479777
+PRJNA373825_Paracentrotus-lividus	SRR5266363	sample161	dummy	BioSample: SAMN06315155; Sample name: CZ_pl28; SRA: SRS1986706	isolate: Sample number 28 collected in Croatia	SINGLE	3153607	3071889
+PRJNA373825_Paracentrotus-lividus	SRR5266364	sample162	dummy	BioSample: SAMN06315154; Sample name: CZ_pl26; SRA: SRS1986707	isolate: Sample number 26 collected in Croatia	SINGLE	3951641	3850128
+PRJNA373825_Paracentrotus-lividus	SRR5266365	sample163	dummy	BioSample: SAMN06315153; Sample name: CZ_pl25; SRA: SRS1986708	isolate: Sample number 25 collected in Croatia	SINGLE	3327273	3252799
+PRJNA373825_Paracentrotus-lividus	SRR5266366	sample164	dummy	BioSample: SAMN06315152; Sample name: CZ_pl24; SRA: SRS1986709	isolate: Sample number 24 collected in Croatia	SINGLE	5332589	5222291
+PRJNA373825_Paracentrotus-lividus	SRR5266367	sample165	dummy	BioSample: SAMN06315151; Sample name: CZ_pl20; SRA: SRS1986710	isolate: Sample number 20 collected in Croatia	SINGLE	4899027	4803200
+PRJNA373825_Paracentrotus-lividus	SRR5266368	sample166	dummy	BioSample: SAMN06315150; Sample name: CZ_pl18; SRA: SRS1986711	isolate: Sample number 18 collected in Croatia	SINGLE	4741605	4650166
+PRJNA373825_Paracentrotus-lividus	SRR5266369	sample167	dummy	BioSample: SAMN06315149; Sample name: CZ_pl17; SRA: SRS1986712	isolate: Sample number 17 collected in Croatia	SINGLE	4453568	4366633
+PRJNA373825_Paracentrotus-lividus	SRR5266370	sample168	dummy	BioSample: SAMN06315148; Sample name: CZ_PL9; SRA: SRS1986713	isolate: Sample number 9 collected in Croatia	SINGLE	4086495	4011920
+PRJNA373825_Paracentrotus-lividus	SRR5266371	sample169	dummy	BioSample: SAMN06315147; Sample name: CZ_PL8; SRA: SRS1986714	isolate: Sample number 8 collected in Croatia	SINGLE	3588325	3525820
+PRJNA373825_Paracentrotus-lividus	SRR5266372	sample170	dummy	BioSample: SAMN06315146; Sample name: CZ_PL7; SRA: SRS1986715	isolate: Sample number 7 collected in Croatia	SINGLE	1633386	1599480
+PRJNA373825_Paracentrotus-lividus	SRR5266373	sample171	dummy	BioSample: SAMN06315145; Sample name: CZ_PL6; SRA: SRS1986716	isolate: Sample number 6 collected in Croatia	SINGLE	3182069	3124111
+PRJNA373825_Paracentrotus-lividus	SRR5266374	sample172	dummy	BioSample: SAMN06315144; Sample name: CZ_PL5; SRA: SRS1986717	isolate: Sample number 5 collected in Croatia	SINGLE	1381589	1351834
+PRJNA373825_Paracentrotus-lividus	SRR5266375	sample173	dummy	BioSample: SAMN06315143; Sample name: CZ_PL4; SRA: SRS1986718	isolate: Sample number 4 collected in Croatia	SINGLE	1197114	1173030
+PRJNA373825_Paracentrotus-lividus	SRR5266376	sample174	dummy	BioSample: SAMN06315142; Sample name: CZ_PL3; SRA: SRS1986719	isolate: Sample number 3 collected in Croatia	SINGLE	3211061	3156017
+PRJNA373825_Paracentrotus-lividus	SRR5266377	sample175	dummy	BioSample: SAMN06315141; Sample name: CZ_PL31; SRA: SRS1986720	isolate: Sample number 31 collected in Croatia	SINGLE	2920938	2868256
+PRJNA373825_Paracentrotus-lividus	SRR5266378	sample176	dummy	BioSample: SAMN06315140; Sample name: CZ_PL30; SRA: SRS1986721	isolate: Sample number 30 collected in Croatia	SINGLE	2548568	2493183
+PRJNA373825_Paracentrotus-lividus	SRR5266379	sample177	dummy	BioSample: SAMN06315139; Sample name: CZ_PL2; SRA: SRS1986722	isolate: Sample number 2 collected in Croatia	SINGLE	3130806	3075707
+PRJNA373825_Paracentrotus-lividus	SRR5266380	sample178	dummy	BioSample: SAMN06315138; Sample name: CZ_PL27; SRA: SRS1986723	isolate: Sample number 27 collected in Croatia	SINGLE	3204292	3149347
+PRJNA373825_Paracentrotus-lividus	SRR5266381	sample179	dummy	BioSample: SAMN06315137; Sample name: CZ_PL23; SRA: SRS1986724	isolate: Sample number 23 collected in Croatia	SINGLE	3235647	3179191
+PRJNA373825_Paracentrotus-lividus	SRR5266382	sample180	dummy	BioSample: SAMN06315136; Sample name: CZ_PL1; SRA: SRS1986725	isolate: Sample number 1 collected in Croatia	SINGLE	1650472	1613281
+PRJNA373825_Paracentrotus-lividus	SRR5266383	sample181	dummy	BioSample: SAMN06315135; Sample name: CZ_PL16; SRA: SRS1986726	isolate: Sample number 16 collected in Croatia	SINGLE	3862403	3793090
+PRJNA373825_Paracentrotus-lividus	SRR5266384	sample182	dummy	BioSample: SAMN06315134; Sample name: CZ_PL14; SRA: SRS1986727	isolate: Sample number 14 collected in Croatia	SINGLE	2772244	2725475
+PRJNA373825_Paracentrotus-lividus	SRR5266385	sample183	dummy	BioSample: SAMN06315133; Sample name: CZ_PL13; SRA: SRS1986728	isolate: Sample number 13 collected in Croatia	SINGLE	1356700	1327725
+PRJNA373825_Paracentrotus-lividus	SRR5266386	sample184	dummy	BioSample: SAMN06315132; Sample name: CZ_PL12; SRA: SRS1986729	isolate: Sample number 12 collected in Croatia	SINGLE	3380400	3322419
+PRJNA373825_Paracentrotus-lividus	SRR5266387	sample185	dummy	BioSample: SAMN06315131; Sample name: CZ_PL11; SRA: SRS1986730	isolate: Sample number 11 collected in Croatia	SINGLE	1328292	1300384
+PRJNA373825_Paracentrotus-lividus	SRR5266388	sample186	dummy	BioSample: SAMN06315130; Sample name: CZ_PL10; SRA: SRS1986731	isolate: Sample number 10 collected in Croatia	SINGLE	1128437	1103551
+PRJNA373825_Paracentrotus-lividus	SRR5266389	sample187	dummy	BioSample: SAMN06315129; Sample name: MN_pl43; SRA: SRS1986732	isolate: Sample number 43 collected in Montenegro	SINGLE	4386872	4303132
+PRJNA373825_Paracentrotus-lividus	SRR5266390	sample188	dummy	BioSample: SAMN06315128; Sample name: MN_pl41; SRA: SRS1986733	isolate: Sample number 41 collected in Montenegro	SINGLE	5247443	5147926
+PRJNA373825_Paracentrotus-lividus	SRR5266391	sample189	dummy	BioSample: SAMN06315127; Sample name: MN_pl29; SRA: SRS1986734	isolate: Sample number 29 collected in Montenegro	SINGLE	4811826	4709619
+PRJNA373825_Paracentrotus-lividus	SRR5266392	sample190	dummy	BioSample: SAMN06315126; Sample name: MN_pl23; SRA: SRS1986735	isolate: Sample number 23 collected in Montenegro	SINGLE	4555737	4468945
+PRJNA373825_Paracentrotus-lividus	SRR5266393	sample191	dummy	BioSample: SAMN06315125; Sample name: MN_pl22; SRA: SRS1986736	isolate: Sample number 22 collected in Montenegro	SINGLE	5094500	4999074
+PRJNA373825_Paracentrotus-lividus	SRR5266394	sample192	dummy	BioSample: SAMN06315124; Sample name: MN_pl18; SRA: SRS1986737	isolate: Sample number 18 collected in Montenegro	SINGLE	4550461	4456319
+PRJNA373825_Paracentrotus-lividus	SRR5266395	sample193	dummy	BioSample: SAMN06315123; Sample name: MN_PL9; SRA: SRS1986738	isolate: Sample number 9 collected in Montenegro	SINGLE	2475518	2425935
+PRJNA373825_Paracentrotus-lividus	SRR5266396	sample194	dummy	BioSample: SAMN06315122; Sample name: MN_PL7; SRA: SRS1986739	isolate: Sample number 7 collected in Montenegro	SINGLE	1081765	1058827
+PRJNA373825_Paracentrotus-lividus	SRR5266397	sample195	dummy	BioSample: SAMN06315121; Sample name: MN_PL6; SRA: SRS1986740	isolate: Sample number 6 collected in Montenegro	SINGLE	1135602	1111207
+PRJNA373825_Paracentrotus-lividus	SRR5266398	sample196	dummy	BioSample: SAMN06315120; Sample name: MN_PL4; SRA: SRS1986741	isolate: Sample number 4 collected in Montenegro	SINGLE	3391829	3321839
+PRJNA373825_Paracentrotus-lividus	SRR5266399	sample197	dummy	BioSample: SAMN06315119; Sample name: MN_PL3; SRA: SRS1986742	isolate: Sample number 3 collected in Montenegro	SINGLE	1453301	1448271
+PRJNA373825_Paracentrotus-lividus	SRR5266400	sample198	dummy	BioSample: SAMN06315118; Sample name: MN_PL39; SRA: SRS1986743	isolate: Sample number 39 collected in Montenegro	SINGLE	3147826	3091894
+PRJNA373825_Paracentrotus-lividus	SRR5266401	sample199	dummy	BioSample: SAMN06315117; Sample name: MN_PL36; SRA: SRS1986744	isolate: Sample number 36 collected in Montenegro	SINGLE	3053180	3000243
+PRJNA373825_Paracentrotus-lividus	SRR5266402	sample200	dummy	BioSample: SAMN06315116; Sample name: MN_PL35; SRA: SRS1986745	isolate: Sample number 35 collected in Montenegro	SINGLE	2708847	2655617
+PRJNA373825_Paracentrotus-lividus	SRR5266403	sample201	dummy	BioSample: SAMN06315115; Sample name: MN_PL34; SRA: SRS1986746	isolate: Sample number 34 collected in Montenegro	SINGLE	3728342	3658831
+PRJNA373825_Paracentrotus-lividus	SRR5266404	sample202	dummy	BioSample: SAMN06315114; Sample name: MN_PL33; SRA: SRS1986747	isolate: Sample number 33 collected in Montenegro	SINGLE	3564937	3502803
+PRJNA373825_Paracentrotus-lividus	SRR5266405	sample203	dummy	BioSample: SAMN06315113; Sample name: MN_PL31; SRA: SRS1986748	isolate: Sample number 31 collected in Montenegro	SINGLE	3766434	3704319
+PRJNA373825_Paracentrotus-lividus	SRR5266406	sample204	dummy	BioSample: SAMN06315112; Sample name: MN_PL2; SRA: SRS1986749	isolate: Sample number 2 collected in Montenegro	SINGLE	1306744	1302715
+PRJNA373825_Paracentrotus-lividus	SRR5266407	sample205	dummy	BioSample: SAMN06315111; Sample name: MN_PL27; SRA: SRS1986750	isolate: Sample number 27 collected in Montenegro	SINGLE	3406630	3348292
+PRJNA373825_Paracentrotus-lividus	SRR5266408	sample206	dummy	BioSample: SAMN06315110; Sample name: MN_PL26; SRA: SRS1986751	isolate: Sample number 26 collected in Montenegro	SINGLE	3637816	3577719
+PRJNA373825_Paracentrotus-lividus	SRR5266409	sample207	dummy	BioSample: SAMN06315109; Sample name: MN_PL25; SRA: SRS1986752	isolate: Sample number 25 collected in Montenegro	SINGLE	2931244	2872459
+PRJNA373825_Paracentrotus-lividus	SRR5266410	sample208	dummy	BioSample: SAMN06315108; Sample name: MN_PL24; SRA: SRS1986753	isolate: Sample number 24 collected in Montenegro	SINGLE	3305299	3246413
+PRJNA373825_Paracentrotus-lividus	SRR5266411	sample209	dummy	BioSample: SAMN06315107; Sample name: MN_PL13; SRA: SRS1986754	isolate: Sample number 13 collected in Montenegro	SINGLE	3554706	3484348
+PRJNA373825_Paracentrotus-lividus	SRR5266412	sample210	dummy	BioSample: SAMN06315106; Sample name: MN_PL11; SRA: SRS1986755	isolate: Sample number 11 collected in Montenegro	SINGLE	2726915	2669931
+PRJNA373825_Paracentrotus-lividus	SRR5266413	sample211	dummy	BioSample: SAMN06315105; Sample name: MN_PL10; SRA: SRS1986756	isolate: Sample number 10 collected in Montenegro	SINGLE	3047907	2980394
+PRJNA373825_Paracentrotus-lividus	SRR5266414	sample212	dummy	BioSample: SAMN06315104; Sample name: ALB_pl50; SRA: SRS1986757	isolate: Sample number 50 collected in Albania	SINGLE	3956864	3884491
+PRJNA373825_Paracentrotus-lividus	SRR5266415	sample213	dummy	BioSample: SAMN06315103; Sample name: ALB_pl49; SRA: SRS1986758	isolate: Sample number 49 collected in Albania	SINGLE	4868871	4775897
+PRJNA373825_Paracentrotus-lividus	SRR5266416	sample214	dummy	BioSample: SAMN06315102; Sample name: ALB_pl48; SRA: SRS1986759	isolate: Sample number 48 collected in Albania	SINGLE	4870147	4772607
+PRJNA373825_Paracentrotus-lividus	SRR5266417	sample215	dummy	BioSample: SAMN06315101; Sample name: ALB_pl44; SRA: SRS1986760	isolate: Sample number 44 collected in Albania	SINGLE	3941016	3869427
+PRJNA373825_Paracentrotus-lividus	SRR5266418	sample216	dummy	BioSample: SAMN06315100; Sample name: ALB_pl43; SRA: SRS1986761	isolate: Sample number 43 collected in Albania	SINGLE	4250806	4163169
+PRJNA373825_Paracentrotus-lividus	SRR5266419	sample217	dummy	BioSample: SAMN06315099; Sample name: ALB_pl42; SRA: SRS1986762	isolate: Sample number 42 collected in Albania	SINGLE	4601948	4512240
+PRJNA373825_Paracentrotus-lividus	SRR5266420	sample218	dummy	BioSample: SAMN06315098; Sample name: ALB_pl40; SRA: SRS1986763	isolate: Sample number 40 collected in Albania	SINGLE	4788177	4680035
+PRJNA373825_Paracentrotus-lividus	SRR5266421	sample219	dummy	BioSample: SAMN06315097; Sample name: ALB_pl39; SRA: SRS1986764	isolate: Sample number 39 collected in Albania	SINGLE	4078863	3995451
+PRJNA373825_Paracentrotus-lividus	SRR5266422	sample220	dummy	BioSample: SAMN06315096; Sample name: ALB_pl38; SRA: SRS1986765	isolate: Sample number 38 collected in Albania	SINGLE	4569817	4467078
+PRJNA373825_Paracentrotus-lividus	SRR5266423	sample221	dummy	BioSample: SAMN06315095; Sample name: ALB_pl37; SRA: SRS1986766	isolate: Sample number 37 collected in Albania	SINGLE	4383377	4296188
+PRJNA373825_Paracentrotus-lividus	SRR5266424	sample222	dummy	BioSample: SAMN06315094; Sample name: ALB_pl36; SRA: SRS1986767	isolate: Sample number 36 collected in Albania	SINGLE	4489391	4378081
+PRJNA373825_Paracentrotus-lividus	SRR5266425	sample223	dummy	BioSample: SAMN06315093; Sample name: ALB_PL9; SRA: SRS1986768	isolate: Sample number 9 collected in Albania	SINGLE	1641444	1635018
+PRJNA373825_Paracentrotus-lividus	SRR5266426	sample224	dummy	BioSample: SAMN06315092; Sample name: ALB_PL8; SRA: SRS1986769	isolate: Sample number 8 collected in Albania	SINGLE	2599485	2544766
+PRJNA373825_Paracentrotus-lividus	SRR5266427	sample225	dummy	BioSample: SAMN06315091; Sample name: ALB_PL6; SRA: SRS1986770	isolate: Sample number 6 collected in Albania	SINGLE	5035674	4927548
+PRJNA373825_Paracentrotus-lividus	SRR5266428	sample226	dummy	BioSample: SAMN06315090; Sample name: ALB_PL4; SRA: SRS1986771	isolate: Sample number 4 collected in Albania	SINGLE	4279897	4191880
+PRJNA373825_Paracentrotus-lividus	SRR5266429	sample227	dummy	BioSample: SAMN06315089; Sample name: ALB_PL33; SRA: SRS1986772	isolate: Sample number 33 collected in Albania	SINGLE	2659283	2616323
+PRJNA373825_Paracentrotus-lividus	SRR5266430	sample228	dummy	BioSample: SAMN06315088; Sample name: ALB_PL31; SRA: SRS1986773	isolate: Sample number 31 collected in Albania	SINGLE	2953540	2903233
+PRJNA373825_Paracentrotus-lividus	SRR5266431	sample229	dummy	BioSample: SAMN06315087; Sample name: ALB_PL30; SRA: SRS1986774	isolate: Sample number 30 collected in Albania	SINGLE	2886749	2837243
+PRJNA373825_Paracentrotus-lividus	SRR5266432	sample230	dummy	BioSample: SAMN06315086; Sample name: ALB_PL28; SRA: SRS1986775	isolate: Sample number 28 collected in Albania	SINGLE	3253238	3197034
+PRJNA373825_Paracentrotus-lividus	SRR5266433	sample231	dummy	BioSample: SAMN06315085; Sample name: ALB_PL26; SRA: SRS1986776	isolate: Sample number 26 collected in Albania	SINGLE	3051519	2998837
+PRJNA373825_Paracentrotus-lividus	SRR5266434	sample232	dummy	BioSample: SAMN06315084; Sample name: ALB_PL25; SRA: SRS1986777	isolate: Sample number 25 collected in Albania	SINGLE	3231894	3170427
+PRJNA373825_Paracentrotus-lividus	SRR5266435	sample233	dummy	BioSample: SAMN06315083; Sample name: ALB_PL21; SRA: SRS1986778	isolate: Sample number 21 collected in Albania	SINGLE	3410618	3340457
+PRJNA373825_Paracentrotus-lividus	SRR5266436	sample234	dummy	BioSample: SAMN06315082; Sample name: ALB_PL20; SRA: SRS1986779	isolate: Sample number 20 collected in Albania	SINGLE	3390438	3330108
+PRJNA373825_Paracentrotus-lividus	SRR5266437	sample235	dummy	BioSample: SAMN06315081; Sample name: ALB_PL19; SRA: SRS1986780	isolate: Sample number 19 collected in Albania	SINGLE	3285330	3224120
+PRJNA373825_Paracentrotus-lividus	SRR5266438	sample236	dummy	BioSample: SAMN06315080; Sample name: ALB_PL18; SRA: SRS1986781	isolate: Sample number 18 collected in Albania	SINGLE	3593400	3534064
+PRJNA373825_Paracentrotus-lividus	SRR5266439	sample237	dummy	BioSample: SAMN06315079; Sample name: ALB_PL17; SRA: SRS1986782	isolate: Sample number 17 collected in Albania	SINGLE	3190358	3133091
+PRJNA373825_Paracentrotus-lividus	SRR5266440	sample238	dummy	BioSample: SAMN06315078; Sample name: ALB_PL16; SRA: SRS1986783	isolate: Sample number 16 collected in Albania	SINGLE	3559785	3498467
+PRJNA373825_Paracentrotus-lividus	SRR5266441	sample239	dummy	BioSample: SAMN06315077; Sample name: ALB_PL14; SRA: SRS1986784	isolate: Sample number 14 collected in Albania	SINGLE	1773697	1737682
+PRJNA373825_Paracentrotus-lividus	SRR5266442	sample240	dummy	BioSample: SAMN06315076; Sample name: ALB_PL13; SRA: SRS1986785	isolate: Sample number 13 collected in Albania	SINGLE	1730674	1693876
+PRJNA373825_Paracentrotus-lividus	SRR5266443	sample241	dummy	BioSample: SAMN06315075; Sample name: ALB_PL12; SRA: SRS1986786	isolate: Sample number 12 collected in Albania	SINGLE	1430199	1398888
+PRJNA373825_Paracentrotus-lividus	SRR5266444	sample242	dummy	BioSample: SAMN06315074; Sample name: GR_pl50; SRA: SRS1986787	isolate: Sample number 50 collected in Greece	SINGLE	4105725	4030719
+PRJNA373825_Paracentrotus-lividus	SRR5266445	sample243	dummy	BioSample: SAMN06315073; Sample name: GR_pl49; SRA: SRS1986788	isolate: Sample number 49 collected in Greece	SINGLE	5177361	5065038
+PRJNA373825_Paracentrotus-lividus	SRR5266446	sample244	dummy	BioSample: SAMN06315072; Sample name: GR_pl48; SRA: SRS1986789	isolate: Sample number 48 collected in Greece	SINGLE	5021133	4921678
+PRJNA373825_Paracentrotus-lividus	SRR5266447	sample245	dummy	BioSample: SAMN06315071; Sample name: GR_pl47; SRA: SRS1986790	isolate: Sample number 47 collected in Greece	SINGLE	4953108	4842231
+PRJNA373825_Paracentrotus-lividus	SRR5266448	sample246	dummy	BioSample: SAMN06315070; Sample name: GR_pl45; SRA: SRS1986791	isolate: Sample number 45 collected in Greece	SINGLE	5125498	5029885
+PRJNA373825_Paracentrotus-lividus	SRR5266449	sample247	dummy	BioSample: SAMN06315069; Sample name: GR_pl40; SRA: SRS1986792	isolate: Sample number 40 collected in Greece	SINGLE	5491008	5374477
+PRJNA373825_Paracentrotus-lividus	SRR5266450	sample248	dummy	BioSample: SAMN06315068; Sample name: GR_pl33; SRA: SRS1986793	isolate: Sample number 33 collected in Greece	SINGLE	4888140	4792415
+PRJNA373825_Paracentrotus-lividus	SRR5266451	sample249	dummy	BioSample: SAMN06315067; Sample name: GR_pl24; SRA: SRS1986794	isolate: Sample number 24 collected in Greece	SINGLE	4529331	4441071
+PRJNA373825_Paracentrotus-lividus	SRR5266452	sample250	dummy	BioSample: SAMN06315066; Sample name: GR_pl23; SRA: SRS1986795	isolate: Sample number 23 collected in Greece	SINGLE	3673307	3606083
+PRJNA373825_Paracentrotus-lividus	SRR5266453	sample251	dummy	BioSample: SAMN06315065; Sample name: GR_pl22; SRA: SRS1986796	isolate: Sample number 22 collected in Greece	SINGLE	4298604	4220663
+PRJNA373825_Paracentrotus-lividus	SRR5266454	sample252	dummy	BioSample: SAMN06315064; Sample name: GR_pl16; SRA: SRS1986797	isolate: Sample number 16 collected in Greece	SINGLE	3932957	3850297
+PRJNA373825_Paracentrotus-lividus	SRR5266455	sample253	dummy	BioSample: SAMN06315063; Sample name: GR_pl15; SRA: SRS1986798	isolate: Sample number 15 collected in Greece	SINGLE	4997782	4897423
+PRJNA373825_Paracentrotus-lividus	SRR5266456	sample254	dummy	BioSample: SAMN06315062; Sample name: GR_PL8; SRA: SRS1986799	isolate: Sample number 8 collected in Greece	SINGLE	1078842	1056324
+PRJNA373825_Paracentrotus-lividus	SRR5266457	sample255	dummy	BioSample: SAMN06315061; Sample name: GR_PL7; SRA: SRS1986800	isolate: Sample number 7 collected in Greece	SINGLE	1032771	1011207
+PRJNA373825_Paracentrotus-lividus	SRR5266458	sample256	dummy	BioSample: SAMN06315060; Sample name: GR_PL6; SRA: SRS1986801	isolate: Sample number 6 collected in Greece	SINGLE	1351892	1324045
+PRJNA373825_Paracentrotus-lividus	SRR5266459	sample257	dummy	BioSample: SAMN06315059; Sample name: GR_PL4; SRA: SRS1986802	isolate: Sample number 4 collected in Greece	SINGLE	1323139	1292373
+PRJNA373825_Paracentrotus-lividus	SRR5266460	sample258	dummy	BioSample: SAMN06315058; Sample name: GR_PL44; SRA: SRS1986803	isolate: Sample number 44 collected in Greece	SINGLE	3326204	3273865
+PRJNA373825_Paracentrotus-lividus	SRR5266461	sample259	dummy	BioSample: SAMN06315057; Sample name: GR_PL43; SRA: SRS1986804	isolate: Sample number 43 collected in Greece	SINGLE	3268717	3205632
+PRJNA373825_Paracentrotus-lividus	SRR5266462	sample260	dummy	BioSample: SAMN06315056; Sample name: GR_PL42; SRA: SRS1986805	isolate: Sample number 42 collected in Greece	SINGLE	2861801	2807080
+PRJNA373825_Paracentrotus-lividus	SRR5266463	sample261	dummy	BioSample: SAMN06315055; Sample name: GR_PL3; SRA: SRS1986806	isolate: Sample number 3 collected in Greece	SINGLE	1393523	1363021
+PRJNA373825_Paracentrotus-lividus	SRR5266464	sample262	dummy	BioSample: SAMN06315054; Sample name: GR_PL39; SRA: SRS1986807	isolate: Sample number 39 collected in Greece	SINGLE	2573773	2528832
+PRJNA373825_Paracentrotus-lividus	SRR5266465	sample263	dummy	BioSample: SAMN06315053; Sample name: GR_PL38; SRA: SRS1986808	isolate: Sample number 38 collected in Greece	SINGLE	2953657	2898970
+PRJNA373825_Paracentrotus-lividus	SRR5266466	sample264	dummy	BioSample: SAMN06315052; Sample name: GR_PL35; SRA: SRS1986809	isolate: Sample number 35 collected in Greece	SINGLE	3267471	3207352
+PRJNA373825_Paracentrotus-lividus	SRR5266467	sample265	dummy	BioSample: SAMN06315051; Sample name: GR_PL34; SRA: SRS1986810	isolate: Sample number 34 collected in Greece	SINGLE	3595153	3524801
+PRJNA373825_Paracentrotus-lividus	SRR5266468	sample266	dummy	BioSample: SAMN06315050; Sample name: GR_PL30; SRA: SRS1986811	isolate: Sample number 30 collected in Greece	SINGLE	3181803	3113283
+PRJNA373825_Paracentrotus-lividus	SRR5266469	sample267	dummy	BioSample: SAMN06315049; Sample name: GR_PL2; SRA: SRS1986812	isolate: Sample number 2 collected in Greece	SINGLE	2364213	2313593
+PRJNA373825_Paracentrotus-lividus	SRR5266470	sample268	dummy	BioSample: SAMN06315048; Sample name: GR_PL28; SRA: SRS1986813	isolate: Sample number 28 collected in Greece	SINGLE	3097459	3045950
+PRJNA373825_Paracentrotus-lividus	SRR5266471	sample269	dummy	BioSample: SAMN06315047; Sample name: GR_PL26; SRA: SRS1986814	isolate: Sample number 26 collected in Greece	SINGLE	3114135	3061246
+PRJNA373825_Paracentrotus-lividus	SRR5266472	sample270	dummy	BioSample: SAMN06315046; Sample name: GR_PL21; SRA: SRS1986815	isolate: Sample number 21 collected in Greece	SINGLE	2916772	2867072
+PRJNA373825_Paracentrotus-lividus	SRR5266473	sample271	dummy	BioSample: SAMN06315045; Sample name: GR_PL20; SRA: SRS1986816	isolate: Sample number 20 collected in Greece	SINGLE	3403511	3345445
+PRJNA373825_Paracentrotus-lividus	SRR5266474	sample272	dummy	BioSample: SAMN06315044; Sample name: GR_PL19; SRA: SRS1986817	isolate: Sample number 19 collected in Greece	SINGLE	2754199	2699131

@@ -1,0 +1,121 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA316872_Sebastes-rastrelliger	SRR4037216	sample0	dummy	BioSample: SAMN04931687; Sample name: SR0016; SRA: SRS1478013	ecotype: Brookings	PAIRED	3758507	3447617
+PRJNA316872_Sebastes-rastrelliger	SRR4037263	sample1	dummy	BioSample: SAMN04931777; Sample name: SR0191; SRA: SRS1478015	ecotype: San Diego	PAIRED	4733722	4274775
+PRJNA316872_Sebastes-rastrelliger	SRR4037345	sample2	dummy	BioSample: SAMN04931677; Sample name: SR0001; SRA: SRS1478012	ecotype: Brookings	PAIRED	3414659	3220274
+PRJNA316872_Sebastes-rastrelliger	SRR4037483	sample3	dummy	BioSample: SAMN04931779; Sample name: SR0193; SRA: SRS1478016	ecotype: San Diego	PAIRED	4483046	4043971
+PRJNA316872_Sebastes-rastrelliger	SRR4037484	sample4	dummy	BioSample: SAMN04931678; Sample name: SR0002; SRA: SRS1478014	ecotype: Brookings	PAIRED	5438435	5141986
+PRJNA316872_Sebastes-rastrelliger	SRR4048373	sample5	dummy	BioSample: SAMN04931679; Sample name: SR0003; SRA: SRS1478074	ecotype: Brookings	PAIRED	5209518	4911915
+PRJNA316872_Sebastes-rastrelliger	SRR4048374	sample6	dummy	BioSample: SAMN04931680; Sample name: SR0009; SRA: SRS1478085	ecotype: Brookings	PAIRED	3091043	2934565
+PRJNA316872_Sebastes-rastrelliger	SRR4048375	sample7	dummy	BioSample: SAMN04931681; Sample name: SR0010; SRA: SRS1478096	ecotype: Brookings	PAIRED	4499685	4268037
+PRJNA316872_Sebastes-rastrelliger	SRR4048376	sample8	dummy	BioSample: SAMN04931682; Sample name: SR0011; SRA: SRS1478107	ecotype: Brookings	PAIRED	4574068	4182935
+PRJNA316872_Sebastes-rastrelliger	SRR4048377	sample9	dummy	BioSample: SAMN04931683; Sample name: SR0012; SRA: SRS1478118	ecotype: Brookings	PAIRED	4252564	4037597
+PRJNA316872_Sebastes-rastrelliger	SRR4048378	sample10	dummy	BioSample: SAMN04931684; Sample name: SR0013; SRA: SRS1478129	ecotype: Brookings	PAIRED	3064862	2823931
+PRJNA316872_Sebastes-rastrelliger	SRR4048379	sample11	dummy	BioSample: SAMN04931685; Sample name: SR0014; SRA: SRS1478140	ecotype: Brookings	PAIRED	5248571	4964754
+PRJNA316872_Sebastes-rastrelliger	SRR4048380	sample12	dummy	BioSample: SAMN04931686; Sample name: SR0015; SRA: SRS1478151	ecotype: Brookings	PAIRED	5133880	4842426
+PRJNA316872_Sebastes-rastrelliger	SRR4048382	sample13	dummy	BioSample: SAMN04931688; Sample name: SR0017; SRA: SRS1478046	ecotype: Brookings	PAIRED	4206098	3844256
+PRJNA316872_Sebastes-rastrelliger	SRR4048383	sample14	dummy	BioSample: SAMN04931689; Sample name: SR0018; SRA: SRS1478057	ecotype: Brookings	PAIRED	4312317	3955691
+PRJNA316872_Sebastes-rastrelliger	SRR4048384	sample15	dummy	BioSample: SAMN04931690; Sample name: SR0019; SRA: SRS1478058	ecotype: Brookings	PAIRED	5408096	4967874
+PRJNA316872_Sebastes-rastrelliger	SRR4048385	sample16	dummy	BioSample: SAMN04931691; Sample name: SR0020; SRA: SRS1478060	ecotype: Brookings	PAIRED	4051123	3711451
+PRJNA316872_Sebastes-rastrelliger	SRR4048386	sample17	dummy	BioSample: SAMN04931692; Sample name: SR0021; SRA: SRS1478059	ecotype: Brookings	PAIRED	3736714	3404240
+PRJNA316872_Sebastes-rastrelliger	SRR4048387	sample18	dummy	BioSample: SAMN04931693; Sample name: SR0022; SRA: SRS1478065	ecotype: Brookings	PAIRED	3758777	3424321
+PRJNA316872_Sebastes-rastrelliger	SRR4048388	sample19	dummy	BioSample: SAMN04931694; Sample name: SR0023; SRA: SRS1478067	ecotype: Brookings	PAIRED	3882876	3559229
+PRJNA316872_Sebastes-rastrelliger	SRR4048389	sample20	dummy	BioSample: SAMN04931695; Sample name: SR0024; SRA: SRS1478072	ecotype: Brookings	PAIRED	5055035	4631483
+PRJNA316872_Sebastes-rastrelliger	SRR4048390	sample21	dummy	BioSample: SAMN04931696; Sample name: SR0025; SRA: SRS1478073	ecotype: Brookings	PAIRED	3342325	3048643
+PRJNA316872_Sebastes-rastrelliger	SRR4048391	sample22	dummy	BioSample: SAMN04931697; Sample name: SR0026; SRA: SRS1478075	ecotype: Westport	PAIRED	4112740	3885793
+PRJNA316872_Sebastes-rastrelliger	SRR4048392	sample23	dummy	BioSample: SAMN04931698; Sample name: SR0027; SRA: SRS1478076	ecotype: Westport	PAIRED	4680760	4407616
+PRJNA316872_Sebastes-rastrelliger	SRR4048393	sample24	dummy	BioSample: SAMN04931699; Sample name: SR0028; SRA: SRS1478077	ecotype: Westport	PAIRED	3731435	3531229
+PRJNA316872_Sebastes-rastrelliger	SRR4048394	sample25	dummy	BioSample: SAMN04931700; Sample name: SR0029; SRA: SRS1478078	ecotype: Westport	PAIRED	3323081	3148900
+PRJNA316872_Sebastes-rastrelliger	SRR4048395	sample26	dummy	BioSample: SAMN04931701; Sample name: SR0030; SRA: SRS1478079	ecotype: Westport	PAIRED	3998008	3780339
+PRJNA316872_Sebastes-rastrelliger	SRR4048396	sample27	dummy	BioSample: SAMN04931702; Sample name: SR0031; SRA: SRS1478080	ecotype: Westport	PAIRED	4608150	4360674
+PRJNA316872_Sebastes-rastrelliger	SRR4048397	sample28	dummy	BioSample: SAMN04931703; Sample name: SR0032; SRA: SRS1478081	ecotype: Westport	PAIRED	5733158	5401599
+PRJNA316872_Sebastes-rastrelliger	SRR4048398	sample29	dummy	BioSample: SAMN04931704; Sample name: SR0033; SRA: SRS1478082	ecotype: Westport	PAIRED	5002284	4723593
+PRJNA316872_Sebastes-rastrelliger	SRR4048399	sample30	dummy	BioSample: SAMN04931705; Sample name: SR0034; SRA: SRS1478084	ecotype: Westport	PAIRED	5437670	4910222
+PRJNA316872_Sebastes-rastrelliger	SRR4048400	sample31	dummy	BioSample: SAMN04931706; Sample name: SR0035; SRA: SRS1478083	ecotype: Westport	PAIRED	5107385	4670573
+PRJNA316872_Sebastes-rastrelliger	SRR4048401	sample32	dummy	BioSample: SAMN04931707; Sample name: SR0036; SRA: SRS1478088	ecotype: Westport	PAIRED	3690952	3368426
+PRJNA316872_Sebastes-rastrelliger	SRR4048402	sample33	dummy	BioSample: SAMN04931708; Sample name: SR0037; SRA: SRS1478086	ecotype: Westport	PAIRED	4831231	4393032
+PRJNA316872_Sebastes-rastrelliger	SRR4048403	sample34	dummy	BioSample: SAMN04931709; Sample name: SR0038; SRA: SRS1478087	ecotype: Westport	PAIRED	5730090	5190087
+PRJNA316872_Sebastes-rastrelliger	SRR4048404	sample35	dummy	BioSample: SAMN04931710; Sample name: SR0039; SRA: SRS1478089	ecotype: Westport	PAIRED	3901886	3567107
+PRJNA316872_Sebastes-rastrelliger	SRR4048405	sample36	dummy	BioSample: SAMN04931711; Sample name: SR0040; SRA: SRS1478090	ecotype: Westport	PAIRED	2415356	2204758
+PRJNA316872_Sebastes-rastrelliger	SRR4048406	sample37	dummy	BioSample: SAMN04931712; Sample name: SR0041; SRA: SRS1478091	ecotype: Westport	PAIRED	3662845	3333820
+PRJNA316872_Sebastes-rastrelliger	SRR4048407	sample38	dummy	BioSample: SAMN04931713; Sample name: SR0042; SRA: SRS1478092	ecotype: Westport	PAIRED	3041812	2757251
+PRJNA316872_Sebastes-rastrelliger	SRR4048408	sample39	dummy	BioSample: SAMN04931714; Sample name: SR0043; SRA: SRS1478093	ecotype: Westport	PAIRED	3566311	3258224
+PRJNA316872_Sebastes-rastrelliger	SRR4048409	sample40	dummy	BioSample: SAMN04931715; Sample name: SR0044; SRA: SRS1478094	ecotype: Westport	PAIRED	6471553	5877731
+PRJNA316872_Sebastes-rastrelliger	SRR4048410	sample41	dummy	BioSample: SAMN04931716; Sample name: SR0045; SRA: SRS1478095	ecotype: Westport	PAIRED	3698868	3356020
+PRJNA316872_Sebastes-rastrelliger	SRR4048411	sample42	dummy	BioSample: SAMN04931717; Sample name: SR0047; SRA: SRS1478097	ecotype: Westport	PAIRED	4084784	3723607
+PRJNA316872_Sebastes-rastrelliger	SRR4048412	sample43	dummy	BioSample: SAMN04931718; Sample name: SR0079; SRA: SRS1478098	ecotype: Big Sur	PAIRED	1358053	1248783
+PRJNA316872_Sebastes-rastrelliger	SRR4048413	sample44	dummy	BioSample: SAMN04931719; Sample name: SR0082; SRA: SRS1478099	ecotype: Big Sur	PAIRED	344096	315080
+PRJNA316872_Sebastes-rastrelliger	SRR4048414	sample45	dummy	BioSample: SAMN04931720; Sample name: SR0083; SRA: SRS1478100	ecotype: Big Sur	PAIRED	1889884	1774408
+PRJNA316872_Sebastes-rastrelliger	SRR4048415	sample46	dummy	BioSample: SAMN04931721; Sample name: SR0084; SRA: SRS1478101	ecotype: Big Sur	PAIRED	1741189	1646457
+PRJNA316872_Sebastes-rastrelliger	SRR4048416	sample47	dummy	BioSample: SAMN04931722; Sample name: SR0085; SRA: SRS1478102	ecotype: Big Sur	PAIRED	861228	791797
+PRJNA316872_Sebastes-rastrelliger	SRR4048417	sample48	dummy	BioSample: SAMN04931723; Sample name: SR0086; SRA: SRS1478103	ecotype: Big Sur	PAIRED	425238	391728
+PRJNA316872_Sebastes-rastrelliger	SRR4048418	sample49	dummy	BioSample: SAMN04931724; Sample name: SR0087; SRA: SRS1478104	ecotype: Big Sur	PAIRED	8102815	7639576
+PRJNA316872_Sebastes-rastrelliger	SRR4048419	sample50	dummy	BioSample: SAMN04931725; Sample name: SR0088; SRA: SRS1478105	ecotype: Big Sur	PAIRED	1224007	1159571
+PRJNA316872_Sebastes-rastrelliger	SRR4048420	sample51	dummy	BioSample: SAMN04931726; Sample name: SR0089; SRA: SRS1478106	ecotype: Big Sur	PAIRED	2931826	2759799
+PRJNA316872_Sebastes-rastrelliger	SRR4048421	sample52	dummy	BioSample: SAMN04931727; Sample name: SR0090; SRA: SRS1478108	ecotype: Big Sur	PAIRED	1163731	1083209
+PRJNA316872_Sebastes-rastrelliger	SRR4048422	sample53	dummy	BioSample: SAMN04931728; Sample name: SR0091; SRA: SRS1478109	ecotype: Big Sur	PAIRED	1099858	1030905
+PRJNA316872_Sebastes-rastrelliger	SRR4048423	sample54	dummy	BioSample: SAMN04931729; Sample name: SR0092; SRA: SRS1478110	ecotype: Big Sur	PAIRED	932069	876320
+PRJNA316872_Sebastes-rastrelliger	SRR4048424	sample55	dummy	BioSample: SAMN04931730; Sample name: SR0093; SRA: SRS1478111	ecotype: Big Sur	PAIRED	3283005	2988564
+PRJNA316872_Sebastes-rastrelliger	SRR4048425	sample56	dummy	BioSample: SAMN04931731; Sample name: SR0094; SRA: SRS1478112	ecotype: Big Sur	PAIRED	4007629	3653519
+PRJNA316872_Sebastes-rastrelliger	SRR4048426	sample57	dummy	BioSample: SAMN04931732; Sample name: SR0095; SRA: SRS1478113	ecotype: Big Sur	PAIRED	5858024	5284775
+PRJNA316872_Sebastes-rastrelliger	SRR4048427	sample58	dummy	BioSample: SAMN04931733; Sample name: SR0096; SRA: SRS1478114	ecotype: Big Sur	PAIRED	5485866	4975551
+PRJNA316872_Sebastes-rastrelliger	SRR4048428	sample59	dummy	BioSample: SAMN04931734; Sample name: SR0097; SRA: SRS1478115	ecotype: Big Sur	PAIRED	5278594	4778211
+PRJNA316872_Sebastes-rastrelliger	SRR4048429	sample60	dummy	BioSample: SAMN04931735; Sample name: SR0098; SRA: SRS1478116	ecotype: Big Sur	PAIRED	3966174	3600070
+PRJNA316872_Sebastes-rastrelliger	SRR4048430	sample61	dummy	BioSample: SAMN04931736; Sample name: SR0099; SRA: SRS1478117	ecotype: Big Sur	PAIRED	3943715	3572494
+PRJNA316872_Sebastes-rastrelliger	SRR4048431	sample62	dummy	BioSample: SAMN04931737; Sample name: SR0100; SRA: SRS1478119	ecotype: Big Sur	PAIRED	4751979	4331358
+PRJNA316872_Sebastes-rastrelliger	SRR4048432	sample63	dummy	BioSample: SAMN04931738; Sample name: SR0126; SRA: SRS1478120	ecotype: Vandenberg	PAIRED	4880905	4613558
+PRJNA316872_Sebastes-rastrelliger	SRR4048433	sample64	dummy	BioSample: SAMN04931739; Sample name: SR0127; SRA: SRS1478121	ecotype: Vandenberg	PAIRED	6031174	5711287
+PRJNA316872_Sebastes-rastrelliger	SRR4048434	sample65	dummy	BioSample: SAMN04931740; Sample name: SR0129; SRA: SRS1478122	ecotype: Vandenberg	PAIRED	4838342	4557564
+PRJNA316872_Sebastes-rastrelliger	SRR4048435	sample66	dummy	BioSample: SAMN04931741; Sample name: SR0130; SRA: SRS1478123	ecotype: Vandenberg	PAIRED	4166239	3944782
+PRJNA316872_Sebastes-rastrelliger	SRR4048436	sample67	dummy	BioSample: SAMN04931742; Sample name: SR0131; SRA: SRS1478124	ecotype: Vandenberg	PAIRED	3522699	3336332
+PRJNA316872_Sebastes-rastrelliger	SRR4048437	sample68	dummy	BioSample: SAMN04931743; Sample name: SR0132; SRA: SRS1478125	ecotype: Vandenberg	PAIRED	5409124	4957276
+PRJNA316872_Sebastes-rastrelliger	SRR4048438	sample69	dummy	BioSample: SAMN04931744; Sample name: SR0133; SRA: SRS1478126	ecotype: Vandenberg	PAIRED	3359844	3068535
+PRJNA316872_Sebastes-rastrelliger	SRR4048439	sample70	dummy	BioSample: SAMN04931745; Sample name: SR0134; SRA: SRS1478127	ecotype: Vandenberg	PAIRED	3000088	2745651
+PRJNA316872_Sebastes-rastrelliger	SRR4048440	sample71	dummy	BioSample: SAMN04931746; Sample name: SR0135; SRA: SRS1478128	ecotype: Vandenberg	PAIRED	3343273	3170363
+PRJNA316872_Sebastes-rastrelliger	SRR4048441	sample72	dummy	BioSample: SAMN04931747; Sample name: SR0136; SRA: SRS1478130	ecotype: Vandenberg	PAIRED	2562738	2408053
+PRJNA316872_Sebastes-rastrelliger	SRR4048442	sample73	dummy	BioSample: SAMN04931748; Sample name: SR0137; SRA: SRS1478131	ecotype: Vandenberg	PAIRED	2821205	2670547
+PRJNA316872_Sebastes-rastrelliger	SRR4048443	sample74	dummy	BioSample: SAMN04931749; Sample name: SR0138; SRA: SRS1478132	ecotype: Vandenberg	PAIRED	2334824	2140198
+PRJNA316872_Sebastes-rastrelliger	SRR4048444	sample75	dummy	BioSample: SAMN04931750; Sample name: SR0139; SRA: SRS1478133	ecotype: Vandenberg	PAIRED	5611413	5148707
+PRJNA316872_Sebastes-rastrelliger	SRR4048445	sample76	dummy	BioSample: SAMN04931751; Sample name: SR0140; SRA: SRS1478134	ecotype: Vandenberg	PAIRED	5509991	5003497
+PRJNA316872_Sebastes-rastrelliger	SRR4048446	sample77	dummy	BioSample: SAMN04931752; Sample name: SR0141; SRA: SRS1478135	ecotype: Vandenberg	PAIRED	7589408	6866267
+PRJNA316872_Sebastes-rastrelliger	SRR4048447	sample78	dummy	BioSample: SAMN04931753; Sample name: SR0142; SRA: SRS1478136	ecotype: Vandenberg	PAIRED	6645466	6030132
+PRJNA316872_Sebastes-rastrelliger	SRR4048448	sample79	dummy	BioSample: SAMN04931754; Sample name: SR0143; SRA: SRS1478137	ecotype: Ventura	PAIRED	5567195	5064438
+PRJNA316872_Sebastes-rastrelliger	SRR4048449	sample80	dummy	BioSample: SAMN04931755; Sample name: SR0144; SRA: SRS1478138	ecotype: Ventura	PAIRED	5702584	5206668
+PRJNA316872_Sebastes-rastrelliger	SRR4048450	sample81	dummy	BioSample: SAMN04931756; Sample name: SR0145; SRA: SRS1478139	ecotype: Ventura	PAIRED	3336448	3021269
+PRJNA316872_Sebastes-rastrelliger	SRR4048451	sample82	dummy	BioSample: SAMN04931757; Sample name: SR0146; SRA: SRS1478141	ecotype: Ventura	PAIRED	4276419	3881412
+PRJNA316872_Sebastes-rastrelliger	SRR4048452	sample83	dummy	BioSample: SAMN04931758; Sample name: SR0168; SRA: SRS1478142	ecotype: Santa Catalina Island	PAIRED	4486319	4071493
+PRJNA316872_Sebastes-rastrelliger	SRR4048453	sample84	dummy	BioSample: SAMN04931759; Sample name: SR0169; SRA: SRS1478143	ecotype: Santa Catalina Island	PAIRED	7411201	6752831
+PRJNA316872_Sebastes-rastrelliger	SRR4048454	sample85	dummy	BioSample: SAMN04931760; Sample name: SR0170; SRA: SRS1478145	ecotype: Santa Catalina Island	PAIRED	4522351	4128331
+PRJNA316872_Sebastes-rastrelliger	SRR4048455	sample86	dummy	BioSample: SAMN04931761; Sample name: SR0171; SRA: SRS1478144	ecotype: Santa Catalina Island	PAIRED	9506097	8683247
+PRJNA316872_Sebastes-rastrelliger	SRR4048456	sample87	dummy	BioSample: SAMN04931762; Sample name: SR0172; SRA: SRS1478146	ecotype: Santa Catalina Island	PAIRED	6569419	5973322
+PRJNA316872_Sebastes-rastrelliger	SRR4048457	sample88	dummy	BioSample: SAMN04931763; Sample name: SR0173; SRA: SRS1478147	ecotype: Santa Catalina Island	PAIRED	2312900	2025638
+PRJNA316872_Sebastes-rastrelliger	SRR4048458	sample89	dummy	BioSample: SAMN04931764; Sample name: SR0174; SRA: SRS1478148	ecotype: Santa Catalina Island	PAIRED	2800099	2530749
+PRJNA316872_Sebastes-rastrelliger	SRR4048459	sample90	dummy	BioSample: SAMN04931765; Sample name: SR0175; SRA: SRS1478149	ecotype: Santa Catalina Island	PAIRED	2322335	2032297
+PRJNA316872_Sebastes-rastrelliger	SRR4048460	sample91	dummy	BioSample: SAMN04931766; Sample name: SR0176; SRA: SRS1478150	ecotype: Santa Catalina Island	PAIRED	4034618	3699092
+PRJNA316872_Sebastes-rastrelliger	SRR4048461	sample92	dummy	BioSample: SAMN04931767; Sample name: SR0177; SRA: SRS1478152	ecotype: Santa Catalina Island	PAIRED	5641147	5188491
+PRJNA316872_Sebastes-rastrelliger	SRR4048462	sample93	dummy	BioSample: SAMN04931768; Sample name: SR0178; SRA: SRS1478153	ecotype: Santa Catalina Island	PAIRED	3157478	2872817
+PRJNA316872_Sebastes-rastrelliger	SRR4048463	sample94	dummy	BioSample: SAMN04931769; Sample name: SR0179; SRA: SRS1478154	ecotype: Santa Catalina Island	PAIRED	1715199	1577758
+PRJNA316872_Sebastes-rastrelliger	SRR4048464	sample95	dummy	BioSample: SAMN04931770; Sample name: SR0180; SRA: SRS1478155	ecotype: Santa Catalina Island	PAIRED	3685979	3370525
+PRJNA316872_Sebastes-rastrelliger	SRR4048465	sample96	dummy	BioSample: SAMN04931771; Sample name: SR0181; SRA: SRS1478156	ecotype: Santa Catalina Island	PAIRED	6327277	5786659
+PRJNA316872_Sebastes-rastrelliger	SRR4048466	sample97	dummy	BioSample: SAMN04931772; Sample name: SR0182; SRA: SRS1478157	ecotype: Santa Catalina Island	PAIRED	10518239	9645735
+PRJNA316872_Sebastes-rastrelliger	SRR4048467	sample98	dummy	BioSample: SAMN04931773; Sample name: SR0183; SRA: SRS1478158	ecotype: Santa Catalina Island	PAIRED	2900888	2646677
+PRJNA316872_Sebastes-rastrelliger	SRR4048468	sample99	dummy	BioSample: SAMN04931774; Sample name: SR0186; SRA: SRS1478159	ecotype: Santa Catalina Island	PAIRED	2601859	2371812
+PRJNA316872_Sebastes-rastrelliger	SRR4048469	sample100	dummy	BioSample: SAMN04931775; Sample name: SR0187; SRA: SRS1478160	ecotype: Santa Catalina Island	PAIRED	3152600	2879977
+PRJNA316872_Sebastes-rastrelliger	SRR4048470	sample101	dummy	BioSample: SAMN04931776; Sample name: SR0188; SRA: SRS1478161	ecotype: Santa Catalina Island	PAIRED	1559999	1421147
+PRJNA316872_Sebastes-rastrelliger	SRR4048472	sample102	dummy	BioSample: SAMN04931778; Sample name: SR0192; SRA: SRS1478017	ecotype: San Diego	PAIRED	3789869	3449599
+PRJNA316872_Sebastes-rastrelliger	SRR4048474	sample103	dummy	BioSample: SAMN04931780; Sample name: SR0194; SRA: SRS1478018	ecotype: San Diego	PAIRED	5720739	5166490
+PRJNA316872_Sebastes-rastrelliger	SRR4048475	sample104	dummy	BioSample: SAMN04931781; Sample name: SR0197; SRA: SRS1478019	ecotype: San Diego	PAIRED	4828512	4394740
+PRJNA316872_Sebastes-rastrelliger	SRR4048476	sample105	dummy	BioSample: SAMN04931782; Sample name: SR0198; SRA: SRS1478041	ecotype: San Diego	PAIRED	5711193	5220852
+PRJNA316872_Sebastes-rastrelliger	SRR4048477	sample106	dummy	BioSample: SAMN04931783; Sample name: SR0199; SRA: SRS1478042	ecotype: San Diego	PAIRED	5512078	4996919
+PRJNA316872_Sebastes-rastrelliger	SRR4048478	sample107	dummy	BioSample: SAMN04931784; Sample name: SR0200; SRA: SRS1478043	ecotype: San Diego	PAIRED	5983486	5403145
+PRJNA316872_Sebastes-rastrelliger	SRR4048479	sample108	dummy	BioSample: SAMN04931785; Sample name: SR0202; SRA: SRS1478045	ecotype: San Diego	PAIRED	6011247	5431857
+PRJNA316872_Sebastes-rastrelliger	SRR4048480	sample109	dummy	BioSample: SAMN04931786; Sample name: SR0203; SRA: SRS1478044	ecotype: San Diego	PAIRED	6235527	5543817
+PRJNA316872_Sebastes-rastrelliger	SRR4048481	sample110	dummy	BioSample: SAMN04931787; Sample name: SR0205; SRA: SRS1478047	ecotype: San Diego	PAIRED	7370363	6705362
+PRJNA316872_Sebastes-rastrelliger	SRR4048482	sample111	dummy	BioSample: SAMN04931788; Sample name: SR0208; SRA: SRS1478048	ecotype: San Diego	PAIRED	7686354	7276655
+PRJNA316872_Sebastes-rastrelliger	SRR4048483	sample112	dummy	BioSample: SAMN04931789; Sample name: SR0209; SRA: SRS1478049	ecotype: San Diego	PAIRED	6780111	6449124
+PRJNA316872_Sebastes-rastrelliger	SRR4048484	sample113	dummy	BioSample: SAMN04931790; Sample name: SR0210; SRA: SRS1478050	ecotype: San Diego	PAIRED	2942280	2790749
+PRJNA316872_Sebastes-rastrelliger	SRR4048485	sample114	dummy	BioSample: SAMN04931791; Sample name: SR0211; SRA: SRS1478051	ecotype: San Diego	PAIRED	3646560	3454240
+PRJNA316872_Sebastes-rastrelliger	SRR4048486	sample115	dummy	BioSample: SAMN04931792; Sample name: SR0212; SRA: SRS1478052	ecotype: San Diego	PAIRED	2190572	2076216
+PRJNA316872_Sebastes-rastrelliger	SRR4048487	sample116	dummy	BioSample: SAMN04931793; Sample name: SR0213; SRA: SRS1478053	ecotype: San Diego	PAIRED	1496471	1423046
+PRJNA316872_Sebastes-rastrelliger	SRR4048488	sample117	dummy	BioSample: SAMN04931794; Sample name: SR0214; SRA: SRS1478054	ecotype: San Diego	PAIRED	2322095	2205575
+PRJNA316872_Sebastes-rastrelliger	SRR4048489	sample118	dummy	BioSample: SAMN04931795; Sample name: SR0215; SRA: SRS1478055	ecotype: San Diego	PAIRED	2013137	1904402
+PRJNA316872_Sebastes-rastrelliger	SRR4048490	sample119	dummy	BioSample: SAMN04931796; Sample name: SR0216; SRA: SRS1478056	ecotype: San Diego	PAIRED	4089832	3708104

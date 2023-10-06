@@ -1,0 +1,22 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA451040_Sebastes-paucispinis	SRR7079337	sample0	dummy	BioSample: SAMN08990962; Sample name: BC_2012_074_OR; SRA: SRS3231199	isolate: Oregon coast	SINGLE	368750	366601
+PRJNA451040_Sebastes-paucispinis	SRR7079366	sample1	dummy	BioSample: SAMN08990963; Sample name: BC_2012_075_OR; SRA: SRS3231168	isolate: Oregon coast	SINGLE	401033	399017
+PRJNA451040_Sebastes-paucispinis	SRR7079376	sample2	dummy	BioSample: SAMN08990959; Sample name: BC_2007_002_WA; SRA: SRS3231158	isolate: Washington coast	SINGLE	1090173	1083136
+PRJNA451040_Sebastes-paucispinis	SRR7079377	sample3	dummy	BioSample: SAMN08990960; Sample name: BC_2008_004_OR; SRA: SRS3231157	isolate: Oregon coast	SINGLE	379462	377294
+PRJNA451040_Sebastes-paucispinis	SRR7079378	sample4	dummy	BioSample: SAMN08990964; Sample name: BC_2014_002_WA_combined; SRA: SRS3231156	isolate: Oregon coast	SINGLE	324973	322557
+PRJNA451040_Sebastes-paucispinis	SRR7079379	sample5	dummy	BioSample: SAMN08990961; Sample name: BC_2011_146_WA_combined; SRA: SRS3231155	isolate: Washington coast	SINGLE	910506	901617
+PRJNA451040_Sebastes-paucispinis	SRR7079413	sample6	dummy	BioSample: SAMN08990975; Sample name: BI_120359_combined; SRA: SRS3231121	isolate: Strait of JDF	SINGLE	356805	354078
+PRJNA451040_Sebastes-paucispinis	SRR7079414	sample7	dummy	BioSample: SAMN08990976; Sample name: BI_857_CanYe7; SRA: SRS3231119	isolate: Central Puget Sound	SINGLE	506783	505778
+PRJNA451040_Sebastes-paucispinis	SRR7079416	sample8	dummy	BioSample: SAMN08990971; Sample name: BC_57_OR; SRA: SRS3231118	isolate: Oregon coast	SINGLE	849038	843898
+PRJNA451040_Sebastes-paucispinis	SRR7079417	sample9	dummy	BioSample: SAMN08990972; Sample name: BC_64_OR; SRA: SRS3231117	isolate: Oregon coast	SINGLE	718326	714924
+PRJNA451040_Sebastes-paucispinis	SRR7079418	sample10	dummy	BioSample: SAMN08990973; Sample name: BC_91_VI_CanYe8; SRA: SRS3231115	isolate: Washington coast	SINGLE	966377	956250
+PRJNA451040_Sebastes-paucispinis	SRR7079419	sample11	dummy	BioSample: SAMN08990974; Sample name: BI_1082; SRA: SRS3231116	isolate: Central Puget Sound	SINGLE	697585	688386
+PRJNA451040_Sebastes-paucispinis	SRR7079420	sample12	dummy	BioSample: SAMN08990967; Sample name: BC_5_OR; SRA: SRS3231114	isolate: Oregon coast	SINGLE	2436215	2422691
+PRJNA451040_Sebastes-paucispinis	SRR7079421	sample13	dummy	BioSample: SAMN08990968; Sample name: BC_55_OR; SRA: SRS3231113	isolate: Oregon coast	SINGLE	1352935	1345416
+PRJNA451040_Sebastes-paucispinis	SRR7079422	sample14	dummy	BioSample: SAMN08990969; Sample name: BC_56_HGN_CanYe8; SRA: SRS3231112	isolate: Canada coast	SINGLE	934960	923418
+PRJNA451040_Sebastes-paucispinis	SRR7079423	sample15	dummy	BioSample: SAMN08990970; Sample name: BC_56_OR; SRA: SRS3231111	isolate: Oregon coast	SINGLE	1575217	1566621
+PRJNA451040_Sebastes-paucispinis	SRR7079458	sample16	dummy	BioSample: SAMN08990977; Sample name: BI_935; SRA: SRS3231075	isolate: Central Puget Sound	SINGLE	4973018	4940549
+PRJNA451040_Sebastes-paucispinis	SRR7079537	sample17	dummy	BioSample: SAMN08990965; Sample name: BC_2014_003_OR_combined; SRA: SRS3230997	isolate: Oregon coast	SINGLE	996603	987993
+PRJNA451040_Sebastes-paucispinis	SRR7079538	sample18	dummy	BioSample: SAMN08990966; Sample name: BC_45_VI; SRA: SRS3230995	isolate: Washington coast	SINGLE	1020490	1014578
+PRJNA451040_Sebastes-paucispinis	SRR7079541	sample19	dummy	BioSample: SAMN08990957; Sample name: BC_1_PR; SRA: SRS3230993	isolate: Canada coast	SINGLE	1250581	1243990
+PRJNA451040_Sebastes-paucispinis	SRR7079542	sample20	dummy	BioSample: SAMN08990958; Sample name: BC_2007_001_WA; SRA: SRS3230992	isolate: Washington coast	SINGLE	684547	680740

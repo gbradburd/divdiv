@@ -1,0 +1,66 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA354496_Symphodus-melops	SRR5043512	sample0	dummy	BioSample: SAMN06046562; Sample name: EG28; SRA: SRS1812739	ecotype: Southern Norway	PAIRED	21226272	21085137
+PRJNA354496_Symphodus-melops	SRR5043513	sample1	dummy	BioSample: SAMN06046587; Sample name: SM117; SRA: SRS1812740	ecotype: Western Norway	PAIRED	21766283	21620504
+PRJNA354496_Symphodus-melops	SRR5043514	sample2	dummy	BioSample: SAMN06046576; Sample name: NH64; SRA: SRS1812741	ecotype: Western Norway	PAIRED	23309586	23183766
+PRJNA354496_Symphodus-melops	SRR5043515	sample3	dummy	BioSample: SAMN06046569; Sample name: GF23; SRA: SRS1812742	ecotype: Southern Norway	PAIRED	38597549	37381087
+PRJNA354496_Symphodus-melops	SRR5043516	sample4	dummy	BioSample: SAMN06046547; Sample name: AR68; SRA: SRS1812743	ecotype: Southern Norway	PAIRED	22290767	22193568
+PRJNA354496_Symphodus-melops	SRR5043517	sample5	dummy	BioSample: SAMN06046549; Sample name: ARD18; SRA: SRS1812744	ecotype: Scotland	PAIRED	20199698	20074455
+PRJNA354496_Symphodus-melops	SRR5043518	sample6	dummy	BioSample: SAMN06046555; Sample name: EG21; SRA: SRS1812745	ecotype: Southern Norway	PAIRED	20041697	19911776
+PRJNA354496_Symphodus-melops	SRR5043519	sample7	dummy	BioSample: SAMN06046550; Sample name: ARD20; SRA: SRS1812746	ecotype: Scotland	PAIRED	20351427	20219421
+PRJNA354496_Symphodus-melops	SRR5043520	sample8	dummy	BioSample: SAMN06046593; Sample name: ST45; SRA: SRS1812747	ecotype: Western Norway	PAIRED	21112801	20975265
+PRJNA354496_Symphodus-melops	SRR5043521	sample9	dummy	BioSample: SAMN06046604; Sample name: TV74; SRA: SRS1812748	ecotype: Southern Norway	PAIRED	18628875	18502645
+PRJNA354496_Symphodus-melops	SRR5043522	sample10	dummy	BioSample: SAMN06046598; Sample name: TV66; SRA: SRS1812749	ecotype: Southern Norway	PAIRED	16844544	16733769
+PRJNA354496_Symphodus-melops	SRR5043523	sample11	dummy	BioSample: SAMN06046574; Sample name: NH61; SRA: SRS1812750	ecotype: Western Norway	PAIRED	21211718	21090672
+PRJNA354496_Symphodus-melops	SRR5043524	sample12	dummy	BioSample: SAMN06046599; Sample name: TV67; SRA: SRS1812751	ecotype: Southern Norway	PAIRED	19264448	19140079
+PRJNA354496_Symphodus-melops	SRR5043525	sample13	dummy	BioSample: SAMN06046559; Sample name: EG25; SRA: SRS1812752	ecotype: Southern Norway	PAIRED	19879534	19748700
+PRJNA354496_Symphodus-melops	SRR5043526	sample14	dummy	BioSample: SAMN06046583; Sample name: SM113; SRA: SRS1812753	ecotype: Western Norway	PAIRED	24629485	24489904
+PRJNA354496_Symphodus-melops	SRR5043527	sample15	dummy	BioSample: SAMN06046590; Sample name: ST42; SRA: SRS1812754	ecotype: Western Norway	PAIRED	19707582	19568945
+PRJNA354496_Symphodus-melops	SRR5043528	sample16	dummy	BioSample: SAMN06046596; Sample name: ST48; SRA: SRS1812755	ecotype: Western Norway	PAIRED	26950696	26712064
+PRJNA354496_Symphodus-melops	SRR5043529	sample17	dummy	BioSample: SAMN06046585; Sample name: SM115; SRA: SRS1812756	ecotype: Western Norway	PAIRED	22719304	22556291
+PRJNA354496_Symphodus-melops	SRR5043530	sample18	dummy	BioSample: SAMN06046591; Sample name: ST43; SRA: SRS1812757	ecotype: Western Norway	PAIRED	29733778	29527257
+PRJNA354496_Symphodus-melops	SRR5043531	sample19	dummy	BioSample: SAMN06046557; Sample name: EG23; SRA: SRS1812758	ecotype: Southern Norway	PAIRED	22124434	21983035
+PRJNA354496_Symphodus-melops	SRR5043532	sample20	dummy	BioSample: SAMN06046572; Sample name: GF49; SRA: SRS1812759	ecotype: Southern Norway	PAIRED	45112366	43723358
+PRJNA354496_Symphodus-melops	SRR5043533	sample21	dummy	BioSample: SAMN06046566; Sample name: GF04; SRA: SRS1812760	ecotype: Southern Norway	PAIRED	34758904	33715449
+PRJNA354496_Symphodus-melops	SRR5043534	sample22	dummy	BioSample: SAMN06046575; Sample name: NH63; SRA: SRS1812761	ecotype: Western Norway	PAIRED	22020068	21892393
+PRJNA354496_Symphodus-melops	SRR5043535	sample23	dummy	BioSample: SAMN06046595; Sample name: ST47; SRA: SRS1812762	ecotype: Western Norway	PAIRED	20095839	19940884
+PRJNA354496_Symphodus-melops	SRR5043536	sample24	dummy	BioSample: SAMN06046560; Sample name: EG26; SRA: SRS1812763	ecotype: Southern Norway	PAIRED	19935870	19806339
+PRJNA354496_Symphodus-melops	SRR5043537	sample25	dummy	BioSample: SAMN06046570; Sample name: GF28; SRA: SRS1812764	ecotype: Southern Norway	PAIRED	33401404	32404016
+PRJNA354496_Symphodus-melops	SRR5043538	sample26	dummy	BioSample: SAMN06046548; Sample name: ARD15; SRA: SRS1812765	ecotype: Scotland	PAIRED	17555574	17436165
+PRJNA354496_Symphodus-melops	SRR5043539	sample27	dummy	BioSample: SAMN06046582; Sample name: SM112; SRA: SRS1812766	ecotype: Western Norway	PAIRED	24250836	24115400
+PRJNA354496_Symphodus-melops	SRR5043540	sample28	dummy	BioSample: SAMN06046563; Sample name: GF01; SRA: SRS1812767	ecotype: Southern Norway	PAIRED	28949052	27997810
+PRJNA354496_Symphodus-melops	SRR5043541	sample29	dummy	BioSample: SAMN06046588; Sample name: SM118; SRA: SRS1812768	ecotype: Western Norway	PAIRED	20079729	19948405
+PRJNA354496_Symphodus-melops	SRR5043542	sample30	dummy	BioSample: SAMN06046602; Sample name: TV70; SRA: SRS1812769	ecotype: Southern Norway	PAIRED	20448663	20312446
+PRJNA354496_Symphodus-melops	SRR5043543	sample31	dummy	BioSample: SAMN06046546; Sample name: AR67; SRA: SRS1812770	ecotype: Southern Norway	PAIRED	21754998	21661599
+PRJNA354496_Symphodus-melops	SRR5043544	sample32	dummy	BioSample: SAMN06046571; Sample name: GF38; SRA: SRS1812771	ecotype: Southern Norway	PAIRED	39121620	37911492
+PRJNA354496_Symphodus-melops	SRR5043545	sample33	dummy	BioSample: SAMN06046544; Sample name: AR65; SRA: SRS1812772	ecotype: Southern Norway	PAIRED	23182742	23083609
+PRJNA354496_Symphodus-melops	SRR5043546	sample34	dummy	BioSample: SAMN06046554; Sample name: ARD8; SRA: SRS1812773	ecotype: Scotland	PAIRED	26618618	26500531
+PRJNA354496_Symphodus-melops	SRR5043547	sample35	dummy	BioSample: SAMN06046564; Sample name: GF02; SRA: SRS1812774	ecotype: Southern Norway	PAIRED	28690350	27789141
+PRJNA354496_Symphodus-melops	SRR5043548	sample36	dummy	BioSample: SAMN06046565; Sample name: GF03; SRA: SRS1812775	ecotype: Southern Norway	PAIRED	31566058	30586905
+PRJNA354496_Symphodus-melops	SRR5043549	sample37	dummy	BioSample: SAMN06046600; Sample name: TV68; SRA: SRS1812776	ecotype: Southern Norway	PAIRED	19400461	19271501
+PRJNA354496_Symphodus-melops	SRR5043550	sample38	dummy	BioSample: SAMN06046552; Sample name: ARD23; SRA: SRS1812777	ecotype: Scotland	PAIRED	21664495	21514346
+PRJNA354496_Symphodus-melops	SRR5043551	sample39	dummy	BioSample: SAMN06046586; Sample name: SM116; SRA: SRS1812778	ecotype: Western Norway	PAIRED	23383154	23225297
+PRJNA354496_Symphodus-melops	SRR5043552	sample40	dummy	BioSample: SAMN06046558; Sample name: EG24; SRA: SRS1812780	ecotype: Southern Norway	PAIRED	21058289	20919433
+PRJNA354496_Symphodus-melops	SRR5043553	sample41	dummy	BioSample: SAMN06046584; Sample name: SM114; SRA: SRS1812779	ecotype: Western Norway	PAIRED	17652748	17530292
+PRJNA354496_Symphodus-melops	SRR5043554	sample42	dummy	BioSample: SAMN06046561; Sample name: EG27; SRA: SRS1812781	ecotype: Southern Norway	PAIRED	16047587	15940858
+PRJNA354496_Symphodus-melops	SRR5043555	sample43	dummy	BioSample: SAMN06046542; Sample name: AR63; SRA: SRS1812782	ecotype: Southern Norway	PAIRED	20905963	20815013
+PRJNA354496_Symphodus-melops	SRR5043556	sample44	dummy	BioSample: SAMN06046603; Sample name: TV73; SRA: SRS1812783	ecotype: Southern Norway	PAIRED	20241726	20107636
+PRJNA354496_Symphodus-melops	SRR5043557	sample45	dummy	BioSample: SAMN06046578; Sample name: NH67; SRA: SRS1812784	ecotype: Western Norway	PAIRED	24762321	24628242
+PRJNA354496_Symphodus-melops	SRR5043558	sample46	dummy	BioSample: SAMN06046568; Sample name: GF07; SRA: SRS1812787	ecotype: Southern Norway	PAIRED	50121143	48478640
+PRJNA354496_Symphodus-melops	SRR5043559	sample47	dummy	BioSample: SAMN06046594; Sample name: ST46; SRA: SRS1812785	ecotype: Western Norway	PAIRED	21264512	21119488
+PRJNA354496_Symphodus-melops	SRR5043560	sample48	dummy	BioSample: SAMN06046580; Sample name: NH69; SRA: SRS1812786	ecotype: Western Norway	PAIRED	20887234	20772718
+PRJNA354496_Symphodus-melops	SRR5043561	sample49	dummy	BioSample: SAMN06046567; Sample name: GF05; SRA: SRS1812788	ecotype: Southern Norway	PAIRED	46973908	45533147
+PRJNA354496_Symphodus-melops	SRR5043562	sample50	dummy	BioSample: SAMN06046597; Sample name: TV65; SRA: SRS1812789	ecotype: Southern Norway	PAIRED	17394328	17279320
+PRJNA354496_Symphodus-melops	SRR5043563	sample51	dummy	BioSample: SAMN06046540; Sample name: AR61; SRA: SRS1812791	ecotype: Southern Norway	PAIRED	22576774	22479482
+PRJNA354496_Symphodus-melops	SRR5043564	sample52	dummy	BioSample: SAMN06046589; Sample name: ST41; SRA: SRS1812790	ecotype: Western Norway	PAIRED	26913447	26711316
+PRJNA354496_Symphodus-melops	SRR5043565	sample53	dummy	BioSample: SAMN06046545; Sample name: AR66; SRA: SRS1812792	ecotype: Southern Norway	PAIRED	21650022	21560406
+PRJNA354496_Symphodus-melops	SRR5043566	sample54	dummy	BioSample: SAMN06046556; Sample name: EG22; SRA: SRS1812793	ecotype: Southern Norway	PAIRED	20854541	20715388
+PRJNA354496_Symphodus-melops	SRR5043567	sample55	dummy	BioSample: SAMN06046573; Sample name: NH60; SRA: SRS1812794	ecotype: Western Norway	PAIRED	22593713	22467285
+PRJNA354496_Symphodus-melops	SRR5043568	sample56	dummy	BioSample: SAMN06046541; Sample name: AR62; SRA: SRS1812796	ecotype: Southern Norway	PAIRED	21376226	21287212
+PRJNA354496_Symphodus-melops	SRR5043569	sample57	dummy	BioSample: SAMN06046579; Sample name: NH68; SRA: SRS1812795	ecotype: Western Norway	PAIRED	22023612	21898770
+PRJNA354496_Symphodus-melops	SRR5043570	sample58	dummy	BioSample: SAMN06046601; Sample name: TV69; SRA: SRS1812797	ecotype: Southern Norway	PAIRED	19306177	19178879
+PRJNA354496_Symphodus-melops	SRR5043571	sample59	dummy	BioSample: SAMN06046543; Sample name: AR64; SRA: SRS1812798	ecotype: Southern Norway	PAIRED	19837850	19755809
+PRJNA354496_Symphodus-melops	SRR5043572	sample60	dummy	BioSample: SAMN06046553; Sample name: ARD6; SRA: SRS1812799	ecotype: Scotland	PAIRED	24793758	24680794
+PRJNA354496_Symphodus-melops	SRR5043573	sample61	dummy	BioSample: SAMN06046577; Sample name: NH65; SRA: SRS1812800	ecotype: Western Norway	PAIRED	23123800	22992564
+PRJNA354496_Symphodus-melops	SRR5043574	sample62	dummy	BioSample: SAMN06046592; Sample name: ST44; SRA: SRS1812801	ecotype: Western Norway	PAIRED	21542715	21389717
+PRJNA354496_Symphodus-melops	SRR5043575	sample63	dummy	BioSample: SAMN06046581; Sample name: SM111; SRA: SRS1812802	ecotype: Western Norway	PAIRED	26433262	26273312
+PRJNA354496_Symphodus-melops	SRR5043576	sample64	dummy	BioSample: SAMN06046551; Sample name: ARD21; SRA: SRS1812803	ecotype: Scotland	PAIRED	22006492	21861816
