@@ -1,0 +1,93 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA451040_Sebastes-pinniger	SRR7079318	sample0	dummy	BioSample: SAMN08991066; Sample name: CC_2013_04; SRA: SRS3231216	isolate: Washington coast	SINGLE	737723	731855
+PRJNA451040_Sebastes-pinniger	SRR7079319	sample1	dummy	BioSample: SAMN08991065; Sample name: CC_20070004; SRA: SRS3231212	isolate: Washington coast	SINGLE	962062	953896
+PRJNA451040_Sebastes-pinniger	SRR7079320	sample2	dummy	BioSample: SAMN08991060; Sample name: CC_2007_41; SRA: SRS3231209	isolate: Washington coast	SINGLE	598230	592817
+PRJNA451040_Sebastes-pinniger	SRR7079321	sample3	dummy	BioSample: SAMN08991059; Sample name: CI_22833_1144006; SRA: SRS3231213	isolate: San Juan Islands	SINGLE	2216080	2193586
+PRJNA451040_Sebastes-pinniger	SRR7079322	sample4	dummy	BioSample: SAMN08991058; Sample name: CI_13; SRA: SRS3231210	isolate: San Juan Islands	SINGLE	963287	962825
+PRJNA451040_Sebastes-pinniger	SRR7079323	sample5	dummy	BioSample: SAMN08991057; Sample name: CC_2010_85_combined; SRA: SRS3231211	isolate: Washington coast	SINGLE	2428510	2364476
+PRJNA451040_Sebastes-pinniger	SRR7079324	sample6	dummy	BioSample: SAMN08991064; Sample name: CC_2012_84; SRA: SRS3231208	isolate: Washington coast	SINGLE	1203225	1194639
+PRJNA451040_Sebastes-pinniger	SRR7079325	sample7	dummy	BioSample: SAMN08991063; Sample name: CI_388_combined; SRA: SRS3231207	isolate: Neah Bay	SINGLE	786784	786359
+PRJNA451040_Sebastes-pinniger	SRR7079326	sample8	dummy	BioSample: SAMN08991062; Sample name: CC_2006_25; SRA: SRS3231205	isolate: Washington coast	SINGLE	557185	552245
+PRJNA451040_Sebastes-pinniger	SRR7079327	sample9	dummy	BioSample: SAMN08991061; Sample name: CI_22836_1144009; SRA: SRS3231203	isolate: San Juan Islands	SINGLE	1274542	1227777
+PRJNA451040_Sebastes-pinniger	SRR7079328	sample10	dummy	BioSample: SAMN08991047; Sample name: CI_22840_1144013; SRA: SRS3231204	isolate: San Juan Islands	SINGLE	1768162	1711907
+PRJNA451040_Sebastes-pinniger	SRR7079329	sample11	dummy	BioSample: SAMN08991033; Sample name: CI_1203.sub1M; SRA: SRS3231202	isolate: Hood Canal	SINGLE	1000000	999048
+PRJNA451040_Sebastes-pinniger	SRR7079330	sample12	dummy	BioSample: SAMN08991034; Sample name: CI_22835_1144008; SRA: SRS3231200	isolate: San Juan Islands	SINGLE	659935	655452
+PRJNA451040_Sebastes-pinniger	SRR7079331	sample13	dummy	BioSample: SAMN08991031; Sample name: CI_889; SRA: SRS3231206	isolate: Central Puget Sound	SINGLE	1448584	1439196
+PRJNA451040_Sebastes-pinniger	SRR7079332	sample14	dummy	BioSample: SAMN08991032; Sample name: CI_979; SRA: SRS3231201	isolate: Central Puget Sound	SINGLE	818643	808472
+PRJNA451040_Sebastes-pinniger	SRR7079334	sample15	dummy	BioSample: SAMN08991030; Sample name: CI_22830_1144003; SRA: SRS3231198	isolate: San Juan Islands	SINGLE	1086103	1046897
+PRJNA451040_Sebastes-pinniger	SRR7079335	sample16	dummy	BioSample: SAMN08991027; Sample name: CC_2007_40_combined; SRA: SRS3231196	isolate: Washington coast	SINGLE	797845	792317
+PRJNA451040_Sebastes-pinniger	SRR7079336	sample17	dummy	BioSample: SAMN08991028; Sample name: CC_2010_50; SRA: SRS3231197	isolate: Washington coast	SINGLE	590347	590067
+PRJNA451040_Sebastes-pinniger	SRR7079338	sample18	dummy	BioSample: SAMN08991029; Sample name: CC_20120083; SRA: SRS3231194	isolate: Washington coast	SINGLE	461773	458408
+PRJNA451040_Sebastes-pinniger	SRR7079339	sample19	dummy	BioSample: SAMN08991035; Sample name: CI_22842_1144015; SRA: SRS3231193	isolate: San Juan Islands	SINGLE	1668117	1613376
+PRJNA451040_Sebastes-pinniger	SRR7079340	sample20	dummy	BioSample: SAMN08991036; Sample name: CI_22839_1144012; SRA: SRS3231192	isolate: San Juan Islands	SINGLE	1129441	1121258
+PRJNA451040_Sebastes-pinniger	SRR7079365	sample21	dummy	BioSample: SAMN08991040; Sample name: CI_422_R_CanYe5; SRA: SRS3231169	isolate: Sekiu	SINGLE	1009173	1002577
+PRJNA451040_Sebastes-pinniger	SRR7079367	sample22	dummy	BioSample: SAMN08991038; Sample name: CI_22843_1144016; SRA: SRS3231167	isolate: San Juan Islands	SINGLE	1504756	1493200
+PRJNA451040_Sebastes-pinniger	SRR7079368	sample23	dummy	BioSample: SAMN08991037; Sample name: CC_2013_27_CanYe2; SRA: SRS3231165	isolate: Washington coast	SINGLE	1568507	1555111
+PRJNA451040_Sebastes-pinniger	SRR7079369	sample24	dummy	BioSample: SAMN08991044; Sample name: CI_22846_1144019; SRA: SRS3231166	isolate: San Juan Islands	SINGLE	747096	742252
+PRJNA451040_Sebastes-pinniger	SRR7079370	sample25	dummy	BioSample: SAMN08991043; Sample name: CI_22837_1144010; SRA: SRS3231164	isolate: San Juan Islands	SINGLE	2720594	2702399
+PRJNA451040_Sebastes-pinniger	SRR7079424	sample26	dummy	BioSample: SAMN08990993; Sample name: CI_712; SRA: SRS3231110	isolate: Sekiu	SINGLE	1764614	1745892
+PRJNA451040_Sebastes-pinniger	SRR7079453	sample27	dummy	BioSample: SAMN08990986; Sample name: CI_607; SRA: SRS3231081	isolate: Sekiu	SINGLE	1440318	1431108
+PRJNA451040_Sebastes-pinniger	SRR7079454	sample28	dummy	BioSample: SAMN08990985; Sample name: CI_841_combined; SRA: SRS3231082	isolate: Central Puget Sound	SINGLE	1207229	1194430
+PRJNA451040_Sebastes-pinniger	SRR7079455	sample29	dummy	BioSample: SAMN08991048; Sample name: CI_236; SRA: SRS3231079	isolate: San Juan Islands	SINGLE	2726710	2700170
+PRJNA451040_Sebastes-pinniger	SRR7079456	sample30	dummy	BioSample: SAMN08991051; Sample name: CI_22844_1144017_combined; SRA: SRS3231077	isolate: San Juan Islands	SINGLE	1619851	1602598
+PRJNA451040_Sebastes-pinniger	SRR7079457	sample31	dummy	BioSample: SAMN08990978; Sample name: CC_2013_25; SRA: SRS3231078	isolate: Washington coast	SINGLE	626789	622250
+PRJNA451040_Sebastes-pinniger	SRR7079459	sample32	dummy	BioSample: SAMN08990980; Sample name: CI_884_combined; SRA: SRS3231076	isolate: Central Puget Sound	SINGLE	700610	697529
+PRJNA451040_Sebastes-pinniger	SRR7079460	sample33	dummy	BioSample: SAMN08990979; Sample name: CI_739; SRA: SRS3231074	isolate: Sekiu	SINGLE	1669402	1656149
+PRJNA451040_Sebastes-pinniger	SRR7079461	sample34	dummy	BioSample: SAMN08990982; Sample name: CC_2009_25; SRA: SRS3231073	isolate: Washington coast	SINGLE	734957	728153
+PRJNA451040_Sebastes-pinniger	SRR7079462	sample35	dummy	BioSample: SAMN08990981; Sample name: CI_987_combined; SRA: SRS3231072	isolate: Central Puget Sound	SINGLE	1909459	1887895
+PRJNA451040_Sebastes-pinniger	SRR7079463	sample36	dummy	BioSample: SAMN08990984; Sample name: CI_672; SRA: SRS3231071	isolate: Sekiu	SINGLE	1728673	1712417
+PRJNA451040_Sebastes-pinniger	SRR7079464	sample37	dummy	BioSample: SAMN08990983; Sample name: CI_640; SRA: SRS3231069	isolate: Sekiu	SINGLE	1773044	1754627
+PRJNA451040_Sebastes-pinniger	SRR7079467	sample38	dummy	BioSample: SAMN08991000; Sample name: CI_830_combined; SRA: SRS3231067	isolate: Central Puget Sound	SINGLE	1631765	1620461
+PRJNA451040_Sebastes-pinniger	SRR7079472	sample39	dummy	BioSample: SAMN08991052; Sample name: CI_22827_1144000_combinedFINAL; SRA: SRS3231062	isolate: San Juan Islands	SINGLE	533254	527738
+PRJNA451040_Sebastes-pinniger	SRR7079473	sample40	dummy	BioSample: SAMN08991053; Sample name: CI_22841_1144014_combined; SRA: SRS3231061	isolate: San Juan Islands	SINGLE	782908	779081
+PRJNA451040_Sebastes-pinniger	SRR7079474	sample41	dummy	BioSample: SAMN08990995; Sample name: CI_1206.sub1M; SRA: SRS3231060	isolate: Hood Canal	SINGLE	1000000	999013
+PRJNA451040_Sebastes-pinniger	SRR7079475	sample42	dummy	BioSample: SAMN08990996; Sample name: CI_407; SRA: SRS3231059	isolate: Sekiu	SINGLE	1180026	1171974
+PRJNA451040_Sebastes-pinniger	SRR7079476	sample43	dummy	BioSample: SAMN08991054; Sample name: CI_22828_1144001; SRA: SRS3231058	isolate: San Juan Islands	SINGLE	1976089	1912880
+PRJNA451040_Sebastes-pinniger	SRR7079477	sample44	dummy	BioSample: SAMN08990989; Sample name: CI_690; SRA: SRS3231057	isolate: Sekiu	SINGLE	846101	836638
+PRJNA451040_Sebastes-pinniger	SRR7079478	sample45	dummy	BioSample: SAMN08990990; Sample name: CC_2009_29; SRA: SRS3231055	isolate: Washington coast	SINGLE	687786	682173
+PRJNA451040_Sebastes-pinniger	SRR7079479	sample46	dummy	BioSample: SAMN08990987; Sample name: CI_658; SRA: SRS3231056	isolate: Sekiu	SINGLE	1404793	1391777
+PRJNA451040_Sebastes-pinniger	SRR7079480	sample47	dummy	BioSample: SAMN08990988; Sample name: CI_1215.sub1M; SRA: SRS3231054	isolate: Hood Canal	SINGLE	1000000	999027
+PRJNA451040_Sebastes-pinniger	SRR7079482	sample48	dummy	BioSample: SAMN08990994; Sample name: CI_740; SRA: SRS3231052	isolate: Sekiu	SINGLE	1451810	1438504
+PRJNA451040_Sebastes-pinniger	SRR7079483	sample49	dummy	BioSample: SAMN08990991; Sample name: CI_22840_no_tag; SRA: SRS3231050	isolate: San Juan Islands	SINGLE	2102949	2046630
+PRJNA451040_Sebastes-pinniger	SRR7079484	sample50	dummy	BioSample: SAMN08990992; Sample name: CI_695; SRA: SRS3231051	isolate: Sekiu	SINGLE	1247414	1238820
+PRJNA451040_Sebastes-pinniger	SRR7079486	sample51	dummy	BioSample: SAMN08991049; Sample name: CI_417; SRA: SRS3231049	isolate: Sekiu	SINGLE	3342837	3307784
+PRJNA451040_Sebastes-pinniger	SRR7079487	sample52	dummy	BioSample: SAMN08991050; Sample name: CI_22829_1144002; SRA: SRS3231047	isolate: San Juan Islands	SINGLE	1341758	1332884
+PRJNA451040_Sebastes-pinniger	SRR7079492	sample53	dummy	BioSample: SAMN08991039; Sample name: CI_415; SRA: SRS3231041	isolate: Sekiu	SINGLE	2333692	2308924
+PRJNA451040_Sebastes-pinniger	SRR7079493	sample54	dummy	BioSample: SAMN08991006; Sample name: CI_704; SRA: SRS3231042	isolate: Sekiu	SINGLE	829166	824277
+PRJNA451040_Sebastes-pinniger	SRR7079494	sample55	dummy	BioSample: SAMN08991005; Sample name: CI_888_combined; SRA: SRS3231040	isolate: Central Puget Sound	SINGLE	1396220	1386723
+PRJNA451040_Sebastes-pinniger	SRR7079495	sample56	dummy	BioSample: SAMN08991004; Sample name: CI_880_combined; SRA: SRS3231039	isolate: Central Puget Sound	SINGLE	2315940	2253121
+PRJNA451040_Sebastes-pinniger	SRR7079496	sample57	dummy	BioSample: SAMN08991003; Sample name: CI_875_combined; SRA: SRS3231037	isolate: Central Puget Sound	SINGLE	1319464	1305739
+PRJNA451040_Sebastes-pinniger	SRR7079497	sample58	dummy	BioSample: SAMN08991002; Sample name: CI_738; SRA: SRS3231038	isolate: Sekiu	SINGLE	1815809	1802704
+PRJNA451040_Sebastes-pinniger	SRR7079498	sample59	dummy	BioSample: SAMN08991001; Sample name: CI_878; SRA: SRS3231036	isolate: Central Puget Sound	SINGLE	3300904	3280714
+PRJNA451040_Sebastes-pinniger	SRR7079500	sample60	dummy	BioSample: SAMN08990999; Sample name: CI_814; SRA: SRS3231035	isolate: Central Puget Sound	SINGLE	1081945	1066651
+PRJNA451040_Sebastes-pinniger	SRR7079501	sample61	dummy	BioSample: SAMN08990998; Sample name: CI_707_combined; SRA: SRS3231033	isolate: Sekiu	SINGLE	2278211	2264450
+PRJNA451040_Sebastes-pinniger	SRR7079502	sample62	dummy	BioSample: SAMN08990997; Sample name: CI_467; SRA: SRS3231032	isolate: Sekiu	SINGLE	1040675	1029791
+PRJNA451040_Sebastes-pinniger	SRR7079524	sample63	dummy	BioSample: SAMN08991046; Sample name: CC_2009_11; SRA: SRS3231010	isolate: Washington coast	SINGLE	935588	927209
+PRJNA451040_Sebastes-pinniger	SRR7079525	sample64	dummy	BioSample: SAMN08991045; Sample name: CI_22838_1144011; SRA: SRS3231009	isolate: San Juan Islands	SINGLE	986691	979497
+PRJNA451040_Sebastes-pinniger	SRR7079526	sample65	dummy	BioSample: SAMN08991015; Sample name: CI_879; SRA: SRS3231007	isolate: Central Puget Sound	SINGLE	2042861	2029603
+PRJNA451040_Sebastes-pinniger	SRR7079527	sample66	dummy	BioSample: SAMN08991016; Sample name: CI_404; SRA: SRS3231008	isolate: Sekiu	SINGLE	1432706	1418927
+PRJNA451040_Sebastes-pinniger	SRR7079528	sample67	dummy	BioSample: SAMN08991055; Sample name: CC_2005_39; SRA: SRS3231006	isolate: Washington coast	SINGLE	726025	720066
+PRJNA451040_Sebastes-pinniger	SRR7079529	sample68	dummy	BioSample: SAMN08991007; Sample name: CI_832; SRA: SRS3231005	isolate: Central Puget Sound	SINGLE	2542238	2523336
+PRJNA451040_Sebastes-pinniger	SRR7079530	sample69	dummy	BioSample: SAMN08991008; Sample name: CI_870_combined; SRA: SRS3231004	isolate: Central Puget Sound	SINGLE	870301	867807
+PRJNA451040_Sebastes-pinniger	SRR7079531	sample70	dummy	BioSample: SAMN08991009; Sample name: CI_896_combined; SRA: SRS3231003	isolate: Central Puget Sound	SINGLE	1176865	1172968
+PRJNA451040_Sebastes-pinniger	SRR7079532	sample71	dummy	BioSample: SAMN08991010; Sample name: CI_948; SRA: SRS3231001	isolate: Central Puget Sound	SINGLE	558044	548917
+PRJNA451040_Sebastes-pinniger	SRR7079533	sample72	dummy	BioSample: SAMN08991011; Sample name: CI_702; SRA: SRS3231002	isolate: Sekiu	SINGLE	908415	902167
+PRJNA451040_Sebastes-pinniger	SRR7079534	sample73	dummy	BioSample: SAMN08991012; Sample name: CI_871_combined; SRA: SRS3231000	isolate: Central Puget Sound	SINGLE	1156181	1153692
+PRJNA451040_Sebastes-pinniger	SRR7079535	sample74	dummy	BioSample: SAMN08991013; Sample name: CI_959_combined; SRA: SRS3230999	isolate: Central Puget Sound	SINGLE	1052935	1042762
+PRJNA451040_Sebastes-pinniger	SRR7079536	sample75	dummy	BioSample: SAMN08991014; Sample name: CC_2010_49_CanYe4; SRA: SRS3230998	isolate: Washington coast	SINGLE	1979959	1920187
+PRJNA451040_Sebastes-pinniger	SRR7079549	sample76	dummy	BioSample: SAMN08991056; Sample name: CI_22831_1144004; SRA: SRS3230985	isolate: San Juan Islands	SINGLE	1692295	1629535
+PRJNA451040_Sebastes-pinniger	SRR7079556	sample77	dummy	BioSample: SAMN08991067; Sample name: CC_2009_46_CanYe4; SRA: SRS3230977	isolate: Washington coast	SINGLE	1331734	1288448
+PRJNA451040_Sebastes-pinniger	SRR7079557	sample78	dummy	BioSample: SAMN08991068; Sample name: CC_2012_73; SRA: SRS3230975	isolate: Washington coast	SINGLE	1522854	1509694
+PRJNA451040_Sebastes-pinniger	SRR7079558	sample79	dummy	BioSample: SAMN08991069; Sample name: CC_2009_47; SRA: SRS3230976	isolate: Washington coast	SINGLE	987751	980578
+PRJNA451040_Sebastes-pinniger	SRR7079560	sample80	dummy	BioSample: SAMN08991042; Sample name: CI_928; SRA: SRS3230973	isolate: Central Puget Sound	SINGLE	648597	637316
+PRJNA451040_Sebastes-pinniger	SRR7079561	sample81	dummy	BioSample: SAMN08991041; Sample name: CI_694; SRA: SRS3230970	isolate: Central Puget Sound	SINGLE	911203	910743
+PRJNA451040_Sebastes-pinniger	SRR7079562	sample82	dummy	BioSample: SAMN08991022; Sample name: CI_22848_1144021; SRA: SRS3230971	isolate: San Juan Islands	SINGLE	1184025	1151119
+PRJNA451040_Sebastes-pinniger	SRR7079563	sample83	dummy	BioSample: SAMN08991021; Sample name: CI_22845_1144018; SRA: SRS3230972	isolate: San Juan Islands	SINGLE	1531307	1482280
+PRJNA451040_Sebastes-pinniger	SRR7079564	sample84	dummy	BioSample: SAMN08991024; Sample name: CI_406; SRA: SRS3230969	isolate: Sekiu	SINGLE	3246008	3133215
+PRJNA451040_Sebastes-pinniger	SRR7079565	sample85	dummy	BioSample: SAMN08991023; Sample name: CI_22832_1144005; SRA: SRS3230968	isolate: San Juan Islands	SINGLE	1816829	1769020
+PRJNA451040_Sebastes-pinniger	SRR7079566	sample86	dummy	BioSample: SAMN08991018; Sample name: CI_744; SRA: SRS3230967	isolate: Central Puget Sound	SINGLE	854533	849336
+PRJNA451040_Sebastes-pinniger	SRR7079567	sample87	dummy	BioSample: SAMN08991017; Sample name: CI_451; SRA: SRS3230966	isolate: Sekiu	SINGLE	1840222	1828422
+PRJNA451040_Sebastes-pinniger	SRR7079568	sample88	dummy	BioSample: SAMN08991020; Sample name: CI_1236.sub1M; SRA: SRS3230964	isolate: Hood Canal	SINGLE	1000000	998964
+PRJNA451040_Sebastes-pinniger	SRR7079569	sample89	dummy	BioSample: SAMN08991019; Sample name: CI_999; SRA: SRS3230963	isolate: Central Puget Sound	SINGLE	1472319	1464412
+PRJNA451040_Sebastes-pinniger	SRR7079570	sample90	dummy	BioSample: SAMN08991026; Sample name: CI_22847_1144020; SRA: SRS3230965	isolate: San Juan Islands	SINGLE	1969129	1948857
+PRJNA451040_Sebastes-pinniger	SRR7079571	sample91	dummy	BioSample: SAMN08991025; Sample name: CI_852_combinedFINAL; SRA: SRS3230962	isolate: Central Puget Sound	SINGLE	1059850	1049917

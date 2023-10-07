@@ -1,0 +1,71 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006164	sample0	dummy	BioSample: SAMN03480522; Sample name: DEN_109; SRA: SRS927661		SINGLE	486949	486949
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006165	sample1	dummy	BioSample: SAMN03480523; Sample name: DEN_113; SRA: SRS927660		SINGLE	1766197	1766197
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006166	sample2	dummy	BioSample: SAMN03480524; Sample name: DEN_128; SRA: SRS927659		SINGLE	1305701	1305701
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006167	sample3	dummy	BioSample: SAMN03480525; Sample name: DEN_24; SRA: SRS927658		SINGLE	1509154	1509154
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006168	sample4	dummy	BioSample: SAMN03480526; Sample name: DEN_247; SRA: SRS927657		SINGLE	1431318	1431318
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006169	sample5	dummy	BioSample: SAMN03480527; Sample name: DEN_265; SRA: SRS927656		SINGLE	1647840	1647840
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006170	sample6	dummy	BioSample: SAMN03480528; Sample name: NOR_14502; SRA: SRS927655		SINGLE	1213769	1213769
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006171	sample7	dummy	BioSample: SAMN03480529; Sample name: FRA_9912071; SRA: SRS927653		SINGLE	1009364	1009364
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006172	sample8	dummy	BioSample: SAMN03480530; Sample name: GER_1160; SRA: SRS927654		SINGLE	1894163	1894163
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006173	sample9	dummy	BioSample: SAMN03480531; Sample name: GER_16411; SRA: SRS927652		SINGLE	7061599	7061599
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006174	sample10	dummy	BioSample: SAMN03480532; Sample name: GER_17551; SRA: SRS927651		SINGLE	1683509	1683509
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006175	sample11	dummy	BioSample: SAMN03480533; Sample name: GER_17889; SRA: SRS927650		SINGLE	805979	805979
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006176	sample12	dummy	BioSample: SAMN03480534; Sample name: GER_17928; SRA: SRS927648		SINGLE	528844	528844
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006177	sample13	dummy	BioSample: SAMN03480535; Sample name: GER_18088; SRA: SRS927649		SINGLE	594826	594826
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006178	sample14	dummy	BioSample: SAMN03480536; Sample name: GER_18089; SRA: SRS927647		SINGLE	247646	247646
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006179	sample15	dummy	BioSample: SAMN03480537; Sample name: GER_2425; SRA: SRS927645		SINGLE	3458878	3458878
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006180	sample16	dummy	BioSample: SAMN03480538; Sample name: GER_3614; SRA: SRS927646		SINGLE	2885876	2885876
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006181	sample17	dummy	BioSample: SAMN03480539; Sample name: GER_3616; SRA: SRS927644		SINGLE	3280270	3280270
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006182	sample18	dummy	BioSample: SAMN03480540; Sample name: GER_5600; SRA: SRS927642		SINGLE	892392	892392
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006183	sample19	dummy	BioSample: SAMN03480541; Sample name: ICE_B19; SRA: SRS927643		SINGLE	2711703	2711703
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006184	sample20	dummy	BioSample: SAMN03480542; Sample name: ICE_H1; SRA: SRS927641		SINGLE	1269790	1269790
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006185	sample21	dummy	BioSample: SAMN03480543; Sample name: ICE_SS36; SRA: SRS927640		SINGLE	46181	46181
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006186	sample22	dummy	BioSample: SAMN03480544; Sample name: ICE_SV1_96_female; SRA: SRS927639		SINGLE	13278334	13278334
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006187	sample23	dummy	BioSample: SAMN03480545; Sample name: ICE_SV17; SRA: SRS927638		SINGLE	654246	654246
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006188	sample24	dummy	BioSample: SAMN03480546; Sample name: ICE_SV19; SRA: SRS927636		SINGLE	31899	31899
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006189	sample25	dummy	BioSample: SAMN03480547; Sample name: ICE_SV198; SRA: SRS927637		SINGLE	1571868	1571868
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006190	sample26	dummy	BioSample: SAMN03480548; Sample name: ICE_SV199; SRA: SRS927635		SINGLE	2469768	2469768
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006191	sample27	dummy	BioSample: SAMN03480549; Sample name: ICE_SV2; SRA: SRS927633		SINGLE	142682	142682
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006192	sample28	dummy	BioSample: SAMN03480550; Sample name: ICE_SV200; SRA: SRS927634		SINGLE	2102149	2102149
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006193	sample29	dummy	BioSample: SAMN03480551; Sample name: ICE_SV201; SRA: SRS927632		SINGLE	685581	685581
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006194	sample30	dummy	BioSample: SAMN03480552; Sample name: ICE_SV4_female; SRA: SRS927631		SINGLE	999959	999959
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006195	sample31	dummy	BioSample: SAMN03480553; Sample name: ICE_SV4_male; SRA: SRS927629		SINGLE	278146	278146
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006196	sample32	dummy	BioSample: SAMN03480554; Sample name: ICE_SV51; SRA: SRS927630		SINGLE	382248	382248
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006197	sample33	dummy	BioSample: SAMN03480555; Sample name: ICE_SV5A; SRA: SRS927628		SINGLE	1724455	1724455
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006198	sample34	dummy	BioSample: SAMN03480556; Sample name: ICE_SV7; SRA: SRS927627		SINGLE	7082890	7082890
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006199	sample35	dummy	BioSample: SAMN03480557; Sample name: ICE_SV86; SRA: SRS927626		SINGLE	397506	397506
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006200	sample36	dummy	BioSample: SAMN03480558; Sample name: ICE_SV90; SRA: SRS927624		SINGLE	4110255	4110255
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006201	sample37	dummy	BioSample: SAMN03480559; Sample name: IRE_117; SRA: SRS927625		SINGLE	1422	1422
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006202	sample38	dummy	BioSample: SAMN03480560; Sample name: IRE_278; SRA: SRS927622		SINGLE	8185707	8185707
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006203	sample39	dummy	BioSample: SAMN03480561; Sample name: IRE_75; SRA: SRS927623		SINGLE	2077573	2077573
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006204	sample40	dummy	BioSample: SAMN03480562; Sample name: IRE_90; SRA: SRS927621		SINGLE	3005	3005
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006205	sample41	dummy	BioSample: SAMN03480563; Sample name: IRE_WBD1_96; SRA: SRS927620		SINGLE	1568956	1568956
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006206	sample42	dummy	BioSample: SAMN03480564; Sample name: IRE_WBD2_93; SRA: SRS927618		SINGLE	3757706	3757706
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006207	sample43	dummy	BioSample: SAMN03480565; Sample name: NOR_034500; SRA: SRS927619		SINGLE	1054106	1054106
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006208	sample44	dummy	BioSample: SAMN03480566; Sample name: NOR_124599; SRA: SRS927617		SINGLE	2973952	2973952
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006209	sample45	dummy	BioSample: SAMN03480567; Sample name: NOR_134500; SRA: SRS927616		SINGLE	1825962	1825962
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006210	sample46	dummy	BioSample: SAMN03480568; Sample name: NOR_34503; SRA: SRS927615		SINGLE	1072702	1072702
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006211	sample47	dummy	BioSample: SAMN03480569; Sample name: NOR_44500; SRA: SRS927614		SINGLE	2249851	2249851
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006212	sample48	dummy	BioSample: SAMN03480570; Sample name: NOR_54500; SRA: SRS927612		SINGLE	1830864	1830864
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006213	sample49	dummy	BioSample: SAMN03480571; Sample name: SCO_E_M03104; SRA: SRS927613		SINGLE	3559862	3559862
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006214	sample50	dummy	BioSample: SAMN03480572; Sample name: SCO_ E_M11410; SRA: SRS927611		SINGLE	564932	564932
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006215	sample51	dummy	BioSample: SAMN03480573; Sample name: SCO_ E_M12305; SRA: SRS927610		SINGLE	515198	515198
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006216	sample52	dummy	BioSample: SAMN03480574; Sample name: SCO_ E_M13808; SRA: SRS927609		SINGLE	324014	324014
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006217	sample53	dummy	BioSample: SAMN03480575; Sample name: SCO_ E_M1403; SRA: SRS927608		SINGLE	132489	132489
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006218	sample54	dummy	BioSample: SAMN03480576; Sample name: SCO_ E_M15604; SRA: SRS927607		SINGLE	1880832	1880832
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006219	sample55	dummy	BioSample: SAMN03480577; Sample name: SCO_ E_M16709; SRA: SRS927606		SINGLE	650712	650712
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006220	sample56	dummy	BioSample: SAMN03480578; Sample name: SCO_ E_M16801; SRA: SRS927605		SINGLE	3048332	3048332
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006221	sample57	dummy	BioSample: SAMN03480579; Sample name: SCO_ E_M17001; SRA: SRS927603		SINGLE	322176	322176
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006222	sample58	dummy	BioSample: SAMN03480580; Sample name: SCO_ E_M18305; SRA: SRS927604		SINGLE	14530451	14530451
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006223	sample59	dummy	BioSample: SAMN03480581; Sample name: SCO_ E_M19209; SRA: SRS927602		SINGLE	18496765	18496765
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006224	sample60	dummy	BioSample: SAMN03480582; Sample name: SCO_ E_M28603; SRA: SRS927601		SINGLE	2470415	2470415
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006225	sample61	dummy	BioSample: SAMN03480583; Sample name: SCO_ E_M3503; SRA: SRS927600		SINGLE	711652	711652
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006226	sample62	dummy	BioSample: SAMN03480584; Sample name: SCO_ E_M9802; SRA: SRS927599		SINGLE	1974814	1974814
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006227	sample63	dummy	BioSample: SAMN03480585; Sample name: SCO_N_M19805; SRA: SRS927598		SINGLE	618311	618311
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006228	sample64	dummy	BioSample: SAMN03480586; Sample name: SCO_ORK_M14101; SRA: SRS927596		SINGLE	2645241	2645241
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006229	sample65	dummy	BioSample: SAMN03480587; Sample name: SCO_ORK_M22511; SRA: SRS927597		SINGLE	646887	646887
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006230	sample66	dummy	BioSample: SAMN03480588; Sample name: SCO_ORK_M286297; SRA: SRS927594		SINGLE	727957	727957
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006231	sample67	dummy	BioSample: SAMN03480589; Sample name: SCO_SHET_M1010; SRA: SRS927595		SINGLE	856374	856374
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006232	sample68	dummy	BioSample: SAMN03480590; Sample name: SCO_W_M25406; SRA: SRS927593		SINGLE	528902	528902
+PRJNA280898_Lagenorhynchus-albirostris	SRR2006233	sample69	dummy	BioSample: SAMN03480591; Sample name: SCO_W_M4608; SRA: SRS927592		SINGLE	1001006	1001006

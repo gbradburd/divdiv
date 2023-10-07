@@ -1,0 +1,135 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA280774_Poecilia-latipinna	SRR1964818	sample0	dummy	BioSample: SAMN03456839; Sample name: BPC1; SRA: SRS901433	isolate: 1; ecotype: intertidial Saltflat	SINGLE	250085	216265
+PRJNA280774_Poecilia-latipinna	SRR1964823	sample1	dummy	BioSample: SAMN03456840; Sample name: BPC10; SRA: SRS901619	isolate: 2; ecotype: intertidial Saltflat	SINGLE	257228	221575
+PRJNA280774_Poecilia-latipinna	SRR1964839	sample2	dummy	BioSample: SAMN03456841; Sample name: BPC11; SRA: SRS901635	isolate: 3; ecotype: intertidial Saltflat	SINGLE	1661294	1471531
+PRJNA280774_Poecilia-latipinna	SRR1964840	sample3	dummy	BioSample: SAMN03456842; Sample name: BPC12; SRA: SRS901637	isolate: 4; ecotype: intertidial Saltflat	SINGLE	922362	872573
+PRJNA280774_Poecilia-latipinna	SRR1974146	sample4	dummy	BioSample: SAMN03456843; Sample name: BPC13; SRA: SRS909814	isolate: 5; ecotype: intertidial Saltflat	SINGLE	1166387	948570
+PRJNA280774_Poecilia-latipinna	SRR1974147	sample5	dummy	BioSample: SAMN03456844; Sample name: BPC14; SRA: SRS909816	isolate: 6; ecotype: intertidial Saltflat	SINGLE	319872	272648
+PRJNA280774_Poecilia-latipinna	SRR1974187	sample6	dummy	BioSample: SAMN03456845; Sample name: BPC15; SRA: SRS909844	isolate: 7; ecotype: intertidial Saltflat	SINGLE	887228	757315
+PRJNA280774_Poecilia-latipinna	SRR1974188	sample7	dummy	BioSample: SAMN03456846; Sample name: BPC16; SRA: SRS909845	isolate: 8; ecotype: intertidial Saltflat	SINGLE	690674	636318
+PRJNA280774_Poecilia-latipinna	SRR1974189	sample8	dummy	BioSample: SAMN03456847; Sample name: BPC17; SRA: SRS909847	isolate: 9; ecotype: intertidial Saltflat	SINGLE	1800572	1631608
+PRJNA280774_Poecilia-latipinna	SRR1974191	sample9	dummy	BioSample: SAMN03456848; Sample name: BPC18; SRA: SRS909848	isolate: 10; ecotype: intertidial Saltflat	SINGLE	2184250	1936749
+PRJNA280774_Poecilia-latipinna	SRR1974192	sample10	dummy	BioSample: SAMN03456849; Sample name: BPC19; SRA: SRS909849	isolate: 11; ecotype: intertidial Saltflat	SINGLE	421350	355193
+PRJNA280774_Poecilia-latipinna	SRR1974194	sample11	dummy	BioSample: SAMN03456850; Sample name: BPC2; SRA: SRS909853	isolate: 12; ecotype: intertidial Saltflat	SINGLE	722620	630589
+PRJNA280774_Poecilia-latipinna	SRR1974195	sample12	dummy	BioSample: SAMN03456851; Sample name: BPC20; SRA: SRS909854	isolate: 13; ecotype: intertidial Saltflat	SINGLE	1743376	1526502
+PRJNA280774_Poecilia-latipinna	SRR1979244	sample13	dummy	BioSample: SAMN03456852; Sample name: BPC21; SRA: SRS912601	isolate: 14; ecotype: intertidial Saltflat	SINGLE	1100362	942513
+PRJNA280774_Poecilia-latipinna	SRR1979245	sample14	dummy	BioSample: SAMN03456853; Sample name: BPC22; SRA: SRS912602	isolate: 15; ecotype: intertidial Saltflat	SINGLE	492394	419077
+PRJNA280774_Poecilia-latipinna	SRR1979317	sample15	dummy	BioSample: SAMN03456854; Sample name: BPC23; SRA: SRS912674	isolate: 16; ecotype: intertidial Saltflat	SINGLE	657075	555411
+PRJNA280774_Poecilia-latipinna	SRR1979318	sample16	dummy	BioSample: SAMN03456855; Sample name: BPC24; SRA: SRS912675	isolate: 17; ecotype: intertidial Saltflat	SINGLE	754377	639653
+PRJNA280774_Poecilia-latipinna	SRR1979319	sample17	dummy	BioSample: SAMN03456856; Sample name: BPC25; SRA: SRS912676	isolate: 18; ecotype: intertidial Saltflat	SINGLE	244277	201829
+PRJNA280774_Poecilia-latipinna	SRR1979320	sample18	dummy	BioSample: SAMN03456857; Sample name: BPC26; SRA: SRS912677	isolate: 19; ecotype: intertidial Saltflat	SINGLE	2622983	2406232
+PRJNA280774_Poecilia-latipinna	SRR1979321	sample19	dummy	BioSample: SAMN03456858; Sample name: BPC27; SRA: SRS912678	isolate: 20; ecotype: intertidial Saltflat	SINGLE	666027	572199
+PRJNA280774_Poecilia-latipinna	SRR1979322	sample20	dummy	BioSample: SAMN03456859; Sample name: BPC28; SRA: SRS912679	isolate: 21; ecotype: intertidial Saltflat	SINGLE	6852522	6183986
+PRJNA280774_Poecilia-latipinna	SRR1979323	sample21	dummy	BioSample: SAMN03456860; Sample name: BPC29; SRA: SRS912680	isolate: 22; ecotype: intertidial Saltflat	SINGLE	687382	606370
+PRJNA280774_Poecilia-latipinna	SRR1979366	sample22	dummy	BioSample: SAMN03456861; Sample name: BPC3; SRA: SRS912695	isolate: 23; ecotype: intertidial Saltflat	SINGLE	1283903	1186611
+PRJNA280774_Poecilia-latipinna	SRR1979369	sample23	dummy	BioSample: SAMN03456862; Sample name: BPC30; SRA: SRS912697	isolate: 24; ecotype: intertidial Saltflat	SINGLE	577887	490032
+PRJNA280774_Poecilia-latipinna	SRR1979376	sample24	dummy	BioSample: SAMN03456863; Sample name: BPC4; SRA: SRS912702	isolate: 25; ecotype: intertidial Saltflat	SINGLE	168065	141560
+PRJNA280774_Poecilia-latipinna	SRR1979377	sample25	dummy	BioSample: SAMN03456864; Sample name: BPC5; SRA: SRS912706	isolate: 26; ecotype: intertidial Saltflat	SINGLE	233095	201809
+PRJNA280774_Poecilia-latipinna	SRR1979378	sample26	dummy	BioSample: SAMN03456865; Sample name: BPC6; SRA: SRS912707	isolate: 27; ecotype: intertidial Saltflat	SINGLE	1432952	1242166
+PRJNA280774_Poecilia-latipinna	SRR1979379	sample27	dummy	BioSample: SAMN03456866; Sample name: BPC7; SRA: SRS912708	isolate: 28; ecotype: intertidial Saltflat	SINGLE	1105040	990406
+PRJNA280774_Poecilia-latipinna	SRR1979380	sample28	dummy	BioSample: SAMN03456868; Sample name: BPC9; SRA: SRS912712	isolate: 30; ecotype: intertidial Saltflat	SINGLE	743569	614543
+PRJNA280774_Poecilia-latipinna	SRR1979382	sample29	dummy	BioSample: SAMN03456869; Sample name: BPN1; SRA: SRS912716	isolate: 31; ecotype: intertidial Saltflat	SINGLE	1706071	1457882
+PRJNA280774_Poecilia-latipinna	SRR1979383	sample30	dummy	BioSample: SAMN03456870; Sample name: BPN10; SRA: SRS912717	isolate: 32; ecotype: intertidial Saltflat	SINGLE	654261	594542
+PRJNA280774_Poecilia-latipinna	SRR1979384	sample31	dummy	BioSample: SAMN03456871; Sample name: BPN11; SRA: SRS912718	isolate: 33; ecotype: intertidial Saltflat	SINGLE	3045921	2876426
+PRJNA280774_Poecilia-latipinna	SRR1979385	sample32	dummy	BioSample: SAMN03456872; Sample name: BPN12; SRA: SRS912719	isolate: 34; ecotype: intertidial Saltflat	SINGLE	714708	612598
+PRJNA280774_Poecilia-latipinna	SRR1979386	sample33	dummy	BioSample: SAMN03456873; Sample name: BPN13; SRA: SRS912727	isolate: 35; ecotype: intertidial Saltflat	SINGLE	165191	140043
+PRJNA280774_Poecilia-latipinna	SRR1979387	sample34	dummy	BioSample: SAMN03456874; Sample name: BPN14; SRA: SRS912726	isolate: 36; ecotype: intertidial Saltflat	SINGLE	185416	159652
+PRJNA280774_Poecilia-latipinna	SRR1979415	sample35	dummy	BioSample: SAMN03456875; Sample name: BPN15; SRA: SRS912732	isolate: 37; ecotype: intertidial Saltflat	SINGLE	733216	683360
+PRJNA280774_Poecilia-latipinna	SRR1979442	sample36	dummy	BioSample: SAMN03456876; Sample name: BPN16; SRA: SRS912756	isolate: 38; ecotype: intertidial Saltflat	SINGLE	1074371	917112
+PRJNA280774_Poecilia-latipinna	SRR1979443	sample37	dummy	BioSample: SAMN03456877; Sample name: BPN17; SRA: SRS912757	isolate: 39; ecotype: intertidial Saltflat	SINGLE	582288	488652
+PRJNA280774_Poecilia-latipinna	SRR1979444	sample38	dummy	BioSample: SAMN03456878; Sample name: BPN18; SRA: SRS912758	isolate: 40; ecotype: intertidial Saltflat	SINGLE	631583	542151
+PRJNA280774_Poecilia-latipinna	SRR1979445	sample39	dummy	BioSample: SAMN03456879; Sample name: BPN19; SRA: SRS912759	isolate: 41; ecotype: intertidial Saltflat	SINGLE	504125	436714
+PRJNA280774_Poecilia-latipinna	SRR1979468	sample40	dummy	BioSample: SAMN03456880; Sample name: BPN2; SRA: SRS912781	isolate: 42; ecotype: intertidial Saltflat	SINGLE	1514119	1390255
+PRJNA280774_Poecilia-latipinna	SRR1979469	sample41	dummy	BioSample: SAMN03456881; Sample name: BPN20; SRA: SRS912782	isolate: 43; ecotype: intertidial Saltflat	SINGLE	2638413	2288506
+PRJNA280774_Poecilia-latipinna	SRR1979470	sample42	dummy	BioSample: SAMN03456882; Sample name: BPN21; SRA: SRS912783	isolate: 44; ecotype: intertidial Saltflat	SINGLE	830003	732248
+PRJNA280774_Poecilia-latipinna	SRR1979471	sample43	dummy	BioSample: SAMN03456883; Sample name: BPN22; SRA: SRS912784	isolate: 45; ecotype: intertidial Saltflat	SINGLE	598994	515476
+PRJNA280774_Poecilia-latipinna	SRR1979472	sample44	dummy	BioSample: SAMN03456884; Sample name: BPN23; SRA: SRS912785	isolate: 46; ecotype: intertidial Saltflat	SINGLE	701333	620178
+PRJNA280774_Poecilia-latipinna	SRR1979473	sample45	dummy	BioSample: SAMN03456885; Sample name: BPN24; SRA: SRS912786	isolate: 47; ecotype: intertidial Saltflat	SINGLE	1977993	1769396
+PRJNA280774_Poecilia-latipinna	SRR1979474	sample46	dummy	BioSample: SAMN03456886; Sample name: BPN25; SRA: SRS912787	isolate: 48; ecotype: intertidial Saltflat	SINGLE	4592219	4083430
+PRJNA280774_Poecilia-latipinna	SRR1980040	sample47	dummy	BioSample: SAMN03456887; Sample name: BPN26; SRA: SRS913315	isolate: 49; ecotype: intertidial Saltflat	SINGLE	1076476	940709
+PRJNA280774_Poecilia-latipinna	SRR1980042	sample48	dummy	BioSample: SAMN03456889; Sample name: BPN28; SRA: SRS913320	isolate: 51; ecotype: intertidial Saltflat	SINGLE	1344235	1239699
+PRJNA280774_Poecilia-latipinna	SRR1980043	sample49	dummy	BioSample: SAMN03456890; Sample name: BPN29; SRA: SRS913321	isolate: 52; ecotype: intertidial Saltflat	SINGLE	462505	393303
+PRJNA280774_Poecilia-latipinna	SRR1980044	sample50	dummy	BioSample: SAMN03456891; Sample name: BPN3; SRA: SRS913322	isolate: 53; ecotype: intertidial Saltflat	SINGLE	456617	388750
+PRJNA280774_Poecilia-latipinna	SRR1980505	sample51	dummy	BioSample: SAMN03456892; Sample name: BPN30; SRA: SRS913512	isolate: 54; ecotype: intertidial Saltflat	SINGLE	2963638	2628296
+PRJNA280774_Poecilia-latipinna	SRR1980506	sample52	dummy	BioSample: SAMN03456893; Sample name: BPN4; SRA: SRS913513	isolate: 55; ecotype: intertidial Saltflat	SINGLE	796879	684819
+PRJNA280774_Poecilia-latipinna	SRR1980507	sample53	dummy	BioSample: SAMN03456894; Sample name: BPN5; SRA: SRS913514	isolate: 56; ecotype: intertidial Saltflat	SINGLE	1104225	956606
+PRJNA280774_Poecilia-latipinna	SRR1980508	sample54	dummy	BioSample: SAMN03456895; Sample name: BPN6; SRA: SRS913515	isolate: 57; ecotype: intertidial Saltflat	SINGLE	475823	430986
+PRJNA280774_Poecilia-latipinna	SRR1980509	sample55	dummy	BioSample: SAMN03456896; Sample name: BPN7; SRA: SRS913516	isolate: 58; ecotype: intertidial Saltflat	SINGLE	243142	200215
+PRJNA280774_Poecilia-latipinna	SRR1980510	sample56	dummy	BioSample: SAMN03456897; Sample name: BPN8; SRA: SRS913517	isolate: 59; ecotype: intertidial Saltflat	SINGLE	459738	392266
+PRJNA280774_Poecilia-latipinna	SRR1980511	sample57	dummy	BioSample: SAMN03456898; Sample name: BPN9; SRA: SRS913518	isolate: 60; ecotype: intertidial Saltflat	SINGLE	389166	341397
+PRJNA280774_Poecilia-latipinna	SRR1980531	sample58	dummy	BioSample: SAMN03456900; Sample name: C10; SRA: SRS913526	isolate: 62; ecotype: intertidial Saltflat	SINGLE	671731	564714
+PRJNA280774_Poecilia-latipinna	SRR1980532	sample59	dummy	BioSample: SAMN03456901; Sample name: C11; SRA: SRS913527	isolate: 63; ecotype: intertidial Saltflat	SINGLE	553212	474528
+PRJNA280774_Poecilia-latipinna	SRR1980533	sample60	dummy	BioSample: SAMN03456902; Sample name: C12; SRA: SRS913528	isolate: 64; ecotype: intertidial Saltflat	SINGLE	1275645	1114292
+PRJNA280774_Poecilia-latipinna	SRR1980534	sample61	dummy	BioSample: SAMN03456903; Sample name: C13; SRA: SRS913529	isolate: 65; ecotype: intertidial Saltflat	SINGLE	542040	516022
+PRJNA280774_Poecilia-latipinna	SRR1980600	sample62	dummy	BioSample: SAMN03456867; Sample name: BPC8; SRA: SRS912709	isolate: 29; ecotype: intertidial Saltflat	SINGLE	446159	372677
+PRJNA280774_Poecilia-latipinna	SRR1980601	sample63	dummy	BioSample: SAMN03456904; Sample name: C14; SRA: SRS913556	isolate: 66; ecotype: intertidial Saltflat	SINGLE	383773	325636
+PRJNA280774_Poecilia-latipinna	SRR1980603	sample64	dummy	BioSample: SAMN03456905; Sample name: C15; SRA: SRS913557	isolate: 67; ecotype: intertidial Saltflat	SINGLE	730357	633820
+PRJNA280774_Poecilia-latipinna	SRR1980612	sample65	dummy	BioSample: SAMN03456906; Sample name: C16; SRA: SRS913565	isolate: 68; ecotype: intertidial Saltflat	SINGLE	913966	801583
+PRJNA280774_Poecilia-latipinna	SRR1980621	sample66	dummy	BioSample: SAMN03456907; Sample name: C17; SRA: SRS913582	isolate: 69; ecotype: intertidial Saltflat	SINGLE	477942	421187
+PRJNA280774_Poecilia-latipinna	SRR1980628	sample67	dummy	BioSample: SAMN03456908; Sample name: C18; SRA: SRS913583	isolate: 70; ecotype: intertidial Saltflat	SINGLE	1061295	917033
+PRJNA280774_Poecilia-latipinna	SRR1980629	sample68	dummy	BioSample: SAMN03456909; Sample name: C19; SRA: SRS913584	isolate: 71; ecotype: intertidial Saltflat	SINGLE	804210	674575
+PRJNA280774_Poecilia-latipinna	SRR1980631	sample69	dummy	BioSample: SAMN03456911; Sample name: C20; SRA: SRS913586	isolate: 73; ecotype: intertidial Saltflat	SINGLE	1991135	1742566
+PRJNA280774_Poecilia-latipinna	SRR1980632	sample70	dummy	BioSample: SAMN03456912; Sample name: C21; SRA: SRS913587	isolate: 74; ecotype: intertidial Saltflat	SINGLE	1493162	1343926
+PRJNA280774_Poecilia-latipinna	SRR1980633	sample71	dummy	BioSample: SAMN03456913; Sample name: C22; SRA: SRS913589	isolate: 75; ecotype: intertidial Saltflat	SINGLE	1196509	1038359
+PRJNA280774_Poecilia-latipinna	SRR1980636	sample72	dummy	BioSample: SAMN03456914; Sample name: C23; SRA: SRS913591	isolate: 76; ecotype: intertidial Saltflat	SINGLE	2050655	1749123
+PRJNA280774_Poecilia-latipinna	SRR1980637	sample73	dummy	BioSample: SAMN03456915; Sample name: C24; SRA: SRS913593	isolate: 77; ecotype: intertidial Saltflat	SINGLE	895787	748659
+PRJNA280774_Poecilia-latipinna	SRR1980638	sample74	dummy	BioSample: SAMN03456916; Sample name: C25; SRA: SRS913597	isolate: 78; ecotype: intertidial Saltflat	SINGLE	1124221	966623
+PRJNA280774_Poecilia-latipinna	SRR1980639	sample75	dummy	BioSample: SAMN03456917; Sample name: C26; SRA: SRS913598	isolate: 79; ecotype: intertidial Saltflat	SINGLE	732704	637629
+PRJNA280774_Poecilia-latipinna	SRR1980640	sample76	dummy	BioSample: SAMN03456918; Sample name: C27; SRA: SRS913599	isolate: 80; ecotype: intertidial Saltflat	SINGLE	1936267	1674827
+PRJNA280774_Poecilia-latipinna	SRR1980641	sample77	dummy	BioSample: SAMN03456919; Sample name: C28; SRA: SRS913600	isolate: 81; ecotype: intertidial Saltflat	SINGLE	704253	599054
+PRJNA280774_Poecilia-latipinna	SRR1980642	sample78	dummy	BioSample: SAMN03456920; Sample name: C29; SRA: SRS913601	isolate: 82; ecotype: intertidial Saltflat	SINGLE	119311	100392
+PRJNA280774_Poecilia-latipinna	SRR1980643	sample79	dummy	BioSample: SAMN03456921; Sample name: C3; SRA: SRS913602	isolate: 83; ecotype: intertidial Saltflat	SINGLE	279104	234022
+PRJNA280774_Poecilia-latipinna	SRR1980644	sample80	dummy	BioSample: SAMN03456922; Sample name: C30; SRA: SRS913603	isolate: 84; ecotype: intertidial Saltflat	SINGLE	607307	525285
+PRJNA280774_Poecilia-latipinna	SRR1980645	sample81	dummy	BioSample: SAMN03456923; Sample name: C4; SRA: SRS913604	isolate: 85; ecotype: intertidial Saltflat	SINGLE	1186482	1062461
+PRJNA280774_Poecilia-latipinna	SRR1980659	sample82	dummy	BioSample: SAMN03456925; Sample name: C6; SRA: SRS913607	isolate: 87; ecotype: intertidial Saltflat	SINGLE	199238	168406
+PRJNA280774_Poecilia-latipinna	SRR1980660	sample83	dummy	BioSample: SAMN03456926; Sample name: C7; SRA: SRS913608	isolate: 88; ecotype: intertidial Saltflat	SINGLE	1028917	899448
+PRJNA280774_Poecilia-latipinna	SRR1980661	sample84	dummy	BioSample: SAMN03456927; Sample name: C8; SRA: SRS913609	isolate: 89; ecotype: intertidial Saltflat	SINGLE	478617	432849
+PRJNA280774_Poecilia-latipinna	SRR1980662	sample85	dummy	BioSample: SAMN03456928; Sample name: C9; SRA: SRS913610	isolate: 90; ecotype: intertidial Saltflat	SINGLE	558494	524099
+PRJNA280774_Poecilia-latipinna	SRR1980666	sample86	dummy	BioSample: SAMN03456930; Sample name: WR10; SRA: SRS913613	isolate: 92; ecotype: River	SINGLE	172808	158855
+PRJNA280774_Poecilia-latipinna	SRR1980667	sample87	dummy	BioSample: SAMN03456931; Sample name: WR11; SRA: SRS913614	isolate: 93; ecotype: River	SINGLE	878666	831578
+PRJNA280774_Poecilia-latipinna	SRR1980668	sample88	dummy	BioSample: SAMN03456932; Sample name: WR12; SRA: SRS913616	isolate: 94; ecotype: River	SINGLE	828312	777610
+PRJNA280774_Poecilia-latipinna	SRR1980670	sample89	dummy	BioSample: SAMN03456933; Sample name: WR13; SRA: SRS913617	isolate: 95; ecotype: River	SINGLE	139727	126774
+PRJNA280774_Poecilia-latipinna	SRR1980671	sample90	dummy	BioSample: SAMN03456934; Sample name: WR14; SRA: SRS913618	isolate: 96; ecotype: River	SINGLE	624094	583080
+PRJNA280774_Poecilia-latipinna	SRR1980672	sample91	dummy	BioSample: SAMN03456935; Sample name: WR15; SRA: SRS913619	isolate: 97; ecotype: River	SINGLE	450470	426787
+PRJNA280774_Poecilia-latipinna	SRR1980673	sample92	dummy	BioSample: SAMN03456936; Sample name: WR16; SRA: SRS913620	isolate: 98; ecotype: River	SINGLE	189396	171268
+PRJNA280774_Poecilia-latipinna	SRR1980679	sample93	dummy	BioSample: SAMN03456942; Sample name: WR21; SRA: SRS913626	isolate: 104; ecotype: River	SINGLE	664957	639417
+PRJNA280774_Poecilia-latipinna	SRR1980680	sample94	dummy	BioSample: SAMN03456943; Sample name: WR22; SRA: SRS913627	isolate: 105; ecotype: River	SINGLE	1269926	1210361
+PRJNA280774_Poecilia-latipinna	SRR1980681	sample95	dummy	BioSample: SAMN03456944; Sample name: WR23; SRA: SRS913628	isolate: 106; ecotype: River	SINGLE	629620	594169
+PRJNA280774_Poecilia-latipinna	SRR1980682	sample96	dummy	BioSample: SAMN03456945; Sample name: WR24; SRA: SRS913629	isolate: 107; ecotype: River	SINGLE	754643	711782
+PRJNA280774_Poecilia-latipinna	SRR1980683	sample97	dummy	BioSample: SAMN03456946; Sample name: WR3; SRA: SRS913630	isolate: 108; ecotype: River	SINGLE	1345403	1277160
+PRJNA280774_Poecilia-latipinna	SRR1980684	sample98	dummy	BioSample: SAMN03456947; Sample name: WR4; SRA: SRS913631	isolate: 109; ecotype: River	SINGLE	1134104	1081352
+PRJNA280774_Poecilia-latipinna	SRR1980685	sample99	dummy	BioSample: SAMN03456948; Sample name: WR5; SRA: SRS913632	isolate: 110; ecotype: River	SINGLE	280164	262036
+PRJNA280774_Poecilia-latipinna	SRR1980686	sample100	dummy	BioSample: SAMN03456949; Sample name: WR6; SRA: SRS913633	isolate: 111; ecotype: River	SINGLE	944918	903000
+PRJNA280774_Poecilia-latipinna	SRR1980687	sample101	dummy	BioSample: SAMN03456950; Sample name: WR7; SRA: SRS913634	isolate: 112; ecotype: River	SINGLE	358052	335535
+PRJNA280774_Poecilia-latipinna	SRR1980688	sample102	dummy	BioSample: SAMN03456951; Sample name: WR8; SRA: SRS913635	isolate: 113; ecotype: River	SINGLE	357247	327676
+PRJNA280774_Poecilia-latipinna	SRR1980689	sample103	dummy	BioSample: SAMN03456952; Sample name: WR9; SRA: SRS913636	isolate: 114; ecotype: River	SINGLE	115641	100927
+PRJNA280774_Poecilia-latipinna	SRR1980691	sample104	dummy	BioSample: SAMN03456953; Sample name: NNK1; SRA: SRS913637	isolate: 115; ecotype: intertidial Saltflat	SINGLE	1301495	1168299
+PRJNA280774_Poecilia-latipinna	SRR1980692	sample105	dummy	BioSample: SAMN03456954; Sample name: NNK10; SRA: SRS913638	isolate: 116; ecotype: intertidial Saltflat	SINGLE	1244645	1177675
+PRJNA280774_Poecilia-latipinna	SRR1980693	sample106	dummy	BioSample: SAMN03456955; Sample name: NNK11; SRA: SRS913639	isolate: 117; ecotype: intertidial Saltflat	SINGLE	598406	506658
+PRJNA280774_Poecilia-latipinna	SRR1980694	sample107	dummy	BioSample: SAMN03456956; Sample name: NNK12; SRA: SRS913640	isolate: 118; ecotype: intertidial Saltflat	SINGLE	1027530	868855
+PRJNA280774_Poecilia-latipinna	SRR1980695	sample108	dummy	BioSample: SAMN03456957; Sample name: NNK13; SRA: SRS913641	isolate: 119; ecotype: intertidial Saltflat	SINGLE	623435	550559
+PRJNA280774_Poecilia-latipinna	SRR1980696	sample109	dummy	BioSample: SAMN03456958; Sample name: NNK14; SRA: SRS913642	isolate: 120; ecotype: intertidial Saltflat	SINGLE	779379	732384
+PRJNA280774_Poecilia-latipinna	SRR1980697	sample110	dummy	BioSample: SAMN03456959; Sample name: NNK15; SRA: SRS913643	isolate: 121; ecotype: intertidial Saltflat	SINGLE	414521	346745
+PRJNA280774_Poecilia-latipinna	SRR1980698	sample111	dummy	BioSample: SAMN03456960; Sample name: NNK16; SRA: SRS913644	isolate: 122; ecotype: intertidial Saltflat	SINGLE	737722	632903
+PRJNA280774_Poecilia-latipinna	SRR1980699	sample112	dummy	BioSample: SAMN03456961; Sample name: NNK17; SRA: SRS913645	isolate: 123; ecotype: intertidial Saltflat	SINGLE	987640	840378
+PRJNA280774_Poecilia-latipinna	SRR1980700	sample113	dummy	BioSample: SAMN03456962; Sample name: NNK18; SRA: SRS913646	isolate: 124; ecotype: intertidial Saltflat	SINGLE	607232	543742
+PRJNA280774_Poecilia-latipinna	SRR1980701	sample114	dummy	BioSample: SAMN03456963; Sample name: NNK19; SRA: SRS913647	isolate: 125; ecotype: intertidial Saltflat	SINGLE	1215478	1118010
+PRJNA280774_Poecilia-latipinna	SRR1980703	sample115	dummy	BioSample: SAMN03456964; Sample name: NNK2; SRA: SRS913649	isolate: 126; ecotype: intertidial Saltflat	SINGLE	521634	438177
+PRJNA280774_Poecilia-latipinna	SRR1980705	sample116	dummy	BioSample: SAMN03456965; Sample name: NNK20; SRA: SRS913650	isolate: 127; ecotype: intertidial Saltflat	SINGLE	996059	886553
+PRJNA280774_Poecilia-latipinna	SRR1980706	sample117	dummy	BioSample: SAMN03456966; Sample name: NNK21; SRA: SRS913651	isolate: 128; ecotype: intertidial Saltflat	SINGLE	1391340	1169002
+PRJNA280774_Poecilia-latipinna	SRR1980707	sample118	dummy	BioSample: SAMN03456967; Sample name: NNK22; SRA: SRS913652	isolate: 129; ecotype: intertidial Saltflat	SINGLE	552019	476559
+PRJNA280774_Poecilia-latipinna	SRR1980708	sample119	dummy	BioSample: SAMN03456968; Sample name: NNK23; SRA: SRS913653	isolate: 130; ecotype: intertidial Saltflat	SINGLE	1447632	1290493
+PRJNA280774_Poecilia-latipinna	SRR1980709	sample120	dummy	BioSample: SAMN03456969; Sample name: NNK24; SRA: SRS913654	isolate: 131; ecotype: intertidial Saltflat	SINGLE	954918	824548
+PRJNA280774_Poecilia-latipinna	SRR1980710	sample121	dummy	BioSample: SAMN03456970; Sample name: NNK25; SRA: SRS913655	isolate: 132; ecotype: intertidial Saltflat	SINGLE	1693524	1465784
+PRJNA280774_Poecilia-latipinna	SRR1980711	sample122	dummy	BioSample: SAMN03456971; Sample name: NNK26; SRA: SRS913656	isolate: 133; ecotype: intertidial Saltflat	SINGLE	5387682	4665097
+PRJNA280774_Poecilia-latipinna	SRR1980712	sample123	dummy	BioSample: SAMN03456972; Sample name: NNK27; SRA: SRS913657	isolate: 134; ecotype: intertidial Saltflat	SINGLE	198853	181781
+PRJNA280774_Poecilia-latipinna	SRR1980713	sample124	dummy	BioSample: SAMN03456973; Sample name: NNK28; SRA: SRS913658	isolate: 135; ecotype: intertidial Saltflat	SINGLE	990884	853989
+PRJNA280774_Poecilia-latipinna	SRR1980714	sample125	dummy	BioSample: SAMN03456974; Sample name: NNK29; SRA: SRS913659	isolate: 136; ecotype: intertidial Saltflat	SINGLE	1127157	941196
+PRJNA280774_Poecilia-latipinna	SRR1980715	sample126	dummy	BioSample: SAMN03456975; Sample name: NNK3; SRA: SRS913660	isolate: 137; ecotype: intertidial Saltflat	SINGLE	1224370	1077295
+PRJNA280774_Poecilia-latipinna	SRR1980716	sample127	dummy	BioSample: SAMN03456976; Sample name: NNK30; SRA: SRS913661	isolate: 138; ecotype: intertidial Saltflat	SINGLE	2212271	1880243
+PRJNA280774_Poecilia-latipinna	SRR1980717	sample128	dummy	BioSample: SAMN03456977; Sample name: NNK4; SRA: SRS913662	isolate: 139; ecotype: intertidial Saltflat	SINGLE	1972058	1731153
+PRJNA280774_Poecilia-latipinna	SRR1980718	sample129	dummy	BioSample: SAMN03456978; Sample name: NNK5; SRA: SRS913663	isolate: 140; ecotype: intertidial Saltflat	SINGLE	547331	501473
+PRJNA280774_Poecilia-latipinna	SRR1980719	sample130	dummy	BioSample: SAMN03456979; Sample name: NNK6; SRA: SRS913664	isolate: 141; ecotype: intertidial Saltflat	SINGLE	951162	804317
+PRJNA280774_Poecilia-latipinna	SRR1980720	sample131	dummy	BioSample: SAMN03456980; Sample name: NNK7; SRA: SRS913665	isolate: 142; ecotype: intertidial Saltflat	SINGLE	393723	342461
+PRJNA280774_Poecilia-latipinna	SRR1980721	sample132	dummy	BioSample: SAMN03456981; Sample name: NNK8; SRA: SRS913666	isolate: 143; ecotype: intertidial Saltflat	SINGLE	1095342	964079
+PRJNA280774_Poecilia-latipinna	SRR1980723	sample133	dummy	BioSample: SAMN03456982; Sample name: NNK9; SRA: SRS913667	isolate: 144; ecotype: intertidial Saltflat	SINGLE	1055533	944748

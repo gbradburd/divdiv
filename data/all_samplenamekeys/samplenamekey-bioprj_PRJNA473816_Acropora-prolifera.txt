@@ -1,0 +1,14 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA473816_Acropora-prolifera	SRR7235977	sample0	dummy	BioSample: SAMN09283744; Sample name: Aprol_VI_1835; SRA: SRS3356139	isolate: 1835	PAIRED	15782215	15478986
+PRJNA473816_Acropora-prolifera	SRR7235978	sample1	dummy	BioSample: SAMN09283743; Sample name: Aprol_VI_1834; SRA: SRS3356140	isolate: 1834	PAIRED	12528618	12279216
+PRJNA473816_Acropora-prolifera	SRR7235997	sample2	dummy	BioSample: SAMN09283742; Sample name: Aprol_VI_13764; SRA: SRS3356120	isolate: 13764	PAIRED	14132863	14036267
+PRJNA473816_Acropora-prolifera	SRR7236000	sample3	dummy	BioSample: SAMN09283745; Sample name: Aprol_VI_1837; SRA: SRS3356115	isolate: 1837	PAIRED	13580103	13299284
+PRJNA473816_Acropora-prolifera	SRR7236004	sample4	dummy	BioSample: SAMN09283738; Sample name: Aprol_BE_8939; SRA: SRS3356111	isolate: 8939	PAIRED	13632019	13366699
+PRJNA473816_Acropora-prolifera	SRR7236005	sample5	dummy	BioSample: SAMN09283741; Sample name: Aprol_FL_1303; SRA: SRS3356110	isolate: 1303	PAIRED	15255041	15150287
+PRJNA473816_Acropora-prolifera	SRR7236006	sample6	dummy	BioSample: SAMN09283737; Sample name: Aprol_BE_13807; SRA: SRS3356109	isolate: 13807	PAIRED	12392632	12310575
+PRJNA473816_Acropora-prolifera	SRR7236023	sample7	dummy	BioSample: SAMN09283734; Sample name: Aprol_BA_1667; SRA: SRS3356112	isolate: 1667	PAIRED	14390104	14080048
+PRJNA473816_Acropora-prolifera	SRR7236024	sample8	dummy	BioSample: SAMN09283740; Sample name: Aprol_FL_1302; SRA: SRS3356091	isolate: 1302	PAIRED	12211820	11949464
+PRJNA473816_Acropora-prolifera	SRR7236025	sample9	dummy	BioSample: SAMN09283736; Sample name: Aprol_BE_13799; SRA: SRS3356100	isolate: 13799	PAIRED	13991481	13896518
+PRJNA473816_Acropora-prolifera	SRR7236026	sample10	dummy	BioSample: SAMN09283739; Sample name: Aprol_CU_13913; SRA: SRS3356089	isolate: 13913	PAIRED	13682852	13593017
+PRJNA473816_Acropora-prolifera	SRR7236035	sample11	dummy	BioSample: SAMN09283735; Sample name: Aprol_BE_13778; SRA: SRS3356080	isolate: 13778	PAIRED	14592464	14492751
+PRJNA473816_Acropora-prolifera	SRR7236038	sample12	dummy	BioSample: SAMN09283746; Sample name: Aprol_VI_1839; SRA: SRS3356077	isolate: 1839	PAIRED	12817195	12583422

@@ -1,0 +1,11 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA448430_Stegastes-beebei	SRR6927560	sample0	dummy	BioSample: SAMN08832747; Sample name: SBE_ESP_2; SRA: SRS3114814		SINGLE	168921	168921
+PRJNA448430_Stegastes-beebei	SRR6927562	sample1	dummy	BioSample: SAMN08832748; Sample name: SBE_ISA_2; SRA: SRS3114811		SINGLE	115424	115424
+PRJNA448430_Stegastes-beebei	SRR6927568	sample2	dummy	BioSample: SAMN08832737; Sample name: SBE_FLO_1; SRA: SRS3114805		SINGLE	723056	723056
+PRJNA448430_Stegastes-beebei	SRR6927573	sample3	dummy	BioSample: SAMN08832760; Sample name: SBE_ISA_1; SRA: SRS3114799		SINGLE	1271109	1271109
+PRJNA448430_Stegastes-beebei	SRR6927574	sample4	dummy	BioSample: SAMN08832759; Sample name: SBE_ESP_1; SRA: SRS3114798		SINGLE	1667646	1667646
+PRJNA448430_Stegastes-beebei	SRR6927582	sample5	dummy	BioSample: SAMN08832715; Sample name: SBE_ACA_2; SRA: SRS3114790		SINGLE	1257582	1257582
+PRJNA448430_Stegastes-beebei	SRR6927583	sample6	dummy	BioSample: SAMN08832716; Sample name: SBE_ACA_3; SRA: SRS3114789		SINGLE	82717	82717
+PRJNA448430_Stegastes-beebei	SRR6927584	sample7	dummy	BioSample: SAMN08832717; Sample name: SBE_COC_1; SRA: SRS3114788		SINGLE	308370	308370
+PRJNA448430_Stegastes-beebei	SRR6927589	sample8	dummy	BioSample: SAMN08832714; Sample name: SBE_ACA_1; SRA: SRS3114783		SINGLE	281232	281232
+PRJNA448430_Stegastes-beebei	SRR6927609	sample9	dummy	BioSample: SAMN08832725; Sample name: SBE_FLO_2; SRA: SRS3114802		SINGLE	896408	896408

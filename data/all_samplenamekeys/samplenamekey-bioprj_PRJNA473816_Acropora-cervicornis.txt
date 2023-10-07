@@ -1,0 +1,22 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA473816_Acropora-cervicornis	SRR7235989	sample0	dummy	BioSample: SAMN09283702; Sample name: Acerv_VI_13696; SRA: SRS3356127	isolate: 13696	PAIRED	11738621	10176760
+PRJNA473816_Acropora-cervicornis	SRR7235990	sample1	dummy	BioSample: SAMN09283701; Sample name: Acerv_FL_4960; SRA: SRS3356126	isolate: 4960	PAIRED	10218844	10163507
+PRJNA473816_Acropora-cervicornis	SRR7235991	sample2	dummy	BioSample: SAMN09283700; Sample name: Acerv_FL_4959; SRA: SRS3356125	isolate: 4959	PAIRED	14623446	14468372
+PRJNA473816_Acropora-cervicornis	SRR7235992	sample3	dummy	BioSample: SAMN09283699; Sample name: Acerv_FL_4928; SRA: SRS3356123	isolate: 4928	PAIRED	11529163	11472106
+PRJNA473816_Acropora-cervicornis	SRR7235993	sample4	dummy	BioSample: SAMN09283698; Sample name: Acerv_FL_4927; SRA: SRS3356124	isolate: 4927	PAIRED	15710422	15434993
+PRJNA473816_Acropora-cervicornis	SRR7235994	sample5	dummy	BioSample: SAMN09283697; Sample name: Acerv_FL_4923; SRA: SRS3356122	isolate: 4923	PAIRED	13661163	13593457
+PRJNA473816_Acropora-cervicornis	SRR7235996	sample6	dummy	BioSample: SAMN09283695; Sample name: Acerv_CU_13925; SRA: SRS3356118	isolate: 13925	PAIRED	13428706	13358056
+PRJNA473816_Acropora-cervicornis	SRR7235998	sample7	dummy	BioSample: SAMN09283704; Sample name: Acerv_VI_13714; SRA: SRS3356119	isolate: 13714	PAIRED	16010284	15831156
+PRJNA473816_Acropora-cervicornis	SRR7235999	sample8	dummy	BioSample: SAMN09283703; Sample name: Acerv_VI_13712; SRA: SRS3356117	isolate: 13712	PAIRED	17830992	17633012
+PRJNA473816_Acropora-cervicornis	SRR7236021	sample9	dummy	BioSample: SAMN09283705; Sample name: Acerv_VI_13738; SRA: SRS3356093	isolate: 13738	PAIRED	14846260	14769000
+PRJNA473816_Acropora-cervicornis	SRR7236022	sample10	dummy	BioSample: SAMN09283706; Sample name: Acerv_VI_13758; SRA: SRS3356092	isolate: 13758	PAIRED	14794553	14627705
+PRJNA473816_Acropora-cervicornis	SRR7236027	sample11	dummy	BioSample: SAMN09283690; Sample name: Acerv_BE_8867; SRA: SRS3356088	isolate: 8867	PAIRED	11968217	11881843
+PRJNA473816_Acropora-cervicornis	SRR7236028	sample12	dummy	BioSample: SAMN09283689; Sample name: Acerv_BE_13837; SRA: SRS3356087	isolate: 13837	PAIRED	17339044	17258823
+PRJNA473816_Acropora-cervicornis	SRR7236029	sample13	dummy	BioSample: SAMN09283692; Sample name: Acerv_CU_13903; SRA: SRS3356086	isolate: 13903	PAIRED	17877353	17673146
+PRJNA473816_Acropora-cervicornis	SRR7236030	sample14	dummy	BioSample: SAMN09283691; Sample name: Acerv_CU_13901; SRA: SRS3356085	isolate: 13901	PAIRED	13739115	13551753
+PRJNA473816_Acropora-cervicornis	SRR7236031	sample15	dummy	BioSample: SAMN09283686; Sample name: Acerv_BE_13792; SRA: SRS3356084	isolate: 13792	PAIRED	11541826	11345848
+PRJNA473816_Acropora-cervicornis	SRR7236032	sample16	dummy	BioSample: SAMN09283685; Sample name: Acerv_BE_13786; SRA: SRS3356083	isolate: 13786	PAIRED	12659512	12494999
+PRJNA473816_Acropora-cervicornis	SRR7236033	sample17	dummy	BioSample: SAMN09283688; Sample name: Acerv_BE_13827; SRA: SRS3356082	isolate: 13827	PAIRED	16820439	16514183
+PRJNA473816_Acropora-cervicornis	SRR7236034	sample18	dummy	BioSample: SAMN09283687; Sample name: Acerv_BE_13797; SRA: SRS3356081	isolate: 13797	PAIRED	11054898	10997271
+PRJNA473816_Acropora-cervicornis	SRR7236036	sample19	dummy	BioSample: SAMN09283694; Sample name: Acerv_CU_13917; SRA: SRS3356079	isolate: 13917	PAIRED	16589862	16506344
+PRJNA473816_Acropora-cervicornis	SRR7236037	sample20	dummy	BioSample: SAMN09283693; Sample name: Acerv_CU_13905; SRA: SRS3356078	isolate: 13905	PAIRED	14925154	14661434

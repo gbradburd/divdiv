@@ -1,0 +1,26 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168278	sample0	dummy	BioSample: SAMN12825472; Sample name: HBG7585; SRA: SRS5426051	isolate: Midwater cephalopod	PAIRED	1304504	1299906
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168280	sample1	dummy	BioSample: SAMN12825401; Sample name: HBG4052; SRA: SRS5426049	isolate: Midwater cephalopod	PAIRED	1035409	1031875
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168282	sample2	dummy	BioSample: SAMN12825451; Sample name: HBG6584; SRA: SRS5426047	isolate: Midwater cephalopod	PAIRED	725620	723234
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168288	sample3	dummy	BioSample: SAMN12825423; Sample name: HBG6021; SRA: SRS5426041	isolate: Midwater cephalopod	PAIRED	256277	255239
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168289	sample4	dummy	BioSample: SAMN12825391; Sample name: HBG4038; SRA: SRS5426040	isolate: Midwater cephalopod	PAIRED	2391545	2383949
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168291	sample5	dummy	BioSample: SAMN12825471; Sample name: HBG7584; SRA: SRS5426038	isolate: Midwater cephalopod	PAIRED	267673	266340
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168295	sample6	dummy	BioSample: SAMN12825454; Sample name: HBG6587; SRA: SRS5426034	isolate: Midwater cephalopod	PAIRED	493402	490713
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168299	sample7	dummy	BioSample: SAMN12825453; Sample name: HBG6586; SRA: SRS5426030	isolate: Midwater cephalopod	PAIRED	913697	909805
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168303	sample8	dummy	BioSample: SAMN12825424; Sample name: HBG6126; SRA: SRS5426026	isolate: Midwater cephalopod	PAIRED	6026	5946
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168307	sample9	dummy	BioSample: SAMN12825386; Sample name: HBG3468; SRA: SRS5426022	isolate: Midwater cephalopod	PAIRED	97364	96829
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168312	sample10	dummy	BioSample: SAMN12825470; Sample name: HBG7583; SRA: SRS5426017	isolate: Midwater cephalopod	PAIRED	612066	609920
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168315	sample11	dummy	BioSample: SAMN12825385; Sample name: HBG3467; SRA: SRS5426014	isolate: Midwater cephalopod	PAIRED	742870	740011
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168318	sample12	dummy	BioSample: SAMN12825469; Sample name: HBG7582; SRA: SRS5426011	isolate: Midwater cephalopod	PAIRED	1061189	1057168
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168324	sample13	dummy	BioSample: SAMN12825465; Sample name: HBG6688; SRA: SRS5426005	isolate: Midwater cephalopod	PAIRED	153065	152468
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168325	sample14	dummy	BioSample: SAMN12825383; Sample name: HBG3464; SRA: SRS5426004	isolate: Midwater cephalopod	PAIRED	440467	438676
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168334	sample15	dummy	BioSample: SAMN12825378; Sample name: HBG3454; SRA: SRS5425995	isolate: Midwater cephalopod	PAIRED	55687	55395
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168335	sample16	dummy	BioSample: SAMN12825425; Sample name: HBG6129; SRA: SRS5425994	isolate: Midwater cephalopod	PAIRED	786808	783954
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168338	sample17	dummy	BioSample: SAMN12825420; Sample name: HBG6015; SRA: SRS5425991	isolate: Midwater cephalopod	PAIRED	1103432	1099908
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168339	sample18	dummy	BioSample: SAMN12825452; Sample name: HBG6585; SRA: SRS5425990	isolate: Midwater cephalopod	PAIRED	1160536	1157423
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168346	sample19	dummy	BioSample: SAMN12825458; Sample name: HBG6673; SRA: SRS5425983	isolate: Midwater cephalopod	PAIRED	930352	926950
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168347	sample20	dummy	BioSample: SAMN12825380; Sample name: HBG3456; SRA: SRS5425982	isolate: Midwater cephalopod	PAIRED	1462582	1457312
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168353	sample21	dummy	BioSample: SAMN12825473; Sample name: HBG7586; SRA: SRS5425976	isolate: Midwater cephalopod	PAIRED	133723	133215
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168356	sample22	dummy	BioSample: SAMN12825427; Sample name: HBG6213; SRA: SRS5425973	isolate: Midwater cephalopod	PAIRED	776094	773291
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168357	sample23	dummy	BioSample: SAMN12825379; Sample name: HBG3455; SRA: SRS5425972	isolate: Midwater cephalopod	PAIRED	1730211	1724381
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168365	sample24	dummy	BioSample: SAMN12825426; Sample name: HBG6212; SRA: SRS5425964	isolate: Midwater cephalopod	PAIRED	1752577	1745367

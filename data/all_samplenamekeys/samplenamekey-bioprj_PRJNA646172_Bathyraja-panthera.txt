@@ -1,0 +1,16 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA646172_Bathyraja-panthera	SRR12217798	sample0	dummy	BioSample: SAMN15525696; Sample name: Bparm64; SRA: SRS7002924	strain: 500	SINGLE	10909124	10886987
+PRJNA646172_Bathyraja-panthera	SRR12217799	sample1	dummy	BioSample: SAMN15525695; Sample name: Bparm63; SRA: SRS7002923	strain: 499	SINGLE	2078002	2074109
+PRJNA646172_Bathyraja-panthera	SRR12217800	sample2	dummy	BioSample: SAMN15525694; Sample name: Bparm62; SRA: SRS7002922	strain: 498	SINGLE	1866593	1858795
+PRJNA646172_Bathyraja-panthera	SRR12217801	sample3	dummy	BioSample: SAMN15525693; Sample name: Bparm61; SRA: SRS7002921	strain: 497	SINGLE	1252452	1248619
+PRJNA646172_Bathyraja-panthera	SRR12217823	sample4	dummy	BioSample: SAMN15525673; Sample name: Bparm127; SRA: SRS7002899	strain: 471	SINGLE	1762798	1759067
+PRJNA646172_Bathyraja-panthera	SRR12217824	sample5	dummy	BioSample: SAMN15525672; Sample name: Bparm126; SRA: SRS7002898	strain: 470	SINGLE	6083891	6072834
+PRJNA646172_Bathyraja-panthera	SRR12217825	sample6	dummy	BioSample: SAMN15525671; Sample name: Bparm123; SRA: SRS7002897	strain: 469	SINGLE	4419653	4411687
+PRJNA646172_Bathyraja-panthera	SRR12217826	sample7	dummy	BioSample: SAMN15525670; Sample name: Bparm120; SRA: SRS7002896	strain: 466	SINGLE	1297735	1295168
+PRJNA646172_Bathyraja-panthera	SRR12217827	sample8	dummy	BioSample: SAMN15525669; Sample name: Bparm119; SRA: SRS7002895	strain: 465	SINGLE	5330726	5322083
+PRJNA646172_Bathyraja-panthera	SRR12217828	sample9	dummy	BioSample: SAMN15525668; Sample name: Bparm118; SRA: SRS7002894	strain: 464	SINGLE	2432504	2428167
+PRJNA646172_Bathyraja-panthera	SRR12217830	sample10	dummy	BioSample: SAMN15525667; Sample name: Bparm117; SRA: SRS7002892	strain: 463	SINGLE	2032786	2029458
+PRJNA646172_Bathyraja-panthera	SRR12217831	sample11	dummy	BioSample: SAMN15525666; Sample name: Bparm116; SRA: SRS7002891	strain: 462	SINGLE	22860487	22822165
+PRJNA646172_Bathyraja-panthera	SRR12217832	sample12	dummy	BioSample: SAMN15525665; Sample name: Bparm113; SRA: SRS7002890	strain: 459	SINGLE	16170445	16144930
+PRJNA646172_Bathyraja-panthera	SRR12217833	sample13	dummy	BioSample: SAMN15525664; Sample name: Bparm112; SRA: SRS7002889	strain: 458	SINGLE	3309335	3303030
+PRJNA646172_Bathyraja-panthera	SRR12217834	sample14	dummy	BioSample: SAMN15525663; Sample name: Bparm111; SRA: SRS7002888	strain: 457	SINGLE	2245557	2241942

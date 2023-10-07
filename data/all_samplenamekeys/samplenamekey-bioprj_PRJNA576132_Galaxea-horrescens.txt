@@ -1,0 +1,14 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA576132_Galaxea-horrescens	SRR10279741	sample0	dummy	BioSample: SAMN12925355; Sample name: ZR#12_Galaxea horrescens; SRA: SRS5514807		SINGLE	995982	826987
+PRJNA576132_Galaxea-horrescens	SRR10279750	sample1	dummy	BioSample: SAMN12925347; Sample name: ZR#04_Galaxea horrescens; SRA: SRS5514798		SINGLE	1368114	1253798
+PRJNA576132_Galaxea-horrescens	SRR10281069	sample2	dummy	BioSample: SAMN12925103; Sample name: 74-G-8_Galaxea horrescens; SRA: SRS5516236		SINGLE	2209689	1826603
+PRJNA576132_Galaxea-horrescens	SRR10281102	sample3	dummy	BioSample: SAMN12925104; Sample name: 74-P-26_Galaxea horrescens; SRA: SRS5516203		SINGLE	1476200	1122282
+PRJNA576132_Galaxea-horrescens	SRR10281125	sample4	dummy	BioSample: SAMN12925106; Sample name: 74-P-46_Galaxea horrescens; SRA: SRS5516180		SINGLE	2595443	2086846
+PRJNA576132_Galaxea-horrescens	SRR10281128	sample5	dummy	BioSample: SAMN12925113; Sample name: P76-728_Galaxea horrescens; SRA: SRS5516177		SINGLE	1673280	1346095
+PRJNA576132_Galaxea-horrescens	SRR10281129	sample6	dummy	BioSample: SAMN12925107; Sample name: 74-P-60_Galaxea horrescens; SRA: SRS5516176		SINGLE	4115422	3323771
+PRJNA576132_Galaxea-horrescens	SRR10281133	sample7	dummy	BioSample: SAMN12925114; Sample name: P76-728(c)_Galaxea horrescens; SRA: SRS5516172		SINGLE	526963	414205
+PRJNA576132_Galaxea-horrescens	SRR10281135	sample8	dummy	BioSample: SAMN12925066; Sample name: AF-2_Galaxea horrescens; SRA: SRS5516170		SINGLE	710302	569927
+PRJNA576132_Galaxea-horrescens	SRR10281144	sample9	dummy	BioSample: SAMN12925108; Sample name: 74-P-77_Galaxea horrescens; SRA: SRS5516161		SINGLE	3280533	2780576
+PRJNA576132_Galaxea-horrescens	SRR10281151	sample10	dummy	BioSample: SAMN12925065; Sample name: AF-1_Galaxea horrescens; SRA: SRS5516153		SINGLE	754617	653140
+PRJNA576132_Galaxea-horrescens	SRR10281216	sample11	dummy	BioSample: SAMN12925068; Sample name: AF-4_Galaxea horrescens; SRA: SRS5516088		SINGLE	741605	649107
+PRJNA576132_Galaxea-horrescens	SRR10281228	sample12	dummy	BioSample: SAMN12925067; Sample name: AF-3_Galaxea horrescens; SRA: SRS5516076		SINGLE	1204917	936158

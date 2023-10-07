@@ -1,0 +1,81 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA533707_Larimichthys-polyactis	SRR8953021	sample0	dummy	BioSample: SAMN11489334; Sample name: XHY-YA-24; SRA: SRS4670309	isolate: Central Yellow Sea 17	PAIRED	9169134	8789551
+PRJNA533707_Larimichthys-polyactis	SRR8953022	sample1	dummy	BioSample: SAMN11489329; Sample name: XHY-YA-2; SRA: SRS4670308	isolate: Central Yellow Sea 12	PAIRED	5558033	5376819
+PRJNA533707_Larimichthys-polyactis	SRR8953023	sample2	dummy	BioSample: SAMN11489328; Sample name: XHY-YA-19; SRA: SRS4670307	isolate: Central Yellow Sea 11	PAIRED	6166891	5574011
+PRJNA533707_Larimichthys-polyactis	SRR8953024	sample3	dummy	BioSample: SAMN11489331; Sample name: XHY-YA-21; SRA: SRS4670306	isolate: Central Yellow Sea 14	PAIRED	9730278	9471926
+PRJNA533707_Larimichthys-polyactis	SRR8953025	sample4	dummy	BioSample: SAMN11489330; Sample name: XHY-YA-20; SRA: SRS4670305	isolate: Central Yellow Sea 13	PAIRED	11489824	11015623
+PRJNA533707_Larimichthys-polyactis	SRR8953026	sample5	dummy	BioSample: SAMN11489355; Sample name: XHY-YB-6; SRA: SRS4670304	isolate: South Yellow Sea 18	PAIRED	4256696	3913664
+PRJNA533707_Larimichthys-polyactis	SRR8953027	sample6	dummy	BioSample: SAMN11489354; Sample name: XHY-YB-5; SRA: SRS4670303	isolate: South Yellow Sea 17	PAIRED	7991103	7941206
+PRJNA533707_Larimichthys-polyactis	SRR8953028	sample7	dummy	BioSample: SAMN11489353; Sample name: XHY-YB-4; SRA: SRS4670302	isolate: South Yellow Sea 16	PAIRED	11174894	10478431
+PRJNA533707_Larimichthys-polyactis	SRR8953029	sample8	dummy	BioSample: SAMN11489352; Sample name: XHY-YB-30; SRA: SRS4670301	isolate: South Yellow Sea 15	PAIRED	10753991	10652999
+PRJNA533707_Larimichthys-polyactis	SRR8953030	sample9	dummy	BioSample: SAMN11489351; Sample name: XHY-YB-3; SRA: SRS4670300	isolate: South Yellow Sea 14	PAIRED	19130790	19043197
+PRJNA533707_Larimichthys-polyactis	SRR8953031	sample10	dummy	BioSample: SAMN11489350; Sample name: XHY-YB-24; SRA: SRS4670299	isolate: South Yellow Sea 13	PAIRED	31353741	31217148
+PRJNA533707_Larimichthys-polyactis	SRR8953032	sample11	dummy	BioSample: SAMN11489349; Sample name: XHY-YB-23; SRA: SRS4670298	isolate: South Yellow Sea 12	PAIRED	4604705	4567265
+PRJNA533707_Larimichthys-polyactis	SRR8953033	sample12	dummy	BioSample: SAMN11489348; Sample name: XHY-YB-22; SRA: SRS4670297	isolate: South Yellow Sea 11	PAIRED	8619292	8216220
+PRJNA533707_Larimichthys-polyactis	SRR8953034	sample13	dummy	BioSample: SAMN11489357; Sample name: XHY-YB-8; SRA: SRS4670296	isolate: South Yellow Sea 20	PAIRED	6260795	6219211
+PRJNA533707_Larimichthys-polyactis	SRR8953035	sample14	dummy	BioSample: SAMN11489356; Sample name: XHY-YB-7; SRA: SRS4670295	isolate: South Yellow Sea 19	PAIRED	6131112	5588229
+PRJNA533707_Larimichthys-polyactis	SRR8953036	sample15	dummy	BioSample: SAMN11489379; Sample name: XHY-YD-12; SRA: SRS4670294	isolate: North East China Sea 2	PAIRED	7210325	6860016
+PRJNA533707_Larimichthys-polyactis	SRR8953037	sample16	dummy	BioSample: SAMN11489392; Sample name: XHY-YD-24; SRA: SRS4670293	isolate: North East China Sea 15	PAIRED	4964450	4605889
+PRJNA533707_Larimichthys-polyactis	SRR8953038	sample17	dummy	BioSample: SAMN11489372; Sample name: XHY-YC-3; SRA: SRS4670292	isolate: South of Cheju Island 15	PAIRED	26761998	26603612
+PRJNA533707_Larimichthys-polyactis	SRR8953039	sample18	dummy	BioSample: SAMN11489397; Sample name: XHY-YD-9; SRA: SRS4670291	isolate: North East China Sea 20	PAIRED	7885782	7539388
+PRJNA533707_Larimichthys-polyactis	SRR8953040	sample19	dummy	BioSample: SAMN11489325; Sample name: XHY-YA-16; SRA: SRS4670290	isolate: Central Yellow Sea 8	PAIRED	6679830	6326289
+PRJNA533707_Larimichthys-polyactis	SRR8953041	sample20	dummy	BioSample: SAMN11489324; Sample name: XHY-YA-15; SRA: SRS4670289	isolate: Central Yellow Sea 7	PAIRED	6577712	6323087
+PRJNA533707_Larimichthys-polyactis	SRR8953042	sample21	dummy	BioSample: SAMN11489323; Sample name: XHY-YA-14; SRA: SRS4670288	isolate: Central Yellow Sea 6	PAIRED	5361169	4884913
+PRJNA533707_Larimichthys-polyactis	SRR8953043	sample22	dummy	BioSample: SAMN11489322; Sample name: XHY-YA-13; SRA: SRS4670287	isolate: Central Yellow Sea 5	PAIRED	5963341	5707487
+PRJNA533707_Larimichthys-polyactis	SRR8953044	sample23	dummy	BioSample: SAMN11489321; Sample name: XHY-YA-12; SRA: SRS4670286	isolate: Central Yellow Sea 4	PAIRED	4624691	3956256
+PRJNA533707_Larimichthys-polyactis	SRR8953045	sample24	dummy	BioSample: SAMN11489320; Sample name: XHY-YA-11; SRA: SRS4670285	isolate: Central Yellow Sea 3	PAIRED	8379401	8153971
+PRJNA533707_Larimichthys-polyactis	SRR8953046	sample25	dummy	BioSample: SAMN11489319; Sample name: XHY-YA-10; SRA: SRS4670284	isolate: Central Yellow Sea 2	PAIRED	10196754	9389607
+PRJNA533707_Larimichthys-polyactis	SRR8953047	sample26	dummy	BioSample: SAMN11489318; Sample name: XHY-YA-1; SRA: SRS4670283	isolate: Central Yellow Sea 1	PAIRED	6803843	6595384
+PRJNA533707_Larimichthys-polyactis	SRR8953048	sample27	dummy	BioSample: SAMN11489382; Sample name: XHY-YD-15; SRA: SRS4670282	isolate: North East China Sea 5	PAIRED	7011064	6610940
+PRJNA533707_Larimichthys-polyactis	SRR8953049	sample28	dummy	BioSample: SAMN11489383; Sample name: XHY-YD-16; SRA: SRS4670281	isolate: North East China Sea 6	PAIRED	7753640	7534957
+PRJNA533707_Larimichthys-polyactis	SRR8953050	sample29	dummy	BioSample: SAMN11489393; Sample name: XHY-YD-3; SRA: SRS4670280	isolate: North East China Sea 16	PAIRED	7982001	7663467
+PRJNA533707_Larimichthys-polyactis	SRR8953051	sample30	dummy	BioSample: SAMN11489384; Sample name: XHY-YD-17; SRA: SRS4670279	isolate: North East China Sea 7	PAIRED	7969725	7505183
+PRJNA533707_Larimichthys-polyactis	SRR8953052	sample31	dummy	BioSample: SAMN11489327; Sample name: XHY-YA-18; SRA: SRS4670278	isolate: Central Yellow Sea 10	PAIRED	7513120	7237027
+PRJNA533707_Larimichthys-polyactis	SRR8953053	sample32	dummy	BioSample: SAMN11489326; Sample name: XHY-YA-17; SRA: SRS4670277	isolate: Central Yellow Sea 9	PAIRED	8910820	8224685
+PRJNA533707_Larimichthys-polyactis	SRR8953054	sample33	dummy	BioSample: SAMN11489360; Sample name: XHY-YC-11; SRA: SRS4670276	isolate: South of Cheju Island 3	PAIRED	11474897	11202041
+PRJNA533707_Larimichthys-polyactis	SRR8953055	sample34	dummy	BioSample: SAMN11489361; Sample name: XHY-YC-12; SRA: SRS4670275	isolate: South of Cheju Island 4	PAIRED	11888465	11850960
+PRJNA533707_Larimichthys-polyactis	SRR8953056	sample35	dummy	BioSample: SAMN11489358; Sample name: XHY-YC-1; SRA: SRS4670274	isolate: South of Cheju Island 1	PAIRED	8902392	8072555
+PRJNA533707_Larimichthys-polyactis	SRR8953057	sample36	dummy	BioSample: SAMN11489359; Sample name: XHY-YC-10; SRA: SRS4670273	isolate: South of Cheju Island 2	PAIRED	5201434	5174199
+PRJNA533707_Larimichthys-polyactis	SRR8953058	sample37	dummy	BioSample: SAMN11489364; Sample name: XHY-YC-17; SRA: SRS4670272	isolate: South of Cheju Island 7	PAIRED	8813875	8781453
+PRJNA533707_Larimichthys-polyactis	SRR8953059	sample38	dummy	BioSample: SAMN11489365; Sample name: XHY-YC-18; SRA: SRS4670271	isolate: South of Cheju Island 8	PAIRED	6584627	6046705
+PRJNA533707_Larimichthys-polyactis	SRR8953060	sample39	dummy	BioSample: SAMN11489362; Sample name: XHY-YC-13; SRA: SRS4670270	isolate: South of Cheju Island 5	PAIRED	8443076	8412833
+PRJNA533707_Larimichthys-polyactis	SRR8953061	sample40	dummy	BioSample: SAMN11489363; Sample name: XHY-YC-16; SRA: SRS4670269	isolate: South of Cheju Island 6	PAIRED	5816068	5797361
+PRJNA533707_Larimichthys-polyactis	SRR8953062	sample41	dummy	BioSample: SAMN11489396; Sample name: XHY-YD-6; SRA: SRS4670268	isolate: North East China Sea 19	PAIRED	4738280	4584331
+PRJNA533707_Larimichthys-polyactis	SRR8953063	sample42	dummy	BioSample: SAMN11489366; Sample name: XHY-YC-2; SRA: SRS4670267	isolate: South of Cheju Island 9	PAIRED	8602520	7983298
+PRJNA533707_Larimichthys-polyactis	SRR8953064	sample43	dummy	BioSample: SAMN11489367; Sample name: XHY-YC-20; SRA: SRS4670266	isolate: South of Cheju Island 10	PAIRED	8500513	8162172
+PRJNA533707_Larimichthys-polyactis	SRR8953065	sample44	dummy	BioSample: SAMN11489373; Sample name: XHY-YC-4; SRA: SRS4670265	isolate: South of Cheju Island 16	PAIRED	8992408	8636581
+PRJNA533707_Larimichthys-polyactis	SRR8953066	sample45	dummy	BioSample: SAMN11489387; Sample name: XHY-YD-2; SRA: SRS4670264	isolate: North East China Sea 10	PAIRED	4095084	3938668
+PRJNA533707_Larimichthys-polyactis	SRR8953067	sample46	dummy	BioSample: SAMN11489338; Sample name: XHY-YB-1; SRA: SRS4670263	isolate: South Yellow Sea 1	PAIRED	6165213	5952761
+PRJNA533707_Larimichthys-polyactis	SRR8953068	sample47	dummy	BioSample: SAMN11489339; Sample name: XHY-YB-10; SRA: SRS4670262	isolate: South Yellow Sea 2	PAIRED	6152971	6105410
+PRJNA533707_Larimichthys-polyactis	SRR8953069	sample48	dummy	BioSample: SAMN11489340; Sample name: XHY-YB-11; SRA: SRS4670261	isolate: South Yellow Sea 3	PAIRED	17469522	17314857
+PRJNA533707_Larimichthys-polyactis	SRR8953070	sample49	dummy	BioSample: SAMN11489341; Sample name: XHY-YB-12; SRA: SRS4670260	isolate: South Yellow Sea 4	PAIRED	7560677	7413727
+PRJNA533707_Larimichthys-polyactis	SRR8953071	sample50	dummy	BioSample: SAMN11489342; Sample name: XHY-YB-13; SRA: SRS4670259	isolate: South Yellow Sea 5	PAIRED	15539351	15440831
+PRJNA533707_Larimichthys-polyactis	SRR8953072	sample51	dummy	BioSample: SAMN11489343; Sample name: XHY-YB-14; SRA: SRS4670258	isolate: South Yellow Sea 6	PAIRED	5105409	4853074
+PRJNA533707_Larimichthys-polyactis	SRR8953073	sample52	dummy	BioSample: SAMN11489344; Sample name: XHY-YB-17; SRA: SRS4670257	isolate: South Yellow Sea 7	PAIRED	6374228	6212640
+PRJNA533707_Larimichthys-polyactis	SRR8953074	sample53	dummy	BioSample: SAMN11489345; Sample name: XHY-YB-18; SRA: SRS4670256	isolate: South Yellow Sea 8	PAIRED	9769251	9730438
+PRJNA533707_Larimichthys-polyactis	SRR8953075	sample54	dummy	BioSample: SAMN11489346; Sample name: XHY-YB-2; SRA: SRS4670255	isolate: South Yellow Sea 9	PAIRED	12803387	12543273
+PRJNA533707_Larimichthys-polyactis	SRR8953076	sample55	dummy	BioSample: SAMN11489347; Sample name: XHY-YB-20; SRA: SRS4670254	isolate: South Yellow Sea 10	PAIRED	8208045	7749315
+PRJNA533707_Larimichthys-polyactis	SRR8953077	sample56	dummy	BioSample: SAMN11489385; Sample name: XHY-YD-18; SRA: SRS4670253	isolate: North East China Sea 8	PAIRED	7957537	7569032
+PRJNA533707_Larimichthys-polyactis	SRR8953078	sample57	dummy	BioSample: SAMN11489381; Sample name: XHY-YD-14; SRA: SRS4670252	isolate: North East China Sea 4	PAIRED	8532023	8231625
+PRJNA533707_Larimichthys-polyactis	SRR8953079	sample58	dummy	BioSample: SAMN11489391; Sample name: XHY-YD-23; SRA: SRS4670251	isolate: North East China Sea 14	PAIRED	10788681	10445128
+PRJNA533707_Larimichthys-polyactis	SRR8953080	sample59	dummy	BioSample: SAMN11489377; Sample name: XHY-YC-8; SRA: SRS4670250	isolate: South of Cheju Island 20	PAIRED	20664682	20595936
+PRJNA533707_Larimichthys-polyactis	SRR8953081	sample60	dummy	BioSample: SAMN11489380; Sample name: XHY-YD-13; SRA: SRS4670249	isolate: North East China Sea 3	PAIRED	5617623	5324742
+PRJNA533707_Larimichthys-polyactis	SRR8953082	sample61	dummy	BioSample: SAMN11489376; Sample name: XHY-YC-7; SRA: SRS4670248	isolate: South of Cheju Island 19	PAIRED	5850027	5654644
+PRJNA533707_Larimichthys-polyactis	SRR8953083	sample62	dummy	BioSample: SAMN11489395; Sample name: XHY-YD-5; SRA: SRS4670247	isolate: North East China Sea 18	PAIRED	10813230	10148134
+PRJNA533707_Larimichthys-polyactis	SRR8953084	sample63	dummy	BioSample: SAMN11489389; Sample name: XHY-YD-21; SRA: SRS4670246	isolate: North East China Sea 12	PAIRED	6372075	5806311
+PRJNA533707_Larimichthys-polyactis	SRR8953085	sample64	dummy	BioSample: SAMN11489394; Sample name: XHY-YD-4; SRA: SRS4670245	isolate: North East China Sea 17	PAIRED	8461227	8214671
+PRJNA533707_Larimichthys-polyactis	SRR8953086	sample65	dummy	BioSample: SAMN11489388; Sample name: XHY-YD-20; SRA: SRS4670244	isolate: North East China Sea 11	PAIRED	9487177	9131499
+PRJNA533707_Larimichthys-polyactis	SRR8953087	sample66	dummy	BioSample: SAMN11489378; Sample name: XHY-YD-1; SRA: SRS4670243	isolate: North East China Sea 1	PAIRED	5968332	5751466
+PRJNA533707_Larimichthys-polyactis	SRR8953088	sample67	dummy	BioSample: SAMN11489386; Sample name: XHY-YD-19; SRA: SRS4670242	isolate: North East China Sea 9	PAIRED	8494230	8234634
+PRJNA533707_Larimichthys-polyactis	SRR8953089	sample68	dummy	BioSample: SAMN11489390; Sample name: XHY-YD-22; SRA: SRS4670241	isolate: North East China Sea 13	PAIRED	9434436	8992779
+PRJNA533707_Larimichthys-polyactis	SRR8953090	sample69	dummy	BioSample: SAMN11489369; Sample name: XHY-YC-24; SRA: SRS4670240	isolate: South of Cheju Island 12	PAIRED	8865411	8545782
+PRJNA533707_Larimichthys-polyactis	SRR8953091	sample70	dummy	BioSample: SAMN11489368; Sample name: XHY-YC-22; SRA: SRS4670239	isolate: South of Cheju Island 11	PAIRED	3512442	3497914
+PRJNA533707_Larimichthys-polyactis	SRR8953092	sample71	dummy	BioSample: SAMN11489371; Sample name: XHY-YC-27; SRA: SRS4670238	isolate: South of Cheju Island 14	PAIRED	12682896	12637166
+PRJNA533707_Larimichthys-polyactis	SRR8953093	sample72	dummy	BioSample: SAMN11489370; Sample name: XHY-YC-25; SRA: SRS4670237	isolate: South of Cheju Island 13	PAIRED	10843360	10808764
+PRJNA533707_Larimichthys-polyactis	SRR8953094	sample73	dummy	BioSample: SAMN11489337; Sample name: XHY-YA-9; SRA: SRS4670236	isolate: Central Yellow Sea 20	PAIRED	9778209	9519536
+PRJNA533707_Larimichthys-polyactis	SRR8953095	sample74	dummy	BioSample: SAMN11489336; Sample name: XHY-YA-8; SRA: SRS4670235	isolate: Central Yellow Sea 19	PAIRED	7063351	6808106
+PRJNA533707_Larimichthys-polyactis	SRR8953096	sample75	dummy	BioSample: SAMN11489375; Sample name: XHY-YC-6; SRA: SRS4670234	isolate: South of Cheju Island 18	PAIRED	3550391	3530243
+PRJNA533707_Larimichthys-polyactis	SRR8953097	sample76	dummy	BioSample: SAMN11489374; Sample name: XHY-YC-5; SRA: SRS4670233	isolate: South of Cheju Island 17	PAIRED	9620544	9164351
+PRJNA533707_Larimichthys-polyactis	SRR8953098	sample77	dummy	BioSample: SAMN11489333; Sample name: XHY-YA-23; SRA: SRS4670232	isolate: Central Yellow Sea 16	PAIRED	11786613	11266449
+PRJNA533707_Larimichthys-polyactis	SRR8953099	sample78	dummy	BioSample: SAMN11489332; Sample name: XHY-YA-22; SRA: SRS4670231	isolate: Central Yellow Sea 15	PAIRED	8214516	7898039
+PRJNA533707_Larimichthys-polyactis	SRR8953100	sample79	dummy	BioSample: SAMN11489335; Sample name: XHY-YA-7; SRA: SRS4670230	isolate: Central Yellow Sea 18	PAIRED	10658017	10274375

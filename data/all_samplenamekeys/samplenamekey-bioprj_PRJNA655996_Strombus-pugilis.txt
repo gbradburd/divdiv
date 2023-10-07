@@ -1,0 +1,23 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA655996_Strombus-pugilis	SRR12415610	sample0	dummy	BioSample: SAMN15763425; Sample name: U61-80_90-5596C_S28; SRA: SRS7168646	isolate: SitioDrago-U61-80-90-5596C-archShell	PAIRED	4717348	1173934
+PRJNA655996_Strombus-pugilis	SRR12415611	sample1	dummy	BioSample: SAMN15763424; Sample name: U61-50_60-5454_S27; SRA: SRS7168645	isolate: SitioDrago-U61-50-60-5454-archShell	PAIRED	2635767	1503145
+PRJNA655996_Strombus-pugilis	SRR12415612	sample2	dummy	BioSample: SAMN15763423; Sample name: U61-20-30_S26; SRA: SRS7168644	isolate: SitioDrago-U61-20-30-archShell	PAIRED	2959316	1598034
+PRJNA655996_Strombus-pugilis	SRR12415613	sample3	dummy	BioSample: SAMN15763422; Sample name: U60-110_120-5659_S25; SRA: SRS7168643	isolate: SitioDrago-U60-110-120-5659-archShell	PAIRED	4713112	1782824
+PRJNA655996_Strombus-pugilis	SRR12415614	sample4	dummy	BioSample: SAMN15763421; Sample name: U60-10_20_S24; SRA: SRS7168642	isolate: SitioDrago-U60-10-20-archShell	PAIRED	2772467	1453446
+PRJNA655996_Strombus-pugilis	SRR12415615	sample5	dummy	BioSample: SAMN15763420; Sample name: MS-F-7-128_S31; SRA: SRS7168641	isolate: Lennond-SweetBocas-APS17-MS-F-7-128-paleoShell	PAIRED	4395848	1327469
+PRJNA655996_Strombus-pugilis	SRR12415616	sample6	dummy	BioSample: SAMN15763419; Sample name: MS-F-5-157_S30; SRA: SRS7168640	isolate: Lennond-SweetBocas-APS17-MS-F-5-157-paleoShell	PAIRED	4557996	2137624
+PRJNA655996_Strombus-pugilis	SRR12415618	sample7	dummy	BioSample: SAMN15763437; Sample name: Cayo_Agua_2-6_S3; SRA: SRS7168638	isolate: CayoAgua-2-6-liveTissue	PAIRED	13117697	9068072
+PRJNA655996_Strombus-pugilis	SRR12415619	sample8	dummy	BioSample: SAMN15763436; Sample name: Cayo_Agua_2-5_S2; SRA: SRS7168637	isolate: CayoAgua-2-5-liveTissue	PAIRED	7193764	4529350
+PRJNA655996_Strombus-pugilis	SRR12415620	sample9	dummy	BioSample: SAMN15763418; Sample name: MS-F-2-78_S29; SRA: SRS7168636	isolate: Lennond-SweetBocas-APS-MS-17-2-78-paleoShell	PAIRED	3211642	1618977
+PRJNA655996_Strombus-pugilis	SRR12415621	sample10	dummy	BioSample: SAMN15763435; Sample name: Boca_Drago_3-3_S4; SRA: SRS7168635	isolate: BocaDrago-3-3-liveTissue	PAIRED	12416399	8604502
+PRJNA655996_Strombus-pugilis	SRR12415622	sample11	dummy	BioSample: SAMN15763434; Sample name: Boca_Drago_3-10_S5; SRA: SRS7168634	isolate: BocaDrago-3-10-liveTissue	PAIRED	20059001	13845269
+PRJNA655996_Strombus-pugilis	SRR12415623	sample12	dummy	BioSample: SAMN15763433; Sample name: CayoAguaBoil3_S22; SRA: SRS7168633	isolate: CayoAgua-2-Boil3-boiledShell	PAIRED	4377911	892213
+PRJNA655996_Strombus-pugilis	SRR12415624	sample13	dummy	BioSample: SAMN15763432; Sample name: CayoAguaBoil2_S21; SRA: SRS7168632	isolate: CayoAgua-2-Boil2-boiledShell	PAIRED	3785755	1481745
+PRJNA655996_Strombus-pugilis	SRR12415625	sample14	dummy	BioSample: SAMN15763431; Sample name: CayoAguaBoil1_S20; SRA: SRS7168631	isolate: CayoAgua-2-Boil1-boiledShell	PAIRED	3239338	1351128
+PRJNA655996_Strombus-pugilis	SRR12415626	sample15	dummy	BioSample: SAMN15763430; Sample name: CayoAgua2-6_S17; SRA: SRS7168630	isolate: CayoAgua-2-6-liveShell	PAIRED	2197346	1411498
+PRJNA655996_Strombus-pugilis	SRR12415627	sample16	dummy	BioSample: SAMN15763429; Sample name: CayoAgua2-5_S16; SRA: SRS7168629	isolate: CayoAgua-2-5-liveShell	PAIRED	1809609	1029574
+PRJNA655996_Strombus-pugilis	SRR12415628	sample17	dummy	BioSample: SAMN15763428; Sample name: CayoAgua2-3_S15; SRA: SRS7168628	isolate: CayoAgua-2-3-liveShell	PAIRED	2052984	1171295
+PRJNA655996_Strombus-pugilis	SRR12415629	sample18	dummy	BioSample: SAMN15763427; Sample name: BocaDrago3-3_S18; SRA: SRS7168627	isolate: BocaDrago-3-3-liveShell	PAIRED	1605019	991508
+PRJNA655996_Strombus-pugilis	SRR12415630	sample19	dummy	BioSample: SAMN15763426; Sample name: BocaDrago3-10_S19; SRA: SRS7168626	isolate: BocaDrago-3-10-liveShell	PAIRED	3836909	1441496
+PRJNA655996_Strombus-pugilis	SRR12415631	sample20	dummy	BioSample: SAMN15763417; Sample name: MS-F-15-4_S33; SRA: SRS7168625	isolate: Lennond-SweetBocas-APS17-MS-F-15-4-paleoShell	PAIRED	2502631	698150
+PRJNA655996_Strombus-pugilis	SRR12415632	sample21	dummy	BioSample: SAMN15763416; Sample name: MS-F-10-110_S32; SRA: SRS7168624	isolate: Lennond-SweetBocas-APS17-MS-F-10-110-paleoShell	PAIRED	3568763	1690574

@@ -1,0 +1,14 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA553554_Istiblennius-lineatus	SRR9672057	sample0	dummy	BioSample: SAMN12238313; Sample name: Istiblennius female replicate #3; SRA: SRS5087337	breed: N/A.	PAIRED	5148981	5123885
+PRJNA553554_Istiblennius-lineatus	SRR9672059	sample1	dummy	BioSample: SAMN12238316; Sample name: Istiblennius female replicate #6; SRA: SRS5087335	breed: N/A.	PAIRED	8105848	8066925
+PRJNA553554_Istiblennius-lineatus	SRR9672060	sample2	dummy	BioSample: SAMN12238329; Sample name: Istiblennius male replicate #9; SRA: SRS5087334	breed: N/A.	PAIRED	5243685	5224037
+PRJNA553554_Istiblennius-lineatus	SRR9672062	sample3	dummy	BioSample: SAMN12238314; Sample name: Istiblennius female replicate #4; SRA: SRS5087332	breed: N/A.	PAIRED	7255769	7218921
+PRJNA553554_Istiblennius-lineatus	SRR9672063	sample4	dummy	BioSample: SAMN12238311; Sample name: Istiblennius female replicate #1; SRA: SRS5087331	breed: N/A.	PAIRED	6425920	6391326
+PRJNA553554_Istiblennius-lineatus	SRR9672065	sample5	dummy	BioSample: SAMN12238327; Sample name: Istiblennius male replicate #7; SRA: SRS5087329	breed: N/A.	PAIRED	6848222	6815505
+PRJNA553554_Istiblennius-lineatus	SRR9672066	sample6	dummy	BioSample: SAMN12238328; Sample name: Istiblennius male replicate #8; SRA: SRS5087328	breed: N/A.	PAIRED	4244654	4222596
+PRJNA553554_Istiblennius-lineatus	SRR9672067	sample7	dummy	BioSample: SAMN12238321; Sample name: Istiblennius male replicate #1; SRA: SRS5087327	breed: N/A.	PAIRED	5070470	5047063
+PRJNA553554_Istiblennius-lineatus	SRR9672070	sample8	dummy	BioSample: SAMN12238324; Sample name: Istiblennius male replicate #4; SRA: SRS5087324	breed: N/A.	PAIRED	16303781	16244986
+PRJNA553554_Istiblennius-lineatus	SRR9672072	sample9	dummy	BioSample: SAMN12238325; Sample name: Istiblennius male replicate #5; SRA: SRS5087322	breed: N/A.	PAIRED	9058045	9012672
+PRJNA553554_Istiblennius-lineatus	SRR9672074	sample10	dummy	BioSample: SAMN12238317; Sample name: Istiblennius female replicate #7; SRA: SRS5087320	breed: N/A.	PAIRED	13005199	12939879
+PRJNA553554_Istiblennius-lineatus	SRR9672075	sample11	dummy	BioSample: SAMN12238326; Sample name: Istiblennius male replicate #6; SRA: SRS5087319	breed: N/A.	PAIRED	4113723	4093899
+PRJNA553554_Istiblennius-lineatus	SRR9672076	sample12	dummy	BioSample: SAMN12238315; Sample name: Istiblennius female replicate #5; SRA: SRS5087317	breed: N/A.	PAIRED	10553028	10499393

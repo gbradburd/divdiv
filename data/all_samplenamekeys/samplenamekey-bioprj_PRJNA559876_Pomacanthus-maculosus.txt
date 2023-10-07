@@ -1,0 +1,152 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA559876_Pomacanthus-maculosus	SRR9953009	sample0	dummy	BioSample: SAMN12561952; Sample name: Abu_Dhabi_03; SRA: SRS5256474	breed: wildtype; ecotype: Persian Gulf	SINGLE	3359412	3356051
+PRJNA559876_Pomacanthus-maculosus	SRR9953010	sample1	dummy	BioSample: SAMN12561950; Sample name: Abu_Dhabi_01; SRA: SRS5256472	breed: wildtype; ecotype: Persian Gulf	SINGLE	3376436	3372854
+PRJNA559876_Pomacanthus-maculosus	SRR9953011	sample2	dummy	BioSample: SAMN12561948; Sample name: Qatar_33; SRA: SRS5256470	breed: wildtype; ecotype: Persian Gulf	SINGLE	6980318	6971973
+PRJNA559876_Pomacanthus-maculosus	SRR9953012	sample3	dummy	BioSample: SAMN12561946; Sample name: Qatar_31; SRA: SRS5256468	breed: wildtype; ecotype: Persian Gulf	SINGLE	7659693	7650348
+PRJNA559876_Pomacanthus-maculosus	SRR9953013	sample4	dummy	BioSample: SAMN12561954; Sample name: Abu_Dhabi_05; SRA: SRS5256466	breed: wildtype; ecotype: Persian Gulf	SINGLE	3110859	3107275
+PRJNA559876_Pomacanthus-maculosus	SRR9953014	sample5	dummy	BioSample: SAMN12561955; Sample name: Abu_Dhabi_06; SRA: SRS5256465	breed: wildtype; ecotype: Persian Gulf	SINGLE	2423613	2420958
+PRJNA559876_Pomacanthus-maculosus	SRR9953015	sample6	dummy	BioSample: SAMN12561947; Sample name: Qatar_32; SRA: SRS5256467	breed: wildtype; ecotype: Persian Gulf	SINGLE	7902016	7891644
+PRJNA559876_Pomacanthus-maculosus	SRR9953016	sample7	dummy	BioSample: SAMN12561949; Sample name: Qatar_34; SRA: SRS5256469	breed: wildtype; ecotype: Persian Gulf	SINGLE	6250586	6242306
+PRJNA559876_Pomacanthus-maculosus	SRR9953017	sample8	dummy	BioSample: SAMN12561951; Sample name: Abu_Dhabi_02; SRA: SRS5256471	breed: wildtype; ecotype: Persian Gulf	SINGLE	1986763	1984743
+PRJNA559876_Pomacanthus-maculosus	SRR9953018	sample9	dummy	BioSample: SAMN12561953; Sample name: Abu_Dhabi_04; SRA: SRS5256473	breed: wildtype; ecotype: Persian Gulf	SINGLE	2820734	2818005
+PRJNA559876_Pomacanthus-maculosus	SRR9953019	sample10	dummy	BioSample: SAMN12562026; Sample name: Saudi_Arabia_20; SRA: SRS5256464	breed: wildtype; ecotype: Red Sea	SINGLE	4308306	4303347
+PRJNA559876_Pomacanthus-maculosus	SRR9953020	sample11	dummy	BioSample: SAMN12562027; Sample name: Saudi_Arabia_21; SRA: SRS5256463	breed: wildtype; ecotype: Red Sea	SINGLE	3763205	3759188
+PRJNA559876_Pomacanthus-maculosus	SRR9953021	sample12	dummy	BioSample: SAMN12562029; Sample name: Saudi_Arabia_23; SRA: SRS5256461	breed: wildtype; ecotype: Red Sea	SINGLE	4037540	4033553
+PRJNA559876_Pomacanthus-maculosus	SRR9953022	sample13	dummy	BioSample: SAMN12562031; Sample name: Saudi_Arabia_25; SRA: SRS5256459	breed: wildtype; ecotype: Red Sea	SINGLE	3558942	3554874
+PRJNA559876_Pomacanthus-maculosus	SRR9953023	sample14	dummy	BioSample: SAMN12562033; Sample name: Saudi_Arabia_27; SRA: SRS5256457	breed: wildtype; ecotype: Red Sea	SINGLE	2683636	2681021
+PRJNA559876_Pomacanthus-maculosus	SRR9953024	sample15	dummy	BioSample: SAMN12562035; Sample name: Saudi_Arabia_29; SRA: SRS5256455	breed: wildtype; ecotype: Red Sea	SINGLE	5161349	5156175
+PRJNA559876_Pomacanthus-maculosus	SRR9953025	sample16	dummy	BioSample: SAMN12561959; Sample name: Abu_Dhabi_10; SRA: SRS5256454	breed: wildtype; ecotype: Persian Gulf	SINGLE	4286676	4282169
+PRJNA559876_Pomacanthus-maculosus	SRR9953026	sample17	dummy	BioSample: SAMN12562034; Sample name: Saudi_Arabia_28; SRA: SRS5256456	breed: wildtype; ecotype: Red Sea	SINGLE	3161303	3157649
+PRJNA559876_Pomacanthus-maculosus	SRR9953027	sample18	dummy	BioSample: SAMN12562032; Sample name: Saudi_Arabia_26; SRA: SRS5256458	breed: wildtype; ecotype: Red Sea	SINGLE	4025431	4021155
+PRJNA559876_Pomacanthus-maculosus	SRR9953028	sample19	dummy	BioSample: SAMN12562030; Sample name: Saudi_Arabia_24; SRA: SRS5256460	breed: wildtype; ecotype: Red Sea	SINGLE	2764318	2761528
+PRJNA559876_Pomacanthus-maculosus	SRR9953029	sample20	dummy	BioSample: SAMN12562028; Sample name: Saudi_Arabia_22; SRA: SRS5256462	breed: wildtype; ecotype: Red Sea	SINGLE	3325363	3322180
+PRJNA559876_Pomacanthus-maculosus	SRR9953030	sample21	dummy	BioSample: SAMN12561958; Sample name: Abu_Dhabi_09; SRA: SRS5256453	breed: wildtype; ecotype: Persian Gulf	SINGLE	3355709	3351976
+PRJNA559876_Pomacanthus-maculosus	SRR9953031	sample22	dummy	BioSample: SAMN12561957; Sample name: Abu_Dhabi_08; SRA: SRS5256452	breed: wildtype; ecotype: Persian Gulf	SINGLE	2720303	2717463
+PRJNA559876_Pomacanthus-maculosus	SRR9953032	sample23	dummy	BioSample: SAMN12561963; Sample name: Abu_Dhabi_14; SRA: SRS5256450	breed: wildtype; ecotype: Persian Gulf	SINGLE	3929812	3925608
+PRJNA559876_Pomacanthus-maculosus	SRR9953033	sample24	dummy	BioSample: SAMN12561961; Sample name: Abu_Dhabi_12; SRA: SRS5256448	breed: wildtype; ecotype: Persian Gulf	SINGLE	3713540	3709789
+PRJNA559876_Pomacanthus-maculosus	SRR9953034	sample25	dummy	BioSample: SAMN12561965; Sample name: Abu_Dhabi_16; SRA: SRS5256446	breed: wildtype; ecotype: Persian Gulf	SINGLE	13442108	13424158
+PRJNA559876_Pomacanthus-maculosus	SRR9953035	sample26	dummy	BioSample: SAMN12562025; Sample name: Saudi_Arabia_19; SRA: SRS5256444	breed: wildtype; ecotype: Red Sea	SINGLE	4450416	4445936
+PRJNA559876_Pomacanthus-maculosus	SRR9953036	sample27	dummy	BioSample: SAMN12562024; Sample name: Saudi_Arabia_18; SRA: SRS5256443	breed: wildtype; ecotype: Red Sea	SINGLE	2030826	2028709
+PRJNA559876_Pomacanthus-maculosus	SRR9953037	sample28	dummy	BioSample: SAMN12561964; Sample name: Abu_Dhabi_15; SRA: SRS5256445	breed: wildtype; ecotype: Persian Gulf	SINGLE	2969065	2966009
+PRJNA559876_Pomacanthus-maculosus	SRR9953038	sample29	dummy	BioSample: SAMN12561960; Sample name: Abu_Dhabi_11; SRA: SRS5256447	breed: wildtype; ecotype: Persian Gulf	SINGLE	3707576	3703525
+PRJNA559876_Pomacanthus-maculosus	SRR9953039	sample30	dummy	BioSample: SAMN12561962; Sample name: Abu_Dhabi_13; SRA: SRS5256449	breed: wildtype; ecotype: Persian Gulf	SINGLE	4342209	4338047
+PRJNA559876_Pomacanthus-maculosus	SRR9953040	sample31	dummy	BioSample: SAMN12561956; Sample name: Abu_Dhabi_07; SRA: SRS5256451	breed: wildtype; ecotype: Persian Gulf	SINGLE	3138318	3135050
+PRJNA559876_Pomacanthus-maculosus	SRR9953041	sample32	dummy	BioSample: SAMN12562023; Sample name: Saudi_Arabia_17; SRA: SRS5256442	breed: wildtype; ecotype: Red Sea	SINGLE	3681627	3677920
+PRJNA559876_Pomacanthus-maculosus	SRR9953042	sample33	dummy	BioSample: SAMN12562022; Sample name: Saudi_Arabia_16; SRA: SRS5256441	breed: wildtype; ecotype: Red Sea	SINGLE	3499564	3496336
+PRJNA559876_Pomacanthus-maculosus	SRR9953043	sample34	dummy	BioSample: SAMN12562020; Sample name: Saudi_Arabia_14; SRA: SRS5256439	breed: wildtype; ecotype: Red Sea	SINGLE	3665365	3661407
+PRJNA559876_Pomacanthus-maculosus	SRR9953044	sample35	dummy	BioSample: SAMN12562018; Sample name: Saudi_Arabia_12; SRA: SRS5256437	breed: wildtype; ecotype: Red Sea	SINGLE	3220526	3217473
+PRJNA559876_Pomacanthus-maculosus	SRR9953045	sample36	dummy	BioSample: SAMN12562016; Sample name: Saudi_Arabia_10; SRA: SRS5256435	breed: wildtype; ecotype: Red Sea	SINGLE	6208128	6201242
+PRJNA559876_Pomacanthus-maculosus	SRR9953046	sample37	dummy	BioSample: SAMN12561975; Sample name: Gulf_of_Oman_02; SRA: SRS5256433	breed: wildtype; ecotype: Gulf of Oman	SINGLE	3331138	3326916
+PRJNA559876_Pomacanthus-maculosus	SRR9953047	sample38	dummy	BioSample: SAMN12561970; Sample name: Abu_Dhabi_21; SRA: SRS5256432	breed: wildtype; ecotype: Persian Gulf	SINGLE	7319668	7309562
+PRJNA559876_Pomacanthus-maculosus	SRR9953048	sample39	dummy	BioSample: SAMN12561974; Sample name: Gulf_of_Oman_01; SRA: SRS5256434	breed: wildtype; ecotype: Gulf of Oman	SINGLE	3614946	3610357
+PRJNA559876_Pomacanthus-maculosus	SRR9953049	sample40	dummy	BioSample: SAMN12562017; Sample name: Saudi_Arabia_11; SRA: SRS5256436	breed: wildtype; ecotype: Red Sea	SINGLE	3668658	3664373
+PRJNA559876_Pomacanthus-maculosus	SRR9953050	sample41	dummy	BioSample: SAMN12562019; Sample name: Saudi_Arabia_13; SRA: SRS5256438	breed: wildtype; ecotype: Red Sea	SINGLE	2712717	2709933
+PRJNA559876_Pomacanthus-maculosus	SRR9953051	sample42	dummy	BioSample: SAMN12562021; Sample name: Saudi_Arabia_15; SRA: SRS5256440	breed: wildtype; ecotype: Red Sea	SINGLE	3073750	3070920
+PRJNA559876_Pomacanthus-maculosus	SRR9953052	sample43	dummy	BioSample: SAMN12561971; Sample name: Abu_Dhabi_22; SRA: SRS5256431	breed: wildtype; ecotype: Persian Gulf	SINGLE	5697797	5691130
+PRJNA559876_Pomacanthus-maculosus	SRR9953053	sample44	dummy	BioSample: SAMN12561972; Sample name: Abu_Dhabi_23; SRA: SRS5256430	breed: wildtype; ecotype: Persian Gulf	SINGLE	6401387	6392373
+PRJNA559876_Pomacanthus-maculosus	SRR9953054	sample45	dummy	BioSample: SAMN12561973; Sample name: Abu_Dhabi_24; SRA: SRS5256429	breed: wildtype; ecotype: Persian Gulf	SINGLE	5668825	5661322
+PRJNA559876_Pomacanthus-maculosus	SRR9953055	sample46	dummy	BioSample: SAMN12561966; Sample name: Abu_Dhabi_17; SRA: SRS5256428	breed: wildtype; ecotype: Persian Gulf	SINGLE	9174020	9162543
+PRJNA559876_Pomacanthus-maculosus	SRR9953056	sample47	dummy	BioSample: SAMN12561967; Sample name: Abu_Dhabi_18; SRA: SRS5256427	breed: wildtype; ecotype: Persian Gulf	SINGLE	4589053	4583794
+PRJNA559876_Pomacanthus-maculosus	SRR9953057	sample48	dummy	BioSample: SAMN12561969; Sample name: Abu_Dhabi_20; SRA: SRS5256425	breed: wildtype; ecotype: Persian Gulf	SINGLE	7264313	7254638
+PRJNA559876_Pomacanthus-maculosus	SRR9953058	sample49	dummy	BioSample: SAMN12562055; Sample name: Saudi_Arabia_49; SRA: SRS5256423	breed: wildtype; ecotype: Red Sea	SINGLE	3334992	3331361
+PRJNA559876_Pomacanthus-maculosus	SRR9953059	sample50	dummy	BioSample: SAMN12562049; Sample name: Saudi_Arabia_43; SRA: SRS5256421	breed: wildtype; ecotype: Red Sea	SINGLE	10216545	10203069
+PRJNA559876_Pomacanthus-maculosus	SRR9953060	sample51	dummy	BioSample: SAMN12562047; Sample name: Saudi_Arabia_41; SRA: SRS5256419	breed: wildtype; ecotype: Red Sea	SINGLE	5269960	5263534
+PRJNA559876_Pomacanthus-maculosus	SRR9953061	sample52	dummy	BioSample: SAMN12562053; Sample name: Saudi_Arabia_47; SRA: SRS5256418	breed: wildtype; ecotype: Red Sea	SINGLE	5622979	5617217
+PRJNA559876_Pomacanthus-maculosus	SRR9953062	sample53	dummy	BioSample: SAMN12562052; Sample name: Saudi_Arabia_46; SRA: SRS5256417	breed: wildtype; ecotype: Red Sea	SINGLE	2951025	2947872
+PRJNA559876_Pomacanthus-maculosus	SRR9953063	sample54	dummy	BioSample: SAMN12562046; Sample name: Saudi_Arabia_40; SRA: SRS5256420	breed: wildtype; ecotype: Red Sea	SINGLE	6702537	6694431
+PRJNA559876_Pomacanthus-maculosus	SRR9953064	sample55	dummy	BioSample: SAMN12562048; Sample name: Saudi_Arabia_42; SRA: SRS5256422	breed: wildtype; ecotype: Red Sea	SINGLE	7568045	7558062
+PRJNA559876_Pomacanthus-maculosus	SRR9953065	sample56	dummy	BioSample: SAMN12562054; Sample name: Saudi_Arabia_48; SRA: SRS5256424	breed: wildtype; ecotype: Red Sea	SINGLE	4585173	4580410
+PRJNA559876_Pomacanthus-maculosus	SRR9953066	sample57	dummy	BioSample: SAMN12561968; Sample name: Abu_Dhabi_19; SRA: SRS5256426	breed: wildtype; ecotype: Persian Gulf	SINGLE	10816703	10801459
+PRJNA559876_Pomacanthus-maculosus	SRR9953067	sample58	dummy	BioSample: SAMN12562050; Sample name: Saudi_Arabia_44; SRA: SRS5256416	breed: wildtype; ecotype: Red Sea	SINGLE	1543035	1541139
+PRJNA559876_Pomacanthus-maculosus	SRR9953068	sample59	dummy	BioSample: SAMN12562051; Sample name: Saudi_Arabia_45; SRA: SRS5256415	breed: wildtype; ecotype: Red Sea	SINGLE	2477980	2475411
+PRJNA559876_Pomacanthus-maculosus	SRR9953069	sample60	dummy	BioSample: SAMN12561985; Sample name: Gulf_of_Oman_12; SRA: SRS5256414	breed: wildtype; ecotype: Gulf of Oman	SINGLE	7592105	7582589
+PRJNA559876_Pomacanthus-maculosus	SRR9953070	sample61	dummy	BioSample: SAMN12561984; Sample name: Gulf_of_Oman_11; SRA: SRS5256413	breed: wildtype; ecotype: Gulf of Oman	SINGLE	3240534	3236747
+PRJNA559876_Pomacanthus-maculosus	SRR9953071	sample62	dummy	BioSample: SAMN12561976; Sample name: Gulf_of_Oman_03; SRA: SRS5256411	breed: wildtype; ecotype: Gulf of Oman	SINGLE	3869993	3865381
+PRJNA559876_Pomacanthus-maculosus	SRR9953072	sample63	dummy	BioSample: SAMN12561978; Sample name: Gulf_of_Oman_05; SRA: SRS5256409	breed: wildtype; ecotype: Gulf of Oman	SINGLE	3496284	3492284
+PRJNA559876_Pomacanthus-maculosus	SRR9953073	sample64	dummy	BioSample: SAMN12561980; Sample name: Gulf_of_Oman_07; SRA: SRS5256407	breed: wildtype; ecotype: Gulf of Oman	SINGLE	4417821	4412264
+PRJNA559876_Pomacanthus-maculosus	SRR9953074	sample65	dummy	BioSample: SAMN12561982; Sample name: Gulf_of_Oman_09; SRA: SRS5256405	breed: wildtype; ecotype: Gulf of Oman	SINGLE	5026376	5019902
+PRJNA559876_Pomacanthus-maculosus	SRR9953075	sample66	dummy	BioSample: SAMN12561924; Sample name: Qatar_09; SRA: SRS5256404	breed: wildtype; ecotype: Persian Gulf	SINGLE	745715	744869
+PRJNA559876_Pomacanthus-maculosus	SRR9953076	sample67	dummy	BioSample: SAMN12561983; Sample name: Gulf_of_Oman_10; SRA: SRS5256406	breed: wildtype; ecotype: Gulf of Oman	SINGLE	3710468	3705393
+PRJNA559876_Pomacanthus-maculosus	SRR9953077	sample68	dummy	BioSample: SAMN12561981; Sample name: Gulf_of_Oman_08; SRA: SRS5256408	breed: wildtype; ecotype: Gulf of Oman	SINGLE	4216757	4211447
+PRJNA559876_Pomacanthus-maculosus	SRR9953078	sample69	dummy	BioSample: SAMN12561979; Sample name: Gulf_of_Oman_06; SRA: SRS5256410	breed: wildtype; ecotype: Gulf of Oman	SINGLE	4230119	4225604
+PRJNA559876_Pomacanthus-maculosus	SRR9953079	sample70	dummy	BioSample: SAMN12561977; Sample name: Gulf_of_Oman_04; SRA: SRS5256412	breed: wildtype; ecotype: Gulf of Oman	SINGLE	6001927	5994596
+PRJNA559876_Pomacanthus-maculosus	SRR9953080	sample71	dummy	BioSample: SAMN12561925; Sample name: Qatar_10; SRA: SRS5256403	breed: wildtype; ecotype: Persian Gulf	SINGLE	852496	851411
+PRJNA559876_Pomacanthus-maculosus	SRR9953081	sample72	dummy	BioSample: SAMN12561920; Sample name: Qatar_05; SRA: SRS5256402	breed: wildtype; ecotype: Persian Gulf	SINGLE	750044	749111
+PRJNA559876_Pomacanthus-maculosus	SRR9953082	sample73	dummy	BioSample: SAMN12561922; Sample name: Qatar_07; SRA: SRS5256400	breed: wildtype; ecotype: Persian Gulf	SINGLE	870803	869749
+PRJNA559876_Pomacanthus-maculosus	SRR9953083	sample74	dummy	BioSample: SAMN12561916; Sample name: Qatar_01; SRA: SRS5256398	breed: wildtype; ecotype: Persian Gulf	SINGLE	715058	714215
+PRJNA559876_Pomacanthus-maculosus	SRR9953084	sample75	dummy	BioSample: SAMN12561918; Sample name: Qatar_03; SRA: SRS5256396	breed: wildtype; ecotype: Persian Gulf	SINGLE	1027195	1026021
+PRJNA559876_Pomacanthus-maculosus	SRR9953085	sample76	dummy	BioSample: SAMN12562045; Sample name: Saudi_Arabia_39; SRA: SRS5256394	breed: wildtype; ecotype: Red Sea	SINGLE	6379046	6371355
+PRJNA559876_Pomacanthus-maculosus	SRR9953086	sample77	dummy	BioSample: SAMN12562044; Sample name: Saudi_Arabia_38; SRA: SRS5256393	breed: wildtype; ecotype: Red Sea	SINGLE	5621693	5615446
+PRJNA559876_Pomacanthus-maculosus	SRR9953087	sample78	dummy	BioSample: SAMN12561919; Sample name: Qatar_04; SRA: SRS5256395	breed: wildtype; ecotype: Persian Gulf	SINGLE	769488	768638
+PRJNA559876_Pomacanthus-maculosus	SRR9953088	sample79	dummy	BioSample: SAMN12561917; Sample name: Qatar_02; SRA: SRS5256397	breed: wildtype; ecotype: Persian Gulf	SINGLE	896171	895200
+PRJNA559876_Pomacanthus-maculosus	SRR9953089	sample80	dummy	BioSample: SAMN12561923; Sample name: Qatar_08; SRA: SRS5256399	breed: wildtype; ecotype: Persian Gulf	SINGLE	1157102	1155803
+PRJNA559876_Pomacanthus-maculosus	SRR9953090	sample81	dummy	BioSample: SAMN12561921; Sample name: Qatar_06; SRA: SRS5256401	breed: wildtype; ecotype: Persian Gulf	SINGLE	802948	802046
+PRJNA559876_Pomacanthus-maculosus	SRR9953091	sample82	dummy	BioSample: SAMN12562037; Sample name: Saudi_Arabia_31; SRA: SRS5256392	breed: wildtype; ecotype: Red Sea	SINGLE	3650215	3646775
+PRJNA559876_Pomacanthus-maculosus	SRR9953092	sample83	dummy	BioSample: SAMN12562036; Sample name: Saudi_Arabia_30; SRA: SRS5256391	breed: wildtype; ecotype: Red Sea	SINGLE	479907	479164
+PRJNA559876_Pomacanthus-maculosus	SRR9953093	sample84	dummy	BioSample: SAMN12562039; Sample name: Saudi_Arabia_33; SRA: SRS5256390	breed: wildtype; ecotype: Red Sea	SINGLE	2921728	2918431
+PRJNA559876_Pomacanthus-maculosus	SRR9953094	sample85	dummy	BioSample: SAMN12562038; Sample name: Saudi_Arabia_32; SRA: SRS5256389	breed: wildtype; ecotype: Red Sea	SINGLE	3102265	3099134
+PRJNA559876_Pomacanthus-maculosus	SRR9953095	sample86	dummy	BioSample: SAMN12562041; Sample name: Saudi_Arabia_35; SRA: SRS5256388	breed: wildtype; ecotype: Red Sea	SINGLE	808798	807743
+PRJNA559876_Pomacanthus-maculosus	SRR9953096	sample87	dummy	BioSample: SAMN12562040; Sample name: Saudi_Arabia_34; SRA: SRS5256387	breed: wildtype; ecotype: Red Sea	SINGLE	3645026	3640986
+PRJNA559876_Pomacanthus-maculosus	SRR9953097	sample88	dummy	BioSample: SAMN12562043; Sample name: Saudi_Arabia_37; SRA: SRS5256386	breed: wildtype; ecotype: Red Sea	SINGLE	7361823	7352344
+PRJNA559876_Pomacanthus-maculosus	SRR9953098	sample89	dummy	BioSample: SAMN12562042; Sample name: Saudi_Arabia_36; SRA: SRS5256385	breed: wildtype; ecotype: Red Sea	SINGLE	5793794	5786490
+PRJNA559876_Pomacanthus-maculosus	SRR9953099	sample90	dummy	BioSample: SAMN12561995; Sample name: Djibouti_06; SRA: SRS5256383	breed: wildtype; ecotype: Gulf of Aden	SINGLE	2704513	2701602
+PRJNA559876_Pomacanthus-maculosus	SRR9953100	sample91	dummy	BioSample: SAMN12561989; Sample name: Gulf_of_Oman_16; SRA: SRS5256381	breed: wildtype; ecotype: Gulf of Oman	SINGLE	8266674	8256203
+PRJNA559876_Pomacanthus-maculosus	SRR9953101	sample92	dummy	BioSample: SAMN12561987; Sample name: Gulf_of_Oman_14; SRA: SRS5256379	breed: wildtype; ecotype: Gulf of Oman	SINGLE	6364980	6357478
+PRJNA559876_Pomacanthus-maculosus	SRR9953102	sample93	dummy	BioSample: SAMN12561993; Sample name: Djibouti_04; SRA: SRS5256377	breed: wildtype; ecotype: Gulf of Aden	SINGLE	4384175	4379339
+PRJNA559876_Pomacanthus-maculosus	SRR9953103	sample94	dummy	BioSample: SAMN12561990; Sample name: Djibouti_01; SRA: SRS5256376	breed: wildtype; ecotype: Gulf of Aden	SINGLE	2207122	2205032
+PRJNA559876_Pomacanthus-maculosus	SRR9953104	sample95	dummy	BioSample: SAMN12561992; Sample name: Djibouti_03; SRA: SRS5256378	breed: wildtype; ecotype: Gulf of Aden	SINGLE	3915572	3911325
+PRJNA559876_Pomacanthus-maculosus	SRR9953105	sample96	dummy	BioSample: SAMN12561986; Sample name: Gulf_of_Oman_13; SRA: SRS5256380	breed: wildtype; ecotype: Gulf of Oman	SINGLE	4768260	4761880
+PRJNA559876_Pomacanthus-maculosus	SRR9953106	sample97	dummy	BioSample: SAMN12561988; Sample name: Gulf_of_Oman_15; SRA: SRS5256382	breed: wildtype; ecotype: Gulf of Oman	SINGLE	7832559	7822121
+PRJNA559876_Pomacanthus-maculosus	SRR9953107	sample98	dummy	BioSample: SAMN12561994; Sample name: Djibouti_05; SRA: SRS5256384	breed: wildtype; ecotype: Gulf of Aden	SINGLE	2421752	2418989
+PRJNA559876_Pomacanthus-maculosus	SRR9953108	sample99	dummy	BioSample: SAMN12561991; Sample name: Djibouti_02; SRA: SRS5256375	breed: wildtype; ecotype: Gulf of Aden	SINGLE	3429851	3426533
+PRJNA559876_Pomacanthus-maculosus	SRR9953109	sample100	dummy	BioSample: SAMN12562003; Sample name: Djibouti_14; SRA: SRS5256374	breed: wildtype; ecotype: Gulf of Aden	SINGLE	2467874	2465518
+PRJNA559876_Pomacanthus-maculosus	SRR9953110	sample101	dummy	BioSample: SAMN12562002; Sample name: Djibouti_13; SRA: SRS5256373	breed: wildtype; ecotype: Gulf of Aden	SINGLE	6590472	6582155
+PRJNA559876_Pomacanthus-maculosus	SRR9953111	sample102	dummy	BioSample: SAMN12562001; Sample name: Djibouti_12; SRA: SRS5256372	breed: wildtype; ecotype: Gulf of Aden	SINGLE	3811399	3807313
+PRJNA559876_Pomacanthus-maculosus	SRR9953112	sample103	dummy	BioSample: SAMN12562000; Sample name: Djibouti_11; SRA: SRS5256371	breed: wildtype; ecotype: Gulf of Aden	SINGLE	2928049	2924734
+PRJNA559876_Pomacanthus-maculosus	SRR9953113	sample104	dummy	BioSample: SAMN12561998; Sample name: Djibouti_09; SRA: SRS5256369	breed: wildtype; ecotype: Gulf of Aden	SINGLE	2359112	2356877
+PRJNA559876_Pomacanthus-maculosus	SRR9953114	sample105	dummy	BioSample: SAMN12561996; Sample name: Djibouti_07; SRA: SRS5256367	breed: wildtype; ecotype: Gulf of Aden	SINGLE	3317592	3314308
+PRJNA559876_Pomacanthus-maculosus	SRR9953115	sample106	dummy	BioSample: SAMN12562005; Sample name: Djibouti_16; SRA: SRS5256365	breed: wildtype; ecotype: Gulf of Aden	SINGLE	2874462	2871669
+PRJNA559876_Pomacanthus-maculosus	SRR9953116	sample107	dummy	BioSample: SAMN12562014; Sample name: Saudi_Arabia_08; SRA: SRS5256363	breed: wildtype; ecotype: Red Sea	SINGLE	3322983	3319197
+PRJNA559876_Pomacanthus-maculosus	SRR9953117	sample108	dummy	BioSample: SAMN12562007; Sample name: Saudi_Arabia_01; SRA: SRS5256362	breed: wildtype; ecotype: Red Sea	SINGLE	3386056	3382535
+PRJNA559876_Pomacanthus-maculosus	SRR9953118	sample109	dummy	BioSample: SAMN12562006; Sample name: Djibouti_17; SRA: SRS5256361	breed: wildtype; ecotype: Gulf of Aden	SINGLE	2598030	2595304
+PRJNA559876_Pomacanthus-maculosus	SRR9953119	sample110	dummy	BioSample: SAMN12562004; Sample name: Djibouti_15; SRA: SRS5256364	breed: wildtype; ecotype: Gulf of Aden	SINGLE	2421442	2418780
+PRJNA559876_Pomacanthus-maculosus	SRR9953120	sample111	dummy	BioSample: SAMN12562066; Sample name: Kenya_09; SRA: SRS5256366	breed: wildtype; ecotype: Eastern Africa	SINGLE	2928852	2925342
+PRJNA559876_Pomacanthus-maculosus	SRR9953121	sample112	dummy	BioSample: SAMN12561997; Sample name: Djibouti_08; SRA: SRS5256368	breed: wildtype; ecotype: Gulf of Aden	SINGLE	3106024	3102991
+PRJNA559876_Pomacanthus-maculosus	SRR9953122	sample113	dummy	BioSample: SAMN12561999; Sample name: Djibouti_10; SRA: SRS5256370	breed: wildtype; ecotype: Gulf of Aden	SINGLE	2273605	2270871
+PRJNA559876_Pomacanthus-maculosus	SRR9953123	sample114	dummy	BioSample: SAMN12562065; Sample name: Kenya_08; SRA: SRS5256360	breed: wildtype; ecotype: Eastern Africa	SINGLE	5779274	5772030
+PRJNA559876_Pomacanthus-maculosus	SRR9953124	sample115	dummy	BioSample: SAMN12562010; Sample name: Saudi_Arabia_04; SRA: SRS5256358	breed: wildtype; ecotype: Red Sea	SINGLE	7924547	7916082
+PRJNA559876_Pomacanthus-maculosus	SRR9953125	sample116	dummy	BioSample: SAMN12562012; Sample name: Saudi_Arabia_06; SRA: SRS5256356	breed: wildtype; ecotype: Red Sea	SINGLE	5340995	5336048
+PRJNA559876_Pomacanthus-maculosus	SRR9953126	sample117	dummy	BioSample: SAMN12562059; Sample name: Kenya_02; SRA: SRS5256354	breed: wildtype; ecotype: Eastern Africa	SINGLE	5625646	5619006
+PRJNA559876_Pomacanthus-maculosus	SRR9953127	sample118	dummy	BioSample: SAMN12562057; Sample name: Saudi_Arabia_51; SRA: SRS5256352	breed: wildtype; ecotype: Red Sea	SINGLE	6754465	6745839
+PRJNA559876_Pomacanthus-maculosus	SRR9953128	sample119	dummy	BioSample: SAMN12562063; Sample name: Kenya_06; SRA: SRS5256351	breed: wildtype; ecotype: Eastern Africa	SINGLE	2905488	2901803
+PRJNA559876_Pomacanthus-maculosus	SRR9953129	sample120	dummy	BioSample: SAMN12562056; Sample name: Saudi_Arabia_50; SRA: SRS5256350	breed: wildtype; ecotype: Red Sea	SINGLE	3348656	3345406
+PRJNA559876_Pomacanthus-maculosus	SRR9953130	sample121	dummy	BioSample: SAMN12562058; Sample name: Kenya_01; SRA: SRS5256353	breed: wildtype; ecotype: Eastern Africa	SINGLE	8260896	8251067
+PRJNA559876_Pomacanthus-maculosus	SRR9953131	sample122	dummy	BioSample: SAMN12562013; Sample name: Saudi_Arabia_07; SRA: SRS5256355	breed: wildtype; ecotype: Red Sea	SINGLE	4301903	4297371
+PRJNA559876_Pomacanthus-maculosus	SRR9953132	sample123	dummy	BioSample: SAMN12562011; Sample name: Saudi_Arabia_05; SRA: SRS5256357	breed: wildtype; ecotype: Red Sea	SINGLE	5199894	5194655
+PRJNA559876_Pomacanthus-maculosus	SRR9953133	sample124	dummy	BioSample: SAMN12562064; Sample name: Kenya_07; SRA: SRS5256359	breed: wildtype; ecotype: Eastern Africa	SINGLE	2343137	2340401
+PRJNA559876_Pomacanthus-maculosus	SRR9953134	sample125	dummy	BioSample: SAMN12562062; Sample name: Kenya_05; SRA: SRS5256349	breed: wildtype; ecotype: Eastern Africa	SINGLE	8134928	8124754
+PRJNA559876_Pomacanthus-maculosus	SRR9953135	sample126	dummy	BioSample: SAMN12562061; Sample name: Kenya_04; SRA: SRS5256348	breed: wildtype; ecotype: Eastern Africa	SINGLE	9794249	9780937
+PRJNA559876_Pomacanthus-maculosus	SRR9953136	sample127	dummy	BioSample: SAMN12562060; Sample name: Kenya_03; SRA: SRS5256347	breed: wildtype; ecotype: Eastern Africa	SINGLE	7226523	7217166
+PRJNA559876_Pomacanthus-maculosus	SRR9953137	sample128	dummy	BioSample: SAMN12561934; Sample name: Qatar_19; SRA: SRS5256346	breed: wildtype; ecotype: Persian Gulf	SINGLE	3750800	3746991
+PRJNA559876_Pomacanthus-maculosus	SRR9953138	sample129	dummy	BioSample: SAMN12561926; Sample name: Qatar_11; SRA: SRS5256344	breed: wildtype; ecotype: Persian Gulf	SINGLE	618311	617437
+PRJNA559876_Pomacanthus-maculosus	SRR9953139	sample130	dummy	BioSample: SAMN12561928; Sample name: Qatar_13; SRA: SRS5256342	breed: wildtype; ecotype: Persian Gulf	SINGLE	2160540	2158254
+PRJNA559876_Pomacanthus-maculosus	SRR9953140	sample131	dummy	BioSample: SAMN12561930; Sample name: Qatar_15; SRA: SRS5256340	breed: wildtype; ecotype: Persian Gulf	SINGLE	3927738	3923219
+PRJNA559876_Pomacanthus-maculosus	SRR9953141	sample132	dummy	BioSample: SAMN12561932; Sample name: Qatar_17; SRA: SRS5256338	breed: wildtype; ecotype: Persian Gulf	SINGLE	7326502	7318481
+PRJNA559876_Pomacanthus-maculosus	SRR9953142	sample133	dummy	BioSample: SAMN12561933; Sample name: Qatar_18; SRA: SRS5256337	breed: wildtype; ecotype: Persian Gulf	SINGLE	6860776	6853440
+PRJNA559876_Pomacanthus-maculosus	SRR9953143	sample134	dummy	BioSample: SAMN12561931; Sample name: Qatar_16; SRA: SRS5256339	breed: wildtype; ecotype: Persian Gulf	SINGLE	2152891	2150539
+PRJNA559876_Pomacanthus-maculosus	SRR9953144	sample135	dummy	BioSample: SAMN12561929; Sample name: Qatar_14; SRA: SRS5256341	breed: wildtype; ecotype: Persian Gulf	SINGLE	41839	41686
+PRJNA559876_Pomacanthus-maculosus	SRR9953145	sample136	dummy	BioSample: SAMN12561927; Sample name: Qatar_12; SRA: SRS5256343	breed: wildtype; ecotype: Persian Gulf	SINGLE	691271	690461
+PRJNA559876_Pomacanthus-maculosus	SRR9953146	sample137	dummy	BioSample: SAMN12561935; Sample name: Qatar_20; SRA: SRS5256345	breed: wildtype; ecotype: Persian Gulf	SINGLE	3465201	3461572
+PRJNA559876_Pomacanthus-maculosus	SRR9953147	sample138	dummy	BioSample: SAMN12562008; Sample name: Saudi_Arabia_02; SRA: SRS5256336	breed: wildtype; ecotype: Red Sea	SINGLE	302310	301912
+PRJNA559876_Pomacanthus-maculosus	SRR9953148	sample139	dummy	BioSample: SAMN12562009; Sample name: Saudi_Arabia_03; SRA: SRS5256335	breed: wildtype; ecotype: Red Sea	SINGLE	3121340	3118119
+PRJNA559876_Pomacanthus-maculosus	SRR9953149	sample140	dummy	BioSample: SAMN12561940; Sample name: Qatar_25; SRA: SRS5256333	breed: wildtype; ecotype: Persian Gulf	SINGLE	7141760	7132260
+PRJNA559876_Pomacanthus-maculosus	SRR9953150	sample141	dummy	BioSample: SAMN12561942; Sample name: Qatar_27; SRA: SRS5256331	breed: wildtype; ecotype: Persian Gulf	SINGLE	5468451	5461676
+PRJNA559876_Pomacanthus-maculosus	SRR9953151	sample142	dummy	BioSample: SAMN12561936; Sample name: Qatar_21; SRA: SRS5256329	breed: wildtype; ecotype: Persian Gulf	SINGLE	1179339	1177842
+PRJNA559876_Pomacanthus-maculosus	SRR9953152	sample143	dummy	BioSample: SAMN12561938; Sample name: Qatar_23; SRA: SRS5256327	breed: wildtype; ecotype: Persian Gulf	SINGLE	2109423	2107548
+PRJNA559876_Pomacanthus-maculosus	SRR9953153	sample144	dummy	BioSample: SAMN12562015; Sample name: Saudi_Arabia_09; SRA: SRS5256326	breed: wildtype; ecotype: Red Sea	SINGLE	2037393	2035253
+PRJNA559876_Pomacanthus-maculosus	SRR9953154	sample145	dummy	BioSample: SAMN12561939; Sample name: Qatar_24; SRA: SRS5256328	breed: wildtype; ecotype: Persian Gulf	SINGLE	5854680	5847375
+PRJNA559876_Pomacanthus-maculosus	SRR9953155	sample146	dummy	BioSample: SAMN12561937; Sample name: Qatar_22; SRA: SRS5256330	breed: wildtype; ecotype: Persian Gulf	SINGLE	822613	821619
+PRJNA559876_Pomacanthus-maculosus	SRR9953156	sample147	dummy	BioSample: SAMN12561943; Sample name: Qatar_28; SRA: SRS5256332	breed: wildtype; ecotype: Persian Gulf	SINGLE	6306776	6298198
+PRJNA559876_Pomacanthus-maculosus	SRR9953157	sample148	dummy	BioSample: SAMN12561941; Sample name: Qatar_26; SRA: SRS5256334	breed: wildtype; ecotype: Persian Gulf	SINGLE	7383256	7372555
+PRJNA559876_Pomacanthus-maculosus	SRR9953158	sample149	dummy	BioSample: SAMN12561945; Sample name: Qatar_30; SRA: SRS5256325	breed: wildtype; ecotype: Persian Gulf	SINGLE	6932918	6924620
+PRJNA559876_Pomacanthus-maculosus	SRR9953159	sample150	dummy	BioSample: SAMN12561944; Sample name: Qatar_29; SRA: SRS5256324	breed: wildtype; ecotype: Persian Gulf	SINGLE	7496490	7486940

@@ -1,0 +1,11 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA253681_Scomber-scombrus	SRR1766199	sample0	dummy	BioSample: SAMN02887024; Sample name: S13; SRA: SRS823172		PAIRED	23261182	21956852
+PRJNA253681_Scomber-scombrus	SRR1766215	sample1	dummy	BioSample: SAMN02887025; Sample name: S15; SRA: SRS823173		PAIRED	25894422	24573360
+PRJNA253681_Scomber-scombrus	SRR1766216	sample2	dummy	BioSample: SAMN02887026; Sample name: S18; SRA: SRS823174		PAIRED	24796766	22678639
+PRJNA253681_Scomber-scombrus	SRR1766217	sample3	dummy	BioSample: SAMN02887027; Sample name: S21; SRA: SRS823175		PAIRED	19745114	18424991
+PRJNA253681_Scomber-scombrus	SRR1766218	sample4	dummy	BioSample: SAMN02887029; Sample name: S32; SRA: SRS823176		PAIRED	22670811	21639137
+PRJNA253681_Scomber-scombrus	SRR1766221	sample5	dummy	BioSample: SAMN02887030; Sample name: S35; SRA: SRS823178		PAIRED	20916371	19254645
+PRJNA253681_Scomber-scombrus	SRR1766222	sample6	dummy	BioSample: SAMN02887031; Sample name: S36; SRA: SRS823179		PAIRED	23306363	22274572
+PRJNA253681_Scomber-scombrus	SRR1766223	sample7	dummy	BioSample: SAMN02887032; Sample name: S41; SRA: SRS823180		PAIRED	22727820	21248400
+PRJNA253681_Scomber-scombrus	SRR1766224	sample8	dummy	BioSample: SAMN02887033; Sample name: S42; SRA: SRS823181		PAIRED	24114386	23074681
+PRJNA253681_Scomber-scombrus	SRR1766225	sample9	dummy	BioSample: SAMN02887028; Sample name: S23; SRA: SRS823177		PAIRED	19801294	18833484

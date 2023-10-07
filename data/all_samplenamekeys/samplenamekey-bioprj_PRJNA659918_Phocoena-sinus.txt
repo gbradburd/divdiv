@@ -1,0 +1,13 @@
+link	run_acc_sra	sampid_assigned_for_bioinf	pop	identifiers_biosamp	infraspecies_biosamp	read_type_sra	total_number_reads_sra	total_reads_written_to_final_fastq
+PRJNA659918_Phocoena-sinus	SRR12545247	sample0	dummy	BioSample: SAMN15930314; Sample name: 4396; SRA: SRS7285132		PAIRED	3174474	3113878
+PRJNA659918_Phocoena-sinus	SRR12545249	sample1	dummy	BioSample: SAMN15930313; Sample name: 4394; SRA: SRS7285130		PAIRED	1752774	1715211
+PRJNA659918_Phocoena-sinus	SRR12545250	sample2	dummy	BioSample: SAMN15930312; Sample name: 4393; SRA: SRS7285129		PAIRED	1863975	1830125
+PRJNA659918_Phocoena-sinus	SRR12545251	sample3	dummy	BioSample: SAMN15930311; Sample name: 4381; SRA: SRS7285128		PAIRED	2440208	2392665
+PRJNA659918_Phocoena-sinus	SRR12545252	sample4	dummy	BioSample: SAMN15930310; Sample name: 4379; SRA: SRS7285127		PAIRED	1436484	1410372
+PRJNA659918_Phocoena-sinus	SRR12545253	sample5	dummy	BioSample: SAMN15930309; Sample name: 4018; SRA: SRS7285126		PAIRED	1610437	1581938
+PRJNA659918_Phocoena-sinus	SRR12545254	sample6	dummy	BioSample: SAMN15930308; Sample name: 1660; SRA: SRS7285125		PAIRED	1126078	1104633
+PRJNA659918_Phocoena-sinus	SRR12545255	sample7	dummy	BioSample: SAMN15930307; Sample name: 1655; SRA: SRS7285124		PAIRED	863211	846774
+PRJNA659918_Phocoena-sinus	SRR12545256	sample8	dummy	BioSample: SAMN15930306; Sample name: 1654; SRA: SRS7285123		PAIRED	1129446	1108089
+PRJNA659918_Phocoena-sinus	SRR12545257	sample9	dummy	BioSample: SAMN15930305; Sample name: 1651; SRA: SRS7285122		PAIRED	5338954	5193443
+PRJNA659918_Phocoena-sinus	SRR12545258	sample10	dummy	BioSample: SAMN15930304; Sample name: 1649; SRA: SRS7285121		PAIRED	10250688	9993228
+PRJNA659918_Phocoena-sinus	SRR12545260	sample11	dummy	BioSample: SAMN15930303; Sample name: 703; SRA: SRS7285119		SINGLE	1322366	1321085
