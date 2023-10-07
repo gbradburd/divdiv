@@ -22,7 +22,7 @@ source("divdiv_analysis_functions.R")
 ################################
 source("trait_mod_stan_blocks.R")
 betaPhyReg <- stan_model(model_code=betaPhyReg)
-expPhyReg <- stan_model(model_code=expPhyReg)
+#expPhyReg <- stan_model(model_code=expPhyReg)
 
 ################################
 # get phylo structure,
@@ -81,12 +81,11 @@ predNames <- c("mean species latitude","number of ecoregions",
 
 nIter <- 5e3
 
-
+if(FALSE){
 ################################
 # analyze s with one predictor at a time
 #	beta model, unscaled s
 ################################
-
 db <- lapply(1:nrow(predictors),
 			function(i){
 				makeDB(predictors[i,],1-z$s,phyStr)
@@ -119,25 +118,36 @@ dev.off()
 pdf(file="betas_beta_s.pdf",width=14,height=10)
 	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE)
 dev.off()
-
+}
 
 ################################
 # analyze s with one biological predictor 
 #	and all the "nuisance" parameters
 #	beta model, unscaled s
 ################################
+bioPreds <- predictors[1:11,]
+bioPredNames <- predNames[1:11]
+nuisPreds <- predictors[12:16,]
+nuisPredNames <- predNames[12:16]
 
-db <- lapply(1:nrow(predictors),
+db <- lapply(1:nrow(bioPreds),
 			function(i){
-				makeDB(predictors[i,],1-z$s,phyStr)
+				makeMultiDB(list(predictors[i,],
+								 nuisPreds[1,],
+								 nuisPreds[2,],
+								 nuisPreds[3,],
+								 nuisPreds[4,],
+								 nuisPreds[5,]),
+							 Y=1-z$s,
+							 phyStr=phyStr)
 		})
-names(db) <- predNames
+names(db) <- bioPredNames
 
 cl <- parallel::makeCluster(12)
 doParallel::registerDoParallel(cl)
 
-fits <- foreach::foreach(i = 1:nrow(predictors)) %dopar% {
-	message(sprintf("now analyzing predictor %s/%s",i,nrow(predictors)))
+fits <- foreach::foreach(i = 1:nrow(bioPreds)) %dopar% {
+	message(sprintf("now analyzing multiple-linear regression with main predictor %s/%s",i,nrow(predictors)))
 	rstan::sampling(object=betaPhyReg,
 					data=db[[i]],
 					iter=nIter,
@@ -148,9 +158,19 @@ fits <- foreach::foreach(i = 1:nrow(predictors)) %dopar% {
 
 parallel::stopCluster(cl)
 
-names(fits) <- predNames
+names(fits) <- bioPredNames
 out <- list("db"=db,"fits"=fits)
-save(out,file="beta_s.Robj")
+save(out,file="beta_multiPred_s.Robj")
+
+pdf(file="beta_multiPred_s.pdf",width=12,height=10)
+	par(mfrow=c(3,4)) ; for(i in 1:nrow(bioPreds)){betaPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i],multiPred=TRUE)}
+dev.off()
+
+pdf(file="betas_beta_multiPred_s.pdf",width=14,height=10)
+	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,multiPred=TRUE)
+dev.off()
+
+
 
 #GRAVEYARD
 if(FALSE){
