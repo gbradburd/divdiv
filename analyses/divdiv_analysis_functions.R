@@ -178,7 +178,7 @@ postBetaPlot <- function(out,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,multi
 	if(stdize){
 		betas <- lapply(1:length(betas),
 						function(i){
-							if(length(unique(out$db[[i]]$X)) > 3){
+							if(length(unique(out$db[[i]]$X[1,])) > 3){
 								betas[[i]] * sd(out$db[[i]]$X)								
 							} else {
 								betas[[i]]

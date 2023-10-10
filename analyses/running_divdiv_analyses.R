@@ -35,7 +35,6 @@ z$Body_Size[z$species=="Cranchia_scabra"] <- 15
 z[["log(deep-time diversity)"]] <- log(1-z$s)
 
 
-
 load("../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
 sampPhy <- ape::keep.tip(phy,gsub("_"," ",z$species))
 phyStr <- ape::vcv(sampPhy,corr=TRUE)
@@ -61,14 +60,6 @@ predictors <- rbind(z[["meanlat.gbif"]],					# abiotic
 					z[["mean_locus_depth"]])					# nuisance
 
 
-if(FALSE){
-	tmp <- predictors
-	# fill in missing data w/ grand mean for that predictor
-	md <- which(is.na(predictors),arr.ind=TRUE)
-	for(i in 1:nrow(md)){
-		predictors[md[i,1],md[i,2]] <- mean(tmp[md[i,1],],na.rm=TRUE)
-	}
-}
 
 predNames <- c("mean species latitude","number of ecoregions",
 			   "range extent","body size",
@@ -81,7 +72,6 @@ predNames <- c("mean species latitude","number of ecoregions",
 
 nIter <- 5e3
 
-if(FALSE){
 ################################
 # analyze s with one predictor at a time
 #	beta model, unscaled s
@@ -118,7 +108,6 @@ dev.off()
 pdf(file="betas_beta_s.pdf",width=14,height=10)
 	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE)
 dev.off()
-}
 
 ################################
 # analyze s with one biological predictor 
@@ -127,8 +116,8 @@ dev.off()
 ################################
 bioPreds <- predictors[1:11,]
 bioPredNames <- predNames[1:11]
-nuisPreds <- predictors[12:16,]
-nuisPredNames <- predNames[12:16]
+nuisPreds <- predictors[13:16,]
+nuisPredNames <- predNames[13:16]
 
 db <- lapply(1:nrow(bioPreds),
 			function(i){
@@ -136,8 +125,7 @@ db <- lapply(1:nrow(bioPreds),
 								 nuisPreds[1,],
 								 nuisPreds[2,],
 								 nuisPreds[3,],
-								 nuisPreds[4,],
-								 nuisPreds[5,]),
+								 nuisPreds[4,]),
 							 Y=1-z$s,
 							 phyStr=phyStr)
 		})
@@ -170,6 +158,38 @@ pdf(file="betas_beta_multiPred_s.pdf",width=14,height=10)
 	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,multiPred=TRUE)
 dev.off()
 
+
+################################
+# analyze s with multiple biological predictors 
+#	and all the "nuisance" parameters
+#	beta model, unscaled s
+################################
+
+# for ecoregions & range size, include both
+
+db <- makeMultiDB(list(predictors[2,],
+					   predictors[3,],
+					   nuisPreds[1,],
+					   nuisPreds[2,],
+					   nuisPreds[3,],
+					   nuisPreds[4,]),
+				   Y=1-z$s,
+				   phyStr=phyStr)
+
+fit <- rstan::sampling(object=betaPhyReg,
+						data=db,
+						iter=nIter,
+						thin=nIter/500,
+						chains=1,
+						control=setNames(list(15),"max_treedepth"))
+
+out <- list("db"=db,"fit"=fit)
+save(out,file="ecoreg_range_s.Robj")
+
+# betaPPS(out$db,out$fit,500,predName="ecoreg",multiPred=TRUE)
+# b1 <- extract(out$fit,"beta[1]",inc_warmup=TRUE,permute=FALSE)
+# b2 <- extract(out$fit,"beta[2]",inc_warmup=TRUE,permute=FALSE)
+# plot(b1,b2,xlim=c(-0.03,0.03))
 
 
 #GRAVEYARD
@@ -242,4 +262,13 @@ z <- z[-which(grepl("PRJNA392526",z$link)),]
 # keep PRJNA356786
 
 z <- z[-which(grepl("PRJNA314732",z$link)),]
+if(FALSE){
+	tmp <- predictors
+	# fill in missing data w/ grand mean for that predictor
+	md <- which(is.na(predictors),arr.ind=TRUE)
+	for(i in 1:nrow(md)){
+		predictors[md[i,1],md[i,2]] <- mean(tmp[md[i,1],],na.rm=TRUE)
+	}
+}
+
 }

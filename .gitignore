@@ -4,3 +4,6 @@
 analyses/loo/*.Robj
 *.pdf
 analyses/loo/*.pdf
+analyses/*.pdf
+analyses/*.Robj
+*.Rout
