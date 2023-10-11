@@ -3,7 +3,8 @@
 #explore trait-trait correlations
 
 #load libraries
-library(tidyverse)
+library(dplyr)
+library(tidyr)
 library(googledrive)
 library(googlesheets4)
 
@@ -60,12 +61,12 @@ range_midpoint <- function(x){
   return(midpoint)
 }
 
-df$Body_Size <- map_dbl(df$Body_Size, range_midpoint)
-df$Reproductive_Age <- map_dbl(df$Body_Size, range_midpoint)
-df$Fecundity_EggsFemaleSpawn <- map_dbl(df$Fecundity_EggsFemaleSpawn, range_midpoint)
-df$Fecundity_SpawnFrequency <- map_dbl(df$Fecundity_SpawnFrequency , range_midpoint)
+df$Body_Size <- purrr::map_dbl(df$Body_Size, range_midpoint)
+df$Reproductive_Age <- purrr::map_dbl(df$Body_Size, range_midpoint)
+df$Fecundity_EggsFemaleSpawn <- purrr::map_dbl(df$Fecundity_EggsFemaleSpawn, range_midpoint)
+df$Fecundity_SpawnFrequency <- purrr::map_dbl(df$Fecundity_SpawnFrequency , range_midpoint)
 
-write_tsv(df,"data/biotic/marinerds_traits_230918.tsv")
+write.csv(df, file = "data/biotic/marinerds_traits_231011.csv", row.names = FALSE)
 
 
 
@@ -73,7 +74,7 @@ write_tsv(df,"data/biotic/marinerds_traits_230918.tsv")
 rm(list = ls())
 gc()
 
-df <- read.delim("data/biotic/marinerds_traits_230918.tsv")
+df <- read.csv("data/biotic/marinerds_traits_231011.csv")
 
 #recode some variables
 #for dispersal related traits, larger values mean higher dispersal
@@ -335,6 +336,7 @@ my.plotcorr(trtcor.pairwise,
             axes = FALSE, xlab = "", ylab = "",
             cex.lab = 0.6, cex = 0.6)
 # !!! have to save manually above figure (ggsave() doesn't work) !!!
+#pred_correlation_matrix-allpotential.pdf , 14x14 in
 
 #and make correlation matrix just for traits in hypoth bingo
 df.numeric.yg <- df %>% dplyr::select(Body_Size, Fecundity_EggSize, Generational_Structure, 
@@ -351,6 +353,7 @@ my.plotcorr(trtcor.pairwise.yg,
             axes = FALSE, xlab = "", ylab = "",
             cex.lab = 0.6, cex = 0.6)
 # !!! have to save manually above figure (ggsave() doesn't work) !!!
+#pred_correlation_matrix-12inmodel.pdf , 14x14 in
 
 # end
 

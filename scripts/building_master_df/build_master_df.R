@@ -8,7 +8,6 @@ library(ggplot2)
 rm(list = ls())
 gc()
 
-setwd("/Users/rachel/divdiv")
 
 #-----------------------------------------------------------------------------------------------------------------
 #read in data
@@ -77,7 +76,7 @@ df <- merge(df, popgsummary, by = "link", all = F)
 df <- merge(df, taxcolorkey, by = "species", all = F)
 names(df)
 
-#check if there are any duplicate rows/datasets
+#check if there are any duplicate rows/datasets (should return no rows if no dups)
 df %>% group_by(link) %>% summarise(n=n()) %>% filter(n > 1)
 
 #change a few species names (AGAIN...), for our sanity
