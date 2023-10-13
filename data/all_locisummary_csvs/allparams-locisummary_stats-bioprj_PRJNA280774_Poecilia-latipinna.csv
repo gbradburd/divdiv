@@ -1,0 +1,6 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA280774_Poecilia-latipinna","stacks_littlem_3_bigm_6_n6_nequalM",1,10,4.67,0,0,0,"3","6","6","nequalM",1
+"bioprj_PRJNA280774_Poecilia-latipinna","stacks_littlem_3_bigm_6_n7_nis1morethanM",1,10,4.67,0,0,0,"3","6","7","nis1morethanM",1
+"bioprj_PRJNA280774_Poecilia-latipinna","stacks_littlem_3_bigm_9_n10_nis1morethanM",2,19,4.78,0,0,0,"3","9","10","nis1morethanM",2
+"bioprj_PRJNA280774_Poecilia-latipinna","stacks_littlem_3_bigm_9_n8_nis1lessthanM",2,19,4.75,0,0,0,"3","9","8","nis1lessthanM",2
+"bioprj_PRJNA280774_Poecilia-latipinna","stacks_littlem_3_bigm_9_n9_nequalM",2,19,4.75,0,0,0,"3","9","9","nequalM",2

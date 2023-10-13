@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA573759_Cranchia-scabra","stacks_littlem_3_bigm_3_n2_nis1lessthanM",17274,225938,6.49,777,0.34389965388735,234,"3","3","2","nis1lessthanM",17508
+"bioprj_PRJNA573759_Cranchia-scabra","stacks_littlem_3_bigm_3_n3_nequalM",18977,279839,6.37,889,0.317682667533832,232,"3","3","3","nequalM",19209
+"bioprj_PRJNA573759_Cranchia-scabra","stacks_littlem_3_bigm_3_n4_nis1morethanM",20022,319188,6.35,961,0.301076481571989,227,"3","3","4","nis1morethanM",20249
+"bioprj_PRJNA573759_Cranchia-scabra","stacks_littlem_3_bigm_6_n5_nis1lessthanM",20096,342566,6.74,1259,0.367520419422827,232,"3","6","5","nis1lessthanM",20328
+"bioprj_PRJNA573759_Cranchia-scabra","stacks_littlem_3_bigm_6_n6_nequalM",20402,353105,6.73,1294,0.366463233315869,229,"3","6","6","nequalM",20631
+"bioprj_PRJNA573759_Cranchia-scabra","stacks_littlem_3_bigm_6_n7_nis1morethanM",20524,358635,6.73,1308,0.36471621565101,222,"3","6","7","nis1morethanM",20746
+"bioprj_PRJNA573759_Cranchia-scabra","stacks_littlem_3_bigm_9_n10_nis1morethanM",19588,345136,6.86,1372,0.397524454128228,226,"3","9","10","nis1morethanM",19814
+"bioprj_PRJNA573759_Cranchia-scabra","stacks_littlem_3_bigm_9_n8_nis1lessthanM",19685,344767,6.86,1369,0.397079766915047,228,"3","9","8","nis1lessthanM",19913
+"bioprj_PRJNA573759_Cranchia-scabra","stacks_littlem_3_bigm_9_n9_nequalM",19677,345352,6.86,1383,0.400460978943223,224,"3","9","9","nequalM",19901

@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA371502_Acanthurus-olivaceus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",93440,353820,12.98,11474,3.24289186592052,13332,"3","3","2","nis1lessthanM",106772
+"bioprj_PRJNA371502_Acanthurus-olivaceus","stacks_littlem_3_bigm_3_n3_nequalM",94100,365348,12.93,11667,3.19339369587352,13297,"3","3","3","nequalM",107397
+"bioprj_PRJNA371502_Acanthurus-olivaceus","stacks_littlem_3_bigm_3_n4_nis1morethanM",94497,375199,12.9,11878,3.16578668919693,13177,"3","3","4","nis1morethanM",107674
+"bioprj_PRJNA371502_Acanthurus-olivaceus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",94086,384898,13.28,13909,3.61368466450852,12913,"3","6","5","nis1lessthanM",106999
+"bioprj_PRJNA371502_Acanthurus-olivaceus","stacks_littlem_3_bigm_6_n6_nequalM",94106,386660,13.24,13741,3.5537681684167,12885,"3","6","6","nequalM",106991
+"bioprj_PRJNA371502_Acanthurus-olivaceus","stacks_littlem_3_bigm_6_n7_nis1morethanM",94093,388482,13.22,13867,3.56953475321894,12862,"3","6","7","nis1morethanM",106955
+"bioprj_PRJNA371502_Acanthurus-olivaceus","stacks_littlem_3_bigm_9_n10_nis1morethanM",93757,392794,13.33,14883,3.78900899708244,12741,"3","9","10","nis1morethanM",106498
+"bioprj_PRJNA371502_Acanthurus-olivaceus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",93761,391526,13.33,14703,3.75530616102124,12758,"3","9","8","nis1lessthanM",106519
+"bioprj_PRJNA371502_Acanthurus-olivaceus","stacks_littlem_3_bigm_9_n9_nequalM",93760,392009,13.32,14722,3.75552602108625,12771,"3","9","9","nequalM",106531

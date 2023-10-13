@@ -1,0 +1,7 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA450328_Halichoerus-grypus-atlantica","stacks_littlem_3_bigm_3_n2_nis1lessthanM",26308,34183,7.8,1210,3.53977123131381,37346,"3","3","2","nis1lessthanM",63654
+"bioprj_PRJNA450328_Halichoerus-grypus-atlantica","stacks_littlem_3_bigm_3_n3_nequalM",26313,34328,7.79,1188,3.46073176415754,37314,"3","3","3","nequalM",63627
+"bioprj_PRJNA450328_Halichoerus-grypus-atlantica","stacks_littlem_3_bigm_3_n4_nis1morethanM",26367,34942,7.75,1216,3.48005265869155,37236,"3","3","4","nis1morethanM",63603
+"bioprj_PRJNA450328_Halichoerus-grypus-atlantica","stacks_littlem_3_bigm_6_n5_nis1lessthanM",26274,35683,8.28,1504,4.21489224560715,36992,"3","6","5","nis1lessthanM",63266
+"bioprj_PRJNA450328_Halichoerus-grypus-atlantica","stacks_littlem_3_bigm_6_n6_nequalM",26272,35774,8.37,1537,4.29641639179292,36981,"3","6","6","nequalM",63253
+"bioprj_PRJNA450328_Halichoerus-grypus-atlantica","stacks_littlem_3_bigm_6_n7_nis1morethanM",26323,36169,8.43,1577,4.36008736763527,36920,"3","6","7","nis1morethanM",63243

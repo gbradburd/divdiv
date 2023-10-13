@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA343959_Phocoena-phocoena","stacks_littlem_3_bigm_3_n2_nis1lessthanM",97226,156631,13.72,6600,4.21372525234468,90318,"3","3","2","nis1lessthanM",187544
+"bioprj_PRJNA343959_Phocoena-phocoena","stacks_littlem_3_bigm_3_n3_nequalM",97839,158178,13.67,6627,4.1895838865076,90171,"3","3","3","nequalM",188010
+"bioprj_PRJNA343959_Phocoena-phocoena","stacks_littlem_3_bigm_3_n4_nis1morethanM",97868,159649,13.75,6934,4.34327806625785,89817,"3","3","4","nis1morethanM",187685
+"bioprj_PRJNA343959_Phocoena-phocoena","stacks_littlem_3_bigm_6_n5_nis1lessthanM",97275,165072,14.51,9361,5.6708587767762,88670,"3","6","5","nis1lessthanM",185945
+"bioprj_PRJNA343959_Phocoena-phocoena","stacks_littlem_3_bigm_6_n6_nequalM",97151,165235,14.44,9086,5.49883499258632,88459,"3","6","6","nequalM",185610
+"bioprj_PRJNA343959_Phocoena-phocoena","stacks_littlem_3_bigm_6_n7_nis1morethanM",96950,165559,14.44,9092,5.49169782373655,88225,"3","6","7","nis1morethanM",185175
+"bioprj_PRJNA343959_Phocoena-phocoena","stacks_littlem_3_bigm_9_n10_nis1morethanM",96358,171432,15.12,11278,6.57870175929815,87344,"3","9","10","nis1morethanM",183702
+"bioprj_PRJNA343959_Phocoena-phocoena","stacks_littlem_3_bigm_9_n8_nis1lessthanM",96377,170158,15.12,11130,6.54097956017349,87542,"3","9","8","nis1lessthanM",183919
+"bioprj_PRJNA343959_Phocoena-phocoena","stacks_littlem_3_bigm_9_n9_nequalM",96347,170266,15.08,11079,6.50687747406998,87444,"3","9","9","nequalM",183791

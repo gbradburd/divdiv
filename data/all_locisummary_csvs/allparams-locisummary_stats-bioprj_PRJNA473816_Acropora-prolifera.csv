@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA473816_Acropora-prolifera","stacks_littlem_3_bigm_3_n2_nis1lessthanM",1297,1740,37.57,607,34.8850574712644,4966,"3","3","2","nis1lessthanM",6263
+"bioprj_PRJNA473816_Acropora-prolifera","stacks_littlem_3_bigm_3_n3_nequalM",1368,1851,38.2,658,35.5483522420313,5038,"3","3","3","nequalM",6406
+"bioprj_PRJNA473816_Acropora-prolifera","stacks_littlem_3_bigm_3_n4_nis1morethanM",1374,1885,37.55,655,34.7480106100796,4995,"3","3","4","nis1morethanM",6369
+"bioprj_PRJNA473816_Acropora-prolifera","stacks_littlem_3_bigm_6_n5_nis1lessthanM",1279,1807,36.64,624,34.5323741007194,4722,"3","6","5","nis1lessthanM",6001
+"bioprj_PRJNA473816_Acropora-prolifera","stacks_littlem_3_bigm_6_n6_nequalM",1265,1775,36.89,620,34.9295774647887,4675,"3","6","6","nequalM",5940
+"bioprj_PRJNA473816_Acropora-prolifera","stacks_littlem_3_bigm_6_n7_nis1morethanM",1265,1789,36.5,616,34.4326439351593,4691,"3","6","7","nis1morethanM",5956
+"bioprj_PRJNA473816_Acropora-prolifera","stacks_littlem_3_bigm_9_n10_nis1morethanM",1253,1714,36.11,586,34.1890315052509,4575,"3","9","10","nis1morethanM",5828
+"bioprj_PRJNA473816_Acropora-prolifera","stacks_littlem_3_bigm_9_n8_nis1lessthanM",1246,1714,35.93,584,34.0723453908985,4528,"3","9","8","nis1lessthanM",5774
+"bioprj_PRJNA473816_Acropora-prolifera","stacks_littlem_3_bigm_9_n9_nequalM",1256,1719,36.57,591,34.3804537521815,4578,"3","9","9","nequalM",5834

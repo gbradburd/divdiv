@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA286089_Sphyrna-tiburo","stacks_littlem_3_bigm_3_n2_nis1lessthanM",42989,93361,15.75,4911,5.26022643287882,20648,"3","3","2","nis1lessthanM",63637
+"bioprj_PRJNA286089_Sphyrna-tiburo","stacks_littlem_3_bigm_3_n3_nequalM",42584,91698,15.81,4808,5.24329865427817,20557,"3","3","3","nequalM",63141
+"bioprj_PRJNA286089_Sphyrna-tiburo","stacks_littlem_3_bigm_3_n4_nis1morethanM",42309,92578,15.94,4956,5.35332368381257,20314,"3","3","4","nis1morethanM",62623
+"bioprj_PRJNA286089_Sphyrna-tiburo","stacks_littlem_3_bigm_6_n5_nis1lessthanM",41608,97064,16.08,5952,6.13203659441194,19762,"3","6","5","nis1lessthanM",61370
+"bioprj_PRJNA286089_Sphyrna-tiburo","stacks_littlem_3_bigm_6_n6_nequalM",41415,96074,16.15,5877,6.11715968940608,19630,"3","6","6","nequalM",61045
+"bioprj_PRJNA286089_Sphyrna-tiburo","stacks_littlem_3_bigm_6_n7_nis1morethanM",41255,96879,16.16,5873,6.06220130265589,19588,"3","6","7","nis1morethanM",60843
+"bioprj_PRJNA286089_Sphyrna-tiburo","stacks_littlem_3_bigm_9_n10_nis1morethanM",40667,102438,16.27,6741,6.58056580565806,19110,"3","9","10","nis1morethanM",59777
+"bioprj_PRJNA286089_Sphyrna-tiburo","stacks_littlem_3_bigm_9_n8_nis1lessthanM",40847,101608,16.22,6746,6.6392410046453,19168,"3","9","8","nis1lessthanM",60015
+"bioprj_PRJNA286089_Sphyrna-tiburo","stacks_littlem_3_bigm_9_n9_nequalM",40809,102235,16.22,6721,6.57406954565462,19186,"3","9","9","nequalM",59995

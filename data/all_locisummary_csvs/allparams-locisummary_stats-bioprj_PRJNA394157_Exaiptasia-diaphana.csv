@@ -1,0 +1,4 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA394157_Exaiptasia-diaphana","stacks_littlem_3_bigm_3_n2_nis1lessthanM",2053,3907,60.7,1983,50.7550550294343,226,"3","3","2","nis1lessthanM",2279
+"bioprj_PRJNA394157_Exaiptasia-diaphana","stacks_littlem_3_bigm_3_n3_nequalM",2044,3906,60.16,1964,50.2816180235535,214,"3","3","3","nequalM",2258
+"bioprj_PRJNA394157_Exaiptasia-diaphana","stacks_littlem_3_bigm_3_n4_nis1morethanM",2047,3952,59.07,1986,50.253036437247,216,"3","3","4","nis1morethanM",2263

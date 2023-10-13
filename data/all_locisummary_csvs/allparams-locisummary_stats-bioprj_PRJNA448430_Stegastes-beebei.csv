@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA448430_Stegastes-beebei","stacks_littlem_3_bigm_3_n2_nis1lessthanM",21632,40277,16.29,1108,2.75094967351094,22491,"3","3","2","nis1lessthanM",44123
+"bioprj_PRJNA448430_Stegastes-beebei","stacks_littlem_3_bigm_3_n3_nequalM",22398,44921,15.63,1149,2.55782373500145,22332,"3","3","3","nequalM",44730
+"bioprj_PRJNA448430_Stegastes-beebei","stacks_littlem_3_bigm_3_n4_nis1morethanM",23274,49262,15.13,1149,2.33242661686493,22645,"3","3","4","nis1morethanM",45919
+"bioprj_PRJNA448430_Stegastes-beebei","stacks_littlem_3_bigm_6_n5_nis1lessthanM",23441,52378,16.03,1625,3.10244759250067,22313,"3","6","5","nis1lessthanM",45754
+"bioprj_PRJNA448430_Stegastes-beebei","stacks_littlem_3_bigm_6_n6_nequalM",22970,52055,16.32,1717,3.29843434828547,21819,"3","6","6","nequalM",44789
+"bioprj_PRJNA448430_Stegastes-beebei","stacks_littlem_3_bigm_6_n7_nis1morethanM",23521,53948,15.91,1611,2.98620894194409,22237,"3","6","7","nis1morethanM",45758
+"bioprj_PRJNA448430_Stegastes-beebei","stacks_littlem_3_bigm_9_n10_nis1morethanM",23537,55628,16.25,1881,3.38139066657079,22106,"3","9","10","nis1morethanM",45643
+"bioprj_PRJNA448430_Stegastes-beebei","stacks_littlem_3_bigm_9_n8_nis1lessthanM",23522,54894,16.22,1836,3.34462782817794,22131,"3","9","8","nis1lessthanM",45653
+"bioprj_PRJNA448430_Stegastes-beebei","stacks_littlem_3_bigm_9_n9_nequalM",23538,55443,16.21,1858,3.35118950994715,22144,"3","9","9","nequalM",45682

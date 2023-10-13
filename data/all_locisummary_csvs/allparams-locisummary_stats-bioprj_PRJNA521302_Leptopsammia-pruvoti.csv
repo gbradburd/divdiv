@@ -1,0 +1,4 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA521302_Leptopsammia-pruvoti","stacks_littlem_3_bigm_3_n2_nis1lessthanM",11739,31074,11.33,1930,6.21098024071571,3362,"3","3","2","nis1lessthanM",15101
+"bioprj_PRJNA521302_Leptopsammia-pruvoti","stacks_littlem_3_bigm_3_n3_nequalM",11736,31416,11.26,1950,6.2070282658518,3316,"3","3","3","nequalM",15052
+"bioprj_PRJNA521302_Leptopsammia-pruvoti","stacks_littlem_3_bigm_3_n4_nis1morethanM",11717,32196,11.25,1999,6.20884581935644,3280,"3","3","4","nis1morethanM",14997

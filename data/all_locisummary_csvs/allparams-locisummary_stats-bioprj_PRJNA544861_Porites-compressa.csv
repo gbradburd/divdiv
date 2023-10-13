@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA544861_Porites-compressa","stacks_littlem_3_bigm_3_n2_nis1lessthanM",12764,56104,19.13,9068,16.1628404391844,423,"3","3","2","nis1lessthanM",13187
+"bioprj_PRJNA544861_Porites-compressa","stacks_littlem_3_bigm_3_n3_nequalM",12994,59285,18.51,9249,15.6009108543476,416,"3","3","3","nequalM",13410
+"bioprj_PRJNA544861_Porites-compressa","stacks_littlem_3_bigm_3_n4_nis1morethanM",13305,64075,17.61,9447,14.7436597737027,386,"3","3","4","nis1morethanM",13691
+"bioprj_PRJNA544861_Porites-compressa","stacks_littlem_3_bigm_6_n5_nis1lessthanM",13379,71581,17.37,9788,13.6740196420838,349,"3","6","5","nis1lessthanM",13728
+"bioprj_PRJNA544861_Porites-compressa","stacks_littlem_3_bigm_6_n6_nequalM",13419,73022,17.02,9692,13.2727123332694,337,"3","6","6","nequalM",13756
+"bioprj_PRJNA544861_Porites-compressa","stacks_littlem_3_bigm_6_n7_nis1morethanM",13459,75117,16.66,9766,13.0010516926927,329,"3","6","7","nis1morethanM",13788
+"bioprj_PRJNA544861_Porites-compressa","stacks_littlem_3_bigm_9_n10_nis1morethanM",13360,79704,16.43,9933,12.4623607347185,327,"3","9","10","nis1morethanM",13687
+"bioprj_PRJNA544861_Porites-compressa","stacks_littlem_3_bigm_9_n8_nis1lessthanM",13292,77644,16.78,9893,12.7414867858431,323,"3","9","8","nis1lessthanM",13615
+"bioprj_PRJNA544861_Porites-compressa","stacks_littlem_3_bigm_9_n9_nequalM",13363,78497,16.66,9886,12.594111876887,318,"3","9","9","nequalM",13681

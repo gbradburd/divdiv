@@ -1,0 +1,7 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA576132_Galaxea-fascicularis","stacks_littlem_3_bigm_3_n2_nis1lessthanM",9861,109599,3.65,128,0.116789386764478,20,"3","3","2","nis1lessthanM",9881
+"bioprj_PRJNA576132_Galaxea-fascicularis","stacks_littlem_3_bigm_3_n3_nequalM",10775,126429,3.58,126,0.099660679116342,17,"3","3","3","nequalM",10792
+"bioprj_PRJNA576132_Galaxea-fascicularis","stacks_littlem_3_bigm_3_n4_nis1morethanM",11302,137009,3.59,120,0.0875854870847901,16,"3","3","4","nis1morethanM",11318
+"bioprj_PRJNA576132_Galaxea-fascicularis","stacks_littlem_3_bigm_6_n5_nis1lessthanM",10643,129694,3.79,152,0.117198945209493,10,"3","6","5","nis1lessthanM",10653
+"bioprj_PRJNA576132_Galaxea-fascicularis","stacks_littlem_3_bigm_6_n6_nequalM",10764,131441,3.79,156,0.118684428755107,10,"3","6","6","nequalM",10774
+"bioprj_PRJNA576132_Galaxea-fascicularis","stacks_littlem_3_bigm_6_n7_nis1morethanM",10812,132565,3.79,156,0.117678120167465,8,"3","6","7","nis1morethanM",10820

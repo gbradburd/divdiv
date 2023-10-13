@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA523574_Eudyptes-chrysolophus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",15243,36478,9.5,647,1.77367180218214,4081,"3","3","2","nis1lessthanM",19324
+"bioprj_PRJNA523574_Eudyptes-chrysolophus","stacks_littlem_3_bigm_3_n3_nequalM",15258,36620,9.5,657,1.79410158383397,4079,"3","3","3","nequalM",19337
+"bioprj_PRJNA523574_Eudyptes-chrysolophus","stacks_littlem_3_bigm_3_n4_nis1morethanM",15260,36706,9.5,664,1.8089685609982,4073,"3","3","4","nis1morethanM",19333
+"bioprj_PRJNA523574_Eudyptes-chrysolophus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",15206,36773,9.69,697,1.8954123949637,4083,"3","6","5","nis1lessthanM",19289
+"bioprj_PRJNA523574_Eudyptes-chrysolophus","stacks_littlem_3_bigm_6_n6_nequalM",15203,36780,9.69,703,1.91136487221316,4084,"3","6","6","nequalM",19287
+"bioprj_PRJNA523574_Eudyptes-chrysolophus","stacks_littlem_3_bigm_6_n7_nis1morethanM",15199,36810,9.69,709,1.92610703613149,4080,"3","6","7","nis1morethanM",19279
+"bioprj_PRJNA523574_Eudyptes-chrysolophus","stacks_littlem_3_bigm_9_n10_nis1morethanM",15140,36662,9.76,720,1.96388631280345,4088,"3","9","10","nis1morethanM",19228
+"bioprj_PRJNA523574_Eudyptes-chrysolophus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",15138,36614,9.75,708,1.93368656797946,4094,"3","9","8","nis1lessthanM",19232
+"bioprj_PRJNA523574_Eudyptes-chrysolophus","stacks_littlem_3_bigm_9_n9_nequalM",15136,36611,9.78,725,1.98027915107481,4096,"3","9","9","nequalM",19232

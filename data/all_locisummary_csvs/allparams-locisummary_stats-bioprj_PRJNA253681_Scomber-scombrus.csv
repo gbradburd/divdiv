@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA253681_Scomber-scombrus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",3914,6467,31.07,2235,34.5600742229782,5556,"3","3","2","nis1lessthanM",9470
+"bioprj_PRJNA253681_Scomber-scombrus","stacks_littlem_3_bigm_3_n3_nequalM",4012,6876,30.71,2327,33.8423502036067,5633,"3","3","3","nequalM",9645
+"bioprj_PRJNA253681_Scomber-scombrus","stacks_littlem_3_bigm_3_n4_nis1morethanM",4009,6854,31.09,2370,34.5783484096878,5573,"3","3","4","nis1morethanM",9582
+"bioprj_PRJNA253681_Scomber-scombrus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",3584,6435,31.78,2288,35.5555555555556,5236,"3","6","5","nis1lessthanM",8820
+"bioprj_PRJNA253681_Scomber-scombrus","stacks_littlem_3_bigm_6_n6_nequalM",3578,6405,31.57,2267,35.3942232630757,5192,"3","6","6","nequalM",8770
+"bioprj_PRJNA253681_Scomber-scombrus","stacks_littlem_3_bigm_6_n7_nis1morethanM",3596,6492,31.81,2300,35.4282193468885,5226,"3","6","7","nis1morethanM",8822
+"bioprj_PRJNA253681_Scomber-scombrus","stacks_littlem_3_bigm_9_n10_nis1morethanM",3205,5944,30.53,2038,34.2866756393001,5068,"3","9","10","nis1morethanM",8273
+"bioprj_PRJNA253681_Scomber-scombrus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",3224,5986,30.47,2052,34.2799866354828,5040,"3","9","8","nis1lessthanM",8264
+"bioprj_PRJNA253681_Scomber-scombrus","stacks_littlem_3_bigm_9_n9_nequalM",3260,6086,30.63,2093,34.3904042063753,5061,"3","9","9","nequalM",8321

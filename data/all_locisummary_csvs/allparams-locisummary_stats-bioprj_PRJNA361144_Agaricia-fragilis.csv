@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA361144_Agaricia-fragilis","stacks_littlem_3_bigm_3_n2_nis1lessthanM",8596,19080,18.61,3127,16.3888888888889,11813,"3","3","2","nis1lessthanM",20409
+"bioprj_PRJNA361144_Agaricia-fragilis","stacks_littlem_3_bigm_3_n3_nequalM",8614,19870,18.1,3115,15.6768998490186,11728,"3","3","3","nequalM",20342
+"bioprj_PRJNA361144_Agaricia-fragilis","stacks_littlem_3_bigm_3_n4_nis1morethanM",8758,21638,17.78,3285,15.1816249191238,11459,"3","3","4","nis1morethanM",20217
+"bioprj_PRJNA361144_Agaricia-fragilis","stacks_littlem_3_bigm_6_n5_nis1lessthanM",8835,26012,21.51,5146,19.783176995233,10845,"3","6","5","nis1lessthanM",19680
+"bioprj_PRJNA361144_Agaricia-fragilis","stacks_littlem_3_bigm_6_n6_nequalM",8825,26284,21.27,5118,19.4719220818749,10808,"3","6","6","nequalM",19633
+"bioprj_PRJNA361144_Agaricia-fragilis","stacks_littlem_3_bigm_6_n7_nis1morethanM",8887,27279,20.93,5160,18.9156494006379,10728,"3","6","7","nis1morethanM",19615
+"bioprj_PRJNA361144_Agaricia-fragilis","stacks_littlem_3_bigm_9_n10_nis1morethanM",8995,30957,22.29,6193,20.005168459476,10413,"3","9","10","nis1morethanM",19408
+"bioprj_PRJNA361144_Agaricia-fragilis","stacks_littlem_3_bigm_9_n8_nis1lessthanM",8968,30188,22.36,6109,20.236517821651,10466,"3","9","8","nis1lessthanM",19434
+"bioprj_PRJNA361144_Agaricia-fragilis","stacks_littlem_3_bigm_9_n9_nequalM",8968,30147,22.55,6159,20.4298935217435,10444,"3","9","9","nequalM",19412

@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA280898_Lagenorhynchus-acutus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",308,1958,8.64,12,0.612870275791624,42,"3","3","2","nis1lessthanM",350
+"bioprj_PRJNA280898_Lagenorhynchus-acutus","stacks_littlem_3_bigm_3_n3_nequalM",337,2482,8.28,12,0.48348106365834,40,"3","3","3","nequalM",377
+"bioprj_PRJNA280898_Lagenorhynchus-acutus","stacks_littlem_3_bigm_3_n4_nis1morethanM",382,3449,7.54,11,0.318933024064946,38,"3","3","4","nis1morethanM",420
+"bioprj_PRJNA280898_Lagenorhynchus-acutus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",430,4061,8.24,14,0.344742674218173,39,"3","6","5","nis1lessthanM",469
+"bioprj_PRJNA280898_Lagenorhynchus-acutus","stacks_littlem_3_bigm_6_n6_nequalM",469,4808,8.17,18,0.374376039933444,40,"3","6","6","nequalM",509
+"bioprj_PRJNA280898_Lagenorhynchus-acutus","stacks_littlem_3_bigm_6_n7_nis1morethanM",390,4683,7.51,13,0.277599829169336,15,"3","6","7","nis1morethanM",405
+"bioprj_PRJNA280898_Lagenorhynchus-acutus","stacks_littlem_3_bigm_9_n10_nis1morethanM",431,5753,8.21,10,0.173822353554667,18,"3","9","10","nis1morethanM",449
+"bioprj_PRJNA280898_Lagenorhynchus-acutus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",339,4445,7.59,9,0.202474690663667,9,"3","9","8","nis1lessthanM",348
+"bioprj_PRJNA280898_Lagenorhynchus-acutus","stacks_littlem_3_bigm_9_n9_nequalM",425,5562,8.23,11,0.197770586120101,19,"3","9","9","nequalM",444

@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA564121_Galaxias-maculatus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",4695,43985,4.23,61,0.138683642150733,46,"3","3","2","nis1lessthanM",4741
+"bioprj_PRJNA564121_Galaxias-maculatus","stacks_littlem_3_bigm_3_n3_nequalM",4799,46955,4.22,52,0.110744329677351,43,"3","3","3","nequalM",4842
+"bioprj_PRJNA564121_Galaxias-maculatus","stacks_littlem_3_bigm_3_n4_nis1morethanM",4856,48770,4.25,52,0.106622923928645,41,"3","3","4","nis1morethanM",4897
+"bioprj_PRJNA564121_Galaxias-maculatus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",4841,50192,4.58,90,0.179311444054829,30,"3","6","5","nis1lessthanM",4871
+"bioprj_PRJNA564121_Galaxias-maculatus","stacks_littlem_3_bigm_6_n6_nequalM",4848,50363,4.58,89,0.176717034330759,29,"3","6","6","nequalM",4877
+"bioprj_PRJNA564121_Galaxias-maculatus","stacks_littlem_3_bigm_6_n7_nis1morethanM",4860,50897,4.57,80,0.157180187437374,32,"3","6","7","nis1morethanM",4892
+"bioprj_PRJNA564121_Galaxias-maculatus","stacks_littlem_3_bigm_9_n10_nis1morethanM",4833,51438,4.68,87,0.169135658462615,36,"3","9","10","nis1morethanM",4869
+"bioprj_PRJNA564121_Galaxias-maculatus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",4839,51232,4.7,97,0.189334790755778,35,"3","9","8","nis1lessthanM",4874
+"bioprj_PRJNA564121_Galaxias-maculatus","stacks_littlem_3_bigm_9_n9_nequalM",4834,51379,4.68,84,0.163490920414956,39,"3","9","9","nequalM",4873

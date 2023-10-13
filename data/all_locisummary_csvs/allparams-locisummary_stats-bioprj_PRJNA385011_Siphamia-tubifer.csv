@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA385011_Siphamia-tubifer","stacks_littlem_3_bigm_3_n2_nis1lessthanM",45882,199611,6.69,2447,1.22588434505112,3366,"3","3","2","nis1lessthanM",49248
+"bioprj_PRJNA385011_Siphamia-tubifer","stacks_littlem_3_bigm_3_n3_nequalM",45881,200803,6.67,2443,1.21661528961221,3346,"3","3","3","nequalM",49227
+"bioprj_PRJNA385011_Siphamia-tubifer","stacks_littlem_3_bigm_3_n4_nis1morethanM",45789,201765,6.68,2439,1.20883205709613,3333,"3","3","4","nis1morethanM",49122
+"bioprj_PRJNA385011_Siphamia-tubifer","stacks_littlem_3_bigm_6_n5_nis1lessthanM",45170,205198,7.02,3645,1.77633310266182,3277,"3","6","5","nis1lessthanM",48447
+"bioprj_PRJNA385011_Siphamia-tubifer","stacks_littlem_3_bigm_6_n6_nequalM",45114,205380,6.99,3567,1.73678060181128,3266,"3","6","6","nequalM",48380
+"bioprj_PRJNA385011_Siphamia-tubifer","stacks_littlem_3_bigm_6_n7_nis1morethanM",45038,205904,6.98,3529,1.71390550936359,3260,"3","6","7","nis1morethanM",48298
+"bioprj_PRJNA385011_Siphamia-tubifer","stacks_littlem_3_bigm_9_n10_nis1morethanM",44538,211060,7.38,4792,2.27044442338671,3245,"3","9","10","nis1morethanM",47783
+"bioprj_PRJNA385011_Siphamia-tubifer","stacks_littlem_3_bigm_9_n8_nis1lessthanM",44551,209722,7.35,4828,2.30209515453791,3240,"3","9","8","nis1lessthanM",47791
+"bioprj_PRJNA385011_Siphamia-tubifer","stacks_littlem_3_bigm_9_n9_nequalM",44537,209748,7.37,4782,2.27987871159677,3245,"3","9","9","nequalM",47782

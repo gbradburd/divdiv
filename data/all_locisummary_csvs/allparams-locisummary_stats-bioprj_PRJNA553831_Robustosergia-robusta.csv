@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA553831_Robustosergia-robusta","stacks_littlem_3_bigm_3_n2_nis1lessthanM",5599,20976,8.49,364,1.73531655225019,1168,"3","3","2","nis1lessthanM",6767
+"bioprj_PRJNA553831_Robustosergia-robusta","stacks_littlem_3_bigm_3_n3_nequalM",5814,23804,7.85,371,1.55856158628802,1098,"3","3","3","nequalM",6912
+"bioprj_PRJNA553831_Robustosergia-robusta","stacks_littlem_3_bigm_3_n4_nis1morethanM",6056,26533,7.48,389,1.46609882033694,1055,"3","3","4","nis1morethanM",7111
+"bioprj_PRJNA553831_Robustosergia-robusta","stacks_littlem_3_bigm_6_n5_nis1lessthanM",4958,20517,7.72,363,1.76926451235561,1041,"3","6","5","nis1lessthanM",5999
+"bioprj_PRJNA553831_Robustosergia-robusta","stacks_littlem_3_bigm_6_n6_nequalM",5011,21422,7.53,361,1.68518345625992,1049,"3","6","6","nequalM",6060
+"bioprj_PRJNA553831_Robustosergia-robusta","stacks_littlem_3_bigm_6_n7_nis1morethanM",5018,21925,7.33,355,1.61915621436716,1039,"3","6","7","nis1morethanM",6057
+"bioprj_PRJNA553831_Robustosergia-robusta","stacks_littlem_3_bigm_9_n10_nis1morethanM",4091,16171,7.81,296,1.83043720239936,1032,"3","9","10","nis1morethanM",5123
+"bioprj_PRJNA553831_Robustosergia-robusta","stacks_littlem_3_bigm_9_n8_nis1lessthanM",4070,15927,7.86,319,2.00288817730897,1037,"3","9","8","nis1lessthanM",5107
+"bioprj_PRJNA553831_Robustosergia-robusta","stacks_littlem_3_bigm_9_n9_nequalM",4096,16042,7.89,315,1.96359556165067,1044,"3","9","9","nequalM",5140

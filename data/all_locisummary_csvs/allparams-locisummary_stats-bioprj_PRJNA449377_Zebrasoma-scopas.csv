@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA449377_Zebrasoma-scopas","stacks_littlem_3_bigm_3_n2_nis1lessthanM",46194,249909,8.7,3036,1.21484220256173,1352,"3","3","2","nis1lessthanM",47546
+"bioprj_PRJNA449377_Zebrasoma-scopas","stacks_littlem_3_bigm_3_n3_nequalM",46287,253546,8.7,3067,1.20964243174809,1339,"3","3","3","nequalM",47626
+"bioprj_PRJNA449377_Zebrasoma-scopas","stacks_littlem_3_bigm_3_n4_nis1morethanM",46354,257110,8.73,3099,1.20532067986465,1308,"3","3","4","nis1morethanM",47662
+"bioprj_PRJNA449377_Zebrasoma-scopas","stacks_littlem_3_bigm_6_n5_nis1lessthanM",46253,264010,9.06,3735,1.41471913942654,1210,"3","6","5","nis1lessthanM",47463
+"bioprj_PRJNA449377_Zebrasoma-scopas","stacks_littlem_3_bigm_6_n6_nequalM",46239,264428,9.07,3739,1.41399549215666,1208,"3","6","6","nequalM",47447
+"bioprj_PRJNA449377_Zebrasoma-scopas","stacks_littlem_3_bigm_6_n7_nis1morethanM",46261,266883,9.08,3809,1.42721717007078,1183,"3","6","7","nis1morethanM",47444
+"bioprj_PRJNA449377_Zebrasoma-scopas","stacks_littlem_3_bigm_9_n10_nis1morethanM",46227,277383,9.37,4504,1.62374767018887,1098,"3","9","10","nis1morethanM",47325
+"bioprj_PRJNA449377_Zebrasoma-scopas","stacks_littlem_3_bigm_9_n8_nis1lessthanM",46196,274370,9.36,4396,1.60221598571272,1117,"3","9","8","nis1lessthanM",47313
+"bioprj_PRJNA449377_Zebrasoma-scopas","stacks_littlem_3_bigm_9_n9_nequalM",46213,275195,9.37,4441,1.61376478497066,1116,"3","9","9","nequalM",47329

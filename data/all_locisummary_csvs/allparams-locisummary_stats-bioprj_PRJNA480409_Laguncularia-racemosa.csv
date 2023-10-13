@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA480409_Laguncularia-racemosa","stacks_littlem_3_bigm_3_n2_nis1lessthanM",26495,62862,13.32,6557,10.4307848938946,19070,"3","3","2","nis1lessthanM",45565
+"bioprj_PRJNA480409_Laguncularia-racemosa","stacks_littlem_3_bigm_3_n3_nequalM",26120,62730,13.19,6562,10.4607046070461,18770,"3","3","3","nequalM",44890
+"bioprj_PRJNA480409_Laguncularia-racemosa","stacks_littlem_3_bigm_3_n4_nis1morethanM",25712,65155,13.33,6866,10.5379479702248,18273,"3","3","4","nis1morethanM",43985
+"bioprj_PRJNA480409_Laguncularia-racemosa","stacks_littlem_3_bigm_6_n5_nis1lessthanM",24286,72941,16.95,10924,14.9764878463416,16805,"3","6","5","nis1lessthanM",41091
+"bioprj_PRJNA480409_Laguncularia-racemosa","stacks_littlem_3_bigm_6_n6_nequalM",24051,72718,16.86,10862,14.9371544871971,16746,"3","6","6","nequalM",40797
+"bioprj_PRJNA480409_Laguncularia-racemosa","stacks_littlem_3_bigm_6_n7_nis1morethanM",23895,75354,17,11161,14.8114234148154,16519,"3","6","7","nis1morethanM",40414
+"bioprj_PRJNA480409_Laguncularia-racemosa","stacks_littlem_3_bigm_9_n10_nis1morethanM",22898,86238,20.21,16171,18.7515944247316,15508,"3","9","10","nis1morethanM",38406
+"bioprj_PRJNA480409_Laguncularia-racemosa","stacks_littlem_3_bigm_9_n8_nis1lessthanM",22975,82852,20.23,15689,18.9361753488148,15648,"3","9","8","nis1lessthanM",38623
+"bioprj_PRJNA480409_Laguncularia-racemosa","stacks_littlem_3_bigm_9_n9_nequalM",22956,83456,20.22,15775,18.9021759969325,15640,"3","9","9","nequalM",38596

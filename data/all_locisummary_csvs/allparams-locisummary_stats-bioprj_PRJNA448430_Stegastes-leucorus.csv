@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA448430_Stegastes-leucorus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",30028,58526,21.95,4660,7.96227317773297,26004,"3","3","2","nis1lessthanM",56032
+"bioprj_PRJNA448430_Stegastes-leucorus","stacks_littlem_3_bigm_3_n3_nequalM",30517,61964,21.46,4738,7.64637531469886,25650,"3","3","3","nequalM",56167
+"bioprj_PRJNA448430_Stegastes-leucorus","stacks_littlem_3_bigm_3_n4_nis1morethanM",31479,68896,21.4,5248,7.61727821644217,24681,"3","3","4","nis1morethanM",56160
+"bioprj_PRJNA448430_Stegastes-leucorus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",32959,84918,24.88,8912,10.4948303068843,22807,"3","6","5","nis1lessthanM",55766
+"bioprj_PRJNA448430_Stegastes-leucorus","stacks_littlem_3_bigm_6_n6_nequalM",33127,87210,24.68,9051,10.3783969728242,22645,"3","6","6","nequalM",55772
+"bioprj_PRJNA448430_Stegastes-leucorus","stacks_littlem_3_bigm_6_n7_nis1morethanM",33646,93392,24.2,9306,9.96445091656673,22123,"3","6","7","nis1morethanM",55769
+"bioprj_PRJNA448430_Stegastes-leucorus","stacks_littlem_3_bigm_9_n10_nis1morethanM",34706,110596,25.84,12533,11.3322362472422,20950,"3","9","10","nis1morethanM",55656
+"bioprj_PRJNA448430_Stegastes-leucorus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",34363,105205,26.37,12404,11.7903141485671,21212,"3","9","8","nis1lessthanM",55575
+"bioprj_PRJNA448430_Stegastes-leucorus","stacks_littlem_3_bigm_9_n9_nequalM",34456,106648,26.24,12440,11.6645412947266,21163,"3","9","9","nequalM",55619

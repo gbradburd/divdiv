@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA477007_Paralichthys-dentatus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",7642,97621,4.79,720,0.737546224685262,45,"3","3","2","nis1lessthanM",7687
+"bioprj_PRJNA477007_Paralichthys-dentatus","stacks_littlem_3_bigm_3_n3_nequalM",7815,104466,4.74,740,0.708364443933912,44,"3","3","3","nequalM",7859
+"bioprj_PRJNA477007_Paralichthys-dentatus","stacks_littlem_3_bigm_3_n4_nis1morethanM",7879,108009,4.7,742,0.68697978872131,41,"3","3","4","nis1morethanM",7920
+"bioprj_PRJNA477007_Paralichthys-dentatus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",7840,108833,4.75,804,0.738746519897458,41,"3","6","5","nis1lessthanM",7881
+"bioprj_PRJNA477007_Paralichthys-dentatus","stacks_littlem_3_bigm_6_n6_nequalM",7845,109300,4.74,810,0.741079597438243,41,"3","6","6","nequalM",7886
+"bioprj_PRJNA477007_Paralichthys-dentatus","stacks_littlem_3_bigm_6_n7_nis1morethanM",7843,109625,4.73,810,0.738882554161916,42,"3","6","7","nis1morethanM",7885
+"bioprj_PRJNA477007_Paralichthys-dentatus","stacks_littlem_3_bigm_9_n10_nis1morethanM",7812,109737,4.74,827,0.753620018772155,44,"3","9","10","nis1morethanM",7856
+"bioprj_PRJNA477007_Paralichthys-dentatus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",7815,109671,4.75,828,0.754985365319911,43,"3","9","8","nis1lessthanM",7858
+"bioprj_PRJNA477007_Paralichthys-dentatus","stacks_littlem_3_bigm_9_n9_nequalM",7820,109848,4.75,827,0.752858495375428,43,"3","9","9","nequalM",7863

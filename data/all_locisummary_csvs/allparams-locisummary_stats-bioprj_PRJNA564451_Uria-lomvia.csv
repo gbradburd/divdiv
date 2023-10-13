@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA564451_Uria-lomvia","stacks_littlem_3_bigm_3_n2_nis1lessthanM",9824,59183,11.4,564,0.952976361455148,373,"3","3","2","nis1lessthanM",10197
+"bioprj_PRJNA564451_Uria-lomvia","stacks_littlem_3_bigm_3_n3_nequalM",9902,60905,11.35,598,0.981856990394877,369,"3","3","3","nequalM",10271
+"bioprj_PRJNA564451_Uria-lomvia","stacks_littlem_3_bigm_3_n4_nis1morethanM",9961,62046,11.36,602,0.970247880604713,367,"3","3","4","nis1morethanM",10328
+"bioprj_PRJNA564451_Uria-lomvia","stacks_littlem_3_bigm_6_n5_nis1lessthanM",9770,61180,11.57,619,1.01176855181432,391,"3","6","5","nis1lessthanM",10161
+"bioprj_PRJNA564451_Uria-lomvia","stacks_littlem_3_bigm_6_n6_nequalM",9765,61268,11.55,623,1.0168440295097,390,"3","6","6","nequalM",10155
+"bioprj_PRJNA564451_Uria-lomvia","stacks_littlem_3_bigm_6_n7_nis1morethanM",9761,61298,11.57,627,1.02287187183921,389,"3","6","7","nis1morethanM",10150
+"bioprj_PRJNA564451_Uria-lomvia","stacks_littlem_3_bigm_9_n10_nis1morethanM",9597,59705,11.69,631,1.05686290930408,407,"3","9","10","nis1morethanM",10004
+"bioprj_PRJNA564451_Uria-lomvia","stacks_littlem_3_bigm_9_n8_nis1lessthanM",9606,59731,11.68,634,1.06142539050074,408,"3","9","8","nis1lessthanM",10014
+"bioprj_PRJNA564451_Uria-lomvia","stacks_littlem_3_bigm_9_n9_nequalM",9605,59672,11.69,628,1.05241989542834,408,"3","9","9","nequalM",10013

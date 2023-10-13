@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA319656_Seriola-lalandi-dorsalis","stacks_littlem_3_bigm_3_n2_nis1lessthanM",256,708,33.46,191,26.9774011299435,177,"3","3","2","nis1lessthanM",433
+"bioprj_PRJNA319656_Seriola-lalandi-dorsalis","stacks_littlem_3_bigm_3_n3_nequalM",328,1009,30.14,239,23.6868186323092,157,"3","3","3","nequalM",485
+"bioprj_PRJNA319656_Seriola-lalandi-dorsalis","stacks_littlem_3_bigm_3_n4_nis1morethanM",315,1037,26.46,196,18.900675024108,163,"3","3","4","nis1morethanM",478
+"bioprj_PRJNA319656_Seriola-lalandi-dorsalis","stacks_littlem_3_bigm_6_n5_nis1lessthanM",245,649,38.3,203,31.2788906009245,84,"3","6","5","nis1lessthanM",329
+"bioprj_PRJNA319656_Seriola-lalandi-dorsalis","stacks_littlem_3_bigm_6_n6_nequalM",227,613,36.28,187,30.5057096247961,89,"3","6","6","nequalM",316
+"bioprj_PRJNA319656_Seriola-lalandi-dorsalis","stacks_littlem_3_bigm_6_n7_nis1morethanM",242,695,36.28,188,27.0503597122302,82,"3","6","7","nis1morethanM",324
+"bioprj_PRJNA319656_Seriola-lalandi-dorsalis","stacks_littlem_3_bigm_9_n10_nis1morethanM",183,520,34.11,135,25.9615384615385,71,"3","9","10","nis1morethanM",254
+"bioprj_PRJNA319656_Seriola-lalandi-dorsalis","stacks_littlem_3_bigm_9_n8_nis1lessthanM",189,557,36.56,141,25.3141831238779,67,"3","9","8","nis1lessthanM",256
+"bioprj_PRJNA319656_Seriola-lalandi-dorsalis","stacks_littlem_3_bigm_9_n9_nequalM",183,548,32.18,130,23.7226277372263,70,"3","9","9","nequalM",253

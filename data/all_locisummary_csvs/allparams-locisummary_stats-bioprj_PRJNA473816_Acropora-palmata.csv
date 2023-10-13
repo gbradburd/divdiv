@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA473816_Acropora-palmata","stacks_littlem_3_bigm_3_n2_nis1lessthanM",1067,1383,30.47,387,27.9826464208243,2875,"3","3","2","nis1lessthanM",3942
+"bioprj_PRJNA473816_Acropora-palmata","stacks_littlem_3_bigm_3_n3_nequalM",1148,1546,31.78,444,28.7192755498059,2845,"3","3","3","nequalM",3993
+"bioprj_PRJNA473816_Acropora-palmata","stacks_littlem_3_bigm_3_n4_nis1morethanM",1154,1537,32,460,29.9284320104099,2856,"3","3","4","nis1morethanM",4010
+"bioprj_PRJNA473816_Acropora-palmata","stacks_littlem_3_bigm_6_n5_nis1lessthanM",956,1290,32.24,401,31.0852713178295,2568,"3","6","5","nis1lessthanM",3524
+"bioprj_PRJNA473816_Acropora-palmata","stacks_littlem_3_bigm_6_n6_nequalM",980,1336,31.2,412,30.8383233532934,2607,"3","6","6","nequalM",3587
+"bioprj_PRJNA473816_Acropora-palmata","stacks_littlem_3_bigm_6_n7_nis1morethanM",970,1347,30.86,414,30.7349665924276,2572,"3","6","7","nis1morethanM",3542
+"bioprj_PRJNA473816_Acropora-palmata","stacks_littlem_3_bigm_9_n10_nis1morethanM",1004,1435,31.37,420,29.2682926829268,2421,"3","9","10","nis1morethanM",3425
+"bioprj_PRJNA473816_Acropora-palmata","stacks_littlem_3_bigm_9_n8_nis1lessthanM",989,1414,30.88,426,30.1272984441301,2432,"3","9","8","nis1lessthanM",3421
+"bioprj_PRJNA473816_Acropora-palmata","stacks_littlem_3_bigm_9_n9_nequalM",1001,1427,31.41,443,31.0441485634198,2403,"3","9","9","nequalM",3404

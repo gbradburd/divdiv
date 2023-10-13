@@ -1,0 +1,4 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA508589_Orbicella-faveolata","stacks_littlem_3_bigm_3_n2_nis1lessthanM",51543,135106,15.75,15721,11.6360487321066,18783,"3","3","2","nis1lessthanM",70326
+"bioprj_PRJNA508589_Orbicella-faveolata","stacks_littlem_3_bigm_3_n3_nequalM",51275,135238,15.66,15715,11.6202546621512,18724,"3","3","3","nequalM",69999
+"bioprj_PRJNA508589_Orbicella-faveolata","stacks_littlem_3_bigm_3_n4_nis1morethanM",50978,136370,15.63,15738,11.5406614357997,18523,"3","3","4","nis1morethanM",69501

@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA553831_Acanthephyra-purpurea","stacks_littlem_3_bigm_3_n2_nis1lessthanM",84,685,5.09,4,0.583941605839416,2,"3","3","2","nis1lessthanM",86
+"bioprj_PRJNA553831_Acanthephyra-purpurea","stacks_littlem_3_bigm_3_n3_nequalM",99,1075,4.38,3,0.27906976744186,2,"3","3","3","nequalM",101
+"bioprj_PRJNA553831_Acanthephyra-purpurea","stacks_littlem_3_bigm_3_n4_nis1morethanM",108,1264,3.99,2,0.158227848101266,2,"3","3","4","nis1morethanM",110
+"bioprj_PRJNA553831_Acanthephyra-purpurea","stacks_littlem_3_bigm_6_n5_nis1lessthanM",100,1101,4.16,3,0.272479564032698,2,"3","6","5","nis1lessthanM",102
+"bioprj_PRJNA553831_Acanthephyra-purpurea","stacks_littlem_3_bigm_6_n6_nequalM",90,969,4.33,3,0.309597523219814,2,"3","6","6","nequalM",92
+"bioprj_PRJNA553831_Acanthephyra-purpurea","stacks_littlem_3_bigm_6_n7_nis1morethanM",103,1074,4.4,4,0.37243947858473,2,"3","6","7","nis1morethanM",105
+"bioprj_PRJNA553831_Acanthephyra-purpurea","stacks_littlem_3_bigm_9_n10_nis1morethanM",71,604,5.08,3,0.496688741721854,0,"3","9","10","nis1morethanM",71
+"bioprj_PRJNA553831_Acanthephyra-purpurea","stacks_littlem_3_bigm_9_n8_nis1lessthanM",84,853,4.61,3,0.351699882766706,2,"3","9","8","nis1lessthanM",86
+"bioprj_PRJNA553831_Acanthephyra-purpurea","stacks_littlem_3_bigm_9_n9_nequalM",81,741,4.92,2,0.269905533063428,1,"3","9","9","nequalM",82

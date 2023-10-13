@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA493660_Pygoscelis-adeliae","stacks_littlem_3_bigm_3_n2_nis1lessthanM",82990,447930,8.9,6426,1.43459915611814,2189,"3","3","2","nis1lessthanM",85179
+"bioprj_PRJNA493660_Pygoscelis-adeliae","stacks_littlem_3_bigm_3_n3_nequalM",82958,449567,8.9,6486,1.44272155207122,2152,"3","3","3","nequalM",85110
+"bioprj_PRJNA493660_Pygoscelis-adeliae","stacks_littlem_3_bigm_3_n4_nis1morethanM",82746,450209,8.91,6516,1.44732779664556,2123,"3","3","4","nis1morethanM",84869
+"bioprj_PRJNA493660_Pygoscelis-adeliae","stacks_littlem_3_bigm_6_n5_nis1lessthanM",81693,442833,9.05,6776,1.53014793387123,2363,"3","6","5","nis1lessthanM",84056
+"bioprj_PRJNA493660_Pygoscelis-adeliae","stacks_littlem_3_bigm_6_n6_nequalM",81630,442684,9.04,6770,1.52930758735351,2364,"3","6","6","nequalM",83994
+"bioprj_PRJNA493660_Pygoscelis-adeliae","stacks_littlem_3_bigm_6_n7_nis1morethanM",81453,441300,9.05,6766,1.53319737140267,2353,"3","6","7","nis1morethanM",83806
+"bioprj_PRJNA493660_Pygoscelis-adeliae","stacks_littlem_3_bigm_9_n10_nis1morethanM",80726,435751,9.13,6932,1.59081677379972,2599,"3","9","10","nis1morethanM",83325
+"bioprj_PRJNA493660_Pygoscelis-adeliae","stacks_littlem_3_bigm_9_n8_nis1lessthanM",80838,436482,9.13,6939,1.58975627860943,2606,"3","9","8","nis1lessthanM",83444
+"bioprj_PRJNA493660_Pygoscelis-adeliae","stacks_littlem_3_bigm_9_n9_nequalM",80773,436203,9.13,6920,1.58641733321412,2603,"3","9","9","nequalM",83376

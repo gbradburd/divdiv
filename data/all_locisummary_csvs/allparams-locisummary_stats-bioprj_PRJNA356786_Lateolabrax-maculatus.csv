@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA356786_Lateolabrax-maculatus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",31240,125069,8.61,979,0.782767912112514,2669,"3","3","2","nis1lessthanM",33909
+"bioprj_PRJNA356786_Lateolabrax-maculatus","stacks_littlem_3_bigm_3_n3_nequalM",31350,126707,8.58,992,0.782908600156266,2630,"3","3","3","nequalM",33980
+"bioprj_PRJNA356786_Lateolabrax-maculatus","stacks_littlem_3_bigm_3_n4_nis1morethanM",31377,127813,8.57,1001,0.783175420340654,2622,"3","3","4","nis1morethanM",33999
+"bioprj_PRJNA356786_Lateolabrax-maculatus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",30732,124294,8.89,1156,0.930052938999469,2794,"3","6","5","nis1lessthanM",33526
+"bioprj_PRJNA356786_Lateolabrax-maculatus","stacks_littlem_3_bigm_6_n6_nequalM",30734,124364,8.89,1164,0.935962175549194,2794,"3","6","6","nequalM",33528
+"bioprj_PRJNA356786_Lateolabrax-maculatus","stacks_littlem_3_bigm_6_n7_nis1morethanM",30739,124614,8.89,1158,0.929269584476865,2806,"3","6","7","nis1morethanM",33545
+"bioprj_PRJNA356786_Lateolabrax-maculatus","stacks_littlem_3_bigm_9_n10_nis1morethanM",30327,122074,9.08,1312,1.07475793371234,2972,"3","9","10","nis1morethanM",33299
+"bioprj_PRJNA356786_Lateolabrax-maculatus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",30324,121771,9.09,1296,1.06429281191745,2968,"3","9","8","nis1lessthanM",33292
+"bioprj_PRJNA356786_Lateolabrax-maculatus","stacks_littlem_3_bigm_9_n9_nequalM",30336,122021,9.07,1291,1.05801460404357,2973,"3","9","9","nequalM",33309

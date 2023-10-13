@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA379028_Porites-astreoides","stacks_littlem_3_bigm_3_n2_nis1lessthanM",14956,31878,24.06,5138,16.1176987263944,36208,"3","3","2","nis1lessthanM",51164
+"bioprj_PRJNA379028_Porites-astreoides","stacks_littlem_3_bigm_3_n3_nequalM",15118,33306,23.56,5197,15.6037951119918,36123,"3","3","3","nequalM",51241
+"bioprj_PRJNA379028_Porites-astreoides","stacks_littlem_3_bigm_3_n4_nis1morethanM",15315,35565,23.25,5448,15.3184310417545,35905,"3","3","4","nis1morethanM",51220
+"bioprj_PRJNA379028_Porites-astreoides","stacks_littlem_3_bigm_6_n5_nis1lessthanM",15631,40632,24.56,6944,17.0899783421933,35438,"3","6","5","nis1lessthanM",51069
+"bioprj_PRJNA379028_Porites-astreoides","stacks_littlem_3_bigm_6_n6_nequalM",15688,41458,24.3,7015,16.9207390612186,35429,"3","6","6","nequalM",51117
+"bioprj_PRJNA379028_Porites-astreoides","stacks_littlem_3_bigm_6_n7_nis1morethanM",15742,43055,23.97,7092,16.471954476832,35363,"3","6","7","nis1morethanM",51105
+"bioprj_PRJNA379028_Porites-astreoides","stacks_littlem_3_bigm_9_n10_nis1morethanM",15697,46100,24.48,8100,17.5704989154013,35163,"3","9","10","nis1morethanM",50860
+"bioprj_PRJNA379028_Porites-astreoides","stacks_littlem_3_bigm_9_n8_nis1lessthanM",15670,45160,24.72,8070,17.8697962798937,35204,"3","9","8","nis1lessthanM",50874
+"bioprj_PRJNA379028_Porites-astreoides","stacks_littlem_3_bigm_9_n9_nequalM",15678,45634,24.58,8077,17.6995222860148,35186,"3","9","9","nequalM",50864

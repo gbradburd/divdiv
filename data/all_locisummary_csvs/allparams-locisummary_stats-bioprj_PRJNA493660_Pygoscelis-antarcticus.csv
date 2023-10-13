@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA493660_Pygoscelis-antarcticus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",62918,133858,14.5,4938,3.68898384855593,22262,"3","3","2","nis1lessthanM",85180
+"bioprj_PRJNA493660_Pygoscelis-antarcticus","stacks_littlem_3_bigm_3_n3_nequalM",62716,133117,14.52,4923,3.69825041129232,22236,"3","3","3","nequalM",84952
+"bioprj_PRJNA493660_Pygoscelis-antarcticus","stacks_littlem_3_bigm_3_n4_nis1morethanM",62392,132566,14.58,4980,3.7566193443266,22156,"3","3","4","nis1morethanM",84548
+"bioprj_PRJNA493660_Pygoscelis-antarcticus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",61973,133425,14.73,5254,3.93779276747236,22026,"3","6","5","nis1lessthanM",83999
+"bioprj_PRJNA493660_Pygoscelis-antarcticus","stacks_littlem_3_bigm_6_n6_nequalM",61794,132574,14.72,5212,3.93138926184621,22008,"3","6","6","nequalM",83802
+"bioprj_PRJNA493660_Pygoscelis-antarcticus","stacks_littlem_3_bigm_6_n7_nis1morethanM",61714,132460,14.75,5230,3.94836176959082,21991,"3","6","7","nis1morethanM",83705
+"bioprj_PRJNA493660_Pygoscelis-antarcticus","stacks_littlem_3_bigm_9_n10_nis1morethanM",61376,132443,14.92,5284,3.98964082661975,21932,"3","9","10","nis1morethanM",83308
+"bioprj_PRJNA493660_Pygoscelis-antarcticus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",61450,132815,14.89,5269,3.9671723826375,21942,"3","9","8","nis1lessthanM",83392
+"bioprj_PRJNA493660_Pygoscelis-antarcticus","stacks_littlem_3_bigm_9_n9_nequalM",61383,132117,14.93,5294,4.00705435333833,21927,"3","9","9","nequalM",83310

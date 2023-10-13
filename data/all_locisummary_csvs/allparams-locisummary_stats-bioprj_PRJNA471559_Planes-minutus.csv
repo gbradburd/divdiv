@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA471559_Planes-minutus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",49302,256183,6.31,5050,1.97124711631919,7470,"3","3","2","nis1lessthanM",56772
+"bioprj_PRJNA471559_Planes-minutus","stacks_littlem_3_bigm_3_n3_nequalM",49350,262761,6.3,4919,1.87204341587983,7412,"3","3","3","nequalM",56762
+"bioprj_PRJNA471559_Planes-minutus","stacks_littlem_3_bigm_3_n4_nis1morethanM",49109,267175,6.3,4898,1.83325535697576,7286,"3","3","4","nis1morethanM",56395
+"bioprj_PRJNA471559_Planes-minutus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",47883,273345,7.35,8309,3.03974830342607,6901,"3","6","5","nis1lessthanM",54784
+"bioprj_PRJNA471559_Planes-minutus","stacks_littlem_3_bigm_6_n6_nequalM",47672,273814,7.28,8176,2.98596857720935,6843,"3","6","6","nequalM",54515
+"bioprj_PRJNA471559_Planes-minutus","stacks_littlem_3_bigm_6_n7_nis1morethanM",47514,275328,7.38,8504,3.08867968386797,6771,"3","6","7","nis1morethanM",54285
+"bioprj_PRJNA471559_Planes-minutus","stacks_littlem_3_bigm_9_n10_nis1morethanM",46339,283865,8.51,12829,4.51940182833389,6362,"3","9","10","nis1morethanM",52701
+"bioprj_PRJNA471559_Planes-minutus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",46481,281560,8.44,12516,4.44523369796846,6436,"3","9","8","nis1lessthanM",52917
+"bioprj_PRJNA471559_Planes-minutus","stacks_littlem_3_bigm_9_n9_nequalM",46319,281978,8.46,12705,4.50567065515749,6390,"3","9","9","nequalM",52709

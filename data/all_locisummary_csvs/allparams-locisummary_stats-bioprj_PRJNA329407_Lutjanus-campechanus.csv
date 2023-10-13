@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA329407_Lutjanus-campechanus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",17159,80383,6.69,568,0.706617070773671,827,"3","3","2","nis1lessthanM",17986
+"bioprj_PRJNA329407_Lutjanus-campechanus","stacks_littlem_3_bigm_3_n3_nequalM",17278,82178,6.69,595,0.72403806371535,822,"3","3","3","nequalM",18100
+"bioprj_PRJNA329407_Lutjanus-campechanus","stacks_littlem_3_bigm_3_n4_nis1morethanM",17315,83540,6.69,604,0.723006942781901,815,"3","3","4","nis1morethanM",18130
+"bioprj_PRJNA329407_Lutjanus-campechanus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",17219,84748,6.88,699,0.824798225326851,804,"3","6","5","nis1lessthanM",18023
+"bioprj_PRJNA329407_Lutjanus-campechanus","stacks_littlem_3_bigm_6_n6_nequalM",17238,85318,6.86,693,0.812255327129094,799,"3","6","6","nequalM",18037
+"bioprj_PRJNA329407_Lutjanus-campechanus","stacks_littlem_3_bigm_6_n7_nis1morethanM",17246,85681,6.86,694,0.809981209369639,797,"3","6","7","nis1morethanM",18043
+"bioprj_PRJNA329407_Lutjanus-campechanus","stacks_littlem_3_bigm_9_n10_nis1morethanM",17227,87458,6.97,833,0.952457179446134,800,"3","9","10","nis1morethanM",18027
+"bioprj_PRJNA329407_Lutjanus-campechanus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",17193,86512,7,844,0.975587201775476,801,"3","9","8","nis1lessthanM",17994
+"bioprj_PRJNA329407_Lutjanus-campechanus","stacks_littlem_3_bigm_9_n9_nequalM",17209,87027,6.99,825,0.94798166086387,799,"3","9","9","nequalM",18008

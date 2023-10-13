@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA573759_Vampyroteuthis-infernalis","stacks_littlem_3_bigm_3_n2_nis1lessthanM",10520,76039,8.94,983,1.2927576638304,251,"3","3","2","nis1lessthanM",10771
+"bioprj_PRJNA573759_Vampyroteuthis-infernalis","stacks_littlem_3_bigm_3_n3_nequalM",10985,88388,8.69,1067,1.20717744490202,239,"3","3","3","nequalM",11224
+"bioprj_PRJNA573759_Vampyroteuthis-infernalis","stacks_littlem_3_bigm_3_n4_nis1morethanM",11199,97856,8.71,1164,1.18950294310007,228,"3","3","4","nis1morethanM",11427
+"bioprj_PRJNA573759_Vampyroteuthis-infernalis","stacks_littlem_3_bigm_6_n5_nis1lessthanM",9829,97686,9.6,1715,1.75562516634932,178,"3","6","5","nis1lessthanM",10007
+"bioprj_PRJNA573759_Vampyroteuthis-infernalis","stacks_littlem_3_bigm_6_n6_nequalM",9784,100073,9.51,1718,1.71674677485436,167,"3","6","6","nequalM",9951
+"bioprj_PRJNA573759_Vampyroteuthis-infernalis","stacks_littlem_3_bigm_6_n7_nis1morethanM",9706,101484,9.54,1680,1.65543336880691,167,"3","6","7","nis1morethanM",9873
+"bioprj_PRJNA573759_Vampyroteuthis-infernalis","stacks_littlem_3_bigm_9_n10_nis1morethanM",9019,101728,9.87,1859,1.82742214532872,168,"3","9","10","nis1morethanM",9187
+"bioprj_PRJNA573759_Vampyroteuthis-infernalis","stacks_littlem_3_bigm_9_n8_nis1lessthanM",9170,100556,9.94,1942,1.9312621822666,162,"3","9","8","nis1lessthanM",9332
+"bioprj_PRJNA573759_Vampyroteuthis-infernalis","stacks_littlem_3_bigm_9_n9_nequalM",9059,100201,9.92,1916,1.91215656530374,168,"3","9","9","nequalM",9227
