@@ -27,7 +27,6 @@ z <- z[,c("species","cladecolor","s","nbhd",
 			"read_length",
 			"mean_locus_depth")]
 
-z$Body_Size[z$species=="Cranchia_scabra"] <- 15
 z[["log(deep-time diversity)"]] <- log(1-z$s)
 
 pdf(file="../figures/variable_scatterplots.pdf",width=12,height=5,pointsize=11)
