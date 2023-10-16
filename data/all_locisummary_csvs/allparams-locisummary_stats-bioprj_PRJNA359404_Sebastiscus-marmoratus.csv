@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA359404_Sebastiscus-marmoratus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",133773,490334,14.18,11855,2.41773974474542,13595,"3","3","2","nis1lessthanM",147368
+"bioprj_PRJNA359404_Sebastiscus-marmoratus","stacks_littlem_3_bigm_3_n3_nequalM",135229,509872,14.05,12015,2.356473781655,13449,"3","3","3","nequalM",148678
+"bioprj_PRJNA359404_Sebastiscus-marmoratus","stacks_littlem_3_bigm_3_n4_nis1morethanM",136048,524089,13.97,12135,2.31544642226797,13358,"3","3","4","nis1morethanM",149406
+"bioprj_PRJNA359404_Sebastiscus-marmoratus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",136483,544061,14.5,14889,2.7366416633429,13205,"3","6","5","nis1lessthanM",149688
+"bioprj_PRJNA359404_Sebastiscus-marmoratus","stacks_littlem_3_bigm_6_n6_nequalM",136558,547200,14.48,14986,2.73866959064327,13184,"3","6","6","nequalM",149742
+"bioprj_PRJNA359404_Sebastiscus-marmoratus","stacks_littlem_3_bigm_6_n7_nis1morethanM",136592,550348,14.44,14944,2.71537281865292,13180,"3","6","7","nis1morethanM",149772
+"bioprj_PRJNA359404_Sebastiscus-marmoratus","stacks_littlem_3_bigm_9_n10_nis1morethanM",135951,560934,14.54,16467,2.93563948699847,13108,"3","9","10","nis1morethanM",149059
+"bioprj_PRJNA359404_Sebastiscus-marmoratus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",136059,558028,14.59,16567,2.96884744134703,13112,"3","9","8","nis1lessthanM",149171
+"bioprj_PRJNA359404_Sebastiscus-marmoratus","stacks_littlem_3_bigm_9_n9_nequalM",135979,559356,14.57,16474,2.94517266284799,13126,"3","9","9","nequalM",149105

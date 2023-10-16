@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA646172_Bathyraja-panthera","stacks_littlem_3_bigm_3_n2_nis1lessthanM",35213,65517,15.64,2191,3.34417021536395,24633,"3","3","2","nis1lessthanM",59846
+"bioprj_PRJNA646172_Bathyraja-panthera","stacks_littlem_3_bigm_3_n3_nequalM",34949,66139,15.46,2187,3.30667231134429,24307,"3","3","3","nequalM",59256
+"bioprj_PRJNA646172_Bathyraja-panthera","stacks_littlem_3_bigm_3_n4_nis1morethanM",34854,68655,15.29,2226,3.24229844876557,23868,"3","3","4","nis1morethanM",58722
+"bioprj_PRJNA646172_Bathyraja-panthera","stacks_littlem_3_bigm_6_n5_nis1lessthanM",34230,72684,16.12,3322,4.57046942931044,22980,"3","6","5","nis1lessthanM",57210
+"bioprj_PRJNA646172_Bathyraja-panthera","stacks_littlem_3_bigm_6_n6_nequalM",34148,73251,15.98,3273,4.46819838637015,22965,"3","6","6","nequalM",57113
+"bioprj_PRJNA646172_Bathyraja-panthera","stacks_littlem_3_bigm_6_n7_nis1morethanM",34134,75015,15.9,3406,4.54042524828368,22741,"3","6","7","nis1morethanM",56875
+"bioprj_PRJNA646172_Bathyraja-panthera","stacks_littlem_3_bigm_9_n10_nis1morethanM",33818,80683,16.66,4757,5.89591363732137,22298,"3","9","10","nis1morethanM",56116
+"bioprj_PRJNA646172_Bathyraja-panthera","stacks_littlem_3_bigm_9_n8_nis1lessthanM",33763,78648,16.88,4748,6.03702573492015,22380,"3","9","8","nis1lessthanM",56143
+"bioprj_PRJNA646172_Bathyraja-panthera","stacks_littlem_3_bigm_9_n9_nequalM",33846,79392,16.76,4774,6.01320032245062,22405,"3","9","9","nequalM",56251

@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA450871_Pocillopora-damicornis","stacks_littlem_3_bigm_3_n2_nis1lessthanM",3048,12131,8.45,67,0.552304014508285,228,"3","3","2","nis1lessthanM",3276
+"bioprj_PRJNA450871_Pocillopora-damicornis","stacks_littlem_3_bigm_3_n3_nequalM",3184,13734,8.14,78,0.567933595456531,198,"3","3","3","nequalM",3382
+"bioprj_PRJNA450871_Pocillopora-damicornis","stacks_littlem_3_bigm_3_n4_nis1morethanM",3225,15122,7.98,80,0.52903055151435,185,"3","3","4","nis1morethanM",3410
+"bioprj_PRJNA450871_Pocillopora-damicornis","stacks_littlem_3_bigm_6_n5_nis1lessthanM",3062,14323,8.63,78,0.54457864972422,182,"3","6","5","nis1lessthanM",3244
+"bioprj_PRJNA450871_Pocillopora-damicornis","stacks_littlem_3_bigm_6_n6_nequalM",3094,14798,8.47,74,0.500067576699554,174,"3","6","6","nequalM",3268
+"bioprj_PRJNA450871_Pocillopora-damicornis","stacks_littlem_3_bigm_6_n7_nis1morethanM",3078,14842,8.42,85,0.572699097156717,167,"3","6","7","nis1morethanM",3245
+"bioprj_PRJNA450871_Pocillopora-damicornis","stacks_littlem_3_bigm_9_n10_nis1morethanM",2958,14664,8.62,66,0.450081833060556,184,"3","9","10","nis1morethanM",3142
+"bioprj_PRJNA450871_Pocillopora-damicornis","stacks_littlem_3_bigm_9_n8_nis1lessthanM",2962,14469,8.64,71,0.49070426428917,183,"3","9","8","nis1lessthanM",3145
+"bioprj_PRJNA450871_Pocillopora-damicornis","stacks_littlem_3_bigm_9_n9_nequalM",2977,14588,8.61,61,0.418151905675898,183,"3","9","9","nequalM",3160

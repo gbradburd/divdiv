@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA573759_Pyroteuthis-margaritifera","stacks_littlem_3_bigm_3_n2_nis1lessthanM",11836,122893,7.25,633,0.515082226001481,102,"3","3","2","nis1lessthanM",11938
+"bioprj_PRJNA573759_Pyroteuthis-margaritifera","stacks_littlem_3_bigm_3_n3_nequalM",12971,152063,7.06,690,0.453759297133425,94,"3","3","3","nequalM",13065
+"bioprj_PRJNA573759_Pyroteuthis-margaritifera","stacks_littlem_3_bigm_3_n4_nis1morethanM",13745,176414,7.11,816,0.462548323829175,90,"3","3","4","nis1morethanM",13835
+"bioprj_PRJNA573759_Pyroteuthis-margaritifera","stacks_littlem_3_bigm_6_n5_nis1lessthanM",14237,203579,7.83,1330,0.653309034821863,78,"3","6","5","nis1lessthanM",14315
+"bioprj_PRJNA573759_Pyroteuthis-margaritifera","stacks_littlem_3_bigm_6_n6_nequalM",14429,212320,7.79,1309,0.616522230595328,79,"3","6","6","nequalM",14508
+"bioprj_PRJNA573759_Pyroteuthis-margaritifera","stacks_littlem_3_bigm_6_n7_nis1morethanM",14551,219327,7.83,1328,0.605488608333675,73,"3","6","7","nis1morethanM",14624
+"bioprj_PRJNA573759_Pyroteuthis-margaritifera","stacks_littlem_3_bigm_9_n10_nis1morethanM",14524,232551,8.12,1666,0.716401993541202,75,"3","9","10","nis1morethanM",14599
+"bioprj_PRJNA573759_Pyroteuthis-margaritifera","stacks_littlem_3_bigm_9_n8_nis1lessthanM",14436,225873,8.16,1636,0.724300823914323,68,"3","9","8","nis1lessthanM",14504
+"bioprj_PRJNA573759_Pyroteuthis-margaritifera","stacks_littlem_3_bigm_9_n9_nequalM",14453,228490,8.14,1644,0.719506324127971,73,"3","9","9","nequalM",14526

@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA361144_Stephanocoenia-intersepta","stacks_littlem_3_bigm_3_n2_nis1lessthanM",12590,73410,10.13,1222,1.66462334831767,494,"3","3","2","nis1lessthanM",13084
+"bioprj_PRJNA361144_Stephanocoenia-intersepta","stacks_littlem_3_bigm_3_n3_nequalM",12878,79897,9.8,1269,1.58829492972202,447,"3","3","3","nequalM",13325
+"bioprj_PRJNA361144_Stephanocoenia-intersepta","stacks_littlem_3_bigm_3_n4_nis1morethanM",13083,86967,9.55,1209,1.3901824830108,408,"3","3","4","nis1morethanM",13491
+"bioprj_PRJNA361144_Stephanocoenia-intersepta","stacks_littlem_3_bigm_6_n5_nis1lessthanM",11883,82349,10.48,1544,1.87494687245747,391,"3","6","5","nis1lessthanM",12274
+"bioprj_PRJNA361144_Stephanocoenia-intersepta","stacks_littlem_3_bigm_6_n6_nequalM",11623,81923,10.4,1537,1.87615199638685,367,"3","6","6","nequalM",11990
+"bioprj_PRJNA361144_Stephanocoenia-intersepta","stacks_littlem_3_bigm_6_n7_nis1morethanM",11883,85191,10.26,1514,1.77718303576669,373,"3","6","7","nis1morethanM",12256
+"bioprj_PRJNA361144_Stephanocoenia-intersepta","stacks_littlem_3_bigm_9_n10_nis1morethanM",10904,79777,10.66,1733,2.17230530102661,380,"3","9","10","nis1morethanM",11284
+"bioprj_PRJNA361144_Stephanocoenia-intersepta","stacks_littlem_3_bigm_9_n8_nis1lessthanM",10931,79015,10.78,1761,2.22869075491995,380,"3","9","8","nis1lessthanM",11311
+"bioprj_PRJNA361144_Stephanocoenia-intersepta","stacks_littlem_3_bigm_9_n9_nequalM",10905,78724,10.75,1750,2.2229561506021,376,"3","9","9","nequalM",11281

@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA430030_Coryphaenoides-rupestris","stacks_littlem_3_bigm_3_n2_nis1lessthanM",49192,222681,8.37,4050,1.8187452005335,7760,"3","3","2","nis1lessthanM",56952
+"bioprj_PRJNA430030_Coryphaenoides-rupestris","stacks_littlem_3_bigm_3_n3_nequalM",49707,231489,8.3,4051,1.74997516080678,7710,"3","3","3","nequalM",57417
+"bioprj_PRJNA430030_Coryphaenoides-rupestris","stacks_littlem_3_bigm_3_n4_nis1morethanM",49781,235712,8.29,4195,1.7797142275319,7592,"3","3","4","nis1morethanM",57373
+"bioprj_PRJNA430030_Coryphaenoides-rupestris","stacks_littlem_3_bigm_6_n5_nis1lessthanM",48921,235675,8.6,4891,2.07531558290018,7423,"3","6","5","nis1lessthanM",56344
+"bioprj_PRJNA430030_Coryphaenoides-rupestris","stacks_littlem_3_bigm_6_n6_nequalM",49004,236963,8.59,4902,2.06867738845305,7372,"3","6","6","nequalM",56376
+"bioprj_PRJNA430030_Coryphaenoides-rupestris","stacks_littlem_3_bigm_6_n7_nis1morethanM",49034,238571,8.6,4996,2.094135498447,7368,"3","6","7","nis1morethanM",56402
+"bioprj_PRJNA430030_Coryphaenoides-rupestris","stacks_littlem_3_bigm_9_n10_nis1morethanM",48175,235752,8.79,5517,2.34017102718111,7243,"3","9","10","nis1morethanM",55418
+"bioprj_PRJNA430030_Coryphaenoides-rupestris","stacks_littlem_3_bigm_9_n8_nis1lessthanM",48238,235454,8.8,5439,2.31000535136375,7288,"3","9","8","nis1lessthanM",55526
+"bioprj_PRJNA430030_Coryphaenoides-rupestris","stacks_littlem_3_bigm_9_n9_nequalM",48108,234535,8.79,5423,2.31223484767732,7263,"3","9","9","nequalM",55371

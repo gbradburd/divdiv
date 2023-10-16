@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJDB7819_Fibramia-amboinensis","stacks_littlem_3_bigm_3_n2_nis1lessthanM",30074,62921,15.46,3549,5.64040622367731,23988,"3","3","2","nis1lessthanM",54062
+"bioprj_PRJDB7819_Fibramia-amboinensis","stacks_littlem_3_bigm_3_n3_nequalM",30096,63818,15.31,3493,5.47337741702968,23938,"3","3","3","nequalM",54034
+"bioprj_PRJDB7819_Fibramia-amboinensis","stacks_littlem_3_bigm_3_n4_nis1morethanM",30066,64611,15.24,3500,5.41703425113371,23883,"3","3","4","nis1morethanM",53949
+"bioprj_PRJDB7819_Fibramia-amboinensis","stacks_littlem_3_bigm_6_n5_nis1lessthanM",29749,66455,16.01,4711,7.08900759912723,23519,"3","6","5","nis1lessthanM",53268
+"bioprj_PRJDB7819_Fibramia-amboinensis","stacks_littlem_3_bigm_6_n6_nequalM",29730,66818,15.97,4775,7.14627794905564,23488,"3","6","6","nequalM",53218
+"bioprj_PRJDB7819_Fibramia-amboinensis","stacks_littlem_3_bigm_6_n7_nis1morethanM",29756,68242,15.85,4786,7.01327628146889,23458,"3","6","7","nis1morethanM",53214
+"bioprj_PRJDB7819_Fibramia-amboinensis","stacks_littlem_3_bigm_9_n10_nis1morethanM",29470,71702,16.61,6164,8.59669186354635,23139,"3","9","10","nis1morethanM",52609
+"bioprj_PRJDB7819_Fibramia-amboinensis","stacks_littlem_3_bigm_9_n8_nis1lessthanM",29469,70492,16.75,6135,8.70311524712024,23159,"3","9","8","nis1lessthanM",52628
+"bioprj_PRJDB7819_Fibramia-amboinensis","stacks_littlem_3_bigm_9_n9_nequalM",29440,70947,16.67,6165,8.68958518330585,23166,"3","9","9","nequalM",52606

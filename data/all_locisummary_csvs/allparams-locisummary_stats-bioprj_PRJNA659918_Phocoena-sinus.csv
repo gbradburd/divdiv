@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA659918_Phocoena-sinus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",126,162,90.81,144,88.8888888888889,125,"3","3","2","nis1lessthanM",251
+"bioprj_PRJNA659918_Phocoena-sinus","stacks_littlem_3_bigm_3_n3_nequalM",127,166,89.46,145,87.3493975903614,126,"3","3","3","nequalM",253
+"bioprj_PRJNA659918_Phocoena-sinus","stacks_littlem_3_bigm_3_n4_nis1morethanM",126,167,87.33,144,86.2275449101796,125,"3","3","4","nis1morethanM",251
+"bioprj_PRJNA659918_Phocoena-sinus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",74,109,82.55,85,77.9816513761468,78,"3","6","5","nis1lessthanM",152
+"bioprj_PRJNA659918_Phocoena-sinus","stacks_littlem_3_bigm_6_n6_nequalM",74,109,82.55,85,77.9816513761468,77,"3","6","6","nequalM",151
+"bioprj_PRJNA659918_Phocoena-sinus","stacks_littlem_3_bigm_6_n7_nis1morethanM",75,111,82.82,87,78.3783783783784,76,"3","6","7","nis1morethanM",151
+"bioprj_PRJNA659918_Phocoena-sinus","stacks_littlem_3_bigm_9_n10_nis1morethanM",59,85,84.62,66,77.6470588235294,62,"3","9","10","nis1morethanM",121
+"bioprj_PRJNA659918_Phocoena-sinus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",59,85,84.62,66,77.6470588235294,62,"3","9","8","nis1lessthanM",121
+"bioprj_PRJNA659918_Phocoena-sinus","stacks_littlem_3_bigm_9_n9_nequalM",59,85,84.62,66,77.6470588235294,62,"3","9","9","nequalM",121

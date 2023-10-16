@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA473816_Acropora-cervicornis","stacks_littlem_3_bigm_3_n2_nis1lessthanM",1424,2016,34.05,593,29.4146825396825,3475,"3","3","2","nis1lessthanM",4899
+"bioprj_PRJNA473816_Acropora-cervicornis","stacks_littlem_3_bigm_3_n3_nequalM",1439,2073,33.68,615,29.6671490593343,3470,"3","3","3","nequalM",4909
+"bioprj_PRJNA473816_Acropora-cervicornis","stacks_littlem_3_bigm_3_n4_nis1morethanM",1463,2188,33.5,649,29.6617915904936,3404,"3","3","4","nis1morethanM",4867
+"bioprj_PRJNA473816_Acropora-cervicornis","stacks_littlem_3_bigm_6_n5_nis1lessthanM",1284,1925,34.11,576,29.9220779220779,3043,"3","6","5","nis1lessthanM",4327
+"bioprj_PRJNA473816_Acropora-cervicornis","stacks_littlem_3_bigm_6_n6_nequalM",1262,1895,34.65,576,30.3957783641161,3031,"3","6","6","nequalM",4293
+"bioprj_PRJNA473816_Acropora-cervicornis","stacks_littlem_3_bigm_6_n7_nis1morethanM",1310,1985,34.2,592,29.823677581864,3035,"3","6","7","nis1morethanM",4345
+"bioprj_PRJNA473816_Acropora-cervicornis","stacks_littlem_3_bigm_9_n10_nis1morethanM",1187,1904,33.3,538,28.2563025210084,2867,"3","9","10","nis1morethanM",4054
+"bioprj_PRJNA473816_Acropora-cervicornis","stacks_littlem_3_bigm_9_n8_nis1lessthanM",1187,1849,34.37,541,29.2590589507842,2911,"3","9","8","nis1lessthanM",4098
+"bioprj_PRJNA473816_Acropora-cervicornis","stacks_littlem_3_bigm_9_n9_nequalM",1223,1931,33.82,563,29.1558777835318,2895,"3","9","9","nequalM",4118

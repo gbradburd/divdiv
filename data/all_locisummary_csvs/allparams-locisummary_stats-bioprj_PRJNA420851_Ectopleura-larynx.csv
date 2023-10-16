@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA420851_Ectopleura-larynx","stacks_littlem_3_bigm_3_n2_nis1lessthanM",3518,13733,11.3,783,5.70159469890046,1172,"3","3","2","nis1lessthanM",4690
+"bioprj_PRJNA420851_Ectopleura-larynx","stacks_littlem_3_bigm_3_n3_nequalM",3559,15261,10.45,758,4.96690911473691,1092,"3","3","3","nequalM",4651
+"bioprj_PRJNA420851_Ectopleura-larynx","stacks_littlem_3_bigm_3_n4_nis1morethanM",3610,16879,10.25,853,5.05361692043367,974,"3","3","4","nis1morethanM",4584
+"bioprj_PRJNA420851_Ectopleura-larynx","stacks_littlem_3_bigm_6_n5_nis1lessthanM",3447,18158,10.53,989,5.44663509197048,826,"3","6","5","nis1lessthanM",4273
+"bioprj_PRJNA420851_Ectopleura-larynx","stacks_littlem_3_bigm_6_n6_nequalM",3445,18576,10.31,1005,5.41020671834625,813,"3","6","6","nequalM",4258
+"bioprj_PRJNA420851_Ectopleura-larynx","stacks_littlem_3_bigm_6_n7_nis1morethanM",3456,19418,10.08,974,5.01596456895664,808,"3","6","7","nis1morethanM",4264
+"bioprj_PRJNA420851_Ectopleura-larynx","stacks_littlem_3_bigm_9_n10_nis1morethanM",3371,20419,10.36,1168,5.72016259366277,748,"3","9","10","nis1morethanM",4119
+"bioprj_PRJNA420851_Ectopleura-larynx","stacks_littlem_3_bigm_9_n8_nis1lessthanM",3331,19253,10.48,1139,5.91596114891186,758,"3","9","8","nis1lessthanM",4089
+"bioprj_PRJNA420851_Ectopleura-larynx","stacks_littlem_3_bigm_9_n9_nequalM",3343,19443,10.62,1178,6.05873579180168,753,"3","9","9","nequalM",4096

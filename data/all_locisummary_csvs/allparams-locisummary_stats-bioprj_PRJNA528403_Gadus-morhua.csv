@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA528403_Gadus-morhua","stacks_littlem_3_bigm_3_n2_nis1lessthanM",56294,283720,5.98,5359,1.88883406175102,2931,"3","3","2","nis1lessthanM",59225
+"bioprj_PRJNA528403_Gadus-morhua","stacks_littlem_3_bigm_3_n3_nequalM",56327,287494,5.96,5420,1.88525673579275,2903,"3","3","3","nequalM",59230
+"bioprj_PRJNA528403_Gadus-morhua","stacks_littlem_3_bigm_3_n4_nis1morethanM",56206,291101,5.98,5517,1.89521849804707,2860,"3","3","4","nis1morethanM",59066
+"bioprj_PRJNA528403_Gadus-morhua","stacks_littlem_3_bigm_6_n5_nis1lessthanM",54677,284141,6.46,6905,2.43013151921053,3089,"3","6","5","nis1lessthanM",57766
+"bioprj_PRJNA528403_Gadus-morhua","stacks_littlem_3_bigm_6_n6_nequalM",54713,285445,6.44,6879,2.4099213508732,3057,"3","6","6","nequalM",57770
+"bioprj_PRJNA528403_Gadus-morhua","stacks_littlem_3_bigm_6_n7_nis1morethanM",54672,286335,6.46,6952,2.42792533221576,3050,"3","6","7","nis1morethanM",57722
+"bioprj_PRJNA528403_Gadus-morhua","stacks_littlem_3_bigm_9_n10_nis1morethanM",53518,278029,6.84,7996,2.87595898269605,3378,"3","9","10","nis1morethanM",56896
+"bioprj_PRJNA528403_Gadus-morhua","stacks_littlem_3_bigm_9_n8_nis1lessthanM",53453,276978,6.85,7977,2.88001213092737,3402,"3","9","8","nis1lessthanM",56855
+"bioprj_PRJNA528403_Gadus-morhua","stacks_littlem_3_bigm_9_n9_nequalM",53473,277678,6.84,7970,2.87023098697052,3377,"3","9","9","nequalM",56850

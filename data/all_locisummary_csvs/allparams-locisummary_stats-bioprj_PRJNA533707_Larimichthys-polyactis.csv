@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA533707_Larimichthys-polyactis","stacks_littlem_3_bigm_3_n2_nis1lessthanM",1308,3877,19.1,717,18.4936806809389,307,"3","3","2","nis1lessthanM",1615
+"bioprj_PRJNA533707_Larimichthys-polyactis","stacks_littlem_3_bigm_3_n3_nequalM",1286,3836,19.27,741,19.3169968717414,302,"3","3","3","nequalM",1588
+"bioprj_PRJNA533707_Larimichthys-polyactis","stacks_littlem_3_bigm_3_n4_nis1morethanM",1322,4006,18.08,708,17.673489765352,304,"3","3","4","nis1morethanM",1626
+"bioprj_PRJNA533707_Larimichthys-polyactis","stacks_littlem_3_bigm_6_n5_nis1lessthanM",1257,3869,18.4,731,18.8937710002585,298,"3","6","5","nis1lessthanM",1555
+"bioprj_PRJNA533707_Larimichthys-polyactis","stacks_littlem_3_bigm_6_n6_nequalM",1252,3708,18.71,692,18.6623516720604,297,"3","6","6","nequalM",1549
+"bioprj_PRJNA533707_Larimichthys-polyactis","stacks_littlem_3_bigm_6_n7_nis1morethanM",1251,3735,18.77,724,19.384203480589,276,"3","6","7","nis1morethanM",1527
+"bioprj_PRJNA533707_Larimichthys-polyactis","stacks_littlem_3_bigm_9_n10_nis1morethanM",1188,3620,19.63,704,19.4475138121547,283,"3","9","10","nis1morethanM",1471
+"bioprj_PRJNA533707_Larimichthys-polyactis","stacks_littlem_3_bigm_9_n8_nis1lessthanM",1221,3611,20.25,754,20.8806424813071,296,"3","9","8","nis1lessthanM",1517
+"bioprj_PRJNA533707_Larimichthys-polyactis","stacks_littlem_3_bigm_9_n9_nequalM",1209,3634,19.79,742,20.4182718767199,322,"3","9","9","nequalM",1531

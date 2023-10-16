@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJDB7819_Zenarchopterus-dunckeri","stacks_littlem_3_bigm_3_n2_nis1lessthanM",20145,42767,7.41,1401,3.2758902892417,20069,"3","3","2","nis1lessthanM",40214
+"bioprj_PRJDB7819_Zenarchopterus-dunckeri","stacks_littlem_3_bigm_3_n3_nequalM",23270,57395,5.78,1374,2.39393675407265,17399,"3","3","3","nequalM",40669
+"bioprj_PRJDB7819_Zenarchopterus-dunckeri","stacks_littlem_3_bigm_3_n4_nis1morethanM",25415,70512,5.01,1403,1.98973224415702,15562,"3","3","4","nis1morethanM",40977
+"bioprj_PRJDB7819_Zenarchopterus-dunckeri","stacks_littlem_3_bigm_6_n5_nis1lessthanM",26585,80684,4.95,1919,2.37841455555005,14303,"3","6","5","nis1lessthanM",40888
+"bioprj_PRJDB7819_Zenarchopterus-dunckeri","stacks_littlem_3_bigm_6_n6_nequalM",27309,86979,4.65,1864,2.14304602260316,13686,"3","6","6","nequalM",40995
+"bioprj_PRJDB7819_Zenarchopterus-dunckeri","stacks_littlem_3_bigm_6_n7_nis1morethanM",27694,91259,4.55,1909,2.09184847521888,13348,"3","6","7","nis1morethanM",41042
+"bioprj_PRJDB7819_Zenarchopterus-dunckeri","stacks_littlem_3_bigm_9_n10_nis1morethanM",27988,97313,4.86,2652,2.72522684533413,12916,"3","9","10","nis1morethanM",40904
+"bioprj_PRJDB7819_Zenarchopterus-dunckeri","stacks_littlem_3_bigm_9_n8_nis1lessthanM",27797,94079,4.87,2599,2.76257188107867,13084,"3","9","8","nis1lessthanM",40881
+"bioprj_PRJDB7819_Zenarchopterus-dunckeri","stacks_littlem_3_bigm_9_n9_nequalM",27896,95647,4.84,2651,2.77164992106391,13005,"3","9","9","nequalM",40901

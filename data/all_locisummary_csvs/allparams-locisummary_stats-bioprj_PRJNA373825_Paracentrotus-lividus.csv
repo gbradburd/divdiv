@@ -1,0 +1,4 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA373825_Paracentrotus-lividus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",44497,325055,4.28,2218,0.68234606451216,965,"3","3","2","nis1lessthanM",45462
+"bioprj_PRJNA373825_Paracentrotus-lividus","stacks_littlem_3_bigm_3_n3_nequalM",44418,330575,4.27,2258,0.683052257430235,919,"3","3","3","nequalM",45337
+"bioprj_PRJNA373825_Paracentrotus-lividus","stacks_littlem_3_bigm_3_n4_nis1morethanM",44218,332438,4.32,2267,0.681931668461488,919,"3","3","4","nis1morethanM",45137

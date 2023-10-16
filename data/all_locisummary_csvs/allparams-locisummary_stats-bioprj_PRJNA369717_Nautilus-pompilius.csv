@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA369717_Nautilus-pompilius","stacks_littlem_3_bigm_3_n2_nis1lessthanM",2048,9557,7.95,26,0.272051899131527,165,"3","3","2","nis1lessthanM",2213
+"bioprj_PRJNA369717_Nautilus-pompilius","stacks_littlem_3_bigm_3_n3_nequalM",2081,9983,7.85,24,0.240408694781128,167,"3","3","3","nequalM",2248
+"bioprj_PRJNA369717_Nautilus-pompilius","stacks_littlem_3_bigm_3_n4_nis1morethanM",2081,10069,7.86,24,0.238355348098123,168,"3","3","4","nis1morethanM",2249
+"bioprj_PRJNA369717_Nautilus-pompilius","stacks_littlem_3_bigm_6_n5_nis1lessthanM",1998,9562,8.09,50,0.522903158335076,164,"3","6","5","nis1lessthanM",2162
+"bioprj_PRJNA369717_Nautilus-pompilius","stacks_littlem_3_bigm_6_n6_nequalM",2001,9624,8.09,51,0.529925187032419,164,"3","6","6","nequalM",2165
+"bioprj_PRJNA369717_Nautilus-pompilius","stacks_littlem_3_bigm_6_n7_nis1morethanM",2006,9655,8.07,51,0.528223718280684,163,"3","6","7","nis1morethanM",2169
+"bioprj_PRJNA369717_Nautilus-pompilius","stacks_littlem_3_bigm_9_n10_nis1morethanM",1901,9044,8.21,70,0.773993808049536,194,"3","9","10","nis1morethanM",2095
+"bioprj_PRJNA369717_Nautilus-pompilius","stacks_littlem_3_bigm_9_n8_nis1lessthanM",1900,8944,8.23,68,0.760286225402504,190,"3","9","8","nis1lessthanM",2090
+"bioprj_PRJNA369717_Nautilus-pompilius","stacks_littlem_3_bigm_9_n9_nequalM",1894,8934,8.23,66,0.73875083948959,191,"3","9","9","nequalM",2085

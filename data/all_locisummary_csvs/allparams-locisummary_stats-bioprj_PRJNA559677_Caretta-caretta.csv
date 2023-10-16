@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA559677_Caretta-caretta","stacks_littlem_3_bigm_3_n2_nis1lessthanM",2467,6767,48.23,3123,46.1504359391163,1006,"3","3","2","nis1lessthanM",3473
+"bioprj_PRJNA559677_Caretta-caretta","stacks_littlem_3_bigm_3_n3_nequalM",2468,7124,45.35,3101,43.5289163391353,1009,"3","3","3","nequalM",3477
+"bioprj_PRJNA559677_Caretta-caretta","stacks_littlem_3_bigm_3_n4_nis1morethanM",2530,8259,39.46,3123,37.8132945877225,965,"3","3","4","nis1morethanM",3495
+"bioprj_PRJNA559677_Caretta-caretta","stacks_littlem_3_bigm_6_n5_nis1lessthanM",2534,9148,40.83,3619,39.5605596851771,929,"3","6","5","nis1lessthanM",3463
+"bioprj_PRJNA559677_Caretta-caretta","stacks_littlem_3_bigm_6_n6_nequalM",2568,9856,37.88,3650,37.0332792207792,913,"3","6","6","nequalM",3481
+"bioprj_PRJNA559677_Caretta-caretta","stacks_littlem_3_bigm_6_n7_nis1morethanM",2593,10971,33.85,3655,33.315103454562,900,"3","6","7","nis1morethanM",3493
+"bioprj_PRJNA559677_Caretta-caretta","stacks_littlem_3_bigm_9_n10_nis1morethanM",2586,11378,35.36,4012,35.2610300580067,882,"3","9","10","nis1morethanM",3468
+"bioprj_PRJNA559677_Caretta-caretta","stacks_littlem_3_bigm_9_n8_nis1lessthanM",2534,10209,39.77,3965,38.8382799490645,893,"3","9","8","nis1lessthanM",3427
+"bioprj_PRJNA559677_Caretta-caretta","stacks_littlem_3_bigm_9_n9_nequalM",2577,10964,36.65,3967,36.1820503465888,878,"3","9","9","nequalM",3455

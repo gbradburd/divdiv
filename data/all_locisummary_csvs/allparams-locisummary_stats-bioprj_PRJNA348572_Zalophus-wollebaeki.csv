@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA348572_Zalophus-wollebaeki","stacks_littlem_3_bigm_3_n2_nis1lessthanM",6952,9171,14.4,627,6.83676807327445,22792,"3","3","2","nis1lessthanM",29744
+"bioprj_PRJNA348572_Zalophus-wollebaeki","stacks_littlem_3_bigm_3_n3_nequalM",6990,9384,14.01,623,6.63895993179881,22752,"3","3","3","nequalM",29742
+"bioprj_PRJNA348572_Zalophus-wollebaeki","stacks_littlem_3_bigm_3_n4_nis1morethanM",7113,10053,13.03,611,6.0777877250572,22604,"3","3","4","nis1morethanM",29717
+"bioprj_PRJNA348572_Zalophus-wollebaeki","stacks_littlem_3_bigm_6_n5_nis1lessthanM",7253,11008,12.69,707,6.42260174418605,22366,"3","6","5","nis1lessthanM",29619
+"bioprj_PRJNA348572_Zalophus-wollebaeki","stacks_littlem_3_bigm_6_n6_nequalM",7283,11269,12.53,726,6.44245274647262,22324,"3","6","6","nequalM",29607
+"bioprj_PRJNA348572_Zalophus-wollebaeki","stacks_littlem_3_bigm_6_n7_nis1morethanM",7377,11876,11.9,743,6.25631525766251,22228,"3","6","7","nis1morethanM",29605
+"bioprj_PRJNA348572_Zalophus-wollebaeki","stacks_littlem_3_bigm_9_n10_nis1morethanM",7455,12841,11.43,788,6.13659372323028,22102,"3","9","10","nis1morethanM",29557
+"bioprj_PRJNA348572_Zalophus-wollebaeki","stacks_littlem_3_bigm_9_n8_nis1lessthanM",7426,12448,11.79,800,6.426735218509,22138,"3","9","8","nis1lessthanM",29564
+"bioprj_PRJNA348572_Zalophus-wollebaeki","stacks_littlem_3_bigm_9_n9_nequalM",7438,12592,11.64,802,6.36912325285896,22136,"3","9","9","nequalM",29574

@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA299372_Aythya-marila","stacks_littlem_3_bigm_3_n2_nis1lessthanM",2125,7320,12.41,172,2.34972677595628,421,"3","3","2","nis1lessthanM",2546
+"bioprj_PRJNA299372_Aythya-marila","stacks_littlem_3_bigm_3_n3_nequalM",2141,7732,12.28,182,2.35385411277807,411,"3","3","3","nequalM",2552
+"bioprj_PRJNA299372_Aythya-marila","stacks_littlem_3_bigm_3_n4_nis1morethanM",2147,8115,12.32,184,2.26740603820086,404,"3","3","4","nis1morethanM",2551
+"bioprj_PRJNA299372_Aythya-marila","stacks_littlem_3_bigm_6_n5_nis1lessthanM",2149,8558,12.87,230,2.68754381864922,399,"3","6","5","nis1lessthanM",2548
+"bioprj_PRJNA299372_Aythya-marila","stacks_littlem_3_bigm_6_n6_nequalM",2148,8621,12.87,224,2.59830646096741,399,"3","6","6","nequalM",2547
+"bioprj_PRJNA299372_Aythya-marila","stacks_littlem_3_bigm_6_n7_nis1morethanM",2150,8735,12.83,227,2.59874069834001,397,"3","6","7","nis1morethanM",2547
+"bioprj_PRJNA299372_Aythya-marila","stacks_littlem_3_bigm_9_n10_nis1morethanM",2151,9000,12.89,226,2.51111111111111,393,"3","9","10","nis1morethanM",2544
+"bioprj_PRJNA299372_Aythya-marila","stacks_littlem_3_bigm_9_n8_nis1lessthanM",2151,8954,12.9,227,2.53517980790708,394,"3","9","8","nis1lessthanM",2545
+"bioprj_PRJNA299372_Aythya-marila","stacks_littlem_3_bigm_9_n9_nequalM",2149,8956,12.86,226,2.52344796784279,394,"3","9","9","nequalM",2543

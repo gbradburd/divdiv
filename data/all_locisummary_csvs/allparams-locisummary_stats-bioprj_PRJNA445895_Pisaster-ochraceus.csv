@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA445895_Pisaster-ochraceus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",10868,64898,8.43,483,0.744244814940368,223,"3","3","2","nis1lessthanM",11091
+"bioprj_PRJNA445895_Pisaster-ochraceus","stacks_littlem_3_bigm_3_n3_nequalM",10919,66628,8.45,489,0.733925676892598,214,"3","3","3","nequalM",11133
+"bioprj_PRJNA445895_Pisaster-ochraceus","stacks_littlem_3_bigm_3_n4_nis1morethanM",10973,69364,8.54,505,0.728043365434519,201,"3","3","4","nis1morethanM",11174
+"bioprj_PRJNA445895_Pisaster-ochraceus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",10761,72287,9.51,726,1.00432996251055,226,"3","6","5","nis1lessthanM",10987
+"bioprj_PRJNA445895_Pisaster-ochraceus","stacks_littlem_3_bigm_6_n6_nequalM",10771,72671,9.49,720,0.99076660566113,226,"3","6","6","nequalM",10997
+"bioprj_PRJNA445895_Pisaster-ochraceus","stacks_littlem_3_bigm_6_n7_nis1morethanM",10786,73916,9.48,736,0.995724876887278,223,"3","6","7","nis1morethanM",11009
+"bioprj_PRJNA445895_Pisaster-ochraceus","stacks_littlem_3_bigm_9_n10_nis1morethanM",10541,72621,10.03,841,1.1580672257336,259,"3","9","10","nis1morethanM",10800
+"bioprj_PRJNA445895_Pisaster-ochraceus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",10522,72489,10,821,1.13258563368235,268,"3","9","8","nis1lessthanM",10790
+"bioprj_PRJNA445895_Pisaster-ochraceus","stacks_littlem_3_bigm_9_n9_nequalM",10529,72597,10.03,832,1.14605286719837,259,"3","9","9","nequalM",10788

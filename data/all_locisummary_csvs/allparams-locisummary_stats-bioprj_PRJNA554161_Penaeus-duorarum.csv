@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA554161_Penaeus-duorarum","stacks_littlem_3_bigm_3_n2_nis1lessthanM",4535,43349,5.88,238,0.549032272947473,80,"3","3","2","nis1lessthanM",4615
+"bioprj_PRJNA554161_Penaeus-duorarum","stacks_littlem_3_bigm_3_n3_nequalM",4661,47469,5.76,254,0.535086056162969,77,"3","3","3","nequalM",4738
+"bioprj_PRJNA554161_Penaeus-duorarum","stacks_littlem_3_bigm_3_n4_nis1morethanM",4753,50667,5.74,264,0.52104920362366,74,"3","3","4","nis1morethanM",4827
+"bioprj_PRJNA554161_Penaeus-duorarum","stacks_littlem_3_bigm_6_n5_nis1lessthanM",4769,53342,6.03,329,0.616774774099209,68,"3","6","5","nis1lessthanM",4837
+"bioprj_PRJNA554161_Penaeus-duorarum","stacks_littlem_3_bigm_6_n6_nequalM",4782,54272,6,340,0.626474056603774,71,"3","6","6","nequalM",4853
+"bioprj_PRJNA554161_Penaeus-duorarum","stacks_littlem_3_bigm_6_n7_nis1morethanM",4787,54799,5.98,339,0.618624427453056,67,"3","6","7","nis1morethanM",4854
+"bioprj_PRJNA554161_Penaeus-duorarum","stacks_littlem_3_bigm_9_n10_nis1morethanM",4749,54937,6.06,346,0.62981233048765,72,"3","9","10","nis1morethanM",4821
+"bioprj_PRJNA554161_Penaeus-duorarum","stacks_littlem_3_bigm_9_n8_nis1lessthanM",4742,54685,6.08,350,0.640029258480388,72,"3","9","8","nis1lessthanM",4814
+"bioprj_PRJNA554161_Penaeus-duorarum","stacks_littlem_3_bigm_9_n9_nequalM",4744,54844,6.06,347,0.632703668587266,72,"3","9","9","nequalM",4816

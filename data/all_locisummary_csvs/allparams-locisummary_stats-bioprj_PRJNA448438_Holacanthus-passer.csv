@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA448438_Holacanthus-passer","stacks_littlem_3_bigm_3_n2_nis1lessthanM",31104,58872,15.96,1674,2.84345699143905,16276,"3","3","2","nis1lessthanM",47380
+"bioprj_PRJNA448438_Holacanthus-passer","stacks_littlem_3_bigm_3_n3_nequalM",31137,59395,15.95,1711,2.88071386480343,16248,"3","3","3","nequalM",47385
+"bioprj_PRJNA448438_Holacanthus-passer","stacks_littlem_3_bigm_3_n4_nis1morethanM",31222,60274,15.89,1699,2.81879417327538,16087,"3","3","4","nis1morethanM",47309
+"bioprj_PRJNA448438_Holacanthus-passer","stacks_littlem_3_bigm_6_n5_nis1lessthanM",31232,61851,16.05,1936,3.13010298944237,15833,"3","6","5","nis1lessthanM",47065
+"bioprj_PRJNA448438_Holacanthus-passer","stacks_littlem_3_bigm_6_n6_nequalM",31242,61928,16,1908,3.0809972871722,15816,"3","6","6","nequalM",47058
+"bioprj_PRJNA448438_Holacanthus-passer","stacks_littlem_3_bigm_6_n7_nis1morethanM",31289,62584,15.94,1936,3.0934424133964,15755,"3","6","7","nis1morethanM",47044
+"bioprj_PRJNA448438_Holacanthus-passer","stacks_littlem_3_bigm_9_n10_nis1morethanM",31292,63930,16.07,2306,3.60707023306742,15620,"3","9","10","nis1morethanM",46912
+"bioprj_PRJNA448438_Holacanthus-passer","stacks_littlem_3_bigm_9_n8_nis1lessthanM",31302,63661,16.07,2221,3.48879219616406,15633,"3","9","8","nis1lessthanM",46935
+"bioprj_PRJNA448438_Holacanthus-passer","stacks_littlem_3_bigm_9_n9_nequalM",31313,63737,16.07,2240,3.51444216075435,15647,"3","9","9","nequalM",46960

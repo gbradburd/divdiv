@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA451040_Sebastes-pinniger","stacks_littlem_3_bigm_3_n2_nis1lessthanM",24274,41929,11.08,2107,5.02516158267548,21103,"3","3","2","nis1lessthanM",45377
+"bioprj_PRJNA451040_Sebastes-pinniger","stacks_littlem_3_bigm_3_n3_nequalM",24317,42244,11,2134,5.05160496165136,20896,"3","3","3","nequalM",45213
+"bioprj_PRJNA451040_Sebastes-pinniger","stacks_littlem_3_bigm_3_n4_nis1morethanM",24271,42433,11.19,2250,5.30247684585111,20751,"3","3","4","nis1morethanM",45022
+"bioprj_PRJNA451040_Sebastes-pinniger","stacks_littlem_3_bigm_6_n5_nis1lessthanM",23059,41636,12.69,2934,7.04678643481602,20813,"3","6","5","nis1lessthanM",43872
+"bioprj_PRJNA451040_Sebastes-pinniger","stacks_littlem_3_bigm_6_n6_nequalM",23016,41548,12.67,2924,7.03764320785597,20819,"3","6","6","nequalM",43835
+"bioprj_PRJNA451040_Sebastes-pinniger","stacks_littlem_3_bigm_6_n7_nis1morethanM",23027,41894,12.83,3089,7.37337088843271,20770,"3","6","7","nis1morethanM",43797
+"bioprj_PRJNA451040_Sebastes-pinniger","stacks_littlem_3_bigm_9_n10_nis1morethanM",22487,41865,14.35,3787,9.04574226680998,20967,"3","9","10","nis1morethanM",43454
+"bioprj_PRJNA451040_Sebastes-pinniger","stacks_littlem_3_bigm_9_n8_nis1lessthanM",22464,41869,14.3,3783,9.03532446440087,20976,"3","9","8","nis1lessthanM",43440
+"bioprj_PRJNA451040_Sebastes-pinniger","stacks_littlem_3_bigm_9_n9_nequalM",22490,41876,14.26,3717,8.87620594135065,20987,"3","9","9","nequalM",43477

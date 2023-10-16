@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA493660_Pygoscelis-papua","stacks_littlem_3_bigm_3_n2_nis1lessthanM",50343,85634,10.41,1910,2.23042249573767,37130,"3","3","2","nis1lessthanM",87473
+"bioprj_PRJNA493660_Pygoscelis-papua","stacks_littlem_3_bigm_3_n3_nequalM",50161,85019,10.39,1916,2.25361389806984,37039,"3","3","3","nequalM",87200
+"bioprj_PRJNA493660_Pygoscelis-papua","stacks_littlem_3_bigm_3_n4_nis1morethanM",49954,84839,10.48,2028,2.39041007084006,36929,"3","3","4","nis1morethanM",86883
+"bioprj_PRJNA493660_Pygoscelis-papua","stacks_littlem_3_bigm_6_n5_nis1lessthanM",49467,85633,10.75,2491,2.90892529749045,36724,"3","6","5","nis1lessthanM",86191
+"bioprj_PRJNA493660_Pygoscelis-papua","stacks_littlem_3_bigm_6_n6_nequalM",49329,85169,10.73,2397,2.81440430203478,36693,"3","6","6","nequalM",86022
+"bioprj_PRJNA493660_Pygoscelis-papua","stacks_littlem_3_bigm_6_n7_nis1morethanM",49232,84960,10.7,2498,2.94020715630885,36638,"3","6","7","nis1morethanM",85870
+"bioprj_PRJNA493660_Pygoscelis-papua","stacks_littlem_3_bigm_9_n10_nis1morethanM",48844,85277,11.17,3229,3.78648404610856,36514,"3","9","10","nis1morethanM",85358
+"bioprj_PRJNA493660_Pygoscelis-papua","stacks_littlem_3_bigm_9_n8_nis1lessthanM",48942,85544,11.16,3182,3.719723183391,36536,"3","9","8","nis1lessthanM",85478
+"bioprj_PRJNA493660_Pygoscelis-papua","stacks_littlem_3_bigm_9_n9_nequalM",48881,85241,11.07,3070,3.60155324315764,36557,"3","9","9","nequalM",85438

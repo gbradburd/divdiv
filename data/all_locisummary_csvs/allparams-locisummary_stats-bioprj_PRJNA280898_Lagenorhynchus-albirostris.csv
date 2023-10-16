@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA280898_Lagenorhynchus-albirostris","stacks_littlem_3_bigm_3_n2_nis1lessthanM",236,1694,8.61,8,0.472255017709563,16,"3","3","2","nis1lessthanM",252
+"bioprj_PRJNA280898_Lagenorhynchus-albirostris","stacks_littlem_3_bigm_3_n3_nequalM",274,2378,7.63,11,0.462573591253154,16,"3","3","3","nequalM",290
+"bioprj_PRJNA280898_Lagenorhynchus-albirostris","stacks_littlem_3_bigm_3_n4_nis1morethanM",306,3089,7.19,7,0.226610553577209,13,"3","3","4","nis1morethanM",319
+"bioprj_PRJNA280898_Lagenorhynchus-albirostris","stacks_littlem_3_bigm_6_n5_nis1lessthanM",352,4235,7.32,7,0.165289256198347,11,"3","6","5","nis1lessthanM",363
+"bioprj_PRJNA280898_Lagenorhynchus-albirostris","stacks_littlem_3_bigm_6_n6_nequalM",349,4415,7.01,4,0.0906002265005662,12,"3","6","6","nequalM",361
+"bioprj_PRJNA280898_Lagenorhynchus-albirostris","stacks_littlem_3_bigm_6_n7_nis1morethanM",379,5177,7.07,5,0.0965810314854163,13,"3","6","7","nis1morethanM",392
+"bioprj_PRJNA280898_Lagenorhynchus-albirostris","stacks_littlem_3_bigm_9_n10_nis1morethanM",411,5848,7.69,7,0.119699042407661,10,"3","9","10","nis1morethanM",421
+"bioprj_PRJNA280898_Lagenorhynchus-albirostris","stacks_littlem_3_bigm_9_n8_nis1lessthanM",385,5378,7.44,5,0.0929713648196356,11,"3","9","8","nis1lessthanM",396
+"bioprj_PRJNA280898_Lagenorhynchus-albirostris","stacks_littlem_3_bigm_9_n9_nequalM",384,5492,7.52,6,0.10924981791697,11,"3","9","9","nequalM",395

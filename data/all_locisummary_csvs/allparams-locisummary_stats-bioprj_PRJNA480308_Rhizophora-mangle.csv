@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA480308_Rhizophora-mangle","stacks_littlem_3_bigm_3_n2_nis1lessthanM",21527,47250,12.26,5120,10.8359788359788,16558,"3","3","2","nis1lessthanM",38085
+"bioprj_PRJNA480308_Rhizophora-mangle","stacks_littlem_3_bigm_3_n3_nequalM",21563,48952,11.66,4976,10.1650596502697,16258,"3","3","3","nequalM",37821
+"bioprj_PRJNA480308_Rhizophora-mangle","stacks_littlem_3_bigm_3_n4_nis1morethanM",21338,50435,11.43,5033,9.97918112421929,15876,"3","3","4","nis1morethanM",37214
+"bioprj_PRJNA480308_Rhizophora-mangle","stacks_littlem_3_bigm_6_n5_nis1lessthanM",20390,53845,13.28,6454,11.986256848361,15001,"3","6","5","nis1lessthanM",35391
+"bioprj_PRJNA480308_Rhizophora-mangle","stacks_littlem_3_bigm_6_n6_nequalM",20280,53835,13.1,6347,11.7897278722021,14942,"3","6","6","nequalM",35222
+"bioprj_PRJNA480308_Rhizophora-mangle","stacks_littlem_3_bigm_6_n7_nis1morethanM",20212,55311,12.99,6528,11.8023539621413,14859,"3","6","7","nis1morethanM",35071
+"bioprj_PRJNA480308_Rhizophora-mangle","stacks_littlem_3_bigm_9_n10_nis1morethanM",19907,59698,14.45,7926,13.2768266943616,14506,"3","9","10","nis1morethanM",34413
+"bioprj_PRJNA480308_Rhizophora-mangle","stacks_littlem_3_bigm_9_n8_nis1lessthanM",19818,58105,14.41,7693,13.2398244557267,14544,"3","9","8","nis1lessthanM",34362
+"bioprj_PRJNA480308_Rhizophora-mangle","stacks_littlem_3_bigm_9_n9_nequalM",19862,58517,14.4,7652,13.0765418596305,14525,"3","9","9","nequalM",34387

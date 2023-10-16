@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA311981_Engraulis-encrasicolus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",33446,302692,4.93,546,0.180381377770143,212,"3","3","2","nis1lessthanM",33658
+"bioprj_PRJNA311981_Engraulis-encrasicolus","stacks_littlem_3_bigm_3_n3_nequalM",34146,324857,4.88,572,0.176077474088599,182,"3","3","3","nequalM",34328
+"bioprj_PRJNA311981_Engraulis-encrasicolus","stacks_littlem_3_bigm_3_n4_nis1morethanM",34427,341062,4.89,640,0.187649166427219,161,"3","3","4","nis1morethanM",34588
+"bioprj_PRJNA311981_Engraulis-encrasicolus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",33653,342637,5.14,770,0.224727627197296,151,"3","6","5","nis1lessthanM",33804
+"bioprj_PRJNA311981_Engraulis-encrasicolus","stacks_littlem_3_bigm_6_n6_nequalM",33680,345936,5.11,806,0.232991073493363,151,"3","6","6","nequalM",33831
+"bioprj_PRJNA311981_Engraulis-encrasicolus","stacks_littlem_3_bigm_6_n7_nis1morethanM",33669,348896,5.11,791,0.226715124277722,150,"3","6","7","nis1morethanM",33819
+"bioprj_PRJNA311981_Engraulis-encrasicolus","stacks_littlem_3_bigm_9_n10_nis1morethanM",33056,344111,5.24,1038,0.301646852323814,158,"3","9","10","nis1morethanM",33214
+"bioprj_PRJNA311981_Engraulis-encrasicolus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",33012,342254,5.25,1041,0.304160068253402,159,"3","9","8","nis1lessthanM",33171
+"bioprj_PRJNA311981_Engraulis-encrasicolus","stacks_littlem_3_bigm_9_n9_nequalM",33145,346188,5.24,1079,0.311680358649058,159,"3","9","9","nequalM",33304

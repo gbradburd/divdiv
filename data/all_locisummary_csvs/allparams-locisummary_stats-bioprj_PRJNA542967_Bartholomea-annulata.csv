@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA542967_Bartholomea-annulata","stacks_littlem_3_bigm_3_n2_nis1lessthanM",11831,66270,8.37,2843,4.29002565263317,7721,"3","3","2","nis1lessthanM",19552
+"bioprj_PRJNA542967_Bartholomea-annulata","stacks_littlem_3_bigm_3_n3_nequalM",11923,69114,8.25,2841,4.11059987846167,7708,"3","3","3","nequalM",19631
+"bioprj_PRJNA542967_Bartholomea-annulata","stacks_littlem_3_bigm_3_n4_nis1morethanM",11946,71087,8.25,2899,4.0781014812835,7686,"3","3","4","nis1morethanM",19632
+"bioprj_PRJNA542967_Bartholomea-annulata","stacks_littlem_3_bigm_6_n5_nis1lessthanM",11717,72016,8.97,3505,4.86697400577649,7618,"3","6","5","nis1lessthanM",19335
+"bioprj_PRJNA542967_Bartholomea-annulata","stacks_littlem_3_bigm_6_n6_nequalM",11721,72250,8.95,3524,4.87750865051903,7616,"3","6","6","nequalM",19337
+"bioprj_PRJNA542967_Bartholomea-annulata","stacks_littlem_3_bigm_6_n7_nis1morethanM",11724,72860,8.95,3564,4.89157287949492,7611,"3","6","7","nis1morethanM",19335
+"bioprj_PRJNA542967_Bartholomea-annulata","stacks_littlem_3_bigm_9_n10_nis1morethanM",11576,72441,9.34,4094,5.65149569994892,7553,"3","9","10","nis1morethanM",19129
+"bioprj_PRJNA542967_Bartholomea-annulata","stacks_littlem_3_bigm_9_n8_nis1lessthanM",11536,71764,9.35,4057,5.65325232707207,7569,"3","9","8","nis1lessthanM",19105
+"bioprj_PRJNA542967_Bartholomea-annulata","stacks_littlem_3_bigm_9_n9_nequalM",11549,71990,9.32,4059,5.63828309487429,7568,"3","9","9","nequalM",19117

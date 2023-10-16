@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA508986_Ctenolabrus-rupestris","stacks_littlem_3_bigm_3_n2_nis1lessthanM",1310,2558,28.11,759,29.6716184519156,2796,"3","3","2","nis1lessthanM",4106
+"bioprj_PRJNA508986_Ctenolabrus-rupestris","stacks_littlem_3_bigm_3_n3_nequalM",1286,2468,29.5,772,31.2803889789303,2785,"3","3","3","nequalM",4071
+"bioprj_PRJNA508986_Ctenolabrus-rupestris","stacks_littlem_3_bigm_3_n4_nis1morethanM",1297,2636,28.58,779,29.5523520485584,2760,"3","3","4","nis1morethanM",4057
+"bioprj_PRJNA508986_Ctenolabrus-rupestris","stacks_littlem_3_bigm_6_n5_nis1lessthanM",1152,2293,25.77,600,26.1665939816834,2556,"3","6","5","nis1lessthanM",3708
+"bioprj_PRJNA508986_Ctenolabrus-rupestris","stacks_littlem_3_bigm_6_n6_nequalM",1135,2362,25.18,607,25.6985605419136,2591,"3","6","6","nequalM",3726
+"bioprj_PRJNA508986_Ctenolabrus-rupestris","stacks_littlem_3_bigm_6_n7_nis1morethanM",1161,2378,26.18,622,26.1564339781329,2611,"3","6","7","nis1morethanM",3772
+"bioprj_PRJNA508986_Ctenolabrus-rupestris","stacks_littlem_3_bigm_9_n10_nis1morethanM",1073,2189,25.45,576,26.313385107355,2526,"3","9","10","nis1morethanM",3599
+"bioprj_PRJNA508986_Ctenolabrus-rupestris","stacks_littlem_3_bigm_9_n8_nis1lessthanM",1079,2181,25.66,566,25.9513984410821,2563,"3","9","8","nis1lessthanM",3642
+"bioprj_PRJNA508986_Ctenolabrus-rupestris","stacks_littlem_3_bigm_9_n9_nequalM",1063,2226,26.19,593,26.6397124887691,2567,"3","9","9","nequalM",3630

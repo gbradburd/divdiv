@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA595396_Bathygobius-cocosensis","stacks_littlem_3_bigm_3_n2_nis1lessthanM",116031,288197,33.58,109486,37.9899860165095,21495,"3","3","2","nis1lessthanM",137526
+"bioprj_PRJNA595396_Bathygobius-cocosensis","stacks_littlem_3_bigm_3_n3_nequalM",117593,297636,33.15,111288,37.3906382292465,21949,"3","3","3","nequalM",139542
+"bioprj_PRJNA595396_Bathygobius-cocosensis","stacks_littlem_3_bigm_3_n4_nis1morethanM",118552,308172,32.52,112280,36.4341990836286,21472,"3","3","4","nis1morethanM",140024
+"bioprj_PRJNA595396_Bathygobius-cocosensis","stacks_littlem_3_bigm_6_n5_nis1lessthanM",117693,316151,32.5,120622,38.1532875113474,20164,"3","6","5","nis1lessthanM",137857
+"bioprj_PRJNA595396_Bathygobius-cocosensis","stacks_littlem_3_bigm_6_n6_nequalM",117766,318023,32.35,120797,37.9837307364562,20121,"3","6","6","nequalM",137887
+"bioprj_PRJNA595396_Bathygobius-cocosensis","stacks_littlem_3_bigm_6_n7_nis1morethanM",117836,320872,32.09,120756,37.63369817248,20099,"3","6","7","nis1morethanM",137935
+"bioprj_PRJNA595396_Bathygobius-cocosensis","stacks_littlem_3_bigm_9_n10_nis1morethanM",116407,325662,31.01,119789,36.7832292376759,19421,"3","9","10","nis1morethanM",135828
+"bioprj_PRJNA595396_Bathygobius-cocosensis","stacks_littlem_3_bigm_9_n8_nis1lessthanM",116438,323231,31.26,120052,37.1412395469494,19438,"3","9","8","nis1lessthanM",135876
+"bioprj_PRJNA595396_Bathygobius-cocosensis","stacks_littlem_3_bigm_9_n9_nequalM",116362,323830,31.17,119764,36.9836025074885,19491,"3","9","9","nequalM",135853

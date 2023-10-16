@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA449377_Zebrasoma-flavescens","stacks_littlem_3_bigm_3_n2_nis1lessthanM",38342,105159,19.99,7746,7.36598864576498,23878,"3","3","2","nis1lessthanM",62220
+"bioprj_PRJNA449377_Zebrasoma-flavescens","stacks_littlem_3_bigm_3_n3_nequalM",38565,108575,19.88,7893,7.26962928851025,23821,"3","3","3","nequalM",62386
+"bioprj_PRJNA449377_Zebrasoma-flavescens","stacks_littlem_3_bigm_3_n4_nis1morethanM",38775,111694,20,8354,7.47936326033628,23578,"3","3","4","nis1morethanM",62353
+"bioprj_PRJNA449377_Zebrasoma-flavescens","stacks_littlem_3_bigm_6_n5_nis1lessthanM",39142,119686,22.39,13373,11.1734037397858,22530,"3","6","5","nis1lessthanM",61672
+"bioprj_PRJNA449377_Zebrasoma-flavescens","stacks_littlem_3_bigm_6_n6_nequalM",39126,120023,22.36,13358,11.129533506078,22518,"3","6","6","nequalM",61644
+"bioprj_PRJNA449377_Zebrasoma-flavescens","stacks_littlem_3_bigm_6_n7_nis1morethanM",39283,122272,22.57,13852,11.3288406176394,22329,"3","6","7","nis1morethanM",61612
+"bioprj_PRJNA449377_Zebrasoma-flavescens","stacks_littlem_3_bigm_9_n10_nis1morethanM",39662,132183,25.33,21040,15.9173267364184,21347,"3","9","10","nis1morethanM",61009
+"bioprj_PRJNA449377_Zebrasoma-flavescens","stacks_littlem_3_bigm_9_n8_nis1lessthanM",39583,130664,25.23,20869,15.9714994183555,21470,"3","9","8","nis1lessthanM",61053
+"bioprj_PRJNA449377_Zebrasoma-flavescens","stacks_littlem_3_bigm_9_n9_nequalM",39569,130598,25.23,20807,15.9320969693257,21460,"3","9","9","nequalM",61029

@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA553554_Istiblennius-lineatus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",57434,191661,18.47,9679,5.05006234966947,11664,"3","3","2","nis1lessthanM",69098
+"bioprj_PRJNA553554_Istiblennius-lineatus","stacks_littlem_3_bigm_3_n3_nequalM",57689,198084,18.47,10100,5.09884695381757,11601,"3","3","3","nequalM",69290
+"bioprj_PRJNA553554_Istiblennius-lineatus","stacks_littlem_3_bigm_3_n4_nis1morethanM",57684,201108,18.51,10363,5.15295264236132,11555,"3","3","4","nis1morethanM",69239
+"bioprj_PRJNA553554_Istiblennius-lineatus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",56613,199586,18.88,10984,5.50339202148447,11505,"3","6","5","nis1lessthanM",68118
+"bioprj_PRJNA553554_Istiblennius-lineatus","stacks_littlem_3_bigm_6_n6_nequalM",56617,200093,18.86,10954,5.4744543787139,11499,"3","6","6","nequalM",68116
+"bioprj_PRJNA553554_Istiblennius-lineatus","stacks_littlem_3_bigm_6_n7_nis1morethanM",56615,200525,18.85,10969,5.4701408801895,11490,"3","6","7","nis1morethanM",68105
+"bioprj_PRJNA553554_Istiblennius-lineatus","stacks_littlem_3_bigm_9_n10_nis1morethanM",55769,197811,18.97,11241,5.68269711997816,11463,"3","9","10","nis1morethanM",67232
+"bioprj_PRJNA553554_Istiblennius-lineatus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",55747,197531,18.96,11183,5.66138985779447,11470,"3","9","8","nis1lessthanM",67217
+"bioprj_PRJNA553554_Istiblennius-lineatus","stacks_littlem_3_bigm_9_n9_nequalM",55778,197801,18.96,11215,5.669839889586,11480,"3","9","9","nequalM",67258

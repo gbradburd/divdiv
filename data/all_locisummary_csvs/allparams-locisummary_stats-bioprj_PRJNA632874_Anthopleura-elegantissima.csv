@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA632874_Anthopleura-elegantissima","stacks_littlem_3_bigm_3_n2_nis1lessthanM",1274,5165,10.01,83,1.60696999031946,74,"3","3","2","nis1lessthanM",1348
+"bioprj_PRJNA632874_Anthopleura-elegantissima","stacks_littlem_3_bigm_3_n3_nequalM",2212,9900,9.26,114,1.15151515151515,165,"3","3","3","nequalM",2377
+"bioprj_PRJNA632874_Anthopleura-elegantissima","stacks_littlem_3_bigm_3_n4_nis1morethanM",1399,6850,9.5,90,1.31386861313869,67,"3","3","4","nis1morethanM",1466
+"bioprj_PRJNA632874_Anthopleura-elegantissima","stacks_littlem_3_bigm_6_n5_nis1lessthanM",1300,6919,10.11,98,1.41638965168377,58,"3","6","5","nis1lessthanM",1358
+"bioprj_PRJNA632874_Anthopleura-elegantissima","stacks_littlem_3_bigm_6_n6_nequalM",1314,7031,10.05,99,1.40805006400228,58,"3","6","6","nequalM",1372
+"bioprj_PRJNA632874_Anthopleura-elegantissima","stacks_littlem_3_bigm_6_n7_nis1morethanM",1315,7237,9.93,101,1.39560591405278,55,"3","6","7","nis1morethanM",1370
+"bioprj_PRJNA632874_Anthopleura-elegantissima","stacks_littlem_3_bigm_9_n10_nis1morethanM",1202,6896,9.82,84,1.21809744779582,60,"3","9","10","nis1morethanM",1262
+"bioprj_PRJNA632874_Anthopleura-elegantissima","stacks_littlem_3_bigm_9_n8_nis1lessthanM",1220,6927,10.08,112,1.61686155622925,56,"3","9","8","nis1lessthanM",1276
+"bioprj_PRJNA632874_Anthopleura-elegantissima","stacks_littlem_3_bigm_9_n9_nequalM",1218,6957,10.11,106,1.5236452493891,62,"3","9","9","nequalM",1280

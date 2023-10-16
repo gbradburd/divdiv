@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA419445_Arctocephalus-forsteri","stacks_littlem_3_bigm_3_n2_nis1lessthanM",62299,126900,9.81,3305,2.60441292356186,27942,"3","3","2","nis1lessthanM",90241
+"bioprj_PRJNA419445_Arctocephalus-forsteri","stacks_littlem_3_bigm_3_n3_nequalM",62038,125633,9.77,3245,2.58292009265082,27916,"3","3","3","nequalM",89954
+"bioprj_PRJNA419445_Arctocephalus-forsteri","stacks_littlem_3_bigm_3_n4_nis1morethanM",61740,125418,9.78,3270,2.607281251495,27873,"3","3","4","nis1morethanM",89613
+"bioprj_PRJNA419445_Arctocephalus-forsteri","stacks_littlem_3_bigm_6_n5_nis1lessthanM",60883,126676,10.09,4096,3.23344595661372,27693,"3","6","5","nis1lessthanM",88576
+"bioprj_PRJNA419445_Arctocephalus-forsteri","stacks_littlem_3_bigm_6_n6_nequalM",60707,125136,10.15,4142,3.30999872139113,27691,"3","6","6","nequalM",88398
+"bioprj_PRJNA419445_Arctocephalus-forsteri","stacks_littlem_3_bigm_6_n7_nis1morethanM",60530,124159,10.15,4047,3.2595301186382,27670,"3","6","7","nis1morethanM",88200
+"bioprj_PRJNA419445_Arctocephalus-forsteri","stacks_littlem_3_bigm_9_n10_nis1morethanM",60113,126277,10.6,5040,3.99122563887327,27501,"3","9","10","nis1morethanM",87614
+"bioprj_PRJNA419445_Arctocephalus-forsteri","stacks_littlem_3_bigm_9_n8_nis1lessthanM",60167,126255,10.52,4926,3.90162765831056,27515,"3","9","8","nis1lessthanM",87682
+"bioprj_PRJNA419445_Arctocephalus-forsteri","stacks_littlem_3_bigm_9_n9_nequalM",60185,126079,10.56,4891,3.87931376359267,27511,"3","9","9","nequalM",87696

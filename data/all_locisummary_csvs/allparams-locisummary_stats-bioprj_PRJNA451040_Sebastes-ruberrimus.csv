@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA451040_Sebastes-ruberrimus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",19247,30685,16.56,2435,7.9354733583184,25053,"3","3","2","nis1lessthanM",44300
+"bioprj_PRJNA451040_Sebastes-ruberrimus","stacks_littlem_3_bigm_3_n3_nequalM",19546,31350,16.48,2489,7.93939393939394,24705,"3","3","3","nequalM",44251
+"bioprj_PRJNA451040_Sebastes-ruberrimus","stacks_littlem_3_bigm_3_n4_nis1morethanM",19627,31765,16.5,2550,8.02770344719031,24446,"3","3","4","nis1morethanM",44073
+"bioprj_PRJNA451040_Sebastes-ruberrimus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",18192,31333,18.55,3151,10.0564899626592,24627,"3","6","5","nis1lessthanM",42819
+"bioprj_PRJNA451040_Sebastes-ruberrimus","stacks_littlem_3_bigm_6_n6_nequalM",18241,31526,18.58,3212,10.1884159106769,24597,"3","6","6","nequalM",42838
+"bioprj_PRJNA451040_Sebastes-ruberrimus","stacks_littlem_3_bigm_6_n7_nis1morethanM",18212,31384,18.64,3209,10.2249553912822,24512,"3","6","7","nis1morethanM",42724
+"bioprj_PRJNA451040_Sebastes-ruberrimus","stacks_littlem_3_bigm_9_n10_nis1morethanM",17626,31675,20.18,3973,12.5430149960537,24783,"3","9","10","nis1morethanM",42409
+"bioprj_PRJNA451040_Sebastes-ruberrimus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",17587,31820,20.44,4028,12.6587052168448,24777,"3","9","8","nis1lessthanM",42364
+"bioprj_PRJNA451040_Sebastes-ruberrimus","stacks_littlem_3_bigm_9_n9_nequalM",17589,31532,20.29,3922,12.4381580616517,24766,"3","9","9","nequalM",42355

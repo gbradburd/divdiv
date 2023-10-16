@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA382467_Platichthys-flesus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",19641,61537,7.73,1294,2.10279994149861,2813,"3","3","2","nis1lessthanM",22454
+"bioprj_PRJNA382467_Platichthys-flesus","stacks_littlem_3_bigm_3_n3_nequalM",19698,62968,7.59,1292,2.05183585313175,2775,"3","3","3","nequalM",22473
+"bioprj_PRJNA382467_Platichthys-flesus","stacks_littlem_3_bigm_3_n4_nis1morethanM",19745,65061,7.41,1345,2.06729069642336,2690,"3","3","4","nis1morethanM",22435
+"bioprj_PRJNA382467_Platichthys-flesus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",19600,66733,7.59,1674,2.50850403848171,2647,"3","6","5","nis1lessthanM",22247
+"bioprj_PRJNA382467_Platichthys-flesus","stacks_littlem_3_bigm_6_n6_nequalM",19623,66967,7.58,1679,2.50720504128899,2642,"3","6","6","nequalM",22265
+"bioprj_PRJNA382467_Platichthys-flesus","stacks_littlem_3_bigm_6_n7_nis1morethanM",19618,67231,7.54,1648,2.45125016733352,2639,"3","6","7","nis1morethanM",22257
+"bioprj_PRJNA382467_Platichthys-flesus","stacks_littlem_3_bigm_9_n10_nis1morethanM",19493,66875,7.64,1775,2.65420560747664,2680,"3","9","10","nis1morethanM",22173
+"bioprj_PRJNA382467_Platichthys-flesus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",19474,66870,7.61,1746,2.61103633916555,2675,"3","9","8","nis1lessthanM",22149
+"bioprj_PRJNA382467_Platichthys-flesus","stacks_littlem_3_bigm_9_n9_nequalM",19465,66758,7.65,1774,2.65735941759789,2678,"3","9","9","nequalM",22143

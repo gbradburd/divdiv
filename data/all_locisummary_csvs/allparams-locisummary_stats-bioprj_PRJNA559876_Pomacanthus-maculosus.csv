@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA559876_Pomacanthus-maculosus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",41779,99880,11.91,1484,1.48578293952743,8258,"3","3","2","nis1lessthanM",50037
+"bioprj_PRJNA559876_Pomacanthus-maculosus","stacks_littlem_3_bigm_3_n3_nequalM",41779,100505,11.85,1471,1.4636087756828,8193,"3","3","3","nequalM",49972
+"bioprj_PRJNA559876_Pomacanthus-maculosus","stacks_littlem_3_bigm_3_n4_nis1morethanM",41905,103292,11.71,1546,1.4967277233474,7996,"3","3","4","nis1morethanM",49901
+"bioprj_PRJNA559876_Pomacanthus-maculosus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",41454,106108,11.6,1782,1.67942096731632,7902,"3","6","5","nis1lessthanM",49356
+"bioprj_PRJNA559876_Pomacanthus-maculosus","stacks_littlem_3_bigm_6_n6_nequalM",41482,106921,11.53,1780,1.66478053890255,7879,"3","6","6","nequalM",49361
+"bioprj_PRJNA559876_Pomacanthus-maculosus","stacks_littlem_3_bigm_6_n7_nis1morethanM",41548,108731,11.35,1777,1.63430852286836,7784,"3","6","7","nis1morethanM",49332
+"bioprj_PRJNA559876_Pomacanthus-maculosus","stacks_littlem_3_bigm_9_n10_nis1morethanM",41342,114723,10.95,2176,1.8967425886701,7657,"3","9","10","nis1morethanM",48999
+"bioprj_PRJNA559876_Pomacanthus-maculosus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",41327,112865,11.14,2177,1.92885305453418,7706,"3","9","8","nis1lessthanM",49033
+"bioprj_PRJNA559876_Pomacanthus-maculosus","stacks_littlem_3_bigm_9_n9_nequalM",41329,113337,11.07,2139,1.88729188173324,7700,"3","9","9","nequalM",49029

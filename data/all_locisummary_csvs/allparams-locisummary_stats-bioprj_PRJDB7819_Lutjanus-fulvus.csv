@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJDB7819_Lutjanus-fulvus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",42759,119511,14.3,4368,3.65489369179406,11559,"3","3","2","nis1lessthanM",54318
+"bioprj_PRJDB7819_Lutjanus-fulvus","stacks_littlem_3_bigm_3_n3_nequalM",43011,122375,14.28,4406,3.60040858018386,11537,"3","3","3","nequalM",54548
+"bioprj_PRJDB7819_Lutjanus-fulvus","stacks_littlem_3_bigm_3_n4_nis1morethanM",43112,124632,14.25,4458,3.57693048334296,11483,"3","3","4","nis1morethanM",54595
+"bioprj_PRJDB7819_Lutjanus-fulvus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",42961,126863,14.72,5327,4.19901783814036,11420,"3","6","5","nis1lessthanM",54381
+"bioprj_PRJDB7819_Lutjanus-fulvus","stacks_littlem_3_bigm_6_n6_nequalM",42986,127525,14.7,5386,4.22348559106058,11419,"3","6","6","nequalM",54405
+"bioprj_PRJDB7819_Lutjanus-fulvus","stacks_littlem_3_bigm_6_n7_nis1morethanM",42985,128174,14.69,5386,4.20210026994554,11388,"3","6","7","nis1morethanM",54373
+"bioprj_PRJDB7819_Lutjanus-fulvus","stacks_littlem_3_bigm_9_n10_nis1morethanM",42822,129893,14.8,5849,4.50293703278853,11379,"3","9","10","nis1morethanM",54201
+"bioprj_PRJDB7819_Lutjanus-fulvus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",42806,128734,14.85,5807,4.51085183401432,11394,"3","9","8","nis1lessthanM",54200
+"bioprj_PRJDB7819_Lutjanus-fulvus","stacks_littlem_3_bigm_9_n9_nequalM",42810,129153,14.83,5851,4.53028578507661,11387,"3","9","9","nequalM",54197

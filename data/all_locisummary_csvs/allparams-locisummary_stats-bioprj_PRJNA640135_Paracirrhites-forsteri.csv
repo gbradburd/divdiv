@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA640135_Paracirrhites-forsteri","stacks_littlem_3_bigm_3_n2_nis1lessthanM",110822,472151,10.49,12115,2.56591641233419,11065,"3","3","2","nis1lessthanM",121887
+"bioprj_PRJNA640135_Paracirrhites-forsteri","stacks_littlem_3_bigm_3_n3_nequalM",111288,480759,10.47,12183,2.53411792602947,11052,"3","3","3","nequalM",122340
+"bioprj_PRJNA640135_Paracirrhites-forsteri","stacks_littlem_3_bigm_3_n4_nis1morethanM",111365,485940,10.48,12294,2.52994196814422,10996,"3","3","4","nis1morethanM",122361
+"bioprj_PRJNA640135_Paracirrhites-forsteri","stacks_littlem_3_bigm_6_n5_nis1lessthanM",110671,488933,10.69,13661,2.79404335563359,10875,"3","6","5","nis1lessthanM",121546
+"bioprj_PRJNA640135_Paracirrhites-forsteri","stacks_littlem_3_bigm_6_n6_nequalM",110598,489083,10.69,13722,2.80565875321776,10884,"3","6","6","nequalM",121482
+"bioprj_PRJNA640135_Paracirrhites-forsteri","stacks_littlem_3_bigm_6_n7_nis1morethanM",110614,490356,10.69,13738,2.80163799362096,10866,"3","6","7","nis1morethanM",121480
+"bioprj_PRJNA640135_Paracirrhites-forsteri","stacks_littlem_3_bigm_9_n10_nis1morethanM",110020,491602,10.77,14574,2.96459330922169,10776,"3","9","10","nis1morethanM",120796
+"bioprj_PRJNA640135_Paracirrhites-forsteri","stacks_littlem_3_bigm_9_n8_nis1lessthanM",110040,490381,10.79,14602,2.97768469822444,10784,"3","9","8","nis1lessthanM",120824
+"bioprj_PRJNA640135_Paracirrhites-forsteri","stacks_littlem_3_bigm_9_n9_nequalM",110062,491289,10.77,14566,2.96485368082737,10777,"3","9","9","nequalM",120839

@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA544861_Montipora-capitata","stacks_littlem_3_bigm_3_n2_nis1lessthanM",20951,71403,27.41,17508,24.5199781521785,2079,"3","3","2","nis1lessthanM",23030
+"bioprj_PRJNA544861_Montipora-capitata","stacks_littlem_3_bigm_3_n3_nequalM",21434,75087,26.75,17927,23.8749716994953,2054,"3","3","3","nequalM",23488
+"bioprj_PRJNA544861_Montipora-capitata","stacks_littlem_3_bigm_3_n4_nis1morethanM",21422,77455,25.92,17865,23.065005487057,2022,"3","3","4","nis1morethanM",23444
+"bioprj_PRJNA544861_Montipora-capitata","stacks_littlem_3_bigm_6_n5_nis1lessthanM",21087,84827,26.26,19658,23.174225187735,1759,"3","6","5","nis1lessthanM",22846
+"bioprj_PRJNA544861_Montipora-capitata","stacks_littlem_3_bigm_6_n6_nequalM",21056,85544,26.06,19685,23.0115496118956,1743,"3","6","6","nequalM",22799
+"bioprj_PRJNA544861_Montipora-capitata","stacks_littlem_3_bigm_6_n7_nis1morethanM",21101,87018,25.68,19662,22.5953251051507,1725,"3","6","7","nis1morethanM",22826
+"bioprj_PRJNA544861_Montipora-capitata","stacks_littlem_3_bigm_9_n10_nis1morethanM",20716,92071,25.33,20208,21.9482790455192,1639,"3","9","10","nis1morethanM",22355
+"bioprj_PRJNA544861_Montipora-capitata","stacks_littlem_3_bigm_9_n8_nis1lessthanM",20745,91474,25.51,20074,21.9450335614492,1638,"3","9","8","nis1lessthanM",22383
+"bioprj_PRJNA544861_Montipora-capitata","stacks_littlem_3_bigm_9_n9_nequalM",20734,91897,25.41,20169,21.9473976299553,1625,"3","9","9","nequalM",22359

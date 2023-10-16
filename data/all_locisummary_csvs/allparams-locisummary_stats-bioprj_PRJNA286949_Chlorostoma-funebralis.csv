@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA286949_Chlorostoma-funebralis","stacks_littlem_3_bigm_3_n2_nis1lessthanM",40177,323642,6.89,3140,0.970207822223321,745,"3","3","2","nis1lessthanM",40922
+"bioprj_PRJNA286949_Chlorostoma-funebralis","stacks_littlem_3_bigm_3_n3_nequalM",40483,338832,6.87,3197,0.943535439391793,733,"3","3","3","nequalM",41216
+"bioprj_PRJNA286949_Chlorostoma-funebralis","stacks_littlem_3_bigm_3_n4_nis1morethanM",40538,350465,6.94,3377,0.963576962036152,721,"3","3","4","nis1morethanM",41259
+"bioprj_PRJNA286949_Chlorostoma-funebralis","stacks_littlem_3_bigm_6_n5_nis1lessthanM",39822,360601,7.38,4605,1.27703472813442,662,"3","6","5","nis1lessthanM",40484
+"bioprj_PRJNA286949_Chlorostoma-funebralis","stacks_littlem_3_bigm_6_n6_nequalM",39832,362678,7.37,4648,1.28157759775889,659,"3","6","6","nequalM",40491
+"bioprj_PRJNA286949_Chlorostoma-funebralis","stacks_littlem_3_bigm_6_n7_nis1morethanM",39746,364887,7.38,4651,1.27464119028631,648,"3","6","7","nis1morethanM",40394
+"bioprj_PRJNA286949_Chlorostoma-funebralis","stacks_littlem_3_bigm_9_n10_nis1morethanM",39198,368047,7.6,5435,1.47671357190794,653,"3","9","10","nis1morethanM",39851
+"bioprj_PRJNA286949_Chlorostoma-funebralis","stacks_littlem_3_bigm_9_n8_nis1lessthanM",39214,365942,7.6,5421,1.48138229555503,651,"3","9","8","nis1lessthanM",39865
+"bioprj_PRJNA286949_Chlorostoma-funebralis","stacks_littlem_3_bigm_9_n9_nequalM",39177,365706,7.59,5451,1.49054158258273,657,"3","9","9","nequalM",39834

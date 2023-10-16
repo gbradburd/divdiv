@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA564451_Uria-aalge","stacks_littlem_3_bigm_3_n2_nis1lessthanM",9459,37868,12.47,691,1.82475969156016,748,"3","3","2","nis1lessthanM",10207
+"bioprj_PRJNA564451_Uria-aalge","stacks_littlem_3_bigm_3_n3_nequalM",9494,38690,12.37,697,1.80149909537348,742,"3","3","3","nequalM",10236
+"bioprj_PRJNA564451_Uria-aalge","stacks_littlem_3_bigm_3_n4_nis1morethanM",9526,39488,12.38,714,1.80814424635332,735,"3","3","4","nis1morethanM",10261
+"bioprj_PRJNA564451_Uria-aalge","stacks_littlem_3_bigm_6_n5_nis1lessthanM",9340,38993,12.59,740,1.89777652399149,751,"3","6","5","nis1lessthanM",10091
+"bioprj_PRJNA564451_Uria-aalge","stacks_littlem_3_bigm_6_n6_nequalM",9329,39005,12.59,750,1.92283040635816,755,"3","6","6","nequalM",10084
+"bioprj_PRJNA564451_Uria-aalge","stacks_littlem_3_bigm_6_n7_nis1morethanM",9331,38995,12.6,751,1.92588793435056,754,"3","6","7","nis1morethanM",10085
+"bioprj_PRJNA564451_Uria-aalge","stacks_littlem_3_bigm_9_n10_nis1morethanM",9190,38235,12.75,747,1.95370733621028,775,"3","9","10","nis1morethanM",9965
+"bioprj_PRJNA564451_Uria-aalge","stacks_littlem_3_bigm_9_n8_nis1lessthanM",9177,38007,12.76,746,1.9627963269924,778,"3","9","8","nis1lessthanM",9955
+"bioprj_PRJNA564451_Uria-aalge","stacks_littlem_3_bigm_9_n9_nequalM",9182,38046,12.76,747,1.96341271092888,776,"3","9","9","nequalM",9958

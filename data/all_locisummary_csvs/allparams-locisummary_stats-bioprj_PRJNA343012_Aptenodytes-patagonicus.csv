@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA343012_Aptenodytes-patagonicus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",72154,200050,9.92,4714,2.35641089727568,12943,"3","3","2","nis1lessthanM",85097
+"bioprj_PRJNA343012_Aptenodytes-patagonicus","stacks_littlem_3_bigm_3_n3_nequalM",71985,199413,9.92,4755,2.38449850310662,12890,"3","3","3","nequalM",84875
+"bioprj_PRJNA343012_Aptenodytes-patagonicus","stacks_littlem_3_bigm_3_n4_nis1morethanM",71753,199077,9.93,4754,2.38802071560251,12870,"3","3","4","nis1morethanM",84623
+"bioprj_PRJNA343012_Aptenodytes-patagonicus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",70668,195880,10.07,4806,2.45354298550133,13083,"3","6","5","nis1lessthanM",83751
+"bioprj_PRJNA343012_Aptenodytes-patagonicus","stacks_littlem_3_bigm_6_n6_nequalM",70598,196062,10.05,4766,2.43086370637859,13062,"3","6","6","nequalM",83660
+"bioprj_PRJNA343012_Aptenodytes-patagonicus","stacks_littlem_3_bigm_6_n7_nis1morethanM",70518,195332,10.1,4882,2.49933446644687,13034,"3","6","7","nis1morethanM",83552
+"bioprj_PRJNA343012_Aptenodytes-patagonicus","stacks_littlem_3_bigm_9_n10_nis1morethanM",69660,193173,10.29,5079,2.62924942926807,13433,"3","9","10","nis1morethanM",83093
+"bioprj_PRJNA343012_Aptenodytes-patagonicus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",69701,193263,10.28,5068,2.62233329711326,13451,"3","9","8","nis1lessthanM",83152
+"bioprj_PRJNA343012_Aptenodytes-patagonicus","stacks_littlem_3_bigm_9_n9_nequalM",69700,193436,10.28,5071,2.62153890692529,13443,"3","9","9","nequalM",83143

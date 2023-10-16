@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA281764_Homarus-americanus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",24486,129705,4.33,947,0.730118345476273,382,"3","3","2","nis1lessthanM",24868
+"bioprj_PRJNA281764_Homarus-americanus","stacks_littlem_3_bigm_3_n3_nequalM",24375,132677,4.26,941,0.709241240003919,349,"3","3","3","nequalM",24724
+"bioprj_PRJNA281764_Homarus-americanus","stacks_littlem_3_bigm_3_n4_nis1morethanM",24129,135917,4.23,1046,0.769587321674257,324,"3","3","4","nis1morethanM",24453
+"bioprj_PRJNA281764_Homarus-americanus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",23603,140994,4.35,1433,1.01635530589954,310,"3","6","5","nis1lessthanM",23913
+"bioprj_PRJNA281764_Homarus-americanus","stacks_littlem_3_bigm_6_n6_nequalM",23572,142023,4.36,1459,1.02729839533033,309,"3","6","6","nequalM",23881
+"bioprj_PRJNA281764_Homarus-americanus","stacks_littlem_3_bigm_6_n7_nis1morethanM",23431,143177,4.29,1430,0.998763767923619,304,"3","6","7","nis1morethanM",23735
+"bioprj_PRJNA281764_Homarus-americanus","stacks_littlem_3_bigm_9_n10_nis1morethanM",23215,146897,4.41,1784,1.21445638780915,309,"3","9","10","nis1morethanM",23524
+"bioprj_PRJNA281764_Homarus-americanus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",23188,145683,4.42,1786,1.22594949307744,312,"3","9","8","nis1lessthanM",23500
+"bioprj_PRJNA281764_Homarus-americanus","stacks_littlem_3_bigm_9_n9_nequalM",23206,146365,4.43,1798,1.22843575991528,318,"3","9","9","nequalM",23524

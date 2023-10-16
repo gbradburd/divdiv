@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA294760_Amphiprion-bicinctus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",36131,81069,12.59,2765,3.41067485722039,12255,"3","3","2","nis1lessthanM",48386
+"bioprj_PRJNA294760_Amphiprion-bicinctus","stacks_littlem_3_bigm_3_n3_nequalM",36116,81449,12.57,2729,3.3505629289494,12244,"3","3","3","nequalM",48360
+"bioprj_PRJNA294760_Amphiprion-bicinctus","stacks_littlem_3_bigm_3_n4_nis1morethanM",36106,81954,12.55,2709,3.30551284867121,12207,"3","3","4","nis1morethanM",48313
+"bioprj_PRJNA294760_Amphiprion-bicinctus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",35919,83008,12.9,3370,4.05984965304549,12080,"3","6","5","nis1lessthanM",47999
+"bioprj_PRJNA294760_Amphiprion-bicinctus","stacks_littlem_3_bigm_6_n6_nequalM",35894,83159,12.88,3324,3.99716206303587,12080,"3","6","6","nequalM",47974
+"bioprj_PRJNA294760_Amphiprion-bicinctus","stacks_littlem_3_bigm_6_n7_nis1morethanM",35922,83634,12.89,3380,4.04141856182892,12063,"3","6","7","nis1morethanM",47985
+"bioprj_PRJNA294760_Amphiprion-bicinctus","stacks_littlem_3_bigm_9_n10_nis1morethanM",35801,84984,13.23,4010,4.71853525369481,11986,"3","9","10","nis1morethanM",47787
+"bioprj_PRJNA294760_Amphiprion-bicinctus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",35780,84273,13.21,3980,4.72274631257936,11995,"3","9","8","nis1lessthanM",47775
+"bioprj_PRJNA294760_Amphiprion-bicinctus","stacks_littlem_3_bigm_9_n9_nequalM",35812,84774,13.23,4011,4.73140349635502,11991,"3","9","9","nequalM",47803

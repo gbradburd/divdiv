@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA558810_Gadus-macrocephalus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",26359,62115,7.2,1783,2.87048217016824,8742,"3","3","2","nis1lessthanM",35101
+"bioprj_PRJNA558810_Gadus-macrocephalus","stacks_littlem_3_bigm_3_n3_nequalM",26433,62978,7.12,1767,2.80574168757344,8624,"3","3","3","nequalM",35057
+"bioprj_PRJNA558810_Gadus-macrocephalus","stacks_littlem_3_bigm_3_n4_nis1morethanM",26469,64213,7.14,1878,2.92464142774828,8462,"3","3","4","nis1morethanM",34931
+"bioprj_PRJNA558810_Gadus-macrocephalus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",25712,64348,7.75,2401,3.73127369926027,8544,"3","6","5","nis1lessthanM",34256
+"bioprj_PRJNA558810_Gadus-macrocephalus","stacks_littlem_3_bigm_6_n6_nequalM",25725,64554,7.73,2360,3.65585401369396,8499,"3","6","6","nequalM",34224
+"bioprj_PRJNA558810_Gadus-macrocephalus","stacks_littlem_3_bigm_6_n7_nis1morethanM",25858,65563,7.7,2461,3.75364153562223,8388,"3","6","7","nis1morethanM",34246
+"bioprj_PRJNA558810_Gadus-macrocephalus","stacks_littlem_3_bigm_9_n10_nis1morethanM",25380,65895,8.05,2818,4.27650049320889,8516,"3","9","10","nis1morethanM",33896
+"bioprj_PRJNA558810_Gadus-macrocephalus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",25393,65335,8.07,2764,4.23050432386929,8508,"3","9","8","nis1lessthanM",33901
+"bioprj_PRJNA558810_Gadus-macrocephalus","stacks_littlem_3_bigm_9_n9_nequalM",25402,65653,8.04,2790,4.2496154021903,8521,"3","9","9","nequalM",33923
