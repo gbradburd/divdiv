@@ -22,7 +22,7 @@ source("divdiv_analysis_functions.R")
 ################################
 source("trait_mod_stan_blocks.R")
 betaPhyReg <- stan_model(model_code=betaPhyReg)
-#expPhyReg <- stan_model(model_code=expPhyReg)
+expPhyReg <- stan_model(model_code=expPhyReg)
 
 ################################
 # get phylo structure,
@@ -31,16 +31,13 @@ betaPhyReg <- stan_model(model_code=betaPhyReg)
 ################################
 
 z <- read.csv("../data/master_df.csv",header=TRUE,stringsAsFactors=FALSE)
-z$Body_Size[z$species=="Cranchia_scabra"] <- 15
-z[["log(deep-time diversity)"]] <- log(1-z$s)
-
 
 load("../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
 sampPhy <- ape::keep.tip(phy,gsub("_"," ",z$species))
 phyStr <- ape::vcv(sampPhy,corr=TRUE)
 
-# change ratio to absolute sampled range extent
-# predictors one by one with all nuisances included
+sp <- gsub("_"," ",z$species)
+z <- z[match(row.names(phyStr),sp),]
 
 predictors <- rbind(z[["meanlat.gbif"]],					# abiotic
 					z[["n_ECOREGIONS.all"]],				# abiotic
@@ -99,20 +96,28 @@ parallel::stopCluster(cl)
 
 names(fits) <- predNames
 out <- list("db"=db,"fits"=fits)
-save(out,file="beta_s.Robj")
+save(out,file="div.Robj")
 
-pdf(file="beta_s.pdf",width=12,height=12)
+pdf(file="div.pdf",width=12,height=12)
 	par(mfrow=c(4,4)) ; for(i in 1:nrow(predictors)){betaPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i])}
 dev.off()
 
-pdf(file="betas_beta_s.pdf",width=14,height=10)
-	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE)
+# pdf(file="div_phyloFit.pdf",width=12,height=12)
+	# for(i in 1:nrow(predictors)){
+		# modAdViz(out$db[[i]],out$fit[[i]],
+					# nPPS=500,tree=sampPhy,xlim=c(0,0.03),
+					# valRange=NULL,qnt=1,adj=2)
+	# }
+# dev.off()
+
+pdf(file="div_betas.pdf",width=14,height=10)
+	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,qnt=0.99)
 dev.off()
 
 ################################
-# analyze s with one biological predictor 
+# analyze diversity with one biological predictor 
 #	and all the "nuisance" parameters
-#	beta model, unscaled s
+#	beta model, unscaled diversity
 ################################
 bioPreds <- predictors[1:11,]
 bioPredNames <- predNames[1:11]
@@ -148,53 +153,25 @@ parallel::stopCluster(cl)
 
 names(fits) <- bioPredNames
 out <- list("db"=db,"fits"=fits)
-save(out,file="beta_multiPred_s.Robj")
+save(out,file="div_multiPred.Robj")
 
-pdf(file="beta_multiPred_s.pdf",width=12,height=10)
+pdf(file="div_multiPred.pdf",width=12,height=10)
 	par(mfrow=c(3,4)) ; for(i in 1:nrow(bioPreds)){betaPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i],multiPred=TRUE)}
 dev.off()
 
-pdf(file="betas_beta_multiPred_s.pdf",width=14,height=10)
+# pdf(file="div_multiPred_phyloFit.pdf",width=12,height=12)
+	# for(i in 1:nrow(bioPreds)){
+		# modAdViz(out$db[[i]],out$fit[[i]],
+					# nPPS=500,tree=sampPhy,xlim=c(1e-9,0.05),
+					# valRange=NULL,qnt=0.95,adj=1)
+	# }
+# dev.off()
+
+pdf(file="div_multiPred_betas.pdf",width=14,height=10)
 	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,multiPred=TRUE)
 dev.off()
 
-
-################################
-# analyze s with multiple biological predictors 
-#	and all the "nuisance" parameters
-#	beta model, unscaled s
-################################
-
-# for ecoregions & range size, include both
-
-db <- makeMultiDB(list(predictors[2,],
-					   predictors[3,],
-					   nuisPreds[1,],
-					   nuisPreds[2,],
-					   nuisPreds[3,],
-					   nuisPreds[4,]),
-				   Y=1-z$s,
-				   phyStr=phyStr)
-
-fit <- rstan::sampling(object=betaPhyReg,
-						data=db,
-						iter=nIter,
-						thin=nIter/500,
-						chains=1,
-						control=setNames(list(15),"max_treedepth"))
-
-out <- list("db"=db,"fit"=fit)
-save(out,file="ecoreg_range_s.Robj")
-
-# betaPPS(out$db,out$fit,500,predName="ecoreg",multiPred=TRUE)
-# b1 <- extract(out$fit,"beta[1]",inc_warmup=TRUE,permute=FALSE)
-# b2 <- extract(out$fit,"beta[2]",inc_warmup=TRUE,permute=FALSE)
-# plot(b1,b2,xlim=c(-0.03,0.03))
-
-
-#GRAVEYARD
 if(FALSE){
-
 ################################
 # analyze Nbhd with one predictor at a time
 #	exp model
@@ -224,51 +201,100 @@ parallel::stopCluster(cl)
 
 names(fits) <- predNames
 out <- list("db"=db,"fits"=fits)
-save(out,file="exp_Nbhd.Robj")
+save(out,file="nbhd.Robj")
 
-pdf(file="exp_Nbhd.pdf",width=12,height=12)
+pdf(file="nbhd.pdf",width=12,height=12)
 	par(mfrow=c(4,4)) ; for(i in 1:nrow(predictors)){expPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i])}
 dev.off()
 
-pdf(file="betas_exp_Nbhd.pdf",width=14,height=10)
-	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL)
+pdf(file="nbhd_betas.pdf",width=14,height=10)
+	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,multiPred=FALSE)
 dev.off()
 
+################################
+# analyze Nbhd size with one biological predictor 
+#	and all the "nuisance" parameters
+################################
+bioPreds <- predictors[1:11,]
+bioPredNames <- predNames[1:11]
+nuisPreds <- predictors[13:16,]
+nuisPredNames <- predNames[13:16]
 
-z <- z[-which(z$species=="Pocillopora_damicornis"),]
-if(any(is.na(z$s))){
-	z <- z[!which(is.na(z$s)),]	
+db <- lapply(1:nrow(bioPreds),
+			function(i){
+				makeMultiDB(list(predictors[i,],
+								 nuisPreds[1,],
+								 nuisPreds[2,],
+								 nuisPreds[3,],
+								 nuisPreds[4,]),
+							 Y=z$nbhd,
+							 phyStr=phyStr)
+		})
+names(db) <- bioPredNames
+
+cl <- parallel::makeCluster(12)
+doParallel::registerDoParallel(cl)
+
+fits <- foreach::foreach(i = 1:nrow(bioPreds)) %dopar% {
+	message(sprintf("now analyzing multiple-linear regression with main predictor %s/%s",i,nrow(predictors)))
+	rstan::sampling(object=expPhyReg,
+					data=db[[i]],
+					iter=nIter,
+					thin=nIter/500,
+					chains=1,
+					control=setNames(list(15),"max_treedepth"))
 }
 
-#dupes <- names(which(table(z$species) > 1))
+parallel::stopCluster(cl)
 
-# Gadus morhua
-#	sampling of PRJNA521889 is w/in range of PRJNA528403
-#	model fit looks equally reasonable
-#	keep PRJNA528403
+names(fits) <- bioPredNames
+out <- list("db"=db,"fits"=fits)
+save(out,file="nbhd_multiPred.Robj")
 
-z <- z[-which(grepl("PRJNA528403",z$link)),]
+pdf(file="nbhd_multiPred.pdf",width=12,height=10)
+	par(mfrow=c(3,4)) ; for(i in 1:nrow(bioPreds)){expPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i],multiPred=TRUE)}
+dev.off()
 
-# Sebastiscus marmoratus
-#	more samples in PRJNA359404 than PRJNA392526
-#	model fit isn't amazing for either
-#	keep PRJNA359404
+pdf(file="nbhd_multiPred_betas.pdf",width=14,height=10)
+	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,multiPred=TRUE)
+dev.off()
+}
 
-z <- z[-which(grepl("PRJNA392526",z$link)),]
 
-# Lateolabrax maculatus
-# more samples from more locations in PRJNA356786 than PRJNA314732
-# model fit looks fine for PRJNA356786
-# keep PRJNA356786
+################
+# GRAVEYARD
+################
 
-z <- z[-which(grepl("PRJNA314732",z$link)),]
 if(FALSE){
-	tmp <- predictors
-	# fill in missing data w/ grand mean for that predictor
-	md <- which(is.na(predictors),arr.ind=TRUE)
-	for(i in 1:nrow(md)){
-		predictors[md[i,1],md[i,2]] <- mean(tmp[md[i,1],],na.rm=TRUE)
-	}
-}
+################################
+# analyze s with multiple biological predictors 
+#	and all the "nuisance" parameters
+#	beta model, unscaled diversity
+################################
 
+# for ecoregions & range size, include both
+
+db <- makeMultiDB(list(predictors[2,],
+					   predictors[3,],
+					   nuisPreds[1,],
+					   nuisPreds[2,],
+					   nuisPreds[3,],
+					   nuisPreds[4,]),
+				   Y=1-z$s,
+				   phyStr=phyStr)
+
+fit <- rstan::sampling(object=betaPhyReg,
+						data=db,
+						iter=nIter,
+						thin=nIter/500,
+						chains=1,
+						control=setNames(list(15),"max_treedepth"))
+
+out <- list("db"=db,"fit"=fit)
+save(out,file="ecoreg_range_s.Robj")
+
+# betaPPS(out$db,out$fit,500,predName="ecoreg",multiPred=TRUE)
+# b1 <- extract(out$fit,"beta[1]",inc_warmup=TRUE,permute=FALSE)
+# b2 <- extract(out$fit,"beta[2]",inc_warmup=TRUE,permute=FALSE)
+# plot(b1,b2,xlim=c(-0.03,0.03))
 }

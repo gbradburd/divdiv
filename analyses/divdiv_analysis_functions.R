@@ -52,7 +52,6 @@ logit <- function(x){
 }
 
 betaPPS <- function(db,fit,nPPS,predName,multiPred=FALSE){
-#	recover()
 	lpp <- get_logposterior(fit,inc_warmup=FALSE)[[1]]
 	nIter <- length(lpp)
 	sampledIter <- sample(1:nIter,nPPS,replace=TRUE)
@@ -75,7 +74,7 @@ betaPPS <- function(db,fit,nPPS,predName,multiPred=FALSE){
 	# shape2 <- lapply(1:nPPS,function(i){phi[[i]]*(1-mu[[i]])})
 	shape1 <- extract(fit,"shape1",permute=FALSE)[sampledIter,1,]
 	shape2 <- extract(fit,"shape2",permute=FALSE)[sampledIter,1,]
-	pps <- lapply(1:nPPS,function(i){rbeta(db$N,shape1[[i]],shape2[[i]])})
+	pps <- lapply(1:nPPS,function(i){rbeta(db$N,shape1[i,],shape2[i,])})
 	ppsCIs <- getPPSci(db,pps)
 	if(multiPred){
 		x <- db$X[1,]
@@ -111,10 +110,16 @@ getPPSci <- function(db,pps){
 	return(ppsByN)
 }
 
-expPPS <- function(db,fit,nPPS,predName){
-	nIter <- length(get_logposterior(fit)[[1]])
+expPPS <- function(db,fit,nPPS,predName,multiPred=FALSE){
+	lpp <- get_logposterior(fit,inc_warmup=FALSE)[[1]]
+	nIter <- length(lpp)
 	sampledIter <- sample(1:(nIter/2),nPPS,replace=TRUE)
-	beta <- extract(fit,"beta",permute=FALSE)[,1,1]
+	if(multiPred){
+		b <- "beta[1]"
+	} else {
+		b <- "beta"
+	}
+	beta <- extract(fit,b,permute=FALSE,inc_warmup=FALSE)[,1,1]
 	sig <- 1-2*(abs(0.5-ecdf(beta)(0)))
 	siglwd <- ifelse(sig<0.05,4,0.5)
 	beta <- beta[sampledIter]
@@ -126,26 +131,29 @@ expPPS <- function(db,fit,nPPS,predName){
 	lambda <- extract(fit,"lambda",permute=FALSE)[sampledIter,1,]
 	pps <- lapply(1:nPPS,function(i){rexp(db$N,rate=lambda[[i]])})
 	ppsCIs <- getPPSci(db,pps)
-	sig <- 1-2*(abs(0.5-ecdf(beta)(0)))
-	siglwd <- ifelse(sig<0.05,4,0.5)
-	plot(db$X,db$Y,
+	if(multiPred){
+		x <- db$X[1,]
+	} else {
+		x <- db$X
+	}
+	plot(x,db$Y,
 		ylim=range(c(db$Y,unlist(ppsCIs))),
 		xlab="predictor",ylab="response",
 		type='n',main=sprintf("%s (p=%s)",predName,round(sig,4)))
 		invisible(
 			lapply(1:db$N,
 				function(n){
-					segments(x0=db$X[n],
+					segments(x0=x[n],
 							 y0=ppsCIs[[n]][1],
-							 x1=db$X[n],
+							 x1=x[n],
 							 y1=ppsCIs[[n]][2],
 							 lwd=0.75)
 				})
 		)
-	points(db$X,db$Y,col="red",pch=19,cex=1)
-	x <- seq(min(db$X),max(db$X),length.out=100)
-	mnLn <- getMeanLine(beta=beta,gamma=gamma,X=x,nPPS=nPPS)
-	lines(x,1/exp(mnLn),lwd=siglwd)
+	points(x,db$Y,col="red",pch=19,cex=1)
+	lnx <- seq(min(x),max(x),length.out=100)
+	mnLn <- getMeanLine(beta=beta,gamma=gamma,X=lnx,nPPS=nPPS)
+	lines(lnx,1/exp(mnLn),lwd=siglwd)
 #	lines(0:max(db$X),1/exp(mean(beta)*(0:max(db$X))+mean(gamma)),lwd=siglwd)
 	box(lwd=2,col=ifelse(sig<0.05,"red","black"))
 }
@@ -165,7 +173,8 @@ checkSig <- function(beta){
 	return(sig)
 }
 
-postBetaPlot <- function(out,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,multiPred=FALSE,...){
+postBetaPlot <- function(out,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,multiPred=FALSE,qnt=1,...){
+#	recover()
 	if(multiPred){
 		b <- "beta[1]"
 	} else {
@@ -179,7 +188,7 @@ postBetaPlot <- function(out,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,multi
 		betas <- lapply(1:length(betas),
 						function(i){
 							if(length(unique(out$db[[i]]$X[1,])) > 3){
-								betas[[i]] * sd(out$db[[i]]$X)								
+								betas[[i]] * sd(out$db[[i]]$X[1,])
 							} else {
 								betas[[i]]
 							}
@@ -206,7 +215,7 @@ postBetaPlot <- function(out,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,multi
 	invisible(
 		lapply(1:nPredictors,
 			function(i){
-				plotDens(ymin=i+i*0.25,betaDens[[predOrder[i]]],col=cols[predOrder[i]])
+				plotDens(ymin=i+i*0.25,x=betas[[predOrder[i]]],d=betaDens[[predOrder[i]]],col=cols[predOrder[i]],qnt=qnt)
 			}))
 }
 
@@ -284,7 +293,6 @@ getCNvar <- function(sig11,sig12,sig22inv,sig21){
 	return(cnVar)
 }
 
-
 looCN <- function(nCNsamples,sampleNames,masterDB,looRep,link,invLink){
 	i <- which(sampleNames==looRep$dropped)
 	alpha <- mean(extract(looRep$fit,"alpha",inc_warmup=FALSE,permute=FALSE))
@@ -336,27 +344,7 @@ getTipOrder <- function(tree){
 	return(tree$tip.label[tipOrder])
 }
 
-plotDens <- function(ymin=0,d,col,alpha=0.3,xmin=NULL,peakheight=1){
-	if(is.null(xmin)){
-		xmin <- min(d$x)
-	}
-	yvec <- d$y/(peakheight*max(d$y))
-	polygon(x=c(xmin,d$x,xmin),
-				y=c(ymin,ymin+yvec,ymin),
-				col=adjustcolor(col,alpha))
-}
-
-getLooDens <- function(x){
-	if(length(unique(x)) > 1){
-		toDrop <- which(x < quantile(x,0.1))
-		toDrop <- unique(c(toDrop,which(x > quantile(x,0.9))))
-		x <- x[-toDrop]
-	}
-	d <- density(x,adjust=2)
-	return(d)
-}
-
-phylooViz <- function(db,CNsamples,tree,xlim=c(0.95,1.01),valRange=NULL){
+phylooViz <- function(db,CNsamples,tree,xlim=c(0.95,1.01),valRange=NULL,qnt=0.95,adj=2){
 	#recover()
 	if(is.null(valRange)){
 		valRange <- c(0,1)
@@ -374,7 +362,7 @@ phylooViz <- function(db,CNsamples,tree,xlim=c(0.95,1.01),valRange=NULL){
 						abs(mean(CNsamples[[n]])-db$Y[n])
 						#2*(abs(0.5-ecdf(CNsamples[[n]])(db$Y[n])))
 				}))
-	cnDens <- lapply(CNsamples,getLooDens)
+	cnDens <- lapply(CNsamples,function(x){getDens(x,qnt=qnt,adj=adj)})
 	virCols <- viridis::viridis_pal(alpha=1,begin=0,end=1,direction=1,option="D")(100)
 	cols <- colFunc(cnFits,cols=virCols,nCols=100,valRange=valRange)
 	par(mfrow=c(1,2),oma=c(3,0,0,0))
@@ -403,7 +391,93 @@ phylooViz <- function(db,CNsamples,tree,xlim=c(0.95,1.01),valRange=NULL){
 			}))
 }
 
+getDens <- function(x,adj=2){
+#	recover()
+	# if(length(unique(x)) > 1){
+		# toDrop <- which(x < quantile(x,qmn))
+		# toDrop <- unique(c(toDrop,which(x > quantile(x,qmx))))
+		# if(length(toDrop) > 0){
+			# x <- x[-toDrop]
+		# }
+	# }
+	d <- density(x,adjust=adj)
+	return(d)
+}
 
+plotDens <- function(ymin=0,x,d,col,alpha=0.3,xmin=NULL,peakheight=1,qnt=1){
+	#recover()
+	if(qnt != 1){
+		qmn <- (1-qnt)/2
+		qmx <- 1-qmn
+		qx <- quantile(x,c(qmn,qmx))
+		toDrop <- which(d$x < qx[1])
+		toDrop <- c(toDrop,which(d$x > qx[2]))
+		dx <- d$x[-toDrop]
+		dy <- d$y[-toDrop]
+	} else {
+		dx <- d$x
+		dy <- d$y
+	}
+	if(is.null(xmin)){
+		xmin <- min(dx)
+	}
+	yvec <- dy/(peakheight*max(dy))
+	polygon(x=c(xmin,xmin,dx,max(dx),xmin),
+				y=c(ymin,ymin,ymin+yvec,ymin,ymin),
+				col=adjustcolor(col,alpha))
+}
+
+modAdViz <- function(db,fit,nPPS,tree,xlim,valRange=NULL,qnt=0.95,adj=2){
+	recover()
+	lpp <- get_logposterior(fit,inc_warmup=FALSE)[[1]]
+	nIter <- length(lpp)
+	sampledIter <- sample(1:nIter,nPPS,replace=TRUE)
+	shape1 <- extract(fit,"shape1",permute=FALSE)[sampledIter,1,]
+	shape2 <- extract(fit,"shape2",permute=FALSE)[sampledIter,1,]
+	pps <- lapply(1:nPPS,function(i){rbeta(db$N,shape1[i,],shape2[i,])})
+	pps <- Reduce("rbind",pps,init=NULL)
+	ppsDens <- lapply(1:db$N,function(n){getDens(pps[,n],adj=adj)})
+	spNames <- row.names(db$relMat)
+	tree <- ape::keep.tip(tree,gsub("_"," ",spNames))
+	tree <- ape::ladderize(tree,right=FALSE)
+	tipOrder <- getTipOrder(tree)
+	nSp <- length(tipOrder)
+	spOrder <- match(tipOrder,spNames)
+	# ppsFits <- unlist(
+				# lapply(1:db$N,
+					# function(n){
+						# #abs(mean(pps[,n])-db$Y[n])
+						# 2*(abs(0.5-ecdf(pps[,n])(db$Y[n])))
+				# }))
+	virCols <- viridis::viridis_pal(alpha=1,begin=0,end=1,direction=1,option="D")(100)
+	cols <- colFunc(db$Y,cols=virCols,nCols=100,valRange=valRange) #ppsFits
+	par(mfrow=c(1,2),oma=c(3,0,0,0))
+	ape::plot.phylo(tree,label.offset=50,cex=0.7,no.margin=TRUE,x.lim=c(0,1950),tip.color=cols[spOrder],edge.width=1.5)
+	plot(0,type='n',
+			xlim=xlim,
+			yaxt='n',xaxt='n',xlab="",ylab="",bty='n',
+			ylim=c(1,nSp)) #c(0,(length(cnDens)+1)*1.25))
+	axis(side=1,
+		at=c(xlim[1],(xlim[2]+xlim[1])/2,xlim[2]),
+		labels=round(c(xlim[1],(xlim[2]+xlim[1])/2,xlim[2]),2))
+	#abline(h=0:nSp,lty=2)
+	#text(x=xtext,y=(0.4 + 1:nSp)*1.25,labels=spNames[spOrder],srt=0)
+	invisible(
+		lapply(nSp:1,
+			function(i){
+				plotDens(ymin=i-0.5,
+						 x=pps[,spOrder[i]],
+						 d=ppsDens[[spOrder[i]]],
+						 col=cols[spOrder[i]],
+						 alpha=0.9,
+						 qnt=qnt,
+						 xmin=NULL,
+						 peakheight=0.5)
+				#text(x=0.95,y=i,labels=spNames[spOrder[i]])
+				points(x=db$Y[spOrder[i]],i-0.25,pch=17,col="red")
+				abline(h=spOrder[i]-0.5,lty=3,col="gray")	
+			}))
+}
 
 
 
