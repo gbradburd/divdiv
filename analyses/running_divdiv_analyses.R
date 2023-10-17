@@ -54,7 +54,8 @@ predictors <- rbind(z[["meanlat.gbif"]],					# abiotic
 					z[["n_samples"]],					# nuisance
 					z[["mean_raw_read_cnt"]]/1e7,					# nuisance
 					z[["read_length"]],					# nuisance
-					z[["mean_locus_depth"]])					# nuisance
+					z[["mean_locus_depth"]],					# nuisance
+					z[["n.totalsnps"]]/1e5)					# nuisance
 
 
 
@@ -65,9 +66,9 @@ predNames <- c("mean species latitude","number of ecoregions",
 			   "larval feeding","pelagic larval duration",
 			   "planktonicity","ratio of range sampled : total",
 			   "number of samples","mean raw read count",
-			   "read length","mean locus depth")
+			   "read length","mean locus depth","number of SNPs")
 
-nIter <- 5e3
+nIter <- 1e4
 
 ################################
 # analyze s with one predictor at a time
@@ -98,17 +99,25 @@ names(fits) <- predNames
 out <- list("db"=db,"fits"=fits)
 save(out,file="div.Robj")
 
-pdf(file="div.pdf",width=12,height=12)
-	par(mfrow=c(4,4)) ; for(i in 1:nrow(predictors)){betaPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i])}
+pdf(file="div.pdf",width=14,height=12)
+	par(mfrow=c(4,5)) ; for(i in 1:nrow(predictors)){betaPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i])}
 dev.off()
 
-# pdf(file="div_phyloFit.pdf",width=12,height=12)
-	# for(i in 1:nrow(predictors)){
-		# modAdViz(out$db[[i]],out$fit[[i]],
-					# nPPS=500,tree=sampPhy,xlim=c(0,0.03),
-					# valRange=NULL,qnt=1,adj=2)
-	# }
-# dev.off()
+pdf(file="div_phyloFit.pdf",width=12,height=12)
+	for(i in 1:nrow(predictors)){
+		modAdViz(out$db[[i]],out$fit[[i]],
+					nPPS=500,tree=sampPhy,xlim=c(0,0.05),
+					valRange=NULL,qnt=0.999,adj=0.5)
+	}
+dev.off()
+
+pdf(file="div_phyloFit_log.pdf",width=12,height=12)
+	for(i in 1:nrow(predictors)){
+		modAdViz(out$db[[i]],out$fit[[i]],
+					nPPS=500,tree=sampPhy,xlim=c(0,0.05),
+					valRange=NULL,qnt=0.999,adj=0.5,logX=TRUE)
+	}
+dev.off()
 
 pdf(file="div_betas.pdf",width=14,height=10)
 	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,qnt=0.99)
@@ -159,19 +168,27 @@ pdf(file="div_multiPred.pdf",width=12,height=10)
 	par(mfrow=c(3,4)) ; for(i in 1:nrow(bioPreds)){betaPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i],multiPred=TRUE)}
 dev.off()
 
-# pdf(file="div_multiPred_phyloFit.pdf",width=12,height=12)
-	# for(i in 1:nrow(bioPreds)){
-		# modAdViz(out$db[[i]],out$fit[[i]],
-					# nPPS=500,tree=sampPhy,xlim=c(1e-9,0.05),
-					# valRange=NULL,qnt=0.95,adj=1)
-	# }
-# dev.off()
+pdf(file="div_multiPred_phyloFit.pdf",width=12,height=12)
+	for(i in 1:nrow(bioPreds)){
+		modAdViz(out$db[[i]],out$fit[[i]],predName=bioPredNames[i],
+					nPPS=500,tree=sampPhy,xlim=c(0,0.05),
+					valRange=NULL,qnt=0.999,adj=0.5)
+	}
+dev.off()
+
+pdf(file="div_multiPred_phyloFit_log.pdf",width=12,height=12)
+	for(i in 1:nrow(bioPreds)){
+		modAdViz(out$db[[i]],out$fit[[i]],predName=bioPredNames[i],
+					nPPS=500,tree=sampPhy,xlim=c(0,0.05),
+					valRange=NULL,qnt=0.999,adj=0.5,logX=TRUE)
+	}
+dev.off()
+
 
 pdf(file="div_multiPred_betas.pdf",width=14,height=10)
 	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,multiPred=TRUE)
 dev.off()
 
-if(FALSE){
 ################################
 # analyze Nbhd with one predictor at a time
 #	exp model
@@ -258,7 +275,6 @@ dev.off()
 pdf(file="nbhd_multiPred_betas.pdf",width=14,height=10)
 	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,multiPred=TRUE)
 dev.off()
-}
 
 
 ################

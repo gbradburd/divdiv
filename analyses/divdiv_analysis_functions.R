@@ -391,7 +391,7 @@ phylooViz <- function(db,CNsamples,tree,xlim=c(0.95,1.01),valRange=NULL,qnt=0.95
 			}))
 }
 
-getDens <- function(x,adj=2){
+getDens <- function(x,adj=2,logX=FALSE){
 #	recover()
 	# if(length(unique(x)) > 1){
 		# toDrop <- which(x < quantile(x,qmn))
@@ -400,12 +400,17 @@ getDens <- function(x,adj=2){
 			# x <- x[-toDrop]
 		# }
 	# }
+	if(logX){
+		x <- log(x)
+	}
 	d <- density(x,adjust=adj)
 	return(d)
 }
 
-plotDens <- function(ymin=0,x,d,col,alpha=0.3,xmin=NULL,peakheight=1,qnt=1){
-	#recover()
+plotDens <- function(ymin=0,x,d,col,alpha=0.3,xmin=NULL,peakheight=1,qnt=1,logX=FALSE){
+	if(logX){
+		x <- log(x)
+	}
 	if(qnt != 1){
 		qmn <- (1-qnt)/2
 		qmx <- 1-qmn
@@ -427,8 +432,7 @@ plotDens <- function(ymin=0,x,d,col,alpha=0.3,xmin=NULL,peakheight=1,qnt=1){
 				col=adjustcolor(col,alpha))
 }
 
-modAdViz <- function(db,fit,nPPS,tree,xlim,valRange=NULL,qnt=0.95,adj=2){
-	recover()
+modAdViz <- function(db,fit,predName,nPPS,tree,xlim,valRange=NULL,qnt=0.95,adj=2,logX=FALSE){
 	lpp <- get_logposterior(fit,inc_warmup=FALSE)[[1]]
 	nIter <- length(lpp)
 	sampledIter <- sample(1:nIter,nPPS,replace=TRUE)
@@ -436,7 +440,7 @@ modAdViz <- function(db,fit,nPPS,tree,xlim,valRange=NULL,qnt=0.95,adj=2){
 	shape2 <- extract(fit,"shape2",permute=FALSE)[sampledIter,1,]
 	pps <- lapply(1:nPPS,function(i){rbeta(db$N,shape1[i,],shape2[i,])})
 	pps <- Reduce("rbind",pps,init=NULL)
-	ppsDens <- lapply(1:db$N,function(n){getDens(pps[,n],adj=adj)})
+	ppsDens <- lapply(1:db$N,function(n){getDens(pps[,n],adj=adj,logX=logX)})
 	spNames <- row.names(db$relMat)
 	tree <- ape::keep.tip(tree,gsub("_"," ",spNames))
 	tree <- ape::ladderize(tree,right=FALSE)
@@ -450,9 +454,16 @@ modAdViz <- function(db,fit,nPPS,tree,xlim,valRange=NULL,qnt=0.95,adj=2){
 						# 2*(abs(0.5-ecdf(pps[,n])(db$Y[n])))
 				# }))
 	virCols <- viridis::viridis_pal(alpha=1,begin=0,end=1,direction=1,option="D")(100)
-	cols <- colFunc(db$Y,cols=virCols,nCols=100,valRange=valRange) #ppsFits
+	cols <- colFunc(log(db$Y),cols=virCols,nCols=100,valRange=valRange) #ppsFits
 	par(mfrow=c(1,2),oma=c(3,0,0,0))
-	ape::plot.phylo(tree,label.offset=50,cex=0.7,no.margin=TRUE,x.lim=c(0,1950),tip.color=cols[spOrder],edge.width=1.5)
+	ape::plot.phylo(tree,label.offset=50,cex=0.7,no.margin=TRUE,x.lim=c(0,1950),tip.color=cols,edge.width=1.5)
+	text(x=450,y=70,labels=sprintf("predictor:\n%s",predName))
+	if(logX){
+		xlim <- range(log(db$Y)) + c(-4,1)
+		y <- log(db$Y)
+	} else {
+		y <- db$Y
+	}
 	plot(0,type='n',
 			xlim=xlim,
 			yaxt='n',xaxt='n',xlab="",ylab="",bty='n',
@@ -472,15 +483,10 @@ modAdViz <- function(db,fit,nPPS,tree,xlim,valRange=NULL,qnt=0.95,adj=2){
 						 alpha=0.9,
 						 qnt=qnt,
 						 xmin=NULL,
-						 peakheight=0.5)
+						 peakheight=0.5,
+						 logX=logX)
 				#text(x=0.95,y=i,labels=spNames[spOrder[i]])
-				points(x=db$Y[spOrder[i]],i-0.25,pch=17,col="red")
+				points(x=y[spOrder[i]],i-0.25,pch=17,col="red")
 				abline(h=spOrder[i]-0.5,lty=3,col="gray")	
 			}))
 }
-
-
-
-
-
-
