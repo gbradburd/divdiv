@@ -168,6 +168,25 @@ saveOut <- function(fit,outPrefix){
 # visualizing output
 ################################
 
+vizFit <- function(wmOutfile,outPrefix){
+	load(wmOutfile)
+	post <- rstan::get_logposterior(out$fit,inc_warmup=FALSE)
+	bestChain <- which.max(unlist(lapply(post,mean)))
+	pHom <- invisible(lapply(1:length(post),
+				function(i){
+					getPhom(out$fit,i,out$dataBlock$N)}))
+	s <- rstan::extract(out$fit,"s",inc_warmup=FALSE,permute=FALSE)[,,1]
+	pdf(file=paste0(outPrefix,"modelFit.pdf"),width=12,heigh=8)
+		plotFit(out=out,pHom=pHom[[bestChain]],s=s[,bestChain],chainCol="blue")
+		legend(x="topright",
+				pch=c(20,19,NA,NA),lty=c(NA,NA,1,2),
+				col=c(adjustcolor("black",0.4),"blue","blue","darkorange1"),
+				legend=c("observed pairwise pi",
+						 "parametric model fit",
+						 "estimated mean max divergence",
+						 "kappa (spatial cutoff)"))
+	dev.off()
+}
 
 vizWMout <- function(wmOutfile,outPrefix){
 	load(wmOutfile)
@@ -186,7 +205,7 @@ vizWMout <- function(wmOutfile,outPrefix){
 		makeCmpParPlots(post,m,nbhd,s,nugget,inDeme,chainCols)
 		for(i in 1:length(post)){
 			par(mfrow=c(1,1))
-				plotFit(out,pHom[[i]],chainCols[i])
+				plotFit(out,pHom[[i]],s[,i,1],chainCols[i])
 		}
 	dev.off()
 }
@@ -219,15 +238,20 @@ makeCmpParPlots <- function(post,m,nbhd,s,nugget=NULL,inDeme,chainCols){
 	}
 }
 
-plotFit <- function(out,pHom,chainCol){
-	plot(out$dataBlock$geoDist,out$myData$hom,
-			ylim=range(c(pHom,out$dataBlock$hom)),type='n',
+plotFit <- function(out,pHom,s,chainCol){
+	up <- upper.tri(out$dataBlock$geoDist,diag=FALSE)
+	ylim <- range(c(unlist(lapply(1:dim(pHom)[1],function(i){pHom[i,,][up]})),
+					out$dataBlock$hom[up],
+					s))
+	plot(out$dataBlock$geoDist[up],out$myData$hom[up],
+			ylim=ylim,xlim=range(out$dataBlock$geoDist),type='n',
 			xlab="pairwise distance",ylab="pairwise homozygosity")
+	points(out$dataBlock$geoDist[up],out$dataBlock$hom[up],pch=20,col=adjustcolor("black",0.3))
 		invisible(
 			lapply(seq(1,250,length.out=25),function(i){
-				points(out$dataBlock$geoDist,pHom[i,,],pch=20,col=adjustcolor(chainCol,0.05))
+				points(out$dataBlock$geoDist[up],pHom[i,,][up],pch=20,col=adjustcolor(chainCol,0.05))
+				abline(h=s[i],col=adjustcolor(chainCol,0.3))
 			}))
-	points(out$dataBlock$geoDist,out$dataBlock$hom)
 	abline(v=out$dataBlock$k,lty=2,lwd=1,col="darkorange1")
 }
 
