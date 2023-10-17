@@ -20,7 +20,7 @@ do
 	
 	r80dir=${storagenode}$run_name/popgen
 	r80paramstemp=$(rclone cat $r80dir/r80params.txt)
-	r80params=$(echo "${r80paramstemp//_n[0-9]/}")
+	r80params=$(echo $r80paramstemp | sed 's/_n[0-9]\{1,\}//g') #remove the _n[#]_ chunk 
 		
 	echo "run_name: $run_name"
 	echo "link_name: $link_name"
