@@ -35,6 +35,7 @@ runWM <- function(stanMod,dataBlock,nChains,nIter,prefix,MLjumpstart=FALSE,nMLru
     saveOut(fit=fit,outPrefix=prefix)
 	save(out,file=paste0(prefix,"_out.Robj"))
 	vizWMout(wmOutfile=paste0(prefix,"_out.Robj"),outPrefix=prefix)
+	vizFit(wmOutfile=paste0(prefix,"_out.Robj"),outPrefix=prefix)
 }
 
 ml2init <- function(db,mod,nRuns,Gmodel=FALSE,prefix){
