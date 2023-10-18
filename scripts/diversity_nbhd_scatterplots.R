@@ -74,15 +74,19 @@ pdf(file="../figures/predictor_corrs.pdf",width=15,height=15,pointsize=11)
 				sp <- z$species
 				spCols <- z$cladecolor
 			}
+			x1x2cor <- round(cor(x1,x2),3)
 			plot(x1,x2,
 					pch=19,cex=2,
 					main=sprintf("%s x %s, cor = %s",
 									names(z)[i],
 									names(z)[j],
-									round(cor(x1,x2),3)),
+									x1x2cor),
 					col=adjustcolor(spCols,0.5),
 					xlab=names(z)[i],
 					ylab=names(z)[j])
+			if(abs(x1x2cor) > 0.5){
+				box(lwd=2,col="red")
+			}
 		}
 		plot.new()
 		plot.new()

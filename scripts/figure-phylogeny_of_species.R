@@ -45,7 +45,7 @@ p %<+% finaltreetips + #leftjoin labels for aesthetics onto phy
         axis.ticks.x = element_line(), #build scale bar
         axis.text.x = element_text(size = 2)) + #plot ranges between 0 and 1
 	geom_hilight(node=MRCA(phy,"Engraulis encrasicolus","Sebastes diaconus"),fill=cladeCols[1],alpha=0.3) + #bony fishes
-	geom_hilight(node=MRCA(phy,"Pygoscelis papua","Uria aalge"),fill=cladeCols[2],alpha=0.3) + #sauropsida
+	geom_hilight(node=MRCA(phy,"Pygoscelis papua","Aythya marila"),fill=cladeCols[2],alpha=0.3) + #sauropsida
 	geom_hilight(node=MRCA(phy,"Phocoena sinus","Halichoerus grypus atlantica"),fill=cladeCols[3],alpha=0.3) + #mammals
 	geom_hilight(node=MRCA(phy,"Bathyraja panthera","Sphyrna tiburo"),fill=cladeCols[4],alpha=0.3) +  #chondrichthyes
 	geom_hilight(node=MRCA(phy,"Paracentrotus lividus","Pisaster ochraceus"),fill=cladeCols[5],alpha=0.3) + #echinoderms
@@ -54,7 +54,7 @@ p %<+% finaltreetips + #leftjoin labels for aesthetics onto phy
 	geom_hilight(node=MRCA(phy,"Acropora palmata","Ectopleura larynx"),fill=cladeCols[8],alpha=0.3) + #cnidarians
 	geom_hilight(node=MRCA(phy,"Rhizophora mangle","Laguncularia racemosa"),fill=cladeCols[9],alpha=0.3) + #vascular plants
 #	geom_hilight(node=MRCA(phy,"Sargassum muticum","Sargassum muticum"),fill=cladeCols[10],alpha=0.3) #ochrophyta + 
-	theme_classic() #remove box
+	theme_void() #remove box
 ggsave(filename = "../figures/phylo_distn.pdf", width = 15, height = 15, units = c("cm"))
 
 
