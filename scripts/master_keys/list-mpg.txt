@@ -1,8 +1,0 @@
-bioprj_PRJNA294760_Amphiprion-bicinctus X
-bioprj_PRJNA316872_Sebastes-rastrelliger X
-bioprj_PRJNA356786_Lateolabrax-maculatus X
-bioprj_PRJNA448438_Holacanthus-passer X
-bioprj_PRJNA473382_Dascyllus-trimaculatus X
-bioprj_PRJNA511386_Ostrea-lurida X
-bioprj_PRJNA542967_Bartholomea-annulata X
-bioprj_PRJNA559876_Pomacanthus-maculosus X
