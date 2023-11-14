@@ -105,7 +105,7 @@ dev.off()
 
 pdf(file="div_phyloFit.pdf",width=12,height=12)
 	for(i in 1:nrow(predictors)){
-		modAdViz(out$db[[i]],out$fit[[i]],
+		modAdViz(out$db[[i]],out$fit[[i]],predName=predNames[i],
 					nPPS=500,tree=sampPhy,xlim=c(0,0.05),
 					valRange=NULL,qnt=0.999,adj=0.5)
 	}
@@ -113,7 +113,7 @@ dev.off()
 
 pdf(file="div_phyloFit_log.pdf",width=12,height=12)
 	for(i in 1:nrow(predictors)){
-		modAdViz(out$db[[i]],out$fit[[i]],
+		modAdViz(out$db[[i]],out$fit[[i]],predName=predNames[i],
 					nPPS=500,tree=sampPhy,xlim=c(0,0.05),
 					valRange=NULL,qnt=0.999,adj=0.5,logX=TRUE)
 	}
