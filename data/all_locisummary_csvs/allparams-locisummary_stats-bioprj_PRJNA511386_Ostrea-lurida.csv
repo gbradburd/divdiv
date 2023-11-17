@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA511386_Ostrea-lurida","stacks_littlem_3_bigm_3_n2_nis1lessthanM",65947,389193,8.21,6535,1.67911550310514,3248,"3","3","2","nis1lessthanM",69195
+"bioprj_PRJNA511386_Ostrea-lurida","stacks_littlem_3_bigm_3_n3_nequalM",66704,417661,7.97,6572,1.57352494008299,3173,"3","3","3","nequalM",69877
+"bioprj_PRJNA511386_Ostrea-lurida","stacks_littlem_3_bigm_3_n4_nis1morethanM",67199,446924,7.82,6710,1.50137383537246,3045,"3","3","4","nis1morethanM",70244
+"bioprj_PRJNA511386_Ostrea-lurida","stacks_littlem_3_bigm_6_n5_nis1lessthanM",63015,446634,8.37,8402,1.88118235512746,2977,"3","6","5","nis1lessthanM",65992
+"bioprj_PRJNA511386_Ostrea-lurida","stacks_littlem_3_bigm_6_n6_nequalM",62937,452572,8.3,8468,1.8710834961067,2951,"3","6","6","nequalM",65888
+"bioprj_PRJNA511386_Ostrea-lurida","stacks_littlem_3_bigm_6_n7_nis1morethanM",62916,459518,8.26,8427,1.83387810706001,2949,"3","6","7","nis1morethanM",65865
+"bioprj_PRJNA511386_Ostrea-lurida","stacks_littlem_3_bigm_9_n10_nis1morethanM",59805,447352,8.62,9839,2.1993866127792,3041,"3","9","10","nis1morethanM",62846
+"bioprj_PRJNA511386_Ostrea-lurida","stacks_littlem_3_bigm_9_n8_nis1lessthanM",59888,445565,8.63,9712,2.17970442023049,3021,"3","9","8","nis1lessthanM",62909
+"bioprj_PRJNA511386_Ostrea-lurida","stacks_littlem_3_bigm_9_n9_nequalM",59893,446335,8.63,9842,2.2050701827103,3034,"3","9","9","nequalM",62927
