@@ -20,13 +20,12 @@ rm(list=ls())
 gc()
 set.seed(123)
 
-#setwd('~/../Documents/For_Rachel')
-setwd("/Users/rachel/divdiv_collecting_genetic_data/marine/phylogeny")
+setwd("/Users/rachel/divdiv")
 
 
 # load in data -----------
-load('TimeTree_140K_NCBI_Taxon_IDs-withtaxizeinfo.Robj') #TimeTree plus tacked on df of looked up rank info/names from taxize
-missing.spp<-read.csv('missing_species_to_add_in-Bruce.csv') #list of species not in TimeTree that we need to add in
+load('data/phylo/TimeTree_140K_NCBI_Taxon_IDs-withtaxizeinfo.Robj') #TimeTree plus tacked on df of looked up rank info/names from taxize
+missing.spp <- read.csv('data/phylo/missing_species_to_add_in.csv') #list of species not in TimeTree that we need to add in
 #get master spreadsheet from Drive of species we want / that are "in" analyses
 ourspp <- googledrive::shared_drive_find(pattern = "^divdiv$")
 ourspp <- googledrive::drive_ls(path = ourspp, pattern = "working_datasheets", recursive = FALSE)
@@ -39,6 +38,7 @@ ourspp <- ourspp %>%
   dplyr::select(organism_biosamp, kingdom_worms, phylum_worms, class_worms, order_worms, family_worms, genus_worms) %>%
   mutate(organism_biosamp = unlist(organism_biosamp))
 str(ourspp)
+  #120 species as of last time ran this script
 #update name of Exaiptasia pallida to Exaiptasia diaphana (now current/accepted name)
 ourspp$organism_biosamp[ourspp$organism_biosamp == "Exaiptasia pallida"] = "Exaiptasia diaphana" 
 
@@ -51,12 +51,12 @@ ourspp$organism_biosamp[ourspp$organism_biosamp == "Exaiptasia pallida"] = "Exai
 
 # reformat tree a bit -----------
 #grab phylo object
-phy<-tree@phylo
+phy <- tree@phylo
 #grab tip dataset
-tip.seq<-match(seq_len(Ntip(phy)),tree@extraInfo[['node']]) #just in case things are out of order
-dat<-tree@extraInfo[tip.seq,]
+tip.seq <- match(seq_len(Ntip(phy)),tree@extraInfo[['node']]) #just in case things are out of order
+dat <- tree@extraInfo[tip.seq,]
 #add tip labels to tip dataset
-dat$label<-phy$tip.label
+dat$label <- phy$tip.label
 #above is df of tip label (label), node id, and all the taxonomic rank info that we looked up and tacked onto tips earlier using taxize
 
 
@@ -77,7 +77,7 @@ dat$species[dat$species == "Halichoerus grypus"] = "Halichoerus grypus atlantica
 
 # first swap tips
 #let's first drop the "_worms" suffix for easier index handling
-colnames(missing.spp)<-gsub('_worms$','',colnames(missing.spp))
+colnames(missing.spp) <- gsub('_worms$','',colnames(missing.spp))
 #add on a species col for the ones we already picked specific subs out for
 missing.spp$species <- missing.spp$species_subbed
 #and where we already picked a specific species to use as the sub, switch phy_level_to_sub_at col to species 
@@ -98,36 +98,35 @@ for(i in 1:nrow(missing.spp)){
   #get the Linnaean rank we're using for the swap
   lin.rank<-missing.spp$Phy_level_to_sub_in_at[i]
   #find the tips within that rank
-  indices<-dat[[lin.rank]]==missing.spp[i,lin.rank]&
+  indices <- dat[[lin.rank]]==missing.spp[i,lin.rank]&
     !is.na(dat[[lin.rank]])
-  tips<-dat$node[indices]
+  tips <- dat$node[indices]
   #note that the Linnaean rank might have been para/polyphyletic
   #if we don't care about monophyly, we can stop here
   # missing.spp$species_to_sub[i]<-sample(dat$label[tips],1)
   #but if we DO care about monophyly, we first find the most recent common ancestor...
   if(length(tips)>1){
-    mrca<-getMRCA(phy,tips)
+    mrca <- getMRCA(phy,tips)
     #get ALL descendants of that common ancestor...
-    des<-getDescendants(phy,mrca)
-    des<-des[des<Ntip(phy)] # get rid of internal nodes and just keep tip "nodes"
+    des <- getDescendants(phy,mrca)
+    des <- des[des<Ntip(phy)] # get rid of internal nodes and just keep tip "nodes"
     #we can use this to store what "unexpected" tips end up in the group, just so we can see how extensive this potential issue is
-    missing.spp$monophy_tips[i]<-list(des[!(des%in%tips)])
+    missing.spp$monophy_tips[i] <- list(des[!(des%in%tips)])
     #then just do what we would've done before with the FULL monophyletic group
     #pick a random tip within the group
-    missing.spp$species_subbed[i]<-sample(dat$label[des],1)
+    missing.spp$species_subbed[i] <- sample(dat$label[des],1)
   }else if(length(tips)==1){
     #note that we already have mrca if there's only 1 tip!
-    missing.spp$species_subbed[i]<-dat$label[tips]
+    missing.spp$species_subbed[i] <- dat$label[tips]
   }
 }
-missing.spp$species_subbed #looks good, but remember we filled in a 
+missing.spp$species_subbed
 cbind(missing.spp[,1:4],lengths(missing.spp$monophy_tips)) #so it looks like there was some monophyly issues with the Bathymodiolus genus
-#make of that what you will--you can look up the "unexpected" tips that got included in the dataset...
 dat$species[missing.spp$monophy_tips[[5]]] #in this case, it seems like the taxonomic annotations for some tips were just incomplete
-#assuming nonmonophy issues are okay, proceed and swap out some names in dat with our divdiv names
-matches<-match(missing.spp$species_subbed,dat$label)
-nas<-is.na(matches) #exclude the special case for now (building polytomy of Acroporas)...
-dat$species[matches[!nas]]<-missing.spp$label[!nas]
+#swap out some names in dat with our divdiv names
+matches <- match(missing.spp$species_subbed,dat$label)
+nas <- is.na(matches) #exclude the special case for now (building polytomy of Acroporas)...
+dat$species[matches[!nas]] <- missing.spp$label[!nas]
 
 
 
@@ -135,10 +134,10 @@ dat$species[matches[!nas]]<-missing.spp$label[!nas]
 
 #phytool's bind.tip() unfortunately alters the node indexing in the tree
 #this makes phy and dat no longer match up correctly
-#so I made a custom wrapper to alter dat properly
+#so made a custom wrapper to alter dat properly
 #just make sure the tip.label is a UNIQUE name!!!
 #also assumes dat is correctly ordered from node 1 to # of tips (we did this above in lines 22-23)
-custom.bind.tip<-function(tree,
+custom.bind.tip <- function(tree,
                           dat,
                           tip.label, #the label of the new tip
                           sp.name=tip.label, #in case you want the tip label to be different from the actual species name in dat
@@ -146,21 +145,21 @@ custom.bind.tip<-function(tree,
                           where, #the node to connect the edge to
                           position=0){ #how far to shift the base of the edge "rootward" (0 if you want a polytomy)
   #first actually bind the tip
-  tree<-bind.tip(tree,tip.label,edge.length,where,position)
+  tree <- bind.tip(tree,tip.label,edge.length,where,position)
   #find the node index of the new tip using it's label (this is why the label must be unique)
-  new.tip<-which(tree$tip.label==tip.label)
+  new.tip <- which(tree$tip.label==tip.label)
   #duplicate the row corresponding to the new tip in dat
-  reps<-rep(1,nrow(dat))
-  reps[new.tip]<-2
-  inds<-rep(seq_len(nrow(dat)),reps)
-  dat<-dat[inds,]
+  reps <- rep(1,nrow(dat))
+  reps[new.tip] <- 2
+  inds <- rep(seq_len(nrow(dat)),reps)
+  dat <- dat[inds,]
   #alter the new tip's row with appropriate name/species label
-  dat[new.tip,-1]<-NA
-  dat$label[new.tip]<-tip.label
-  dat$species[new.tip]<-sp.name
+  dat[new.tip,-1] <- NA
+  dat$label[new.tip] <- tip.label
+  dat$species[new.tip] <- sp.name
   #increment the nodes below the new tip's row by 1
-  nodes.to.inc<-seq_len(nrow(dat))>new.tip
-  dat$node[nodes.to.inc]<-dat$node[nodes.to.inc]+1
+  nodes.to.inc <- seq_len(nrow(dat))>new.tip
+  dat$node[nodes.to.inc] <- dat$node[nodes.to.inc]+1
   list(tree=tree,dat=dat)
 }
 
@@ -169,100 +168,100 @@ custom.bind.tip<-function(tree,
 #then use custom function to add a branch in 
 
 #bind Acropora prolifera in
-tips<-dat$node[dat$species%in%c('Acropora millepora','Acropora palmata')]
-mrca<-getMRCA(phy,tips)
-tmp<-custom.bind.tip(phy,
+tips <- dat$node[dat$species%in%c('Acropora millepora','Acropora palmata')]
+mrca <- getMRCA(phy,tips)
+tmp <- custom.bind.tip(phy,
                      dat,
                      tip.label="Acropora prolifera",
                      where=mrca)
-phy<-tmp$tree
-dat<-tmp$dat
+phy <- tmp$tree
+dat <- tmp$dat
 
 #bind Bathyraja panthera in
-tips<-dat$node[dat$species%in%c('Bathyraja parmifera','Pavoraja nitida')]
-mrca<-getMRCA(phy,tips)
-tmp<-custom.bind.tip(phy,
+tips <- dat$node[dat$species%in%c('Bathyraja parmifera','Pavoraja nitida')]
+mrca <- getMRCA(phy,tips)
+tmp <- custom.bind.tip(phy,
                      dat,
                      tip.label="Bathyraja panthera",
                      where=mrca)
-phy<-tmp$tree
-dat<-tmp$dat
+phy <- tmp$tree
+dat <- tmp$dat
 
 #bind Bathyraja aleutica in
-tips<-dat$node[dat$species%in%c('Bathyraja parmifera','Pavoraja nitida')]
-mrca<-getMRCA(phy,tips)
-tmp<-custom.bind.tip(phy,
+tips <- dat$node[dat$species%in%c('Bathyraja parmifera','Pavoraja nitida')]
+mrca <- getMRCA(phy,tips)
+tmp <- custom.bind.tip(phy,
                      dat,
                      tip.label="Bathyraja aleutica",
                      where=mrca)
-phy<-tmp$tree
-dat<-tmp$dat
+phy <- tmp$tree
+dat <- tmp$dat
 
 #bind Bartholomea annulata in
-tips<-dat$node[dat$family%in%c('Aiptasiidae','Edwardsiidae')]
-mrca<-getMRCA(phy,tips)
-tmp<-custom.bind.tip(phy,
+tips <- dat$node[dat$family%in%c('Aiptasiidae','Edwardsiidae')]
+mrca <- getMRCA(phy,tips)
+tmp <- custom.bind.tip(phy,
                      dat,
                      tip.label="Bartholomea annulata",
                      where=mrca)
-phy<-tmp$tree
-dat<-tmp$dat
+phy <- tmp$tree
+dat <- tmp$dat
 
 #bind Exaiptasia brasiliensis in
-tips<-dat$node[dat$family%in%c('Aiptasiidae','Edwardsiidae')]
-mrca<-getMRCA(phy,tips)
-tmp<-custom.bind.tip(phy,
+tips <- dat$node[dat$family%in%c('Aiptasiidae','Edwardsiidae')]
+mrca <- getMRCA(phy,tips)
+tmp <- custom.bind.tip(phy,
                      dat,
                      tip.label="Exaiptasia brasiliensis",
                      where=mrca)
-phy<-tmp$tree
-dat<-tmp$dat
+phy <- tmp$tree
+dat <- tmp$dat
 
 #bind Exaiptasia diaphana (pallida) in
 # !!! NOTE !!! - using Exaiptasia diaphana instead of Exaiptasia pallida bc E. diaphana is accepted/current
-tips<-dat$node[dat$family%in%c('Aiptasiidae','Edwardsiidae')]
-mrca<-getMRCA(phy,tips)
-tmp<-custom.bind.tip(phy,
+tips <- dat$node[dat$family%in%c('Aiptasiidae','Edwardsiidae')]
+mrca <- getMRCA(phy,tips)
+tmp <- custom.bind.tip(phy,
                      dat,
                      tip.label="Exaiptasia diaphana",
                      where=mrca)
-phy<-tmp$tree
-dat<-tmp$dat
+phy <- tmp$tree
+dat <- tmp$dat
 
 #bind Systellaspis debilis in
-tips<-dat$node[dat$species%in%c('Pandalus montagui','Procaris ascensionis')]
-mrca<-getMRCA(phy,tips)
-tmp<-custom.bind.tip(phy,
+tips <- dat$node[dat$species%in%c('Pandalus montagui','Procaris ascensionis')]
+mrca <- getMRCA(phy,tips)
+tmp <- custom.bind.tip(phy,
                      dat,
                      tip.label="Systellaspis debilis",
                      where=mrca)
-phy<-tmp$tree
-dat<-tmp$dat
+phy <- tmp$tree
+dat <- tmp$dat
 
 #bind Acanthephyra purpurea in
-tips<-dat$node[dat$species%in%c('Pandalus montagui','Procaris ascensionis')]
-mrca<-getMRCA(phy,tips)
-tmp<-custom.bind.tip(phy,
+tips <- dat$node[dat$species%in%c('Pandalus montagui','Procaris ascensionis')]
+mrca <- getMRCA(phy,tips)
+tmp <- custom.bind.tip(phy,
                      dat,
                      tip.label="Acanthephyra purpurea",
                      where=mrca)
-phy<-tmp$tree
-dat<-tmp$dat
+phy <- tmp$tree
+dat <- tmp$dat
 
 #bind Cranchia scabra in
-tips<-dat$node[dat$family%in%c('Pyroteuthidae','Bathyteuthidae')]
-mrca<-getMRCA(phy,tips)
-tmp<-custom.bind.tip(phy,
+tips <- dat$node[dat$family%in%c('Pyroteuthidae','Bathyteuthidae')]
+mrca <- getMRCA(phy,tips)
+tmp <- custom.bind.tip(phy,
                      dat,
                      tip.label="Cranchia scabra",
                      where=mrca)
-phy<-tmp$tree
-dat<-tmp$dat
+phy <- tmp$tree
+dat <- tmp$dat
 
 
 #if you didn't want to make a polytomy, just find where the mrca of the clade you want the new tip to be SISTER to
 #then play around with the position=, which will slide the base of the new tip down the stem of that sister clade
-#(hopefully that makes sense)
+
 
 # final steps -----------
 #now we have a dataset with all the species we want, which gives the tip labels each species corresponds to in phy!
@@ -272,16 +271,15 @@ labels.to.keep<-match(ourspp$organism_biosamp,dat$species)
 # labels.to.keep<-lapply(ourspp$organism_biosamp,function(ii) which(dat$species==ii))
 # lengths(labels.to.keep) #thankfully, each species you want to keep correspond to either 0 or 1 labels
 #which divdiv species are still not in the tree
-ourspp$organism_biosamp[is.na(labels.to.keep)] #most of these are species not in missing.spp, so I assume they're just ones you haven't dealt with yet
-#now we're ready to just subset the tree using "keep.tip"
-labels.to.keep<-dat$label[labels.to.keep]
-labels.to.keep<-labels.to.keep[!is.na(labels.to.keep)]
-phy<-keep.tip(phy,labels.to.keep)
+ourspp$organism_biosamp[is.na(labels.to.keep)] #should return 0 aka they should all be in timetree as a tip now
+#now we're ready to subset the tree using "keep.tip"
+labels.to.keep <- dat$label[labels.to.keep]
+labels.to.keep <- labels.to.keep[!is.na(labels.to.keep)]
+phy <- keep.tip(phy,labels.to.keep)
 #for better "readability"
-phy$tip.label<-dat$species[match(phy$tip.label,dat$label)]
+phy$tip.label <- dat$species[match(phy$tip.label,dat$label)]
 
-
-#pdf('test.pdf',width=8.5,height=10)
+#view
 plot(phy,cex=0.6)
 
 
@@ -310,11 +308,11 @@ p %<+% lbs + #leftjoin labels for aesthetics onto phy
         axis.ticks.x = element_line(), #build scale bar
         axis.text.x = element_text(size = 2)) #plot ranges between 0 and 1
 
-#have to save manually using export point and click
-#8.18 x 5.80 inches
+#have to save manually using export -> Save as PDF, point and click
+#8.5 x 6 inches, "/figures/phy_115_divdiv_species.pdf"
 
 #save phy as Robj ---------------
-save(phy, file="divdiv_phy_from_timetreebeta5.Robj")
+save(phy, file="data/phylo/divdiv_phy_from_timetreebeta5.Robj")
 
 
 

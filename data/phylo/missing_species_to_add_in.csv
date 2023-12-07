@@ -1,0 +1,34 @@
+﻿label,in_timetree,in_our_NCBI_data,Phy_level_to_sub_in_at,subbing_method,species_subbed,kingdom_worms,phylum_worms,class_worms,order_worms,family_worms,genus_worms,sub_category
+Pisaster ochraceus,no,yes,family,pick a random one,,Animalia,Echinodermata,Asteroidea,Forcipulatida,Asteriidae,Pisaster,"randomly assigned to present tip, no other divdiv sp in this clade"
+Stephanocoenia intersepta,no,yes,family,pick a random one,,Animalia,Cnidaria,Anthozoa,Scleractinia,Astrocoeniidae,Stephanocoenia,"randomly assigned to present tip, no other divdiv sp in this clade"
+Chlorostoma funebralis,no,yes,genus,pick a random one,,Animalia,Mollusca,Gastropoda,Trochida,Tegulidae,Chlorostoma,"randomly assigned to present tip, no other divdiv sp in this clade"
+Laguncularia racemosa,no,yes,family,pick a random one,,Plantae,Tracheophyta,Magnoliopsida,Myrtales,Combretaceae,Laguncularia,"randomly assigned to present tip, no other divdiv sp in this clade"
+Bathymodiolus platifrons,no,yes,genus,pick a random one,,Animalia,Mollusca,Bivalvia,Mytilida,Mytilidae,Gigantidas,"randomly assigned to present tip, no other divdiv sp in this clade"
+Planes minutus,no,yes,family,pick a random one,,Animalia,Arthropoda,Malacostraca,Decapoda,Grapsidae,Planes,"randomly assigned to present tip, no other divdiv sp in this clade"
+Lateolabrax maculatus,no,yes,genus,pick a random one,,Animalia,Chordata,Actinopterygii,Perciformes,Lateolabracidae,Lateolabrax,"randomly assigned to present tip, no other divdiv sp in this clade"
+Strombus pugilis,no,yes,order,pick a random one,,Animalia,Mollusca,Gastropoda,Littorinimorpha,Strombidae,Strombus,"randomly assigned to present tip, no other divdiv sp in this clade"
+Nymphon australe,no,yes,genus,pick a random one,,Animalia,Arthropoda,Pycnogonida,Pantopoda,Nymphonidae,Nymphon,"randomly assigned to present tip, no other divdiv sp in this clade"
+Ostrea lurida,no,yes,family,pick a random one,,Animalia,Mollusca,Bivalvia,Ostreida,Ostreidae,Ostrea,"randomly assigned to present tip, no other divdiv sp in this clade"
+Eukrohnia hamata,no,yes,class,pick a random one,,Animalia,Chaetognatha,Sagittoidea,Phragmophora,Eukrohniidae,Eukrohnia,"randomly assigned to present tip, no other divdiv sp in this clade"
+Robustosergia robusta,no,yes,family,pick a random one,,Animalia,Arthropoda,Malacostraca,Decapoda,Sergestidae,Robustosergia,"randomly assigned to present tip, no other divdiv sp in this clade"
+Seriola dorsalis,no,yes,genus,pick a random one,,NA,NA,NA,NA,NA,Seriola,"randomly assigned to present tip, no other divdiv sp in this clade"
+Siphamia tubifer,no,yes,genus,pick a random one,,Animalia,Chordata,Actinopterygii,Perciformes,Apogonidae,Siphamia,"randomly assigned to present tip, no other divdiv sp in this clade"
+Isocladus armatus,no,yes,family,pick a random one,,Animalia,Arthropoda,Malacostraca,Isopoda,Sphaeromatidae,Isocladus,"randomly assigned to present tip, no other divdiv sp in this clade"
+Sphyrna tiburo,no,yes,genus,pick a random one,,Animalia,Chordata,Elasmobranchii,Carcharhiniformes,Sphyrnidae,Sphyrna,"randomly assigned to present tip, no other divdiv sp in this clade"
+Ectopleura larynx,no,yes,family,pick a random one,,Animalia,Cnidaria,Hydrozoa,Anthoathecata,Tubulariidae,Ectopleura,"randomly assigned to present tip, no other divdiv sp in this clade"
+Zenarchopterus dunckeri,no,yes,family,pick genera tip,Zenarchopterus dunckeri,Animalia,Chordata,Actinopterygii,Beloniformes,Zenarchopteridae,Zenarchopterus,"assigned to TT genera tip, no other divdiv in this clade"
+Acropora prolifera,no,yes,genus,add as a new branch to make polytomy with Acropora millepora and Acropora palmata,,Animalia,Cnidaria,Anthozoa,Scleractinia,Acroporidae,Acropora,added new branch to TT as a polytomy
+Sebastes diaconus,no,yes,genus,closest relative,Sebastes mystinus,Animalia,Chordata,Actinopterygii,Scorpaeniformes,Sebastidae,Sebastes,"assigned to closest relative, other divdiv sp in this clade"
+Stegastes beebei,no,yes,genus,closest relative,Stegastes leucostictus,Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Stegastes,"assigned to closest relative, other divdiv sp in this clade"
+Stegastes leucorus,no,yes,genus,closest relative,Stegastes variabilis,Animalia,Chordata,Actinopterygii,Perciformes,Pomacentridae,Stegastes,"assigned to closest relative, other divdiv sp in this clade"
+Bathyraja panthera,no,yes,genus,"add as a new branch to make polytomy with one Bathraja species in TT, also in divdiv",,Animalia,Chordata,Elasmobranchii,Rajiformes,Arhynchobatidae,Bathyraja,added new branch to TT as a polytomy
+Bathyraja aleutica,no,yes,genus,"add as a new branch to make polytomy with one Bathraja species in TT, also in divdiv",,Animalia,Chordata,Elasmobranchii,Rajiformes,Arhynchobatidae,Bathyraja,added new branch to TT as a polytomy
+Anthopleura elegantissima,no,yes,genus,pick genera tip,Anthopleura elegantissima,Animalia,Cnidaria,Anthozoa,Actiniaria,Actiniidae,Anthopleura,"assigned to TT genera tip, no other divdiv in this clade"
+Nematostella vectensis,no,yes,genus,pick genera tip,Nematostella vectensis,Animalia,Cnidaria,Anthozoa,Actiniaria,Edwardsiidae,Nematostella,"assigned to TT genera tip, no other divdiv in this clade"
+Bartholomea annulata,no,yes,family,"three sp. in divdiv that are all only in TT as one family tip, make polytomy here",,Animalia,Cnidaria,Anthozoa,Actiniaria,Aiptasiidae,Bartholomea,added new branch to TT as a polytomy
+Exaiptasia brasiliensis,no,yes,family,"three sp. in divdiv that are all only in TT as one family tip, make polytomy here",,Animalia,Cnidaria,Anthozoa,Actiniaria,Aiptasiidae,Exaiptasia,added new branch to TT as a polytomy
+Exaiptasia pallida,no,yes,family,"three sp. in divdiv that are all only in TT as one family tip, make polytomy here",,Animalia,Cnidaria,Anthozoa,Actiniaria,Aiptasiidae,Exaiptasia,added new branch to TT as a polytomy
+Pyroteuthis margaritifera,no,yes,family,pick family tip,Pyroteuthis margaritifera,Animalia,Mollusca,Cephalopoda,Oegopsida,Pyroteuthidae,Pyroteuthis,"assigned to TT family tip, no other divdiv in this clade"
+Systellaspis debilis,no,yes,infraorder,"add as polytomy to infraorder Caridea, along with another missing sp",,Animalia,Arthropoda,Malacostraca,Decapoda,Oplophoridae,Systellaspis,added new branch to TT as a polytomy
+Acanthephyra purpurea,no,yes,infraorder,"add as polytomy to infraorder Caridea, along with another missing sp",,Animalia,Arthropoda,Malacostraca,Decapoda,Acanthephyridae,Acanthephyra,added new branch to TT as a polytomy
+Cranchia scabra,no,yes,suborder,"add as polytomy to suborder Oegopsina, also contains tip for Pyroteuthidae family",,Animalia,Mollusca,Cephalopoda,Oegopsida,Cranchiidae,Cranchia,added new branch to TT as a polytomy
