@@ -22,7 +22,7 @@ source("divdiv_analysis_functions.R")
 ################################
 source("trait_mod_stan_blocks.R")
 betaPhyReg <- stan_model(model_code=betaPhyReg)
-expPhyReg <- stan_model(model_code=expPhyReg)
+#expPhyReg <- stan_model(model_code=expPhyReg)
 
 ################################
 # get phylo structure,
@@ -189,6 +189,122 @@ pdf(file="div_multiPred_betas.pdf",width=14,height=10)
 	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,multiPred=TRUE)
 dev.off()
 
+
+################################
+# analyze diversity with one biological predictor 
+#	and all the "nuisance" parameters
+#	beta model, unscaled diversity
+#	IN SPECIFIC GROUPS:
+#		PLD w/ isPlanktonic filter
+#		body size just in fish
+#		all analyses dropping birds & mammals
+################################
+
+# PLD w/ isPlanktonic filter
+isPlanktonic <- which(predictors[11,]==1)
+db <- makeMultiDB(list(predictors[10,isPlanktonic],
+						 nuisPreds[1,isPlanktonic],
+						 nuisPreds[2,isPlanktonic],
+						 nuisPreds[3,isPlanktonic],
+						 nuisPreds[4,isPlanktonic]),
+					 Y=1-z$s[isPlanktonic],
+					 phyStr=phyStr[isPlanktonic,isPlanktonic])
+
+fit <- rstan::sampling(object=betaPhyReg,
+						data=db,
+						iter=nIter,
+						thin=nIter/500,
+						chains=1,
+						control=setNames(list(15),"max_treedepth"))
+
+pdf(file="div_PLD_isPlanktonic.pdf",width=12,height=10)
+	betaPPS(db,fit,500,predName="pelagic larval dispersal\nin planktonic species",multiPred=TRUE)
+dev.off()
+out <- list("db"=db,"fit"=fit)
+save(out,file="PLD_isPlanktonic.Robj")
+
+
+# BodySize w/ isFish filter
+fishMRCA <- ape::getMRCA(sampPhy,c(which(sampPhy$tip.label=="Engraulis encrasicolus"),which(sampPhy$tip.label=="Sebastes diaconus")))
+isFish <- phangorn::Descendants(sampPhy,fishMRCA,type="tips")[[1]]
+
+db <- makeMultiDB(list(predictors[4,isFish],
+						 nuisPreds[1,isFish],
+						 nuisPreds[2,isFish],
+						 nuisPreds[3,isFish],
+						 nuisPreds[4,isFish]),
+					 Y=1-z$s[isFish],
+					 phyStr=phyStr[isFish,isFish])
+
+fit <- rstan::sampling(object=betaPhyReg,
+						data=db,
+						iter=nIter,
+						thin=nIter/500,
+						chains=1,
+						control=setNames(list(15),"max_treedepth"))
+
+pdf(file="div_bodySize_isFish.pdf",width=12,height=10)
+	betaPPS(db,fit,500,predName="body size\nin fishes",multiPred=TRUE)
+dev.off()
+out <- list("db"=db,"fit"=fit)
+save(out,file="bodySize_isFish.Robj")
+
+
+# all analyses with only primarily marine spp.
+ogMarine <- which(z$taxclade %in% c("cnidarians","crustacea","molluscs","echinoderms","chondrichthyes","bony fishes"))
+
+db <- lapply(1:nrow(bioPreds),
+			function(i){
+				makeMultiDB(list(predictors[i,ogMarine],
+								 nuisPreds[1,ogMarine],
+								 nuisPreds[2,ogMarine],
+								 nuisPreds[3,ogMarine],
+								 nuisPreds[4,ogMarine]),
+							 Y=1-z$s[ogMarine],
+							 phyStr=phyStr[ogMarine,ogMarine])
+		})
+names(db) <- bioPredNames
+
+cl <- parallel::makeCluster(12)
+doParallel::registerDoParallel(cl)
+
+fits <- foreach::foreach(i = 1:nrow(bioPreds)) %dopar% {
+	message(sprintf("now analyzing multiple-linear regression with main predictor %s/%s",i,nrow(predictors)))
+	rstan::sampling(object=betaPhyReg,
+					data=db[[i]],
+					iter=nIter,
+					thin=nIter/500,
+					chains=1,
+					control=setNames(list(15),"max_treedepth"))
+}
+
+parallel::stopCluster(cl)
+
+names(fits) <- bioPredNames
+out <- list("db"=db,"fits"=fits)
+save(out,file="div_multiPred_ogMarine.Robj")
+
+pdf(file="div_multiPred_ogMarine.pdf",width=12,height=10)
+	par(mfrow=c(3,4)) ; for(i in 1:nrow(bioPreds)){betaPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i],multiPred=TRUE)}
+dev.off()
+
+pdf(file="div_multiPred_phyloFit_ogMarine.pdf",width=12,height=12)
+	for(i in 1:nrow(bioPreds)){
+		modAdViz(out$db[[i]],out$fit[[i]],predName=bioPredNames[i],
+					nPPS=500,tree=sampPhy,xlim=c(0,0.05),
+					valRange=NULL,qnt=0.999,adj=0.5)
+	}
+dev.off()
+
+pdf(file="div_multiPred_phyloFit_log_ogMarine.pdf",width=12,height=12)
+	for(i in 1:nrow(bioPreds)){
+		modAdViz(out$db[[i]],out$fit[[i]],predName=bioPredNames[i],
+					nPPS=500,tree=sampPhy,xlim=c(0,0.05),
+					valRange=NULL,qnt=0.999,adj=0.5,logX=TRUE)
+	}
+dev.off()
+
+if(FALSE){
 ################################
 # analyze Nbhd with one predictor at a time
 #	exp model
@@ -275,7 +391,7 @@ dev.off()
 pdf(file="nbhd_multiPred_betas.pdf",width=14,height=10)
 	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,multiPred=TRUE)
 dev.off()
-
+}
 
 ################
 # GRAVEYARD

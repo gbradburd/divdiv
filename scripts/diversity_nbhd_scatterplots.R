@@ -30,6 +30,7 @@ z <- z[,c("species","cladecolor","s","nbhd",
 
 z[["log(deep-time diversity)"]] <- log(1-z$s)
 
+
 pdf(file="../figures/variable_scatterplots.pdf",width=12,height=5,pointsize=11)
 for(i in 4:ncol(z)){
 	par(mar=c(8,5,3,1),bty="n")
@@ -115,6 +116,28 @@ pdf(file="../figures/nbhd_vs_pi.pdf",width=7,height=7,pointsize=11)
 plot(z$nbhd,log(1-z$s),col=adjustcolor(z$cladecolor[order(z$nbhd)],0.5),pch=19,cex=2,
 	xlab="neighborhood size",
 	ylab=expression(paste("log(deep-time ",pi,")")))
+dev.off()
+
+# phylogenetic distance vs. predictor and response variable distance
+load("../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
+sampPhy <- ape::keep.tip(phy,gsub("_"," ",z$species))
+phyStr <- ape::cophenetic.phylo(sampPhy)
+upTri <- upper.tri(phyStr)
+colmat1 <- matrix(z$cladecolor,nrow=nrow(z),ncol=nrow(z))[upTri]
+colmat2 <- matrix(z$cladecolor,nrow=nrow(z),ncol=nrow(z),byrow=TRUE)[upTri]
+
+sp <- gsub("_"," ",z$species)
+z <- z[match(row.names(phyStr),sp),]
+
+
+pdf(file="../figures/phylodist.pdf",width=7,height=7,pointsize=11)
+	par(cex.lab=2,mar=c(6,6,5,1))
+	for(i in 4:ncol(z)){
+		plot(phyStr[upTri],fields::rdist(z[,i])[upTri],
+				pch=21,bg=adjustcolor(colmat1,0.4),col=adjustcolor(colmat2,0.4),
+				main=names(z)[i],
+				xlab="phylogenetic distance",ylab="trait distance")
+	}
 dev.off()
 
 #graveyard
