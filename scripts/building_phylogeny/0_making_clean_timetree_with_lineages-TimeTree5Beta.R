@@ -24,7 +24,7 @@ rm(list=ls())
 gc()
 
 #read in time tree ---------------------------------------------------------------------------------------------------------------------
-tree <- phytools::read.newick("data/phylo/TimeTree_140K_NCBI_Taxon_IDs.nwk")
+tree <- phytools::read.newick("data/phylo/inputs_and_working/TimeTree_140K_NCBI_Taxon_IDs.nwk")
 tree
 
 #convert to treedata object 
@@ -114,7 +114,7 @@ rm(list=ls())
 gc()
 
 #read in time tree
-tree <- phytools::read.newick("data/phylo/TimeTree_140K_NCBI_Taxon_IDs.nwk")
+tree <- phytools::read.newick("data/phylo/inputs_and_working/TimeTree_140K_NCBI_Taxon_IDs.nwk")
 tree
 #convert to treedata object 
 tree <- tidytree::as.treedata(tree)
@@ -125,7 +125,7 @@ tiplabels <- tree@phylo$tip.label %>% as.data.frame(.) %>% rename("tip.label" = 
 head(tiplabels)
 
 #get lineage info that we looked up for timetree
-lineageinfo <- read.csv("data/phylo/TimeTree_140K_NCBI_Taxon_IDs_linean_ranks_for_tips_from_taxize-wide.csv") %>% select(-X)
+lineageinfo <- read.csv("data/phylo/inputs_and_working/TimeTree_140K_NCBI_Taxon_IDs_linean_ranks_for_tips_from_taxize-wide.csv") %>% select(-X)
 head(lineageinfo)
 #add lineage info on to tip labels
 dim(tiplabels)
@@ -156,19 +156,8 @@ tree <- full_join(tree, lbs, by = "label")
 tree
 
 #save tree WITH taxon info tacked on - so we can use it later
-save(tree, file = "data/phylo/TimeTree_140K_NCBI_Taxon_IDs-withtaxizeinfo.Robj")
+save(tree, file = "data/phylo/inputs_and_working/TimeTree_140K_NCBI_Taxon_IDs-withtaxizeinfo.Robj")
 
 
-
-# *****************************************
-#### SECTION 3 - drop phy tips to get just metazoa and viridiplantae ####
-# *****************************************
-
-rm(list = setdiff(ls(), lsf.str()))
-gc()
-
-# read in Time Tree with taxonomic rank info saved in @extraInfo
-# note, tax info looked up using taxize::classification(x = timetree_tip_labels, db = 'ncbi') - making_phylogeny.R
-load("plotting_on_phylogeny/tree_files/TimeTree_140K_NCBI_Taxon_IDs-withtaxizeinfo.Robj")
 
 

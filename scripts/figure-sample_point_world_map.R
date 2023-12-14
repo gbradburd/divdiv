@@ -68,9 +68,11 @@ sites <- merge(sites %>% separate(., link, into = c("garbage","species"), sep = 
                by = "species", all.x = T)
 sites.pg <- sites
 
-#get list of datasets with wishart values
-#havewishart <- read.csv("data/master_df.csv") %>% filter(is.na(s.wish)==FALSE) %>% dplyr::select(link) %>% mutate(link = gsub("bioprj_","",link))
-#sites.pg <- sites %>% filter(link %in% havewishart$link)
+#get list of datasets we're using
+
+
+
+
 
 
 

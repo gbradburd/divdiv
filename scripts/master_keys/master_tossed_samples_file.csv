@@ -1,0 +1,1118 @@
+﻿link,run_acc_sra,reason_for_removal
+PRJNA354496_Symphodus-melops,SRR5262242,"sequencing method listed as ""other"" and no lat/long and other type of metadata associated with other 65 samples listed for these 8 - also listed as paired samples but downloaded as single"
+PRJNA354496_Symphodus-melops,SRR5262235,"sequencing method listed as ""other"" and no lat/long and other type of metadata associated with other 65 samples listed for these 8 - also listed as paired samples but downloaded as single"
+PRJNA354496_Symphodus-melops,SRR5262237,"sequencing method listed as ""other"" and no lat/long and other type of metadata associated with other 65 samples listed for these 8 - also listed as paired samples but downloaded as single"
+PRJNA354496_Symphodus-melops,SRR5262238,"sequencing method listed as ""other"" and no lat/long and other type of metadata associated with other 65 samples listed for these 8 - also listed as paired samples but downloaded as single"
+PRJNA354496_Symphodus-melops,SRR5262239,"sequencing method listed as ""other"" and no lat/long and other type of metadata associated with other 65 samples listed for these 8 - also listed as paired samples but downloaded as single"
+PRJNA354496_Symphodus-melops,SRR9968853,"sequencing method listed as ""other"" and no lat/long and other type of metadata associated with other 65 samples listed for these 8 - also listed as paired samples but downloaded as single"
+PRJNA354496_Symphodus-melops,SRR9968791,"sequencing method listed as ""other"" and no lat/long and other type of metadata associated with other 65 samples listed for these 8 - also listed as paired samples but downloaded as single"
+PRJNA354496_Symphodus-melops,SRR9968796,"sequencing method listed as ""other"" and no lat/long and other type of metadata associated with other 65 samples listed for these 8 - also listed as paired samples but downloaded as single"
+PRJNA371817_Ostrea-lurida,SRR5239009,sample has tens-hundreds of millions of reads compared to rest of samples that have millions of reads and this one sample doesn't have lat/long
+PRJNA480308_Rhizophora-mangle,SRR7779779,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779773,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779739,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779763,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779783,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779752,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779767,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779736,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779737,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779765,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779741,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779742,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779743,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779778,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779761,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779766,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779774,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779781,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779756,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779769,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779784,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779764,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779757,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779770,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779750,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779747,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779740,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779746,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779759,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779738,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779753,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779751,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779749,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779744,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779748,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779785,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779776,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779780,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779762,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779777,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779760,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779772,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779768,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779758,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779754,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779771,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779782,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779755,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779775,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480308_Rhizophora-mangle,SRR7779745,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781572,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781579,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781541,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781544,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781554,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781562,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781571,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781582,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781570,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781552,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781546,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781558,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781555,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781551,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781539,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781535,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781574,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781573,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781538,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781543,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781576,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781568,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781559,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781550,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781561,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781580,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781565,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781549,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781563,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781542,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781564,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781553,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781557,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781560,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781577,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781537,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781556,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781540,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781545,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781536,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781566,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781534,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781569,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781581,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781575,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781548,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781547,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781578,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781533,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA480409_Laguncularia-racemosa,SRR7781567,confirmed in published paper and NCBI that this is chloroplast DNA (remaining samples in this bioproject are nuclear)
+PRJNA560239_Sebastes-diaconus,SRR5262243,Felix - corresponding author and data submitted - told us over email that this sample removed due to poor quality before their bioinformatic processing/at first step - this sample is not listed in suppmat sample list
+PRJNA560239_Sebastes-diaconus,SRR5262241,Felix - corresponding author and data submitted - told us over email that this sample removed due to poor quality before their bioinformatic processing/at first step - this sample is not listed in suppmat sample list
+PRJNA560239_Sebastes-diaconus,SRR5262234,Felix - corresponding author and data submitted - told us over email that this sample removed due to poor quality before their bioinformatic processing/at first step - this sample is not listed in suppmat sample list
+PRJNA437462_Fundulus-grandis,SRR7221845,"original sample from NCBI only had 11598 total reads, Stacks could not form any primary reads in ustacks and threw an error"
+PRJNA553831_Robustosergia-robusta,SRR9669204,"original sample from NCBI only had 1026 total reads, Stacks could not form any primary reads in ustacks and threw an error"
+PRJNA528403_Gadus-morhua,SRR8759252,"paper and NCBI says this should be single-end read but download returns _1 and _2 files, dropping"
+PRJNA560242_Gadus-morhua,SRR9967845,"only 405 raw reads, Stacks couldn't form any primary stacks"
+PRJNA560242_Gadus-morhua,SRR9967896,"only 1590 raw reads, Stacks couldn't form any primary stacks"
+PRJNA560242_Gadus-morhua,SRR9968259,"only 1110 raw reads, Stacks couldn't form any primary stacks"
+PRJNA560242_Gadus-morhua,SRR9967899,"only 250 raw reads, Stacks couldn't form any primary stacks"
+PRJNA473816_Acropora-palmata,SRR7235983,this 1 sample sequenced differently than the rest to build a draft genome out of
+PRJNA473816_Acropora-cervicornis,SRR7235995,this 1 sample sequenced differently than the rest to build a draft genome out of
+PRJNA319656_Seriola-lalandi-dorsalis,SRR4039442,sex of the fish couldn't be determined to they treated this and 4 other of 95 total samples differently - paper only reports on the 90 do dropping these - which also stuck out in read length as weird/diff from rest
+PRJNA319656_Seriola-lalandi-dorsalis,SRR4039443,sex of the fish couldn't be determined to they treated this and 4 other of 95 total samples differently - paper only reports on the 90 do dropping these - which also stuck out in read length as weird/diff from rest
+PRJNA319656_Seriola-lalandi-dorsalis,SRR4039444,sex of the fish couldn't be determined to they treated this and 4 other of 95 total samples differently - paper only reports on the 90 do dropping these - which also stuck out in read length as weird/diff from rest
+PRJNA319656_Seriola-lalandi-dorsalis,SRR4039445,sex of the fish couldn't be determined to they treated this and 4 other of 95 total samples differently - paper only reports on the 90 do dropping these - which also stuck out in read length as weird/diff from rest
+PRJNA319656_Seriola-lalandi-dorsalis,SRR4039446,sex of the fish couldn't be determined to they treated this and 4 other of 95 total samples differently - paper only reports on the 90 do dropping these - which also stuck out in read length as weird/diff from rest
+PRJNA646172_Bathyraja-parmifera,SRR12218246,"had over 100,000,000 reads compared to about 3 million or less for rest of samples"
+PRJNA646172_Bathyraja-parmifera,SRR12217866,"had over 100,000,000 reads compared to about 3 million or less for rest of samples"
+PRJNA210803_Pygoscelis-adeliae,SRR1523855,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523856,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523857,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523858,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523859,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523860,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523861,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523862,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523863,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523864,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523865,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523866,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523867,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523868,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523869,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523870,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523871,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523872,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523873,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523874,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523877,ancient DNA
+PRJNA210803_Pygoscelis-adeliae,SRR1523878,ancient DNA
+PRJNA471559_Planes-minutus,SRR7189701,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226913,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226910,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226909,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226919,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226885,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226884,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226896,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226898,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226920,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226890,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226894,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226907,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226882,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226883,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226888,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226905,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226902,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226893,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226906,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226912,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226887,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226897,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226892,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226891,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226886,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226917,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226889,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226903,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226918,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226901,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226915,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226900,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226914,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226916,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226904,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226908,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226895,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226911,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226899,couldn't find lat/long
+PRJNA369717_Nautilus-pompilius,SRR5226858,couldn't find lat/long
+PRJNA593014_Acropora-millepora,SRR10571274,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571285,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571296,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571300,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571311,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571322,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571339,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571340,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571351,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571362,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571373,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571384,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571397,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571400,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571401,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571402,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571403,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571404,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571405,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571406,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571407,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571408,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571409,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571410,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571411,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571412,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571413,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571414,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571415,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571416,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571417,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571422,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571423,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571429,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571440,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571451,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571466,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571477,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571488,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571499,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571510,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571521,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571533,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571544,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571555,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571566,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571567,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA593014_Acropora-millepora,SRR10571568,"over 100,000,000 reads - resequenced to build genome - already have this indiv sequenced in prj with millions of reads"
+PRJNA554161_Penaeus-duorarum,SRR9694625,sequence didn't have lat/lon - figured out it was somewhere near Brazil - but this species doesn't have GBIF points there - and authors reclassified this samples as species brasiliensis in meantime
+PRJNA554161_Penaeus-duorarum,SRR9694645,couldn't find lat/long
+PRJNA549138_Sargassum-muticum,SRR9311988,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9311990,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9311991,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9311992,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9311993,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9311994,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9311995,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9311996,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9311997,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9311998,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9311999,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312000,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312001,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312002,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312003,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312004,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312005,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312006,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312007,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312008,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312009,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312010,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312011,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312012,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312013,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312014,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312016,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312017,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312020,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312021,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312022,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312023,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312024,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312025,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312026,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312027,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312028,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312029,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312030,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312031,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312032,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312033,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312034,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312035,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312036,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312037,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312038,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312039,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312040,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312041,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312042,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312043,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312044,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312045,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312046,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312047,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312048,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312049,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312050,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312051,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312052,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312053,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312054,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312055,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312056,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312057,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312058,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312059,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312060,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312061,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312062,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312063,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312064,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312065,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312066,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312067,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312068,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312070,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312071,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312072,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312082,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312083,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312084,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312085,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312086,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312087,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312088,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312089,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312091,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312092,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312093,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312094,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312095,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312096,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312097,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312098,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312099,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312100,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312101,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312102,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312103,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312104,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312105,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312106,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312107,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312108,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312109,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312110,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312111,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312112,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312113,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312114,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312115,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312116,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312117,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312118,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312119,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312120,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312127,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312128,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312129,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312130,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312131,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312132,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312135,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312144,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312145,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312146,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312147,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312148,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312149,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312150,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312151,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312152,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312153,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312154,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312155,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312160,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312161,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312164,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312165,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312166,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312167,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312168,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312169,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312170,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312171,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312172,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312173,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312174,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312175,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312176,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312177,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312178,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312179,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312184,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312185,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312186,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312187,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312188,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312189,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312190,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312191,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312192,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312193,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312194,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312195,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312196,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312198,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312205,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312208,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312209,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312210,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312211,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312212,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312219,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312221,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312222,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312223,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312224,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312225,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312226,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312227,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312228,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312229,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312230,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312233,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312236,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312242,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312243,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312244,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312245,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312246,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312247,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312248,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312249,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312250,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312251,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312252,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312253,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312254,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312255,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312256,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312257,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312258,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312270,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312271,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312272,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312273,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312274,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312275,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312276,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312277,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312278,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312279,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312280,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312281,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312282,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312283,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312285,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312286,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312287,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312288,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312289,sampled in introduced range
+PRJNA549138_Sargassum-muticum,SRR9312290,sampled in introduced range
+PRJNA295681_Anguilla-anguilla,SRR2887278,outlier with way more reads than rest of samples (20+ million)
+PRJNA295681_Anguilla-anguilla,SRR2887456,outlier with way more reads than rest of samples (20+ million)
+PRJNA319656_Seriola-lalandi-dorsalis,SRR4039443,outlier with way more reads than rest of samples (80+ million)
+PRJNA319656_Seriola-lalandi-dorsalis,SRR4039442,outlier with way more reads than rest of samples (80+ million)
+PRJNA319656_Seriola-lalandi-dorsalis,SRR4039444,no reads in this sample
+PRJNA319656_Seriola-lalandi-dorsalis,SRR4039445,no reads in this sample
+PRJNA319656_Seriola-lalandi-dorsalis,SRR4039446,no reads in this sample
+PRJNA343012_Aptenodytes-patagonicus,SRR4244504,outlier with way more reads than rest of samples (20+ million)
+PRJNA343301_Oculina-patagonica,SRR4308810,"less than 100,000 reads"
+PRJNA343301_Oculina-patagonica,SRR4308780,"less than 100,000 reads"
+PRJNA343301_Oculina-patagonica,SRR4308809,"less than 100,000 reads"
+PRJNA343301_Oculina-patagonica,SRR4308720,"less than 100,000 reads"
+PRJNA343301_Oculina-patagonica,SRR4308807,"less than 100,000 reads"
+PRJNA343301_Oculina-patagonica,SRR4308805,"less than 100,000 reads"
+PRJNA343301_Oculina-patagonica,SRR4308779,"less than 100,000 reads"
+PRJNA343301_Oculina-patagonica,SRR4308723,"less than 100,000 reads"
+PRJNA343301_Oculina-patagonica,SRR4308811,"less than 100,000 reads"
+PRJNA343301_Oculina-patagonica,SRR4308727,"less than 100,000 reads"
+PRJNA344385_Oculina-patagonica,SRR4344255,"less than 100,000 reads"
+PRJNA344385_Oculina-patagonica,SRR4344225,"less than 100,000 reads"
+PRJNA344385_Oculina-patagonica,SRR4344254,"less than 100,000 reads"
+PRJNA344385_Oculina-patagonica,SRR4344165,"less than 100,000 reads"
+PRJNA344385_Oculina-patagonica,SRR4344252,"less than 100,000 reads"
+PRJNA344385_Oculina-patagonica,SRR4344250,"less than 100,000 reads"
+PRJNA344385_Oculina-patagonica,SRR4344224,"less than 100,000 reads"
+PRJNA344385_Oculina-patagonica,SRR4344168,"less than 100,000 reads"
+PRJNA344385_Oculina-patagonica,SRR4344256,"less than 100,000 reads"
+PRJNA344385_Oculina-patagonica,SRR4344172,"less than 100,000 reads"
+PRJNA344385_Oculina-patagonica,SRR4344247,"less than 100,000 reads"
+PRJNA348572_Zalophus-wollebaeki,SRR4424713,"less than 100,000 reads"
+PRJNA360511_Trachidermus-fasciatus,SRR8929588,outlier with way more reads than rest of samples (40+ million)
+PRJNA360511_Trachidermus-fasciatus,SRR8929518,outlier with way more reads than rest of samples (40+ million)
+PRJNA369168_Gasterosteus-aculeatus,SRR5215347,outlier with way more reads than rest of samples (30+ million)
+PRJNA382467_Platichthys-flesus,SRR6914787,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914788,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914789,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914790,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914791,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914792,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914793,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914794,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914795,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914796,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914797,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914798,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914799,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914800,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914801,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914802,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914803,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914804,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914805,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914806,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914807,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914808,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914809,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914810,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914811,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914812,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914813,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914814,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914815,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914816,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914817,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914818,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914819,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914820,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914821,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914822,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914823,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914824,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914825,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914826,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914827,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914828,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914829,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914830,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914831,no reads in this sample
+PRJNA382467_Platichthys-flesus,SRR6914832,no reads in this sample
+PRJNA394157_Exaiptasia-diaphana,SRR5829074,"less than 100,000 reads"
+PRJNA428529_Fundulus-heteroclitus,SRR7340933,"less than 100,000 reads"
+PRJNA428529_Fundulus-heteroclitus,SRR7340997,"less than 100,000 reads"
+PRJNA428529_Fundulus-heteroclitus,SRR7340934,"less than 100,000 reads"
+PRJNA428529_Fundulus-heteroclitus,SRR7341185,"less than 100,000 reads"
+PRJNA428529_Fundulus-heteroclitus,SRR7340870,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487102,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487098,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487111,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487106,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487099,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487103,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487109,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487068,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487077,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487072,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487069,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487108,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487052,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487107,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487026,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487112,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487076,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487071,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487073,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487086,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487032,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487075,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487029,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487043,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487051,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487057,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487050,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487067,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487045,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487042,"less than 100,000 reads"
+PRJNA430897_Nymphon-australe,SRR6487048,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7410907,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428635,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428845,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428888,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428671,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428893,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429045,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428839,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428846,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428670,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428672,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428848,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428837,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428822,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428851,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428636,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428891,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429051,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428895,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428637,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428838,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428669,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428572,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428842,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428897,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429047,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428847,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428794,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428602,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428725,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429080,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428770,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429001,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428874,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429033,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428806,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428916,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428558,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429017,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428731,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428630,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428758,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428971,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428914,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428853,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428727,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428968,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428889,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428960,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428633,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428785,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428815,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428656,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429018,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428781,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428963,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428854,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428913,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428611,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428769,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429090,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428859,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428894,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428600,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429036,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429041,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429056,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428713,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429084,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428690,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428578,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429083,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428568,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428579,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428587,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429013,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428873,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428918,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428603,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428623,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428987,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428756,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428996,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429012,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428922,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428863,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429025,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429031,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428803,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428776,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428594,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428993,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428585,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428807,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428597,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428608,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428658,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428733,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428618,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428598,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429048,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428824,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428801,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428772,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429038,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429037,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428902,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429081,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428915,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428654,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428948,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428766,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428773,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428584,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428632,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428562,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428983,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428907,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428765,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428688,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428998,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428878,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428601,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428617,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428599,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428620,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428588,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429087,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428614,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428744,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428999,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429032,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428855,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428984,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428802,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428779,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428973,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428985,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429035,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428605,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428639,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428720,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428668,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429023,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428997,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428912,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428988,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429021,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428638,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429078,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428704,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428992,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428666,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428908,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428827,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428964,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428817,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428799,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428622,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428990,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428655,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428748,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428870,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428798,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428955,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428947,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429016,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428823,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428865,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428858,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428808,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428549,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428768,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429064,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429003,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429082,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428826,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428557,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428767,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428581,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428718,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429002,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428980,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428723,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428726,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428667,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429059,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428919,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429085,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7429024,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428966,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428871,"less than 100,000 reads"
+PRJNA432036_Thunnus-thynnus,SRR7428818,"less than 100,000 reads"
+PRJNA434194_Acropora-millepora,SRR6728359,outlier with way more reads than rest of samples (20+ million)
+PRJNA434194_Acropora-millepora,SRR6728336,outlier with way more reads than rest of samples (20+ million)
+PRJNA434194_Acropora-millepora,SRR6728337,outlier with way more reads than rest of samples (20+ million)
+PRJNA445895_Pisaster-ochraceus,SRR6905521,"less than 100,000 reads"
+PRJNA445895_Pisaster-ochraceus,SRR6905520,"less than 100,000 reads"
+PRJNA445895_Pisaster-ochraceus,SRR6905507,"less than 100,000 reads"
+PRJNA445895_Pisaster-ochraceus,SRR6905624,"less than 100,000 reads"
+PRJNA445895_Pisaster-ochraceus,SRR6905449,"less than 100,000 reads"
+PRJNA445895_Pisaster-ochraceus,SRR6905677,"less than 100,000 reads"
+PRJNA445895_Pisaster-ochraceus,SRR6905437,"less than 100,000 reads"
+PRJNA445895_Pisaster-ochraceus,SRR6905700,"less than 100,000 reads"
+PRJNA450328_Halichoerus-grypus-atlantica,SRR7007595,"less than 100,000 reads"
+PRJNA471834_Gasterosteus-aculeatus,SRR7177241,"less than 100,000 reads"
+PRJNA471834_Gasterosteus-aculeatus,SRR7177230,"less than 100,000 reads"
+PRJNA471834_Gasterosteus-aculeatus,SRR7177752,"less than 100,000 reads"
+PRJNA471834_Gasterosteus-aculeatus,SRR7177163,"less than 100,000 reads"
+PRJNA471834_Gasterosteus-aculeatus,SRR7177735,"less than 100,000 reads"
+PRJNA471834_Gasterosteus-aculeatus,SRR7177505,"less than 100,000 reads"
+PRJNA473646_Bathymodiolus-platifrons,SRR7233042,outlier with way more reads than rest of samples (30+ million)
+PRJNA473816_Acropora-palmata,SRR7235983,outlier with way more reads than rest of samples (150+ million)
+PRJNA477007_Paralichthys-dentatus,SRR7402160,"less than 100,000 reads"
+PRJNA477007_Paralichthys-dentatus,SRR7402201,"less than 100,000 reads"
+PRJNA477007_Paralichthys-dentatus,SRR7402149,"less than 100,000 reads"
+PRJNA477712_Fundulus-heteroclitus,SRR7498335,"less than 100,000 reads"
+PRJNA544861_Montipora-capitata,SRR9158353,outlier with way more reads than rest of samples (6+ million)
+PRJNA544861_Porites-compressa,SRR9158408,"less than 100,000 reads"
+PRJNA549138_Sargassum-muticum,SRR9311999,"less than 100,000 reads"
+PRJNA551577_Idotea-baltica,SRR10770170,"less than 100,000 reads"
+PRJNA553831_Systellaspis-debilis,SRR9669194,"less than 100,000 reads"
+PRJNA554161_Penaeus-duorarum,SRR9694586,"less than 100,000 reads"
+PRJNA554161_Penaeus-duorarum,SRR9694623,"less than 100,000 reads"
+PRJNA560242_Gadus-morhua,SRR9967899,"less than 100,000 reads"
+PRJNA560242_Gadus-morhua,SRR9967845,"less than 100,000 reads"
+PRJNA560242_Gadus-morhua,SRR9968266,"less than 100,000 reads"
+PRJNA560242_Gadus-morhua,SRR9968259,"less than 100,000 reads"
+PRJNA560242_Gadus-morhua,SRR9967896,"less than 100,000 reads"
+PRJNA560242_Gadus-morhua,SRR9968189,"less than 100,000 reads"
+PRJNA564451_Uria-aalge,SRR10085429,"less than 100,000 reads"
+PRJNA564451_Uria-aalge,SRR10085295,"less than 100,000 reads"
+PRJNA564451_Uria-lomvia,SRR10085336,"less than 100,000 reads"
+PRJNA564451_Uria-lomvia,SRR10085438,"less than 100,000 reads"
+PRJNA564451_Uria-lomvia,SRR10085325,"less than 100,000 reads"
+PRJNA576132_Galaxea-fascicularis,SRR10281246,"less than 100,000 reads"
+PRJNA576132_Galaxea-fascicularis,SRR10281177,"less than 100,000 reads"
+PRJNA576132_Galaxea-fascicularis,SRR10281142,"less than 100,000 reads"
+PRJNA576132_Galaxea-fascicularis,SRR10281164,"less than 100,000 reads"
+PRJNA593014_Acropora-millepora,SRR10571505,"less than 100,000 reads"
+PRJNA593014_Acropora-millepora,SRR10571486,"less than 100,000 reads"
+PRJNA593014_Acropora-millepora,SRR10571536,"less than 100,000 reads"
+PRJNA593014_Acropora-millepora,SRR10571306,"less than 100,000 reads"
+PRJNA593014_Acropora-millepora,SRR10571382,"less than 100,000 reads"
+PRJNA593014_Acropora-millepora,SRR10571471,"less than 100,000 reads"
+PRJNA593014_Acropora-millepora,SRR10571453,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900291,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900331,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900254,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900413,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900446,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900404,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900471,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900498,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900497,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900425,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900352,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900419,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900496,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900429,"less than 100,000 reads"
+PRJNA600652_Paralichthys-dentatus,SRR10900301,"less than 100,000 reads"
+PRJNA631144_Mallotus-villosus,SRR11731530,"less than 100,000 reads"
+PRJNA631144_Mallotus-villosus,SRR11731529,"less than 100,000 reads"
+PRJNA631144_Mallotus-villosus,SRR11842542,"less than 100,000 reads"
+PRJNA631144_Mallotus-villosus,SRR11842541,"less than 100,000 reads"
+PRJNA631144_Mallotus-villosus,SRR11730720,"less than 100,000 reads"
+PRJNA631144_Mallotus-villosus,SRR11842633,"less than 100,000 reads"
+PRJNA631144_Mallotus-villosus,SRR11842552,"less than 100,000 reads"
+PRJNA631144_Mallotus-villosus,SRR11842539,"less than 100,000 reads"
+PRJNA631144_Mallotus-villosus,SRR11842656,"less than 100,000 reads"
+PRJNA631144_Mallotus-villosus,SRR11842568,"less than 100,000 reads"
+PRJNA631144_Mallotus-villosus,SRR11731172,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797141,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797172,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797138,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797105,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797142,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797158,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797107,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797102,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797140,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797170,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797108,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797150,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797144,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797178,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797164,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797174,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797147,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797111,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797097,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797153,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797077,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797149,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797167,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797152,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797162,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797179,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797161,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797156,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797115,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797155,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797182,"less than 100,000 reads"
+PRJNA632874_Anthopleura-elegantissima,SRR11797110,"less than 100,000 reads"
+PRJNA646172_Bathyraja-aleutica,SRR12217988,"less than 100,000 reads"
+PRJNA646172_Bathyraja-aleutica,SRR12217754,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12217866,outlier with way more reads than rest of samples (100+ million)
+PRJNA646172_Bathyraja-parmifera,SRR12218246,outlier with way more reads than rest of samples (100+ million)
+PRJNA646172_Bathyraja-parmifera,SRR12218058,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12218259,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12217855,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12217780,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12218313,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12218014,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12217776,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12217920,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12218090,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12218249,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12218024,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12218230,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12218256,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12217884,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12218244,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12218075,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12217835,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12218301,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12218223,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12218324,"less than 100,000 reads"
+PRJNA646172_Bathyraja-parmifera,SRR12218343,"less than 100,000 reads"
+PRJNA655996_Strombus-pugilis,SRR12415617,outlier with way more reads than rest of samples (80+ million)
+PRJNA563695_Amphiprion-clarkii,SRR10118705,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118554,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117914,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118541,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114832,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118537,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10115279,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118001,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118551,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118547,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118506,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114919,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118552,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118559,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118782,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118528,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118527,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118490,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117910,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118532,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118482,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118499,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114830,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117913,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118514,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118571,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114843,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117919,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118562,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118513,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118526,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118563,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118516,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114914,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114846,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118572,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118483,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10115290,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118523,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117952,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118517,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118497,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118504,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118555,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117918,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114718,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114720,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10115035,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118635,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118643,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117917,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118515,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118492,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118485,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118418,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118568,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118556,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118662,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118505,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118484,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118724,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118510,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117906,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118569,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118507,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118491,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118546,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118522,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117925,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118254,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10115263,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117908,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118565,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118094,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117907,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118493,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118573,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118495,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118545,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118525,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118521,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114884,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117928,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117909,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118496,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118494,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117951,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118561,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118519,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118518,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118488,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118540,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118512,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118647,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118669,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118530,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117922,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114779,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118677,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118022,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118550,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118721,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117912,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118570,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10115285,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118558,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117916,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118659,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118621,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118536,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118671,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118502,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118063,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114893,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118566,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118265,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118567,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118508,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114875,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118121,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10115222,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118529,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118655,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117905,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114802,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117932,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118560,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114831,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114850,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10115338,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117923,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114825,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118574,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118503,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114838,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118703,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114835,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118501,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118548,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114894,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114853,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114840,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10115271,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118767,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118652,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118500,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114879,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118778,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118058,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118666,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117924,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118543,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118489,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118535,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118653,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118641,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118702,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118009,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118498,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114858,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118534,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118640,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10114873,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118102,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118031,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118673,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118638,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118072,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117934,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118544,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118697,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118680,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118437,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118100,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118068,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118625,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118033,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117953,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10115268,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118538,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118719,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10117942,"less than 100,000 reads"
+PRJNA563695_Amphiprion-clarkii,SRR10118608,"less than 100,000 reads"
+PRJNA170681_Nematostella-vectensis,SRR521977,"less than 100,000 reads"
+PRJNA170681_Nematostella-vectensis,SRR521987,"less than 100,000 reads"
+PRJNA170681_Nematostella-vectensis,SRR521989,"less than 100,000 reads"
+PRJNA170681_Nematostella-vectensis,SRR521990,"less than 100,000 reads"
+PRJNA170681_Nematostella-vectensis,SRR521993,"less than 100,000 reads"
+PRJNA170681_Nematostella-vectensis,SRR521994,"less than 100,000 reads"
+PRJNA170681_Nematostella-vectensis,SRR521995,"less than 100,000 reads"
+PRJNA170681_Nematostella-vectensis,SRR521996,"less than 100,000 reads"
+PRJNA170681_Nematostella-vectensis,SRR521997,"less than 100,000 reads"
+PRJNA170681_Nematostella-vectensis,SRR521998,"less than 100,000 reads"
+PRJNA170681_Nematostella-vectensis,SRR522004,"less than 100,000 reads"
+PRJNA280774_Poecilia-latipinna,SRR1980041,"less than 100,000 reads"
+PRJNA280774_Poecilia-latipinna,SRR1980530,"less than 100,000 reads"
+PRJNA280774_Poecilia-latipinna,SRR1980630,"less than 100,000 reads"
+PRJNA280774_Poecilia-latipinna,SRR1980646,"less than 100,000 reads"
+PRJNA280774_Poecilia-latipinna,SRR1980664,"less than 100,000 reads"
+PRJNA280774_Poecilia-latipinna,SRR1980674,"less than 100,000 reads"
+PRJNA280774_Poecilia-latipinna,SRR1980675,"less than 100,000 reads"
+PRJNA280774_Poecilia-latipinna,SRR1980676,"less than 100,000 reads"
+PRJNA280774_Poecilia-latipinna,SRR1980677,"less than 100,000 reads"
+PRJNA280774_Poecilia-latipinna,SRR1980678,"less than 100,000 reads"
+PRJNA528403_Gadus-morhua,SRR8759391,missing end of fasta file error

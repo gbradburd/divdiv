@@ -20,7 +20,7 @@ gc()
 # READ IN PHYLO TREE ---------------------------------------------------
 #read in tree - from http://timetree.org/book (Timetree of Life V2015)
 #with taxize lineage info tacked on, and no bacteria or virus tips
-load(file="/Users/rachel/Desktop/DivDiv/divdiv_collecting_genetic_data/plotting_on_phylogeny/tree_files/TimeTree_140K_NCBI_Taxon_IDs-withtaxizeinfo.Robj")
+load(file="data/phylo/inputs_and_working/TimeTree_140K_NCBI_Taxon_IDs-withtaxizeinfo.Robj")
 
 #view summary about tree
 tree
