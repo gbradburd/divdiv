@@ -11,6 +11,10 @@ library(googlesheets4)
 rm(list = ls())
 gc()
 
+#define path to save outputs to
+workingdir = "/Users/rachel/divdiv/data/biotic/inputs_and_working"
+outdir = "/Users/rachel/divdiv/data/biotic"
+figdir = "/Users/rachel/divdiv/figures"
 
 
 # get trait data -------
@@ -66,7 +70,7 @@ df$Reproductive_Age <- purrr::map_dbl(df$Body_Size, range_midpoint)
 df$Fecundity_EggsFemaleSpawn <- purrr::map_dbl(df$Fecundity_EggsFemaleSpawn, range_midpoint)
 df$Fecundity_SpawnFrequency <- purrr::map_dbl(df$Fecundity_SpawnFrequency , range_midpoint)
 
-write.csv(df, file = "data/biotic/marinerds_traits_231011.csv", row.names = FALSE)
+write.csv(df, file = paste0(workingdir,"/marinerds_traits_231011.csv"), row.names = FALSE)
 
 
 
@@ -74,7 +78,7 @@ write.csv(df, file = "data/biotic/marinerds_traits_231011.csv", row.names = FALS
 rm(list = ls())
 gc()
 
-df <- read.csv("data/biotic/marinerds_traits_231011.csv")
+df <- read.csv(paste0(workingdir,"/marinerds_traits_231011.csv"))
 
 #recode some variables
 #for dispersal related traits, larger values mean higher dispersal
@@ -107,7 +111,7 @@ for ( trait in names(df) ) {
 }
 
 #save cleaned, numerically coded traits
-write.csv(df %>% dplyr::select(-Genome_Size_picoGrams, -Genome_Size_MB), "data/biotic/cleaned_numeric_biotic_traits.csv", row.names = FALSE)
+write.csv(df %>% dplyr::select(-Genome_Size_picoGrams, -Genome_Size_MB), paste0(outdir,"/cleaned_numeric_biotic_traits.csv"), row.names = FALSE)
 
 
 
@@ -166,7 +170,9 @@ trtcov %>%
        x = "Trait") +
   coord_flip() +
   theme_bw()
-ggsave("data/biotic/trait_coverage.pdf", width = 8, height = 5, units = c("in"))
+ggsave(paste0(figdir, "/biotic_trait_coverage-bytrait.pdf"), width = 8, height = 5, units = c("in"))
+
+
 
 spcov %>% 
   arrange(spcov.greenandyellow, desc(organism_biosamp)) %>% mutate(order = 1:n()) %>% 
@@ -186,7 +192,7 @@ spcov %>%
   theme(axis.text.y = element_text(size = 3.5)) +
   labs(y = "Trait coverage per species (%)",
        x = "Species")
-ggsave("data/biotic/species_trait_coverage.pdf", width = 8, height = 5, units = c("in"))
+ggsave(paste0(figdir, "/biotic_trait_coverage-byspecies.pdf"), width = 8, height = 5, units = c("in"))
 
 
 

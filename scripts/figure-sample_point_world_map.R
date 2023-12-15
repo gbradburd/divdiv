@@ -1,7 +1,9 @@
 #idea: make a map of the world and plot NCBI current winners marine data on it
 
+#https://spatialreference.org - to look up projection codes, like PROJ.4 codes
+
 #load libraries -------
-library(rgdal)      
+library(sf)      
 library(ggplot2)
 library(data.table)
 library(dplyr)
@@ -14,65 +16,49 @@ gc()
 
 # load files for world map --------
 
-load("../data/earth_map_objects.RData")
+load("/Users/rachel/divdiv/data/abiotic/input_and_working/earth_map_objects.RData")
 
 ## This will load 5 R objects:
-##   xbl.X & lbl.Y are two data.frames that contain labels for graticule lines
+##   lbl.X & lbl.Y are two data.frames that contain labels for graticule lines
 ##   NE_box is a SpatialPolygonsDataFrame object and represents a bounding box for Earth 
 ##   NE_countries is a SpatialPolygonsDataFrame object representing countries 
 ##   NE_graticules is a SpatialLinesDataFrame object that represents 10 dg latitude lines and 20 dg longitude lines
 ##   NOTE: data downloaded from http://www.naturalearthdata.com/
 
+# get Great Lakes outlines
+lakes <- rnaturalearth::ne_download(scale="medium", category = 'physical', type = "lakes", returnclass = "sf")
+#subset world lake outlines to just GLs
+gls <- c("Lake Superior", "Lake Huron",
+         "Lake Michigan", "Lake Erie", "Lake Ontario")
+gls <- subset(lakes, name %in% gls)
+#how does it look?
+ggplot() +
+  geom_sf(data = gls)
 
-### CHOOSE YOUR OWN ADVENTURE (2 options) ###
+# get the genetic sample points we want to plot on map ----------
 
-# # *** OPTION 1 *** : build inputs from scratch aka raw files (works for RT's desktop) ----------
-# 
-# # read in lat/long points we want to plot on map
-# #datasets to plot
-# #get master spreadsheet from Drive
-# using <- googledrive::drive_ls(path = "working_datasheets", pattern = "working_list_marine_projects_with_10indivs-12-4-2020")
-# using <- googlesheets4::range_read(using, sheet = 1) %>% as.data.frame() %>% mutate(run_name = paste("bioprj_",link,sep=""))
-# #keep cols we want and only datasets that are "in"
-# using <- using %>% dplyr::select(organism_biosamp,run_name,link,keepinrunning_YN) %>%
-#   filter(grepl("yes|Yes",keepinrunning_YN)) %>% mutate(y = "full list")
-# 
-# #get lat/longs
-# datasets <- list.files(path = "/Users/rachel/Desktop/DivDiv/mapping_gbif_and_genetic_sample_points/lat_long_tables_per_dataset",
-#                        pattern = "lat_long_table", full.names = TRUE)
-# sites <- data.frame("link"=NA, "run_acc_sra"=NA, "lat"=NA, "long"=NA, "coordinateUncertaintyInMeters"=NA, "origin"=NA)
-# for ( d in datasets ) {
-#   out <- read.delim(d)
-#   sites <- rbind(sites,out)
-# }
-# sites <- sites %>% filter(is.na(link)==F)
-# write.csv(sites, "data/all_divdiv_lat_long_tables_for_genetic_samps.csv", row.names = FALSE)
-# 
-# #get list of all datasets
-# sites.all <- sites %>% filter(link %in% using$link)
+#get master list of datasets we're using
+using <- read.csv("/Users/rachel/divdiv/data/master_df.csv")
+using <- using %>% dplyr::select(species,link) %>% mutate(link = gsub("bioprj_","",link))
 
+#get lat/longs
+datasets <- list.files(path = "/Users/rachel/divdiv/data/abiotic/input_and_working/lat_long_tables_per_dataset",
+                       pattern = "lat_long_table", full.names = TRUE)
+sites <- data.frame("link"=NA, "run_acc_sra"=NA, "lat"=NA, "long"=NA, "coordinateUncertaintyInMeters"=NA, "origin"=NA)
+for ( d in datasets ) {
+  out <- read.delim(d)
+  sites <- rbind(sites,out)
+}
+sites <- sites %>% filter(is.na(link)==F)
 
-# *** OPTION 2 *** : load pre=saved files (works for anyone with /divdiv repo) ---------
-
-#get all divdiv lat/longs
-sites <- read.csv("../data/all_divdiv_lat_long_tables_for_genetic_samps.csv")
-
-# *** END CHOOSE YOUR OWN ADVENTURE *** 
-
-
+#keep ones we want
+sites <- sites %>% filter(link %in% using$link) %>% rename("lon" = "long")
 
 #add clade groups on for coloring
-taxcolorkey <- read.csv("../data/master_tax_color_key.csv")
+taxcolorkey <- read.csv("/Users/rachel/divdiv/data/master_tax_color_key.csv")
 sites <- merge(sites %>% separate(., link, into = c("garbage","species"), sep = "_", remove = F) %>% dplyr::select(-garbage) %>% mutate(species = gsub("-","_",species)), 
                taxcolorkey %>% mutate(species = gsub(" ","_",species)), 
                by = "species", all.x = T)
-sites.pg <- sites
-
-#get list of datasets we're using
-
-
-
-
 
 
 
@@ -81,56 +67,51 @@ sites.pg <- sites
 PROJ <- "+proj=eck4 +lon_0=0 +x_0=0 +y_0=0 +ellps=WGS84 +datum=WGS84 +units=m +no_defs" 
 ## or use the short form "+proj=eck4"
 
-## re-project the shapefiles (warnings about CRS object has no comment okay)
-NE_countries.prj  <- spTransform(NE_countries, CRSobj = PROJ)
-NE_graticules.prj <- spTransform(NE_graticules, CRSobj = PROJ)
-NE_box.prj        <- spTransform(NE_box, CRSobj = PROJ)
+## convert shapefiles to sf objects and ensure all in same projection
+NE_countries <- sf::st_as_sf(NE_countries)
+NE_countries.prj <- sf::st_transform(NE_countries, crs = PROJ)
+NE_graticules <- sf::st_as_sf(NE_graticules)
+NE_graticules.prj <- sf::st_transform(NE_graticules, crs = PROJ)
+NE_box <- sf::st_as_sf(NE_box)
+NE_box.prj <- sf::st_transform(NE_box, crs = PROJ)
+gls.prj <- sf::st_transform(gls, crs = PROJ)
 
-## project long-lat coordinates columns for data frames 
-## (two extra columns with projected XY are created)
-prj.coord <- project(cbind(lbl.Y$lon, lbl.Y$lat), proj = PROJ)
-lbl.Y.prj <- cbind(prj.coord, lbl.Y)
-names(lbl.Y.prj)[1:2] <- c("X.prj","Y.prj")
+## project long-lat coordinates columns for data frames
+lbl.X.prj <- st_as_sf(lbl.X, coords = c("lon", "lat"), crs = PROJ)
+lbl.Y.prj <- st_as_sf(lbl.Y, coords = c("lon", "lat"), crs = PROJ)
 
-prj.coord <- project(cbind(lbl.X$lon, lbl.X$lat), proj = PROJ)
-lbl.X.prj <- cbind(prj.coord, lbl.X)
-names(lbl.X.prj)[1:2] <- c("X.prj","Y.prj")
-
-#project sites to map
-sites.df  = sites.pg
-prj.coord <- project(cbind(sites.df$long, sites.df$lat), proj = PROJ)
-sites.df.prj <- cbind(prj.coord, sites.df)
-names(sites.df.prj)[1:2] <- c("X.prj","Y.prj")
-
-
-jitter <- position_jitter(width = 10, height = 10)
+#project sites
+PROJ.pts <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs" #EPSG:4326, WGS 84
+#first make dataframe into spatial object, using projection points are in
+sites.prj <- st_as_sf(sites, coords = c("lon", "lat"), crs = PROJ.pts)
+#then transform projection to match other map layers
+sites.prj <- st_transform(sites.prj, crs = PROJ)
 
 
 
 # plot ----------------------
 ggplot() +
   
-  coord_fixed(ratio = 1) +
-  
-  ## add projected bounding box, blue for ocean (#abd9e9)
-  geom_polygon(data = NE_box.prj, 
-               aes(x = long, y = lat), 
-               colour = "black", fill = "white", size = .25) +
+  ## add projected bounding box, (a blue for ocean = #abd9e9)
+  geom_sf(data = NE_box.prj,
+          colour = "black", fill = "white", size = .25) +
   
   ## add graticules
-  geom_path(data = NE_graticules.prj,
-            aes(long, lat, group = group),
-            linetype = "dotted", colour = "grey70", size = .25) +
+  geom_sf(data = NE_graticules.prj,
+          linetype = "dotted", colour = "grey70", size = .25) +
   
-  ## add projected countries, a bit darker grey for terrestrial polygons
-  geom_polygon(data = NE_countries.prj, 
-               aes(long,lat, group = group), 
-               colour = "gray50", fill = "gray90", size = .25) +
+  ## add projected countries
+  geom_sf(data = NE_countries.prj, 
+          colour = "gray50", fill = "gray90", size = .25) +
+
+  ## add great lakes
+  geom_sf(data = gls.prj, 
+          colour = "gray50", fill = "white", size = .25) +
   
-  ## add locations (points)
-  geom_point(data = sites.df.prj, aes(x = X.prj, y = Y.prj, fill = taxclade), shape=21, colour="black", size = 4, alpha = 0.5, position = jitter) +
+  ## add genetic sample points
+  geom_sf(data = st_jitter(sites.prj, 5000), aes(fill = taxclade), shape=21, colour="black", size = 4, alpha = 0.5) +
   scale_fill_manual(values = c("#A6CEE3","#33A02C","#FF7F00","#FDBF6F","#FB9A99","#B2DF8A","#E31A1C","#C2C0C0","#6A3D9A","#1F78B4","#CAB2D6")) +
-  
+
   ## Set empty theme
   theme_void() + # remove the default background, gridlines & default gray color around legend's symbols
   theme(
@@ -142,68 +123,7 @@ ggplot() +
     plot.background = element_rect(fill = "transparent")
   )
 
-ggsave(filename = "../figures/world_map_all_pts.pdf", width = 30, height = 15, units = c("cm"))
+ggsave(filename = "/Users/rachel/divdiv/figures/world_map_genetic_pts.pdf", width = 30, height = 15, units = c("cm"))
 
 
 
-
-
-
-
-#graveyard ------
-
-#read in lat/long of points we want to plot onto map - previous/old way
-sites.raw <- read.csv("marine/current_winners/current_winners_list-sequence_level-11-21-19.csv", header = T, stringsAsFactors = F) %>% 
-  dplyr::select(-X)
-str(sites.raw)
-sites <- sites.raw %>% dplyr::select(organism_biosamp,family_worms,lat_long_biosamp,biosample_acc_sra,project_acc_bioprj)
-dim(sites)
-#keep just records with lat/long (so we can plot them)
-sites <- sites %>% filter(is.na(lat_long_biosamp) == F) %>% filter(lat_long_biosamp != "unknown") %>% filter(lat_long_biosamp != "not given in NCBI")
-dim(sites)
-#convert lat/long from N/S/E/W to +/- (so they will plot nice)
-sites <- sites %>% separate(.,lat_long_biosamp,into = c("lat","lat_dir","lon","lon_dir"), sep = " ", remove = F)
-sites %>% group_by(lat_dir) %>% summarise(n=n())
-sites <- sites %>% filter(lat_dir %in% c("N","S"))
-sites %>% group_by(lat_dir) %>% summarise(n=n())
-sites %>% group_by(lon_dir) %>% summarise(n=n())
-sites$lat <- as.numeric(sites$lat)
-sites$lon <- as.numeric(sites$lon)
-#north and east are + ; south and west are - 
-sites <- sites %>% mutate(lat = ifelse(lat_dir == "N", lat, lat*-1)) %>% 
-  mutate(lon = ifelse(lon_dir == "E", lon, lon*-1))
-sites <- sites %>% dplyr::select(lat,lon,everything())
-
-
-
-
-#assign tax categories
-df.tax <- df.1 %>% mutate(tax_category = ifelse(kingdom_ncbitaxonomy.via.taxize == "Fungi", "Fungi", ".")) %>% 
-  mutate(tax_category = ifelse(kingdom_ncbitaxonomy.via.taxize == "Viridiplantae", "Other Plants", tax_category)) %>%
-  mutate(tax_category = ifelse(class_ncbitaxonomy.via.taxize == "Cycadopsida", "Gymnosperms", tax_category)) %>% 
-  mutate(tax_category = ifelse(class_ncbitaxonomy.via.taxize == "Gnetopsida", "Gymnosperms", tax_category)) %>% 
-  mutate(tax_category = ifelse(class_ncbitaxonomy.via.taxize == "Pinopsida", "Gymnosperms", tax_category)) %>%
-  mutate(tax_category = ifelse(class_ncbitaxonomy.via.taxize == "Magnoliopsida", "Angiosperms", tax_category)) %>% 
-  mutate(tax_category = ifelse(class_ncbitaxonomy.via.taxize == "Aves", "Birds", tax_category)) %>% 
-  mutate(tax_category = ifelse(class_ncbitaxonomy.via.taxize == "Mammalia", "Mammals", tax_category)) %>% 
-  mutate(tax_category = ifelse(class_ncbitaxonomy.via.taxize %in% c("Actinopteri","Chondrichthyes","Coelacanthimorpha"), "Fish", tax_category)) %>% 
-  mutate(tax_category = ifelse(class_ncbitaxonomy.via.taxize %in% c("Lepidosauria","Amphibia"), "Amphibians and Reptiles", tax_category)) %>%
-  mutate(tax_category = ifelse(phylum_ncbitaxonomy.via.taxize == "Arthropoda", "Arthropods", tax_category)) %>% 
-  mutate(tax_category = ifelse(phylum_ncbitaxonomy.via.taxize == "Mollusca", "Mollusks", tax_category)) %>%
-  mutate(tax_category = ifelse(division_taxonomy == "Mammals" & is.na(tax_category)==T, "Mammals", tax_category)) %>% 
-  mutate(tax_category = ifelse(division_taxonomy == "Vertebrates" & tax_category==".", "Other Vertebrates", tax_category)) %>% 
-  mutate(tax_category = ifelse(division_taxonomy == "Invertebrates" & tax_category==".", "Invertebrates", tax_category)) %>% mutate(tax_category = ifelse(kingdom_ncbitaxonomy.via.taxize == "Fungi" & is.na(tax_category)==T, "Fungi", tax_category)) %>% 
-  mutate(tax_category = ifelse(division_taxonomy == "Vertebrates" & is.na(tax_category)==T, "Other Vertebrates", tax_category)) %>% 
-  mutate(tax_category = ifelse(division_taxonomy == "Invertebrates" & is.na(tax_category)==T, "Invertebrates", tax_category)) %>% 
-  mutate(tax_category = ifelse(division_taxonomy == "Plants and Fungi" & is.na(tax_category)==T, "Other", tax_category)) %>% 
-  mutate(tax_category = ifelse(tax_category == "Invertebrates", "Other Invertebrates", tax_category)) %>% 
-  dplyr::select(link,tax_category,class_ncbitaxonomy.via.taxize,phylum_ncbitaxonomy.via.taxize,order_ncbitaxonomy.via.taxize,family_ncbitaxonomy.via.taxize,contains("worm")) %>% distinct()
-
-sites <- merge(df, df.tax, by = "link", all.x = T) %>% dplyr::select(lat,lon,everything()) %>% filter(is.na(link)==F)
-
-sites$tax_category[sites$link=="PRJNA311981_Engraulis-encrasicolus"] = "Fish"
-sites$tax_category[sites$link=="PRJNA394157_Exaiptasia-pallida"] = "Other Invertebrates"
-sites$tax_category[sites$link=="PRJNA473288_Ectocarpus-siliculosus"] = "Other"
-sites$tax_category[sites$link=="PRJNA506239_Crassostrea-virginica"] = "Mollusks"
-sites$tax_category[sites$tax_category=="Other Invertebrates"] = "Other"
-sites$tax_category[sites$tax_category=="Other Vertebrates"] = "Other"
