@@ -1,0 +1,26 @@
+link	run_acc_sra	lat	long	coordinateUncertaintyInMeters	origin
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168278	27.99	-87		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168280	28	-88.5		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168282	40	-67.5		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168288	27.01	-86.98		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168289	29	-87.5		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168291	28.53	-88.02		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168295	40	-67.5		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168299	40	-67.5		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168303	27.52	-89		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168307	27.49	-86.49		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168312	28.52	-87.99		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168315	26.94	-87		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168318	27.93	-87.02		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168324	28.3	-87.3		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168325	27.93	-86.96		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168334	27	-88.5		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168335	27.49	-87.97		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168338	26.89	-89.04		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168339	40	-67.5		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168346	27.99	-88		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168347	27.01	-88.5		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168353	27.99	-87		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168356	27	-86.99		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168357	27.01	-88.5		ncbi
+PRJNA573759_Vampyroteuthis-infernalis	SRR10168365	27.01	-86.98		ncbi

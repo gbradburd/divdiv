@@ -1,0 +1,13 @@
+link	run_acc_sra	lat	long	coordinateUncertaintyInMeters	origin
+PRJNA659918_Phocoena-phocoena	SRR12545262	42.83	-124.58		ncbi
+PRJNA659918_Phocoena-phocoena	SRR12545263	57.03	-154.15		ncbi
+PRJNA659918_Phocoena-phocoena	SRR12545265	36.63	-121.87		ncbi
+PRJNA659918_Phocoena-phocoena	SRR12545266	36.55	-121.98		ncbi
+PRJNA659918_Phocoena-phocoena	SRR12545267	36.63	-121.87		ncbi
+PRJNA659918_Phocoena-phocoena	SRR12545268	49	-123.5		ncbi
+PRJNA659918_Phocoena-phocoena	SRR12545269	48.42	-123.4		ncbi
+PRJNA659918_Phocoena-phocoena	SRR12545271	49.05	-125.72		ncbi
+PRJNA659918_Phocoena-phocoena	SRR12545272	36.9	-121.83		ncbi
+PRJNA659918_Phocoena-phocoena	SRR12545273	36.8	-121.78		ncbi
+PRJNA659918_Phocoena-phocoena	SRR12545274	36.9	-121.83		ncbi
+PRJNA659918_Phocoena-phocoena	SRR12545275	36.8	-121.78		ncbi

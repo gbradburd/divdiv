@@ -1,0 +1,16 @@
+link	run_acc_sra	lat	long	coordinateUncertaintyInMeters	origin
+PRJNA646172_Bathyraja-panthera	SRR12217798	52.67	179.35		ncbi
+PRJNA646172_Bathyraja-panthera	SRR12217799	52.2	179.97		ncbi
+PRJNA646172_Bathyraja-panthera	SRR12217800	52.2	179.97		ncbi
+PRJNA646172_Bathyraja-panthera	SRR12217801	52.2	179.97		ncbi
+PRJNA646172_Bathyraja-panthera	SRR12217823	52	-176.24		ncbi
+PRJNA646172_Bathyraja-panthera	SRR12217824	52	-176.24		ncbi
+PRJNA646172_Bathyraja-panthera	SRR12217825	52.12	-176.24		ncbi
+PRJNA646172_Bathyraja-panthera	SRR12217826	52.12	-176.24		ncbi
+PRJNA646172_Bathyraja-panthera	SRR12217827	52.12	-176.24		ncbi
+PRJNA646172_Bathyraja-panthera	SRR12217828	52.12	-176.24		ncbi
+PRJNA646172_Bathyraja-panthera	SRR12217830	51.78	-175.92		ncbi
+PRJNA646172_Bathyraja-panthera	SRR12217831	51.78	-175.92		ncbi
+PRJNA646172_Bathyraja-panthera	SRR12217832	51.78	-175.92		ncbi
+PRJNA646172_Bathyraja-panthera	SRR12217833	51.86	-175.89		ncbi
+PRJNA646172_Bathyraja-panthera	SRR12217834	51.75	-175.68		ncbi

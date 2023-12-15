@@ -1,0 +1,14 @@
+link	run_acc_sra	lat	long	coordinateUncertaintyInMeters	origin
+PRJNA473816_Acropora-prolifera	SRR7236038	18.30941	-64.89897	10	datathon
+PRJNA473816_Acropora-prolifera	SRR7236023	23.80746474	-76.16011638	10	datathon
+PRJNA473816_Acropora-prolifera	SRR7236026	12.0842	-68.8966	10	datathon
+PRJNA473816_Acropora-prolifera	SRR7235978	18.30941	-64.89897	10	datathon
+PRJNA473816_Acropora-prolifera	SRR7236025	16.8013222	-88.0825	10	datathon
+PRJNA473816_Acropora-prolifera	SRR7236035	16.8013222	-88.0825	10	datathon
+PRJNA473816_Acropora-prolifera	SRR7236024	24.6209	-82.8675	10	datathon
+PRJNA473816_Acropora-prolifera	SRR7236006	16.7791333	-88.11755	10	datathon
+PRJNA473816_Acropora-prolifera	SRR7235977	18.35868	-65.03299	10	datathon
+PRJNA473816_Acropora-prolifera	SRR7236000	18.405727	-64.90444	10	datathon
+PRJNA473816_Acropora-prolifera	SRR7235997	18.31701	-64.9892	10	datathon
+PRJNA473816_Acropora-prolifera	SRR7236005	24.6209	-82.8675	10	datathon
+PRJNA473816_Acropora-prolifera	SRR7236004	16.88806	-87.75973	10	datathon

@@ -1,0 +1,18 @@
+link	run_acc_sra	lat	long	coordinateUncertaintyInMeters	origin
+PRJNA449377_Zebrasoma-flavescens	SRR6973153	19.64	-155.9969		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973160	19.64	-155.9969		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973162	9.9032778	139.6552833		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973163	19.64	-155.9969		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973174	19.64	-155.9969		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973175	19.64	-155.9969		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973176	19.64	-155.9969		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973220	9.9032778	139.6552833		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973224	10.0284472	139.7626861		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973225	10.0284472	139.7626861		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973226	9.9032778	139.6552833		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973227	19.64	-155.9969		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973228	19.64	-155.9969		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973229	10.0284472	139.7626861		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973230	10.0758333	139.7372222		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973234	19.64	-155.9969		ncbi
+PRJNA449377_Zebrasoma-flavescens	SRR6973235	19.64	-155.9969		ncbi

@@ -1,0 +1,21 @@
+link	run_acc_sra	lat	long	coordinateUncertaintyInMeters	origin
+PRJNA448430_Stegastes-leucorus	SRR6927559	19.3094	-110.8113		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927567	29.0525	-118.2761		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927575	19.3094	-110.8113		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927576	29.0525	-118.2761		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927577	29.0525	-118.2761		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927579	29.0525	-118.2761		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927580	19.3094	-110.8113		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927581	29.0525	-118.2761		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927590	19.3094	-110.8113		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927592	19.3094	-110.8113		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927593	29.0525	-118.2761		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927594	29.0525	-118.2761		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927595	29.0525	-118.2761		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927596	19.3094	-110.8113		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927597	19.3094	-110.8113		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927598	19.3094	-110.8113		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927603	19.3094	-110.8113		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927610	29.0525	-118.2761		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927611	29.0525	-118.2761		ncbi
+PRJNA448430_Stegastes-leucorus	SRR6927612	19.3094	-110.8113		ncbi

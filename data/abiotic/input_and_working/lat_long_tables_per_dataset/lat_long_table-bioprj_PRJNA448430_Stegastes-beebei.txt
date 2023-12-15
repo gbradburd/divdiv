@@ -1,0 +1,11 @@
+link	run_acc_sra	lat	long	coordinateUncertaintyInMeters	origin
+PRJNA448430_Stegastes-beebei	SRR6927560	-1.3758	-89.6722		ncbi
+PRJNA448430_Stegastes-beebei	SRR6927562	-0.8292	-91.1353		ncbi
+PRJNA448430_Stegastes-beebei	SRR6927568	-1.3083	-90.4314		ncbi
+PRJNA448430_Stegastes-beebei	SRR6927573	-0.8292	-91.1353		ncbi
+PRJNA448430_Stegastes-beebei	SRR6927574	-1.3758	-89.6722		ncbi
+PRJNA448430_Stegastes-beebei	SRR6927582	-0.752	-90.3019		ncbi
+PRJNA448430_Stegastes-beebei	SRR6927583	-0.752	-90.3019		ncbi
+PRJNA448430_Stegastes-beebei	SRR6927584	5.5282	-87.0574		ncbi
+PRJNA448430_Stegastes-beebei	SRR6927589	-0.752	-90.3019		ncbi
+PRJNA448430_Stegastes-beebei	SRR6927609	-1.3083	-90.4314		ncbi
