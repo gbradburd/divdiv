@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #define variables:
-#storagenode=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen #path to main node to write fastq files to
+#storagenode=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen #path to main node where outputs will end up
 storagenode=/mnt/scratch/$USER
 
 jobname=run-popgenstats #label for SLURM book-keeping
@@ -18,12 +18,7 @@ time=168:00:00
 
 #list_of_datasets=list-allfinal136.txt #name of dataset that we want to process
 #list_of_datasets=list-test.txt #name of dataset that we want to process
-#list_of_datasets=list-highmempopgen.txt #name of dataset that we want to process
-#list_of_datasets=list-lowmempopgen.txt #name of dataset that we want to process
-#list_of_datasets=list-highermempopg.txt #name of dataset that we want to process
-#list_of_datasets=list-lostloci.txt #name of dataset that we want to process
 list_of_datasets=list-run.txt #name of dataset that we want to process
-#list_of_datasets=list-bees.txt #name of dataset that we want to process
 
 nPCs=4 #number of principal component axes to save
 minpropindivsscoredin=0.5 #percent of indivs that a locus must be present in to save
@@ -44,16 +39,11 @@ do
 	#define label to give dataset
 	run_name=$(echo $dataset | cut -d " " -f1 | cut -d "." -f1)
 
-	#define path to where downloaded raw/unprocessed sequence data live for this dataset
-	#and where clean/processed reads should be written to
-	#indir=$storagenode/$run_name/genetic_data
+	#define file paths
 	indir=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen/$run_name/genetic_data
-	#indir=/mnt/research/Fitz_Lab/bradburd/rht/$run_name/genetic_data
 	outdir=$storagenode/$run_name/popgen
 	figdir=$storagenode/popgen-figures
-	#keysdir=$storagenode/$run_name
-	keysdir=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen/$run_name
-	#keysdir=/mnt/research/Fitz_Lab/bradburd/rht/$run_name	
+	keysdir=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen/$run_name #place where samplenamekey and lat long tables of genetic pts live
 
 	##if directory to downloaded files doesn't contain at least 1 .gz file; print warning, otherwise process the files that are there
 	n_gzfiles=($(ls $indir/*.snps.vcf | wc -l))
@@ -75,4 +65,4 @@ do
 	echo submitted ID list with name $run_name from $list_of_datasets
 	fi	
 		
-done < ./master_keys/$list_of_datasets
+done < ../master_keys/$list_of_datasets

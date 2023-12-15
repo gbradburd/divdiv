@@ -12,9 +12,7 @@ ram_per_cpu=8G #amount of RAM to request/use per CPU
 time=168:00:00
 
 #list_of_datasets=list-allfinal136.txt #name of dataset that we want to process
-#list_of_datasets=list-forWM.txt #name of dataset that we want to process
 #list_of_datasets=list-test.txt #name of dataset that we want to process
-#list_of_datasets=list-redo.txt
 list_of_datasets=list-runwm.txt
 
 copy_files_to_execute_node=yes #yes to copy input folder to tmp dir on execute node and load files into R from there, no to load files into R directly from where they live on cluster aka $indir below in this file
@@ -66,4 +64,4 @@ do
 	echo submitted dataset $run_name from $list_of_datasets
 	fi
 	
-done < ./master_keys/$list_of_datasets
+done < ../master_keys/$list_of_datasets

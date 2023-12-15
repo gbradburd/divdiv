@@ -85,4 +85,4 @@ do
 	echo ALL DONE EXTRACTING REQUIRED FILES
 	#say go copy files
 
-done < ./master_keys/$list_of_datasets
+done < ../master_keys/$list_of_datasets

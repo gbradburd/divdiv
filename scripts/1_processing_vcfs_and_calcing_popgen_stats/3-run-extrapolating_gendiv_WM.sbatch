@@ -3,22 +3,10 @@
 # Shell script to run R script for fitting 4 param cline to distance vs. pairwise pi
 
 #load programs
-#module purge
-#module load foss/2020a
-#module load R/4.0.3
-
 module purge
 module load foss/2020b
 module load R/4.0.3
 
-#module purge
-#module load GCC/5.4.0-2.26 
-#module load OpenMPI/1.10.3
-#module load R/3.4.3-X11-20160819
-
-#module purge
-#module load GCC/8.3.0  OpenMPI/3.1.4
-#module load R/4.0.2
 
 #create output dir if it doesn't already exist
 if [ ! -d $OUTDIR ]; then mkdir $OUTDIR; fi
@@ -37,7 +25,7 @@ then
 	#copy input files to tmpdir to speed up run time
 	cp $INDIR/samplenamekey.txt $WORKDIR
 	cp $INDIR/location_data/"max_and_pw_dists"* $WORKDIR
-	#cp $INDIR/popgen/"popgenstats."$MINPROPINDIVSSCOREDIN* $WORKDIR
+	#cp $INDIR/popgen/"popgenstats."$MINPROPINDIVSSCOREDIN* $WORKDIR #for when we processed all the outputs/assemblies, not just r80
 	#cp $INDIR/popgen/"bpstats."$MINPROPINDIVSSCOREDIN* $WORKDIR
 	cp $INDIR/r80_outputs/"popgenstats."$MINPROPINDIVSSCOREDIN* $WORKDIR
 	cp $INDIR/r80_outputs/"bpstats."$MINPROPINDIVSSCOREDIN* $WORKDIR
