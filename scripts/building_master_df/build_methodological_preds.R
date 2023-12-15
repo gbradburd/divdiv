@@ -10,6 +10,7 @@ library(stringr)
 rm(list=ls())
 gc()
 
+setwd("/Users/rachel/divdiv")
 
 #get samp count and mean raw read count
 sampkeys <- list.files(path = "data/all_samplenamekeys/",
@@ -35,7 +36,7 @@ df <- df %>% filter(is.na(run_name)==F)
 
 
 #get read length
-readl <- read.csv("data/master_bookkeeping_sheet-preStacks.csv") %>% 
+readl <- read.csv("data/methodological/input_and_working/master_bookkeeping_sheet-preStacks.csv") %>% 
   dplyr::select(run_name, trimlength) %>% 
   rename("read_length" = "trimlength")
 
@@ -46,7 +47,7 @@ df <- merge(df, readl, by = "run_name", all.x = T)
 #note N total SNPs is for r80 dataset, and is total number of SNPs in the dataset
 #and each SNP is scored in at least 50% of indivs, 
 #and this is indivs remaining after dropping indivs with cogenotyped bps <30% of mean for dataset
-gstacklogs <- list.files(path = "data/all_r80_gstacksoutlogs",
+gstacklogs <- list.files(path = "data/methodological/input_and_working/all_r80_gstacksoutlogs",
                        pattern = "*.out",
                        full.names = TRUE)
 

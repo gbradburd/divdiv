@@ -16,7 +16,7 @@ setwd("/Users/rachel/divdiv")
 # collate response variables/data from WM models ----------
 #load("/Users/rachel/WMfit-bioprj_PRJNA294760_Amphiprion-bicinctus_stacks_littlem_3_bigm_3_n2_nis1lessthanM_pars.Robj")
 
-indir = "/Users/rachel/ALL_r80_gendiv_data"
+indir = "data/popgen/input_and_working/ALL_r80_gendiv_data"
 
 
 #get WM og aka Wishart
@@ -54,7 +54,7 @@ write.csv(df, "data/popgen/r80_WM_stats-wide.csv", row.names = FALSE)
 # collate response variables/data from popgen stats ----------
 #load("/Users/rachel/popgenstats.0.5.bioprj_PRJNA294760_Amphiprion-bicinctus_stacks_littlem_3_bigm_3_n2_nis1lessthanM_popgenstats.Robj")
 
-indir="/Users/rachel/ALL_r80_popgen_data"
+indir="data/popgen/input_and_working/ALL_r80_popgen_data"
 
 #get WM og aka Wishart
 file_list <- list.files(indir, pattern="popgenstats.0.5", full.names = TRUE)

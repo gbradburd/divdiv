@@ -2,7 +2,7 @@
 
 #define variables
 list_of_datasets=list-allfinal115.txt
-outdir=/Users/rachel/divdiv/data/all_r80_gstacksoutlogs
+outdir=/Users/rachel/divdiv/data/methodological/input_and_working/all_r80_gstacksoutlogs
 storagenode=divdiv_datafiles: 
 #note - storagenode needs a / at end if it's a non Google Drive file path
 

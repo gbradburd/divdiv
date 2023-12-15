@@ -2,7 +2,7 @@
 
 #define variables
 list_of_datasets=list-allfinal115.txt
-outdir=/Users/rachel/divdiv/data/all_locisummary_csvs
+outdir=/Users/rachel/divdiv/data/methodological/input_and_working/all_locisummary_csvs
 
 mkdir -p $outdir
 
@@ -12,10 +12,8 @@ while read dataset
 do
 	
 	run_name=$(echo $dataset | cut -d " " -f 1)
-	link_name=$(echo "${run_name//bioprj_/}")
 	
 	echo "run_name: $run_name"
-	echo "link_name: $link_name"
 	echo "outdir: $outdir"
 	
 	rclone copy divdiv_datafiles:$run_name/popgen --include "allparams-locisummary_stats*" $outdir

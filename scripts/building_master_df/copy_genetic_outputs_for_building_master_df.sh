@@ -5,8 +5,8 @@ list_of_datasets=list-allfinal115.txt
 #list_of_datasets=list-test.txt
 storagenode=divdiv_datafiles: 
 #note - storagenode needs a / at end if it's a non Google Drive file path
-outdirA=/Users/rachel/ALL_r80_gendiv_data
-outdirB=/Users/rachel/ALL_r80_popgen_data
+outdirA=/Users/rachel/divdiv/data/popgen/input_and_working/ALL_r80_gendiv_data
+outdirB=/Users/rachel/divdiv/data/popgen/input_and_working/ALL_r80_popgen_data
 
 mkdir -p $outdirA
 mkdir -p $outdirB
