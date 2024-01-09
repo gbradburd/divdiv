@@ -20,24 +20,36 @@ figdir = "/Users/rachel/divdiv/figures"
 # get trait data -------
 
 #get master spreadsheet from Drive
-df <- googledrive::shared_drive_find(pattern = "^divdiv$")
-df <- googledrive::drive_ls(path = df, pattern = "working_datasheets", recursive = FALSE)
-df <- googledrive::drive_ls(path = df, pattern = "working_list_marine_projects_with_10indivs-12-4-2020", recursive = FALSE)
-df$name
-df.raw <- googlesheets4::range_read(df, sheet = 1) %>% as.data.frame() %>% mutate(run_name = paste("bioprj_",link,sep=""))
-df <- df.raw %>% filter(grepl("yes|Yes",keepinrunning_YN))
+df.raw  <- googledrive::shared_drive_find(pattern = "^divdiv$")
+df.raw  <- googledrive::drive_ls(path = df.raw , pattern = "working_datasheets", recursive = FALSE)
+df.raw  <- googledrive::drive_ls(path = df.raw , pattern = "working_list_marine_projects_with_10indivs-12-4-2020", recursive = FALSE)
+df.raw $name
+df.raw <- googlesheets4::range_read(df.raw , sheet = 1) %>% as.data.frame() %>% mutate(run_name = paste("bioprj_",link,sep=""))
 
-#keep traits we think we care about (one row per unique entry, species level)
-df <- df %>% dplyr::select(organism_biosamp, somePopsFWorBrackish, isInvasiveRange, isMaybeHybrid, 
-                               DiffbyDepthSuspected, isAdultBenthicMarine, isNektonSometimes, 
-                               PLD_point, PLD_Min, PLD_Max, PLD_point2,
-                               isPlanktonic_atanypoint, Spawning_mode, Larval_feeding,
-                               Large_Adult_Range, ReturnToSpawningGround,
-                               Fecundity_EggsFemaleSpawn, Fecundity_SpawnFrequency, Fecundity_EggSize, 
-                               Body_Size, Reproductive_Age, Generational_Structure,
-                               Asexual_Stage, Census_Size,
-                               Genome_Size_MB, Genome_Size_picoGrams, Coded_longevity, LogEgg) %>% 
-  distinct()
+# this is older way we were building the trait df
+# #keep traits we care about (one row per unique entry, species level)
+# df <- df.raw %>% filter(grepl("yes|Yes",keepinrunning_YN))
+# df <- df %>% dplyr::select(organism_biosamp, somePopsFWorBrackish, isInvasiveRange, isMaybeHybrid, 
+#                                DiffbyDepthSuspected, isAdultBenthicMarine, isNektonSometimes, 
+#                                PLD_point, PLD_Min, PLD_Max, PLD_point2,
+#                                isPlanktonic_atanypoint, Spawning_mode, Larval_feeding,
+#                                Large_Adult_Range, ReturnToSpawningGround,
+#                                Fecundity_EggsFemaleSpawn, Fecundity_SpawnFrequency, Fecundity_EggSize, 
+#                                Body_Size, Reproductive_Age, Generational_Structure,
+#                                Asexual_Stage, Census_Size,
+#                                Genome_Size_MB, Genome_Size_picoGrams, Coded_longevity, LogEgg) %>% 
+#   distinct()
+
+# new/current way to build trait df, including only traits and species that were curated in final trait curation effort
+df <- df.raw %>% filter(final_keepers_with_popgen_data == "TRUE")
+nrow(df)
+df <- df %>% dplyr::select(organism_biosamp, 
+                           PLD_point, PLD_Min, PLD_Max, PLD_point2,
+                           isPlanktonic_atanypoint, 
+                           Spawning_mode, Larval_feeding, ReturnToSpawningGround,
+                           Fecundity_EggSize, Body_Size, Generational_Structure,
+                           isBenthic, Large_Adult_Range,
+                           isInvert, isFish, isAmniote, isPlant, isCoral)
 
 #check if there are any species with non-identical info
 #should return 0 if no duplicates
@@ -47,50 +59,56 @@ dups <- df %>% group_by(organism_biosamp) %>% mutate(nonid = 1:n()) %>% mutate(m
 nrow(dups)
 dups
 
-#replace values that aren't actually data with true NAs - NULL, ?, TBD, NA
-df <- df %>% mutate(across(everything(), gsub, pattern = "NULL", replacement = NA)) %>% 
-  mutate(across(everything(), gsub, pattern = "NA", replacement = NA)) %>% 
-  mutate(across(everything(), gsub, pattern = "\\?", replacement = NA)) %>% 
-  mutate(across(everything(), gsub, pattern = "TBD", replacement = NA))
-
 #check coding of variables
 for ( trait in names(df) ) {
   print(df %>% group_by(!!as.symbol(trait)) %>% summarise(n=n()))
 }
 
-#change ranges to midpoints
-range_midpoint <- function(x){
-  split <- str_split(x, "–")
-  midpoint <- mean(as.numeric(split[[1]]))
-  return(midpoint)
+#replace values that aren't actually data with true NAs - NULL, ?, TBD, NA
+df <- df %>% 
+  mutate(across(everything(), gsub, pattern = "unknown", replacement = NA)) %>% 
+  mutate(across(everything(), gsub, pattern = "NULL", replacement = NA)) %>% 
+  mutate(across(everything(), gsub, pattern = "NA", replacement = NA)) %>% 
+  mutate(across(everything(), gsub, pattern = "\\?", replacement = NA)) %>% 
+  mutate(across(everything(), gsub, pattern = "TBD", replacement = NA))
+
+#check coding of variables again
+for ( trait in names(df) ) {
+  print(df %>% group_by(!!as.symbol(trait)) %>% summarise(n=n()))
 }
 
-df$Body_Size <- purrr::map_dbl(df$Body_Size, range_midpoint)
-df$Reproductive_Age <- purrr::map_dbl(df$Body_Size, range_midpoint)
-df$Fecundity_EggsFemaleSpawn <- purrr::map_dbl(df$Fecundity_EggsFemaleSpawn, range_midpoint)
-df$Fecundity_SpawnFrequency <- purrr::map_dbl(df$Fecundity_SpawnFrequency , range_midpoint)
+# #change ranges to midpoints
+# range_midpoint <- function(x){
+#   split <- str_split(x, "–")
+#   midpoint <- mean(as.numeric(split[[1]]))
+#   return(midpoint)
+# }
+# 
+# df$Body_Size <- purrr::map_dbl(df$Body_Size, range_midpoint)
+# df$Reproductive_Age <- purrr::map_dbl(df$Body_Size, range_midpoint)
+# df$Fecundity_EggsFemaleSpawn <- purrr::map_dbl(df$Fecundity_EggsFemaleSpawn, range_midpoint)
+# df$Fecundity_SpawnFrequency <- purrr::map_dbl(df$Fecundity_SpawnFrequency , range_midpoint)
 
-write.csv(df, file = paste0(workingdir,"/marinerds_traits_231011.csv"), row.names = FALSE)
+write.csv(df, file = paste0(workingdir,"/marinerds_traits_01-05-2024.csv"), row.names = FALSE)
 
 
 
 # convert trait data to numerically coded for analysis/modeling ---------------
-rm(list = ls())
+rm(list = ls() %>% str_subset(., c("workingdir|outdir|figdir"), negate = T))
 gc()
 
-df <- read.csv(paste0(workingdir,"/marinerds_traits_231011.csv"))
+df <- read.csv(paste0(workingdir,"/marinerds_traits_01-05-2024.csv"))
 
 #recode some variables
 #for dispersal related traits, larger values mean higher dispersal
-df <- df %>% mutate(somePopsFWorBrackish = ifelse(somePopsFWorBrackish == "TRUE", 1, 0)) %>% 
-  mutate(isInvasiveRange = ifelse(isInvasiveRange == "TRUE", 1, 0)) %>%
-  mutate(isMaybeHybrid = ifelse(isMaybeHybrid == "TRUE", 1, 0)) %>%
-  mutate(DiffbyDepthSuspected = ifelse(DiffbyDepthSuspected == "TRUE", 1, 0)) %>%
-  mutate(isAdultBenthicMarine = ifelse(isAdultBenthicMarine == "TRUE", 1, 0)) %>%
-  mutate(isNektonSometimes = ifelse(isNektonSometimes == "TRUE", 1, 0)) %>%
+df <- df %>% 
   mutate(isPlanktonic_atanypoint = ifelse(isPlanktonic_atanypoint == "TRUE", 1, 0)) %>% 
-  mutate(Large_Adult_Range = ifelse(Large_Adult_Range == "TRUE", 1, 0)) %>%
-  mutate(ReturnToSpawningGround = ifelse(ReturnToSpawningGround == "TRUE", 1, 0))
+  mutate(ReturnToSpawningGround = ifelse(ReturnToSpawningGround == "TRUE", 1, 0)) %>% 
+  mutate(Large_Adult_Range = ifelse(Large_Adult_Range == "TRUE", 1, 0)) %>% 
+  mutate(isInvert = ifelse(isInvert == "TRUE", 1, 0)) %>%
+  mutate(isFish = ifelse(isFish == "TRUE", 1, 0)) %>%
+  mutate(isAmniote = ifelse(isAmniote == "TRUE", 1, 0)) %>%
+  mutate(isPlant = ifelse(isPlant == "TRUE", 1, 0))
 df$Spawning_mode[df$Spawning_mode == "I"] = 0
 df$Spawning_mode[df$Spawning_mode == "N"] = 1
 df$Spawning_mode[df$Spawning_mode == "F"] = 2
@@ -99,19 +117,24 @@ df$Larval_feeding[df$Larval_feeding == "L"] = 1
 df$Larval_feeding[df$Larval_feeding == "P"] = 2
 df$Generational_Structure[df$Generational_Structure == "I"] = 0
 df$Generational_Structure[df$Generational_Structure == "S"] = 1
-df$Census_Size[df$Census_Size == "vast"] = NA
-df <- df %>% mutate(Census_Size = as.numeric(gsub(",","",Census_Size))) %>% 
+df$isBenthic[df$isBenthic == "A"] = 2
+df$isBenthic[df$isBenthic == "S"] = 1
+df$isBenthic[df$isBenthic == "N"] = 0
+#make sure numbers are numbers
+df <- df %>% 
   mutate(Spawning_mode = as.numeric(Spawning_mode), 
          Larval_feeding = as.numeric(Larval_feeding),
-         Generational_Structure = as.numeric(Generational_Structure))
+         Generational_Structure = as.numeric(Generational_Structure),
+         isBenthic = as.numeric(isBenthic))
 
 #check coding of variables again
 for ( trait in names(df) ) {
   print(df %>% group_by(!!as.symbol(trait)) %>% summarise(n=n()))
 }
+str(df)
 
 #save cleaned, numerically coded traits
-write.csv(df %>% dplyr::select(-Genome_Size_picoGrams, -Genome_Size_MB), paste0(outdir,"/cleaned_numeric_biotic_traits.csv"), row.names = FALSE)
+write.csv(df, paste0(outdir,"/cleaned_numeric_biotic_traits.csv"), row.names = FALSE)
 
 
 
@@ -119,50 +142,36 @@ write.csv(df %>% dplyr::select(-Genome_Size_picoGrams, -Genome_Size_MB), paste0(
 
 #trait coverage
 total = nrow(df)
-trtcov <- df %>% dplyr::select(-organism_biosamp) %>%
+trtcov <- df %>% dplyr::select(-organism_biosamp,-PLD_point,-PLD_Min, -PLD_Max) %>%
   summarise(across(everything(), ~ ((total - sum(is.na(.x)))/total)*100)) %>% 
   pivot_longer(., names_to = "trait", values_to = "percentage_coverage", cols = 1:ncol(.)) %>%
-  mutate(isspecial = ifelse(trait %in% c("PLD_point2", "PLD_Min", "PLD_Max", "isPlanktonic_atanypoint", 
-                                         "Spawning_mode", "Fecundity_EggSize", 
-                                         "Body_Size", "Generational_Structure"), 
+  mutate(trait_type = ifelse(trait %in% c("PLD_point2", "Fecundity_EggSize", 
+                                         "Body_Size"), 
                             "green", "additional")) %>% 
-  mutate(isspecial = ifelse(trait %in% c("Fecundity_EggsFemaleSpawn", "Fecundity_SpawnFrequency", 
-                                         "Reproductive_Age", "Coded_longevity"),
-                            "yellow", isspecial)) %>% 
-  mutate(isspecial = factor(isspecial, levels = c("green", "yellow", "additional")))
+  mutate(trait_type = ifelse(trait %in% c("isPlanktonic_atanypoint", "Spawning_mode", 
+                                         "Larval_feeding", "ReturnToSpawningGround",
+                                         "Generational_Structure", "isBenthic", "Large_Adult_Range"),
+                            "yellow", trait_type)) %>% 
+  mutate(trait_type = factor(trait_type, levels = c("green", "yellow", "additional")))
 
 #species coverage
 spcov.all <- df %>%
   rowwise(organism_biosamp) %>% summarise(spcov.all = (((ncol(.)-1) - (sum(is.na(cur_data()))))/(ncol(.)-1))*100) %>% ungroup()
 
-spcov.green <- df %>% 
-  dplyr::select(organism_biosamp, PLD_point2, PLD_Min, PLD_Max, isPlanktonic_atanypoint, 
-                Spawning_mode, Fecundity_EggSize, Body_Size, Generational_Structure) %>%
-  rowwise(organism_biosamp) %>% summarise(spcov.green = (((ncol(.)-1) - (sum(is.na(cur_data()))))/(ncol(.)-1))*100) %>% ungroup()
-
-spcov.yellow <- df %>% 
-  dplyr::select(organism_biosamp, Fecundity_EggsFemaleSpawn, Fecundity_SpawnFrequency, Reproductive_Age, Coded_longevity) %>%
-  rowwise(organism_biosamp) %>% summarise(spcov.yellow = (((ncol(.)-1) - (sum(is.na(cur_data()))))/(ncol(.)-1))*100) %>% ungroup()
-
-spcov.greenandyellow <- df %>% 
-  dplyr::select(organism_biosamp, PLD_point2, PLD_Min, PLD_Max, isPlanktonic_atanypoint, 
-                Spawning_mode, Fecundity_EggSize, Body_Size, Generational_Structure,
-                Fecundity_EggsFemaleSpawn, Fecundity_SpawnFrequency, Reproductive_Age, Coded_longevity) %>%
+spcov <- df %>% 
+  dplyr::select(organism_biosamp, PLD_point2, isPlanktonic_atanypoint, 
+                Spawning_mode, Larval_feeding, ReturnToSpawningGround, Fecundity_EggSize, Body_Size, Generational_Structure,
+                isBenthic, Large_Adult_Range) %>%
   rowwise(organism_biosamp) %>% summarise(spcov.greenandyellow = (((ncol(.)-1) - (sum(is.na(cur_data()))))/(ncol(.)-1))*100) %>% ungroup()
-
-spcov <- merge(spcov.all, spcov.green, by = "organism_biosamp", all = T) %>% 
-  merge(., spcov.yellow, by = "organism_biosamp", all = T) %>% 
-  merge(., spcov.greenandyellow, by = "organism_biosamp", all = T)
-rm(spcov.all, spcov.green, spcov.greenandyellow, spcov.yellow, total, trait)
 
 #plot
 trtcov %>% 
-  arrange(desc(isspecial), desc(trait)) %>% mutate(order = 1:n()) %>% 
+  arrange(desc(trait_type), desc(trait)) %>% mutate(order = 1:n()) %>% 
   mutate(trait = reorder(trait, order)) %>%  
   ggplot() + 
   geom_hline(yintercept = 50, colour = "red", alpha = 0.5, linetype = "dashed") +
   geom_hline(yintercept = 80, colour = "red", alpha = 0.5, linetype = "dashed") +
-  geom_point(aes(x = trait, y = percentage_coverage, fill = isspecial), 
+  geom_point(aes(x = trait, y = percentage_coverage, fill = trait_type), 
              shape = 21, colour = "black", size = 3) +
   scale_fill_manual(values = c("green","yellow","black")) +
   labs(fill = "Trait priority",
@@ -170,19 +179,15 @@ trtcov %>%
        x = "Trait") +
   coord_flip() +
   theme_bw()
+
 ggsave(paste0(figdir, "/biotic_trait_coverage-bytrait.pdf"), width = 8, height = 5, units = c("in"))
 
 
 
-spcov %>% 
-  arrange(spcov.greenandyellow, desc(organism_biosamp)) %>% mutate(order = 1:n()) %>% 
-  mutate(organism_biosamp = reorder(organism_biosamp, order)) %>% 
+spcov %>%
   ggplot() +
   geom_hline(yintercept = 50, colour = "red", alpha = 0.5, linetype = "dashed") +
   geom_hline(yintercept = 80, colour = "red", alpha = 0.5, linetype = "dashed") +
-  geom_point(aes(x = organism_biosamp, y = spcov.all, fill = "black"), shape = 21, colour = "black", size = 1) +
-  geom_point(aes(x = organism_biosamp, y = spcov.green, fill = "green"), shape = 21, colour = "black", size = 1) +
-  geom_point(aes(x = organism_biosamp, y = spcov.yellow, fill = "yellow"), shape = 21, colour = "black", size = 1) +
   geom_point(aes(x = organism_biosamp, y = spcov.greenandyellow, fill = "turquoise2"), shape = 21, colour = "black", size = 2.5) +
   scale_fill_identity(guide = "legend", name = "Traits included",
                       breaks = c("black", "green", "yellow", "turquoise2"),
@@ -192,6 +197,7 @@ spcov %>%
   theme(axis.text.y = element_text(size = 3.5)) +
   labs(y = "Trait coverage per species (%)",
        x = "Species")
+
 ggsave(paste0(figdir, "/biotic_trait_coverage-byspecies.pdf"), width = 8, height = 5, units = c("in"))
 
 
@@ -303,14 +309,12 @@ my.plotcorr <- function (corr, outline = FALSE, col = "grey", upper.panel = c("e
 }
 
 #can only put numerically coded traits into correlation table
-df.numeric <- df %>% dplyr::select(-organism_biosamp, -Genome_Size_picoGrams, -Genome_Size_MB)
+df.numeric <- df %>% dplyr::select(PLD_point2, isPlanktonic_atanypoint, Spawning_mode, 
+                                   Larval_feeding, ReturnToSpawningGround, Fecundity_EggSize, 
+                                   Body_Size, Generational_Structure, isBenthic, Large_Adult_Range)
 for ( trait in names(df.numeric) ) {
   print(df %>% group_by(!!as.symbol(trait)) %>% summarise(n=n()))
 }
-str(df.numeric)
-
-# !!! JUST FOR NOW - remove a few messy categories that we can't easily make numeric !!!
-df.numeric <- df.numeric %>% dplyr::select(-Asexual_Stage)
 str(df.numeric)
 
 #cor table using pairwise obs
@@ -342,24 +346,7 @@ my.plotcorr(trtcor.pairwise,
             axes = FALSE, xlab = "", ylab = "",
             cex.lab = 0.6, cex = 0.6)
 # !!! have to save manually above figure (ggsave() doesn't work) !!!
-#pred_correlation_matrix-allpotential.pdf , 14x14 in
-
-#and make correlation matrix just for traits in hypoth bingo
-df.numeric.yg <- df %>% dplyr::select(Body_Size, Fecundity_EggSize, Generational_Structure, 
-                                      ReturnToSpawningGround, Spawning_mode, Larval_feeding,
-                                      PLD_point2, isPlanktonic_atanypoint)
-
-trtcor.pairwise.yg <- df.numeric.yg %>% cor(., use = "pairwise.complete.obs", method = "pearson")
-
-my.plotcorr(trtcor.pairwise.yg,
-            upper.panel="number", lower.panel = "ellipse", diag = "none",
-            mar=c(0,0,0,0),
-            outline = F,
-            col=colors[((trtcor.pairwise.yg + 1)/2) * 100],
-            axes = FALSE, xlab = "", ylab = "",
-            cex.lab = 0.6, cex = 0.6)
-# !!! have to save manually above figure (ggsave() doesn't work) !!!
-#pred_correlation_matrix-12inmodel.pdf , 14x14 in
+#pred_correlation_matrix-biotic_traits.pdf , 14x14 in
 
 # end
 
