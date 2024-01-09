@@ -28,12 +28,8 @@ taxcolorkey <- read.csv("data/master_tax_color_key.csv") %>% mutate(species = gs
 
 #-----------------------------------------------------------------------------------------------------------------
 
-
-
-#keep just traits in hypoth bingo
-biotic <- biotic %>% dplyr::select(species, Body_Size, Fecundity_EggSize, Generational_Structure, 
-                                   ReturnToSpawningGround, Spawning_mode, Larval_feeding,
-                                   PLD_point2, isPlanktonic_atanypoint)
+#drop a few biotic preds we don't want
+biotic <- biotic %>% dplyr::select(-PLD_point, -PLD_Min, -PLD_Max)
 
 #make all latitude values positive
 lat %>% ggplot() + geom_histogram(aes(x = meanlat.gbif), bins = 30) + scale_x_continuous(limits = c(-90,90))
