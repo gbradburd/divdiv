@@ -1,0 +1,12 @@
+link	run_acc_sra	lat	long	coordinateUncertaintyInMeters	origin
+PRJNA576132_Galaxea-horrescens	SRR10281216	13.2682	144.6639	500	datathon
+PRJNA576132_Galaxea-horrescens	SRR10281125	7.5	134.5	15624	datathon
+PRJNA576132_Galaxea-horrescens	SRR10281128	7.5	134.5	15624	datathon
+PRJNA576132_Galaxea-horrescens	SRR10281129	7.5	134.5	15624	datathon
+PRJNA576132_Galaxea-horrescens	SRR10281135	13.2682	144.6639	500	datathon
+PRJNA576132_Galaxea-horrescens	SRR10281144	7.5	134.5	15624	datathon
+PRJNA576132_Galaxea-horrescens	SRR10281228	13.2682	144.6639	500	datathon
+PRJNA576132_Galaxea-horrescens	SRR10281102	7.5	134.5	15624	datathon
+PRJNA576132_Galaxea-horrescens	SRR10281069	13.4	144.7	15482	datathon
+PRJNA576132_Galaxea-horrescens	SRR10281133	7.5	134.5	15624	datathon
+PRJNA576132_Galaxea-horrescens	SRR10281151	13.39	144.6489	500	datathon

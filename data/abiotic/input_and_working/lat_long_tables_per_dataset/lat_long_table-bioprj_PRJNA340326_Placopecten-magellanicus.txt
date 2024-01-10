@@ -1,0 +1,13 @@
+link	run_acc_sra	lat	long	coordinateUncertaintyInMeters	origin
+PRJNA340326_Placopecten-magellanicus	SRR4131967	47.1545	-55.10416667		ncbi
+PRJNA340326_Placopecten-magellanicus	SRR4131968	47.1143	-62.0243		ncbi
+PRJNA340326_Placopecten-magellanicus	SRR4131969	38.82265936	-73.59895436		ncbi
+PRJNA340326_Placopecten-magellanicus	SRR4131970	46.13383333	-63.77283333		ncbi
+PRJNA340326_Placopecten-magellanicus	SRR4131971	45.06473333	-67.01663333		ncbi
+PRJNA340326_Placopecten-magellanicus	SRR4131972	44.67615	-66.07181667		ncbi
+PRJNA340326_Placopecten-magellanicus	SRR4131973	44.52066667	-60.635		ncbi
+PRJNA340326_Placopecten-magellanicus	SRR4131974	44.52	-67.0319		ncbi
+PRJNA340326_Placopecten-magellanicus	SRR4131975	42.83716667	-66.13583333		ncbi
+PRJNA340326_Placopecten-magellanicus	SRR4131976	42.44	-70.3874		ncbi
+PRJNA340326_Placopecten-magellanicus	SRR4131977	41.61266667	-66.36216667		ncbi
+PRJNA340326_Placopecten-magellanicus	SRR4189620	47.824108	-53.869456		ncbi

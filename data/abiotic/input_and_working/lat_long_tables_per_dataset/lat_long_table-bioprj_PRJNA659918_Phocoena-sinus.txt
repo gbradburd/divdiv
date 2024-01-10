@@ -1,0 +1,13 @@
+link	run_acc_sra	lat	long	coordinateUncertaintyInMeters	origin
+PRJNA659918_Phocoena-sinus	SRR12545247	31.73	-114.5		ncbi
+PRJNA659918_Phocoena-sinus	SRR12545249	31.75	-114.5		ncbi
+PRJNA659918_Phocoena-sinus	SRR12545250	31.75	-114.5		ncbi
+PRJNA659918_Phocoena-sinus	SRR12545251	31.75	-114.5		ncbi
+PRJNA659918_Phocoena-sinus	SRR12545252	31.75	-114.6		ncbi
+PRJNA659918_Phocoena-sinus	SRR12545253	31.75	-114.5		ncbi
+PRJNA659918_Phocoena-sinus	SRR12545254	31.75	-114.58		ncbi
+PRJNA659918_Phocoena-sinus	SRR12545255	31.75	-114.58		ncbi
+PRJNA659918_Phocoena-sinus	SRR12545256	31.75	-114.5		ncbi
+PRJNA659918_Phocoena-sinus	SRR12545257	31.75	-114.5		ncbi
+PRJNA659918_Phocoena-sinus	SRR12545258	31.74	-114.5		ncbi
+PRJNA659918_Phocoena-sinus	SRR12545260	31.36	-114.3		ncbi

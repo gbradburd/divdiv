@@ -1,0 +1,15 @@
+link	run_acc_sra	lat	long	coordinateUncertaintyInMeters	origin
+PRJNA564823_Delphinapterus-leucas	SRR10241496	61.327786	-149.738152	50	datathon
+PRJNA564823_Delphinapterus-leucas	SRR10241515	60.9871217	-150.3008883	50	datathon
+PRJNA564823_Delphinapterus-leucas	SRR10241492	61.23929	-150.26421	50	datathon
+PRJNA564823_Delphinapterus-leucas	SRR10241489	58.95997	-158.49783	50	datathon
+PRJNA564823_Delphinapterus-leucas	SRR10241510	61.3592797	-149.7175767	50	datathon
+PRJNA564823_Delphinapterus-leucas	SRR10241508	61.3061347	-149.8457781	50	datathon
+PRJNA564823_Delphinapterus-leucas	SRR10241502	61.32522	-149.7963883	50	datathon
+PRJNA564823_Delphinapterus-leucas	SRR10241494	61.24361	-150.27641	50	datathon
+PRJNA564823_Delphinapterus-leucas	SRR10241513	60.9858883	-150.3002517	50	datathon
+PRJNA564823_Delphinapterus-leucas	SRR10241500	61.3517181	-149.7220197	50	datathon
+PRJNA564823_Delphinapterus-leucas	SRR10241498	61.327786	-149.738152	50	datathon
+PRJNA564823_Delphinapterus-leucas	SRR10241506	61.1826417	-150.52207	50	datathon
+PRJNA564823_Delphinapterus-leucas	SRR10241504	61.3573417	-149.88371	50	datathon
+PRJNA564823_Delphinapterus-leucas	SRR10241486	59.06042	-158.3847	50	datathon
