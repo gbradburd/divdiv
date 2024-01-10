@@ -54,18 +54,15 @@ mod <- stan_model(model_code=betaPhyReg2)
 
 
 simData <- function(N,nX){
-	N <- 50
-	nX <- 1
-	bad <- TRUE
-	counter <- 0
 	X <- matrix(rnorm(N*nX),nrow=nX,ncol=N)
+	X[,N] <- 0
 	phy <- ape::rtree(N)
 	phyCov <- ape::vcv(phy)
 	alpha <- abs(rnorm(1))
 	gamma <- rnorm(1,mean=-6,sd=0.01)
 	beta <- matrix(rnorm(nX,mean=0,sd=1),nrow=nX,ncol=1)
 	phi <- rexp(1,rate=1/100)
-	meanVec <- gamma + beta %*% X
+	meanVec <- gamma + t(beta) %*% X
 	theta <- MASS::mvrnorm(n=1,mu=meanVec,Sigma=alpha*phyCov)
 	mu <- 1/(1+exp(-theta))
 	shape1 <- mu*phi
@@ -97,11 +94,11 @@ simData <- function(N,nX){
 	return(out)
 }
 
-sim <- simData(50,1)
+sim <- simData(50,2)
 fit <- rstan::sampling(object=mod,
 						data=sim$db,
-						iter=3e3,
-						thin=3e3/500,
+						iter=2e3,
+						thin=2e3/500,
 						chains=1,
 						control=setNames(list(15),"max_treedepth"))
 plot(get_logposterior(fit)[[1]])

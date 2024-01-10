@@ -220,10 +220,19 @@ postBetaPlot <- function(out,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,multi
 }
 
 makeLooDB <- function(toDrop,db){
+	db$Nstar <- db$N
 	db$N <- db$N-1
+	db$Ystar <- db$Y[toDrop]
 	db$Y <- db$Y[-toDrop]
-	db$X <- db$X[1,-toDrop,drop=FALSE]
-	db$relMat <- db$relMat[-toDrop,-toDrop]
+	reord <- c(c(1:db$Nstar)[-toDrop],toDrop)
+	db$relMat <- db$relMat[reord,reord]
+	if(db$nX == 1){
+		db$X <- db$X[reord]
+	} else {
+		xMeans <- rowMeans(db$X[2:db$nX,-toDrop])
+		db$X[2:db$nX,toDrop] <- xMeans
+		db$X <- db$X[,reord]
+	}
 	return(db)
 }
 
@@ -263,6 +272,7 @@ looRep <- function(toDrop,sampleName,db,nIter,mod){
 							chains=1,
 							control=setNames(list(15),"max_treedepth"))
 	loo <- list("fit" = fit,
+				"looDB" = looDB,
 				"dropped" = sampleName)
 	return(loo)
 }
@@ -344,29 +354,35 @@ getTipOrder <- function(tree){
 	return(tree$tip.label[tipOrder])
 }
 
-phylooViz <- function(db,CNsamples,tree,xlim=c(0.95,1.01),valRange=NULL,qnt=0.95,adj=2){
-	#recover()
+phylooViz <- function(loo,predName,tree,xlim,valRange=NULL,qnt=0.95,adj=2,logX=FALSE){
 	if(is.null(valRange)){
 		valRange <- c(0,1)
 	}
-	spNames <- row.names(db$relMat)
+	y <- lapply(1:loo$db$N,function(i){
+					rstan::extract(loo$looReps[[i]]$fit,"y",
+									inc_warmup=FALSE,permute=FALSE)[,1,loo$db$N]
+				})
+	yDens <- lapply(y,getDens,adj=adj,logX=logX)
+	spNames <- row.names(loo$db$relMat)
 	tree <- ape::keep.tip(tree,gsub("_"," ",spNames))
 	tree <- ape::ladderize(tree,right=FALSE)
 	tipOrder <- getTipOrder(tree)
 	nSp <- length(tipOrder)
 	spOrder <- match(tipOrder,spNames)
-	CNsamples <- looCNsamples
-	cnFits <- unlist(
-				lapply(1:db$N,
-					function(n){
-						abs(mean(CNsamples[[n]])-db$Y[n])
-						#2*(abs(0.5-ecdf(CNsamples[[n]])(db$Y[n])))
-				}))
-	cnDens <- lapply(CNsamples,function(x){getDens(x,qnt=qnt,adj=adj)})
+	fits <- unlist(lapply(1:loo$db$N,
+							function(n){
+								2*(abs(0.5-ecdf(y[[n]])(loo$looReps[[n]]$looDB$Ystar)))}))
 	virCols <- viridis::viridis_pal(alpha=1,begin=0,end=1,direction=1,option="D")(100)
-	cols <- colFunc(cnFits,cols=virCols,nCols=100,valRange=valRange)
+	cols <- colFunc(fits,cols=virCols,nCols=100,valRange=valRange)
 	par(mfrow=c(1,2),oma=c(3,0,0,0))
 	ape::plot.phylo(tree,label.offset=50,cex=0.7,no.margin=TRUE,x.lim=c(0,1950),tip.color=cols,edge.width=1.5)
+	text(x=450,y=70,labels=sprintf("predictor:\n%s",predName))
+	if(logX){
+		xlim <- range(log(loo$db$Y)) + c(-4,1)
+		yax <- log(loo$db$Y)
+	} else {
+		yax <- loo$db$Y
+	}
 	plot(0,type='n',
 			xlim=xlim,
 			yaxt='n',xaxt='n',xlab="",ylab="",bty='n',
@@ -380,13 +396,16 @@ phylooViz <- function(db,CNsamples,tree,xlim=c(0.95,1.01),valRange=NULL,qnt=0.95
 		lapply(nSp:1,
 			function(i){
 				plotDens(ymin=i-0.5,
-						 d=cnDens[[spOrder[i]]],
+						 x=y[[spOrder[i]]],
+						 d=yDens[[spOrder[i]]],
 						 col=cols[spOrder[i]],
 						 alpha=0.9,
+						 qnt=qnt,
 						 xmin=NULL,
-						 peakheight=0.5)
+						 peakheight=0.5,
+						 logX=logX)
 				#text(x=0.95,y=i,labels=spNames[spOrder[i]])
-				points(x=db$Y[spOrder[i]],i-0.25,pch=17,col="red")
+				points(x=yax[spOrder[i]],i-0.25,pch=17,col="red")
 				abline(h=spOrder[i]-0.5,lty=3,col="gray")	
 			}))
 }
@@ -490,3 +509,38 @@ modAdViz <- function(db,fit,predName,nPPS,tree,xlim,valRange=NULL,qnt=0.95,adj=2
 				abline(h=spOrder[i]-0.5,lty=3,col="gray")	
 			}))
 }
+
+phyloViz_scatter <- function(loo,predName,valRange=NULL){
+	if(is.null(valRange)){
+		valRange <- c(0,1)
+	}
+	y <- lapply(1:loo$db$N,function(i){
+					rstan::extract(loo$looReps[[i]]$fit,"y",
+									inc_warmup=FALSE,permute=FALSE)[,1,loo$db$N]
+				})
+	yMean <- unlist(lapply(y,mean))
+	fits <- unlist(lapply(1:loo$db$N,
+							function(n){
+								2*(abs(0.5-ecdf(y[[n]])(loo$looReps[[n]]$looDB$Ystar)))}))
+	virCols <- viridis::viridis_pal(alpha=1,begin=0,end=1,direction=1,option="D")(100)
+	cols <- colFunc(fits,cols=virCols,nCols=100,valRange=valRange)
+	plot(loo$db$Y,yMean,
+			xlim=range(c(loo$db$Y,yMean)),
+			ylim=range(c(loo$db$Y,yMean)),
+			xlab="observed diversity",
+			ylab="leave-one-out predicted diversity",type='n',
+			main=predName)
+		abline(a=0,b=1,col="red",lty=2)
+		invisible(
+			lapply(1:loo$db$N,
+				function(n){
+					qnt <- quantile(y[[n]],c(0.025,0.975))
+					segments(x0=loo$db$Y[n],x1=loo$db$Y[n],
+								y0=qnt[1],y1=qnt[2],lwd=1.5,col=adjustcolor(cols[n],0.5))
+			})
+		)
+	points(loo$db$Y,yMean,pch=18,cex=1.5,col=cols)
+}
+
+
+
