@@ -7,6 +7,9 @@ library(dplyr)
 library(tidyr)
 library(googledrive)
 library(googlesheets4)
+library(stringr)
+library(ggplot2)
+
 
 rm(list = ls())
 gc()
@@ -89,15 +92,15 @@ for ( trait in names(df) ) {
 # df$Fecundity_EggsFemaleSpawn <- purrr::map_dbl(df$Fecundity_EggsFemaleSpawn, range_midpoint)
 # df$Fecundity_SpawnFrequency <- purrr::map_dbl(df$Fecundity_SpawnFrequency , range_midpoint)
 
-write.csv(df, file = paste0(workingdir,"/marinerds_traits_01-05-2024.csv"), row.names = FALSE)
+write.csv(df, file = paste0(workingdir,"/marinerds_traits_01-30-2024.csv"), row.names = FALSE)
 
 
 
 # convert trait data to numerically coded for analysis/modeling ---------------
-rm(list = ls() %>% str_subset(., c("workingdir|outdir|figdir"), negate = T))
+rm(list = ls() %>% stringr::str_subset(., c("workingdir|outdir|figdir"), negate = T))
 gc()
 
-df <- read.csv(paste0(workingdir,"/marinerds_traits_01-05-2024.csv"))
+df <- read.csv(paste0(workingdir,"/marinerds_traits_01-30-2024.csv"))
 
 #recode some variables
 #for dispersal related traits, larger values mean higher dispersal

@@ -89,7 +89,7 @@ write.csv(df, "data/master_df.csv", row.names = FALSE)
 
 
 #**********************************************
-#first look at methology preds vs responses -------
+#a first look at methology preds vs responses -------
 
 temp <- df %>% dplyr::select(link,species,n_samples,mean_raw_read_cnt,read_length,mean_locus_depth,s,nbhd,thetaW,globalPi,meanHet)
 temp <- temp %>% pivot_longer(., names_to = "pred", values_to = "value", cols = 3:7)
