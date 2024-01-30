@@ -1,3 +1,86 @@
+divdivAnalyses <- function(z,X,y,phyStr,mod,outName,nIter=1e4,parallel=TRUE,nNodes=4,filterKeep=NULL){
+    `%d%` <- parallelizing(args <- as.list(environment()))
+    export <- c("divdivAnalysis","makeDB","makeMultiDB")
+    outs <- foreach::foreach(i = 1:length(X),
+    						.export=export,
+    						.packages="rstan") %d% {
+								divdivAnalysis(z=z,x=X[[i]],y=y,phyStr=phyStr,
+												mod=mod,nIter=nIter,filterKeep=filterKeep)
+			}
+	doParallel::stopImplicitCluster()
+	save(outs,file=paste0(outName,"_outs.Robj"))
+	return(outs)
+}
+
+divdivAnalysis <- function(z,x,y,phyStr,mod,nIter=1e4,filterKeep=NULL){
+    if(inherits(mod,"character")){
+	    	mod <- stan_model(model_code=mod)
+    }
+	if(!is.null(filterKeep)){
+		z <- z[filterKeep,]
+		phyStr <- phyStr[filterKeep,filterKeep]
+	}
+	if(length(x)==1){
+		db <- makeDB(X=z[[x]],Y=z[[y]],phyStr=phyStr)
+	} else {
+		preds <- lapply(1:length(x),function(i){z[[x[i]]]})
+		db <- makeMultiDB(X=preds,Y=z[[y]],phyStr=phyStr)		
+	}
+	fit <- rstan::sampling(object=mod,
+							data=db,
+							iter=nIter,
+							thin=nIter/500,
+							chains=1,
+							control=setNames(list(15),"max_treedepth"))
+	out <- list("db"=db,"fit"=fit)
+	return(out)
+}
+
+getPlotDims <- function(N){
+	n <- round(sqrt(N))
+	if(N <= n^2){
+		dims <- c(n,n)
+	} else {
+		dims <- c(n,n+1)
+	}
+	return(dims)
+}
+
+getSampCols <- function(db,sampCols){
+	sp <- row.names(db$relMat)
+	sampCols <- sampCols[names(sampCols) %in% sp]
+	return(sampCols)
+}
+
+vizAllOuts <- function(outs,predNames,sampPhy,outName,sampCols=NULL,multiPred=FALSE){
+	pdf(file=sprintf("%s_fits.pdf",outName),width=14,height=12)
+		par(mfrow=getPlotDims(length(outs)))
+		for(i in 1:length(outs)){
+			betaPPS(outs[[i]]$db,outs[[i]]$fit,500,predName=predNames[i],multiPred=multiPred,sampCols=sampCols)
+		}
+	dev.off()
+	#
+	pdf(file=sprintf("%s_phyloFit.pdf",outName),width=12,height=12)
+		for(i in 1:length(outs)){
+			modAdViz(outs[[i]]$db,outs[[i]]$fit,predName=predNames[i],
+						nPPS=500,tree=sampPhy,xlim=c(0,0.05),
+						valRange=NULL,qnt=0.999,adj=0.5)
+		}
+	dev.off()
+	#
+	pdf(file=sprintf("%s_phyloFit_log.pdf",outName),width=12,height=12)
+		for(i in 1:length(outs)){
+			modAdViz(outs[[i]]$db,outs[[i]]$fit,predName=predNames[i],
+						nPPS=500,tree=sampPhy,xlim=c(0,0.05),
+						valRange=NULL,qnt=0.999,adj=0.5,logX=TRUE)
+		}
+	dev.off()
+	#
+	pdf(file=sprintf("%s_betas.pdf",outName),width=14,height=10)
+		postBetaPlot(outs,predNames,reorder=TRUE,cols=NULL,stdize=TRUE,multiPred=multiPred,qnt=0.999)
+	dev.off()
+}
+
 getMeanLine <- function(beta,gamma,X,nPPS){
 	lns <- lapply(1:nPPS,function(i){beta[i]*X+gamma[i]})
 	mnLn <- colMeans(Reduce("rbind",lns))
@@ -10,39 +93,6 @@ getBestLine <- function(lpp,beta,gamma,X){
 	return(bestLine)
 }
 
-mvnPPS <- function(db,fit,nPPS,predName){
-	nIter <- length(get_logposterior(fit)[[1]])
-	sampledIter <- sample(1:(nIter/2),nPPS,replace=TRUE)
-	beta <- extract(fit,"beta",permute=FALSE)[,1,1]
-	sig <- 1-2*(abs(0.5-ecdf(beta)(0)))
-	siglwd <- ifelse(sig<0.05,4,0.5)
-	beta <- beta[sampledIter]
-	alpha <- extract(fit,"alpha",permute=FALSE,inc_warmup=FALSE)[sampledIter,1,1]
-	gamma <- extract(fit,"gamma",permute=FALSE,inc_warmup=FALSE)[sampledIter,1,1]
-	mu <- lapply(1:nPPS,function(i){c(gamma[i] + beta[i]*db$X)})
-	pps <- lapply(1:nPPS,function(i){MASS::mvrnorm(1,mu=mu[[i]],Sigma=alpha[i]*db$relMat)})
-	ppsCIs <- getPPSci(db,pps)
-	plot(db$X,db$Y,
-		ylim=range(c(db$Y,unlist(ppsCIs))),
-		xlab="predictor",ylab="response",
-		type='n',main=sprintf("%s (p=%s)",predName,round(sig,4)))
-		invisible(
-			lapply(1:db$N,
-				function(n){
-					segments(x0=db$X[n],
-							 y0=ppsCIs[[n]][1],
-							 x1=db$X[n],
-							 y1=ppsCIs[[n]][2],
-							 lwd=0.75)
-				})
-		)
-	points(db$X,db$Y,col="red",pch=19,cex=1)
-	x <- seq(min(db$X),max(db$X),length.out=100)
-	mnLn <- getMeanLine(beta=beta,gamma=gamma,X=x,nPPS=nPPS)
-	lines(x,mnLn,lwd=siglwd)
-	box(lwd=2,col=ifelse(sig<0.05,"red","black"))
-}
-
 invLogit <- function(x){
 	return(exp(x)/(1+exp(x)))
 }
@@ -51,7 +101,12 @@ logit <- function(x){
 	return(log(x/(1-x)))
 }
 
-betaPPS <- function(db,fit,nPPS,predName,multiPred=FALSE){
+betaPPS <- function(db,fit,nPPS,predName,multiPred=FALSE,sampCols=NULL){
+	if(!is.null(sampCols)){
+		sampCols <- 	getSampCols(db,sampCols)
+	} else {
+		sampCols <- "red"
+	}
 	lpp <- get_logposterior(fit,inc_warmup=FALSE)[[1]]
 	nIter <- length(lpp)
 	sampledIter <- sample(1:nIter,nPPS,replace=TRUE)
@@ -95,7 +150,7 @@ betaPPS <- function(db,fit,nPPS,predName,multiPred=FALSE){
 							 lwd=0.75)
 				})
 		)
-	points(x,db$Y,col="red",pch=19,cex=1)
+	points(x,db$Y,col=sampCols,pch=19,cex=1)
 	lnx <- seq(min(x),max(x),length.out=100)
 	mnLn <- getMeanLine(beta=beta,gamma=gamma,X=lnx,nPPS=nPPS)
 	lines(lnx,invLogit(mnLn),lwd=siglwd)
@@ -108,54 +163,6 @@ getPPSci <- function(db,pps){
 					quantile(unlist(lapply(pps,"[[",n)),c(0.025,0.975))
 				})
 	return(ppsByN)
-}
-
-expPPS <- function(db,fit,nPPS,predName,multiPred=FALSE){
-	lpp <- get_logposterior(fit,inc_warmup=FALSE)[[1]]
-	nIter <- length(lpp)
-	sampledIter <- sample(1:(nIter/2),nPPS,replace=TRUE)
-	if(multiPred){
-		b <- "beta[1]"
-	} else {
-		b <- "beta"
-	}
-	beta <- extract(fit,b,permute=FALSE,inc_warmup=FALSE)[,1,1]
-	sig <- 1-2*(abs(0.5-ecdf(beta)(0)))
-	siglwd <- ifelse(sig<0.05,4,0.5)
-	beta <- beta[sampledIter]
-	#alpha <- extract(fit,"alpha",permute=FALSE,inc_warmup=FALSE)[sampledIter,1,1]
-	gamma <- extract(fit,"gamma",permute=FALSE,inc_warmup=FALSE)[sampledIter,1,1]
-	#mvnMean <- lapply(1:nPPS,function(i){c(gamma[i] + beta[i]*db$X)})
-	#theta <- lapply(1:nPPS,function(i){MASS::mvrnorm(1,mu=mvnMean[[i]],Sigma=alpha[i]*db$relMat)})
-	#lambda <- lapply(theta,function(x){exp(x)})
-	lambda <- extract(fit,"lambda",permute=FALSE)[sampledIter,1,]
-	pps <- lapply(1:nPPS,function(i){rexp(db$N,rate=lambda[[i]])})
-	ppsCIs <- getPPSci(db,pps)
-	if(multiPred){
-		x <- db$X[1,]
-	} else {
-		x <- db$X
-	}
-	plot(x,db$Y,
-		ylim=range(c(db$Y,unlist(ppsCIs))),
-		xlab="predictor",ylab="response",
-		type='n',main=sprintf("%s (p=%s)",predName,round(sig,4)))
-		invisible(
-			lapply(1:db$N,
-				function(n){
-					segments(x0=x[n],
-							 y0=ppsCIs[[n]][1],
-							 x1=x[n],
-							 y1=ppsCIs[[n]][2],
-							 lwd=0.75)
-				})
-		)
-	points(x,db$Y,col="red",pch=19,cex=1)
-	lnx <- seq(min(x),max(x),length.out=100)
-	mnLn <- getMeanLine(beta=beta,gamma=gamma,X=lnx,nPPS=nPPS)
-	lines(lnx,1/exp(mnLn),lwd=siglwd)
-#	lines(0:max(db$X),1/exp(mean(beta)*(0:max(db$X))+mean(gamma)),lwd=siglwd)
-	box(lwd=2,col=ifelse(sig<0.05,"red","black"))
 }
 
 colFunc <- function (x, cols, nCols, valRange){
@@ -173,22 +180,22 @@ checkSig <- function(beta){
 	return(sig)
 }
 
-postBetaPlot <- function(out,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,multiPred=FALSE,qnt=1,...){
+postBetaPlot <- function(outs,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,multiPred=FALSE,qnt=1,...){
 #	recover()
 	if(multiPred){
 		b <- "beta[1]"
 	} else {
 		b <- "beta"
 	}
-	betas <- lapply(out$fits,
-				function(fit){
-					extract(fit,b,inc_warmup=FALSE,permute=FALSE)[,1,1]
+	betas <- lapply(1:length(outs),
+				function(i){
+					extract(outs[[i]]$fit,b,inc_warmup=FALSE,permute=FALSE)[,1,1]
 				})
 	if(stdize){
 		betas <- lapply(1:length(betas),
 						function(i){
-							if(length(unique(out$db[[i]]$X[1,])) > 3){
-								betas[[i]] * sd(out$db[[i]]$X[1,])
+							if(length(unique(outs[[i]]$db$X[1,])) > 3){
+								betas[[i]] * sd(outs[[i]]$db$X[1,])
 							} else {
 								betas[[i]]
 							}
@@ -219,23 +226,6 @@ postBetaPlot <- function(out,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,multi
 			}))
 }
 
-makeLooDB <- function(toDrop,db){
-	db$Nstar <- db$N
-	db$N <- db$N-1
-	db$Ystar <- db$Y[toDrop]
-	db$Y <- db$Y[-toDrop]
-	reord <- c(c(1:db$Nstar)[-toDrop],toDrop)
-	db$relMat <- db$relMat[reord,reord]
-	if(db$nX == 1){
-		db$X <- db$X[reord]
-	} else {
-		xMeans <- rowMeans(db$X[2:db$nX,-toDrop])
-		db$X[2:db$nX,toDrop] <- xMeans
-		db$X <- db$X[,reord]
-	}
-	return(db)
-}
-
 parallelizing <- function(args) {
     if (args[["parallel"]]) {
         if (!foreach::getDoParRegistered()) {
@@ -261,61 +251,6 @@ parallelizing <- function(args) {
         d <- foreach::`%do%`
     }
     return(d)
-}
-
-looRep <- function(toDrop,sampleName,db,nIter,mod){
-	looDB <- makeLooDB(toDrop,db)
-	fit <- rstan::sampling(object=mod,
-							data=looDB,
-							iter=nIter,
-							thin=nIter/500,
-							chains=1,
-							control=setNames(list(15),"max_treedepth"))
-	loo <- list("fit" = fit,
-				"looDB" = looDB,
-				"dropped" = sampleName)
-	return(loo)
-}
-
-phyloo <- function(db,mod,sampleNames,nIter,parallel=TRUE,nNodes=4,prefix){
-	prespecified <- conStruct:::parallel.prespecify.check(args <- as.list(environment()))
-    `%d%` <- parallelizing(args <- as.list(environment()))
-	looReps <- foreach::foreach(i = 1:db$N,.export=c("looRep","makeLooDB"),.packages="rstan") %d% {
-				looRep(toDrop=i,sampleName=sampleNames[i],db=db,nIter=nIter,mod=mod)
-			}
-	looReps <- setNames(looReps,paste0("looRep",1:db$N))
-	loo <- list("db"=db,
-				"looReps"=looReps)
-	conStruct:::end.parallelization(prespecified)
-	save(loo,file=paste0(prefix,"_loo.Robj"))
-	return("loo done")
-}
-
-getCNmean <- function(masterDB,i,beta,gamma,sig12,sig22inv,link){
-	mu1 <- beta*masterDB$X[,i,drop=FALSE] + gamma
-	mu2 <- beta*masterDB$X[,-i,drop=FALSE] + gamma
-	cnMean <- mu1 + sig12 %*% sig22inv %*% t(link(masterDB$Y[-i])-mu2)
-	return(cnMean)
-}
-
-getCNvar <- function(sig11,sig12,sig22inv,sig21){
-	cnVar <- sig11 - sig12 %*% sig22inv %*% sig21
-	return(cnVar)
-}
-
-looCN <- function(nCNsamples,sampleNames,masterDB,looRep,link,invLink){
-	i <- which(sampleNames==looRep$dropped)
-	alpha <- mean(extract(looRep$fit,"alpha",inc_warmup=FALSE,permute=FALSE))
-	beta <- mean(extract(looRep$fit,"beta",inc_warmup=FALSE,permute=FALSE))
-	gamma <- mean(extract(looRep$fit,"gamma",inc_warmup=FALSE,permute=FALSE))
-	sig22inv <- MASS::ginv(alpha*masterDB$relMat[-i,-i])
-	sig11 <- alpha*masterDB$relMat[i,i]
-	sig12 <- alpha*masterDB$relMat[i,-i,drop=FALSE]
-	sig21 <- alpha*masterDB$relMat[-i,i,drop=FALSE]
-	cnMean <- getCNmean(masterDB,i,beta,gamma,sig12,sig22inv,link)
-	cnVar <- getCNvar(sig11,sig12,sig22inv,sig21)
-	cnSamples <- invLink(rnorm(nCNsamples,mean=cnMean,sd=sqrt(cnVar)))
-	return(cnSamples)
 }
 
 makeDB <- function(X,Y,phyStr){
@@ -352,62 +287,6 @@ getTipOrder <- function(tree){
 	isTip <- tree$edge[,2] <= length(tree$tip.label)
 	tipOrder <- tree$edge[isTip,2]
 	return(tree$tip.label[tipOrder])
-}
-
-phylooViz <- function(loo,predName,tree,xlim,valRange=NULL,qnt=0.95,adj=2,logX=FALSE){
-	if(is.null(valRange)){
-		valRange <- c(0,1)
-	}
-	y <- lapply(1:loo$db$N,function(i){
-					rstan::extract(loo$looReps[[i]]$fit,"y",
-									inc_warmup=FALSE,permute=FALSE)[,1,loo$db$N]
-				})
-	yDens <- lapply(y,getDens,adj=adj,logX=logX)
-	spNames <- row.names(loo$db$relMat)
-	tree <- ape::keep.tip(tree,gsub("_"," ",spNames))
-	tree <- ape::ladderize(tree,right=FALSE)
-	tipOrder <- getTipOrder(tree)
-	nSp <- length(tipOrder)
-	spOrder <- match(tipOrder,spNames)
-	fits <- unlist(lapply(1:loo$db$N,
-							function(n){
-								2*(abs(0.5-ecdf(y[[n]])(loo$looReps[[n]]$looDB$Ystar)))}))
-	virCols <- viridis::viridis_pal(alpha=1,begin=0,end=1,direction=1,option="D")(100)
-	cols <- colFunc(fits,cols=virCols,nCols=100,valRange=valRange)
-	par(mfrow=c(1,2),oma=c(3,0,0,0))
-	ape::plot.phylo(tree,label.offset=50,cex=0.7,no.margin=TRUE,x.lim=c(0,1950),tip.color=cols,edge.width=1.5)
-	text(x=450,y=70,labels=sprintf("predictor:\n%s",predName))
-	if(logX){
-		xlim <- range(log(loo$db$Y)) + c(-4,1)
-		yax <- log(loo$db$Y)
-	} else {
-		yax <- loo$db$Y
-	}
-	plot(0,type='n',
-			xlim=xlim,
-			yaxt='n',xaxt='n',xlab="",ylab="",bty='n',
-			ylim=c(1,nSp)) #c(0,(length(cnDens)+1)*1.25))
-	axis(side=1,
-		at=c(xlim[1],(xlim[2]+xlim[1])/2,xlim[2]),
-		labels=round(c(xlim[1],(xlim[2]+xlim[1])/2,xlim[2]),2))
-	#abline(h=0:nSp,lty=2)
-	#text(x=xtext,y=(0.4 + 1:nSp)*1.25,labels=spNames[spOrder],srt=0)
-	invisible(
-		lapply(nSp:1,
-			function(i){
-				plotDens(ymin=i-0.5,
-						 x=y[[spOrder[i]]],
-						 d=yDens[[spOrder[i]]],
-						 col=cols[spOrder[i]],
-						 alpha=0.9,
-						 qnt=qnt,
-						 xmin=NULL,
-						 peakheight=0.5,
-						 logX=logX)
-				#text(x=0.95,y=i,labels=spNames[spOrder[i]])
-				points(x=yax[spOrder[i]],i-0.25,pch=17,col="red")
-				abline(h=spOrder[i]-0.5,lty=3,col="gray")	
-			}))
 }
 
 getDens <- function(x,adj=2,logX=FALSE){

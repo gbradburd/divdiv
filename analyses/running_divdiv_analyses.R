@@ -4,6 +4,7 @@
 ################################################################
 ################################################################
 
+set.seed(123)
 
 ################################
 # load libraries and define 
@@ -17,12 +18,19 @@ library(foreach)
 
 source("divdiv_analysis_functions.R")
 
+#specify global code options
+nNodes <- 15
+nIter <- 2e4
+interactive <- FALSE
+
 ################################
 # compile rstan models
 ################################
 source("trait_mod_stan_blocks.R")
-betaPhyReg <- stan_model(model_code=betaPhyReg)
-#expPhyReg <- stan_model(model_code=expPhyReg)
+if(interactive){
+	betaPhyReg <- stan_model(model_code=betaPhyReg)	
+}
+
 
 ################################
 # get phylo structure,
@@ -36,397 +44,142 @@ load("../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
 sampPhy <- ape::keep.tip(phy,gsub("_"," ",z$species))
 phyStr <- ape::vcv(sampPhy,corr=TRUE)
 
+# reorder dataframe to match order of species
+#	in phylogenetic variance-covariance matrix
 sp <- gsub("_"," ",z$species)
 z <- z[match(row.names(phyStr),sp),]
 
-predictors <- rbind(z[["meanlat.gbif"]],					# abiotic
-					z[["n_ECOREGIONS.all"]],				# abiotic
-					z[["max.95.sea.gbif"]]/max(z[["max.95.sea.gbif"]]),				# abiotic
-					z[["Body_Size"]],				# biotic
-					z[["Fecundity_EggSize"]],				# biotic
-					z[["Generational_Structure"]],				# biotic
-					z[["ReturnToSpawningGround"]],				# biotic
-					z[["Spawning_mode"]],				# biotic
-					z[["Larval_feeding"]],				# biotic
-					z[["PLD_point2"]],				# biotic
-					z[["isPlanktonic_atanypoint"]],				# biotic
-					z[["ratio.sea.95"]],					# nuisance
-					z[["n_samples"]],					# nuisance
-					z[["mean_raw_read_cnt"]]/1e7,					# nuisance
-					z[["read_length"]],					# nuisance
-					z[["mean_locus_depth"]],					# nuisance
-					z[["n.totalsnps"]]/1e5)					# nuisance
+# prepare dataframe for analyses
+z[["div"]] <- 1-z$s
+z[["Log_BodySize"]] <- log(z[["Body_Size"]])
+#z[["Log_PLD"]] <- log(z[["PLD_point2"]])
+z[["max.95.sea.gbif.nrm"]] <- z[["max.95.sea.gbif"]]/max(z[["max.95.sea.gbif"]])
+z[["mean_raw_read_cnt.nrm"]] <- z[["mean_raw_read_cnt"]]/1e7
+z[["n.totalsnps.nrm"]] <- z[["n.totalsnps"]]/1e5
 
+# make vector of predictor names
+preds <- c("meanlat.gbif","n_ECOREGIONS.all","max.95.sea.gbif.nrm",
+			"Log_BodySize","Fecundity_EggSize","Generational_Structure",
+			"ReturnToSpawningGround","Spawning_mode",
+			"Larval_feeding","PLD_point2","isPlanktonic_atanypoint",
+			"isBenthic","Large_Adult_Range",
+			"ratio.sea.95","n_samples","mean_raw_read_cnt.nrm",
+			"read_length","mean_locus_depth")
 
-
-predNames <- c("mean species latitude","number of ecoregions",
-			   "range extent","body size",
-			   "egg size","generational structure",
+predNames <- c("mean species latitude","number of ecoregions","range extent",
+			   "body size (log)","egg size","generational structure",
 			   "philopatry","spawning mode",
-			   "larval feeding","pelagic larval duration",
-			   "planktonicity","ratio of range sampled : total",
+			   "larval feeding","pelagic larval duration","planktonicity",
+			   "benthic lifestyle (N/S/A)", "highly dispersive adults",
+			   "ratio of range sampled : total",
 			   "number of samples","mean raw read count",
-			   "read length","mean locus depth","number of SNPs")
+			   "read length","mean locus depth")
 
-nIter <- 1e4
+sampCols <- z$cladecolor
+names(sampCols) <- gsub("_"," ",z$species)
+bioPreds <- preds[1:13]
+bioPredNames <- predNames[1:13]
+nuisPreds <- preds[15:18]
+nuisPredNames <- predNames[15:18]
 
 ################################
-# analyze s with one predictor at a time
-#	beta model, unscaled s
+# analyze diversity with one predictor at a time
 ################################
-db <- lapply(1:nrow(predictors),
-			function(i){
-				makeDB(predictors[i,],1-z$s,phyStr)
-		})
-names(db) <- predNames
 
-cl <- parallel::makeCluster(12)
-doParallel::registerDoParallel(cl)
+outs <- divdivAnalyses(z=z,X=as.list(preds),
+						y="div",phyStr=phyStr,mod=betaPhyReg,
+						outName="partA",nIter=nIter,parallel=TRUE,
+						nNodes=nNodes,filterKeep=NULL)
 
-fits <- foreach::foreach(i = 1:nrow(predictors)) %dopar% {
-	message(sprintf("now analyzing predictor %s/%s",i,nrow(predictors)))
-	rstan::sampling(object=betaPhyReg,
-					data=db[[i]],
-					iter=nIter,
-					thin=nIter/500,
-					chains=1,
-					control=setNames(list(15),"max_treedepth"))
-}
-
-parallel::stopCluster(cl)
-
-names(fits) <- predNames
-out <- list("db"=db,"fits"=fits)
-save(out,file="div.Robj")
-
-pdf(file="div.pdf",width=14,height=12)
-	par(mfrow=c(4,5)) ; for(i in 1:nrow(predictors)){betaPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i])}
-dev.off()
-
-pdf(file="div_phyloFit.pdf",width=12,height=12)
-	for(i in 1:nrow(predictors)){
-		modAdViz(out$db[[i]],out$fit[[i]],predName=predNames[i],
-					nPPS=500,tree=sampPhy,xlim=c(0,0.05),
-					valRange=NULL,qnt=0.999,adj=0.5)
-	}
-dev.off()
-
-pdf(file="div_phyloFit_log.pdf",width=12,height=12)
-	for(i in 1:nrow(predictors)){
-		modAdViz(out$db[[i]],out$fit[[i]],predName=predNames[i],
-					nPPS=500,tree=sampPhy,xlim=c(0,0.05),
-					valRange=NULL,qnt=0.999,adj=0.5,logX=TRUE)
-	}
-dev.off()
-
-pdf(file="div_betas.pdf",width=14,height=10)
-	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,qnt=0.99)
-dev.off()
+vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partA",sampCols=sampCols)
 
 ################################
 # analyze diversity with one biological predictor 
 #	and all the "nuisance" parameters
-#	beta model, unscaled diversity
 ################################
-bioPreds <- predictors[1:11,]
-bioPredNames <- predNames[1:11]
-nuisPreds <- predictors[13:16,]
-nuisPredNames <- predNames[13:16]
 
-db <- lapply(1:nrow(bioPreds),
-			function(i){
-				makeMultiDB(list(predictors[i,],
-								 nuisPreds[1,],
-								 nuisPreds[2,],
-								 nuisPreds[3,],
-								 nuisPreds[4,]),
-							 Y=1-z$s,
-							 phyStr=phyStr)
-		})
-names(db) <- bioPredNames
+x <- lapply(1:length(bioPreds),function(i){c(bioPreds[i],nuisPreds)})
 
-cl <- parallel::makeCluster(12)
-doParallel::registerDoParallel(cl)
+outs <- divdivAnalyses(z=z,X=x,
+						y="div",phyStr=phyStr,mod=betaPhyReg,
+						outName="partB",nIter=nIter,parallel=TRUE,
+						nNodes=nNodes,filterKeep=NULL)
 
-fits <- foreach::foreach(i = 1:nrow(bioPreds)) %dopar% {
-	message(sprintf("now analyzing multiple-linear regression with main predictor %s/%s",i,nrow(predictors)))
-	rstan::sampling(object=betaPhyReg,
-					data=db[[i]],
-					iter=nIter,
-					thin=nIter/500,
-					chains=1,
-					control=setNames(list(15),"max_treedepth"))
-}
-
-parallel::stopCluster(cl)
-
-names(fits) <- bioPredNames
-out <- list("db"=db,"fits"=fits)
-save(out,file="div_multiPred.Robj")
-
-pdf(file="div_multiPred.pdf",width=12,height=10)
-	par(mfrow=c(3,4)) ; for(i in 1:nrow(bioPreds)){betaPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i],multiPred=TRUE)}
-dev.off()
-
-pdf(file="div_multiPred_phyloFit.pdf",width=12,height=12)
-	for(i in 1:nrow(bioPreds)){
-		modAdViz(out$db[[i]],out$fit[[i]],predName=bioPredNames[i],
-					nPPS=500,tree=sampPhy,xlim=c(0,0.05),
-					valRange=NULL,qnt=0.999,adj=0.5)
-	}
-dev.off()
-
-pdf(file="div_multiPred_phyloFit_log.pdf",width=12,height=12)
-	for(i in 1:nrow(bioPreds)){
-		modAdViz(out$db[[i]],out$fit[[i]],predName=bioPredNames[i],
-					nPPS=500,tree=sampPhy,xlim=c(0,0.05),
-					valRange=NULL,qnt=0.999,adj=0.5,logX=TRUE)
-	}
-dev.off()
-
-
-pdf(file="div_multiPred_betas.pdf",width=14,height=10)
-	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,multiPred=TRUE)
-dev.off()
+vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partB",multiPred=TRUE,sampCols=sampCols)
 
 
 ################################
+# BOUTIQUE ANALYSES
+#	e.g., with specific combinations 
+#	of predictors, or in 
+#	specific taxonomic groups
+################################
+
+################
+# diversity ~ planktotrophic + !isCoral
+################
+
+x <- list(c("Larval_feeding",nuisPreds))
+
+outs <- divdivAnalyses(z=z,X=x,
+						y="div",phyStr=phyStr,mod=betaPhyReg,
+						outName="partC",nIter=nIter,parallel=TRUE,
+						nNodes=nNodes,filterKeep=which(z$isCoral!=1))
+
+vizAllOuts(outs=outs,predNames="Larval_feeding",sampPhy=sampPhy,outName="partC",multiPred=TRUE,sampCols=sampCols)
+
+
+################
+# diversity ~ pld + isBenthic
+################
+
+x <- list(c("PLD_point2","isBenthic"))
+
+outs <- divdivAnalyses(z=z,X=x,
+						y="div",phyStr=phyStr,mod=betaPhyReg,
+						outName="partD",nIter=nIter,parallel=TRUE,
+						nNodes=nNodes,filterKeep=NULL)
+
+vizAllOuts(outs=outs,predNames="PLD_point2",sampPhy=sampPhy,outName="partD",multiPred=TRUE,sampCols=sampCols)
+
+################
 # analyze diversity with one biological predictor 
 #	and all the "nuisance" parameters
-#	beta model, unscaled diversity
-#	IN SPECIFIC GROUPS:
-#		PLD w/ isPlanktonic filter
-#		body size just in fish
-#		all analyses dropping birds & mammals
-################################
-
-# PLD w/ isPlanktonic filter
-isPlanktonic <- which(predictors[11,]==1)
-db <- makeMultiDB(list(predictors[10,isPlanktonic],
-						 nuisPreds[1,isPlanktonic],
-						 nuisPreds[2,isPlanktonic],
-						 nuisPreds[3,isPlanktonic],
-						 nuisPreds[4,isPlanktonic]),
-					 Y=1-z$s[isPlanktonic],
-					 phyStr=phyStr[isPlanktonic,isPlanktonic])
-
-fit <- rstan::sampling(object=betaPhyReg,
-						data=db,
-						iter=nIter,
-						thin=nIter/500,
-						chains=1,
-						control=setNames(list(15),"max_treedepth"))
-
-pdf(file="div_PLD_isPlanktonic.pdf",width=12,height=10)
-	betaPPS(db,fit,500,predName="pelagic larval dispersal\nin planktonic species",multiPred=TRUE)
-dev.off()
-out <- list("db"=db,"fit"=fit)
-save(out,file="PLD_isPlanktonic.Robj")
-
-
-# BodySize w/ isFish filter
-fishMRCA <- ape::getMRCA(sampPhy,c(which(sampPhy$tip.label=="Engraulis encrasicolus"),which(sampPhy$tip.label=="Sebastes diaconus")))
-isFish <- phangorn::Descendants(sampPhy,fishMRCA,type="tips")[[1]]
-
-db <- makeMultiDB(list(predictors[4,isFish],
-						 nuisPreds[1,isFish],
-						 nuisPreds[2,isFish],
-						 nuisPreds[3,isFish],
-						 nuisPreds[4,isFish]),
-					 Y=1-z$s[isFish],
-					 phyStr=phyStr[isFish,isFish])
-
-fit <- rstan::sampling(object=betaPhyReg,
-						data=db,
-						iter=nIter,
-						thin=nIter/500,
-						chains=1,
-						control=setNames(list(15),"max_treedepth"))
-
-pdf(file="div_bodySize_isFish.pdf",width=12,height=10)
-	betaPPS(db,fit,500,predName="body size\nin fishes",multiPred=TRUE)
-dev.off()
-out <- list("db"=db,"fit"=fit)
-save(out,file="bodySize_isFish.Robj")
-
-
-# all analyses with only primarily marine spp.
-ogMarine <- which(z$taxclade %in% c("cnidarians","crustacea","molluscs","echinoderms","chondrichthyes","bony fishes"))
-
-db <- lapply(1:nrow(bioPreds),
-			function(i){
-				makeMultiDB(list(predictors[i,ogMarine],
-								 nuisPreds[1,ogMarine],
-								 nuisPreds[2,ogMarine],
-								 nuisPreds[3,ogMarine],
-								 nuisPreds[4,ogMarine]),
-							 Y=1-z$s[ogMarine],
-							 phyStr=phyStr[ogMarine,ogMarine])
-		})
-names(db) <- bioPredNames
-
-cl <- parallel::makeCluster(12)
-doParallel::registerDoParallel(cl)
-
-fits <- foreach::foreach(i = 1:nrow(bioPreds)) %dopar% {
-	message(sprintf("now analyzing multiple-linear regression with main predictor %s/%s",i,nrow(predictors)))
-	rstan::sampling(object=betaPhyReg,
-					data=db[[i]],
-					iter=nIter,
-					thin=nIter/500,
-					chains=1,
-					control=setNames(list(15),"max_treedepth"))
-}
-
-parallel::stopCluster(cl)
-
-names(fits) <- bioPredNames
-out <- list("db"=db,"fits"=fits)
-save(out,file="div_multiPred_ogMarine.Robj")
-
-pdf(file="div_multiPred_ogMarine.pdf",width=12,height=10)
-	par(mfrow=c(3,4)) ; for(i in 1:nrow(bioPreds)){betaPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i],multiPred=TRUE)}
-dev.off()
-
-pdf(file="div_multiPred_phyloFit_ogMarine.pdf",width=12,height=12)
-	for(i in 1:nrow(bioPreds)){
-		modAdViz(out$db[[i]],out$fit[[i]],predName=bioPredNames[i],
-					nPPS=500,tree=sampPhy,xlim=c(0,0.05),
-					valRange=NULL,qnt=0.999,adj=0.5)
-	}
-dev.off()
-
-pdf(file="div_multiPred_phyloFit_log_ogMarine.pdf",width=12,height=12)
-	for(i in 1:nrow(bioPreds)){
-		modAdViz(out$db[[i]],out$fit[[i]],predName=bioPredNames[i],
-					nPPS=500,tree=sampPhy,xlim=c(0,0.05),
-					valRange=NULL,qnt=0.999,adj=0.5,logX=TRUE)
-	}
-dev.off()
-
-if(FALSE){
-################################
-# analyze Nbhd with one predictor at a time
-#	exp model
-################################
-
-db <- lapply(1:nrow(predictors),
-			function(i){
-				makeDB(predictors[i,],z$nbhd,phyStr)
-		})
-names(db) <- predNames
-
-cl <- parallel::makeCluster(12)
-doParallel::registerDoParallel(cl)
-
-fits <- foreach::foreach(i = 1:nrow(predictors)) %dopar% {
-	message(sprintf("now analyzing predictor %s/%s",i,nrow(predictors)))
-	rstan::sampling(object=expPhyReg,
-					data=db[[i]],
-					iter=nIter,
-					thin=nIter/500,
-					save_warmup=FALSE,
-					chains=1,
-					control=setNames(list(15),"max_treedepth"))
-}
-
-parallel::stopCluster(cl)
-
-names(fits) <- predNames
-out <- list("db"=db,"fits"=fits)
-save(out,file="nbhd.Robj")
-
-pdf(file="nbhd.pdf",width=12,height=12)
-	par(mfrow=c(4,4)) ; for(i in 1:nrow(predictors)){expPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i])}
-dev.off()
-
-pdf(file="nbhd_betas.pdf",width=14,height=10)
-	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,multiPred=FALSE)
-dev.off()
-
-################################
-# analyze Nbhd size with one biological predictor 
-#	and all the "nuisance" parameters
-################################
-bioPreds <- predictors[1:11,]
-bioPredNames <- predNames[1:11]
-nuisPreds <- predictors[13:16,]
-nuisPredNames <- predNames[13:16]
-
-db <- lapply(1:nrow(bioPreds),
-			function(i){
-				makeMultiDB(list(predictors[i,],
-								 nuisPreds[1,],
-								 nuisPreds[2,],
-								 nuisPreds[3,],
-								 nuisPreds[4,]),
-							 Y=z$nbhd,
-							 phyStr=phyStr)
-		})
-names(db) <- bioPredNames
-
-cl <- parallel::makeCluster(12)
-doParallel::registerDoParallel(cl)
-
-fits <- foreach::foreach(i = 1:nrow(bioPreds)) %dopar% {
-	message(sprintf("now analyzing multiple-linear regression with main predictor %s/%s",i,nrow(predictors)))
-	rstan::sampling(object=expPhyReg,
-					data=db[[i]],
-					iter=nIter,
-					thin=nIter/500,
-					chains=1,
-					control=setNames(list(15),"max_treedepth"))
-}
-
-parallel::stopCluster(cl)
-
-names(fits) <- bioPredNames
-out <- list("db"=db,"fits"=fits)
-save(out,file="nbhd_multiPred.Robj")
-
-pdf(file="nbhd_multiPred.pdf",width=12,height=10)
-	par(mfrow=c(3,4)) ; for(i in 1:nrow(bioPreds)){expPPS(out$db[[i]],out$fit[[i]],500,predName=names(out$fit)[i],multiPred=TRUE)}
-dev.off()
-
-pdf(file="nbhd_multiPred_betas.pdf",width=14,height=10)
-	postBetaPlot(out=out,predNames=names(out$fits),reorder=TRUE,cols=NULL,stdize=TRUE,multiPred=TRUE)
-dev.off()
-}
-
-################
-# GRAVEYARD
+#	JUST IN ACTINOPTERYGII
 ################
 
-if(FALSE){
-################################
-# analyze s with multiple biological predictors 
+bonyFishMRCA <- ape::getMRCA(sampPhy,c(which(sampPhy$tip.label=="Engraulis encrasicolus"),which(sampPhy$tip.label=="Sebastes diaconus")))
+isBonyFish <- phangorn::Descendants(sampPhy,bonyFishMRCA,type="tips")[[1]]
+
+x <- lapply(1:length(bioPreds),function(i){c(bioPreds[i],nuisPreds)})
+
+outs <- divdivAnalyses(z=z,X=x,
+						y="div",phyStr=phyStr,mod=betaPhyReg,
+						outName="partE",nIter=nIter,parallel=TRUE,
+						nNodes=nNodes,filterKeep=isBonyFish)
+
+vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partE",multiPred=TRUE,sampCols=sampCols)
+
+################
+# analyze diversity with one biological predictor 
 #	and all the "nuisance" parameters
-#	beta model, unscaled diversity
-################################
+#	dropping all species that are secondarily marine
+################
 
-# for ecoregions & range size, include both
+mammalMRCA <- ape::getMRCA(sampPhy,c(which(sampPhy$tip.label=="Halichoerus grypus atlantica"),which(sampPhy$tip.label=="Phocoena sinus")))
+isMammal <- phangorn::Descendants(sampPhy,mammalMRCA,type="tips")[[1]]
+birdMRCA <- ape::getMRCA(sampPhy,c(which(sampPhy$tip.label=="Aythya marila"),which(sampPhy$tip.label=="Pygoscelis papua")))
+isBird <- phangorn::Descendants(sampPhy,birdMRCA,type="tips")[[1]]
+isPlant <- c(which(z$species=="Rhizophora_mangle"),
+			 which(z$species=="Laguncularia_racemosa")) # which(z$species=="Sargassum_muticum")
+primarilyMarine <- (1:nrow(z))[-c(isMammal,isBird,isPlant)]
 
-db <- makeMultiDB(list(predictors[2,],
-					   predictors[3,],
-					   nuisPreds[1,],
-					   nuisPreds[2,],
-					   nuisPreds[3,],
-					   nuisPreds[4,]),
-				   Y=1-z$s,
-				   phyStr=phyStr)
 
-fit <- rstan::sampling(object=betaPhyReg,
-						data=db,
-						iter=nIter,
-						thin=nIter/500,
-						chains=1,
-						control=setNames(list(15),"max_treedepth"))
+x <- lapply(1:length(bioPreds),function(i){c(bioPreds[i],nuisPreds)})
 
-out <- list("db"=db,"fit"=fit)
-save(out,file="ecoreg_range_s.Robj")
+outs <- divdivAnalyses(z=z,X=x,
+						y="div",phyStr=phyStr,mod=betaPhyReg,
+						outName="partF",nIter=nIter,parallel=TRUE,
+						nNodes=nNodes,filterKeep=primarilyMarine)
 
-# betaPPS(out$db,out$fit,500,predName="ecoreg",multiPred=TRUE)
-# b1 <- extract(out$fit,"beta[1]",inc_warmup=TRUE,permute=FALSE)
-# b2 <- extract(out$fit,"beta[2]",inc_warmup=TRUE,permute=FALSE)
-# plot(b1,b2,xlim=c(-0.03,0.03))
-}
+vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partF",multiPred=TRUE,sampCols=sampCols)
