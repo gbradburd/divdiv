@@ -1,5 +1,5 @@
 "organism_biosamp","PLD_point","PLD_Min","PLD_Max","PLD_point2","isPlanktonic_atanypoint","Spawning_mode","Larval_feeding","ReturnToSpawningGround","Fecundity_EggSize","Body_Size","Generational_Structure","isBenthic","Large_Adult_Range","isInvert","isFish","isAmniote","isPlant","isCoral"
-"Acanthephyra purpurea",NA,NA,NA,NA,1,0,2,0,1,10,0,0,1,1,0,0,0,0
+"Acanthephyra purpurea","0",NA,NA,0,1,0,2,0,1,10,0,0,1,1,0,0,0,0
 "Acanthurus olivaceus","60.8",40,70,60.8,1,2,2,0,0.75,35,0,1,0,0,1,0,0,0
 "Acropora cervicornis","10",7,70,10,1,2,1,0,0.65,98,0,1,0,1,0,0,0,1
 "Acropora palmata","10",7,70,10,1,2,1,0,0.561,160,0,1,0,1,0,0,0,1
@@ -24,7 +24,7 @@
 "Ectopleura larynx","0",0,0,0,0,0,0,0,NA,6,0,2,0,1,0,0,0,0
 "Engraulis encrasicolus","100",NA,NA,100,1,2,2,0,1.5,21,0,0,1,0,1,0,0,0
 "Eudyptes chrysolophus","0",0,0,0,0,1,0,1,80,60,0,1,1,0,0,1,0,0
-"Eukrohnia hamata",NA,NA,NA,NA,1,2,2,0,NA,3,0,0,1,1,0,0,0,0
+"Eukrohnia hamata","0",NA,NA,0,1,2,2,0,NA,3,0,0,1,1,0,0,0,0
 "Exaiptasia pallida","35",30,40,35,1,2,2,0,0.09,2.5,0,1,0,1,0,0,0,0
 "Fibramia amboinensis","0",0,NA,0,0,0,0,0,NA,7,0,2,0,0,1,0,0,0
 "Gadus macrocephalus","52.5",45,60,52.5,1,2,2,0,1.1,122,0,0,1,0,1,0,0,0
@@ -53,7 +53,7 @@
 "Phocoena phocoena","0",0,0,0,0,0,0,0,NA,190,0,0,1,0,0,1,0,0
 "Phocoena sinus","0",0,0,0,0,0,0,0,NA,150,0,0,1,0,0,1,0,0
 "Pisaster ochraceus","151",76,226,151,1,2,2,0,0.15,25,0,1,0,1,0,0,0,0
-"Planes minutus",NA,NA,NA,NA,1,0,2,0,NA,1,0,0,1,1,0,0,0,0
+"Planes minutus","0",NA,NA,0,1,0,2,0,NA,1,0,0,1,1,0,0,0,0
 "Platichthys flesus","29",NA,NA,29,1,2,2,1,0.95,60,0,1,1,0,1,0,0,0
 "Pocillopora damicornis","6",1,100,6,1,2,2,0,0.11,10,0,1,0,1,0,0,0,1
 "Pomacanthus maculosus","22",20,24,22,1,2,2,0,0.61,50,0,1,0,0,1,0,0,0
@@ -62,18 +62,18 @@
 "Pygoscelis adeliae","0",0,0,0,0,1,0,1,80,70,0,1,1,0,0,1,0,0
 "Pygoscelis antarcticus","0",0,0,0,0,1,0,1,80,75,0,1,1,0,0,1,0,0
 "Pygoscelis papua","0",0,0,0,0,1,0,1,80,90,0,1,1,0,0,1,0,0
-"Pyroteuthis margaritifera",NA,NA,NA,NA,1,0,2,NA,0.9,3,1,0,1,1,0,0,0,0
+"Pyroteuthis margaritifera","0",NA,NA,0,1,0,2,NA,0.9,3,1,0,1,1,0,0,0,0
 "Rhizophora mangle","182.5",0,365,182.5,1,0,1,0,25,2400,0,1,0,0,0,0,1,0
-"Robustosergia robusta",NA,NA,NA,NA,1,0,2,0,NA,0.5,1,0,1,1,0,0,0,0
+"Robustosergia robusta","0",NA,NA,0,1,0,2,0,NA,0.5,1,0,1,1,0,0,0,0
 "Sargassum muticum",NA,NA,NA,NA,1,0,0,0,NA,1600,0,1,0,0,0,0,0,0
-"Scomber scombrus",NA,NA,NA,NA,1,2,2,1,1.15,50,0,0,1,0,1,0,0,0
+"Scomber scombrus","0",NA,NA,0,1,2,2,1,1.15,50,0,0,1,0,1,0,0,0
 "Sebastes diaconus","135",90,180,135,1,0,2,0,NA,33,0,1,0,0,1,0,0,0
 "Sebastes paucispinis","135",90,180,135,1,0,2,0,NA,91,0,1,0,0,1,0,0,0
 "Sebastes pinniger","135",90,180,135,1,0,2,0,NA,76,0,1,0,0,1,0,0,0
 "Sebastes rastrelliger","135",90,180,135,1,0,2,0,NA,56,0,1,0,0,1,0,0,0
 "Sebastes ruberrimus","135",90,180,135,1,0,2,0,NA,104,0,1,0,0,1,0,0,0
 "Sebastiscus marmoratus","135",90,180,135,1,0,2,0,NA,36,0,1,0,0,1,0,0,0
-"Seriola dorsalis",NA,NA,NA,NA,1,2,2,0,1.4,250,0,0,1,0,1,0,0,0
+"Seriola dorsalis","0",NA,NA,0,1,2,2,0,1.4,250,0,0,1,0,1,0,0,0
 "Siphamia tubifer","30",NA,NA,30,1,0,2,0,0.76,4.35,0,1,0,0,1,0,0,0
 "Sphyrna tiburo","0",0,0,0,0,0,0,1,NA,150,0,0,1,0,1,0,0,0
 "Stegastes beebei","31.2",NA,NA,31.2,1,1,2,0,NA,15,0,1,0,0,1,0,0,0
@@ -82,8 +82,8 @@
 "Systellaspis debilis","28",27,29,28,1,0,1,0,3.6,1.5,0,0,0,1,0,0,0,0
 "Uria aalge","0",0,0,0,0,1,0,1,80,45,0,1,1,0,0,1,0,0
 "Uria lomvia","0",0,0,0,0,1,0,1,80,48,0,1,1,0,0,1,0,0
-"Vampyroteuthis infernalis",NA,NA,NA,NA,1,0,2,0,3.5,20,0,0,1,1,0,0,0,0
+"Vampyroteuthis infernalis","0",NA,NA,0,1,0,2,0,3.5,20,0,0,1,1,0,0,0,0
 "Zalophus wollebaeki","0",0,0,0,0,0,0,1,NA,250,0,1,1,0,0,1,0,0
 "Zebrasoma flavescens","70",58,85,70,1,2,2,0,0.75,20,0,1,0,0,1,0,0,0
 "Zebrasoma scopas","60",NA,NA,60,1,2,2,0,0.63,40,0,1,0,0,1,0,0,0
-"Zenarchopterus dunckeri",NA,0,0,NA,1,0,0,0,2,14,0,0,1,0,1,0,0,0
+"Zenarchopterus dunckeri",NA,0,0,NA,1,0,0,0,2,14,0,1,1,0,1,0,0,0
