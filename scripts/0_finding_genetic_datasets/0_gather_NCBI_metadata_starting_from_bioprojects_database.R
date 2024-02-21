@@ -478,7 +478,7 @@ rm(list=ls())
 gc()
 
 #bring bioproject data in
-df.bioprj <- read.csv(paste0(workdir, "/2-NCBI_bioprojects__not-human_bacteria_viral_metagenome__CLEAN-BIOPROJECTS")) %>% dplyr::select(-X)
+df.bioprj <- read.csv(paste0(workdir, "/2-NCBI_bioprojects__not-human_bacteria_viral_metagenome__CLEAN-BIOPROJECTS.csv")) %>% dplyr::select(-X)
 
 #bring SRA data in
 df.sra <- read.csv(paste0(workdir, "/5-NCBI_bioprojects__not-human_bacteria_viral_metagenome__CLEAN-SRAresultsWITHseqdataofinterest.csv")) %>% dplyr::select(-X, -X.1)

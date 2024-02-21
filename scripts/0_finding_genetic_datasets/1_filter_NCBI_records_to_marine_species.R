@@ -86,7 +86,7 @@ str(species.list) #wormsbynames() requires character vector
 
 #don't load worms package here bc it uses plyr which can mess other pkgs we are using up - just call using ::
 #devtools::install_github("janhoo/worms") (the older version that R installs has bugs)
-#library(worms) 
+#library(worrms) 
 
 #pass all of the "species" names in the organism col. from NCBI through WoRMs database to find the marine species
 #note! - this takes a long time to run (minutes to hours)
