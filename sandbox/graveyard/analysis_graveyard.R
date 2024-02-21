@@ -846,4 +846,59 @@ phylooViz <- function(db,CNsamples,tree,xlim){
 
 
 
+betaPPS <- function(db,fit,nPPS,predName,multiPred=FALSE,sampCols=NULL){
+	if(!is.null(sampCols)){
+		sampCols <- 	getSampCols(db,sampCols)
+	} else {
+		sampCols <- "red"
+	}
+	lpp <- get_logposterior(fit,inc_warmup=FALSE)[[1]]
+	nIter <- length(lpp)
+	sampledIter <- sample(1:nIter,nPPS,replace=TRUE)
+	if(multiPred){
+		b <- "beta[1]"
+	} else {
+		b <- "beta"
+	}
+	beta <- extract(fit,b,permute=FALSE,inc_warmup=FALSE)[,1,1]
+	sig <- 1-2*(abs(0.5-ecdf(beta)(0)))
+	siglwd <- ifelse(sig<0.05,4,0.5)
+	beta <- beta[sampledIter]
+	gamma <- extract(fit,"gamma",permute=FALSE,inc_warmup=FALSE)[sampledIter,1,1]
+	# alpha <- extract(fit,"alpha",permute=FALSE,inc_warmup=FALSE)[sampledIter,1,1]
+	# phi <- extract(fit,"phi",permute=FALSE,inc_warmup=FALSE)[sampledIter,1,1]
+	# mvnMean <- lapply(1:nPPS,function(i){c(gamma[i] + beta[i]*db$X)})
+	# theta <- lapply(1:nPPS,function(i){MASS::mvrnorm(1,mu=mvnMean[[i]],Sigma=alpha[i]*db$relMat)})
+	# mu <- lapply(theta,function(x){invLogit(x)})
+	# shape1 <- lapply(1:nPPS,function(i){phi[[i]]*mu[[i]]})
+	# shape2 <- lapply(1:nPPS,function(i){phi[[i]]*(1-mu[[i]])})
+	shape1 <- extract(fit,"shape1",permute=FALSE)[sampledIter,1,]
+	shape2 <- extract(fit,"shape2",permute=FALSE)[sampledIter,1,]
+	pps <- lapply(1:nPPS,function(i){rbeta(db$N,shape1[i,],shape2[i,])})
+	ppsCIs <- getPPSci(db,pps)
+	if(multiPred){
+		x <- db$X[1,]
+	} else {
+		x <- db$X
+	}
+	plot(x,db$Y,
+		ylim=range(c(db$Y,unlist(ppsCIs))),
+		xlab="predictor",ylab="response",
+		type='n',main=sprintf("%s (p=%s)",predName,round(sig,4)))
+		invisible(
+			lapply(1:db$N,
+				function(n){
+					segments(x0=x[n],
+							 y0=ppsCIs[[n]][1],
+							 x1=x[n],
+							 y1=ppsCIs[[n]][2],
+							 lwd=0.75)
+				})
+		)
+	points(x,db$Y,col=sampCols,pch=19,cex=1)
+	lnx <- seq(min(x),max(x),length.out=100)
+	mnLn <- getMeanLine(beta=beta,gamma=gamma,X=lnx,nPPS=nPPS)
+	lines(lnx,invLogit(mnLn),lwd=siglwd)
+	box(lwd=2,col=ifelse(sig<0.05,"red","black"))
+}
 

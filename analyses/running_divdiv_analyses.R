@@ -15,6 +15,8 @@ options(mc.cores=12)
 library(ape)
 library(doParallel)
 library(foreach)
+library(phytools)
+library(phylosignal)
 
 source("divdiv_analysis_functions.R")
 
@@ -44,6 +46,7 @@ load("../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
 sampPhy <- ape::keep.tip(phy,gsub("_"," ",z$species))
 phyStr <- ape::vcv(sampPhy,corr=TRUE)
 
+
 # reorder dataframe to match order of species
 #	in phylogenetic variance-covariance matrix
 sp <- gsub("_"," ",z$species)
@@ -52,13 +55,13 @@ z <- z[match(row.names(phyStr),sp),]
 # prepare dataframe for analyses
 z[["div"]] <- 1-z$s
 z[["Log_BodySize"]] <- log(z[["Body_Size"]])
-#z[["Log_PLD"]] <- log(z[["PLD_point2"]])
 z[["max.95.sea.gbif.nrm"]] <- z[["max.95.sea.gbif"]]/max(z[["max.95.sea.gbif"]])
+z[["eco_per_range"]] <- z[["n_ECOREGIONS.all"]]/z[["max.95.sea.gbif.nrm"]]
 z[["mean_raw_read_cnt.nrm"]] <- z[["mean_raw_read_cnt"]]/1e7
 z[["n.totalsnps.nrm"]] <- z[["n.totalsnps"]]/1e5
 
 # make vector of predictor names
-preds <- c("meanlat.gbif","n_ECOREGIONS.all","max.95.sea.gbif.nrm",
+preds <- c("meanlat.gbif","n_ECOREGIONS.all","max.95.sea.gbif.nrm","eco_per_range",
 			"Log_BodySize","Fecundity_EggSize","Generational_Structure",
 			"ReturnToSpawningGround","Spawning_mode",
 			"Larval_feeding","PLD_point2","isPlanktonic_atanypoint",
@@ -66,7 +69,7 @@ preds <- c("meanlat.gbif","n_ECOREGIONS.all","max.95.sea.gbif.nrm",
 			"ratio.sea.95","n_samples","mean_raw_read_cnt.nrm",
 			"read_length","mean_locus_depth")
 
-predNames <- c("mean species latitude","number of ecoregions","range extent",
+predNames <- c("mean species latitude","number of ecoregions","range extent","ecoregions/range_size",
 			   "body size (log)","egg size","generational structure",
 			   "philopatry","spawning mode",
 			   "larval feeding","pelagic larval duration","planktonicity",
@@ -77,10 +80,24 @@ predNames <- c("mean species latitude","number of ecoregions","range extent",
 
 sampCols <- z$cladecolor
 names(sampCols) <- gsub("_"," ",z$species)
-bioPreds <- preds[1:13]
-bioPredNames <- predNames[1:13]
-nuisPreds <- preds[15:18]
-nuisPredNames <- predNames[15:18]
+bioPreds <- preds[1:14]
+bioPredNames <- predNames[1:14]
+nuisPreds <- preds[16:19]
+nuisPredNames <- predNames[16:19]
+
+################################
+# test for phylogenetic signal
+################################
+
+# blomberg's k
+blom_k <- phytools::phylosig(sampPhy,z$div,test=TRUE)
+	#plot(blom_k)
+sampPhy4d <- phylobase::phylo4d(x=sampPhy,tip.data=z$div)
+sampPhy_cgram <- phylosignal::phyloCorrelogram(sampPhy4d,trait="dt",n.points=100,ci.bs=1000)
+cgram <- list("sampPhy4d"= sampPhy4d,"sampPhy_cgram"= sampPhy_cgram)
+	save(cgram,file="phy_cgram.Robj")
+	#plot(sampPhy_cgram)
+
 
 ################################
 # analyze diversity with one predictor at a time
@@ -106,7 +123,6 @@ outs <- divdivAnalyses(z=z,X=x,
 						nNodes=nNodes,filterKeep=NULL)
 
 vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partB",multiPred=TRUE,sampCols=sampCols)
-
 
 ################################
 # BOUTIQUE ANALYSES
