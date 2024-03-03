@@ -78,7 +78,6 @@ PRJNA553831_Systellaspis-debilis	SRR9669236	25.42	-79.65	1475	datathon
 PRJNA553831_Systellaspis-debilis	SRR9669237	27.45	-86.54	1475	datathon
 PRJNA553831_Systellaspis-debilis	SRR9669246	27	-90	1475	datathon
 PRJNA553831_Systellaspis-debilis	SRR9669196	25.41	-79.67	1475	datathon
-PRJNA553831_Systellaspis-debilis	SRR9669194	27.08	-90.92	1475	datathon
 PRJNA553831_Systellaspis-debilis	SRR9669117	40.18	-67.44	1475	datathon
 PRJNA553831_Systellaspis-debilis	SRR9669362	25.16	-79.56	1475	datathon
 PRJNA553831_Systellaspis-debilis	SRR9669298	39.91	-67.42	1475	datathon

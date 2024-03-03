@@ -23,7 +23,6 @@ PRJNA343012_Aptenodytes-patagonicus	SRR4244500	-54.57	158.92		ncbi
 PRJNA343012_Aptenodytes-patagonicus	SRR4244501	-54.57	158.92		ncbi
 PRJNA343012_Aptenodytes-patagonicus	SRR4244502	-54.57	158.92		ncbi
 PRJNA343012_Aptenodytes-patagonicus	SRR4244503	-54.15	-36.81		ncbi
-PRJNA343012_Aptenodytes-patagonicus	SRR4244504	-54.57	158.92		ncbi
 PRJNA343012_Aptenodytes-patagonicus	SRR4244506	-54.57	158.92		ncbi
 PRJNA343012_Aptenodytes-patagonicus	SRR4244507	-46.43	51.86		ncbi
 PRJNA343012_Aptenodytes-patagonicus	SRR4244508	-46.43	51.86		ncbi

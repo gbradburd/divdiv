@@ -255,7 +255,6 @@ PRJNA471834_Gasterosteus-aculeatus	SRR7177159	59.426	-146.357		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177160	59.426	-146.357		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177161	59.448	-146.325		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177162	59.448	-146.325		ncbi
-PRJNA471834_Gasterosteus-aculeatus	SRR7177163	59.826	-147.478		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177164	59.823	-147.905		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177165	59.823	-147.905		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177166	59.823	-147.905		ncbi
@@ -322,7 +321,6 @@ PRJNA471834_Gasterosteus-aculeatus	SRR7177226	59.826	-147.478		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177227	59.826	-147.478		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177228	59.826	-147.478		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177229	59.872	-147.437		ncbi
-PRJNA471834_Gasterosteus-aculeatus	SRR7177230	59.872	-147.437		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177231	59.925	-148.083		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177232	59.925	-148.083		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177233	59.925	-148.083		ncbi
@@ -333,7 +331,6 @@ PRJNA471834_Gasterosteus-aculeatus	SRR7177237	59.925	-148.083		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177238	59.925	-148.083		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177239	59.923	-148.078		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177240	59.925	-148.083		ncbi
-PRJNA471834_Gasterosteus-aculeatus	SRR7177241	59.925	-148.083		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177242	59.872	-147.437		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177243	59.432	-146.314		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177244	59.437	-146.311		ncbi
@@ -597,7 +594,6 @@ PRJNA471834_Gasterosteus-aculeatus	SRR7177501	61.349	-149.536		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177502	59.826	-147.478		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177503	61.349	-149.536		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177504	59.923	-148.078		ncbi
-PRJNA471834_Gasterosteus-aculeatus	SRR7177505	59.923	-148.078		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177506	59.923	-148.078		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177507	59.923	-148.078		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177508	59.923	-148.078		ncbi
@@ -827,7 +823,6 @@ PRJNA471834_Gasterosteus-aculeatus	SRR7177731	59.872	-147.438		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177732	61.349	-149.536		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177733	59.925	-148.083		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177734	59.925	-148.083		ncbi
-PRJNA471834_Gasterosteus-aculeatus	SRR7177735	59.872	-147.437		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177736	59.872	-147.437		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177737	59.872	-147.437		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177738	59.872	-147.437		ncbi
@@ -844,7 +839,6 @@ PRJNA471834_Gasterosteus-aculeatus	SRR7177748	59.925	-148.083		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177749	59.432	-146.314		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177750	59.426	-146.357		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177751	59.426	-146.357		ncbi
-PRJNA471834_Gasterosteus-aculeatus	SRR7177752	59.826	-147.478		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177753	59.826	-147.478		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177754	59.426	-146.357		ncbi
 PRJNA471834_Gasterosteus-aculeatus	SRR7177755	59.426	-146.357		ncbi

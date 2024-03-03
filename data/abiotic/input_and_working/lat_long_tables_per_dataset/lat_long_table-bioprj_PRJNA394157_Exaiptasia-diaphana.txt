@@ -109,7 +109,6 @@ PRJNA394157_Exaiptasia-diaphana	SRR5829099	9.3524	-82.2574	3801	datathon
 PRJNA394157_Exaiptasia-diaphana	SRR5829027	9.1742	-82.0835	2607	datathon
 PRJNA394157_Exaiptasia-diaphana	SRR5828968	9.3424	-82.2545	3801	datathon
 PRJNA394157_Exaiptasia-diaphana	SRR5829050	9.2136	-82.3231	2493	datathon
-PRJNA394157_Exaiptasia-diaphana	SRR5829074	9.1759	-82.0871	2727	datathon
 PRJNA394157_Exaiptasia-diaphana	SRR5829017	9.4019	-79.8609	3178	datathon
 PRJNA394157_Exaiptasia-diaphana	SRR5829096	9.3511	-82.2576	3801	datathon
 PRJNA394157_Exaiptasia-diaphana	SRR5829015	9.3529	-82.2601	1529	datathon

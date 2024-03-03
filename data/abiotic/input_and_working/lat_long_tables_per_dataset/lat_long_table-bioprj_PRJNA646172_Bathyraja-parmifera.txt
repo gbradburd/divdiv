@@ -7,11 +7,9 @@ PRJNA646172_Bathyraja-parmifera	SRR12217772	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217773	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217774	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217775	54.8	-165.67		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12217776	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217777	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217778	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217779	54.8	-165.67		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12217780	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217781	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217782	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217783	54.8	-165.67		ncbi
@@ -49,7 +47,6 @@ PRJNA646172_Bathyraja-parmifera	SRR12217820	59.38	177.61		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217821	56.95	173.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217822	56.94	173.37		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217829	56.4	-171.38		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12217835	59.4	-177.65		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217836	59.4	-177.65		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217837	59.4	-177.65		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217838	59.4	-177.65		ncbi
@@ -69,7 +66,6 @@ PRJNA646172_Bathyraja-parmifera	SRR12217851	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217852	56.9	-173.37		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217853	56.9	-173.37		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217854	56.9	-173.37		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12217855	56.9	-173.37		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217856	56.9	-173.37		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217857	56.9	-173.37		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217858	56.9	-173.37		ncbi
@@ -97,7 +93,6 @@ PRJNA646172_Bathyraja-parmifera	SRR12217880	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217881	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217882	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217883	56.1	-168.49		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12217884	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217885	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217886	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217887	56.4	-171.38		ncbi
@@ -133,7 +128,6 @@ PRJNA646172_Bathyraja-parmifera	SRR12217916	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217917	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217918	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217919	56.4	-171.38		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12217920	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217921	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217931	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12217932	56.4	-171.38		ncbi
@@ -170,7 +164,6 @@ PRJNA646172_Bathyraja-parmifera	SRR12218010	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218011	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218012	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218013	56.1	-168.49		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218014	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218015	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218016	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218017	56.1	-168.49		ncbi
@@ -180,7 +173,6 @@ PRJNA646172_Bathyraja-parmifera	SRR12218020	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218021	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218022	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218023	56.4	-171.38		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218024	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218025	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218026	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218027	56.1	-168.49		ncbi
@@ -192,7 +184,6 @@ PRJNA646172_Bathyraja-parmifera	SRR12218032	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218035	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218046	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218057	56.1	-168.49		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218058	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218059	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218060	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218061	56.1	-168.49		ncbi
@@ -209,7 +200,6 @@ PRJNA646172_Bathyraja-parmifera	SRR12218071	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218072	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218073	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218074	56.1	-168.49		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218075	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218076	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218077	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218078	56.1	-168.49		ncbi
@@ -224,7 +214,6 @@ PRJNA646172_Bathyraja-parmifera	SRR12218086	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218087	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218088	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218089	56.1	-168.49		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218090	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218091	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218092	56.1	-168.49		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218093	56.1	-168.49		ncbi
@@ -261,14 +250,12 @@ PRJNA646172_Bathyraja-parmifera	SRR12218184	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218195	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218206	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218217	56.4	-171.38		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218223	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218224	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218225	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218226	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218227	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218228	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218229	54.8	-165.67		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218230	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218231	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218232	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218233	54.8	-165.67		ncbi
@@ -282,21 +269,17 @@ PRJNA646172_Bathyraja-parmifera	SRR12218240	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218241	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218242	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218243	54.8	-165.67		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218244	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218245	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218247	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218248	54.8	-165.67		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218249	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218250	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218251	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218252	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218253	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218254	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218255	54.8	-165.67		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218256	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218257	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218258	54.8	-165.67		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218259	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218260	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218261	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218262	56.4	-171.38		ncbi
@@ -338,7 +321,6 @@ PRJNA646172_Bathyraja-parmifera	SRR12218297	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218298	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218299	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218300	54.8	-165.67		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218301	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218302	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218303	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218304	54.8	-165.67		ncbi
@@ -350,7 +332,6 @@ PRJNA646172_Bathyraja-parmifera	SRR12218309	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218310	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218311	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218312	54.8	-165.67		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218313	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218314	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218315	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218316	54.8	-165.67		ncbi
@@ -361,7 +342,6 @@ PRJNA646172_Bathyraja-parmifera	SRR12218320	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218321	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218322	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218323	54.8	-165.67		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218324	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218325	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218326	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218327	54.8	-165.67		ncbi
@@ -380,7 +360,6 @@ PRJNA646172_Bathyraja-parmifera	SRR12218339	56.4	-171.38		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218340	56.9	-173.37		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218341	56.9	-173.37		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218342	56.9	-173.37		ncbi
-PRJNA646172_Bathyraja-parmifera	SRR12218343	56.9	-173.37		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218344	56.9	-173.37		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218345	56.9	-173.37		ncbi
 PRJNA646172_Bathyraja-parmifera	SRR12218346	56.9	-173.37		ncbi

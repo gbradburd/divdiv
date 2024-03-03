@@ -36,7 +36,6 @@ PRJNA593014_Acropora-millepora	SRR10571302	-17.93	146.14		ncbi
 PRJNA593014_Acropora-millepora	SRR10571303	-17.93	146.14		ncbi
 PRJNA593014_Acropora-millepora	SRR10571304	-17.93	146.14		ncbi
 PRJNA593014_Acropora-millepora	SRR10571305	-17.93	146.14		ncbi
-PRJNA593014_Acropora-millepora	SRR10571306	-17.93	146.14		ncbi
 PRJNA593014_Acropora-millepora	SRR10571307	-17.93	146.14		ncbi
 PRJNA593014_Acropora-millepora	SRR10571308	-17.93	146.14		ncbi
 PRJNA593014_Acropora-millepora	SRR10571309	-17.93	146.14		ncbi
@@ -105,7 +104,6 @@ PRJNA593014_Acropora-millepora	SRR10571378	-18.84	146.53		ncbi
 PRJNA593014_Acropora-millepora	SRR10571379	-18.84	146.53		ncbi
 PRJNA593014_Acropora-millepora	SRR10571380	-18.84	146.53		ncbi
 PRJNA593014_Acropora-millepora	SRR10571381	-18.84	146.53		ncbi
-PRJNA593014_Acropora-millepora	SRR10571382	-18.84	146.53		ncbi
 PRJNA593014_Acropora-millepora	SRR10571383	-18.84	146.53		ncbi
 PRJNA593014_Acropora-millepora	SRR10571385	-18.84	146.53		ncbi
 PRJNA593014_Acropora-millepora	SRR10571386	-18.84	146.53		ncbi
@@ -151,7 +149,6 @@ PRJNA593014_Acropora-millepora	SRR10571448	-16.92	145.99		ncbi
 PRJNA593014_Acropora-millepora	SRR10571449	-16.92	145.99		ncbi
 PRJNA593014_Acropora-millepora	SRR10571450	-16.92	145.99		ncbi
 PRJNA593014_Acropora-millepora	SRR10571452	-16.92	145.99		ncbi
-PRJNA593014_Acropora-millepora	SRR10571453	-17.52	146.37		ncbi
 PRJNA593014_Acropora-millepora	SRR10571454	-17.52	146.37		ncbi
 PRJNA593014_Acropora-millepora	SRR10571455	-17.52	146.37		ncbi
 PRJNA593014_Acropora-millepora	SRR10571456	-17.52	146.37		ncbi
@@ -168,7 +165,6 @@ PRJNA593014_Acropora-millepora	SRR10571467	-17.85	146.55		ncbi
 PRJNA593014_Acropora-millepora	SRR10571468	-17.85	146.55		ncbi
 PRJNA593014_Acropora-millepora	SRR10571469	-17.85	146.55		ncbi
 PRJNA593014_Acropora-millepora	SRR10571470	-17.22	146.09		ncbi
-PRJNA593014_Acropora-millepora	SRR10571471	-17.22	146.09		ncbi
 PRJNA593014_Acropora-millepora	SRR10571472	-17.22	146.09		ncbi
 PRJNA593014_Acropora-millepora	SRR10571473	-17.22	146.09		ncbi
 PRJNA593014_Acropora-millepora	SRR10571474	-17.22	146.09		ncbi
@@ -182,7 +178,6 @@ PRJNA593014_Acropora-millepora	SRR10571482	-17.22	146.09		ncbi
 PRJNA593014_Acropora-millepora	SRR10571483	-17.22	146.09		ncbi
 PRJNA593014_Acropora-millepora	SRR10571484	-17.22	146.09		ncbi
 PRJNA593014_Acropora-millepora	SRR10571485	-17.22	146.09		ncbi
-PRJNA593014_Acropora-millepora	SRR10571486	-17.22	146.09		ncbi
 PRJNA593014_Acropora-millepora	SRR10571487	-17.22	146.09		ncbi
 PRJNA593014_Acropora-millepora	SRR10571489	-17.22	146.09		ncbi
 PRJNA593014_Acropora-millepora	SRR10571490	-17.22	146.09		ncbi
@@ -199,7 +194,6 @@ PRJNA593014_Acropora-millepora	SRR10571501	-18.47	146.87		ncbi
 PRJNA593014_Acropora-millepora	SRR10571502	-18.47	146.87		ncbi
 PRJNA593014_Acropora-millepora	SRR10571503	-18.47	146.87		ncbi
 PRJNA593014_Acropora-millepora	SRR10571504	-18.47	146.87		ncbi
-PRJNA593014_Acropora-millepora	SRR10571505	-18.47	146.87		ncbi
 PRJNA593014_Acropora-millepora	SRR10571506	-18.47	146.87		ncbi
 PRJNA593014_Acropora-millepora	SRR10571507	-18.47	146.87		ncbi
 PRJNA593014_Acropora-millepora	SRR10571508	-18.47	146.87		ncbi
@@ -227,7 +221,6 @@ PRJNA593014_Acropora-millepora	SRR10571531	-17.93	146.14		ncbi
 PRJNA593014_Acropora-millepora	SRR10571532	-17.93	146.14		ncbi
 PRJNA593014_Acropora-millepora	SRR10571534	-17.93	146.14		ncbi
 PRJNA593014_Acropora-millepora	SRR10571535	-17.93	146.14		ncbi
-PRJNA593014_Acropora-millepora	SRR10571536	-17.93	146.14		ncbi
 PRJNA593014_Acropora-millepora	SRR10571537	-17.93	146.14		ncbi
 PRJNA593014_Acropora-millepora	SRR10571538	-17.93	146.14		ncbi
 PRJNA593014_Acropora-millepora	SRR10571539	-17.93	146.14		ncbi

@@ -20,7 +20,6 @@ PRJNA369168_Gasterosteus-aculeatus	SRR5215343	64.137	-51.385		ncbi
 PRJNA369168_Gasterosteus-aculeatus	SRR5215344	64.137	-51.385		ncbi
 PRJNA369168_Gasterosteus-aculeatus	SRR5215345	64.137	-51.385		ncbi
 PRJNA369168_Gasterosteus-aculeatus	SRR5215346	64.132	-51.377		ncbi
-PRJNA369168_Gasterosteus-aculeatus	SRR5215347	64.132	-51.377		ncbi
 PRJNA369168_Gasterosteus-aculeatus	SRR5215348	64.132	-51.377		ncbi
 PRJNA369168_Gasterosteus-aculeatus	SRR5215349	64.132	-51.377		ncbi
 PRJNA369168_Gasterosteus-aculeatus	SRR5215350	64.132	-51.377		ncbi

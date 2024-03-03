@@ -1,7 +1,6 @@
 link	run_acc_sra	lat	long	coordinateUncertaintyInMeters	origin
 PRJNA646172_Bathyraja-aleutica	SRR12217752	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-aleutica	SRR12217753	54.8	-165.67		ncbi
-PRJNA646172_Bathyraja-aleutica	SRR12217754	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-aleutica	SRR12217755	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-aleutica	SRR12217756	54.8	-165.67		ncbi
 PRJNA646172_Bathyraja-aleutica	SRR12217757	54.8	-165.67		ncbi
@@ -54,7 +53,6 @@ PRJNA646172_Bathyraja-aleutica	SRR12217984	59.4	-177.65		ncbi
 PRJNA646172_Bathyraja-aleutica	SRR12217985	59.4	-177.65		ncbi
 PRJNA646172_Bathyraja-aleutica	SRR12217986	59.4	-177.65		ncbi
 PRJNA646172_Bathyraja-aleutica	SRR12217987	59.4	-177.65		ncbi
-PRJNA646172_Bathyraja-aleutica	SRR12217988	59.4	-177.65		ncbi
 PRJNA646172_Bathyraja-aleutica	SRR12217990	59.4	-177.65		ncbi
 PRJNA646172_Bathyraja-aleutica	SRR12217991	59.4	-177.65		ncbi
 PRJNA646172_Bathyraja-aleutica	SRR12217992	59.4	-177.65		ncbi

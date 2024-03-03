@@ -32,7 +32,6 @@ PRJNA473646_Bathymodiolus-platifrons	SRR7233038	22.115	119.286		ncbi
 PRJNA473646_Bathymodiolus-platifrons	SRR7233039	22.115	119.286		ncbi
 PRJNA473646_Bathymodiolus-platifrons	SRR7233040	22.115	119.286		ncbi
 PRJNA473646_Bathymodiolus-platifrons	SRR7233041	22.115	119.286		ncbi
-PRJNA473646_Bathymodiolus-platifrons	SRR7233042	22.115	119.286		ncbi
 PRJNA473646_Bathymodiolus-platifrons	SRR7233043	22.115	119.286		ncbi
 PRJNA473646_Bathymodiolus-platifrons	SRR7233044	22.115	119.286		ncbi
 PRJNA473646_Bathymodiolus-platifrons	SRR7233045	22.115	119.286		ncbi

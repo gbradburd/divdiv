@@ -11,7 +11,6 @@ PRJNA428529_Fundulus-heteroclitus	SRR7340866	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340867	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340868	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340869	38.41	-76.92		ncbi
-PRJNA428529_Fundulus-heteroclitus	SRR7340870	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340871	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340872	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340873	38.41	-76.92		ncbi
@@ -74,8 +73,6 @@ PRJNA428529_Fundulus-heteroclitus	SRR7340929	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340930	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340931	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340932	38.41	-76.92		ncbi
-PRJNA428529_Fundulus-heteroclitus	SRR7340933	38.41	-76.92		ncbi
-PRJNA428529_Fundulus-heteroclitus	SRR7340934	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340935	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340936	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340937	38.41	-76.92		ncbi
@@ -138,7 +135,6 @@ PRJNA428529_Fundulus-heteroclitus	SRR7340993	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340994	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340995	38.69	-77.05		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340996	38.69	-77.05		ncbi
-PRJNA428529_Fundulus-heteroclitus	SRR7340997	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340998	38.69	-77.05		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7340999	38.69	-77.05		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7341000	38.69	-77.05		ncbi
@@ -326,7 +322,6 @@ PRJNA428529_Fundulus-heteroclitus	SRR7341181	38.69	-77.05		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7341182	38.69	-77.05		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7341183	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7341184	38.41	-76.92		ncbi
-PRJNA428529_Fundulus-heteroclitus	SRR7341185	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7341186	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7341187	38.41	-76.92		ncbi
 PRJNA428529_Fundulus-heteroclitus	SRR7341188	38.41	-76.92		ncbi
