@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #define variables:
-storagenode=/mnt/research/bradburd_lab/divdiv_working_popgen #path to main node where input files live
+storagenode=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen #path to main node where input files live
 
 gbifdir=$storagenode/speciesLocDat_Sep08_2021_withFilters-cleaned #name of directory where input files with GBIF lats and longs live
 
@@ -51,3 +51,4 @@ do
 	echo submitted dataset $run_name from $list_of_datasets
 		
 done < ../../master_keys/$list_of_datasets
+
