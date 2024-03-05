@@ -9,7 +9,9 @@ outdir1=/Users/rachel/divdiv/data/abiotic/input_and_working/marmapdists-output
 outdir2=/Users/rachel/divdiv/data/abiotic/input_and_working/ecoregions-output
 outdir3=/Users/rachel/divdiv/data/abiotic/input_and_working/postmarmap_coords
 
-mkdir -p $outdir
+mkdir -p $outdir1
+mkdir -p $outdir2
+mkdir -p $outdir3
 
 #grab marmap output and ecoregion output for each dataset in list specified above (these files are nested within bioprj folders)
 while read dataset
