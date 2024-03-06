@@ -23,7 +23,7 @@ then
 	
 	#copy input files to tmpdir to speed up run time
 	cp -r $INDIR $WORKDIR
-	cp $SAMPSTODROP $WORKDIR
+	cp $MANUALSAMPSTODROP $WORKDIR
 	wait
 	
 	#move to execute node
@@ -52,7 +52,7 @@ echo "files currently where I am working from are"
 du -a
 
 #run R, with the name of my R script
-Rscript $WORKDIR/full_popgen.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $NPCS $MINPROPINDIVSSCOREDIN $KEYSDIR $WORKDIR $OUTDIR_FINAL $SAMPSTODROP
+Rscript $WORKDIR/full_popgen.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $NPCS $MINPROPINDIVSSCOREDIN $KEYSDIR $WORKDIR $OUTDIR_FINAL $MANUALSAMPSTODROP
 wait
 
 Rscript $WORKDIR/comparing_assemblies_and_IDing_r80_params.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $MINPROPINDIVSSCOREDIN $WORKDIR
