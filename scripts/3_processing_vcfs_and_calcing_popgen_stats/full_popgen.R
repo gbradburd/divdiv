@@ -40,7 +40,7 @@ nPCs = as.numeric(args[5]) #n principal components to save
 minPropIndivsScoredin = as.numeric(args[6]) #percent of indivs that locus must be scored in to save
 workdir = args[8] #directory on execute node where work is being done
 outdir_final = args[9] #directory on storage node where final files are stored
-moresampstodrop = args[10] #file of additional samples to drop (e.g. ancient samples, captive samples, etc. that were missed earlier)
+manualsampstodrop = args[10] #file of additional samples to drop (e.g. ancient samples, captive samples, etc. that were missed earlier)
 
 #source our functions 
 source(paste0(workdir,"/parsing.R"))
@@ -61,6 +61,7 @@ manualsampstodrop <- read.csv(manualsampstodrop, header = T)
 manualsampstodrop <- manualsampstodrop %>% filter(run_name == run_name)
 manualsampstodrop <- manualsampstodrop$sampid_assigned_for_bioinf
 
+print("here2")
 
 #*****************************************************************************************
 #*****************************************************************************************
