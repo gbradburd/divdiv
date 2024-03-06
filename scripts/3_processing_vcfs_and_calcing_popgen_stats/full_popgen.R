@@ -56,9 +56,10 @@ print("objects currently loaded in R:")
 ls()
 
 #bring in samples to drop file
+run_name.drop = run_name #for filter to work below object has to have different name than column
 manualsampstodrop <- read.csv(manualsampstodrop, header = T)
 #get just samples to drop for this dataset, if any
-manualsampstodrop <- manualsampstodrop %>% filter(run_name == run_name)
+manualsampstodrop <- manualsampstodrop %>% filter(run_name == run_name.drop)
 manualsampstodrop <- manualsampstodrop$sampid_assigned_for_bioinf
 
 print("here2")
