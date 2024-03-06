@@ -112,6 +112,7 @@ for (stacksFAfile in stacksFA_files){
     print("I found an alert file to check for lowcovsamps to drop")
     if (length(which(grepl("co-genotyped", lowcovsamps$V1)))==0) {
     print("I did not make a list of samples to filter out based on results of BPstats in alert file but I may still drop samples manually")
+    lowcovsamps <- NULL
     }  else {
       lowcovsamps <- unique(lowcovsamps[which(grepl("^sample", lowcovsamps$V1)),])
       print("These are samples to drop from alert file")
@@ -120,13 +121,16 @@ for (stacksFAfile in stacksFA_files){
    }
   #load list of samples to manually drop (defined by text file input to pipeline)
   if (length(manualsampstodrop)>0) {
+  print("I found samples to drop from manualsampstodrop .csv file")
+  cat(paste("Removing sample: ",manualsampstodrop,"\n",sep = ""))
   lowcovsamps <- unique(c(manualsampstodrop, lowcovsamps))
   }
   #print out what we're going to do wrt dropping samples
   if (length(lowcovsamps)>0) {
+    print("This is final full combined list of samples to drop")
   	cat(paste("Removing sample: ",lowcovsamps,"\n",sep = ""))
   }   else {
-     print("I did not make a list of samples to filter out from BPstat results or manual list")
+     print("I did not make a list of samples to filter out from BPstat results alert file or manual list")
   }
   # ********
   #get N loci matrix (filtered)
