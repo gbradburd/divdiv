@@ -30,7 +30,7 @@ then
 	cd $WORKDIR
 	
 	#define input directory for R for this job
-	INDIR=$WORKDIR/$(ls)
+	INDIR=$WORKDIR/genetic_data
 	
 	#define output directory for R for this job
 	OUTDIR_FINAL=$OUTDIR
