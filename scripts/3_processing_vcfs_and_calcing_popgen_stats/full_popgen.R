@@ -40,6 +40,7 @@ nPCs = as.numeric(args[5]) #n principal components to save
 minPropIndivsScoredin = as.numeric(args[6]) #percent of indivs that locus must be scored in to save
 workdir = args[8] #directory on execute node where work is being done
 outdir_final = args[9] #directory on storage node where final files are stored
+moresampstodrop = args[10] #file of additional samples to drop (e.g. ancient samples, captive samples, etc. that were missed earlier)
 
 #source our functions 
 source(paste0(workdir,"/parsing.R"))
@@ -54,7 +55,11 @@ print("so far we have loaded libraries and printed args")
 print("objects currently loaded in R:")
 ls()
 
-
+#bring in samples to drop file
+manualsampstodrop <- read.csv(manualsampstodrop, header = T)
+#get just samples to drop for this dataset, if any
+manualsampstodrop <- manualsampstodrop %>% filter(run_name == run_name)
+manualsampstodrop <- manualsampstodrop$sampid_assigned_for_bioinf
 
 
 #*****************************************************************************************
@@ -105,15 +110,20 @@ for (stacksFAfile in stacksFA_files){
     lowcovsamps <- read.delim(lowcovsamps, header = F) %>% mutate(V1 = gsub(" ","",V1))
     
     if (length(which(grepl("co-genotyped", lowcovsamps$V1)))==0) {
-      print("I did not make a list of samples to filter out")
+      print("I did not make a list of samples to filter out based on results of BPstats but I may still drop samples manually")
     }  else {
       lowcovsamps <- unique(lowcovsamps[which(grepl("^sample", lowcovsamps$V1)),])
-      cat(paste("Removing sample: ",lowcovsamps,"\n",sep = ""))
     }
-    
-    
-   }  else {
-    print("I did not make a list of samples to filter out")
+   }
+  #load list of samples to manually drop (defined by text file input to pipeline)
+  if (length(manualsampstodrop)>0) {
+  lowcovsamps <- unique(c(manualsampstodrop, lowcovsamps))
+  }
+  #print out what we're going to do wrt dropping samples
+  if (length(lowcovsamps)>0) {
+  	cat(paste("Removing sample: ",lowcovsamps,"\n",sep = ""))
+  }   else {
+     print("I did not make a list of samples to filter out from BPstat results or manual list")
   }
   # ********
   #get N loci matrix (filtered)

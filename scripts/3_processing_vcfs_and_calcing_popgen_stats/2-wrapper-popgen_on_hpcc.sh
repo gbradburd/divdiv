@@ -1,8 +1,8 @@
 #!/bin/bash
 
 #define variables:
-#storagenode=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen #path to main node where outputs will end up
-storagenode=/mnt/scratch/$USER
+storagenode=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen #path to main node where outputs will end up
+#storagenode=/mnt/scratch/$USER
 
 jobname=run-popgenstats #label for SLURM book-keeping
 executable=2-run-popgen_on_hpcc.sbatch #script to run
@@ -16,14 +16,15 @@ ram_per_cpu=66G #amount of RAM to request/use per CPU
 #ram_per_cpu=491G #amount of RAM to request/use per CPU
 time=168:00:00
 
-#list_of_datasets=list-allfinal136.txt #name of dataset that we want to process
-#list_of_datasets=list-test.txt #name of dataset that we want to process
-list_of_datasets=list-run.txt #name of dataset that we want to process
+#list_of_datasets=list-allfinal115.txt #name of dataset that we want to process
+list_of_datasets=list-redo2024.txt #name of dataset that we want to process
 
 nPCs=4 #number of principal component axes to save
 minpropindivsscoredin=0.5 #percent of indivs that a locus must be present in to save
 
 copy_files_to_execute_node=yes #yes to copy input folder to tmp dir on execute node and load files into R from there, no to load files into R directly from where they live on cluster aka $indir below in this file
+
+manualsampstodrop=/mnt/home/rhtoczyd/divdiv/scripts/master_keys/additional_samples_tossed-alsolistedin_master_tossed.csv #list of additional samples to drop, with sampleX names (rather than SRR IDs)
 
 #---------------------------------------------------------
 
@@ -53,7 +54,7 @@ do
 
 	#submit job to cluster
 	sbatch --job-name=$jobname \
-			--export=CPUS=$cpus,RUN_NAME=$run_name,STORAGENODE=$storagenode,INDIR=$indir,OUTDIR=$outdir,FIGDIR=$figdir,LOGFILESDIR=$logfilesdir,NPCS=$nPCs,MINPROPINDIVSSCOREDIN=$minpropindivsscoredin,KEYSDIR=$keysdir,COPY_FILES_TO_EXECUTE_NODE=$copy_files_to_execute_node \
+			--export=CPUS=$cpus,RUN_NAME=$run_name,STORAGENODE=$storagenode,INDIR=$indir,OUTDIR=$outdir,FIGDIR=$figdir,LOGFILESDIR=$logfilesdir,NPCS=$nPCs,MINPROPINDIVSSCOREDIN=$minpropindivsscoredin,KEYSDIR=$keysdir,COPY_FILES_TO_EXECUTE_NODE=$copy_files_to_execute_node,MANUALSAMPSTODROP=$manualsampstodrop \
 			--cpus-per-task=$cpus \
 			--mem-per-cpu=$ram_per_cpu \
 			--output=./$logfilesdir/${jobname}_${run_name}_%A.out \
