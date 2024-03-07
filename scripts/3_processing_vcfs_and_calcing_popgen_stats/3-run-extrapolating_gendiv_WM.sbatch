@@ -9,9 +9,9 @@ module load R/4.0.3
 
 
 #create output dir if it doesn't already exist
-if [ ! -d $OUTDIR ]; then mkdir $OUTDIR; fi
+mkdir -p $OUTDIR
 #create output dir to copy all figures into
-if [ ! -d $FIGDIR ]; then mkdir $FIGDIR; fi
+mkdir -p $FIGDIR
 
 
 #set up work environment for job depending on if you want to load files from where they live on cluster or from tmp dir on execute node
@@ -20,7 +20,7 @@ then
 	
 	#make unique working directory on execute node
 	WORKDIR=/tmp/local/$SLURM_JOB_ID #working dir on (remote) execute node
-	if [ ! -d $WORKDIR ]; then mkdir $WORKDIR; fi
+	mkdir -p $WORKDIR
 	
 	#copy input files to tmpdir to speed up run time
 	cp $INDIR/samplenamekey.txt $WORKDIR
@@ -70,7 +70,7 @@ then
 	
 	#create dir to store all genetic files associated with r80 optimal params in if it doesn't already exist
 	ALLR80DIR=$STORAGENODE/ALL_r80_gendiv_data
-	if [ ! -d $ALLR80DIR ]; then mkdir $ALLR80DIR; fi
+	mkdir -p $ALLR80DIR
 	R80PARAMS=$(less $STORAGENODE/$RUN_NAME/popgen/r80params.txt)
 	echo R80PARAMS value is $R80PARAMS
 	cp -r $OUTDIR/WMfit${MODEL_FLAVOR}-${RUN_NAME}"_stacks_"${R80PARAMS}* $ALLR80DIR
