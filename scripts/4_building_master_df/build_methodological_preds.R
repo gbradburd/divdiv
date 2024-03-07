@@ -122,7 +122,7 @@ locusd <- locusd %>% filter(is.na(run_name)==F)
 df <- merge(df, locusd, by = "run_name", all.x = T, all.y = T)
 
 #save
-write.csv(df, "data/methodological/new-methodological_predictors-wide.csv", row.names = FALSE)
+write.csv(df, "data/methodological/methodological_predictors-wide.csv", row.names = FALSE)
 
 
 
