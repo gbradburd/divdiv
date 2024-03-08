@@ -273,7 +273,6 @@ PRJNA477007_Paralichthys-dentatus	SRR7402145	41.002	-70.464		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402146	34.6589	-76.807		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402147	34.6589	-76.807		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402148	41.002	-70.464		ncbi
-PRJNA477007_Paralichthys-dentatus	SRR7402149	34.932	-76.2027		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402150	34.3062	-77.6889		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402151	35.0923	-75.9559		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402152	35.0923	-75.9559		ncbi
@@ -284,7 +283,6 @@ PRJNA477007_Paralichthys-dentatus	SRR7402156	34.6424	-76.5581		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402157	41.002	-70.464		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402158	41.002	-70.464		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402159	39.3975	-73.9052		ncbi
-PRJNA477007_Paralichthys-dentatus	SRR7402160	34.0452	-77.8666		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402161	34.0452	-77.8666		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402162	41.1022	-71.0783		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402163	41.1022	-71.0783		ncbi
@@ -325,7 +323,6 @@ PRJNA477007_Paralichthys-dentatus	SRR7402197	34.6424	-76.5581		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402198	33.7743	-77.9718		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402199	29.6369	-81.1922		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402200	34.6667	-76.6197		ncbi
-PRJNA477007_Paralichthys-dentatus	SRR7402201	33.2937	-79.1299		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402202	41.002	-70.464		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402203	34.6424	-76.5581		ncbi
 PRJNA477007_Paralichthys-dentatus	SRR7402204	34.6424	-76.5581		ncbi

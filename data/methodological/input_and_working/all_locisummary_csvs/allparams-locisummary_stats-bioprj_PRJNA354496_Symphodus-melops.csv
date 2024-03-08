@@ -1,7 +1,0 @@
-"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
-"bioprj_PRJNA354496_Symphodus-melops","stacks_littlem_3_bigm_3_n2_nis1lessthanM",3202,5945,56.58,3443,57.9142136248949,6308,"3","3","2","nis1lessthanM",9510
-"bioprj_PRJNA354496_Symphodus-melops","stacks_littlem_3_bigm_3_n3_nequalM",3213,5965,56.91,3395,56.9153394803018,6327,"3","3","3","nequalM",9540
-"bioprj_PRJNA354496_Symphodus-melops","stacks_littlem_3_bigm_3_n4_nis1morethanM",3107,5974,56.26,3398,56.879812520924,6352,"3","3","4","nis1morethanM",9459
-"bioprj_PRJNA354496_Symphodus-melops","stacks_littlem_3_bigm_6_n5_nis1lessthanM",2887,6280,55.94,3484,55.4777070063694,5717,"3","6","5","nis1lessthanM",8604
-"bioprj_PRJNA354496_Symphodus-melops","stacks_littlem_3_bigm_6_n6_nequalM",2852,6044,58.08,3535,58.4877564526803,5621,"3","6","6","nequalM",8473
-"bioprj_PRJNA354496_Symphodus-melops","stacks_littlem_3_bigm_6_n7_nis1morethanM",2921,6288,57.19,3627,57.6812977099237,5714,"3","6","7","nis1morethanM",8635

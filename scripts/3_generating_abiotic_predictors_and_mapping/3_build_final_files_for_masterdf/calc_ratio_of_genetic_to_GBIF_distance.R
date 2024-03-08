@@ -19,14 +19,16 @@ marmap_fileslist <- list.files(path = indir, pattern = "max_and_pw", full.names 
 done <- googledrive::shared_drive_find(pattern = "^divdiv_datafiles")
 done <- googledrive::drive_ls(path = done, pattern = "master_notes_file", recursive = F)
 done$name
-done <- googlesheets4::range_read(done, sheet = 2) %>% as.data.frame() %>% filter(done_with_marmap == "DONE")
+done <- googlesheets4::range_read(done, sheet = 2) %>% as.data.frame() %>% dplyr::select(run_name, done_with_marmap) %>% 
+  filter(grepl("^bioprj",run_name)) %>% as.data.frame() %>% filter(done_with_marmap == "DONE")
 marmap_fileslist <- marmap_fileslist %>% as.data.frame() %>% rename("x"=".") %>% 
-  mutate(run_name = gsub("marmapdists-output/max_and_pw_dists|.Robj","",x)) %>% filter(run_name %in% done$run_name)
+  mutate(run_name = gsub("marmapdists-output/max_and_pw_dists|.Robj","",x)) #%>% filter(run_name %in% done$run_name)
 marmap_fileslist <- marmap_fileslist$x
 
 df <- data.frame(loop.iter=NA, run_name=NA, 
                  max.95.sea.gbif=NA, max.100.sea.gbif=NA, maxgenetic.sea=NA, 
                  max.95.gcd.gbif=NA, max.100.gcd.gbif=NA, maxgenetic.gcd=NA)
+
 for (loop.iter in 1:length(marmap_fileslist)) {
   
   print(paste0("iteration ", loop.iter, " of ", length(marmap_fileslist)))
@@ -94,7 +96,7 @@ df <- df %>% mutate(ratio.sea.95 = ifelse(ratio.sea.95 > 1, 1, ratio.sea.95),
                     ratio.gcd.100 = ifelse(ratio.gcd.100 > 1, 1, ratio.gcd.100))
 
 #save for modeling
-write.csv(df %>% dplyr::select(-loop.iter), paste0(outdir, "/range_lengths_and_ratios.csv", row.names = FALSE))
+write.csv(df %>% dplyr::select(-loop.iter), paste0(outdir, "/range_lengths_and_ratios.csv"), row.names = FALSE)
 
 
 

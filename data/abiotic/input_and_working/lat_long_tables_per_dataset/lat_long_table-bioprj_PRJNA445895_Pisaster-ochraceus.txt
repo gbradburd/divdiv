@@ -61,7 +61,6 @@ PRJNA445895_Pisaster-ochraceus	SRR6905482	38.182	-122.966	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905531	38.317	-123.073	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905753	38.918	-123.721	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905461	37.997	-122.979	500	datathon
-PRJNA445895_Pisaster-ochraceus	SRR6905700	37.997	-122.979	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905453	38.317	-123.073	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905434	38.182	-122.966	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905647	38.741	-123.508	500	datathon
@@ -142,7 +141,6 @@ PRJNA445895_Pisaster-ochraceus	SRR6905662	38.459	-123.146	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905512	38.7	-123.443	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905777	38.597	-123.351	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905693	37.997	-122.979	500	datathon
-PRJNA445895_Pisaster-ochraceus	SRR6905624	38.848	-123.647	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905431	38.918	-123.721	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905417	38.303	-123.053	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905678	37.931	-122.75	500	datathon
@@ -164,7 +162,6 @@ PRJNA445895_Pisaster-ochraceus	SRR6905528	38.317	-123.073	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905701	38.798	-123.573	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905416	38.303	-123.053	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905448	38.597	-123.351	500	datathon
-PRJNA445895_Pisaster-ochraceus	SRR6905521	38.741	-123.508	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905751	38.918	-123.721	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905625	38.848	-123.647	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905638	38.798	-123.573	500	datathon
@@ -210,7 +207,6 @@ PRJNA445895_Pisaster-ochraceus	SRR6905725	37.997	-122.979	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905426	38.918	-123.721	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905634	37.893	-122.707	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905758	38.848	-123.647	500	datathon
-PRJNA445895_Pisaster-ochraceus	SRR6905520	38.741	-123.508	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905784	38.182	-122.966	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905673	38.7	-123.443	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905743	38.525	-123.268	500	datathon
@@ -270,7 +266,6 @@ PRJNA445895_Pisaster-ochraceus	SRR6905495	37.997	-122.979	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905654	38.182	-122.966	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905736	38.317	-123.073	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905420	38.303	-123.053	500	datathon
-PRJNA445895_Pisaster-ochraceus	SRR6905677	38.597	-123.351	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905546	38.597	-123.351	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905543	38.525	-123.268	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905761	37.931	-122.75	500	datathon
@@ -290,7 +285,6 @@ PRJNA445895_Pisaster-ochraceus	SRR6905631	38.182	-122.966	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905421	38.317	-123.073	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905432	38.88	-123.675	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905459	38.317	-123.073	500	datathon
-PRJNA445895_Pisaster-ochraceus	SRR6905449	38.597	-123.351	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905691	37.997	-122.979	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905740	38.525	-123.268	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905633	37.893	-122.707	500	datathon
@@ -304,7 +298,6 @@ PRJNA445895_Pisaster-ochraceus	SRR6905425	38.303	-123.053	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905776	38.7	-123.443	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905612	38.525	-123.268	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905600	38.459	-123.146	500	datathon
-PRJNA445895_Pisaster-ochraceus	SRR6905507	38.7	-123.443	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905697	37.997	-122.979	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905542	38.525	-123.268	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905522	38.597	-123.351	500	datathon
@@ -357,7 +350,6 @@ PRJNA445895_Pisaster-ochraceus	SRR6905718	38.597	-123.351	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905604	38.459	-123.146	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905727	38.182	-122.966	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905429	38.918	-123.721	500	datathon
-PRJNA445895_Pisaster-ochraceus	SRR6905437	38.182	-122.966	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905475	38.317	-123.073	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905750	38.918	-123.721	500	datathon
 PRJNA445895_Pisaster-ochraceus	SRR6905698	37.997	-122.979	500	datathon

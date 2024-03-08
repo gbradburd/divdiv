@@ -5,6 +5,7 @@ library(dplyr)          #data handling
 library(tidyr)          #data handling
 #library(googledrive)    #google sheets
 #library(googlesheets4)  #google sheets
+#library(readr)         #to write out txt files
 
 rm(list=ls())
 gc()
@@ -29,8 +30,8 @@ datathon.input = "/Users/rachel/divdiv/data/abiotic/input_and_working/datathon_m
 #get list of datasets we want to write keys for
 #get master spreadsheet from Drive
 using <- googledrive::shared_drive_find(pattern = "^divdiv$")
-using <- googledrive::drive_ls(path = using, pattern = "working_datasheets", recursive = TRUE)
-using <- googledrive::drive_ls(path = using, pattern = "working_list_marine_projects_with_10indivs-12-4-2020", recursive = TRUE)
+using <- googledrive::drive_ls(path = using, pattern = "working_datasheets", recursive = FALSE)
+using <- googledrive::drive_ls(path = using, pattern = "working_list_marine_projects_with_10indivs-12-4-2020", recursive = FALSE)
 using$name
 using <- googlesheets4::range_read(using, sheet = 1) %>% as.data.frame() %>% mutate(run_name = paste("bioprj_",link,sep=""))
 #keep cols we want and only datasets that are "in"

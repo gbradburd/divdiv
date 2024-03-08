@@ -1,4 +1,5 @@
 ﻿link,run_acc_sra,reason_for_removal
+PRJNA369717_Nautilus-pompilius,SRR5226829,"an aquarium sample with location of the aquarium"
 PRJNA354496_Symphodus-melops,SRR5262242,"sequencing method listed as ""other"" and no lat/long and other type of metadata associated with other 65 samples listed for these 8 - also listed as paired samples but downloaded as single"
 PRJNA354496_Symphodus-melops,SRR5262235,"sequencing method listed as ""other"" and no lat/long and other type of metadata associated with other 65 samples listed for these 8 - also listed as paired samples but downloaded as single"
 PRJNA354496_Symphodus-melops,SRR5262237,"sequencing method listed as ""other"" and no lat/long and other type of metadata associated with other 65 samples listed for these 8 - also listed as paired samples but downloaded as single"

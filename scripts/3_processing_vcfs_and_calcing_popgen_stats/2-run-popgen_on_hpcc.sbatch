@@ -8,9 +8,9 @@ module load foss/2020a
 module load R/4.0.3
 
 #create output dir if it doesn't already exist
-if [ ! -d $OUTDIR ]; then mkdir -p $OUTDIR; fi
+mkdir -p $OUTDIR
 #create output dir to copy all figures into
-if [ ! -d $FIGDIR ]; then mkdir -p $FIGDIR; fi
+mkdir -p $FIGDIR
 
 
 #set up work environment for job depending on if you want to load files from where they live on cluster or from tmp dir on execute node
@@ -23,13 +23,14 @@ then
 	
 	#copy input files to tmpdir to speed up run time
 	cp -r $INDIR $WORKDIR
+	cp $MANUALSAMPSTODROP $WORKDIR
 	wait
 	
 	#move to execute node
 	cd $WORKDIR
 	
 	#define input directory for R for this job
-	INDIR=$WORKDIR/$(ls)
+	INDIR=$WORKDIR/genetic_data
 	
 	#define output directory for R for this job
 	OUTDIR_FINAL=$OUTDIR
@@ -51,7 +52,7 @@ echo "files currently where I am working from are"
 du -a
 
 #run R, with the name of my R script
-Rscript $WORKDIR/full_popgen.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $NPCS $MINPROPINDIVSSCOREDIN $KEYSDIR $WORKDIR $OUTDIR_FINAL
+Rscript $WORKDIR/full_popgen.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $NPCS $MINPROPINDIVSSCOREDIN $KEYSDIR $WORKDIR $OUTDIR_FINAL $MANUALSAMPSTODROP
 wait
 
 Rscript $WORKDIR/comparing_assemblies_and_IDing_r80_params.R $RUN_NAME $STORAGENODE $INDIR $OUTDIR $MINPROPINDIVSSCOREDIN $WORKDIR

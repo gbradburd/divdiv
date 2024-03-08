@@ -124,3 +124,5 @@ df <- merge(df, locusd, by = "run_name", all.x = T, all.y = T)
 #save
 write.csv(df, "data/methodological/methodological_predictors-wide.csv", row.names = FALSE)
 
+
+

@@ -65,7 +65,6 @@ PRJNA477712_Fundulus-heteroclitus	SRR7498331	40.06	-74.06		ncbi
 PRJNA477712_Fundulus-heteroclitus	SRR7498332	40.06	-74.06		ncbi
 PRJNA477712_Fundulus-heteroclitus	SRR7498333	40.06	-74.06		ncbi
 PRJNA477712_Fundulus-heteroclitus	SRR7498334	42.92	-70.85		ncbi
-PRJNA477712_Fundulus-heteroclitus	SRR7498335	40.06	-74.06		ncbi
 PRJNA477712_Fundulus-heteroclitus	SRR7498336	40.06	-74.06		ncbi
 PRJNA477712_Fundulus-heteroclitus	SRR7498337	40.06	-74.06		ncbi
 PRJNA477712_Fundulus-heteroclitus	SRR7498338	40.06	-74.06		ncbi
