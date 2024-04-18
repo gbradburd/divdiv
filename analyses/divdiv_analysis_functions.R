@@ -415,7 +415,7 @@ addPhylopics <- function(cladeCols,ysize=4){
 	ytop <- 80
 	dshift <- 5
 	legendshift <- 100
-	txt.cex=1.3
+	txt.cex=1.4
 	pos=4
 	mammal <- rphylopic::get_phylopic(uuid="44ee07ec-f829-49f9-b242-f4b92bb9cf73") #Halichoerus grypus
 	vasc_plant <- rphylopic::get_phylopic(uuid="bacc6a59-80d2-461c-92d4-83cabc91cc39") #Rhizophora mangle
@@ -486,6 +486,22 @@ gussyUpDivBarPlot <- function(tree,xcoord,cladeCols){
 	addCladeLine(tree=tree,dSp1="Rhizophora mangle",dSp2="Laguncularia racemosa",col=cladeCols[9],xcoord,lwd=3,lend=2)	
 }
 
+addLegend <- function(top,xl,xr,txtShft,txtCex){
+	grayCols <- gray(c(0.2,0.5,0.8),1)
+	gradCols <- rev(colorRampPalette(RColorBrewer::brewer.pal(9,"Blues"))(150)[51:150])
+	colRast <- as.raster(matrix(gradCols,nrow=length(gradCols),ncol=1))
+	rect(xleft=xl,ybottom=top-3,xright=xr,ytop=top-1,col=grayCols[3])
+		text(x=xr+txtShft,y=top-2,labels="present",pos=4,cex=txtCex)
+	rect(xleft=xl,ybottom=top-6,xright=xr,ytop=top-4,col=grayCols[2])
+		text(x=xr+txtShft,y=top-5,labels="intermediate",pos=4,cex=txtCex)
+	rect(xleft=xl,ybottom=top-9,xright=xr,ytop=top-7,col=grayCols[1])
+		text(x=xr+txtShft,y=top-8,labels="absent",pos=4,cex=txtCex)
+	rasterImage(colRast,xleft=xl,ybottom=top-25,xright=xr,ytop=top-10.5,interpolate=TRUE)
+	rect(xleft=xl,ybottom=top-25,xright=xr,ytop=top-10.5)
+		text(x=xr+txtShft,y=top-11.5,labels="high",pos=4,cex=txtCex)
+		text(x=xr+txtShft,y=top-24,labels="low",pos=4,cex=txtCex)
+}
+
 phyViz <- function(db,fit,XX,predNames,tipcols,tree,xlim,valRange=NULL,adj=2,logX=FALSE,rounding=0.1){
 	#recover()
 	spNames <- row.names(db$relMat)
@@ -535,6 +551,7 @@ phyViz <- function(db,fit,XX,predNames,tipcols,tree,xlim,valRange=NULL,adj=2,log
 	gussyUpDivBarPlot(tree=tree,xcoord=-0.001,cladeCols=cladeCols)
 		mtext(side=1,text="Diversity",padj=3)
 		mtext(side=3,text="Species-level Genetic Diversity",padj=1,cex=1.4)
+	addLegend(top=84,xl=0.02,xr=0.0235,txtShft=7e-4,txtCex=1.4)
 }
 
 vizPredMat <- function(xx,N,xnames,xxext,yyext){

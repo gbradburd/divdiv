@@ -76,6 +76,7 @@ nuisPredNames <- predNames[16:19]
 ################################
 
 load("../phy_cgram.Robj")
+#plot(cgram$sampPhy_cgram)
 
 ################################
 # analyze diversity with one biological predictor 
@@ -99,7 +100,7 @@ dev.off()
 
 xx <- z[bioPreds][,-c(4,14)]
 xxnames <- c("latitude","ecoregions","range extent",	#"ecoregions/range_size",
-			 "body size","egg size","parity",
+			 "body size","egg size","iteroparity",
 			 "philopatry","spawning mode","planktotrophy",
 			 "PLD","planktonicity","benthicity") #,"dispersive adults"
 reord <- c(6:9,11:12,1:2,10,4:5,3)
