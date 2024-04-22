@@ -1,4 +1,4 @@
-divdivAnalyses <- function(z,X,y,phyStr,mod,outName,nIter=1e4,parallel=TRUE,nNodes=4,filterKeep=NULL){
+divdivAnalyses <- function(z,X,y,phyStr,mod,outName,nIter=1e4,parallel=TRUE,nNodes=4,filterKeep=NULL,runNames=NULL){
     `%d%` <- parallelizing(args <- as.list(environment()))
     export <- c("divdivAnalysis","makeDB","makeMultiDB")
     outs <- foreach::foreach(i = 1:length(X),
@@ -8,6 +8,10 @@ divdivAnalyses <- function(z,X,y,phyStr,mod,outName,nIter=1e4,parallel=TRUE,nNod
 												mod=mod,nIter=nIter,filterKeep=filterKeep)
 			}
 	doParallel::stopImplicitCluster()
+	if(is.null(runNames)){
+		runNames <- paste0("pred",1:length(X))
+	}
+	names(outs) <- runNames
 	save(outs,file=paste0(outName,"_outs.Robj"))
 	return(outs)
 }
@@ -61,21 +65,21 @@ vizAllOuts <- function(outs,predNames,sampPhy,outName,sampCols=NULL,multiPred=FA
 		}
 	dev.off()
 	#
-	pdf(file=sprintf("%s_phyloFit.pdf",outName),width=12,height=12)
-		for(i in 1:length(outs)){
-			modAdViz(outs[[i]]$db,outs[[i]]$fit,predName=predNames[i],
-						nPPS=500,tree=sampPhy,xlim=c(0,0.05),
-						valRange=NULL,qnt=0.999,adj=0.5)
-		}
-	dev.off()
-	#
-	pdf(file=sprintf("%s_phyloFit_log.pdf",outName),width=12,height=12)
-		for(i in 1:length(outs)){
-			modAdViz(outs[[i]]$db,outs[[i]]$fit,predName=predNames[i],
-						nPPS=500,tree=sampPhy,xlim=c(0,0.05),
-						valRange=NULL,qnt=0.999,adj=0.5,logX=TRUE)
-		}
-	dev.off()
+	# pdf(file=sprintf("%s_phyloFit.pdf",outName),width=12,height=12)
+		# for(i in 1:length(outs)){
+			# modAdViz(outs[[i]]$db,outs[[i]]$fit,predName=predNames[i],
+						# nPPS=500,tree=sampPhy,xlim=c(0,0.05),
+						# valRange=NULL,qnt=0.999,adj=0.5)
+		# }
+	# dev.off()
+	# #
+	# pdf(file=sprintf("%s_phyloFit_log.pdf",outName),width=12,height=12)
+		# for(i in 1:length(outs)){
+			# modAdViz(outs[[i]]$db,outs[[i]]$fit,predName=predNames[i],
+						# nPPS=500,tree=sampPhy,xlim=c(0,0.05),
+						# valRange=NULL,qnt=0.999,adj=0.5,logX=TRUE)
+		# }
+	# dev.off()
 	#
 	pdf(file=sprintf("%s_betas.pdf",outName),width=14,height=10)
 		postBetaPlot(outs,predNames,reorder=TRUE,cols=NULL,stdize=TRUE,multiPred=multiPred,qnt=0.999)
@@ -179,7 +183,7 @@ checkSig <- function(beta){
 }
 
 postBetaPlot <- function(outs,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,multiPred=FALSE,qnt=1,...){
-#	recover()
+	#recover()
 	if(multiPred){
 		b <- "beta[1]"
 	} else {
@@ -206,7 +210,7 @@ postBetaPlot <- function(outs,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,mult
 		predNames[which(sig)] <- paste0(predNames[which(sig)]," * ")
 	}
 	if(is.null(cols)){
-		cols <- colFunc(meanBetas,cols=c("blue","red"),nPredictors,valRange=range(meanBetas))	#rep("blue",nPredictors)
+		cols <- colFunc(meanBetas,cols=viridis::viridis(n=nPredictors),nPredictors,valRange=range(meanBetas))
 	}
 	betaDens <- lapply(betas,density)
 	if(reorder){
@@ -214,13 +218,15 @@ postBetaPlot <- function(outs,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,mult
 	} else {
 		predOrder <- 1:nPredictors
 	}
-	plot(0,type='n',xlim=range(betas)+c(-diff(range(betas))/4,0),yaxt='n',xlab="effect size",ylab="",bty='n',ylim=c(0,(nPredictors+1)*1.25))
-		text(x=min(unlist(betas))-diff(range(betas))/8,y=(0.4 + 1:nPredictors)*1.25,labels=predNames[predOrder],srt=0,font=2,cex=1.3)
+	yTxtCoords <- 0.6+c(1:nPredictors)+c(1:nPredictors)*0.05
+	yDnsCoords <- c(1:nPredictors)+c(1:nPredictors)*0.05
+	plot(0,type='n',xlim=range(betas)+c(-diff(range(betas))/4,0),yaxt='n',xlab="Standardized effect size",ylab="",bty='n',ylim=c(0.9,(nPredictors+1)*1.10))
+		text(x=min(unlist(betas))-diff(range(betas))/4,y=yTxtCoords,labels=predNames[predOrder],srt=0,font=2,cex=1.3,pos=4)
 		abline(v=0,lty=2,lwd=0.5,col=adjustcolor(1,0.5))
 	invisible(
-		lapply(1:nPredictors,
+		lapply(nPredictors:1,
 			function(i){
-				plotDens(ymin=i+i*0.25,x=betas[[predOrder[i]]],d=betaDens[[predOrder[i]]],col=cols[predOrder[i]],qnt=qnt)
+				plotDens(ymin=yDnsCoords[i],x=betas[[predOrder[i]]],d=betaDens[[predOrder[i]]],col=cols[predOrder[i]],qnt=qnt,peakheight=0.5,alpha=1,border="black")
 			}))
 }
 
@@ -303,7 +309,7 @@ getDens <- function(x,adj=2,logX=FALSE){
 	return(d)
 }
 
-plotDens <- function(ymin=0,x,d,col,alpha=0.3,xmin=NULL,peakheight=1,qnt=1,logX=FALSE){
+plotDens <- function(ymin=0,x,d,col,alpha=0.3,xmin=NULL,peakheight=1,qnt=1,logX=FALSE,border="black"){
 	if(logX){
 		x <- log(x)
 	}
@@ -325,7 +331,7 @@ plotDens <- function(ymin=0,x,d,col,alpha=0.3,xmin=NULL,peakheight=1,qnt=1,logX=
 	yvec <- dy/(peakheight*max(dy))
 	polygon(x=c(xmin,xmin,dx,max(dx),xmin),
 				y=c(ymin,ymin,ymin+yvec,ymin,ymin),
-				col=adjustcolor(col,alpha))
+				col=adjustcolor(col,alpha),border=border)
 }
 
 modAdViz <- function(db,fit,predName,nPPS,tree,xlim,valRange=NULL,qnt=0.95,adj=2,logX=FALSE){
@@ -621,6 +627,39 @@ phyloViz_scatter <- function(loo,predName,valRange=NULL){
 		)
 	points(loo$db$Y,yMean,pch=18,cex=1.5,col=cols)
 }
+
+discreteViolPlot <- function(z,nPreds,predName,xAxLabs,logY=FALSE){
+	x <- z[[predName]]
+	if(nPreds==2){
+		vCols <- gray(c(0.2,0.5,0.8),1)[c(1,3)]
+		xRange <- c(-0.5,1.5)
+	} else if (nPreds==3){
+		vCols <- gray(c(0.2,0.5,0.8),1)
+		xRange <- c(-0.5,2.5)
+	}
+	if(logY){
+		yRange <- range(log(z$div)) + c(-0.1+0.1)
+		y <- log(z$div)
+		yLab <- "Log(Genetic Diversity)"
+	} else {
+		yRange <- range(z$div) + c(-0.003+0.003)
+		y <- z$div
+		yLab <- "Genetic Diversity"
+	}
+	plot(0,type='n',xlab="",xaxt='n',ylab=yLab,xlim=xRange,ylim=yRange)
+	for(i in 1:nPreds){
+		vioplot::vioplot(at=i-1,y[x==(i-1)],add=TRUE,col=vCols[i])
+	}
+	points(jitter(x),y=y,col="black",bg=z$cladecolor,pch=21,cex=1.7)
+	axis(side=1,at=0:(nPreds-1),labels=xAxLabs)
+}
+
+
+calcRsq <- function(){
+	
+}
+
+
 
 
 

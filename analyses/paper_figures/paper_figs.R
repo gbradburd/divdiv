@@ -17,6 +17,8 @@ library(doParallel)
 library(foreach)
 library(phytools)
 library(phylosignal)
+library(vioplot)
+library(corrplot)
 
 source("../divdiv_analysis_functions.R")
 
@@ -75,6 +77,11 @@ nuisPredNames <- predNames[16:19]
 # test for phylogenetic signal
 ################################
 
+# blomberg's k
+blom_k <- phytools::phylosig(sampPhy,z$div,test=TRUE)
+pagels_lambda <- phytools::phylosig(sampPhy,z$div,method="lambda",test=TRUE)
+	#plot(blom_k)
+
 load("../phy_cgram.Robj")
 #plot(cgram$sampPhy_cgram)
 
@@ -87,16 +94,43 @@ load("../partB_outs.Robj")
 #paper figure
 pps <- getBetaPPS(db=outs[[3]]$db,fit=outs[[3]]$fit,nPPS=1e3,multiPred=TRUE)
 
-pdf(file="pi_range_analysis.pdf",width=7,height=7)
+pdf(file="predictor_effect_sizes.pdf",width=8,height=7)
+	par(cex.axis=1.5,cex.lab=1.5,mar=c(5,1,1,1))
+	postBetaPlot(outs=outs[-c(4,14)],
+				 predNames=c("Latitude","Ecoregions","Range extent",	#"ecoregions/range_size",
+			 				 "Body size","Egg size","Iteroparity",
+							 "Philopatry","Spawning mode","Planktotrophy",
+							 "Pelagic larval duration","Planktonicity","Benthicity"),
+				 reorder=TRUE,
+				 cols=NULL,
+				 stdize=TRUE,
+				 multiPred=TRUE,
+				 qnt=1)
+dev.off()
+
+pdf(file="range.pdf",width=7,height=7)
 	par(cex.axis=1.5,cex.lab=1.5,mar=c(5,5,2,1))
 	plotBetaPPS(db=outs[[3]]$db,ppsOut=pps,sampCols=sampCols,
 				xlab="Range Extent (km)",ylab="Genetic Diversity",trp=0.7,xaxt='n')
 				max(z[["max.95.sea.gbif"]])
 		axis(side=1,at=seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]])),
 			labels=round(seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]]))*max(z[["max.95.sea.gbif"]])))
-		#legend(x="topleft",col=sampCols,legend=)
 dev.off()
 
+pdf(file="planktonic.pdf",width=7,height=7)
+	par(cex.axis=1.5,cex.lab=1.5,mar=c(5,5,2,1))
+	discreteViolPlot(z,2,"isPlanktonic_atanypoint",xAxLabs=c("Non-planktonic","Planktonic"),logY=TRUE)
+dev.off()
+
+pdf(file="range_planktonic.pdf",width=14,height=7)
+	par(cex.axis=1.5,cex.lab=1.5,mar=c(5,5,2,1),mfrow=c(1,2))
+	plotBetaPPS(db=outs[[3]]$db,ppsOut=pps,sampCols=sampCols,
+				xlab="Range Extent (km)",ylab="Genetic Diversity",trp=0.7,xaxt='n')
+				max(z[["max.95.sea.gbif"]])
+		axis(side=1,at=seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]])),
+			labels=round(seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]]))*max(z[["max.95.sea.gbif"]])))
+	discreteViolPlot(z,2,"isPlanktonic_atanypoint",xAxLabs=c("Non-planktonic","Planktonic"),logY=TRUE)
+dev.off()
 
 xx <- z[bioPreds][,-c(4,14)]
 xxnames <- c("latitude","ecoregions","range extent",	#"ecoregions/range_size",
@@ -106,7 +140,7 @@ xxnames <- c("latitude","ecoregions","range extent",	#"ecoregions/range_size",
 reord <- c(6:9,11:12,1:2,10,4:5,3)
 xx <- xx[,reord]
 xxnames <- xxnames[reord]
-pdf(file="phy_range_analysis.pdf",width=14,height=10)
+pdf(file="all_predictors.pdf",width=14,height=10)
 	phyViz(db=outs[[3]]$db,fit=outs[[3]]$fit,
 			XX=xx,
 			predNames=xxnames,
@@ -114,6 +148,62 @@ pdf(file="phy_range_analysis.pdf",width=14,height=10)
 		   valRange=NULL,adj=0.5,logX=FALSE,rounding=0.05)
 dev.off()
 
+################################
+# calculate R^2
+################################
 
 
 
+
+################################
+# visualize predictor corrleations
+################################
+
+M <- cor(xx,use="pairwise.complete.obs",method="kendall")
+row.names(M) <- xxnames
+colnames(M) <- xxnames
+
+pdf(file="predictor_corrs.pdf",width=6,height=6)
+	par(cex.axis=1.5,cex.lab=1.5)
+	corrplot(M,method="ellipse",diag=TRUE,type="lower",tl.col="black")
+dev.off()
+
+
+
+
+################################
+# report statistics for paper
+################################
+
+# diversity statistics
+range(z$div)
+mean(z$div)
+#phylo corrected mean
+I <- matrix(rep(1,nrow(z)),nrow(z),1)
+C_inv <- solve(phyStr)
+1/(t(I) %*% C_inv %*% I) * t(I) %*% C_inv %*% z$div
+mean(solve(chol(phyStr)) %*% z$div)
+
+
+# effect of range extent
+b <- extract(outs[[3]]$fit,"beta[1]",permute=FALSE,inc_warmup=FALSE)
+mean(b)
+quantile(b,c(0.025,0.975))
+
+# effect of number of ecoregions
+b <- extract(outs[[2]]$fit,"beta[1]",permute=FALSE,inc_warmup=FALSE)
+mean(b)
+quantile(b,c(0.025,0.975))
+
+# effect of planktonicity
+b <- extract(outs[[12]]$fit,"beta[1]",permute=FALSE,inc_warmup=FALSE)
+mean(b)
+quantile(b,c(0.025,0.975))
+
+# effect of number of ecoregions PER range extent
+b <- extract(outs[[4]]$fit,"beta[1]",permute=FALSE,inc_warmup=FALSE)
+mean(b)
+quantile(b,c(0.025,0.975))
+
+# correlation between ecoregions & range extent
+cor(z$n_ECOREGIONS.all,z$max.95.sea.gbif.nrm)

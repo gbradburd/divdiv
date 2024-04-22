@@ -85,19 +85,6 @@ bioPredNames <- predNames[1:14]
 nuisPreds <- preds[16:19]
 nuisPredNames <- predNames[16:19]
 
-################################
-# test for phylogenetic signal
-################################
-
-# blomberg's k
-blom_k <- phytools::phylosig(sampPhy,z$div,test=TRUE)
-	#plot(blom_k)
-sampPhy4d <- phylobase::phylo4d(x=sampPhy,tip.data=z$div)
-sampPhy_cgram <- phylosignal::phyloCorrelogram(sampPhy4d,trait="dt",n.points=100,ci.bs=1000)
-cgram <- list("sampPhy4d"= sampPhy4d,"sampPhy_cgram"= sampPhy_cgram)
-	save(cgram,file="phy_cgram.Robj")
-	#plot(sampPhy_cgram)
-
 
 ################################
 # analyze diversity with one predictor at a time
@@ -106,7 +93,7 @@ cgram <- list("sampPhy4d"= sampPhy4d,"sampPhy_cgram"= sampPhy_cgram)
 outs <- divdivAnalyses(z=z,X=as.list(preds),
 						y="div",phyStr=phyStr,mod=betaPhyReg,
 						outName="partA",nIter=nIter,parallel=TRUE,
-						nNodes=nNodes,filterKeep=NULL)
+						nNodes=nNodes,filterKeep=NULL,runNames=preds)
 
 vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partA",sampCols=sampCols)
 
@@ -120,7 +107,7 @@ x <- lapply(1:length(bioPreds),function(i){c(bioPreds[i],nuisPreds)})
 outs <- divdivAnalyses(z=z,X=x,
 						y="div",phyStr=phyStr,mod=betaPhyReg,
 						outName="partB",nIter=nIter,parallel=TRUE,
-						nNodes=nNodes,filterKeep=NULL)
+						nNodes=nNodes,filterKeep=NULL,runNames=bioPreds)
 
 vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partB",multiPred=TRUE,sampCols=sampCols)
 
@@ -140,7 +127,7 @@ x <- list(c("Larval_feeding",nuisPreds))
 outs <- divdivAnalyses(z=z,X=x,
 						y="div",phyStr=phyStr,mod=betaPhyReg,
 						outName="partC",nIter=nIter,parallel=TRUE,
-						nNodes=nNodes,filterKeep=which(z$isCoral!=1))
+						nNodes=nNodes,filterKeep=which(z$isCoral!=1),runNames="Larval_feeding")
 
 vizAllOuts(outs=outs,predNames="Larval_feeding",sampPhy=sampPhy,outName="partC",multiPred=TRUE,sampCols=sampCols)
 
@@ -154,7 +141,7 @@ x <- list(c("PLD_point2","isBenthic"))
 outs <- divdivAnalyses(z=z,X=x,
 						y="div",phyStr=phyStr,mod=betaPhyReg,
 						outName="partD",nIter=nIter,parallel=TRUE,
-						nNodes=nNodes,filterKeep=NULL)
+						nNodes=nNodes,filterKeep=NULL,runNames=c("PLD_point2","isBenthic"))
 
 vizAllOuts(outs=outs,predNames="PLD_point2",sampPhy=sampPhy,outName="partD",multiPred=TRUE,sampCols=sampCols)
 
@@ -172,7 +159,7 @@ x <- lapply(1:length(bioPreds),function(i){c(bioPreds[i],nuisPreds)})
 outs <- divdivAnalyses(z=z,X=x,
 						y="div",phyStr=phyStr,mod=betaPhyReg,
 						outName="partE",nIter=nIter,parallel=TRUE,
-						nNodes=nNodes,filterKeep=isBonyFish)
+						nNodes=nNodes,filterKeep=isBonyFish,runNames=bioPreds)
 
 vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partE",multiPred=TRUE,sampCols=sampCols)
 
@@ -196,6 +183,23 @@ x <- lapply(1:length(bioPreds),function(i){c(bioPreds[i],nuisPreds)})
 outs <- divdivAnalyses(z=z,X=x,
 						y="div",phyStr=phyStr,mod=betaPhyReg,
 						outName="partF",nIter=nIter,parallel=TRUE,
-						nNodes=nNodes,filterKeep=primarilyMarine)
+						nNodes=nNodes,filterKeep=primarilyMarine,runNames=bioPreds)
 
 vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partF",multiPred=TRUE,sampCols=sampCols)
+
+################
+# analyze diversity with one biological predictor 
+#	and all the "nuisance" parameters
+#	dropping just dolphins
+################
+
+toKeep <- (1:nrow(z))[-grep("Lagenorhynchus",z$species)]
+
+x <- lapply(1:length(bioPreds),function(i){c(bioPreds[i],nuisPreds)})
+
+outs <- divdivAnalyses(z=z,X=x,
+						y="div",phyStr=phyStr,mod=betaPhyReg,
+						outName="partG",nIter=nIter,parallel=TRUE,
+						nNodes=nNodes,filterKeep=toKeep,runNames=bioPreds)
+
+vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partG",multiPred=TRUE,sampCols=sampCols)
