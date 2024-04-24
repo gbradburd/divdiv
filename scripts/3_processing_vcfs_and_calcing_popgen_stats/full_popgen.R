@@ -111,7 +111,7 @@ for (stacksFAfile in stacksFA_files){
     
     lowcovsamps <- read.delim(lowcovsamps, header = F) %>% mutate(V1 = gsub(" ","",V1))
     print("I found an alert file to check for lowcovsamps to drop")
-    if (length(which(grepl("co-genotyped", lowcovsamps$V1)))==0) {
+    if (length(which(grepl("sample", lowcovsamps$V1)))==0) {
     print("I did not make a list of samples to filter out based on results of BPstats in alert file but I may still drop samples manually")
     lowcovsamps <- NULL
     }  else {
