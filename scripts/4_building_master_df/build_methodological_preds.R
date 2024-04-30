@@ -53,7 +53,7 @@ df <- df %>% filter(is.na(run_name)==F)
 
 #get read length
 readl <- read.csv("data/methodological/input_and_working/master_bookkeeping_sheet-preStacks.csv") %>% 
-  dplyr::select(run_name, trimlength) %>% 
+  dplyr::select(run_name, trimlength, adapter_names_to_remove) %>% 
   rename("read_length" = "trimlength") %>% 
   rename("name_of_adapter_removed" = "adapter_names_to_remove")
 
