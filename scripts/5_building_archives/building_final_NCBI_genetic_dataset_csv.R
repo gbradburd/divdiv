@@ -48,7 +48,7 @@ df %>% mutate(check = ifelse(is.na(datathon_project_index)==F,"in datathon","not
 
 #get whether or not we removed adapters or not (kept track of / entered manually into an Excel)
 adpts <- read.csv("data/methodological/input_and_working/master_bookkeeping_sheet-preStacks.csv")
-adpts.slim <- adpts %>% dplyr::rename("name_removed_adapter"="adapter_names_to_remove")
+adpts.slim <- adpts %>% dplyr::rename("name_of_adapter_removed"="adapter_names_to_remove")
 
 
 
