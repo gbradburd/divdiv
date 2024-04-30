@@ -23,7 +23,7 @@ popgen <- list.files(path = popgenpath,
                      pattern="popgenstats.0.5", 
                      full.names = TRUE)
 
-df <- data.frame(run_name = NA, n_samples = NA, mean_raw_read_cnt = NA)
+df <- data.frame(run_name = NA, n_samples = NA, mean_raw_read_cnt = NA, read_type = NA)
 for (i in 1:length(popgen)) {
   
   popgenFile <- popgen[i]
@@ -41,7 +41,10 @@ for (i in 1:length(popgen)) {
   sampkeyFile <- read.delim(sampkeyFile)
   sampkeyFile <- sampkeyFile %>% filter(sampid_assigned_for_bioinf %in% samps)
   mean_raw_read_cnt = mean(sampkeyFile$total_reads_written_to_final_fastq)
-  df.i <- data.frame(run_name = run_name, n_samples = n_samples, mean_raw_read_cnt = mean_raw_read_cnt)
+  read_type_sra = unique(sampkeyFile$read_type_sra)
+  df.i <- data.frame(run_name = run_name, n_samples = n_samples, 
+                     mean_raw_read_cnt = mean_raw_read_cnt, 
+                     read_type = read_type_sra)
   df <- rbind(df, df.i)
   
 }
@@ -51,7 +54,8 @@ df <- df %>% filter(is.na(run_name)==F)
 #get read length
 readl <- read.csv("data/methodological/input_and_working/master_bookkeeping_sheet-preStacks.csv") %>% 
   dplyr::select(run_name, trimlength) %>% 
-  rename("read_length" = "trimlength")
+  rename("read_length" = "trimlength") %>% 
+  rename("name_of_adapter_removed" = "adapter_names_to_remove")
 
 df <- merge(df, readl, by = "run_name", all.x = T)
 
