@@ -12,16 +12,21 @@ setwd("/Users/rachel/divdiv")
 
 #-----------------------------------------------------------------------------------------------------------------
 #read in data
-lat <- read.csv("data/abiotic/mean_min_max_latitude_stats-wide.csv") %>% dplyr::select(-X) %>% mutate(link = paste0("bioprj_",link))
+lat <- read.csv("data/abiotic/mean_min_max_latitude_stats-wide.csv") %>% 
+  dplyr::select(-X) %>% mutate(run_name = paste0("bioprj_",link)) %>% 
+  dplyr::select(-link)
 ecor <- read.csv("data/abiotic/number_of_ecoregions_stats-wide.csv") %>% mutate(species = gsub(" ","_",species))
-rangesize <- read.csv("data/abiotic/range_lengths_and_ratios.csv") %>% dplyr::rename("link"="run_name")
-methods <- read.csv("data/methodological/methodological_predictors-wide.csv") %>% dplyr::rename("link"="run_name")
+rangesize <- read.csv("data/abiotic/range_lengths_and_ratios.csv")
+methods <- read.csv("data/methodological/methodological_predictors-wide.csv") %>% 
+  dplyr::select(run_name, n_samples, mean_raw_read_cnt, read_length, 
+                mean_locus_depth, littlem, bigm, n, mean_depth_snp_filtered, 
+                n.totalsnps)
 
 biotic <- read.csv("data/biotic/cleaned_numeric_biotic_traits.csv") %>% dplyr::rename("species"="organism_biosamp") %>% 
   mutate(species = gsub(" ","_",species))
 
-popgWM <- read.csv("data/popgen/r80_WM_stats-wide.csv") %>% dplyr::rename("link"="run_name") %>% dplyr::select(-species)
-popgsummary <- read.csv("data/popgen/r80_popgen_stats-wide.csv") %>% dplyr::rename("link"="run_name") %>% 
+popgWM <- read.csv("data/popgen/r80_WM_stats-wide.csv") %>% dplyr::select(-species)
+popgsummary <- read.csv("data/popgen/r80_popgen_stats-wide.csv") %>% 
   dplyr::select(-species) %>% dplyr::select(-stacksparams)
 
 taxcolorkey <- read.csv("data/master_tax_color_key.csv") %>% mutate(species = gsub(" ","_",species))
@@ -52,29 +57,29 @@ biotic$species[biotic$species == "Seriola_dorsalis"] = "Seriola_lalandi_dorsalis
 
 #do fake merge first to check that name mismatches are corrected
 df <- merge(lat, ecor, by = "species", all = T)
-df <- merge(df, rangesize, by = "link", all = T)
+df <- merge(df, rangesize, by = "run_name", all = T)
 df <- merge(df, biotic, by = "species", all = T)
-df <- merge(df, popgWM, by = "link", all = T)
-df %>% filter(grepl("Exaiptasia",link)) %>% dplyr::select(link,species)
-df %>% filter(grepl("Exaiptasia",species)) %>% dplyr::select(link,species)
-df %>% filter(grepl("Seriola",link)) %>% dplyr::select(link,species)
-df %>% filter(grepl("Seriola",species)) %>% dplyr::select(link,species)
+df <- merge(df, popgWM, by = "run_name", all = T)
+df %>% filter(grepl("Exaiptasia",run_name)) %>% dplyr::select(run_name,species)
+df %>% filter(grepl("Exaiptasia",species)) %>% dplyr::select(run_name,species)
+df %>% filter(grepl("Seriola",run_name)) %>% dplyr::select(run_name,species)
+df %>% filter(grepl("Seriola",species)) %>% dplyr::select(run_name,species)
 
 
 #do real merge
 df <- merge(lat, ecor, by = "species", all = F)
-df <- merge(df, rangesize, by = "link", all = F)
+df <- merge(df, rangesize, by = "run_name", all = F)
 df <- merge(df, biotic, by = "species", all = F)
-df <- merge(df, methods, by = "link", all = F)
+df <- merge(df, methods, by = "run_name", all = F)
 df.preds <- df
-df <- merge(df, popgWM, by = "link", all = F)
-df <- merge(df, popgsummary, by = "link", all = F)
+df <- merge(df, popgWM, by = "run_name", all = F)
+df <- merge(df, popgsummary, by = "run_name", all = F)
 #add colors for tax. groups (that match phy)
 df <- merge(df, taxcolorkey, by = "species", all = F)
 names(df)
 
 #check if there are any duplicate rows/datasets (should return no rows if no dups)
-df %>% group_by(link) %>% summarise(n=n()) %>% filter(n > 1)
+df %>% group_by(run_name) %>% summarise(n=n()) %>% filter(n > 1)
 
 #change a few species names (AGAIN...), for our sanity
 df$species[df$species == "Seriola_lalandi_dorsalis"] = "Seriola_dorsalis"
@@ -91,7 +96,7 @@ write.csv(df, "data/master_df.csv", row.names = FALSE)
 #**********************************************
 #a first look at methology preds vs responses -------
 
-temp <- df %>% dplyr::select(link,species,n_samples,mean_raw_read_cnt,read_length,mean_locus_depth,s,nbhd,thetaW,globalPi,meanHet)
+temp <- df %>% dplyr::select(run_name,species,n_samples,mean_raw_read_cnt,read_length,mean_locus_depth,s,nbhd,thetaW,globalPi,meanHet)
 temp <- temp %>% pivot_longer(., names_to = "pred", values_to = "value", cols = 3:7)
 temp %>% ggplot() + 
   geom_point(aes(x=value, y=thetaW)) +
