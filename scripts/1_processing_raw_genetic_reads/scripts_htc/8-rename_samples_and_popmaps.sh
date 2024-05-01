@@ -25,7 +25,7 @@ storagenode=/mnt/scratch/$USER #path to main node to where fastq files live
 
 list_of_datasets=list-coral.txt #name of file that contains the name of all of the directories that we want to process
 
-samplenamekeydir=/home/rhtoczyd/divdiv/data/all_samplenamekeys #file path where sample name keys live, that specify how to rename sequence files from SRRXXXXX to sample0, sample1, etc. for Stacks pipeline
+samplenamekeydir=/mnt/home/rhtoczyd/divdiv/data/all_samplenamekeys #file path where sample name keys live, that specify how to rename sequence files from SRRXXXXX to sample0, sample1, etc. for Stacks pipeline
 
 
 #for each sample directory of a bioprj/species combo dataset in the list provided, rename fastq files
