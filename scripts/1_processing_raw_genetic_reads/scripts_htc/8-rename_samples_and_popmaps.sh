@@ -27,6 +27,7 @@ list_of_datasets=list-coral.txt #name of file that contains the name of all of t
 
 samplenamekeydir=/mnt/home/rhtoczyd/divdiv/data/all_samplenamekeys #file path where sample name keys live, that specify how to rename sequence files from SRRXXXXX to sample0, sample1, etc. for Stacks pipeline
 
+popmapdir=/mnt/home/rhtoczyd/divdiv/data/bioinformatics/popmaps #file path to where popmaps live
 
 #for each sample directory of a bioprj/species combo dataset in the list provided, rename fastq files
 
@@ -73,7 +74,7 @@ do
 	
 	#copy popmap from popmap folder (where R code generated all popmaps) to dir for this dataset ($storagenode/$run_name)
 	#and rename from long name with bioprj/species info to just popmap (so Stacks code will run correctly) 
-	cp ./popmaps/$current_popmap_file_name $storagenode/$run_name/popmap
+	cp $popmapdir/$current_popmap_file_name $storagenode/$run_name/popmap
 	
 	#and store a copy of sample naming key just for this dataset in dir too, insurance policy/good bookkeeping
 	cp ${samplenamekeydir}/samplenamekey-${run_name}.txt $storagenode/$run_name/samplenamekey.txt
