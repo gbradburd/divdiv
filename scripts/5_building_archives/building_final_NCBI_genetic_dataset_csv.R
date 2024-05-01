@@ -16,9 +16,11 @@ setwd("/Users/rachel/divdiv")
 
 
 
+#get master df used in analyses
+master <- read.csv("data/master_df.csv")
 
 #get final datasets we used
-using <- read.csv("data/master_df.csv") %>% dplyr::select(run_name)
+using <- master %>% dplyr::select(run_name)
 
 #get master working (trt/bookkeeping) spreadsheet from Drive
 drive  <- googledrive::shared_drive_find(pattern = "^divdiv$")
@@ -80,29 +82,29 @@ df <- df %>% dplyr::select(-has_latlong_in_NCBI) %>% rename("latlong_source" = "
 
 
 #get genetic samples we kept/used to very end in end -------------
-filelist <- list.files(path = "data/popgen/input_and_working/ALL_r80_popgen_data/", pattern = "*.Robj", full.names = TRUE)
+filelist <- list.files(path = "data/popgen/input_and_working/ALL_r80_gendiv_data/", pattern = "*initPars*", full.names = TRUE)
 
-popgen.samps <- data.frame("link" = NA, "samps.in.r80popgen"=NA)
+wm.samps <- data.frame("link" = NA, "samps.in.r80wm"=NA)
 for (loop.iter in 1:length(filelist)) {
   
   print(paste0("starting iter ",loop.iter," of ",length(filelist)))
   file <- filelist[loop.iter]
   
   dataset = file %>% strsplit(., "/") %>% as.data.frame() %>% .[nrow(.),] %>% 
-    strsplit(., "\\.") %>% as.data.frame() %>% .[4,]
-  link = dataset %>% gsub("_popgenstats","",.) %>% strsplit(., "_") %>% unlist() %>% .[1:3] %>% 
+    gsub("WMfitwishart-","",.) %>% gsub("_initPars.Robj","",.)
+  link = dataset %>% strsplit(., "_") %>% unlist() %>% .[1:3] %>% 
     paste(., sep="", collapse="_") %>% gsub("bioprj_","",.)
   
   load(file)
-  tmp <- popgenstats$pwp
-  tmp <- colnames(tmp) %>% as.data.frame() %>% rename("samps.in.r80popgen"=".")
-  tmp <- tmp %>% mutate(link = link) %>% dplyr::select(link,samps.in.r80popgen)
+  tmp <- initPars$parHom
+  tmp <- colnames(tmp) %>% as.data.frame() %>% rename("samps.in.r80wm"=".")
+  tmp <- tmp %>% mutate(link = link) %>% dplyr::select(link,samps.in.r80wm)
   
-  popgen.samps <- rbind(popgen.samps,tmp)
+  wm.samps <- rbind(wm.samps,tmp)
   
 }
-popgen.samps <- popgen.samps %>% filter(is.na(link)==F) %>% 
-  mutate(matchid = paste0(link,".",samps.in.r80popgen))
+wm.samps <- wm.samps %>% filter(is.na(link)==F) %>% 
+  mutate(matchid = paste0(link,".",samps.in.r80wm))
 
 #match bioinf genetic samp names up to to NCBI IDs
 filelist <- list.files(path = "data/all_samplenamekeys", pattern = "*.txt", full.names = TRUE)
@@ -125,8 +127,25 @@ sampkeys.slim <- sampkeys %>% dplyr::select(link, run_acc_sra, sampid_assigned_f
   mutate(matchid = paste0(link,".",sampid_assigned_for_bioinf))
 
 #filter sampnamekeys to just samples we used/kept thru popgen
-sampkeys.slim <- sampkeys.slim %>% filter(matchid %in% popgen.samps$matchid)
-
+sampkeys.slim <- sampkeys.slim %>% filter(matchid %in% wm.samps$matchid)
+#check all SRA and SAM IDs are unique - should return 0 if so
+sampkeys.slim %>% nrow() - sampkeys.slim %>% dplyr::select(run_acc_sra) %>% distinct() %>% nrow()
+sampkeys.slim %>% nrow() - sampkeys.slim %>% separate(., identifiers_biosamp, into = c("x","y"), sep = ";") %>% 
+  separate(., x, into = c("y","biosamp"), sep = " ") %>%
+  dplyr::select(biosamp) %>% distinct() %>% nrow()
+  #not all biosamp IDs unique, not end of world
+merge(sampkeys.slim %>% separate(., identifiers_biosamp, into = c("x","y"), sep = ";") %>% 
+        separate(., x, into = c("y","biosamp"), sep = " ") %>%
+        dplyr::select(link,biosamp) %>% distinct() %>% 
+        group_by(link) %>% summarise(n.biosamps=n()),
+      master %>% mutate(link = gsub("bioprj_","",run_name)) %>%
+        dplyr::select(link, run_name, n_samples),
+      by = "link",
+      all.x = T, all.y = T) %>% 
+  filter(run_name %in% master$run_name) %>% 
+  mutate(check = ifelse(n.biosamps== n_samples, "match", "not match")) %>% 
+  View()
+      
 
 
 
@@ -169,13 +188,9 @@ df <- merge(df, biosamps, by = "run_name", all.x = T)
 #compare all above match, they should
 #keep final cols we want and do any renaming, save! done!
 
-read.csv("data/methodological/methodological_predictors-wide.csv")
 
 
-#then add two additional pieces to methods final df
-#single end vs paired end
-#library strategy (e.g., WGS vs RAD)
-#rerun methods code, save methods df
+
 #rebuild master df (shouldn't change)
 #commit/push everything
 
