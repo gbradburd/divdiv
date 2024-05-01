@@ -43,6 +43,7 @@ do
 		echo "fullr80params: $fullr80params"
 
 		rclone copy divdiv_datafiles:$run_name/gendiv_data --include "WM*${fullr80params}*pars*" $outdirA
+		rclone copy divdiv_datafiles:$run_name/gendiv_data --include "WM*${fullr80params}*initPars*" $outdirA
 		rclone copy divdiv_datafiles:$run_name/popgen --include "popgenstats.0.5.*${fullr80params}*" $outdirB
 	fi
 	
