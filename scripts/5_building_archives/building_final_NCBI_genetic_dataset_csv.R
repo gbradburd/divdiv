@@ -184,14 +184,12 @@ df <- merge(df, biosamps, by = "run_name", all.x = T)
 
 # !!! START HERE !!!
 
+#finish re-doing drop tech reps round of jobs
 #count how many biosamp ids there are and how many sra ids per datasets above
 #compare all above match, they should
 #keep final cols we want and do any renaming, save! done!
 
-
-
-
-#rebuild master df (shouldn't change)
+#rebuild master df
 #commit/push everything
 
 
