@@ -170,7 +170,7 @@ for (stacksFAfile in stacksFA_files){
   
   rm(fileprefix)
 
-workdirfiles = list.files(indir, pattern="meanreaddepth|gt|bpstats", full.names = TRUE)
+workdirfiles = list.files(outdir, pattern="meanreaddepth|gt|bpstats", full.names = TRUE)
 print("workdirfiles are")
 workdirfiles
 print(paste("copying outputs to", outdir_final, sep = " "))
@@ -186,7 +186,7 @@ Sys.time()
 
 #copy files to final location, in case job breaks or runs out of time, so we don't lose everything
 #will still try to do a final copy in the bash script after R script completely finishes to be safe
-workdirfiles = list.files(indir, pattern="meanreaddepth|gt|bpstats", full.names = TRUE)
+workdirfiles = list.files(outdir, pattern="meanreaddepth|gt|bpstats", full.names = TRUE)
 print("workdirfiles are")
 workdirfiles
 print(paste("copying outputs to", outdir_final, sep = " "))
@@ -263,7 +263,7 @@ print(paste0("ALL DONE WITH PARSING AND POPGEN STATS FOR ", run_name))
 
 #copy files to final location, in case job breaks or runs out of time, so we don't lose everything
 #will still try to do a final copy in the bash script after R script completely finishes to be safe
-workdirfiles = list.files(indir, pattern="popgenstats", full.names = TRUE)
+workdirfiles = list.files(outdir, pattern="popgenstats", full.names = TRUE)
 file.copy(from=workdirfiles, to=paste0(outdir_final,"/"), 
           overwrite = TRUE, recursive = FALSE, copy.mode = TRUE)
 rm(workdirfiles)

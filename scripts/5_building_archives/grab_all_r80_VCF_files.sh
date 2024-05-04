@@ -44,5 +44,5 @@ done < ./$list_of_datasets
 #end run on umich cluster
 
 #run locally
-#rsync rhtoczyd@greatlakes.arc-ts.umich.edu:/nfs/turbo/lsa-bradburd/divdiv_datafiles/dataforpub //Users/rachel/divdiv/data/popgen/input_and_working/dataforpub
+#rsync -avP rhtoczyd@greatlakes.arc-ts.umich.edu:/nfs/turbo/lsa-bradburd/divdiv_datafiles/dataforpub /Users/rachel/divdiv/data/popgen/input_and_working/dataforpub
 
