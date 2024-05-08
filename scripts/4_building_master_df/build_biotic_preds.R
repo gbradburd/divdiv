@@ -120,9 +120,9 @@ df$Larval_feeding[df$Larval_feeding == "L"] = 1
 df$Larval_feeding[df$Larval_feeding == "P"] = 2
 df$Generational_Structure[df$Generational_Structure == "I"] = 0
 df$Generational_Structure[df$Generational_Structure == "S"] = 1
-df$isBenthic[df$isBenthic == "A"] = 2
+df$isBenthic[df$isBenthic == "A"] = 0
 df$isBenthic[df$isBenthic == "S"] = 1
-df$isBenthic[df$isBenthic == "N"] = 0
+df$isBenthic[df$isBenthic == "N"] = 2
 #make sure numbers are numbers
 df <- df %>% 
   mutate(Spawning_mode = as.numeric(Spawning_mode), 
