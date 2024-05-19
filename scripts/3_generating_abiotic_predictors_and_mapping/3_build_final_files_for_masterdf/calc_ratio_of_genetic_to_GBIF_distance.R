@@ -69,9 +69,9 @@ rownames(df) <- NULL
 # using <- using %>% dplyr::select(organism_biosamp,run_name,link,keepinrunning_YN) %>%
 #   filter(grepl("yes|Yes",keepinrunning_YN))
 
-#check for errors
-df %>% filter(max.100.sea.gbif > 30000 | maxgenetic.sea > 30000) %>% 
-  View()
+#check for errors (should return no rows if all good)
+df %>% filter(max.100.sea.gbif > 30000 | maxgenetic.sea > 30000)
+
 #drop issues for now (will correct upstream and rerun this script)
 #df <- df %>% filter(max.100.sea.gbif < 30000 & maxgenetic.sea < 30000)
 

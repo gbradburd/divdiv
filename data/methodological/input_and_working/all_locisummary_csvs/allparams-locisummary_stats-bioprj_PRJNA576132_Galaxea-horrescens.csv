@@ -1,0 +1,7 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA576132_Galaxea-horrescens","stacks_littlem_3_bigm_3_n2_nis1lessthanM",1355,3344,25.46,298,8.91148325358852,409,"3","3","2","nis1lessthanM",1764
+"bioprj_PRJNA576132_Galaxea-horrescens","stacks_littlem_3_bigm_3_n3_nequalM",1450,3819,24.57,350,9.16470280178057,420,"3","3","3","nequalM",1870
+"bioprj_PRJNA576132_Galaxea-horrescens","stacks_littlem_3_bigm_3_n4_nis1morethanM",1520,4244,23.88,369,8.69462770970782,419,"3","3","4","nis1morethanM",1939
+"bioprj_PRJNA576132_Galaxea-horrescens","stacks_littlem_3_bigm_6_n5_nis1lessthanM",1621,4811,24.63,497,10.3304926210767,411,"3","6","5","nis1lessthanM",2032
+"bioprj_PRJNA576132_Galaxea-horrescens","stacks_littlem_3_bigm_6_n6_nequalM",1652,4986,23.98,480,9.62695547533093,411,"3","6","6","nequalM",2063
+"bioprj_PRJNA576132_Galaxea-horrescens","stacks_littlem_3_bigm_6_n7_nis1morethanM",1671,5176,23.67,499,9.64064914992272,413,"3","6","7","nis1morethanM",2084

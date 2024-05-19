@@ -1,10 +1,10 @@
 "run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
 "bioprj_PRJNA553831_Systellaspis-debilis","stacks_littlem_3_bigm_3_n2_nis1lessthanM",175,1918,4.4,5,0.260688216892596,1,"3","3","2","nis1lessthanM",176
-"bioprj_PRJNA553831_Systellaspis-debilis","stacks_littlem_3_bigm_3_n3_nequalM",179,2155,4.53,5,0.232018561484919,1,"3","3","3","nequalM",180
+"bioprj_PRJNA553831_Systellaspis-debilis","stacks_littlem_3_bigm_3_n3_nequalM",186,2241,4.48,5,0.223114680946006,1,"3","3","3","nequalM",187
 "bioprj_PRJNA553831_Systellaspis-debilis","stacks_littlem_3_bigm_3_n4_nis1morethanM",191,2529,4.3,6,0.237247924080664,1,"3","3","4","nis1morethanM",192
 "bioprj_PRJNA553831_Systellaspis-debilis","stacks_littlem_3_bigm_6_n5_nis1lessthanM",175,2221,4.62,8,0.360198108959928,1,"3","6","5","nis1lessthanM",176
-"bioprj_PRJNA553831_Systellaspis-debilis","stacks_littlem_3_bigm_6_n6_nequalM",157,2076,4.32,3,0.144508670520231,2,"3","6","6","nequalM",159
+"bioprj_PRJNA553831_Systellaspis-debilis","stacks_littlem_3_bigm_6_n6_nequalM",167,2210,4.32,4,0.180995475113122,2,"3","6","6","nequalM",169
 "bioprj_PRJNA553831_Systellaspis-debilis","stacks_littlem_3_bigm_6_n7_nis1morethanM",171,2430,4.22,5,0.205761316872428,1,"3","6","7","nis1morethanM",172
-"bioprj_PRJNA553831_Systellaspis-debilis","stacks_littlem_3_bigm_9_n10_nis1morethanM",137,1546,4.87,7,0.452781371280724,2,"3","9","10","nis1morethanM",139
-"bioprj_PRJNA553831_Systellaspis-debilis","stacks_littlem_3_bigm_9_n8_nis1lessthanM",131,1535,4.63,4,0.260586319218241,1,"3","9","8","nis1lessthanM",132
-"bioprj_PRJNA553831_Systellaspis-debilis","stacks_littlem_3_bigm_9_n9_nequalM",142,1711,4.5,4,0.233781414377557,1,"3","9","9","nequalM",143
+"bioprj_PRJNA553831_Systellaspis-debilis","stacks_littlem_3_bigm_9_n10_nis1morethanM",145,1648,4.82,7,0.424757281553398,2,"3","9","10","nis1morethanM",147
+"bioprj_PRJNA553831_Systellaspis-debilis","stacks_littlem_3_bigm_9_n8_nis1lessthanM",139,1626,4.62,4,0.2460024600246,1,"3","9","8","nis1lessthanM",140
+"bioprj_PRJNA553831_Systellaspis-debilis","stacks_littlem_3_bigm_9_n9_nequalM",145,1754,4.48,4,0.228050171037628,1,"3","9","9","nequalM",146

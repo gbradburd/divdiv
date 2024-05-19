@@ -145,7 +145,8 @@ merge(sampkeys.slim %>% separate(., identifiers_biosamp, into = c("x","y"), sep 
   filter(run_name %in% master$run_name) %>% 
   mutate(check = ifelse(n.biosamps== n_samples, "match", "not match")) %>% 
   View()
-      
+#okay PRJNA281764_Homarus-americanus has fewer biosamp IDS than SRR IDS, 
+#authors used biosamp to refer to population (rather than individual lobsters)
 
 
 
@@ -184,9 +185,6 @@ df <- merge(df, biosamps, by = "run_name", all.x = T)
 
 # !!! START HERE !!!
 
-#finish re-doing drop tech reps round of jobs
-#count how many biosamp ids there are and how many sra ids per datasets above
-#compare all above match, they should
 #keep final cols we want and do any renaming, save! done!
 
 #rebuild master df

@@ -245,8 +245,8 @@ names(sea.genetic)[names(sea.genetic) == "max.quant.seapath.antimeridian"] <- pa
 
 
 
-#*****************************************************************
-#*****************************************************************
+# *****************************************************************
+# *****************************************************************
 # save -------
 
 max_and_pw_dists <- c(gcd.gbif.1, gcd.gbif.2, gcd.genetic, sea.gbif.1, sea.gbif.2, sea.genetic, gcd.landsamps)
@@ -255,15 +255,15 @@ save(max_and_pw_dists,file=paste(outdir,"/max_and_pw_dists",run_name,".Robj",sep
 write.csv(gbif, paste(outdir,"/gbif-coordspostmarmap-",run_name,".csv",sep=""))
 write.csv(genetic, paste(outdir,"/genetic-coordspostmarmap-",run_name,".csv",sep=""))
 
-#save (big) pairwise dist matricies for gbif data as separate objects
+#save (big) pairwise dist matrices for gbif data as separate objects
 pw.gbif <- list("pw.seadist.gbif" = pw.seadist.gbif,
                 "pw.gcd.gbif" = pw.gcd.gbif)
 save(pw.gbif,file=paste(outdir,"/GBIF_pw_dists",run_name,".Robj",sep = ""))
 
 
 
-#*****************************************************************
-#*****************************************************************
+# *****************************************************************
+# *****************************************************************
 # plot data on map ------------------
 
 load(paste(outdir,"/max_and_pw_dists",run_name,".Robj",sep = ""))
