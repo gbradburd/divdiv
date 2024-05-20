@@ -653,13 +653,3 @@ discreteViolPlot <- function(z,nPreds,predName,xAxLabs,logY=FALSE){
 	points(jitter(x),y=y,col="black",bg=z$cladecolor,pch=21,cex=1.7)
 	axis(side=1,at=0:(nPreds-1),labels=xAxLabs)
 }
-
-
-calcRsq <- function(){
-	
-}
-
-
-
-
-
