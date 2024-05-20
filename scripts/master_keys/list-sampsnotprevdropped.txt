@@ -1,0 +1,7 @@
+bioprj_PRJNA369717_Nautilus-pompilius X
+bioprj_PRJNA371502_Acanthurus-olivaceus X
+bioprj_PRJNA385083_Agaricia-undata X
+bioprj_PRJNA542967_Bartholomea-annulata X
+bioprj_PRJNA549138_Sargassum-muticum X
+bioprj_PRJNA553831_Acanthephyra-purpurea X
+bioprj_PRJNA590458_Dascyllus-trimaculatus X

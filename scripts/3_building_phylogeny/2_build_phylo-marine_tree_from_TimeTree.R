@@ -25,7 +25,7 @@ setwd("/Users/rachel/divdiv")
 
 # load in data -----------
 load('data/phylo/inputs_and_working/TimeTree_140K_NCBI_Taxon_IDs-withtaxizeinfo.Robj') #TimeTree plus tacked on df of looked up rank info/names from taxize
-missing.spp <- read.csv('data/phylo/missing_species_to_add_in.csv') #list of species not in TimeTree that we need to add in
+missing.spp <- read.csv('data/phylo/inputs_and_working/missing_species_to_add_in.csv') #list of species not in TimeTree that we need to add in
 #get master spreadsheet from Drive of species we want / that are "in" analyses
 ourspp <- googledrive::shared_drive_find(pattern = "^divdiv$")
 ourspp <- googledrive::drive_ls(path = ourspp, pattern = "working_datasheets", recursive = FALSE)

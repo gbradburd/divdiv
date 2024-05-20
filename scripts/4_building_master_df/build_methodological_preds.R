@@ -12,46 +12,65 @@ gc()
 
 setwd("/Users/rachel/divdiv")
 sampkeypath = "/Users/rachel/divdiv/data/all_samplenamekeys"
-popgenpath = "/Users/rachel/divdiv/data/popgen/input_and_working/ALL_r80_popgen_data"
+wmpath = "/Users/rachel/divdiv/data/popgen/input_and_working/ALL_r80_gendiv_data/"
 
 #get samp count and mean raw read count
 sampkeys <- list.files(path = sampkeypath,
                        pattern = "samplenamekey*",
                        full.names = TRUE)
 #get list of samples retained for popgen/gendiv calcs (so we only calc mean_raw_read_cnt for samples we used/kept in end)
-popgen <- list.files(path = popgenpath, 
-                     pattern="popgenstats.0.5", 
-                     full.names = TRUE)
+wm <- list.files(path = wmpath, 
+                 pattern="initPars", 
+                 full.names = TRUE)
 
-df <- data.frame(run_name = NA, n_samples = NA, mean_raw_read_cnt = NA)
-for (i in 1:length(popgen)) {
+df <- data.frame(run_name = NA, n_samples = NA, mean_raw_read_cnt = NA, read_type = NA)
+for (i in 1:length(wm)) {
   
-  popgenFile <- popgen[i]
-  load(popgenFile)
-  if (dim(popgenstats$pwp)[1] != dim(popgenstats$pwp)[2]) {"error - pwp dims are not the same"}
-  n_samples = dim(popgenstats$pwp)[1]
-  samps <- rownames(popgenstats$pwp)
+  wmFile <- wm[i]
+  load(wmFile)
+  if (dim(initPars$parHom)[1] != dim(initPars$parHom)[2]) {"error - matrix dims are not the same"}
+  n_samples = dim(initPars$parHom)[1]
+  samps <- rownames(initPars$parHom)
   
-  dataset = popgenFile %>% strsplit(., "/") %>% as.data.frame() %>% .[nrow(.),] %>% 
-    strsplit(., "\\.") %>% as.data.frame() %>% .[4,]
-  run_name = dataset %>% gsub("_popgenstats","",.) %>% strsplit(., "_") %>% unlist() %>% .[1:3] %>% 
+  dataset = wmFile %>% strsplit(., "/") %>% as.data.frame() %>% .[nrow(.),] %>% 
+    gsub("WMfitwishart-","",.) %>% gsub("_initPars.Robj","",.)
+  run_name = dataset %>% strsplit(., "_") %>% unlist() %>% .[1:3] %>% 
     paste(., sep="", collapse="_")
   
   sampkeyFile <- paste0(sampkeypath,"/samplenamekey-",run_name,".txt")
   sampkeyFile <- read.delim(sampkeyFile)
   sampkeyFile <- sampkeyFile %>% filter(sampid_assigned_for_bioinf %in% samps)
   mean_raw_read_cnt = mean(sampkeyFile$total_reads_written_to_final_fastq)
-  df.i <- data.frame(run_name = run_name, n_samples = n_samples, mean_raw_read_cnt = mean_raw_read_cnt)
+  read_type_sra = unique(sampkeyFile$read_type_sra)
+  df.i <- data.frame(run_name = run_name, n_samples = n_samples, 
+                     mean_raw_read_cnt = mean_raw_read_cnt, 
+                     read_type = read_type_sra)
   df <- rbind(df, df.i)
   
 }
 df <- df %>% filter(is.na(run_name)==F)
 
+#check for datasets with mixed read type
+df %>% dplyr::select(run_name, read_type) %>% distinct() %>% group_by(run_name) %>%  
+  mutate(n=1:n()) %>% mutate(max = max(n)) %>% 
+  mutate(check = ifelse(max > 1, "mixed","not mixed")) %>%
+  filter(check == "mixed")
+#assign these mixed read type
+mixed <- df %>% dplyr::select(run_name, read_type) %>% distinct() %>% group_by(run_name) %>%  
+  mutate(n=1:n()) %>% mutate(max = max(n)) %>% 
+  mutate(check = ifelse(max > 1, "mixed","not mixed")) %>%
+  filter(check == "mixed") %>% dplyr::select(run_name) %>% distinct()
+
+df <- df %>% mutate(read_type = ifelse(run_name %in% mixed$run_name, "SINGLE AND PAIRED", read_type)) %>% 
+  distinct()
+
+
 
 #get read length
 readl <- read.csv("data/methodological/input_and_working/master_bookkeeping_sheet-preStacks.csv") %>% 
-  dplyr::select(run_name, trimlength) %>% 
-  rename("read_length" = "trimlength")
+  dplyr::select(run_name, trimlength, adapter_names_to_remove) %>% 
+  rename("read_length" = "trimlength") %>% 
+  rename("name_of_adapter_removed" = "adapter_names_to_remove")
 
 df <- merge(df, readl, by = "run_name", all.x = T)
 
@@ -120,6 +139,7 @@ locusd <- locusd %>% filter(is.na(run_name)==F)
 
 #merge
 df <- merge(df, locusd, by = "run_name", all.x = T, all.y = T)
+df <- df %>% na.omit()
 
 #save
 write.csv(df, "data/methodological/methodological_predictors-wide.csv", row.names = FALSE)

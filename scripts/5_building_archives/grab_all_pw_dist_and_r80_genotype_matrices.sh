@@ -2,11 +2,10 @@
 
 #define variables
 list_of_datasets=list-allfinal115.txt
-#list_of_datasets=list-test.txt
 storagenode=divdiv_datafiles: 
 #note - storagenode needs a / at end if it's a non Google Drive file path
-outdirA=/Users/rachel/divdiv/data/popgen/input_and_working/ALL_r80_gendiv_data
-outdirB=/Users/rachel/divdiv/data/popgen/input_and_working/ALL_r80_popgen_data
+outdirA=/Users/rachel/divdiv/data/dataforpub/all_pairwise_distance_matrices
+outdirB=/Users/rachel/divdiv/data/dataforpub/all_r80_genotype_matrices
 
 mkdir -p $outdirA
 mkdir -p $outdirB
@@ -42,15 +41,12 @@ do
 		fullr80params="littlem_"${littlem}"_bigm_"${bigm}"_n"${n}"_"${nname}
 		echo "fullr80params: $fullr80params"
 
-		rclone copy divdiv_datafiles:$run_name/gendiv_data --include "WM*${fullr80params}*pars*" $outdirA
-		rclone copy divdiv_datafiles:$run_name/gendiv_data --include "WM*${fullr80params}*initPars*" $outdirA
-		rclone copy divdiv_datafiles:$run_name/popgen --include "popgenstats.0.5.*${fullr80params}*" $outdirB
+		rclone copy divdiv_datafiles:$run_name/location_data --include "max_and_pw_dists*${run_name}*" $outdirA
+		rclone copy divdiv_datafiles:$run_name/popgen --include "gt.0.5.${run_name}_stacks_${fullr80params}*" $outdirB
 	fi
 	
 	echo " "
 
 done < ../master_keys/$list_of_datasets
-
-
 
 

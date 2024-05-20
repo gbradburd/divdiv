@@ -17,7 +17,7 @@ ram_per_cpu=66G #amount of RAM to request/use per CPU
 time=168:00:00
 
 #list_of_datasets=list-allfinal115.txt #name of dataset that we want to process
-list_of_datasets=list-redo2024.txt #name of dataset that we want to process
+list_of_datasets=list-final88.txt #name of dataset that we want to process
 
 nPCs=4 #number of principal component axes to save
 minpropindivsscoredin=0.5 #percent of indivs that a locus must be present in to save
@@ -42,8 +42,8 @@ do
 
 	#define file paths
 	indir=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen/$run_name/genetic_data
-	outdir=$storagenode/$run_name/popgen
-	figdir=$storagenode/popgen-figures
+	outdir=/mnt/scratch/rhtoczyd/$run_name/popgen
+	figdir=/mnt/scratch/rhtoczyd/popgen-figures
 	keysdir=/mnt/research/Fitz_Lab/bradburd/rht/divdiv_working_popgen/$run_name #place where samplenamekey and lat long tables of genetic pts live
 
 	##if directory to downloaded files doesn't contain at least 1 .gz file; print warning, otherwise process the files that are there

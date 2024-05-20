@@ -3,6 +3,9 @@
 
 # timetree 2015 version originally downloaded from: http://timetree.org/book near bottom of page
 # taxonomic lineage info came from looking tip labels up using taxize (which accesses NCBI taxonomic database)
+# later/updated version, that was used in final analyses, provided by emailing
+# Adrienne Kasprowicz <akasprowicz@temple.edu> with request
+# received Time Tree v5 beta file TimeTree_140K_NCBI_Taxon_IDs.nwk via email on Jan. 18, 2022
 
 
 #load libraries ------

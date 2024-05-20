@@ -23,10 +23,11 @@
 #define variables
 storagenode=/mnt/scratch/$USER #path to main node to where fastq files live
 
-list_of_datasets=list_of_datasets-stacksround1.txt #name of file that contains the name of all of the directories that we want to process
+list_of_datasets=list-coral.txt #name of file that contains the name of all of the directories that we want to process
 
-samplenamekeydir=/home/rhtoczyd/divdiv/data/all_samplenamekeys #file path where sample name keys live, that specify how to rename sequence files from SRRXXXXX to sample0, sample1, etc. for Stacks pipeline
+samplenamekeydir=/mnt/home/rhtoczyd/divdiv/data/all_samplenamekeys #file path where sample name keys live, that specify how to rename sequence files from SRRXXXXX to sample0, sample1, etc. for Stacks pipeline
 
+popmapdir=/mnt/home/rhtoczyd/divdiv/data/bioinformatics/popmaps #file path to where popmaps live
 
 #for each sample directory of a bioprj/species combo dataset in the list provided, rename fastq files
 
@@ -56,7 +57,7 @@ do
 		echo RUN_ACC_ID is $RUN_ACC_ID
 		
 		#find NCBI sequence ID in sample naming key and get new name for sample
-		new_sample_name=$(grep $RUN_ACC_ID ${samplenamekeydir}/sample_name_key-${run_name}.txt | cut -d$'\t' -f3)
+		new_sample_name=$(grep $RUN_ACC_ID ${samplenamekeydir}/samplenamekey-${run_name}.txt | cut -d$'\t' -f3)
 		echo new_sample_name is $new_sample_name
 		
 		#copy sample from cleaned_reads/ to samples/ and rename it in new location (at which point samples are ready for Stacks)
@@ -73,10 +74,10 @@ do
 	
 	#copy popmap from popmap folder (where R code generated all popmaps) to dir for this dataset ($storagenode/$run_name)
 	#and rename from long name with bioprj/species info to just popmap (so Stacks code will run correctly) 
-	cp ./popmaps/$current_popmap_file_name $storagenode/$run_name/popmap
+	cp $popmapdir/$current_popmap_file_name $storagenode/$run_name/popmap
 	
 	#and store a copy of sample naming key just for this dataset in dir too, insurance policy/good bookkeeping
-	cp ${samplenamekeydir}/sample_name_key-${run_name}.txt $storagenode/$run_name/samplenamekey.txt
+	cp ${samplenamekeydir}/samplenamekey-${run_name}.txt $storagenode/$run_name/samplenamekey.txt
 
 done < ../../master_keys/$list_of_datasets
 

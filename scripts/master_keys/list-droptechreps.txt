@@ -1,0 +1,4 @@
+bioprj_PRJNA348572_Zalophus-wollebaeki X
+bioprj_PRJNA382467_Platichthys-flesus X
+bioprj_PRJNA511386_Ostrea-lurida X
+bioprj_PRJNA379028_Porites-astreoides X

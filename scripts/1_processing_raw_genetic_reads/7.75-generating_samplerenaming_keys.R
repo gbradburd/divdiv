@@ -157,7 +157,7 @@ samps <- samps %>% dplyr::select(link,run_acc_sra,sampid_assigned_for_bioinf,pop
 
 #write out renaming files, per bioprj/sp combo
 samps %>% group_by(link) %>%
-  do(write_delim(., paste(outputdir, "/sample_name_key-bioprj_", unique(.$link), ".txt", sep = ""),
+  do(write_delim(., paste(outputdir, "/samplenamekey-bioprj_", unique(.$link), ".txt", sep = ""),
                  delim = "\t"))
 
 
@@ -179,7 +179,7 @@ list_of_csvs
 #now write out just sampleX and pop columns (not whole df that is in .csv) to final text file for Stacks
 #and deleted the .csvs
 for( file in list_of_csvs ) {
-  temp <- read.csv(paste(popmapdir, file, sep = ""))
+  temp <- read.csv(paste(popmapdir,"/", file, sep = ""))
   file_name <- unique(temp$link)
   temp %>% select(sampid_assigned_for_bioinf,pop) %>% 
     write.table(., 

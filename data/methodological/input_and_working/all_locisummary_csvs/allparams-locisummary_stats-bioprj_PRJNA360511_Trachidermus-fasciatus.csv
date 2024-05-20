@@ -1,0 +1,7 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA360511_Trachidermus-fasciatus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",938,3694,12.55,318,8.60855441256091,178,"3","3","2","nis1lessthanM",1116
+"bioprj_PRJNA360511_Trachidermus-fasciatus","stacks_littlem_3_bigm_3_n3_nequalM",976,3988,12.31,340,8.52557673019057,190,"3","3","3","nequalM",1166
+"bioprj_PRJNA360511_Trachidermus-fasciatus","stacks_littlem_3_bigm_3_n4_nis1morethanM",967,4167,11.97,325,7.79937604991601,181,"3","3","4","nis1morethanM",1148
+"bioprj_PRJNA360511_Trachidermus-fasciatus","stacks_littlem_3_bigm_9_n10_nis1morethanM",1235,4826,14.24,476,9.86324077911314,240,"3","9","10","nis1morethanM",1475
+"bioprj_PRJNA360511_Trachidermus-fasciatus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",985,4298,13.7,421,9.79525360632852,182,"3","9","8","nis1lessthanM",1167
+"bioprj_PRJNA360511_Trachidermus-fasciatus","stacks_littlem_3_bigm_9_n9_nequalM",960,4100,13.8,405,9.87804878048781,175,"3","9","9","nequalM",1135

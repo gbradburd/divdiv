@@ -1,0 +1,10 @@
+"run_name","stacks_params","n.polyloci","n.totalsnps","percent.allcalls.het","total.allcalls.over.50perchet","percent.allcalls.over.50perchet","n.nonpoly","littlem","M","n","type","n.totalloci"
+"bioprj_PRJNA432036_Thunnus-thynnus","stacks_littlem_3_bigm_3_n2_nis1lessthanM",2037,10683,9.12,730,6.83328653000094,272,"3","3","2","nis1lessthanM",2309
+"bioprj_PRJNA432036_Thunnus-thynnus","stacks_littlem_3_bigm_3_n3_nequalM",1947,10057,8.94,700,6.96032614099632,262,"3","3","3","nequalM",2209
+"bioprj_PRJNA432036_Thunnus-thynnus","stacks_littlem_3_bigm_3_n4_nis1morethanM",1940,10396,8.88,726,6.98345517506733,262,"3","3","4","nis1morethanM",2202
+"bioprj_PRJNA432036_Thunnus-thynnus","stacks_littlem_3_bigm_6_n5_nis1lessthanM",1985,11232,10.06,919,8.18198005698006,274,"3","6","5","nis1lessthanM",2259
+"bioprj_PRJNA432036_Thunnus-thynnus","stacks_littlem_3_bigm_6_n6_nequalM",1975,11054,10.02,920,8.3227790844943,272,"3","6","6","nequalM",2247
+"bioprj_PRJNA432036_Thunnus-thynnus","stacks_littlem_3_bigm_6_n7_nis1morethanM",1964,11033,9.95,876,7.93981691289767,271,"3","6","7","nis1morethanM",2235
+"bioprj_PRJNA432036_Thunnus-thynnus","stacks_littlem_3_bigm_9_n10_nis1morethanM",1946,11667,11.22,1190,10.1997085797549,271,"3","9","10","nis1morethanM",2217
+"bioprj_PRJNA432036_Thunnus-thynnus","stacks_littlem_3_bigm_9_n8_nis1lessthanM",1952,11368,11.21,1178,10.3624208304011,270,"3","9","8","nis1lessthanM",2222
+"bioprj_PRJNA432036_Thunnus-thynnus","stacks_littlem_3_bigm_9_n9_nequalM",1929,11440,11.06,1145,10.0087412587413,265,"3","9","9","nequalM",2194
