@@ -31,6 +31,10 @@ df <- trts.og %>% filter(organism_biosamp %in% master$organism_biosamp) %>%
 #save
 write.csv(df, paste0(outdir, "/final_biotic_traits.csv"), row.names = FALSE)
 
+#used combo of an Rmarkdown script and quite a bit of manual processing to add 
+#numerical citation value columns to final_biotic_traits.csv and 
+#generate a full citation text doc
+
 #notes:
 
 #name matchup between trait work (and master df) and pred names in final paper
