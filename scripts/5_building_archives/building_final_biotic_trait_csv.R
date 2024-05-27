@@ -11,7 +11,7 @@ indir = "/Users/rachel/divdiv"
 outdir = "/Users/rachel/divdiv/data/biotic"
 
 #get cleaned final trait data
-trts.og <- read.csv(paste0(indir,"/data/biotic/inputs_and_working/marinerds_traits_01-30-2024.csv"))
+trts.og <- read.csv(paste0(indir,"/data/biotic/inputs_and_working/marinerds_traits_05-19-2024.csv"))
 
 #get final master df used in analyses
 master <- read.csv(paste0(indir,"/data/master_df.csv")) %>% 
