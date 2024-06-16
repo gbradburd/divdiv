@@ -29,7 +29,8 @@ df <- trts.og %>% filter(organism_biosamp %in% master$organism_biosamp) %>%
                 Body_Size, Fecundity_EggSize)
 
 #save
-write.csv(df, paste0(outdir, "/final_biotic_traits.csv"), row.names = FALSE)
+write.csv(df, paste0(outdir, "/final_biotic_traits_for_suppmat.csv"), row.names = FALSE)
+
 
 #used combo of an Rmarkdown script and quite a bit of manual processing to add 
 #numerical citation value columns to final_biotic_traits.csv and 
