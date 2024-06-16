@@ -192,7 +192,8 @@ df <- merge(df, biosamps, by = "run_name", all.x = T)
 #final clean up and renaming
 out <- df %>% mutate(sample_latlon_source = ifelse(latlong_source == "ncbi", "NCBI BioSample database","Crandall et al 2023 datathon"))
 out %>% group_by(sample_latlon_source,latlong_source) %>% summarise(n=n())
-out <- out %>% rename("species_name_biosample" = "organism_biosamp",
+out <- out %>% rename("project_acc_BioProject"="project_acc_bioprj",
+                      "species_name_BioSample" = "organism_biosamp",
                       "DOI_associated_publication" = "link_to_published_citation") %>%
   dplyr::select(-datathon_project_index, -link, -latlong_source)
 
