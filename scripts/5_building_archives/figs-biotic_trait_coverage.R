@@ -41,8 +41,8 @@ trtcov <- merge(trtcov, names, by = "trait", all.x = T, all.y = T)
 #plot
 trtcov %>%
   ggplot() + 
-  geom_hline(yintercept = 50, colour = "blue", linetype = "dashed", size = 0.5) +
-  geom_hline(yintercept = 80, colour = "blue", linetype = "dashed", size = 0.5) +
+  geom_hline(yintercept = 50, colour = "blue", linetype = "dashed", linewidth = 0.5) +
+  geom_hline(yintercept = 80, colour = "blue", linetype = "dashed", linewidth = 0.5) +
   geom_point(aes(x = reorder(trait.clean, desc(trait.clean)), y = percentage_coverage), 
              shape = 21, colour = "black", size = 5, fill = "black") +
   labs(y = "Trait coverage across all species (%)",
@@ -70,8 +70,8 @@ spcov <- df %>%
 #plot
 spcov %>%
   ggplot() +
-  geom_hline(yintercept = 50, colour = "blue", linetype = "dashed", size = 0.5) +
-  geom_hline(yintercept = 80, colour = "blue", linetype = "dashed", size = 0.5) +
+  geom_hline(yintercept = 50, colour = "blue", linetype = "dashed", linewidth = 0.5) +
+  geom_hline(yintercept = 80, colour = "blue", linetype = "dashed", linewidth = 0.5) +
   geom_point(aes(x = reorder(organism_biosamp, desc(organism_biosamp)), y = spcov), 
              shape = 21, colour = "black", fill = "black", size = 2) +
   coord_flip() +

@@ -143,10 +143,13 @@ merge(sampkeys.slim %>% separate(., identifiers_biosamp, into = c("x","y"), sep 
       by = "link",
       all.x = T, all.y = T) %>% 
   filter(run_name %in% master$run_name) %>% 
-  mutate(check = ifelse(n.biosamps== n_samples, "match", "not match")) %>% 
+  mutate(check = ifelse(n.biosamps== n_samples, "match", "not match")) %>%
+  arrange(desc(check)) %>% 
   View()
 #okay PRJNA281764_Homarus-americanus has fewer biosamp IDS than SRR IDS, 
-#authors used biosamp to refer to population (rather than individual lobsters)
+#authors used biosamp to refer to population (rather than individual lobsters),
+#should be the only entry with check = "not match"
+
 
 
 
@@ -183,17 +186,17 @@ df <- merge(df, biosamps, by = "run_name", all.x = T)
 
 
 
-# !!! START HERE !!!
 
-#keep final cols we want and do any renaming, save! done!
+# save -----------
 
-#rebuild master df
-#commit/push everything
+#final clean up and renaming
+out <- df %>% mutate(sample_latlon_source = ifelse(latlong_source == "ncbi", "NCBI BioSample database","Crandall et al 2023 datathon"))
+out %>% group_by(sample_latlon_source,latlong_source) %>% summarise(n=n())
+out <- out %>% rename("species_name_biosample" = "organism_biosamp",
+                      "DOI_associated_publication" = "link_to_published_citation") %>%
+  dplyr::select(-datathon_project_index, -link, -latlong_source)
 
-
-
-
-
+write.csv(out, "data/bioinformatics/final_NCBI_genetic_dataset_metadata.csv", row.names = FALSE)
 
 
 
