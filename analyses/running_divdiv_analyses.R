@@ -22,7 +22,7 @@ source("divdiv_analysis_functions.R")
 
 #specify global code options
 nNodes <- 15
-nIter <- 2e4
+nIter <- 3e4
 interactive <- FALSE
 
 ################################
@@ -141,7 +141,7 @@ x <- list(c("PLD_point2","isBenthic"))
 outs <- divdivAnalyses(z=z,X=x,
 						y="div",phyStr=phyStr,mod=betaPhyReg,
 						outName="partD",nIter=nIter,parallel=TRUE,
-						nNodes=nNodes,filterKeep=NULL,runNames=c("PLD_point2","isBenthic"))
+						nNodes=nNodes,filterKeep=NULL,runNames=c("PLD_point_and_isBenthic"))
 
 vizAllOuts(outs=outs,predNames="PLD_point2",sampPhy=sampPhy,outName="partD",multiPred=TRUE,sampCols=sampCols)
 
@@ -171,10 +171,11 @@ vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partE",multiPr
 
 mammalMRCA <- ape::getMRCA(sampPhy,c(which(sampPhy$tip.label=="Halichoerus grypus atlantica"),which(sampPhy$tip.label=="Phocoena sinus")))
 isMammal <- phangorn::Descendants(sampPhy,mammalMRCA,type="tips")[[1]]
-birdMRCA <- ape::getMRCA(sampPhy,c(which(sampPhy$tip.label=="Aythya marila"),which(sampPhy$tip.label=="Pygoscelis papua")))
+birdMRCA <- ape::getMRCA(sampPhy,c(which(sampPhy$tip.label=="Aythya marila"),which(sampPhy$tip.label=="Caretta caretta")))
 isBird <- phangorn::Descendants(sampPhy,birdMRCA,type="tips")[[1]]
 isPlant <- c(which(z$species=="Rhizophora_mangle"),
-			 which(z$species=="Laguncularia_racemosa")) # which(z$species=="Sargassum_muticum")
+			 which(z$species=="Laguncularia_racemosa"),
+			 which(z$species=="Sargassum_muticum"))
 primarilyMarine <- (1:nrow(z))[-c(isMammal,isBird,isPlant)]
 
 

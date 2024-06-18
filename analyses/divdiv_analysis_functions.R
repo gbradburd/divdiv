@@ -35,7 +35,8 @@ divdivAnalysis <- function(z,x,y,phyStr,mod,nIter=1e4,filterKeep=NULL){
 							iter=nIter,
 							thin=nIter/500,
 							chains=1,
-							control=setNames(list(15),"max_treedepth"))
+							control=setNames(list(15),"max_treedepth"),
+							seed=123)
 	out <- list("db"=db,"fit"=fit)
 	return(out)
 }
