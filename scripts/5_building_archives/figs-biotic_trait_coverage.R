@@ -1,65 +1,93 @@
+#idea: create suppmat figures to show biotic trait coverage 
 
-# copied from another script - need to review/build out to be stand alone
+#load libraries -------
+library(dplyr)
+library(tidyr)
+library(ggplot2)
+
+rm(list=ls())
+gc()
 
 
-# calculate trait and species coverage ------
+setwd("/Users/rachel/divdiv")
 
-#trait coverage
+#define dir to save figs in
+figdir = "suppmat_figures"
+
+# get final, clean trait data we used
+df <- read.csv("data/biotic/cleaned_numeric_biotic_traits.csv") %>% 
+  dplyr::select(organism_biosamp, isBenthic, Body_Size, Generational_Structure, 
+                Fecundity_EggSize, PLD_point2, ReturnToSpawningGround,
+                Larval_feeding, Spawning_mode, isPlanktonic_atanypoint)
+
+
+
+# SUPP FIGURE X - trait coverage by trait ------
+
+#calc trait coverage by trait
 total = nrow(df)
-trtcov <- df %>% dplyr::select(-organism_biosamp,-PLD_point,-PLD_Min, -PLD_Max) %>%
+trtcov <- df %>% dplyr::select(-organism_biosamp) %>%
   summarise(across(everything(), ~ ((total - sum(is.na(.x)))/total)*100)) %>% 
-  pivot_longer(., names_to = "trait", values_to = "percentage_coverage", cols = 1:ncol(.)) %>%
-  mutate(trait_type = ifelse(trait %in% c("PLD_point2", "Fecundity_EggSize", 
-                                          "Body_Size"), 
-                             "green", "additional")) %>% 
-  mutate(trait_type = ifelse(trait %in% c("isPlanktonic_atanypoint", "Spawning_mode", 
-                                          "Larval_feeding", "ReturnToSpawningGround",
-                                          "Generational_Structure", "isBenthic", "Large_Adult_Range"),
-                             "yellow", trait_type)) %>% 
-  mutate(trait_type = factor(trait_type, levels = c("green", "yellow", "additional")))
+  pivot_longer(., names_to = "trait", values_to = "percentage_coverage", cols = 1:ncol(.))
 
-#species coverage
-spcov.all <- df %>%
-  rowwise(organism_biosamp) %>% summarise(spcov.all = (((ncol(.)-1) - (sum(is.na(cur_data()))))/(ncol(.)-1))*100) %>% ungroup()
+names <- data.frame(trait = trtcov$trait, trait.clean = c("Benthicity","Body size",
+                                                          "Generational structure",
+                                                          "Egg size","Pelagic larval duration",
+                                                          "Philopatry","Larval provisioining",
+                                                          "Spawning mode","Planktonicity"))
 
-spcov <- df %>% 
-  dplyr::select(organism_biosamp, PLD_point2, isPlanktonic_atanypoint, 
-                Spawning_mode, Larval_feeding, ReturnToSpawningGround, Fecundity_EggSize, Body_Size, Generational_Structure,
-                isBenthic, Large_Adult_Range) %>%
-  rowwise(organism_biosamp) %>% summarise(spcov.greenandyellow = (((ncol(.)-1) - (sum(is.na(cur_data()))))/(ncol(.)-1))*100) %>% ungroup()
+trtcov <- merge(trtcov, names, by = "trait", all.x = T, all.y = T)
 
 #plot
-trtcov %>% 
-  arrange(desc(trait_type), desc(trait)) %>% mutate(order = 1:n()) %>% 
-  mutate(trait = reorder(trait, order)) %>%  
+trtcov %>%
   ggplot() + 
-  geom_hline(yintercept = 50, colour = "red", alpha = 0.5, linetype = "dashed") +
-  geom_hline(yintercept = 80, colour = "red", alpha = 0.5, linetype = "dashed") +
-  geom_point(aes(x = trait, y = percentage_coverage, fill = trait_type), 
-             shape = 21, colour = "black", size = 3) +
-  scale_fill_manual(values = c("green","yellow","black")) +
-  labs(fill = "Trait priority",
-       y = "Trait coverage (%)",
+  geom_hline(yintercept = 50, colour = "blue", linetype = "dashed", linewidth = 0.5) +
+  geom_hline(yintercept = 80, colour = "blue", linetype = "dashed", linewidth = 0.5) +
+  geom_point(aes(x = reorder(trait.clean, desc(trait.clean)), y = percentage_coverage), 
+             shape = 21, colour = "black", size = 5, fill = "black") +
+  labs(y = "Trait coverage across all species (%)",
        x = "Trait") +
   coord_flip() +
-  theme_bw()
+  theme_bw() +
+  theme(axis.text = element_text(size=9.5),
+        axis.title = element_text(size=11),
+        panel.grid.minor.y = element_blank(),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank())
 
 ggsave(paste0(figdir, "/biotic_trait_coverage-bytrait.pdf"), width = 8, height = 5, units = c("in"))
 
 
 
+# SUPP FIGURE X - trait coverage by species ------------
+
+#calc trait cov by species
+spcov <- df %>%
+  rowwise(organism_biosamp) %>% 
+  summarise(spcov = (((ncol(.)-1) - (sum(is.na(cur_data()))))/(ncol(.)-1))*100) %>% 
+  ungroup()
+
+#plot
 spcov %>%
   ggplot() +
-  geom_hline(yintercept = 50, colour = "red", alpha = 0.5, linetype = "dashed") +
-  geom_hline(yintercept = 80, colour = "red", alpha = 0.5, linetype = "dashed") +
-  geom_point(aes(x = organism_biosamp, y = spcov.greenandyellow, fill = "turquoise2"), shape = 21, colour = "black", size = 2.5) +
-  scale_fill_identity(guide = "legend", name = "Traits included",
-                      breaks = c("black", "green", "yellow", "turquoise2"),
-                      labels = c("all", "green", "yellow", "green + yellow")) +
+  geom_hline(yintercept = 50, colour = "blue", linetype = "dashed", linewidth = 0.5) +
+  geom_hline(yintercept = 80, colour = "blue", linetype = "dashed", linewidth = 0.5) +
+  geom_point(aes(x = reorder(organism_biosamp, desc(organism_biosamp)), y = spcov), 
+             shape = 21, colour = "black", fill = "black", size = 2) +
   coord_flip() +
   theme_bw() +
-  theme(axis.text.y = element_text(size = 3.5)) +
+  theme(axis.text.y = element_text(size = 3.5),
+        axis.text.x = element_text(size=9.5),
+        axis.title = element_text(size=11),
+        panel.grid.minor.y = element_blank(),
+        panel.grid.major.y = element_line(linewidth = 0.2),
+        panel.grid.major.x = element_blank(),
+        panel.grid.minor.x = element_blank(),
+        axis.ticks.y = element_line(linewidth = 0.3)) +
   labs(y = "Trait coverage per species (%)",
        x = "Species")
 
 ggsave(paste0(figdir, "/biotic_trait_coverage-byspecies.pdf"), width = 8, height = 5, units = c("in"))
+
+
+

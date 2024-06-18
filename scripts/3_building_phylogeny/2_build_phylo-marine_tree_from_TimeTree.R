@@ -38,7 +38,7 @@ ourspp <- ourspp %>%
   dplyr::select(organism_biosamp, kingdom_worms, phylum_worms, class_worms, order_worms, family_worms, genus_worms) %>%
   mutate(organism_biosamp = unlist(organism_biosamp))
 str(ourspp)
-  #120 species as of last time ran this script
+  #119 species as of last time ran this script
 #update name of Exaiptasia pallida to Exaiptasia diaphana (now current/accepted name)
 ourspp$organism_biosamp[ourspp$organism_biosamp == "Exaiptasia pallida"] = "Exaiptasia diaphana" 
 
@@ -308,8 +308,34 @@ p %<+% lbs + #leftjoin labels for aesthetics onto phy
         axis.ticks.x = element_line(), #build scale bar
         axis.text.x = element_text(size = 2)) #plot ranges between 0 and 1
 
+#for viz, subset to just species in final analyses
+using <- read.csv("data/master_df.csv") %>% mutate(organism_biosamp = gsub("_"," ",species))
+phy.using <- keep.tip(phy,using$organism_biosamp)
+order <- phy.using$tip.label %>% as.data.frame() %>% rename("organism_biosamp"=".") %>% mutate(tiporder = 1:n())
+lbs.using <- lbs %>% filter(organism_biosamp %in% using$organism_biosamp) %>% dplyr::select(-tiporder)
+lbs.using <- merge(lbs.using,order,by="organism_biosamp",all.x = TRUE)
+lbs.using <- lbs.using %>% arrange(tiporder)
+
+p.using <- ggtree(phy.using, size=0.2) #make object and set line thickness
+p.using %<+% lbs.using + #leftjoin labels for aesthetics onto phy
+  geom_tiplab(aes(fill = sub_category),
+              size = 1.6, #text size
+              color = "black", # color for label font
+              geom = "label",  # labels not text
+              label.padding = unit(0.03, "lines"), # amount of padding around the labels
+              label.size = 0,
+              fontface = "bold") + # size of label border
+  scale_x_continuous(limits = c(0,1800), breaks = seq(0,max(phy$edge.length)+200,200), expand = c(0, 0)) + #change limits max to make space for tip labels
+  scale_fill_manual(name = "Tip status", values = c("#E5446D","#E8871E","#49D49D","#49D49D","#49D49D","#6CBEED")) + 
+  theme(legend.position = c(0.3,0.85),
+        legend.text = element_text(size = 5),
+        legend.title = element_text(size = 5, ),
+        axis.line.x = element_line(size = 0.2), #build scale bar
+        axis.ticks.x = element_line(), #build scale bar
+        axis.text.x = element_text(size = 2)) #plot ranges between 0 and 1
+lbs.using %>% group_by(sub_category) %>% summarise(n=n())
 #have to save manually using export -> Save as PDF, point and click
-#8.5 x 6 inches, "/figures/phy_115_divdiv_species.pdf"
+#8.5 x 6 inches, "/figures/phy93.pdf"
 
 #save phy as Robj ---------------
 save(phy, file="data/phylo/divdiv_phy_from_timetreebeta5.Robj")

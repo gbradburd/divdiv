@@ -17,7 +17,7 @@ gc()
 #define path to save outputs to
 workingdir = "/Users/rachel/divdiv/data/biotic/inputs_and_working"
 outdir = "/Users/rachel/divdiv/data/biotic"
-figdir = "/Users/rachel/divdiv/figures"
+
 
 
 # get trait data -------
@@ -97,7 +97,7 @@ write.csv(df, file = paste0(workingdir,"/marinerds_traits_05-19-2024.csv"), row.
 
 
 # convert trait data to numerically coded for analysis/modeling ---------------
-rm(list = ls() %>% stringr::str_subset(., c("workingdir|outdir|figdir"), negate = T))
+rm(list = ls() %>% stringr::str_subset(., c("workingdir|outdir"), negate = T))
 gc()
 
 df <- read.csv(paste0(workingdir,"/marinerds_traits_05-19-2024.csv"))

@@ -11,7 +11,7 @@ indir = "/Users/rachel/divdiv"
 outdir = "/Users/rachel/divdiv/data/biotic"
 
 #get cleaned final trait data
-trts.og <- read.csv(paste0(indir,"/data/biotic/inputs_and_working/marinerds_traits_01-30-2024.csv"))
+trts.og <- read.csv(paste0(indir,"/data/biotic/inputs_and_working/marinerds_traits_05-19-2024.csv"))
 
 #get final master df used in analyses
 master <- read.csv(paste0(indir,"/data/master_df.csv")) %>% 
@@ -29,7 +29,12 @@ df <- trts.og %>% filter(organism_biosamp %in% master$organism_biosamp) %>%
                 Body_Size, Fecundity_EggSize)
 
 #save
-write.csv(df, paste0(outdir, "/final_biotic_traits.csv"), row.names = FALSE)
+write.csv(df, paste0(outdir, "/final_biotic_traits_for_suppmat.csv"), row.names = FALSE)
+
+
+#used combo of an Rmarkdown script and quite a bit of manual processing to add 
+#numerical citation value columns to final_biotic_traits.csv and 
+#generate a full citation text doc
 
 #notes:
 
