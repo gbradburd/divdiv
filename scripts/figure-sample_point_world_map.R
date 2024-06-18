@@ -5,7 +5,6 @@
 #load libraries -------
 library(sf)      
 library(ggplot2)
-library(data.table)
 library(dplyr)
 library(tidyr)
 
@@ -13,10 +12,12 @@ rm(list=ls())
 gc()
 
 
+setwd("/Users/rachel/divdiv/")
+
 
 # load files for world map --------
 
-load("/Users/rachel/divdiv/data/abiotic/input_and_working/earth_map_objects.RData")
+load("data/abiotic/input_and_working/earth_map_objects.RData")
 
 ## This will load 5 R objects:
 ##   lbl.X & lbl.Y are two data.frames that contain labels for graticule lines
@@ -38,26 +39,28 @@ ggplot() +
 # get the genetic sample points we want to plot on map ----------
 
 #get master list of datasets we're using
-using <- read.csv("/Users/rachel/divdiv/data/master_df.csv")
-using <- using %>% dplyr::select(species,link) %>% mutate(link = gsub("bioprj_","",link))
+using <- read.csv("data/master_df.csv") %>% mutate(link = gsub("bioprj_","",run_name))
+using <- using %>% dplyr::select(species,link)
 
 #get lat/longs
-datasets <- list.files(path = "/Users/rachel/divdiv/data/abiotic/input_and_working/lat_long_tables_per_dataset",
+datasets <- list.files(path = "data/abiotic/input_and_working/lat_long_tables_per_dataset",
                        pattern = "lat_long_table", full.names = TRUE)
 sites <- data.frame("link"=NA, "run_acc_sra"=NA, "lat"=NA, "long"=NA, "coordinateUncertaintyInMeters"=NA, "origin"=NA)
 for ( d in datasets ) {
   out <- read.delim(d)
   sites <- rbind(sites,out)
 }
-sites <- sites %>% filter(is.na(link)==F)
+sites <- sites %>% filter(is.na(link)==F) %>% dplyr::rename("lon" = "long")
 
-#keep ones we want
-sites <- sites %>% filter(link %in% using$link) %>% rename("lon" = "long")
+#keep ones we want and pull out species name
+sites <- sites %>% filter(link %in% using$link) %>% 
+  separate(., link, into = c("garbage","species"), sep = "_", remove = F) %>% 
+  dplyr::select(-garbage) %>% mutate(species = gsub("-","_",species))
 
 #add clade groups on for coloring
-taxcolorkey <- read.csv("/Users/rachel/divdiv/data/master_tax_color_key.csv")
-sites <- merge(sites %>% separate(., link, into = c("garbage","species"), sep = "_", remove = F) %>% dplyr::select(-garbage) %>% mutate(species = gsub("-","_",species)), 
-               taxcolorkey %>% mutate(species = gsub(" ","_",species)), 
+taxcolorkey <- read.csv("data/master_tax_color_key.csv") %>% mutate(species = gsub(" ","_",species))
+sites <- merge(sites, 
+               taxcolorkey, 
                by = "species", all.x = T)
 
 
@@ -77,15 +80,15 @@ NE_box.prj <- sf::st_transform(NE_box, crs = PROJ)
 gls.prj <- sf::st_transform(gls, crs = PROJ)
 
 ## project long-lat coordinates columns for data frames
-lbl.X.prj <- st_as_sf(lbl.X, coords = c("lon", "lat"), crs = PROJ)
-lbl.Y.prj <- st_as_sf(lbl.Y, coords = c("lon", "lat"), crs = PROJ)
+lbl.X.prj <- sf::st_as_sf(lbl.X, coords = c("lon", "lat"), crs = PROJ)
+lbl.Y.prj <- sf::st_as_sf(lbl.Y, coords = c("lon", "lat"), crs = PROJ)
 
 #project sites
 PROJ.pts <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs" #EPSG:4326, WGS 84
 #first make dataframe into spatial object, using projection points are in
-sites.prj <- st_as_sf(sites, coords = c("lon", "lat"), crs = PROJ.pts)
+sites.prj <- sf::st_as_sf(sites, coords = c("lon", "lat"), crs = PROJ.pts)
 #then transform projection to match other map layers
-sites.prj <- st_transform(sites.prj, crs = PROJ)
+sites.prj <- sf::st_transform(sites.prj, crs = PROJ)
 
 
 
@@ -109,7 +112,7 @@ ggplot() +
           colour = "gray50", fill = "white", size = .25) +
   
   ## add genetic sample points
-  geom_sf(data = st_jitter(sites.prj, 5000), aes(fill = taxclade), shape=21, colour="black", size = 4, alpha = 0.5) +
+  geom_sf(data = sf::st_jitter(sites.prj, 5000), aes(fill = taxclade), shape=21, colour="black", size = 4, alpha = 0.5) +
   scale_fill_manual(values = c("#A6CEE3","#33A02C","#FF7F00","#FDBF6F","#FB9A99","#B2DF8A","#E31A1C","#C2C0C0","#6A3D9A","#1F78B4","#CAB2D6")) +
 
   ## Set empty theme
@@ -123,7 +126,7 @@ ggplot() +
     plot.background = element_rect(fill = "transparent")
   )
 
-ggsave(filename = "/Users/rachel/divdiv/figures/world_map_genetic_pts.pdf", width = 30, height = 15, units = c("cm"))
+ggsave(filename = "figures/world_map_genetic_pts.pdf", width = 30, height = 15, units = c("cm"))
 
 
 

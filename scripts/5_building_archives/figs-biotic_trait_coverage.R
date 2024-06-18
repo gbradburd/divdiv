@@ -12,7 +12,7 @@ gc()
 setwd("/Users/rachel/divdiv")
 
 #define dir to save figs in
-figdir = "figures"
+figdir = "suppmat_figures"
 
 # get final, clean trait data we used
 df <- read.csv("data/biotic/cleaned_numeric_biotic_traits.csv") %>% 

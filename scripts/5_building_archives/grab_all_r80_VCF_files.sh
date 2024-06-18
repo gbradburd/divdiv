@@ -45,4 +45,6 @@ done < ./$list_of_datasets
 
 #run locally
 #rsync -avP rhtoczyd@greatlakes.arc-ts.umich.edu:/nfs/turbo/lsa-bradburd/divdiv_datafiles/dataforpub /Users/rachel/divdiv/data
-
+#when ready, to compress, run locally:
+#gzip -v -r /Users/rachel/divdiv/data/dataforpub/all_r80_VCFs/*
+#gzip -v -r /Users/rachel/divdiv/data/dataforpub/all_r80_full_loci_fasta/*
