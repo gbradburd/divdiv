@@ -35,7 +35,8 @@ divdivAnalysis <- function(z,x,y,phyStr,mod,nIter=1e4,filterKeep=NULL){
 							iter=nIter,
 							thin=nIter/500,
 							chains=1,
-							control=setNames(list(15),"max_treedepth"))
+							control=setNames(list(15),"max_treedepth"),
+							seed=123)
 	out <- list("db"=db,"fit"=fit)
 	return(out)
 }
@@ -653,13 +654,3 @@ discreteViolPlot <- function(z,nPreds,predName,xAxLabs,logY=FALSE){
 	points(jitter(x),y=y,col="black",bg=z$cladecolor,pch=21,cex=1.7)
 	axis(side=1,at=0:(nPreds-1),labels=xAxLabs)
 }
-
-
-calcRsq <- function(){
-	
-}
-
-
-
-
-

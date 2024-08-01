@@ -42,7 +42,7 @@ write.csv(df, paste0(outdir, "/final_biotic_traits_for_suppmat.csv"), row.names 
 "Generational_Structure" -> "iteroparity"
 "ReturnToSpawningGround" -> "philopatry"
 "Spawning_mode" -> "spawning mode"
-"Larval_feeding" -> "larval feeding"
+"Larval_feeding" -> "planktotrophy"
 "isPlanktonic_atanypoint" -> "planktonicity"
 "isBenthic" -> "benthicity"
 "PLD_point2" -> "PLD"
@@ -71,8 +71,8 @@ Larval_feeding
 "P" = 2
 
 Generational_Structure
-"I" = 1
-"S" = 0
+"I" = 0
+"S" = 1
 
 isBenthic
 "N" = 0

@@ -148,12 +148,6 @@ pdf(file="all_predictors.pdf",width=14,height=10)
 		   valRange=NULL,adj=0.5,logX=FALSE,rounding=0.05)
 dev.off()
 
-################################
-# calculate R^2
-################################
-
-
-
 
 ################################
 # visualize predictor corrleations
