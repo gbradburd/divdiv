@@ -231,6 +231,50 @@ postBetaPlot <- function(outs,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,mult
 			}))
 }
 
+postBetaPlot_allPreds <- function(outs,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,qnt=1,...){
+	recover()
+	betas <- lapply(1:length(predNames),
+				function(i){
+					extract(outs$fit,sprintf("beta[%s]",i),inc_warmup=FALSE,permute=FALSE)[,1,1]
+				})
+	if(stdize){
+		betas <- lapply(1:length(betas),
+						function(i){
+							if(length(unique(outs$db$X[1,])) > 3){
+								betas[[i]] * sd(outs$db$X[1,])
+							} else {
+								betas[[i]]
+							}
+						})
+	}
+	meanBetas <- unlist(lapply(betas,mean))
+	nPredictors <- length(betas)
+	sig <- unlist(lapply(betas,function(beta){checkSig(beta)}))
+	if(any(sig)){
+		predNames[which(sig)] <- paste0(predNames[which(sig)]," * ")
+	}
+	if(is.null(cols)){
+		cols <- colFunc(meanBetas,cols=viridis::viridis(n=nPredictors),nPredictors,valRange=range(meanBetas))
+	}
+	betaDens <- lapply(betas,density)
+	if(reorder){
+		predOrder <- order(meanBetas)
+	} else {
+		predOrder <- 1:nPredictors
+	}
+	yTxtCoords <- 0.6+c(1:nPredictors)+c(1:nPredictors)*0.05
+	yDnsCoords <- c(1:nPredictors)+c(1:nPredictors)*0.05
+	plot(0,type='n',xlim=range(betas)+c(-diff(range(betas))/4,0),yaxt='n',xlab="Standardized effect size",ylab="",bty='n',ylim=c(0.9,(nPredictors+1)*1.10))
+		text(x=min(unlist(betas))-diff(range(betas))/4,y=yTxtCoords,labels=predNames[predOrder],srt=0,font=2,cex=1.3,pos=4)
+		abline(v=0,lty=2,lwd=0.5,col=adjustcolor(1,0.5))
+	invisible(
+		lapply(nPredictors:1,
+			function(i){
+				plotDens(ymin=yDnsCoords[i],x=betas[[predOrder[i]]],d=betaDens[[predOrder[i]]],col=cols[predOrder[i]],qnt=qnt,peakheight=0.5,alpha=1,border="black")
+			}))
+}
+
+
 parallelizing <- function(args) {
     if (args[["parallel"]]) {
         if (!foreach::getDoParRegistered()) {
