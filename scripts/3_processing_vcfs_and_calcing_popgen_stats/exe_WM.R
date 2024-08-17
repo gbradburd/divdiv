@@ -78,9 +78,9 @@ for (loop.iter in 1:length(popgenfiles_list)) {
   #get sample names
   sampkey <- read.delim(paste0(indir,"/samplenamekey.txt"))
   
-  #get number of polymorphic loci
+  #get number of loci scored in dataset (after dropping low cov indivs and loci)
   load(paste0(indir, "/bpstats.", minPropIndivsScoredin, ".", run_name, "_stacks_", stacksparams, "_BPstats.Robj"))
-  Npolyloci = BPstats$nLoci
+  nLoci = BPstats$nLoci
   cat("here1\n", file = stderr())
 
   #get pw geographic distance matrix
@@ -161,7 +161,7 @@ for (loop.iter in 1:length(popgenfiles_list)) {
     # k = geographic distance w/in which W-M breaks down, (should be ~2*sigma)
     # geoDist = pairwise geographic distance
     dataBlock <- list("N"=nrow(pwp),
-                      "L" = Npolyloci,
+                      "L" = nLoci,
                       "hom"=hom,
                       "k" = 1,
                       "geoDist"=geoDist)
@@ -194,7 +194,7 @@ for (loop.iter in 1:length(popgenfiles_list)) {
   }
 
   #clean up at end of loop iteration in case something goes awry
-  rm(popgenfile,stacksparams,sampkey,Npolyloci,
+  rm(popgenfile,stacksparams,sampkey,nLoci,
      geoDist,geoDistnames,geoDist.ordered,
      pwp.ordered,hom,pwp,sampstouse)
 

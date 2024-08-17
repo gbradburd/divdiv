@@ -1,5 +1,8 @@
-# EXAMPLE: 
-# Extract sea surface temperature data from a remote repo and plot it using the Spilhaus projection
+#idea: make a map of the world and plot heat map of N samples on it
+
+#https://spatialreference.org - to look up projection codes, like PROJ.4 codes
+
+#load libraries -------
 
 library(rerddap)
 library(ggplot2)
@@ -10,9 +13,11 @@ library(tidyr)
 rm(list=ls())
 gc()
 
+
 setwd("/Users/rachel/divdiv/")
 sampkeypath = "/Users/rachel/divdiv/data/all_samplenamekeys"
 wmpath = "/Users/rachel/divdiv/data/popgen/input_and_working/ALL_r80_gendiv_data/"
+
 
 #load Spilhaus projection functions
 source("scripts/spilhaus_functions.R") 
@@ -25,13 +30,13 @@ source("scripts/spilhaus_functions.R")
 spilhaus_df = make_spilhaus_xy_gridpoints(spilhaus_res=1000)
 #convert spilhaus coors to mercator
 lonlat = from_spilhaus_xy_to_lonlat(spilhaus_df$x, spilhaus_df$y)
-#download netCDF data from Coastwatch so we can denote where ocean vs land is (will only get data for ocean pts)
+# download netCDF data from Coastwatch so we can denote where ocean vs land is (will only get data for ocean pts)
 da = download_sst_data("2021-09-16", "2021-09-16")
-#extract data for our lats and lons
+# extract data for our lats and lons
 spilhaus_df$z = extract_sst_data(da, lonlat)
-#mask
+# mask
 spilhaus_df$l = is.na(spilhaus_df$z)
-#prettify
+# prettify
 pretty_spilhaus_df = pretify_spilhaus_df(spilhaus_df)
 
 
@@ -92,55 +97,62 @@ sites <- sites %>% filter(link %in% using$link)
 
 
 
-#add clade groups on for coloring
-#recode to match phy fig
-taxcolorkey <- read.csv("/Users/rachel/divdiv/data/master_tax_color_key.csv") %>% mutate(species = gsub(" ","_",species))
-taxcolorkey$simplerclades <- taxcolorkey$taxclade
-taxcolorkey$simplerclades[taxcolorkey$taxclade == "sauropsida"] = "Birds"
-taxcolorkey$simplerclades[taxcolorkey$taxclade == "chondrichthyes"] = "Cartilaginous fishes"
-taxcolorkey$simplerclades[taxcolorkey$taxclade == "not assigned"] = "Other"
-taxcolorkey$simplerclades[taxcolorkey$taxclade == "ochrophyta"] = "Other"
-taxcolorkey$simplerclades[taxcolorkey$species == "Caretta_caretta"] = "Other"
-#merge
-sites <- sites %>%
-  separate(., link, into = c("garbage","species"), sep = "_", remove = F) %>% 
-  dplyr::select(-garbage) %>% mutate(species = gsub("-","_",species))
-sites <- merge(sites, 
-               taxcolorkey, 
-               by = "species", all.x = T)
+#code expects lat and long to be first two cols and to be called lat and lon
+sites <- sites %>% dplyr::select(lon,lat,everything())
+sites.df <- sites
 
-sites <- sites %>% mutate(pt_ID = paste0("pt_",1:nrow(.)))
+#project sites
+PROJ.pts <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs" #EPSG:4326, WGS 84
+#first make dataframe into spatial object, using projection points are in
+sites.prj <- sf::st_as_sf(sites, coords = c("lon", "lat"), crs = PROJ.pts)
+
+
+
+# trying something -------------
+
+spil.latlon <- as.data.frame(from_spilhaus_xy_to_lonlat(pretty_spilhaus_df$x, pretty_spilhaus_df$y)) %>% 
+  filter(is.na(longitude)==F)
+spil.latlon.prj <- sf::st_as_sf(spil.latlon, coords = c("longitude", "latitude"), crs = PROJ.pts)
+
+rast <- raster::raster(res = 5)
+raster::extent(rast) <- raster::extent(spil.latlon.prj)
+rast
+raster.Nindivs <- raster::rasterize(sites.prj, rast, fun = "count")
+raster.Nindivs <- raster::rasterToPoints(raster.Nindivs) %>% as.data.frame()
+
+raster.Nindivs.prj <- as.data.frame(from_lonlat_to_spilhaus_xy(raster.Nindivs$x, raster.Nindivs$y))
+raster.Nindivs.prj <- cbind(raster.Nindivs.prj, raster.Nindivs)
+
+ggplot() + geom_sf(data = spil.latlon.prj)
+ggplot() + geom_point(data = spil.latlon, aes(x=longitude,y=latitude))
+ggplot() + geom_tile(data = raster.Nindivs, aes(x = x, y = y, fill = ID)) + coord_fixed()
+ggplot() + geom_tile(data = raster.Nindivs.prj, aes(x = spilhaus_x, y = spilhaus_y, fill = ID)) + coord_fixed()
+
+
+#make heatmap raster - N number of points in each box (large res = fewer/bigger squares)
+rast <- raster::raster(res = 5)
+raster::extent(rast) <- raster::extent(sites.prj)
+rast
+raster.Nindivs <- raster::rasterize(sites.prj, rast, fun = "count")
+raster.Nindivs <- raster::rasterToPoints(raster.Nindivs) %>% as.data.frame()
 
 #project genetic lat longs to spilhaus
-sites.prj <- as.data.frame(from_lonlat_to_spilhaus_xy(sites$lon, sites$lat))
-sites.prj <- cbind(sites.prj, sites)
+raster.Nindivs.prj <- as.data.frame(from_lonlat_to_spilhaus_xy(raster.Nindivs$x, raster.Nindivs$y))
+test <- cbind(raster.Nindivs, raster.Nindivs.prj)
 
-
-
-# plot ----------------------
 ggplot() +
   geom_tile(data=pretty_spilhaus_df, aes(x=x, y=y), fill = "white") +
-  geom_point(data = sites.prj, aes(x=spilhaus_x, y=spilhaus_y, fill=simplerclades), 
-             #position = position_jitter(width = 1000000, height = 1000000),
-             shape = 21, colour="black", size = 4, alpha = 0.5) +
-  scale_fill_manual(values = c("#1F78B4","#A6CEE3","#33A02C","#FF7F00","#FDBF6F","#FB9A99","#B2DF8A","#E31A1C","transparent","#CAB2D6")) +
+  geom_point(data = test, aes(x = spilhaus_x, y = spilhaus_y,  colour = ID), shape = 15, size = 3) +
+  viridis::scale_colour_viridis(name = "N. samples", trans = "log",
+                              breaks = c(0,1,10,100,500), labels = c(0,1,10,100,500),
+                              option="mako") +
   theme(panel.background = element_rect(fill = 'gray80', color = 'gray80'),
         panel.grid = element_blank(),
-        legend.position = "none",
-        plot.background = element_rect(fill = "transparent"),
-        axis.text = element_blank(),
-        axis.title = element_blank(),
-        axis.ticks = element_blank()) +
+        #legend.position = "none",
+        plot.background = element_rect(fill = "transparent")) +
   coord_equal()
 
-ggsave(filename = "figures/world_map_genetic_pts-spilhaus.pdf", width = 30, height = 15, units = c("cm"))
+ggsave(filename = "figures/world_map_genetic_pts-NSAMPS-spilhaus.pdf", width = 30, height = 15, units = c("cm"))
 
-
-
-
-# problems -------------
-
-probs <- sites.prj %>% filter(spilhaus_x > 0) %>% filter(spilhaus_y > 6000000)
-sites.probs <- sites %>% filter(pt_ID %in% probs$pt_ID)
 
 

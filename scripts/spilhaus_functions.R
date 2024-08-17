@@ -199,3 +199,39 @@ from_spilhaus_xy_to_lonlat <- function(spilhaus_x, spilhaus_y) {
 
   return(cbind(longitude, latitude))
 }
+
+
+# auxiliary function to extract netCDF file from Coastwatch
+download_sst_data = function(start_date, end_date) {
+  myInfo = rerddap::info('NOAA_DHW_monthly', url='https://coastwatch.pfeg.noaa.gov/erddap/')
+  myData = rerddap::griddap(datasetx = myInfo,
+                            fields = "sea_surface_temperature",
+                            latitude = c(-89.975, 89.975),
+                            longitude = c(-179.975, 179.975),
+                            time = c(start_date, end_date))
+  da = ncdf4::nc_open(myData$summary$filename)
+  return(da)
+}
+
+
+# auxiliary function to extract a list (length = number of instants) 
+#of snapshots (7200x3600 pixels) from the netCDF file
+extract_sst_data = function(da, lonlat) {
+  lons = sort(ncdf4::ncvar_get(da, "longitude"))
+  lats = sort(ncdf4::ncvar_get(da, "latitude"))
+  times = ncdf4::ncvar_get(da, "time")
+  
+  dlon = lons[2] - lons[1]
+  dlat = lats[2] - lats[1]
+  ln = as.integer(round((lonlat[,1] - lons[1]) / dlon) + 1)
+  la = as.integer(round((lonlat[,2] - lats[1]) / dlat) + 1)
+  get_chunk = function(timepoint) {
+    sst = ncdf4::ncvar_get(da, "sea_surface_temperature",
+                           start = c(1,1,timepoint), count = c(7200, 3600, 1))
+    sst = sst[,ncol(sst):1]
+    chunk = sst[ln + (la - 1) * dim(sst)[1]]
+    return(chunk)
+  }
+  sst_data = mapply(1:length(times), FUN=function(timepoint) {get_chunk(timepoint)})
+  return(sst_data)
+}
