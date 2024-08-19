@@ -1,5 +1,35 @@
 library(sf)
 
+# auxiliary function 1: fetch 5km resolution land mask
+download_land_mask = function() {
+  myInfo = rerddap::info('NOAA_DHW_monthly', url='https://coastwatch.pfeg.noaa.gov/erddap/')
+  myData = rerddap::griddap(datasetx = myInfo,
+                            fields = "mask",
+                            latitude = c(-89.975, 89.975),
+                            longitude = c(-179.975, 179.975),
+                            time = c('2024-01-01', '2024-01-01'))
+  da = ncdf4::nc_open(myData$summary$filename)
+  return(da)
+}
+
+
+# auxiliary function 2: determine whether arbitrary lon-lat points fall on land
+extract_mask = function(da, lonlat) {
+  lons = sort(ncdf4::ncvar_get(da, "longitude"))
+  lats = sort(ncdf4::ncvar_get(da, "latitude"))
+  dlon = lons[2] - lons[1]
+  dlat = lats[2] - lats[1]
+  ln = as.integer(round((lonlat[,1] - lons[1]) / dlon) + 1)
+  la = as.integer(round((lonlat[,2] - lats[1]) / dlat) + 1)
+  msk = ncdf4::ncvar_get(da, "mask", start = c(1,1,1), count = c(7200, 3600,1))
+  msk = msk[,ncol(msk):1]
+  chunk = msk[ln + (la - 1) * dim(msk)[1]]
+  chunk[chunk == 1] = NA # in the original mask, 1 denotes land
+  chunk[chunk == 4] = 0 # in the original mask, 4 denotes ice
+  return(chunk)
+}
+
+
 from_lonlat_to_spilhaus_xy <- function(longitude, latitude){
 
   # constants (https://github.com/OSGeo/PROJ/issues/1851)

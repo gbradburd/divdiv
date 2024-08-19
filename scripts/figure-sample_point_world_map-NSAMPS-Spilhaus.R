@@ -3,8 +3,6 @@
 #https://spatialreference.org - to look up projection codes, like PROJ.4 codes
 
 #load libraries -------
-
-library(rerddap)
 library(ggplot2)
 library(ncdf4)
 library(dplyr)
@@ -25,19 +23,19 @@ source("scripts/spilhaus_functions.R")
 
 
 # make spilhaus map -----------------
-#create a data frame with NxN pixels
-#higher spilhaus_res = more defined coastline 
-spilhaus_df = make_spilhaus_xy_gridpoints(spilhaus_res=1000)
-#convert spilhaus coors to mercator
+#create Splihaus map grid (table of x, y points)
+spilhaus_df = make_spilhaus_xy_gridpoints(spilhaus_res=1500)
+x_lo = min(spilhaus_df$x); x_hi = max(spilhaus_df$x)
+y_lo = min(spilhaus_df$y); y_hi = max(spilhaus_df$y)
+
+#convert grid to lat/lon
 lonlat = from_spilhaus_xy_to_lonlat(spilhaus_df$x, spilhaus_df$y)
-# download netCDF data from Coastwatch so we can denote where ocean vs land is (will only get data for ocean pts)
-da = download_sst_data("2021-09-16", "2021-09-16")
-# extract data for our lats and lons
-spilhaus_df$z = extract_sst_data(da, lonlat)
-# mask
+
+#download marine data to locate ocean and 
+#create mask aka pull ocean shape out of square grid
+da = download_land_mask()
+spilhaus_df$z = extract_mask(da, lonlat)
 spilhaus_df$l = is.na(spilhaus_df$z)
-# prettify
-pretty_spilhaus_df = pretify_spilhaus_df(spilhaus_df)
 
 
 
@@ -97,62 +95,63 @@ sites <- sites %>% filter(link %in% using$link)
 
 
 
-#code expects lat and long to be first two cols and to be called lat and lon
-sites <- sites %>% dplyr::select(lon,lat,everything())
-sites.df <- sites
+# do site projecting and heat/raster layer making -----------
+sites.prj = from_lonlat_to_spilhaus_xy(sites$lon, sites$lat)
 
-#project sites
-PROJ.pts <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs" #EPSG:4326, WGS 84
-#first make dataframe into spatial object, using projection points are in
-sites.prj <- sf::st_as_sf(sites, coords = c("lon", "lat"), crs = PROJ.pts)
+#manually build grid and count how many points in each cell
+#(can't use raster::rasterize(sites.prj, rast, fun = "count") here)
+#set grid size (number of grid cells in Spilhaus x and y coordinates)
+n_grid = 36 #30 largest sq size to go probably, 50 smallest
 
-
-
-# trying something -------------
-
-spil.latlon <- as.data.frame(from_spilhaus_xy_to_lonlat(pretty_spilhaus_df$x, pretty_spilhaus_df$y)) %>% 
-  filter(is.na(longitude)==F)
-spil.latlon.prj <- sf::st_as_sf(spil.latlon, coords = c("longitude", "latitude"), crs = PROJ.pts)
-
-rast <- raster::raster(res = 5)
-raster::extent(rast) <- raster::extent(spil.latlon.prj)
-rast
-raster.Nindivs <- raster::rasterize(sites.prj, rast, fun = "count")
-raster.Nindivs <- raster::rasterToPoints(raster.Nindivs) %>% as.data.frame()
-
-raster.Nindivs.prj <- as.data.frame(from_lonlat_to_spilhaus_xy(raster.Nindivs$x, raster.Nindivs$y))
-raster.Nindivs.prj <- cbind(raster.Nindivs.prj, raster.Nindivs)
-
-ggplot() + geom_sf(data = spil.latlon.prj)
-ggplot() + geom_point(data = spil.latlon, aes(x=longitude,y=latitude))
-ggplot() + geom_tile(data = raster.Nindivs, aes(x = x, y = y, fill = ID)) + coord_fixed()
-ggplot() + geom_tile(data = raster.Nindivs.prj, aes(x = spilhaus_x, y = spilhaus_y, fill = ID)) + coord_fixed()
+#build grid
+gridded_x_pos = ceiling(n_grid * (sites.prj[,1] - x_lo) / (x_hi - x_lo))
+gridded_y_pos = ceiling(n_grid * (sites.prj[,2] - y_lo) / (y_hi - y_lo))
+sites_grid = expand.grid(x=seq(x_lo, x_hi, len=n_grid), y=seq(y_lo, y_hi, len=n_grid))
+sites_grid$z = 0
+#build heat map aka count how many pts in each grid cell
+for (i in seq(1, nrow(sites.prj))) {
+  pos = gridded_x_pos[i] + (gridded_y_pos[i] - 1) * n_grid
+  sites_grid$z[pos] = sites_grid$z[pos] + 1
+}
+sites_grid$l = (sites_grid$z == 0)
 
 
-#make heatmap raster - N number of points in each box (large res = fewer/bigger squares)
-rast <- raster::raster(res = 5)
-raster::extent(rast) <- raster::extent(sites.prj)
-rast
-raster.Nindivs <- raster::rasterize(sites.prj, rast, fun = "count")
-raster.Nindivs <- raster::rasterToPoints(raster.Nindivs) %>% as.data.frame()
 
-#project genetic lat longs to spilhaus
-raster.Nindivs.prj <- as.data.frame(from_lonlat_to_spilhaus_xy(raster.Nindivs$x, raster.Nindivs$y))
-test <- cbind(raster.Nindivs, raster.Nindivs.prj)
+# pretty up projected layers ----------------
+pretty_spilhaus_df = pretify_spilhaus_df(spilhaus_df)
+pretty_sites = pretify_spilhaus_df(sites_grid)
 
+
+
+# make heatmap - cells colored by N individuals - white ocean --------------
 ggplot() +
+  
+  # add ocean
   geom_tile(data=pretty_spilhaus_df, aes(x=x, y=y), fill = "white") +
-  geom_point(data = test, aes(x = spilhaus_x, y = spilhaus_y,  colour = ID), shape = 15, size = 3) +
-  viridis::scale_colour_viridis(name = "N. samples", trans = "log",
-                              breaks = c(0,1,10,100,500), labels = c(0,1,10,100,500),
+  
+  # add land outlines
+  #geom_sf(data = NE_coastlines.prj, 
+  #        colour = "gray50", linewidth = .25) +
+  
+  ## add N indivs raster
+  geom_tile(data = pretty_sites, aes(x = x, y = y, fill = z)) +
+  
+  viridis::scale_fill_viridis(name = "N. sequenced\nindividuals", trans = "log",
+                              breaks = c(0,1,10,100,450), labels = c(0,1,10,100,450),
                               option="mako") +
-  theme(panel.background = element_rect(fill = 'gray80', color = 'gray80'),
-        panel.grid = element_blank(),
-        #legend.position = "none",
-        plot.background = element_rect(fill = "transparent")) +
+  
+  ## Set empty theme
+  theme_void() + # remove the default background, gridlines & default gray color around legend's symbols
+  theme(legend.title = element_text(colour="black", size=10, face="bold", margin = margin(b = 10)), # margin is space between title and rest of legend
+        plot.margin = unit(c(t=1, r=1, b=1, l=1), unit="cm"), # adjust margins
+        panel.background = element_rect(fill = 'gray85', color = 'black'),
+        plot.background = element_blank(),
+        legend.position = c(0.13, 0.2), legend.direction = "vertical") +
   coord_equal()
 
-ggsave(filename = "figures/world_map_genetic_pts-NSAMPS-spilhaus.pdf", width = 30, height = 15, units = c("cm"))
+ggsave(paste("figures/world_map_genetic_pts-NSAMPS-Spilhaus-36grid.pdf",sep="") , width = 15, height = 14.5, units = c("cm"))
+ggsave(paste("figures/world_map_genetic_pts-NSAMPS-Spilhaus-36grid.png",sep="") , width = 15, height = 14.5, units = c("cm"))
 
+max(pretty_sites$z)
 
 
