@@ -168,6 +168,49 @@ getPPSci <- function(db,pps){
 	return(ppsByN)
 }
 
+addExpPredPolygon <- function(expFromMod,qnt,polyCol,log=FALSE){
+	ci_lower <- apply(expFromMod$y,1,quantile,probs=qnt[1])
+	ci_upper <- apply(expFromMod$y,1,quantile,probs=qnt[2])
+	if(log==TRUE){
+		ci_lower <- log(ci_lower)
+		ci_upper <- log(ci_upper)
+	}
+	polygon(x=c(expFromMod$x,rev(expFromMod$x)),
+			y=c(ci_lower,rev(ci_upper)),
+			col=polyCol,border=NA)
+}
+
+addExpPredLine <- function(expFromMod,log=FALSE,...){
+	meanLine <- apply(expFromMod$y,1,mean)
+	if(log){
+		meanLine <- log(meanLine)
+	}
+	lines(x=expFromMod$x,y=meanLine,...)
+}
+
+simFromMod <- function(out,nXseq,nSampIters){
+	db <- out$db
+	fit <- out$fit
+	posterior <- extract(out$fit)
+	X <- db$X # nX x N; top row is the focal predictor
+	xSeq <- seq(min(db$X[1,]),max(db$X[1,]),length.out=nXseq)
+	nuisX <- matrix(rowMeans(X[-1,]),nrow=db$nX-1,ncol=nXseq)
+	newX <- rbind(xSeq,nuisX)
+	Y <- matrix(NA,nrow=nXseq,ncol=nSampIters)
+	for(i in 1:nSampIters){
+		iter <- sample(1:250,1)
+		mu = invLogit(posterior$gamma[iter] + posterior$beta[iter,,drop=FALSE] %*% newX)
+		# mu <- invLogit(MASS::mvrnorm(n=1,
+									 # mu=posterior$gamma[iter] + 
+									 	# posterior$beta[iter,,drop=FALSE] %*% newX,
+									 # Sigma=posterior$alpha[iter] * db$relMat))
+		shape1 <- mu * posterior$phi[iter]
+		shape2 <- (1-mu) * posterior$phi[iter]
+		Y[,i] <- rbeta(nXseq,shape1,shape2)
+	}
+	return(list("x"=xSeq,"y"=Y))
+}
+
 colFunc <- function (x, cols, nCols, valRange){
     if (is.null(valRange)) {
         valRange <- c(min(x), max(x))
@@ -460,48 +503,57 @@ highlightClade <- function(tree,dSp1,dSp2,col,x0=NULL,x1=NULL,y0=NULL,y1=NULL,ro
 								col=col,border=NA,aspcorrect=TRUE)
 }
 
-addPhylopics <- function(cladeCols,ysize=4){
-#	recover()
+addPhylopics <- function(cladeCols,ysize=4,tipcols){
+	#recover()
 	xleft <- 90
-	ytop <- 80
+	ytop <- 86
 	dshift <- 5
 	legendshift <- 100
 	txt.cex=1.4
 	pos=4
 	mammal <- rphylopic::get_phylopic(uuid="44ee07ec-f829-49f9-b242-f4b92bb9cf73") #Halichoerus grypus
+		n_mammals <- length(which(tipcols==cladeCols[3]))
 	vasc_plant <- rphylopic::get_phylopic(uuid="bacc6a59-80d2-461c-92d4-83cabc91cc39") #Rhizophora mangle
+		n_vasc_plants <- length(which(tipcols==cladeCols[9]))
 	ochrophyta <- rphylopic::get_phylopic(uuid="61e2982f-07d4-44db-ac00-27a2d86ca855") #Fucus serratus
 	crustacea <- rphylopic::get_phylopic(uuid="7197c71a-0653-4e82-bcbb-b156c150826a") #Callinectes sapidus
+		n_crustaceans <- length(which(tipcols==cladeCols[7]))
 	echinoderms <- rphylopic::get_phylopic(uuid="0adc540a-d1c1-4dd8-bc4d-e258077c5dbd") #Asteriidae
+		n_echinoderms <- length(which(tipcols==cladeCols[5]))
 	bony_fishes <- rphylopic::get_phylopic(uuid="ed245bc2-c8dc-4ad4-9d08-efa19fe6854a") #Sebastes diaconus
+		n_bony_fishes <- length(which(tipcols==cladeCols[1]))
 	chondrichthyes <- rphylopic::get_phylopic(uuid="8d9410d3-8b41-4c4b-ad27-1bf8dd606e47") #Bathyraja griseocauda
+		n_cartilaginous_fishes <- length(which(tipcols==cladeCols[4]))
 	cnidarians <- rphylopic::get_phylopic(uuid="927676f4-7ea9-4aa6-8e0a-3c70d8253f89") #Nematostella vectensis
+		n_cnidarians <- length(which(tipcols==cladeCols[8]))
 	sauropsida <- rphylopic::get_phylopic(uuid="86334821-42ec-4da1-bb9d-53f3d6941c77") #Pygoscelis papua
+		n_birds <- length(which(tipcols==cladeCols[2]))
 	molluscs1 <- rphylopic::get_phylopic(uuid="90449630-774d-48dc-b16c-912b69825dee") #Pyroteuthis margaritifera
 	molluscs2 <- rphylopic::get_phylopic(uuid="6c2e67f0-14e7-4ba0-ba73-2420cacfa9a3") #Tricolia pullus
+		n_molluscs <- length(which(tipcols==cladeCols[6]))
 	rphylopic::add_phylopic_base(img=bony_fishes,x=xleft,y=ytop,ysize=ysize-2,fill=cladeCols[1])
-		text(x=xleft+legendshift,y=ytop,labels="Bony fishes",pos=pos,cex=txt.cex)
+		text(x=xleft+legendshift,y=ytop,labels=sprintf("Bony fishes (n=%s)",n_bony_fishes),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=sauropsida,x=xleft,y=ytop-dshift,ysize=ysize,fill=cladeCols[2])
-		text(x=xleft+legendshift,y=ytop-1*dshift,labels="Birds",pos=pos,cex=txt.cex)
+		text(x=xleft+legendshift,y=ytop-1*dshift,labels=sprintf("Birds (n=%s)",n_birds),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=mammal,x=xleft,y=ytop-2*dshift,ysize=ysize,fill=cladeCols[3])
-		text(x=xleft+legendshift,y=ytop-2*dshift,labels="Mammals",pos=pos,cex=txt.cex)
+		text(x=xleft+legendshift,y=ytop-2*dshift,labels=sprintf("Mammals (n=%s)",n_mammals),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=chondrichthyes,x=xleft,y=ytop-3*dshift,ysize=ysize,fill=cladeCols[4])
-		text(x=xleft+legendshift,y=ytop-3*dshift,labels="Cartilaginous Fishes",pos=pos,cex=txt.cex)
+		text(x=xleft+legendshift,y=ytop-3*dshift,labels=sprintf("Cartilaginous Fishes (n=%s)",n_cartilaginous_fishes),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=echinoderms,x=xleft,y=ytop-4*dshift,ysize=ysize,fill=cladeCols[5])
-		text(x=xleft+legendshift,y=ytop-4*dshift,labels="Echinoderms",pos=pos,cex=txt.cex)
+		text(x=xleft+legendshift,y=ytop-4*dshift,labels=sprintf("Echinoderms (n=%s)",n_echinoderms),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=molluscs1,x=xleft,y=ytop-5*dshift,ysize=ysize,fill=cladeCols[6])
-		text(x=xleft+legendshift,y=ytop-5*dshift,labels="Molluscs",pos=pos,cex=txt.cex)
+		text(x=xleft+legendshift,y=ytop-5*dshift,labels=sprintf("Molluscs (n=%s)",n_molluscs),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=crustacea,x=xleft,y=ytop-6*dshift,ysize=ysize,fill=cladeCols[7])
-		text(x=xleft+legendshift,y=ytop-6*dshift,labels="Crustaceans",pos=pos,cex=txt.cex)
+		text(x=xleft+legendshift,y=ytop-6*dshift,labels=sprintf("Crustaceans (n=%s)",n_crustaceans),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=cnidarians,x=xleft,y=ytop-7*dshift,ysize=ysize+1,fill=cladeCols[8])
-		text(x=xleft+legendshift,y=ytop-7*dshift,labels="Cnidarians",pos=pos,cex=txt.cex)
+		text(x=xleft+legendshift,y=ytop-7*dshift,labels=sprintf("Cnidarians (n=%s)",n_cnidarians),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=vasc_plant,x=xleft,y=ytop-8*dshift,ysize=ysize+1,fill=cladeCols[9])
-		text(x=xleft+legendshift,y=ytop-8*dshift,labels="Vascular Plants",pos=pos,cex=txt.cex)
+		text(x=xleft+legendshift,y=ytop-8*dshift,labels=sprintf("Vascular Plants (n=%s)",n_vasc_plants),pos=pos,cex=txt.cex)
 #	rphylopic::add_phylopic_base(img=ochrophyta,x=50,y=5,ysize=ysize,fill=cladeCols[10])
 	#rphylopic::add_phylopic_base(img=molluscs2,x=5,y=5,ysize=1,fill=cladeCols[1])
 }
 
-gussyUpPhyloFig <- function(tree,cladeCols,rounding){
+gussyUpPhyloFig <- function(tree,cladeCols,rounding,tipcols){
 	cladeCols1 <- adjustcolor(cladeCols,0.5)
 	highlightClade(tree=tree,dSp1="Engraulis encrasicolus",dSp2="Sebastes diaconus",col=cladeCols1[1],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
 	highlightClade(tree=tree,dSp1="Pygoscelis papua",dSp2="Aythya marila",col=cladeCols1[2],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
@@ -512,7 +564,7 @@ gussyUpPhyloFig <- function(tree,cladeCols,rounding){
 	highlightClade(tree=tree,dSp1="Callinectes sapidus",dSp2="Penaeus duorarum",col=cladeCols1[7],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
 	highlightClade(tree=tree,dSp1="Acropora palmata",dSp2="Ectopleura larynx",col=cladeCols1[8],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
 	highlightClade(tree=tree,dSp1="Rhizophora mangle",dSp2="Laguncularia racemosa",col=cladeCols1[9],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
-	addPhylopics(cladeCols)
+	addPhylopics(cladeCols=cladeCols,tipcols=tipcols)
 }
 
 addCladeLine <- function(tree,dSp1,dSp2,col,xcoord,lwd=4,lend=2){
@@ -538,6 +590,7 @@ gussyUpDivBarPlot <- function(tree,xcoord,cladeCols){
 }
 
 addLegend <- function(top,xl,xr,txtShft,txtCex){
+	#recover()
 	grayCols <- gray(c(0.2,0.5,0.8),1)
 	gradCols <- rev(colorRampPalette(RColorBrewer::brewer.pal(9,"Blues"))(150)[51:150])
 	colRast <- as.raster(matrix(gradCols,nrow=length(gradCols),ncol=1))
@@ -547,10 +600,12 @@ addLegend <- function(top,xl,xr,txtShft,txtCex){
 		text(x=xr+txtShft,y=top-5,labels="intermediate",pos=4,cex=txtCex)
 	rect(xleft=xl,ybottom=top-9,xright=xr,ytop=top-7,col=grayCols[1])
 		text(x=xr+txtShft,y=top-8,labels="absent",pos=4,cex=txtCex)
-	rasterImage(colRast,xleft=xl,ybottom=top-25,xright=xr,ytop=top-10.5,interpolate=TRUE)
-	rect(xleft=xl,ybottom=top-25,xright=xr,ytop=top-10.5)
-		text(x=xr+txtShft,y=top-11.5,labels="high",pos=4,cex=txtCex)
-		text(x=xr+txtShft,y=top-24,labels="low",pos=4,cex=txtCex)
+	rect(xleft=xl,ybottom=top-12,xright=xr,ytop=top-10,col="white")
+		text(x=xr+txtShft,y=top-11,labels="missing data",pos=4,cex=txtCex)
+	rasterImage(colRast,xleft=xl,ybottom=top-28,xright=xr,ytop=top-13.5,interpolate=TRUE)
+	rect(xleft=xl,ybottom=top-28,xright=xr,ytop=top-13.5)
+		text(x=xr+txtShft,y=top-14.5,labels="high",pos=4,cex=txtCex)
+		text(x=xr+txtShft,y=top-27,labels="low",pos=4,cex=txtCex)
 }
 
 phyViz <- function(db,fit,XX,predNames,tipcols,tree,xlim,valRange=NULL,adj=2,logX=FALSE,rounding=0.1){
@@ -568,7 +623,7 @@ phyViz <- function(db,fit,XX,predNames,tipcols,tree,xlim,valRange=NULL,adj=2,log
 					x.lim=c(0,1320),tip.color=tipcols,edge.width=1, #x.lim=c(0,1950) #1700
 					show.tip.label=FALSE)
 	cladeCols <- RColorBrewer::brewer.pal(10,"Paired")
-	gussyUpPhyloFig(tree,cladeCols=cladeCols,rounding)
+	gussyUpPhyloFig(tree=tree,cladeCols=cladeCols,rounding=rounding,tipcols=tipcols)
 	axisPhylo()
 		mtext(side=1,text="Time (Mya)",padj=3)
 		mtext(side=3,text="Time-calibrated Phylogeny",padj=1,cex=1.4)
@@ -673,7 +728,7 @@ phyloViz_scatter <- function(loo,predName,valRange=NULL){
 	points(loo$db$Y,yMean,pch=18,cex=1.5,col=cols)
 }
 
-discreteViolPlot <- function(z,nPreds,predName,xAxLabs,logY=FALSE){
+discreteViolPlot <- function(z,nPreds,predName,xAxLabs,logY=FALSE,...){
 	x <- z[[predName]]
 	if(nPreds==2){
 		vCols <- gray(c(0.2,0.5,0.8),1)[c(1,3)]
@@ -693,7 +748,7 @@ discreteViolPlot <- function(z,nPreds,predName,xAxLabs,logY=FALSE){
 	}
 	plot(0,type='n',xlab="",xaxt='n',ylab=yLab,xlim=xRange,ylim=yRange)
 	for(i in 1:nPreds){
-		vioplot::vioplot(at=i-1,y[x==(i-1)],add=TRUE,col=vCols[i])
+		vioplot::vioplot(at=i-1,y[x==(i-1)],add=TRUE,col=vCols[i],...)
 	}
 	points(jitter(x),y=y,col="black",bg=z$cladecolor,pch=21,cex=1.7)
 	axis(side=1,at=0:(nPreds-1),labels=xAxLabs)

@@ -902,3 +902,24 @@ betaPPS <- function(db,fit,nPPS,predName,multiPred=FALSE,sampCols=NULL){
 	box(lwd=2,col=ifelse(sig<0.05,"red","black"))
 }
 
+
+	# b <- extract(out$fit,"beta[1]",permute=FALSE,inc_warmup=FALSE)
+	# g <- extract(out$fit,"gamma",permute=FALSE,inc_warmup=FALSE)
+	# lp <- get_logposterior(out$fit,inc_warmup=FALSE)[[1]]
+	# lp_std <- (lp-min(lp))/max(lp-min(lp))
+	# tmpX <- seq(min(out$db$X[1,]),max(out$db$X[1,]),length.out=5e1)
+	# predVals <- sapply(1:250,function(i){invLogit(g[i]+b[i]*tmpX)})
+	# ci_lower <- apply(predVals,1,quantile,probs=0.025)
+	# ci_upper <- apply(predVals,1,quantile,probs=0.975)			
+	invisible(lapply(sample(1:250,100),function(i){
+		lines(tmpX,invLogit(g[i]+b[i]*tmpX),col=adjustcolor(1,pmax(lp_std[i],1e-3)))
+	}))
+	lines(tmpX,ci_lower,col="red")
+	lines(tmpX,ci_upper,col="red")
+
+	
+	plotBetaPPS(db=outs[[3]]$db,ppsOut=pps,sampCols=sampCols,
+				xlab="Range Extent (km)",ylab="Genetic Diversity",trp=0.7,xaxt='n')
+				max(z[["max.95.sea.gbif"]])
+		axis(side=1,at=seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]])),
+			labels=round(seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]]))*max(z[["max.95.sea.gbif"]])))

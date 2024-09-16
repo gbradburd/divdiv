@@ -59,7 +59,7 @@ preds <- c("meanlat.gbif","n_ECOREGIONS.all","max.95.sea.gbif.nrm","eco_per_rang
 
 predNames <- c("mean species latitude","number of ecoregions","range extent","ecoregions/range_size",
 			   "body size (log)","egg size","generational structure",
-			   "philopatry","spawning mode",
+			   "philopatry","spawning",
 			   "larval feeding","pelagic larval duration","planktonicity",
 			   "benthic lifestyle (N/S/A)", "highly dispersive adults",
 			   "ratio of range sampled : total",
@@ -99,7 +99,7 @@ pdf(file="predictor_effect_sizes.pdf",width=8,height=7)
 	postBetaPlot(outs=outs[-c(4,14)],
 				 predNames=c("Latitude","Ecoregions","Range extent",	#"ecoregions/range_size",
 			 				 "Body size","Egg size","Iteroparity",
-							 "Philopatry","Spawning mode","Planktotrophy",
+							 "Philopatry","spawning","Planktotrophy",
 							 "Pelagic larval duration","Planktonicity","Benthicity"),
 				 reorder=TRUE,
 				 cols=NULL,
@@ -108,7 +108,25 @@ pdf(file="predictor_effect_sizes.pdf",width=8,height=7)
 				 qnt=1)
 dev.off()
 
+expFromMod <- simFromMod(outs[[3]],nXseq=100,nSampIters=1e5)
 pdf(file="range.pdf",width=7,height=7)
+	par(cex.axis=1.5,cex.lab=1.5,mar=c(5,5,2,1))
+	plot(out$db$X[1,],log(out$db$Y),type='n',
+			xlab="Range Extent (km)",ylab="Genetic Diversity",xaxt='n',
+			ylim=range(
+				c(log(out$db$Y),
+				log(apply(expFromMod$y,1,quantile,probs=c(0.025,0.975))))
+			))
+		axis(side=1,at=seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]])),
+			labels=round(seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]]))*max(z[["max.95.sea.gbif"]])))
+		addExpPredPolygon(expFromMod,qnt=c(0.025,0.975),polyCol=adjustcolor("black",0.1),log=TRUE)
+		addExpPredPolygon(expFromMod,qnt=c(0.10,0.90),polyCol=adjustcolor("black",0.2),log=TRUE)
+		addExpPredPolygon(expFromMod,qnt=c(0.25,0.75),polyCol=adjustcolor("black",0.3),log=TRUE)
+		points(out$db$X[1,],log(out$db$Y),col=adjustcolor(sampCols,0.8),pch=19,cex=1.3)
+		addExpPredLine(expFromMod,col="black",lwd=3,log=TRUE)
+dev.off()
+
+pdf(file="range_pps.pdf",width=7,height=7)
 	par(cex.axis=1.5,cex.lab=1.5,mar=c(5,5,2,1))
 	plotBetaPPS(db=outs[[3]]$db,ppsOut=pps,sampCols=sampCols,
 				xlab="Range Extent (km)",ylab="Genetic Diversity",trp=0.7,xaxt='n')
@@ -124,6 +142,26 @@ dev.off()
 
 pdf(file="range_planktonic.pdf",width=14,height=7)
 	par(cex.axis=1.5,cex.lab=1.5,mar=c(5,5,2,1),mfrow=c(1,2))
+	plot(out$db$X[1,],log(out$db$Y),type='n',
+			xlab="Range Extent (km)",ylab="Genetic Diversity",xaxt='n',
+			ylim=range(
+				c(log(out$db$Y),
+				log(apply(expFromMod$y,1,quantile,probs=c(0.025,0.975))))
+			))
+		axis(side=1,at=seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]])),
+			labels=round(seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]]))*max(z[["max.95.sea.gbif"]])))
+		addExpPredPolygon(expFromMod,qnt=c(0.025,0.975),polyCol=adjustcolor("black",0.1),log=TRUE)
+		addExpPredPolygon(expFromMod,qnt=c(0.10,0.90),polyCol=adjustcolor("black",0.2),log=TRUE)
+		addExpPredPolygon(expFromMod,qnt=c(0.25,0.75),polyCol=adjustcolor("black",0.3),log=TRUE)
+		points(out$db$X[1,],log(out$db$Y),col=adjustcolor(sampCols,0.8),pch=19,cex=1.3)
+		addExpPredLine(expFromMod,col="black",lwd=3,log=TRUE)
+	discreteViolPlot(z,2,"isPlanktonic_atanypoint",
+						xAxLabs=c("Non-planktonic","Planktonic"),logY=TRUE,
+						pchMed=18,lineCol="gray98")
+dev.off()
+
+pdf(file="range_planktonic_pps.pdf",width=14,height=7)
+	par(cex.axis=1.5,cex.lab=1.5,mar=c(5,5,2,1),mfrow=c(1,2))
 	plotBetaPPS(db=outs[[3]]$db,ppsOut=pps,sampCols=sampCols,
 				xlab="Range Extent (km)",ylab="Genetic Diversity",trp=0.7,xaxt='n')
 				max(z[["max.95.sea.gbif"]])
@@ -135,7 +173,7 @@ dev.off()
 xx <- z[bioPreds][,-c(4,14)]
 xxnames <- c("latitude","ecoregions","range extent",	#"ecoregions/range_size",
 			 "body size","egg size","iteroparity",
-			 "philopatry","spawning mode","planktotrophy",
+			 "philopatry","spawning","planktotrophy",
 			 "PLD","planktonicity","benthicity") #,"dispersive adults"
 reord <- c(6:9,11:12,1:2,10,4:5,3)
 xx <- xx[,reord]
@@ -168,7 +206,7 @@ dev.off()
 ################################
 # report statistics for paper
 ################################
-
+if(FALSE){
 # diversity statistics
 range(z$div)
 mean(z$div)
@@ -201,3 +239,4 @@ quantile(b,c(0.025,0.975))
 
 # correlation between ecoregions & range extent
 cor(z$n_ECOREGIONS.all,z$max.95.sea.gbif.nrm)
+}
