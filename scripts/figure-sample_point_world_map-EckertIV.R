@@ -13,12 +13,13 @@ gc()
 
 
 setwd("/Users/rachel/divdiv/")
+sampkeypath = "/Users/rachel/divdiv/data/all_samplenamekeys"
+wmpath = "/Users/rachel/divdiv/data/popgen/input_and_working/ALL_r80_gendiv_data/"
 
 
-# load files for world map --------
+# get files for world map --------
 
 load("data/abiotic/input_and_working/earth_map_objects.RData")
-
 ## This will load 5 R objects:
 ##   lbl.X & lbl.Y are two data.frames that contain labels for graticule lines
 ##   NE_box is a SpatialPolygonsDataFrame object and represents a bounding box for Earth 
@@ -32,17 +33,12 @@ lakes <- rnaturalearth::ne_download(scale="medium", category = 'physical', type 
 gls <- c("Lake Superior", "Lake Huron",
          "Lake Michigan", "Lake Erie", "Lake Ontario")
 gls <- subset(lakes, name %in% gls)
-#how does it look?
-ggplot() +
-  geom_sf(data = gls)
+
+
 
 # get the genetic sample points we want to plot on map ----------
 
-#get master list of datasets we're using
-using <- read.csv("data/master_df.csv") %>% mutate(link = gsub("bioprj_","",run_name))
-using <- using %>% dplyr::select(species,link)
-
-#get lat/longs
+#get all lat/longs
 datasets <- list.files(path = "data/abiotic/input_and_working/lat_long_tables_per_dataset",
                        pattern = "lat_long_table", full.names = TRUE)
 sites <- data.frame("link"=NA, "run_acc_sra"=NA, "lat"=NA, "long"=NA, "coordinateUncertaintyInMeters"=NA, "origin"=NA)
@@ -52,13 +48,64 @@ for ( d in datasets ) {
 }
 sites <- sites %>% filter(is.na(link)==F) %>% dplyr::rename("lon" = "long")
 
-#keep ones we want and pull out species name
-sites <- sites %>% filter(link %in% using$link) %>% 
-  separate(., link, into = c("garbage","species"), sep = "_", remove = F) %>% 
-  dplyr::select(-garbage) %>% mutate(species = gsub("-","_",species))
+
+#filter to just those that made it thru popgen
+wmlist <- list.files(path = wmpath, 
+                 pattern="initPars", 
+                 full.names = TRUE)
+
+sites.kept <- data.frame(sampid_assigned_for_bioinf = NA, run_name = NA, run_acc_sra = NA)
+for (i in 1:length(wmlist)) {
+  
+  wmFile <- wmlist[i]
+  dataset = wmFile %>% strsplit(., "/") %>% as.data.frame() %>% .[nrow(.),] %>% 
+    gsub("WMfitwishart-","",.) %>% gsub("_initPars.Robj","",.)
+  run_name = dataset %>% strsplit(., "_") %>% unlist() %>% .[1:3] %>% 
+    paste(., sep="", collapse="_")
+  
+  load(wmFile)
+  if (dim(initPars$parHom)[1] != dim(initPars$parHom)[2]) {"error - matrix dims are not the same"}
+  df.i = rownames(initPars$parHom) %>% as.data.frame() %>% dplyr::rename("sampid_assigned_for_bioinf"=".") %>% 
+    mutate(run_name = run_name)
+
+  sampkeyFile <- paste0(sampkeypath,"/samplenamekey-",run_name,".txt")
+  sampkey <- read.delim(sampkeyFile)
+  df.i <- merge(df.i, 
+                sampkey %>% dplyr::select(sampid_assigned_for_bioinf, run_acc_sra), 
+                by = "sampid_assigned_for_bioinf", all.x = TRUE)
+  sites.kept <- rbind(sites.kept, df.i)
+  
+}
+sites.kept <- sites.kept %>% filter(is.na(sampid_assigned_for_bioinf)==F)
+
+#are run_acc_sra's all unique in two dfs about to use/filter by?
+#should return 0 if so
+nrow(sites) - sites %>% dplyr::select(run_acc_sra) %>% distinct() %>% nrow()
+nrow(sites.kept) - sites.kept %>% dplyr::select(run_acc_sra) %>% distinct() %>% nrow()
+
+sites <- sites %>% filter(run_acc_sra %in% sites.kept$run_acc_sra)
+
+#and filter by datasets in master list of datasets we're using as final check
+using <- read.csv("data/master_df.csv") %>% mutate(link = gsub("bioprj_","",run_name))
+using <- using %>% dplyr::select(species,link)
+sites <- sites %>% filter(link %in% using$link)
+
+
 
 #add clade groups on for coloring
 taxcolorkey <- read.csv("data/master_tax_color_key.csv") %>% mutate(species = gsub(" ","_",species))
+#recode to match phy fig
+taxcolorkey <- read.csv("/Users/rachel/divdiv/data/master_tax_color_key.csv") %>% mutate(species = gsub(" ","_",species))
+taxcolorkey$simplerclades <- taxcolorkey$taxclade
+taxcolorkey$simplerclades[taxcolorkey$taxclade == "sauropsida"] = "Birds"
+taxcolorkey$simplerclades[taxcolorkey$taxclade == "chondrichthyes"] = "Cartilaginous fishes"
+taxcolorkey$simplerclades[taxcolorkey$taxclade == "not assigned"] = "Other"
+taxcolorkey$simplerclades[taxcolorkey$taxclade == "ochrophyta"] = "Other"
+taxcolorkey$simplerclades[taxcolorkey$species == "Caretta_caretta"] = "Other"
+#merge
+sites <- sites %>%
+  separate(., link, into = c("garbage","species"), sep = "_", remove = F) %>% 
+  dplyr::select(-garbage) %>% mutate(species = gsub("-","_",species))
 sites <- merge(sites, 
                taxcolorkey, 
                by = "species", all.x = T)
@@ -112,21 +159,20 @@ ggplot() +
           colour = "gray50", fill = "white", size = .25) +
   
   ## add genetic sample points
-  geom_sf(data = sf::st_jitter(sites.prj, 5000), aes(fill = taxclade), shape=21, colour="black", size = 4, alpha = 0.5) +
-  scale_fill_manual(values = c("#A6CEE3","#33A02C","#FF7F00","#FDBF6F","#FB9A99","#B2DF8A","#E31A1C","#C2C0C0","#6A3D9A","#1F78B4","#CAB2D6")) +
-
+  geom_sf(data = sf::st_jitter(sites.prj, 5000), aes(fill = simplerclades), shape=21, colour="black", size = 4, alpha = 0.5) +
+  scale_fill_manual(values = c("#1F78B4","#A6CEE3","#33A02C","#FF7F00","#FDBF6F","#FB9A99","#B2DF8A","#E31A1C","transparent","#CAB2D6")) +
+  
   ## Set empty theme
   theme_void() + # remove the default background, gridlines & default gray color around legend's symbols
   theme(
     legend.position = "none",
-    #legend.text = element_text(size = 20),
-    #legend.title = element_blank(),
-    #plot.margin = unit(c(t=0, r=3, b=0, l=0), unit="cm"), # adjust margins
-    panel.background = element_rect(fill = "transparent"),
-    plot.background = element_rect(fill = "transparent")
+    plot.margin = unit(c(t=0, r=0, b=0, l=0), unit="cm"), # adjust margins
+    panel.background = element_rect(fill = "white", colour = NA),
+    plot.background = element_rect(fill = "white", colour = NA)
   )
 
-ggsave(filename = "figures/world_map_genetic_pts.pdf", width = 30, height = 15, units = c("cm"))
+ggsave(filename = "figures/world_map_genetic_pts-EckertIV.pdf", width = 30, height = 15, units = c("cm"))
+ggsave(filename = "figures/world_map_genetic_pts-EckertIV.png", width = 30, height = 15, units = c("cm"))
 
 
 
