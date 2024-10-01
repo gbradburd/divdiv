@@ -26,7 +26,7 @@ outdir = "/Users/rachel/divdiv/data/biotic"
 df.raw  <- googledrive::shared_drive_find(pattern = "^divdiv$")
 df.raw  <- googledrive::drive_ls(path = df.raw , pattern = "working_datasheets", recursive = FALSE)
 df.raw  <- googledrive::drive_ls(path = df.raw , pattern = "working_list_marine_projects_with_10indivs-12-4-2020", recursive = FALSE)
-df.raw $name
+df.raw$name
 df.raw <- googlesheets4::range_read(df.raw , sheet = 1) %>% as.data.frame() %>% mutate(run_name = paste("bioprj_",link,sep=""))
 
 # this is older way we were building the trait df
@@ -92,7 +92,7 @@ for ( trait in names(df) ) {
 # df$Fecundity_EggsFemaleSpawn <- purrr::map_dbl(df$Fecundity_EggsFemaleSpawn, range_midpoint)
 # df$Fecundity_SpawnFrequency <- purrr::map_dbl(df$Fecundity_SpawnFrequency , range_midpoint)
 
-write.csv(df, file = paste0(workingdir,"/marinerds_traits_05-19-2024.csv"), row.names = FALSE)
+write.csv(df, file = paste0(workingdir,"/marinerds_traits_10-01-2024.csv"), row.names = FALSE)
 
 
 
@@ -100,7 +100,7 @@ write.csv(df, file = paste0(workingdir,"/marinerds_traits_05-19-2024.csv"), row.
 rm(list = ls() %>% stringr::str_subset(., c("workingdir|outdir"), negate = T))
 gc()
 
-df <- read.csv(paste0(workingdir,"/marinerds_traits_05-19-2024.csv"))
+df <- read.csv(paste0(workingdir,"/marinerds_traits_10-01-2024.csv"))
 
 #recode some variables
 #for dispersal related traits, larger values mean higher dispersal
@@ -141,6 +141,7 @@ write.csv(df, paste0(outdir,"/cleaned_numeric_biotic_traits.csv"), row.names = F
 
 
 
+# graveyard ---------
 
 # trait-trait correlation matrix ------
 
