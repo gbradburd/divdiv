@@ -534,7 +534,7 @@ addPhylopics <- function(cladeCols,ysize=4,tipcols){
 	rphylopic::add_phylopic_base(img=bony_fishes,x=xleft,y=ytop,ysize=ysize-2,fill=cladeCols[1])
 		text(x=xleft+legendshift,y=ytop,labels=sprintf("Bony fishes (n=%s)",n_bony_fishes),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=sauropsida,x=xleft,y=ytop-dshift,ysize=ysize,fill=cladeCols[2])
-		text(x=xleft+legendshift,y=ytop-1*dshift,labels=sprintf("Birds (n=%s)",n_birds),pos=pos,cex=txt.cex)
+		text(x=xleft+legendshift,y=ytop-1*dshift,labels=sprintf("Birds and Reptiles (n=%s)",n_birds),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=mammal,x=xleft,y=ytop-2*dshift,ysize=ysize,fill=cladeCols[3])
 		text(x=xleft+legendshift,y=ytop-2*dshift,labels=sprintf("Mammals (n=%s)",n_mammals),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=chondrichthyes,x=xleft,y=ytop-3*dshift,ysize=ysize,fill=cladeCols[4])
@@ -556,7 +556,7 @@ addPhylopics <- function(cladeCols,ysize=4,tipcols){
 gussyUpPhyloFig <- function(tree,cladeCols,rounding,tipcols){
 	cladeCols1 <- adjustcolor(cladeCols,0.5)
 	highlightClade(tree=tree,dSp1="Engraulis encrasicolus",dSp2="Sebastes diaconus",col=cladeCols1[1],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
-	highlightClade(tree=tree,dSp1="Pygoscelis papua",dSp2="Aythya marila",col=cladeCols1[2],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
+	highlightClade(tree=tree,dSp1="Pygoscelis papua",dSp2="Caretta caretta",col=cladeCols1[2],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
 	highlightClade(tree=tree,dSp1="Phocoena sinus",dSp2="Halichoerus grypus atlantica",col=cladeCols1[3],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
 	highlightClade(tree=tree,dSp1="Bathyraja panthera",dSp2="Sphyrna tiburo",col=cladeCols1[4],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
 	highlightClade(tree=tree,dSp1="Paracentrotus lividus",dSp2="Pisaster ochraceus",col=cladeCols1[5],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
@@ -635,26 +635,28 @@ phyViz <- function(db,fit,XX,predNames,tipcols,tree,xlim,valRange=NULL,adj=2,log
 	if(logX){
 		xlim <- range(log(db$Y)) + c(-4,1)
 		y <- log(db$Y)
-	} else {
+	} else {	
 		y <- db$Y
 	}
 		mtext(side=3,text="Biotic/Abiotic Predictors",padj=1,cex=1.4)
+#	par(mar=c(0,0,0,0))
 	plot(0,type='n',
 			xlim=xlim,
 			yaxt='n',xaxt='n',xlab="",ylab="",bty='n',
-			ylim=c(1,nSp)) #c(0,(length(cnDens)+1)*1.25))
-	axis(side=1,
-		at=c(xlim[1],(xlim[2]+xlim[1])/2,xlim[2]),
-		labels=round(c(xlim[1],(xlim[2]+xlim[1])/2,xlim[2]),2))
+			ylim=c(1,nSp),xaxs="r") #c(0,(length(cnDens)+1)*1.25))
+	axis(side=1,at=c(0,0.01,0.02,0.03),labels=c(0,0.01,0.02,0.03))
+#		at=c(xlim[1],(xlim[2]+xlim[1])/2,xlim[2]),
+#		labels=round(c(xlim[1],(xlim[2]+xlim[1])/2,xlim[2]),3))
 	#text(x=xtext,y=(0.4 + 1:nSp)*1.25,labels=spNames[spOrder],srt=0)
 	#abline(h=spOrder-0.5,lty=3,col="gray")
 	segments(x0=0,
 			 y0=c(1:db$N)-0.25,
 			 x1=y[spOrder],
 			 y1=c(1:db$N)-0.25,
-			 col="red3",
+			 col=tipcols[spOrder],
+			 #col="red3",
 			 lwd=5)
-	gussyUpDivBarPlot(tree=tree,xcoord=-0.001,cladeCols=cladeCols)
+	#gussyUpDivBarPlot(tree=tree,xcoord=-0.001,cladeCols=cladeCols)
 		mtext(side=1,text="Diversity",padj=3)
 		mtext(side=3,text="Species-level Genetic Diversity",padj=1,cex=1.4)
 	addLegend(top=84,xl=0.02,xr=0.0235,txtShft=7e-4,txtCex=1.4)
@@ -728,7 +730,8 @@ phyloViz_scatter <- function(loo,predName,valRange=NULL){
 	points(loo$db$Y,yMean,pch=18,cex=1.5,col=cols)
 }
 
-discreteViolPlot <- function(z,nPreds,predName,xAxLabs,logY=FALSE,...){
+discreteViolPlot <- function(z,nPreds,predName,xAxLabs,logY=FALSE,yRange=NULL,...){
+	#recover()
 	x <- z[[predName]]
 	if(nPreds==2){
 		vCols <- gray(c(0.2,0.5,0.8),1)[c(1,3)]
@@ -738,18 +741,30 @@ discreteViolPlot <- function(z,nPreds,predName,xAxLabs,logY=FALSE,...){
 		xRange <- c(-0.5,2.5)
 	}
 	if(logY){
-		yRange <- range(log(z$div)) + c(-0.1+0.1)
+		if(is.null(yRange)){
+			yRange <- range(log(z$div)) + c(-0.1+0.1)	
+		}
 		y <- log(z$div)
-		yLab <- "Log(Genetic Diversity)"
+#		yLab <- "Log(Genetic Diversity)"
 	} else {
-		yRange <- range(z$div) + c(-0.003+0.003)
+		if(is.null(yRange)){
+			yRange <- range(z$div) + c(-0.003+0.003)
+		}
 		y <- z$div
-		yLab <- "Genetic Diversity"
+#		yLab <- "Genetic Diversity"
 	}
-	plot(0,type='n',xlab="",xaxt='n',ylab=yLab,xlim=xRange,ylim=yRange)
+	plot(0,type='n',xlab="",xaxt='n',ylab="Genetic Diversity",xlim=xRange,ylim=yRange,yaxt='n')
 	for(i in 1:nPreds){
 		vioplot::vioplot(at=i-1,y[x==(i-1)],add=TRUE,col=vCols[i],...)
 	}
-	points(jitter(x),y=y,col="black",bg=z$cladecolor,pch=21,cex=1.7)
+	xJit <- jitter(x)
+	medians <- sapply(unique(x),function(i){median(y[x==i])})
+	medianCoords <- cbind(unique(x),medians)
+	xJitDist <- fields::rdist(cbind(xJit,y), medianCoords)
+	while(any(xJitDist < 0.1)){
+		xJit <- jitter(x)
+		xJitDist <- fields::rdist(cbind(xJit,y),medianCoords)
+	}
+	points(xJit,y=y,col="black",bg=z$cladecolor,pch=21,cex=1.7)
 	axis(side=1,at=0:(nPreds-1),labels=xAxLabs)
 }
