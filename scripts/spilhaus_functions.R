@@ -1,5 +1,104 @@
 library(sf)
 
+gen.gridlines<-function(mins,maxs,n,res=n*10){
+  mins<-rep(mins,length.out=2)
+  maxs<-rep(maxs,length.out=2)
+  n<-rep(n,length.out=2)
+  res<-rep(res,length.out=2)
+  x.seq1<-seq(mins[1],maxs[1],length.out=n[1]+1)
+  x.seq2<-seq(mins[1],maxs[1],length.out=res[1]+1)
+  y.seq1<-seq(mins[2],maxs[2],length.out=n[2]+1)
+  y.seq2<-seq(mins[2],maxs[2],length.out=res[2]+1)
+  c(lapply(x.seq1,function(ii) cbind(ii,y.seq2)),
+    lapply(y.seq1,function(ii) cbind(x.seq2,ii)))
+}
+
+#fix polygon seams resulting from intersecting with -180/180 longitude line
+fix.pacific.seams<-function(x,
+                            by,
+                            intersection.check.tol=1000,
+                            snap.tol=5000,
+                            exp.fudge.fac=100){
+  #map -180/180 longitude line onto spilhaus projection
+  seam.lonlat<-cbind(180,seq(-90,90,length.out=1000))
+  seam.xy<-from_lonlat_to_spilhaus_xy(seam.lonlat[,1],seam.lonlat[,2])
+  #split out separate components (thankfully one half always has positive y coords, the other always negative)
+  seam.xy<-lapply(split(seam.xy,seam.xy[,2]>0),matrix,ncol=2)
+  #fatten up to make sure intersection test gets everything
+  seam<-terra::buffer(terra::vect(seam.xy,"lines"),intersection.check.tol)
+  #find geometries overlapping with seam
+  inds<-which(terra::is.related(x,seam,"intersects"))
+  
+  #for each problem geometry...
+  #first diaggregate into individual pieces
+  #then snap their borders together (within some tolerance)
+  #then buffer the shapes slightly
+  #(not ideal, but found this little bit of fudging necessary to cover all cases)
+  #then finally reaggregate into a single, dissolving any overlapping borders
+  for(i in inds){
+    x<-rbind(x,
+             terra::aggregate(
+               terra::buffer(
+                 terra::snap(
+                   terra::disagg(x[i]),
+                   tol=snap.tol),
+                 exp.fudge.fac),
+               count=FALSE))
+  }
+  #eliminate the old geometry elements (R didn't seem to like directly replacing the indices for whatever reason)
+  x<-x[-inds]
+  
+  x
+}
+
+#splits any polygons overlapping with "seams" of Spilhaus projection
+preproc.split<-function(x,width=2500){
+  
+  #max coordinate in spilhaus projection
+  lim<-11825474
+  #seq from min to max coordinate
+  lim.seq<-seq(-lim,lim,length.out=1000)
+  #"travel" from bottom left corner of spilhaus to top right
+  seam.xy<-rbind(cbind(-lim,lim.seq),
+                 cbind(lim.seq,lim))
+  #convert to lonlat
+  seam.lonlat<-from_spilhaus_xy_to_lonlat(seam.xy[,1],seam.xy[,2])
+  #eliminate the cases that failed (projecting the border can of course make things go wonky)
+  seam.lonlat<-seam.lonlat[complete.cases(seam.lonlat),]
+  #split up at seam of typical mercator projection (i.e., meridian in the Pacific)
+  seam.lonlat<-lapply(split(seam.lonlat,seam.lonlat[,1]>0),matrix,ncol=2)
+  #extend each line to slightly cross meridian to prevent weird edge cases
+  seam.lonlat[[1]]<-rbind(seam.lonlat[[1]],
+                          seam.lonlat[[2]][1,]-c(360,0))
+  seam.lonlat[[2]]<-rbind(seam.lonlat[[1]][nrow(seam.lonlat[[1]])-1,]+c(360,0),
+                          seam.lonlat[[2]])
+  #need to "fatten" lines into polygon to ensure all points end up on one side of border or other...
+  #a little hacky, just doing this in lonlat coordinates
+  #found a value of 0.05 was minimum necessary to ensure no distortion around Bering Strait
+  #damn, just realized that this is probably best done with terra's buffer() function lol
+  # fatten<-function(x,wd=0.05){
+  #   d<-x[-(1:2),]-x[-(nrow(x)-(0:1)),]
+  #   d<-rbind(x[3:2,]-x[2:1,],d,x[nrow(x)-(0:1),]-x[nrow(x)-(1:2),])
+  #   angs<-atan(d[,2]/d[,1])
+  #   angs[d[,1]<0]<-angs[d[,1]<0]+pi
+  #   angs<-angs%%(2*pi)
+  #   angs[2]<-angs[2]+angs[3]-angs[1]
+  #   angs[nrow(x)+1]<-angs[nrow(x)+1]+angs[nrow(x)]-angs[nrow(x)+2]
+  #   angs<-angs[-c(1,nrow(x)+2)]
+  #   angs<-angs+pi/2
+  #   o<-cbind(cos(angs),sin(angs))/2*wd
+  #   rbind(x+o,
+  #         (x-o)[nrow(x):1,])
+  # }
+  # seam<-vect(lapply(seam.lonlat,fatten,wd=0.05),"polygons")
+  #new approach--just add buffer of ~2.5 km (seems to do trick)
+  seam<-terra::buffer(terra::vect(seam.lonlat,"lines",
+                                  crs="+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"),
+                      width=width)
+  #use seam to erase bits of geometry at border
+  terra::erase(x,seam)
+}
+
 # auxiliary function 1: fetch 5km resolution land mask
 download_land_mask = function() {
   myInfo = rerddap::info('NOAA_DHW_monthly', url='https://coastwatch.pfeg.noaa.gov/erddap/')

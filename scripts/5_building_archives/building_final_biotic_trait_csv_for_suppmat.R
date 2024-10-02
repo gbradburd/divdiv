@@ -11,15 +11,14 @@ indir = "/Users/rachel/divdiv"
 outdir = "/Users/rachel/divdiv/data/biotic"
 
 #get cleaned final trait data
-trts.og <- read.csv(paste0(indir,"/data/biotic/inputs_and_working/marinerds_traits_05-19-2024.csv"))
+trts.og <- read.csv(paste0(indir,"/data/biotic/inputs_and_working/marinerds_traits_10-01-2024.csv"))
 
 #get final master df used in analyses
 master <- read.csv(paste0(indir,"/data/master_df.csv")) %>% 
   mutate(organism_biosamp = gsub("_"," ",species))
 master$organism_biosamp[master$organism_biosamp == "Exaiptasia diaphana"] = "Exaiptasia pallida"
 
-#keep just species and traits 
-
+#keep just species and traits
 df <- trts.og %>% filter(organism_biosamp %in% master$organism_biosamp) %>% 
   dplyr::select(organism_biosamp,
                 Generational_Structure,ReturnToSpawningGround,
@@ -34,7 +33,8 @@ write.csv(df, paste0(outdir, "/final_biotic_traits_for_suppmat.csv"), row.names 
 
 #used combo of an Rmarkdown script and quite a bit of manual processing to add 
 #numerical citation value columns to final_biotic_traits.csv and 
-#generate a full citation text doc
+#generate a full citation text doc, saved in:
+#/data/biotic/final_biotic_traits_for_suppmat-with-citation-numbers.csv
 
 #notes:
 

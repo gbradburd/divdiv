@@ -13,8 +13,9 @@ gc()
 
 
 setwd("/Users/rachel/divdiv/")
-sampkeypath = "/Users/rachel/divdiv/data/all_samplenamekeys"
-wmpath = "/Users/rachel/divdiv/data/popgen/input_and_working/ALL_r80_gendiv_data/"
+sampkeypath = "data/all_samplenamekeys"
+wmpath = "data/popgen/input_and_working/ALL_r80_gendiv_data/"
+ecoregionspath = "data/abiotic/input_and_working/Marine_Ecoregions_Of_the_World_(MEOW)-shp/"
 
 
 #load Spilhaus projection functions
@@ -36,6 +37,29 @@ lonlat = from_spilhaus_xy_to_lonlat(spilhaus_df$x, spilhaus_df$y)
 da = download_land_mask()
 spilhaus_df$z = extract_mask(da, lonlat)
 spilhaus_df$l = is.na(spilhaus_df$z)
+
+
+
+# get world coastlines and convert to spilhaus -------------
+NE_coastlines <- rnaturalearth::ne_coastline(scale = "medium", returnclass = 'sf')
+#convert to spatvect so can use terra funcs
+PROJ.latlon <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+NE_coastlines.prj <- sf::st_transform(NE_coastlines, crs = PROJ.latlon)
+NE_coastlines.prj <- as(NE_coastlines.prj, "Spatial")
+NE_coastlines.prj <- terra::vect(NE_coastlines.prj)
+#pull out lat/longs
+coasts <- terra::geom(NE_coastlines.prj) %>% as.data.frame() %>% mutate(grp = paste0(geom,"_",part))
+#do they look right in current proj?
+ggplot() + geom_polygon(data = coasts, aes(x=x, y=y, group=grp), fill = "transparent", colour = "orange", alpha = 0.2)
+#convert lat/longs to spilhaus and add grouping variable back on
+coasts.prj = from_lonlat_to_spilhaus_xy(coasts$x, coasts$y)
+coasts.prj <- cbind(coasts.prj,coasts)
+head(coasts.prj)
+#deal with polygons that get torn apart due to discontinuities near Panama and Bering Straights
+coasts.prj$grp2 <- c(0, cumsum(mapply(2:nrow(coasts.prj), FUN = function(i) {
+  sqrt((coasts.prj$spilhaus_x[i] - coasts.prj$spilhaus_x[i-1])^2 + 
+         (coasts.prj$spilhaus_y[i] - coasts.prj$spilhaus_y[i-1])^2) > 2e5
+})))
 
 
 
@@ -132,6 +156,7 @@ ggplot() +
   # add land outlines
   #geom_sf(data = NE_coastlines.prj, 
   #        colour = "gray50", linewidth = .25) +
+  geom_path(data = coasts.prj, aes(x=spilhaus_x, y=spilhaus_y, group=grp2), colour = "gray70", alpha = 1, linewidth = 0.25) +
   
   ## add N indivs raster
   geom_tile(data = pretty_sites, aes(x = x, y = y, fill = z)) +
@@ -149,9 +174,119 @@ ggplot() +
         legend.position = c(0.13, 0.2), legend.direction = "vertical") +
   coord_equal()
 
-ggsave(paste("figures/world_map_genetic_pts-NSAMPS-Spilhaus-36grid.pdf",sep="") , width = 15, height = 14.5, units = c("cm"))
-ggsave(paste("figures/world_map_genetic_pts-NSAMPS-Spilhaus-36grid.png",sep="") , width = 15, height = 14.5, units = c("cm"))
+ggsave(paste("figures/world_map_genetic_pts-NSAMPS-Spilhaus-36grid-outline.pdf",sep="") , width = 15, height = 14.5, units = c("cm"))
+ggsave(paste("figures/world_map_genetic_pts-NSAMPS-Spilhaus-36grid-outline.png",sep="") , width = 15, height = 14.5, units = c("cm"))
 
-max(pretty_sites$z)
+
+
+# get marine ecoregions ------------------
+ecor <- terra::vect("/Users/rachel/divdiv/data/abiotic/input_and_working/Marine_Ecoregions_Of_the_World_(MEOW)-shp/Marine_Ecoregions_Of_the_World__MEOW_.shp")
+#reproject into norm lat/long and pull out
+PROJ.latlon <- "+proj=longlat +ellps=WGS84 +datum=WGS84 +no_defs"
+ecor <- terra::project(ecor, PROJ.latlon)
+#pull out lat/longs
+ecor <- terra::geom(ecor) %>% as.data.frame() %>% mutate(grp = paste0(geom,"_",part))
+#do they look right in current proj?
+ggplot() + geom_polygon(data = ecor, aes(x=x, y=y, group=grp), fill = "transparent", colour = "orange", alpha = 0.2)
+#convert lat/longs to spilhaus and add grouping variable back on
+ecor.prj = from_lonlat_to_spilhaus_xy(ecor$x, ecor$y)
+ecor.prj <- cbind(ecor.prj,ecor)
+head(ecor.prj)
+#deal with polygons that get torn apart due to discontinuities near Panama and Bering Straights
+ecor.prj$grp2 <- c(0, cumsum(mapply(2:nrow(ecor.prj), FUN = function(i) {
+  sqrt((ecor.prj$spilhaus_x[i] - ecor.prj$spilhaus_x[i-1])^2 + 
+         (ecor.prj$spilhaus_y[i] - ecor.prj$spilhaus_y[i-1])^2) > 2e5
+})))
+
+#hmmm, not great looking
+ggplot() + geom_path(data = ecor.prj, aes(x=spilhaus_x, y=spilhaus_y, group=grp2), colour = "orange", alpha = 1)
+ggplot() + geom_path(data = ecor.prj, aes(x=spilhaus_x, y=spilhaus_y, group=grp), colour = "orange", alpha = 1)
+
+#find the polygons that are problems using some math
+ecor.prj %>% group_by(grp) %>% mutate(range.x = max(spilhaus_x)-min(spilhaus_x)) %>% 
+  mutate(range.y = max(spilhaus_y)-min(spilhaus_y)) %>% 
+  dplyr::select(geom,grp,range.x,range.y) %>% 
+  distinct() %>%
+  pivot_longer(., names_to = "dim", values_to = "range", cols = range.x:range.y) %>% 
+  ggplot() + geom_histogram(aes(x=range)) + facet_wrap(.~dim, ncol = 1)
+
+#pull out the prob polygons
+probs <- ecor.prj %>% group_by(grp) %>% mutate(range.x = max(spilhaus_x)-min(spilhaus_x)) %>% 
+  mutate(range.y = max(spilhaus_y)-min(spilhaus_y)) %>% 
+  dplyr::select(geom,grp,range.x,range.y) %>% 
+  distinct() %>%
+  pivot_longer(., names_to = "dim", values_to = "range", cols = range.x:range.y) %>% 
+  filter(range > 5e6)
+
+#viz where prob polygons are
+probs.plot <- ecor.prj %>% filter(grp %in% probs$grp)
+
+ggplot() + 
+  geom_path(data = ecor.prj, aes(x=spilhaus_x, y=spilhaus_y, group=grp), colour = "orange", alpha = 1) +
+  geom_path(data = probs.plot, aes(x=spilhaus_x, y=spilhaus_y, group=grp), colour = "red", alpha = 1)
+
+ggplot() + 
+  geom_polygon(data = ecor, aes(x=x, y=y, group=grp), fill = "transparent", colour = "orange", alpha = 0.2) +
+  geom_polygon(data = ecor %>% filter(grp %in% probs$grp), aes(x=x, y=y, group=grp), fill = "red", colour = "red", alpha = 0.2)
+
+
+
+#look at just one of probs
+head(probs)
+prob = "34_1"
+prob = "37_1"
+prob = "42_1"
+
+#what it looks like
+ggplot() + 
+  geom_path(data = ecor.prj %>% filter(!grp %in% probs$grp), aes(x=spilhaus_x, y=spilhaus_y, group=grp), colour = "orange", alpha = 1) +
+  geom_path(data = ecor.prj %>% filter(grp == prob), aes(x=spilhaus_x, y=spilhaus_y, group=grp), colour = "red", alpha = 1)
+#what it should look like
+ggplot() + 
+  geom_polygon(data = ecor, aes(x=x, y=y, group=grp), fill = "transparent", colour = "orange", alpha = 0.2) +
+  geom_polygon(data = ecor %>% filter(grp == prob), aes(x=x, y=y, group=grp), fill = "red", colour = "red", alpha = 0.2)
+#single out the specific prob points in polygon
+ggplot() + 
+  geom_path(data = ecor.prj %>% filter(!grp %in% probs$grp), aes(x=spilhaus_x, y=spilhaus_y, group=grp), colour = "orange", alpha = 1) +
+  geom_path(data = ecor.prj %>% filter(grp == prob), aes(x=spilhaus_x, y=spilhaus_y, group=grp), colour = "red", alpha = 1) +
+  geom_point(data = ecor.prj %>% filter(grp == prob) %>% filter(spilhaus_x < -1e7), aes(x=spilhaus_x, y=spilhaus_y, group=grp), colour = "purple")
+#try to prettify
+test <- ecor.prj %>% filter(grp == prob) %>% filter(spilhaus_x < -1e7) %>%
+  rename("lon"="x", "lat" = "y", "x" = "spilhaus_x", "y" = "spilhaus_y") %>% 
+  mutate(l = FALSE) %>%
+  mutate(z = grp) %>% 
+  dplyr::select(x, y, z, l)
+test.pretty = pretify_spilhaus_df(test)
+#points do move, but not to the right place
+ggplot() + 
+  geom_path(data = ecor.prj %>% filter(!grp %in% probs$grp), aes(x=spilhaus_x, y=spilhaus_y, group=grp), colour = "orange", alpha = 1) +
+  geom_path(data = ecor.prj %>% filter(grp == prob), aes(x=spilhaus_x, y=spilhaus_y, group=grp), colour = "red", alpha = 1) +
+  geom_point(data = ecor.prj %>% filter(grp == prob) %>% filter(spilhaus_x < -1e7), aes(x=spilhaus_x, y=spilhaus_y, group=grp), colour = "purple") +
+  geom_point(data = test.pretty, aes(x=x, y=y), colour = "blue")
+#
+
+
+
+
+
+test <- ecor.prj %>% filter(grp == "34_1") %>% filter(spilhaus_x < -1e7)
+
+test <- test %>% mutate(new = )
+
+
+
+for(i in 1:length(unique(ecor.prj$grp))) {
+  
+  list <- unique(ecor.prj$grp)
+  ecor.i <- list[i]
+  print(paste0("ecor is ", ecor.i))
+  tmp <- ecor.prj %>% filter(grp == ecor.i)
+  out <- ggplot() +
+    geom_path(data = tmp, aes(x=spilhaus_x, y=spilhaus_y, group=grp), colour = "orange", alpha = 1) +
+    labs(title = ecor.i)
+  print(out)
+
+}
+
 
 
