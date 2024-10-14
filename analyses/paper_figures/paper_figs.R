@@ -180,8 +180,7 @@ xxnames <- c("latitude","ecoregions","range extent",	#"ecoregions/range_size",
 reord <- c(6:9,11:12,1:2,10,4:5,3)
 xx <- xx[,reord]
 xxnames <- xxnames[reord]
-mapFig <- jpeg::readJPEG("../../figures/world_map_genetic_pts.jpg")
-map_xy_ratio <- dim(mapFig)[1]/dim(mapFig)[2]
+mapFig <- png::readPNG("../../figures/world_map_genetic_pts-EckertIV.png")
 #z$cladecolor[z$species=="Sargassum_muticum"] <- z$cladecolor[which(z$species=="Eukrohnia_hamata")]
 pdf(file="all_predictors.pdf",width=14,height=10)
 	phyViz(db=outs[[3]]$db,fit=outs[[3]]$fit,
