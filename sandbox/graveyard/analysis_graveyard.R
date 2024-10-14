@@ -923,3 +923,18 @@ betaPPS <- function(db,fit,nPPS,predName,multiPred=FALSE,sampCols=NULL){
 				max(z[["max.95.sea.gbif"]])
 		axis(side=1,at=seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]])),
 			labels=round(seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]]))*max(z[["max.95.sea.gbif"]])))
+			
+par(mfrow=c(3,5))
+for(i in 1:length(outs)){
+	if(length(unique(outs[[i]]$db$X[1,])) > 4){
+		continuous <- TRUE
+	} else {
+		continuous <- FALSE
+	}
+	plotPredictionByEffect(out=outs[[i]],xlab=bioPredNames[i],sampCols=sampCols,nXseq=100,nSampIters=1e5,continuous=continuous)	
+}
+
+
+		axis(side=1,at=seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]])),
+			labels=round(seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]]))*max(z[["max.95.sea.gbif"]])))
+	axis(side=1,at=0:(nPreds-1),labels=xAxLabs)

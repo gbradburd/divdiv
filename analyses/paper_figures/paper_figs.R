@@ -74,18 +74,6 @@ nuisPreds <- preds[16:19]
 nuisPredNames <- predNames[16:19]
 
 ################################
-# test for phylogenetic signal
-################################
-
-# blomberg's k
-blom_k <- phytools::phylosig(sampPhy,z$div,test=TRUE)
-pagels_lambda <- phytools::phylosig(sampPhy,z$div,method="lambda",test=TRUE)
-	#plot(blom_k)
-
-load("../phy_cgram.Robj")
-#plot(cgram$sampPhy_cgram)
-
-################################
 # analyze diversity with one biological predictor 
 #	and all the "nuisance" parameters
 ################################
@@ -107,6 +95,7 @@ pdf(file="predictor_effect_sizes.pdf",width=8,height=7)
 				 multiPred=TRUE,
 				 qnt=1)
 dev.off()
+
 
 expFromMod <- simFromMod(outs[[3]],nXseq=100,nSampIters=1e5)
 yrange <- range(c(log(outs[[3]]$db$Y),
@@ -191,13 +180,17 @@ xxnames <- c("latitude","ecoregions","range extent",	#"ecoregions/range_size",
 reord <- c(6:9,11:12,1:2,10,4:5,3)
 xx <- xx[,reord]
 xxnames <- xxnames[reord]
-z$cladecolor[z$species=="Sargassum_muticum"] <- z$cladecolor[which(z$species=="Eukrohnia_hamata")]
-pdf(file="all_predictors1.pdf",width=14,height=10)
+mapFig <- jpeg::readJPEG("../../figures/world_map_genetic_pts.jpg")
+map_xy_ratio <- dim(mapFig)[1]/dim(mapFig)[2]
+#z$cladecolor[z$species=="Sargassum_muticum"] <- z$cladecolor[which(z$species=="Eukrohnia_hamata")]
+pdf(file="all_predictors.pdf",width=14,height=10)
 	phyViz(db=outs[[3]]$db,fit=outs[[3]]$fit,
 			XX=xx,
 			predNames=xxnames,
 		   tree=sampPhy,xlim=c(1e-3,0.035),tipcols=z$cladecolor,
 		   valRange=NULL,adj=0.5,logX=FALSE,rounding=0.05)
+	par(mfg=c(1,1))
+		addMap2fig(mapFig=mapFig,xl=0,xr=0.03,yt=91,yb=64)
 dev.off()
 
 
@@ -221,6 +214,20 @@ dev.off()
 # report statistics for paper
 ################################
 if(FALSE){
+
+################################
+# test for phylogenetic signal
+################################
+
+# blomberg's k
+blom_k <- phytools::phylosig(sampPhy,z$div,test=TRUE)
+pagels_lambda <- phytools::phylosig(sampPhy,z$div,method="lambda",test=TRUE)
+	#plot(blom_k)
+
+load("../phy_cgram.Robj")
+#plot(cgram$sampPhy_cgram)
+
+
 # diversity statistics
 range(z$div)
 mean(z$div)

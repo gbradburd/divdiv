@@ -208,7 +208,7 @@ vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partG",multiPr
 ################
 # analyze diversity with all predictors simultaneously
 ################
-
+if(FALSE){
 predSampCov <- cov(t(z[,bioPreds]),use="pairwise.complete.obs")
 predPCs <- prcomp(predSampCov)
 predPC
@@ -225,3 +225,4 @@ postBetaPlot_allPreds(outs[[1]],x[[1]])
 tmp <- lapply(1:18,function(i){rstan::extract(outs[[1]]$fit,par=sprintf("beta[%s]",i),permute=FALSE,inc_warmup=TRUE)})
 
 par(mfrow=c(4,5)) ; lapply(1:18,function(i){hist(tmp[[i]],main=x[[1]][i]) ; abline(v=0,col="red")})
+}
