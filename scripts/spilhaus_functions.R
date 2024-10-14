@@ -35,15 +35,18 @@ fix.pacific.seams<-function(x,
   #then buffer the shapes slightly
   #(not ideal, but found this little bit of fudging necessary to cover all cases)
   #then finally reaggregate into a single, dissolving any overlapping borders
+  #9/28-->calling aggregate without "by" arguments results in dropping field attributes
+  #now fixed by manually re-adding fields to aggregated shapes
   for(i in inds){
+    tmp<-terra::aggregate(
+      terra::buffer(
+        terra::snap(
+          terra::disagg(x[i]),
+          tol=snap.tol),
+        exp.fudge.fac))
+    terra::values(tmp)<-terra::values(x)[i,]
     x<-rbind(x,
-             terra::aggregate(
-               terra::buffer(
-                 terra::snap(
-                   terra::disagg(x[i]),
-                   tol=snap.tol),
-                 exp.fudge.fac),
-               count=FALSE))
+             tmp)
   }
   #eliminate the old geometry elements (R didn't seem to like directly replacing the indices for whatever reason)
   x<-x[-inds]
@@ -52,7 +55,7 @@ fix.pacific.seams<-function(x,
 }
 
 #splits any polygons overlapping with "seams" of Spilhaus projection
-preproc.split<-function(x,width=2500){
+preproc.split<-function(x,width=100){
   
   #max coordinate in spilhaus projection
   lim<-11825474
