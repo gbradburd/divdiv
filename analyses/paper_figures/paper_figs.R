@@ -74,18 +74,6 @@ nuisPreds <- preds[16:19]
 nuisPredNames <- predNames[16:19]
 
 ################################
-# test for phylogenetic signal
-################################
-
-# blomberg's k
-blom_k <- phytools::phylosig(sampPhy,z$div,test=TRUE)
-pagels_lambda <- phytools::phylosig(sampPhy,z$div,method="lambda",test=TRUE)
-	#plot(blom_k)
-
-load("../phy_cgram.Robj")
-#plot(cgram$sampPhy_cgram)
-
-################################
 # analyze diversity with one biological predictor 
 #	and all the "nuisance" parameters
 ################################
@@ -108,21 +96,25 @@ pdf(file="predictor_effect_sizes.pdf",width=8,height=7)
 				 qnt=1)
 dev.off()
 
+
 expFromMod <- simFromMod(outs[[3]],nXseq=100,nSampIters=1e5)
+yrange <- range(c(log(outs[[3]]$db$Y),
+				log(apply(expFromMod$y,1,quantile,probs=c(0.025,0.975)))))
 pdf(file="range.pdf",width=7,height=7)
 	par(cex.axis=1.5,cex.lab=1.5,mar=c(5,5,2,1))
-	plot(out$db$X[1,],log(out$db$Y),type='n',
-			xlab="Range Extent (km)",ylab="Genetic Diversity",xaxt='n',
-			ylim=range(
-				c(log(out$db$Y),
-				log(apply(expFromMod$y,1,quantile,probs=c(0.025,0.975))))
-			))
+	plot(outs[[3]]$db$X[1,],log(outs[[3]]$db$Y),type='n',
+			xlab="Range Extent (km)",ylab="Genetic Diversity",xaxt='n',yaxt='n',
+			ylim=yrange)
 		axis(side=1,at=seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]])),
 			labels=round(seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]]))*max(z[["max.95.sea.gbif"]])))
+		axis(side=2,at=log(3*c(1e-4,1e-3,1e-2,1e-1)),
+			labels=format(3*c(1e-4,1e-3,1e-2,1e-1),scientific=FALSE))
+		axis(side=2,log(c(seq(3e-4,3e-3,length.out=10),
+						  seq(3e-3,3e-2,length.out=10))),labels=FALSE)
 		addExpPredPolygon(expFromMod,qnt=c(0.025,0.975),polyCol=adjustcolor("black",0.1),log=TRUE)
 		addExpPredPolygon(expFromMod,qnt=c(0.10,0.90),polyCol=adjustcolor("black",0.2),log=TRUE)
 		addExpPredPolygon(expFromMod,qnt=c(0.25,0.75),polyCol=adjustcolor("black",0.3),log=TRUE)
-		points(out$db$X[1,],log(out$db$Y),col=adjustcolor(sampCols,0.8),pch=19,cex=1.3)
+		points(outs[[3]]$db$X[1,],log(outs[[3]]$db$Y),col=adjustcolor(sampCols,0.8),pch=19,cex=1.3)
 		addExpPredLine(expFromMod,col="black",lwd=3,log=TRUE)
 dev.off()
 
@@ -137,27 +129,37 @@ dev.off()
 
 pdf(file="planktonic.pdf",width=7,height=7)
 	par(cex.axis=1.5,cex.lab=1.5,mar=c(5,5,2,1))
-	discreteViolPlot(z,2,"isPlanktonic_atanypoint",xAxLabs=c("Non-planktonic","Planktonic"),logY=TRUE)
+	discreteViolPlot(z,2,"isPlanktonic_atanypoint",xAxLabs=c("Non-planktonic","Planktonic"),
+					logY=TRUE,pchMed=18,lineCol="gray98",yRange=NULL)
+		axis(side=2,at=log(3*c(1e-4,1e-3,1e-2,1e-1)),
+			labels=format(3*c(1e-4,1e-3,1e-2,1e-1),scientific=FALSE))
+		axis(side=2,log(c(seq(3e-4,3e-3,length.out=10),
+						  seq(3e-3,3e-2,length.out=10))),labels=FALSE)		
 dev.off()
 
 pdf(file="range_planktonic.pdf",width=14,height=7)
 	par(cex.axis=1.5,cex.lab=1.5,mar=c(5,5,2,1),mfrow=c(1,2))
-	plot(out$db$X[1,],log(out$db$Y),type='n',
-			xlab="Range Extent (km)",ylab="Genetic Diversity",xaxt='n',
-			ylim=range(
-				c(log(out$db$Y),
-				log(apply(expFromMod$y,1,quantile,probs=c(0.025,0.975))))
-			))
+	plot(outs[[3]]$db$X[1,],log(outs[[3]]$db$Y),type='n',
+			xlab="Range Extent (km)",ylab="Genetic Diversity",xaxt='n',yaxt='n',
+			ylim=yrange)
 		axis(side=1,at=seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]])),
 			labels=round(seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]]))*max(z[["max.95.sea.gbif"]])))
+		axis(side=2,at=log(3*c(1e-4,1e-3,1e-2,1e-1)),
+			labels=format(3*c(1e-4,1e-3,1e-2,1e-1),scientific=FALSE))
+		axis(side=2,log(c(seq(3e-4,3e-3,length.out=10),
+						  seq(3e-3,3e-2,length.out=10))),labels=FALSE)
 		addExpPredPolygon(expFromMod,qnt=c(0.025,0.975),polyCol=adjustcolor("black",0.1),log=TRUE)
 		addExpPredPolygon(expFromMod,qnt=c(0.10,0.90),polyCol=adjustcolor("black",0.2),log=TRUE)
 		addExpPredPolygon(expFromMod,qnt=c(0.25,0.75),polyCol=adjustcolor("black",0.3),log=TRUE)
-		points(out$db$X[1,],log(out$db$Y),col=adjustcolor(sampCols,0.8),pch=19,cex=1.3)
+		points(outs[[3]]$db$X[1,],log(outs[[3]]$db$Y),col=adjustcolor(sampCols,0.8),pch=19,cex=1.3)
 		addExpPredLine(expFromMod,col="black",lwd=3,log=TRUE)
 	discreteViolPlot(z,2,"isPlanktonic_atanypoint",
 						xAxLabs=c("Non-planktonic","Planktonic"),logY=TRUE,
-						pchMed=18,lineCol="gray98")
+						pchMed=18,lineCol="gray98",yRange=yrange)
+		axis(side=2,at=log(3*c(1e-4,1e-3,1e-2,1e-1)),
+			labels=format(3*c(1e-4,1e-3,1e-2,1e-1),scientific=FALSE))
+		axis(side=2,log(c(seq(3e-4,3e-3,length.out=10),
+						  seq(3e-3,3e-2,length.out=10))),labels=FALSE)		
 dev.off()
 
 pdf(file="range_planktonic_pps.pdf",width=14,height=7)
@@ -178,12 +180,16 @@ xxnames <- c("latitude","ecoregions","range extent",	#"ecoregions/range_size",
 reord <- c(6:9,11:12,1:2,10,4:5,3)
 xx <- xx[,reord]
 xxnames <- xxnames[reord]
+mapFig <- png::readPNG("../../figures/world_map_genetic_pts-EckertIV.png")
+#z$cladecolor[z$species=="Sargassum_muticum"] <- z$cladecolor[which(z$species=="Eukrohnia_hamata")]
 pdf(file="all_predictors.pdf",width=14,height=10)
 	phyViz(db=outs[[3]]$db,fit=outs[[3]]$fit,
 			XX=xx,
 			predNames=xxnames,
-		   tree=sampPhy,xlim=c(0,0.035),tipcols=z$cladecolor,
+		   tree=sampPhy,xlim=c(1e-3,0.035),tipcols=z$cladecolor,
 		   valRange=NULL,adj=0.5,logX=FALSE,rounding=0.05)
+	par(mfg=c(1,1))
+		addMap2fig(mapFig=mapFig,xl=0,xr=0.03,yt=91,yb=64)
 dev.off()
 
 
@@ -207,6 +213,20 @@ dev.off()
 # report statistics for paper
 ################################
 if(FALSE){
+
+################################
+# test for phylogenetic signal
+################################
+
+# blomberg's k
+blom_k <- phytools::phylosig(sampPhy,z$div,test=TRUE)
+pagels_lambda <- phytools::phylosig(sampPhy,z$div,method="lambda",test=TRUE)
+	#plot(blom_k)
+
+load("../phy_cgram.Robj")
+#plot(cgram$sampPhy_cgram)
+
+
 # diversity statistics
 range(z$div)
 mean(z$div)

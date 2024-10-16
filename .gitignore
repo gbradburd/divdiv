@@ -7,3 +7,4 @@ analyses/loo/*.pdf
 analyses/*.pdf
 analyses/*.Robj
 *.Rout
+*.png
