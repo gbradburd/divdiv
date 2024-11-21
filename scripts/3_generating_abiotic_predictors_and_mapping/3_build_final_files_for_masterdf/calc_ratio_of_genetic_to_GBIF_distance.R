@@ -16,7 +16,7 @@ outdir = "/Users/rachel/divdiv/data/abiotic"
 #get estimates for params for each dataset -------------
 marmap_fileslist <- list.files(path = indir, pattern = "max_and_pw", full.names = TRUE)
 #filter to make sure we only use inputs we know are good/done (rather than all that are on google drive) by getting master status sheet from Google Drive
-done <- googledrive::shared_drive_find(pattern = "^divdiv_datafiles")
+done <- googledrive::shared_drive_find(pattern = "^LSA-divdiv_datafiles")
 done <- googledrive::drive_ls(path = done, pattern = "master_notes_file", recursive = F)
 done$name
 done <- googlesheets4::range_read(done, sheet = 2) %>% as.data.frame() %>% dplyr::select(run_name, done_with_marmap) %>% 
