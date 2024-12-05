@@ -44,6 +44,7 @@ lat %>% ggplot() + geom_histogram(aes(x = meanlat.gbif), bins = 30) + scale_x_co
 #sync some species names
 biotic$species[biotic$species == "Exaiptasia_pallida"] = "Exaiptasia_diaphana" 
 biotic$species[biotic$species == "Seriola_dorsalis"] = "Seriola_lalandi_dorsalis" 
+taxcolorkey$species[taxcolorkey$species == "Seriola_dorsalis"] = "Seriola_lalandi_dorsalis"
 
 #name issues to correct/sync
 #Exaiptasia diaphana in gbif ecor
