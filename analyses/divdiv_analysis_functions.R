@@ -62,7 +62,7 @@ vizAllOuts <- function(outs,predNames,sampPhy,outName,sampCols=NULL,multiPred=FA
 		par(mfrow=getPlotDims(length(outs)))
 		for(i in 1:length(outs)){
 			pps <- getBetaPPS(db=outs[[i]]$db,fit=outs[[i]]$fit,nPPS=500,multiPred= multiPred)
-			plotBetaPPS(db=outs[[i]]$db,ppsOut=pps,sampCols= sampCols,pt.cex=1.5,trp=0.8,main=predNames[i],xlab="predictor",ylab="diversity")
+			plotBetaPPS(db=outs[[i]]$db,ppsOut=pps,sampCols=sampCols,pt.cex=1.5,trp=0.8,main=predNames[i],xlab="predictor",ylab="diversity")
 		}
 	dev.off()
 	#
@@ -156,7 +156,7 @@ plotBetaPPS <- function(db,ppsOut,sampCols=NULL,pt.cex=1.5,trp=1,...){
 							 lwd=0.75,
 							 col=adjustcolor("gray",0.7))
 				}))
-	points(ppsOut$x,db$Y,col=adjustcolor(sampCols,trp),pch=19,cex=pt.cex)
+	points(ppsOut$x,db$Y,col="black",bg=adjustcolor(sampCols,trp),pch=21,cex=pt.cex)
 	lines(ppsOut$meanLine$lnx,invLogit(ppsOut$meanLine$mnLn),lwd=1.5)
 }
 
@@ -281,7 +281,7 @@ postBetaPlot <- function(outs,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,mult
 		predNames[which(sig)] <- paste0(predNames[which(sig)]," * ")
 	}
 	if(is.null(cols)){#viridis::viridis(n=nPredictors)
-		cols <- colFunc(abs(meanBetas),cols=c("gray","coral3"),nPredictors,valRange=range(abs(meanBetas)))
+		cols <- colFunc(meanBetas,cols=c("coral3","gray","deepskyblue4"),nPredictors,valRange=range(meanBetas))
 	}
 	betaDens <- lapply(betas,density)
 	if(reorder){
@@ -291,7 +291,8 @@ postBetaPlot <- function(outs,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,mult
 	}
 	yTxtCoords <- 0.6+c(1:nPredictors)+c(1:nPredictors)*0.05
 	yDnsCoords <- c(1:nPredictors)+c(1:nPredictors)*0.05
-	plot(0,type='n',xlim=range(betas)+c(-diff(range(betas))/4,0),yaxt='n',xlab="Standardized effect size",ylab="",bty='n',ylim=c(0.9,(nPredictors+1)*1.10))
+	plot(0,type='n',xlim=range(betas)+c(-diff(range(betas))/4,diff(range(betas))/12),
+		yaxt='n',xlab="Standardized effect size",ylab="",bty='n',ylim=c(0.9,(nPredictors+1)*1.10))
 		text(x=min(unlist(betas))-diff(range(betas))/4,y=yTxtCoords,labels=predNames[predOrder],srt=0,font=2,cex=1.3,pos=4)
 		abline(v=0,lty=2,lwd=0.5,col=adjustcolor(1,0.5))
 	invisible(
@@ -552,8 +553,8 @@ addPhylopics <- function(cladeCols,ysize=3.1,tipcols){
 		n_crustaceans <- length(which(tipcols==cladeCols[7]))
 	echinoderms <- rphylopic::get_phylopic(uuid="0adc540a-d1c1-4dd8-bc4d-e258077c5dbd") #Asteriidae
 		n_echinoderms <- length(which(tipcols==cladeCols[5]))
-	bony_fishes <- rphylopic::get_phylopic(uuid="ed245bc2-c8dc-4ad4-9d08-efa19fe6854a") #Sebastes diaconus
-		n_bony_fishes <- length(which(tipcols==cladeCols[1]))
+	ray_finned_fishes <- rphylopic::get_phylopic(uuid="ed245bc2-c8dc-4ad4-9d08-efa19fe6854a") #Sebastes diaconus
+		n_ray_finned_fishes <- length(which(tipcols==cladeCols[1]))
 	chondrichthyes <- rphylopic::get_phylopic(uuid="8d9410d3-8b41-4c4b-ad27-1bf8dd606e47") #Bathyraja griseocauda
 		n_cartilaginous_fishes <- length(which(tipcols==cladeCols[4]))
 	cnidarians <- rphylopic::get_phylopic(uuid="927676f4-7ea9-4aa6-8e0a-3c70d8253f89") #Nematostella vectensis
@@ -563,8 +564,8 @@ addPhylopics <- function(cladeCols,ysize=3.1,tipcols){
 	molluscs1 <- rphylopic::get_phylopic(uuid="90449630-774d-48dc-b16c-912b69825dee") #Pyroteuthis margaritifera
 	molluscs2 <- rphylopic::get_phylopic(uuid="6c2e67f0-14e7-4ba0-ba73-2420cacfa9a3") #Tricolia pullus
 		n_molluscs <- length(which(tipcols==cladeCols[6]))
-	rphylopic::add_phylopic_base(img=bony_fishes,x=xleft,y=ytop,ysize=ysize-2,fill=cladeCols[1])
-		text(x=xleft+legendshift,y=ytop,labels=sprintf("Bony fishes (n=%s)",n_bony_fishes),pos=pos,cex=txt.cex)
+	rphylopic::add_phylopic_base(img=ray_finned_fishes,x=xleft,y=ytop,ysize=ysize-2,fill=cladeCols[1])
+		text(x=xleft+legendshift,y=ytop,labels=sprintf("Ray-Finned Fishes (n=%s)",n_ray_finned_fishes),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=sauropsida,x=xleft,y=ytop-dshift,ysize=ysize,fill=cladeCols[2])
 		text(x=xleft+legendshift,y=ytop-1*dshift,labels=sprintf("Birds and Reptiles (n=%s)",n_birds),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=mammal,x=xleft,y=ytop-2*dshift,ysize=ysize,fill=cladeCols[3])
@@ -586,6 +587,7 @@ addPhylopics <- function(cladeCols,ysize=3.1,tipcols){
 }
 
 gussyUpPhyloFig <- function(tree,cladeCols,rounding,tipcols){
+#	recover()
 	cladeCols1 <- adjustcolor(cladeCols,0.5)
 	highlightClade(tree=tree,dSp1="Engraulis encrasicolus",dSp2="Sebastes diaconus",col=cladeCols1[1],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
 	highlightClade(tree=tree,dSp1="Pygoscelis papua",dSp2="Caretta caretta",col=cladeCols1[2],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
@@ -596,14 +598,14 @@ gussyUpPhyloFig <- function(tree,cladeCols,rounding,tipcols){
 	highlightClade(tree=tree,dSp1="Callinectes sapidus",dSp2="Penaeus duorarum",col=cladeCols1[7],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
 	highlightClade(tree=tree,dSp1="Acropora palmata",dSp2="Ectopleura larynx",col=cladeCols1[8],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
 	highlightClade(tree=tree,dSp1="Rhizophora mangle",dSp2="Laguncularia racemosa",col=cladeCols1[9],x0=NULL,x1=NULL,y0=NULL,y1=NULL,rounding=rounding)
-	m <- ape::getMRCA(tree,tip=c("Rhizophora mangle","Laguncularia racemosa"))
-	offset <- max(nodeHeights(sampPhy))/100
-	decs <- getDescendants(tree,m)
-	x0 <- phytools::nodeheight(tree,m) - offset
-	x1 <- max(unlist(lapply(1:length(decs),function(i){nodeheight(tree,decs[i])})))
-	berryFunctions::roundedRect(xleft=x0,ybottom=0.5,
-								xright=x1,ytop=1.5,rounding=rounding,
-								col=adjustcolor("#6A3D9A",0.5),border=NA,aspcorrect=TRUE)
+	# m <- ape::getMRCA(tree,tip=c("Rhizophora mangle","Laguncularia racemosa"))
+	# offset <- max(nodeHeights(sampPhy))/100
+	# decs <- getDescendants(tree,m)
+	# x0 <- phytools::nodeheight(tree,m) - offset
+	# x1 <- max(unlist(lapply(1:length(decs),function(i){nodeheight(tree,decs[i])})))
+	# berryFunctions::roundedRect(xleft=x0,ybottom=0.5,
+								# xright=x1,ytop=1.5,rounding=rounding,
+								# col=adjustcolor("#6A3D9A",0.5),border=NA,aspcorrect=TRUE)
 	addPhylopics(cladeCols=cladeCols,tipcols=tipcols)
 }
 
@@ -631,8 +633,8 @@ gussyUpDivBarPlot <- function(tree,xcoord,cladeCols){
 
 addLegend <- function(top,xl,xr,txtShft,txtCex){
 	#recover()
-	grayCols <- gray(c(0.2,0.5,0.8),1)
-	gradCols <- rev(colorRampPalette(RColorBrewer::brewer.pal(9,"Blues"))(150)[51:150])
+	grayCols <- gray(c(0.8,0.5,0.2),1)
+	gradCols <- rev(colorRampPalette(RColorBrewer::brewer.pal(9,"Purples"))(150)[51:150])
 	colRast <- as.raster(matrix(gradCols,nrow=length(gradCols),ncol=1))
 	rect(xleft=xl,ybottom=top-3,xright=xr,ytop=top-1,col=grayCols[3])
 		text(x=xr+txtShft,y=top-2,labels="present",pos=4,cex=txtCex)
@@ -646,9 +648,11 @@ addLegend <- function(top,xl,xr,txtShft,txtCex){
 	rect(xleft=xl,ybottom=top-28,xright=xr,ytop=top-13.5)
 		text(x=xr+txtShft,y=top-14.5,labels="high",pos=4,cex=txtCex)
 		text(x=xr+txtShft,y=top-27,labels="low",pos=4,cex=txtCex)
+	text(x=xl-1e-3,y=top-5,labels="discrete\npredictors",pos=2,cex=txtCex)
+	text(x=xl-1e-3,y=top-20.5,labels="continuous\npredictors",pos=2,cex=txtCex)
 }
 
-phyViz <- function(db,fit,XX,predNames,tipcols,tree,xlim,valRange=NULL,adj=2,logX=FALSE,rounding=0.1){
+phyViz <- function(db,fit,XX,predNames,cladeCols,tipcols,tree,xlim,valRange=NULL,adj=2,logX=FALSE,rounding=0.1){
 	#recover()
 	spNames <- row.names(db$relMat)
 	tree <- ape::keep.tip(tree,gsub("_"," ",spNames))
@@ -662,7 +666,6 @@ phyViz <- function(db,fit,XX,predNames,tipcols,tree,xlim,valRange=NULL,adj=2,log
 	ape::plot.phylo(tree,cex=0.7,no.margin=TRUE, #label.offset=50
 					x.lim=c(0,1320),tip.color=tipcols,edge.width=1, #x.lim=c(0,1950) #1700
 					show.tip.label=FALSE)
-	cladeCols <- RColorBrewer::brewer.pal(10,"Paired")
 	gussyUpPhyloFig(tree=tree,cladeCols=cladeCols,rounding=rounding,tipcols=tipcols)
 	axisPhylo()
 		mtext(side=1,text="Time (Mya)",padj=3)
@@ -678,7 +681,7 @@ phyViz <- function(db,fit,XX,predNames,tipcols,tree,xlim,valRange=NULL,adj=2,log
 	} else {	
 		y <- db$Y
 	}
-		mtext(side=3,text="Biotic/Abiotic Predictors",padj=1,cex=1.4)
+		mtext(side=3,text="Biotic and Abiotic Predictors",padj=1,cex=1.4)
 #	par(mar=c(0,0,0,0))
 	plot(0,type='n',
 			xlim=xlim,
@@ -690,9 +693,9 @@ phyViz <- function(db,fit,XX,predNames,tipcols,tree,xlim,valRange=NULL,adj=2,log
 	#text(x=xtext,y=(0.4 + 1:nSp)*1.25,labels=spNames[spOrder],srt=0)
 	#abline(h=spOrder-0.5,lty=3,col="gray")
 	segments(x0=0,
-			 y0=c(1:db$N)-0.25,
+			 y0=c(1:db$N)-0.45,
 			 x1=y[spOrder],
-			 y1=c(1:db$N)-0.25,
+			 y1=c(1:db$N)-0.45,
 			 col=tipcols[spOrder],
 			 #col="red3",
 			 lwd=5)
@@ -721,12 +724,12 @@ vizPredCol <- function(x,N,yext,xext){
 	#recover()
 	valRange <- range(x,na.rm=TRUE)
 	if(length(unique(x)) > 4){
-		allCols <- colorRampPalette(RColorBrewer::brewer.pal(9,"Blues"))(150)[51:150]
+		allCols <- colorRampPalette(RColorBrewer::brewer.pal(9,"Purples"))(150)[51:150]
 		#wesanderson::wes_palette("Zissou1", 100, type = "continuous")
 		#colorspace::diverge_hcl(100,c(246,40),c=96)
 		#viridis::viridis_pal(alpha=1,begin=0,end=1,direction=1,option="D")(100)
 	} else {
-		allCols <- gray(c(0.2,0.5,0.8),1)
+		allCols <- gray(c(0.8,0.5,0.2),1)
 	}
 	cols <- colFunc(x,cols=allCols,nCols=100,valRange=valRange)
 	xls <- rep(xext[1],N)
@@ -770,14 +773,14 @@ phyloViz_scatter <- function(loo,predName,valRange=NULL){
 	points(loo$db$Y,yMean,pch=18,cex=1.5,col=cols)
 }
 
-discreteViolPlot <- function(z,nPreds,predName,xAxLabs,logY=FALSE,yRange=NULL,...){
+discreteViolPlot <- function(z,nPreds,predName,xAxLabs,sampCols,logY=FALSE,yRange=NULL,...){
 	#recover()
 	x <- z[[predName]]
 	if(nPreds==2){
-		vCols <- gray(c(0.2,0.5,0.8),1)[c(1,3)]
+		vCols <- gray(c(0.8,0.5,0.2),1)[c(1,3)]
 		xRange <- c(-0.5,1.5)
 	} else if (nPreds==3){
-		vCols <- gray(c(0.2,0.5,0.8),1)
+		vCols <- gray(c(0.8,0.5,0.2),1)
 		xRange <- c(-0.5,2.5)
 	}
 	if(logY){
@@ -805,7 +808,7 @@ discreteViolPlot <- function(z,nPreds,predName,xAxLabs,logY=FALSE,yRange=NULL,..
 		xJit <- jitter(x)
 		xJitDist <- fields::rdist(cbind(xJit,y),medianCoords)
 	}
-	points(xJit,y=y,col="black",bg=z$cladecolor,pch=21,cex=1.7)
+	points(xJit,y=y,col="black",bg=sampCols,pch=21,cex=1.7)
 	axis(side=1,at=0:(nPreds-1),labels=xAxLabs)
 }
 
