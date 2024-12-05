@@ -66,7 +66,6 @@ nrow(sites.kept) - sites.kept %>% dplyr::select(run_acc_sra) %>% distinct() %>% 
 sites <- sites %>% filter(run_acc_sra %in% sites.kept$run_acc_sra)
 
 
-
 #and filter by datasets in master list of datasets we're using as final check ------------
 using <- read.csv("data/master_df.csv") %>% mutate(link = gsub("bioprj_","",run_name))
 using <- using %>% dplyr::select(species,link)

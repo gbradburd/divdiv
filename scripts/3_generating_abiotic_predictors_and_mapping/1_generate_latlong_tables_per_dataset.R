@@ -29,7 +29,7 @@ datathon.input = "/Users/rachel/divdiv/data/abiotic/input_and_working/datathon_m
 
 #get list of datasets we want to write keys for
 #get master spreadsheet from Drive
-using <- googledrive::shared_drive_find(pattern = "^divdiv$")
+using <- googledrive::shared_drive_find(pattern = "^LSA-divdiv$")
 using <- googledrive::drive_ls(path = using, pattern = "working_datasheets", recursive = FALSE)
 using <- googledrive::drive_ls(path = using, pattern = "working_list_marine_projects_with_10indivs-12-4-2020", recursive = FALSE)
 using$name

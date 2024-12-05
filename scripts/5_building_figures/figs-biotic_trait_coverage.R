@@ -34,12 +34,12 @@ names <- data.frame(trait = trtcov$trait, trait.clean = c("Benthicity","Body siz
                                                           "Iteroparity",
                                                           "Egg size","Pelagic larval duration",
                                                           "Natal philopatry","Larval feeding",
-                                                          "Spawning mode","Planktonicity"))
+                                                          "Spawning","Planktonicity"))
 
 trtcov <- merge(trtcov, names, by = "trait", all.x = T, all.y = T) %>% 
   mutate(trait_ordered = factor(trait.clean, levels = c("Iteroparity",
                                                         "Natal philopatry",
-                                                        "Spawning mode",
+                                                        "Spawning",
                                                         "Benthicity",
                                                         "Planktonicity",
                                                         "Larval feeding",

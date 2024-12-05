@@ -23,7 +23,7 @@ master <- read.csv("data/master_df.csv")
 using <- master %>% dplyr::select(run_name)
 
 #get master working (trt/bookkeeping) spreadsheet from Drive
-drive  <- googledrive::shared_drive_find(pattern = "^divdiv$")
+drive  <- googledrive::shared_drive_find(pattern = "^LSA-divdiv$")
 drive  <- googledrive::drive_ls(path = drive , pattern = "working_datasheets", recursive = FALSE)
 drive  <- googledrive::drive_ls(path = drive , pattern = "working_list_marine_projects_with_10indivs-12-4-2020", recursive = FALSE)
 drive$name

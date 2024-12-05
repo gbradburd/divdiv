@@ -265,9 +265,3 @@ ggsave(paste("figures/world_map_genetic_pts-phy-Spilhaus-option4.png",sep="") , 
 
 
 
-# problem points -------------
-
-probs <- sites.prj %>% filter(spilhaus_x > 0) %>% filter(spilhaus_y > 6000000)
-sites.probs <- sites %>% filter(pt_ID %in% probs$pt_ID)
-
-
