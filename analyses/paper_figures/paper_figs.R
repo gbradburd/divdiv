@@ -29,6 +29,10 @@ source("../divdiv_analysis_functions.R")
 ################################
 
 z <- read.csv("../../data/master_df.csv",header=TRUE,stringsAsFactors=FALSE)
+zCols <- read.csv("../../data/master_tax_color_key.csv",header=TRUE,stringsAsFactors=FALSE)
+zCols <- zCols[-which(!zCols$species %in% gsub("_"," ",z$species)),]
+zCols <- zCols[match(gsub("_"," ",z$species),zCols$species),]
+z$newTaxCol <- zCols$cladecolor[match(gsub("_"," ",z$species),zCols$species)]
 
 load("../../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
 sampPhy <- ape::keep.tip(phy,gsub("_"," ",z$species))
@@ -66,7 +70,7 @@ predNames <- c("mean species latitude","number of ecoregions","range extent","ec
 			   "number of samples","mean raw read count",
 			   "read length","mean locus depth")
 
-sampCols <- z$cladecolor
+sampCols <- z$newTaxCol	#z$cladecolor
 names(sampCols) <- gsub("_"," ",z$species)
 bioPreds <- preds[1:14]
 bioPredNames <- predNames[1:14]
@@ -114,7 +118,7 @@ pdf(file="range.pdf",width=7,height=7)
 		addExpPredPolygon(expFromMod,qnt=c(0.025,0.975),polyCol=adjustcolor("black",0.1),log=TRUE)
 		addExpPredPolygon(expFromMod,qnt=c(0.10,0.90),polyCol=adjustcolor("black",0.2),log=TRUE)
 		addExpPredPolygon(expFromMod,qnt=c(0.25,0.75),polyCol=adjustcolor("black",0.3),log=TRUE)
-		points(outs[[3]]$db$X[1,],log(outs[[3]]$db$Y),col=adjustcolor(sampCols,0.8),pch=19,cex=1.3)
+		points(outs[[3]]$db$X[1,],log(outs[[3]]$db$Y),col="black",bg=adjustcolor(sampCols,0.8),pch=21,cex=1.7)
 		addExpPredLine(expFromMod,col="black",lwd=3,log=TRUE)
 dev.off()
 
@@ -129,7 +133,7 @@ dev.off()
 
 pdf(file="planktonic.pdf",width=7,height=7)
 	par(cex.axis=1.5,cex.lab=1.5,mar=c(5,5,2,1))
-	discreteViolPlot(z,2,"isPlanktonic_atanypoint",xAxLabs=c("Non-planktonic","Planktonic"),
+	discreteViolPlot(z,2,"isPlanktonic_atanypoint",xAxLabs=c("Non-planktonic","Planktonic"),sampCols=sampCols,
 					logY=TRUE,pchMed=18,lineCol="gray98",yRange=NULL)
 		axis(side=2,at=log(3*c(1e-4,1e-3,1e-2,1e-1)),
 			labels=format(3*c(1e-4,1e-3,1e-2,1e-1),scientific=FALSE))
@@ -151,10 +155,10 @@ pdf(file="range_planktonic.pdf",width=14,height=7)
 		addExpPredPolygon(expFromMod,qnt=c(0.025,0.975),polyCol=adjustcolor("black",0.1),log=TRUE)
 		addExpPredPolygon(expFromMod,qnt=c(0.10,0.90),polyCol=adjustcolor("black",0.2),log=TRUE)
 		addExpPredPolygon(expFromMod,qnt=c(0.25,0.75),polyCol=adjustcolor("black",0.3),log=TRUE)
-		points(outs[[3]]$db$X[1,],log(outs[[3]]$db$Y),col=adjustcolor(sampCols,0.8),pch=19,cex=1.3)
+		points(outs[[3]]$db$X[1,],log(outs[[3]]$db$Y),col="black",bg=adjustcolor(sampCols,0.8),pch=21,cex=1.7)
 		addExpPredLine(expFromMod,col="black",lwd=3,log=TRUE)
 	discreteViolPlot(z,2,"isPlanktonic_atanypoint",
-						xAxLabs=c("Non-planktonic","Planktonic"),logY=TRUE,
+						xAxLabs=c("Non-planktonic","Planktonic"),sampCols=sampCols,logY=TRUE,
 						pchMed=18,lineCol="gray98",yRange=yrange)
 		axis(side=2,at=log(3*c(1e-4,1e-3,1e-2,1e-1)),
 			labels=format(3*c(1e-4,1e-3,1e-2,1e-1),scientific=FALSE))
@@ -169,7 +173,7 @@ pdf(file="range_planktonic_pps.pdf",width=14,height=7)
 				max(z[["max.95.sea.gbif"]])
 		axis(side=1,at=seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]])),
 			labels=round(seq(0,1,by=5e3/max(z[["max.95.sea.gbif"]]))*max(z[["max.95.sea.gbif"]])))
-	discreteViolPlot(z,2,"isPlanktonic_atanypoint",xAxLabs=c("Non-planktonic","Planktonic"),logY=TRUE)
+	discreteViolPlot(z,2,"isPlanktonic_atanypoint",xAxLabs=c("Non-planktonic","Planktonic"),sampCols=sampCols,logY=TRUE,pchMed=18,lineCol="gray98")
 dev.off()
 
 xx <- z[bioPreds][,-c(4,14)]
@@ -186,7 +190,8 @@ pdf(file="all_predictors.pdf",width=14,height=10)
 	phyViz(db=outs[[3]]$db,fit=outs[[3]]$fit,
 			XX=xx,
 			predNames=xxnames,
-		   tree=sampPhy,xlim=c(1e-3,0.035),tipcols=z$cladecolor,
+			cladeCols=unique(z$newTaxCol)[c(8,10,9,7,6,4,3,2,1,5)],
+		   tree=sampPhy,xlim=c(1e-3,0.035),tipcols=z$newTaxCol,
 		   valRange=NULL,adj=0.5,logX=FALSE,rounding=0.05)
 	par(mfg=c(1,1))
 		addMap2fig(mapFig=mapFig,xl=0,xr=0.03,yt=91,yb=64)
