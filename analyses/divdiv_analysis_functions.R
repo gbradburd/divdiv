@@ -538,8 +538,8 @@ highlightClade <- function(tree,dSp1,dSp2,col,x0=NULL,x1=NULL,y0=NULL,y1=NULL,ro
 
 addPhylopics <- function(cladeCols,ysize=3.1,tipcols){
 	#recover()
-	xleft <- 83#90
-	ytop <- 60#86
+	xleft <- 170#83#90
+	ytop <- 44#60 #86
 	dshift <- 4.5
 	legendshift <- 65
 	txt.cex=1.1
@@ -564,14 +564,14 @@ addPhylopics <- function(cladeCols,ysize=3.1,tipcols){
 	molluscs1 <- rphylopic::get_phylopic(uuid="90449630-774d-48dc-b16c-912b69825dee") #Pyroteuthis margaritifera
 	molluscs2 <- rphylopic::get_phylopic(uuid="6c2e67f0-14e7-4ba0-ba73-2420cacfa9a3") #Tricolia pullus
 		n_molluscs <- length(which(tipcols==cladeCols[6]))
-	rphylopic::add_phylopic_base(img=ray_finned_fishes,x=xleft,y=ytop,height=ysize-2,fill=cladeCols[1])
-		text(x=xleft+legendshift,y=ytop,labels=sprintf("Ray-Finned Fishes (n=%s)",n_ray_finned_fishes),pos=pos,cex=txt.cex)
+	rphylopic::add_phylopic_base(img=ray_finned_fishes,x=xleft,y=ytop,height=ysize-1.5,fill=cladeCols[1])
+		text(x=xleft+legendshift,y=ytop,labels=sprintf("Ray-Finned fishes (n=%s)",n_ray_finned_fishes),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=sauropsida,x=xleft,y=ytop-dshift,height=ysize,fill=cladeCols[2])
 		text(x=xleft+legendshift,y=ytop-1*dshift,labels=sprintf("Birds and Reptiles (n=%s)",n_birds),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=mammal,x=xleft,y=ytop-2*dshift,height=ysize,fill=cladeCols[3])
 		text(x=xleft+legendshift,y=ytop-2*dshift,labels=sprintf("Mammals (n=%s)",n_mammals),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=chondrichthyes,x=xleft,y=ytop-3*dshift,height=ysize,fill=cladeCols[4])
-		text(x=xleft+legendshift,y=ytop-3*dshift,labels=sprintf("Cartilaginous Fishes (n=%s)",n_cartilaginous_fishes),pos=pos,cex=txt.cex)
+		text(x=xleft+legendshift,y=ytop-3*dshift,labels=sprintf("Cartilaginous fishes (n=%s)",n_cartilaginous_fishes),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=echinoderms,x=xleft,y=ytop-4*dshift,height=ysize,fill=cladeCols[5])
 		text(x=xleft+legendshift,y=ytop-4*dshift,labels=sprintf("Echinoderms (n=%s)",n_echinoderms),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=molluscs1,x=xleft,y=ytop-5*dshift,height=ysize,fill=cladeCols[6])
@@ -581,7 +581,7 @@ addPhylopics <- function(cladeCols,ysize=3.1,tipcols){
 	rphylopic::add_phylopic_base(img=cnidarians,x=xleft,y=ytop-7*dshift,height=ysize+1,fill=cladeCols[8])
 		text(x=xleft+legendshift,y=ytop-7*dshift,labels=sprintf("Cnidarians (n=%s)",n_cnidarians),pos=pos,cex=txt.cex)
 	rphylopic::add_phylopic_base(img=vasc_plant,x=xleft,y=ytop-8*dshift,height=ysize+1,fill=cladeCols[9])
-		text(x=xleft+legendshift,y=ytop-8*dshift,labels=sprintf("Vascular Plants (n=%s)",n_vasc_plants),pos=pos,cex=txt.cex)
+		text(x=xleft+legendshift,y=ytop-8*dshift,labels=sprintf("Vascular plants (n=%s)",n_vasc_plants),pos=pos,cex=txt.cex)
 #	rphylopic::add_phylopic_base(img=ochrophyta,x=50,y=5,ysize=ysize,fill=cladeCols[10])
 	#rphylopic::add_phylopic_base(img=molluscs2,x=5,y=5,ysize=1,fill=cladeCols[1])
 }
@@ -650,6 +650,7 @@ addLegend <- function(top,xl,xr,txtShft,txtCex){
 		text(x=xr+txtShft,y=top-27,labels="low",pos=4,cex=txtCex)
 	text(x=xl-1e-3,y=top-5,labels="discrete\npredictors",pos=2,cex=txtCex)
 	text(x=xl-1e-3,y=top-20.5,labels="continuous\npredictors",pos=2,cex=txtCex)
+	text(x=xl-3e-3,y=top+1.5,labels="Trait values",cex=txtCex+0.35,pos=4)
 }
 
 phyViz <- function(db,fit,XX,predNames,cladeCols,tipcols,tree,xlim,valRange=NULL,adj=2,logX=FALSE,rounding=0.1){
@@ -669,7 +670,7 @@ phyViz <- function(db,fit,XX,predNames,cladeCols,tipcols,tree,xlim,valRange=NULL
 	gussyUpPhyloFig(tree=tree,cladeCols=cladeCols,rounding=rounding,tipcols=tipcols)
 	axisPhylo()
 		mtext(side=1,text="Time (Mya)",padj=3)
-		mtext(side=3,text="Spatial and Phylogenetic Sampling",padj=1,cex=1.4)
+		mtext(side=3,text="(a) Spatial and Phylogenetic Sampling",padj=1,cex=1.4)
 	plot(0,type='n',
 				xlim=c(0,1),
 				yaxt='n',xaxt='n',xlab="",ylab="",bty='n',
@@ -681,7 +682,7 @@ phyViz <- function(db,fit,XX,predNames,cladeCols,tipcols,tree,xlim,valRange=NULL
 	} else {	
 		y <- db$Y
 	}
-		mtext(side=3,text="Biotic and Abiotic Predictors",padj=1,cex=1.4)
+		mtext(side=3,text="(b) Biotic and Abiotic Predictors",padj=1,cex=1.4)
 #	par(mar=c(0,0,0,0))
 	plot(0,type='n',
 			xlim=xlim,
@@ -701,7 +702,7 @@ phyViz <- function(db,fit,XX,predNames,cladeCols,tipcols,tree,xlim,valRange=NULL
 			 lwd=5)
 	#gussyUpDivBarPlot(tree=tree,xcoord=-0.001,cladeCols=cladeCols)
 		mtext(side=1,text="Diversity",padj=3)
-		mtext(side=3,text="Species-level Genetic Diversity",padj=1,cex=1.4)
+		mtext(side=3,text="(c) Species-level Genetic Diversity",padj=1,cex=1.4)
 	addLegend(top=84,xl=0.02,xr=0.0235,txtShft=7e-4,txtCex=1.4)
 }
 

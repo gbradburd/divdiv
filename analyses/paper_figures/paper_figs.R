@@ -91,13 +91,18 @@ pdf(file="predictor_effect_sizes.pdf",width=8,height=7)
 	postBetaPlot(outs=outs[-c(4,14)],
 				 predNames=c("Latitude","Ecoregions","Range extent",	#"ecoregions/range_size",
 			 				 "Body size","Egg size","Iteroparity",
-							 "Philopatry","spawning","Planktotrophy",
+							 "Philopatry","Spawning","Planktotrophy",
 							 "Pelagic larval duration","Planktonicity","Benthicity"),
 				 reorder=TRUE,
 				 cols=NULL,
 				 stdize=TRUE,
 				 multiPred=TRUE,
 				 qnt=1)
+
+	arrows(x0=-1.4,x1=-1.9,y0=-1,y1=-1,lwd=4,xpd=TRUE,col="coral3",length=0.1)
+		text(x=-1.6,y=-1.6,xpd=TRUE,labels="decreasing\ndiversity",col="coral3")
+	arrows(x0=1,x1=1.5,y0=-1,y1=-1,lwd=4,xpd=TRUE,col="deepskyblue4",length=0.1)
+		text(x=1.2,y=-1.6,xpd=TRUE,labels="increasing\ndiversity",col="deepskyblue4")
 dev.off()
 
 
@@ -184,7 +189,8 @@ xxnames <- c("latitude","ecoregions","range extent",	#"ecoregions/range_size",
 reord <- c(6:9,11:12,1:2,10,4:5,3)
 xx <- xx[,reord]
 xxnames <- xxnames[reord]
-mapFig <- png::readPNG("../../figures/world_map_genetic_pts-EckertIV.png")
+#mapFig <- png::readPNG("../../figures/world_map_genetic_pts-EckertIV.png")
+mapFig <- png::readPNG("../../figures/world_map_genetic_pts-phy-Spilhaus-option2b.png")
 #z$cladecolor[z$species=="Sargassum_muticum"] <- z$cladecolor[which(z$species=="Eukrohnia_hamata")]
 pdf(file="all_predictors.pdf",width=14,height=10)
 	phyViz(db=outs[[3]]$db,fit=outs[[3]]$fit,
@@ -193,10 +199,9 @@ pdf(file="all_predictors.pdf",width=14,height=10)
 			cladeCols=unique(z$newTaxCol)[c(8,10,9,7,6,4,3,2,1,5)],
 		   tree=sampPhy,xlim=c(1e-3,0.035),tipcols=z$newTaxCol,
 		   valRange=NULL,adj=0.5,logX=FALSE,rounding=0.05)
-	par(mfg=c(1,1))
-		addMap2fig(mapFig=mapFig,xl=0,xr=0.03,yt=91,yb=64)
+#	par(mfg=c(1,1))
+#		addMap2fig(mapFig=mapFig,xl=0.002,xr=0.027,yt=96,yb=57) #xr=0.027,yt=96,yb=50) #xl=0,xr=0.032,yt=96,yb=57)
 dev.off()
-
 
 ################################
 # visualize predictor corrleations
@@ -211,9 +216,20 @@ pdf(file="predictor_corrs.pdf",width=6,height=6)
 	corrplot(M,method="ellipse",diag=TRUE,type="lower",tl.col="black")
 dev.off()
 
+################################
+# visualize phylogenetic correlogram
+################################
 
-
-
+load("phy_cgram.Robj")
+pdf(file="phylo_correlogram.pdf",width=7,height=7)
+	plot(cgram,xlab="Phylogenetic distance (my)",show.test=FALSE)
+		legend(x="topright",
+				legend=c("mean correlation",
+						"95% confidence interval",
+						"null hypothesis"),
+						lty=c(1,2,1),
+						lwd=c(3,1,1))
+dev.off()
 ################################
 # report statistics for paper
 ################################
@@ -227,6 +243,8 @@ if(FALSE){
 blom_k <- phytools::phylosig(sampPhy,z$div,test=TRUE)
 pagels_lambda <- phytools::phylosig(sampPhy,z$div,method="lambda",test=TRUE)
 	#plot(blom_k)
+
+
 
 load("../phy_cgram.Robj")
 #plot(cgram$sampPhy_cgram)
