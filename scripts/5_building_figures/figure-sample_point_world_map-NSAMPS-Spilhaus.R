@@ -230,14 +230,51 @@ nsamps.res36 = pretify_spilhaus_df(sites_grid)
 
 
 
-# make maps ! -------------------------
+# make map -------------------------
+
+ggplot() +
+  
+  # add graticules over oceans
+  tidyterra::geom_spatvector(data=grid.ocean, colour = "gray80", alpha = 0.8, linewidth = 0.17, linetype = "dashed") +
+  
+  # add land
+  tidyterra::geom_spatvector(data = land.prj, fill = "gray90", colour = "gray45", alpha = 1) +
+  
+  ## add N indivs heatmap/raster
+  geom_tile(data = nsamps.res36, aes(x = x, y = y, fill = z)) +
+  
+  viridis::scale_fill_viridis(name = "N. sequenced\nindividuals", trans = "log",
+                              breaks = c(0,1,10,100,450), labels = c(0,1,10,100,450),
+                              option="magma") +
+  
+  # add outlines
+  tidyterra::geom_spatvector(data = land.prj, fill = "transparent", colour = "black", alpha = 0) +
+  
+  ## Set empty theme
+  theme_void() +
+  theme(legend.title = element_text(colour="black", size=10, face="bold", margin = margin(b = 10)), # margin is space between title and rest of legend
+        plot.margin = unit(c(t=1, r=1, b=1, l=1), unit="cm"), # adjust margins
+        panel.background = element_rect(fill = 'white', color = 'black'),
+        plot.background = element_blank(),
+        legend.position = c(0.16, 0.23), legend.direction = "vertical")
+
+ggsave(paste("figures/world_map_genetic_pts-NSAMPS-Spilhaus.png",sep="") , width = 15, height = 14.5, units = c("cm"))
+ggsave(paste("figures/world_map_genetic_pts-NSAMPS-Spilhaus.pdf",sep="") , width = 15, height = 14.5, units = c("cm"))
+
+
+
+
+
+# graveyard -------------
+
+#other aesthetic options we didn't use
 
 # option 1 -------------
 ggplot() +
   
   # add graticules over oceans
   tidyterra::geom_spatvector(data=grid.ocean, colour = "gray70", alpha = 1, linewidth = 0.19, linetype = "dotted") +
-
+  
   # add land
   tidyterra::geom_spatvector(data = land.prj, fill = "gray80", colour = "gray55", alpha = 0.3) +
   
@@ -267,10 +304,12 @@ ggsave(paste("figures/world_map_genetic_pts-NSAMPS-Spilhaus-option1.png",sep="")
 ggplot() +
   
   # add graticules over oceans
-  tidyterra::geom_spatvector(data=grid.ocean, colour = "gray80", alpha = 0.5, linewidth = 0.25) +
+  #tidyterra::geom_spatvector(data=grid.ocean, colour = "gray80", alpha = 0.5, linewidth = 0.25) +
+  tidyterra::geom_spatvector(data=grid.ocean, colour = "gray80", alpha = 0.8, linewidth = 0.17, linetype = "dashed") +
   
   # add land
-  tidyterra::geom_spatvector(data = land.prj, fill = "gray80", colour = "gray45", alpha = 0.3) +
+  #tidyterra::geom_spatvector(data = land.prj, fill = "gray80", colour = "gray45", alpha = 0.3) +
+  tidyterra::geom_spatvector(data = land.prj, fill = "gray90", colour = "gray45", alpha = 1) +
   
   ## add N indivs heatmap/raster
   geom_tile(data = nsamps.res50, aes(x = x, y = y, fill = z)) +
@@ -278,6 +317,9 @@ ggplot() +
   viridis::scale_fill_viridis(name = "N. sequenced\nindividuals", trans = "log",
                               breaks = c(0,1,10,100,450), labels = c(0,1,10,100,450),
                               option="magma") +
+  
+  # add outlines
+  tidyterra::geom_spatvector(data = land.prj, fill = "transparent", colour = "black", alpha = 0) +
   
   ## Set empty theme
   theme_void() +
@@ -288,6 +330,42 @@ ggplot() +
         legend.position = c(0.16, 0.23), legend.direction = "vertical")
 
 ggsave(paste("figures/world_map_genetic_pts-NSAMPS-Spilhaus-option2.png",sep="") , width = 15, height = 14.5, units = c("cm"))
+
+
+
+# option 2.B -------------
+ggplot() +
+  
+  # add graticules over oceans
+  #tidyterra::geom_spatvector(data=grid.ocean, colour = "gray80", alpha = 0.5, linewidth = 0.25) +
+  tidyterra::geom_spatvector(data=grid.ocean, colour = "gray80", alpha = 0.8, linewidth = 0.17, linetype = "dashed") +
+  
+  # add land
+  #tidyterra::geom_spatvector(data = land.prj, fill = "gray80", colour = "gray45", alpha = 0.3) +
+  tidyterra::geom_spatvector(data = land.prj, fill = "gray90", colour = "gray45", alpha = 1) +
+  
+  # add ecoregions
+  tidyterra::geom_spatvector(data = ecor.prj.1, fill = "skyblue", colour = "skyblue", alpha = 0.3, linewidth = 0.25) +
+  
+  ## add N indivs heatmap/raster
+  geom_tile(data = nsamps.res50, aes(x = x, y = y, fill = z)) +
+  
+  viridis::scale_fill_viridis(name = "N. sequenced\nindividuals", trans = "log",
+                              breaks = c(0,1,10,100,450), labels = c(0,1,10,100,450),
+                              option="magma") +
+  
+  # add outlines
+  tidyterra::geom_spatvector(data = land.prj, fill = "transparent", colour = "black", alpha = 0) +
+  
+  ## Set empty theme
+  theme_void() +
+  theme(legend.title = element_text(colour="black", size=10, face="bold", margin = margin(b = 10)), # margin is space between title and rest of legend
+        plot.margin = unit(c(t=1, r=1, b=1, l=1), unit="cm"), # adjust margins
+        panel.background = element_rect(fill = 'white', color = 'black'),
+        plot.background = element_blank(),
+        legend.position = c(0.16, 0.23), legend.direction = "vertical")
+
+ggsave(paste("figures/world_map_genetic_pts-NSAMPS-Spilhaus-option2B.png",sep="") , width = 15, height = 14.5, units = c("cm"))
 
 
 
@@ -324,7 +402,7 @@ ggplot() +
   
   # add graticules over oceans
   tidyterra::geom_spatvector(data=grid.ocean, colour = "gray80", alpha = 0.8, linewidth = 0.17, linetype = "dashed") +
-
+  
   # add land
   tidyterra::geom_spatvector(data = land.prj, fill = "white", colour = "gray55", alpha = 0.3) +
   
@@ -419,7 +497,9 @@ ggsave(paste("figures/world_map_genetic_pts-NSAMPS-Spilhaus-option6.pdf",sep="")
 
 
 
-# graveyard -------------
+
+
+
 
 #old way of getting land
 #download marine data to locate ocean and
