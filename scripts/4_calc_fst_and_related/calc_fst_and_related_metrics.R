@@ -32,9 +32,9 @@ cat(args, sep = "\n")
 
 #define some variables (pulled in from bash script)
 run_name = args[1] #dataset name
-workdir = args[3] #indir
-outdir = args[4] #outdir
-minPropIndivsScoredin = as.numeric(args[5]) #percent of indivs that locus must be scored in to save
+workdir = args[2] #indir
+outdir = args[3] #outdir
+minPropIndivsScoredin = as.numeric(args[4]) #percent of indivs that locus must be scored in to save
 
 #for local testing
 #run_name="bioprj_PRJNA294760_Amphiprion-bicinctus"
@@ -102,7 +102,7 @@ for (loop.iter in 1:length(popgenfiles_list)) {
   load(paste0(workdir, "/gt.", minPropIndivsScoredin, ".", run_name, "_stacks_", stacksparams, "_gt.Robj"))
   
   #get sample names and filter down to just samples used in end
-  sampkey <- read.delim(paste0(workdir,"/samplenamekey.txt")) %>% 
+  sampkey <- read.delim(paste0(workdir,"/samplenamekey-",run_name,".txt")) %>% 
     filter(run_acc_sra %in% i.latlongs$run_acc_sra)
   cat("here2\n", file = stderr())
   
@@ -148,7 +148,9 @@ for (loop.iter in 1:length(popgenfiles_list)) {
   for (loop.iter.pop in 1:length(unique.pop.list)) {
 
     pop.i = unique.pop.list[loop.iter.pop]
-    
+    print(paste0("starting pop", pop.i, " which is ", loop.iter.pop, " of ", length(unique.pop.list)))
+    cat(paste0("starting pop", pop.i, " which is ", loop.iter.pop, " of ", length(unique.pop.list)), file = stderr())    
+
     #get list of indivs in this pop
     samps.in.pop.i <- mysamps %>% filter(dummy_pop_fst == pop.i)
     #get how many indivs are at location
@@ -160,7 +162,7 @@ for (loop.iter in 1:length(popgenfiles_list)) {
                  rownames(pwp) %in% samps.in.pop.i$sampid_assigned_for_bioinf]
     #calc mean pi for this location
     mean.pwp.pop.i = mean(pwp[upper.tri(pwp.i,diag=TRUE)])
-    cat("here5\n", file = stderr())
+    cat("\nhere5\n", file = stderr())
     
     #calc FST of each population to all rest of samples ------------
     #recode gt and calc FST so focal population i is one pop and all other pops another pop
@@ -206,7 +208,7 @@ for (loop.iter in 1:length(popgenfiles_list)) {
                    "fst.pw.wc" = fst.pw.wc,
                    "fst.wc" = fst.wc)
   
-  save(fststats, file=paste0(outdir,"/fststats.",run_name,"_",stacksparams,"_fststats.Robj"))
+  save(fststats, file=paste0(workdir,"/fststats.",run_name,"_",stacksparams,"_fststats.Robj"))
   
   print(paste("finished processing",run_name, stacksparams, sep = " "))
   rm(popgenfile, stacksparams, i.latlongs, popgenstats, pwp, gt, 

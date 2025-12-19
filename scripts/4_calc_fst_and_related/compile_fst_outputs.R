@@ -42,13 +42,19 @@ for (loop.iter in 1:length(file_list)) {
   fst.global.wc <- fststats$fst.wc$FST
   
   #row-wise FST (value per pop)
-  fst.pw.rowwise.mean <- fststats$fst.pw.wc %>% 
-    mutate(dummy.pop.id = row.names(.)) %>% rowwise() %>% 
-    mutate(rowwise_mean_fst = mean(c_across(2:nrow(.)), na.rm = TRUE)) %>%
-    ungroup() %>% dplyr::select(dummy.pop.id,rowwise_mean_fst)
-  #mean of rowwise FST (value per dataset)
-  mean.rowwisefst <- mean(fst.pw.rowwise.mean$rowwise_mean_fst)
-  sd.rowwisefst <- sd(fst.pw.rowwise.mean$rowwise_mean_fst)
+  if(is.character(fststats$fst.pw.wc)){
+    mean.rowwisefst <- "not_calculated"
+    sd.rowwisefst <- "not_calculated"
+  } else {
+    fst.pw.rowwise.mean <- fststats$fst.pw.wc %>% 
+      mutate(dummy.pop.id = row.names(.)) %>% rowwise() %>% 
+      mutate(rowwise_mean_fst = mean(c_across(2:nrow(.)), na.rm = TRUE)) %>%
+      ungroup() %>% dplyr::select(dummy.pop.id,rowwise_mean_fst)
+    
+    #mean of rowwise FST (value per dataset)
+    mean.rowwisefst <- mean(fst.pw.rowwise.mean$rowwise_mean_fst)
+    sd.rowwisefst <- sd(fst.pw.rowwise.mean$rowwise_mean_fst)
+  }
   
   #one to all FST (value per pop)
   mean.1toallfst <- mean(fststats$fst_summaries$fst.wc.1toall)
