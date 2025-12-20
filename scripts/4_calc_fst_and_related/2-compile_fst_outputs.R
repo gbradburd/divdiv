@@ -43,17 +43,24 @@ for (loop.iter in 1:length(file_list)) {
   
   #row-wise FST (value per pop)
   if(is.character(fststats$fst.pw.wc)){
-    mean.rowwisefst <- "not_calculated"
-    sd.rowwisefst <- "not_calculated"
+    mean.rowwisefst <- "not_calculated_HPCCtimedout"
+    sd.rowwisefst <- "not_calculated_HPCCtimedout"
   } else {
     fst.pw.rowwise.mean <- fststats$fst.pw.wc %>% 
       mutate(dummy.pop.id = row.names(.)) %>% rowwise() %>% 
       mutate(rowwise_mean_fst = mean(c_across(2:nrow(.)), na.rm = TRUE)) %>%
       ungroup() %>% dplyr::select(dummy.pop.id,rowwise_mean_fst)
     
-    #mean of rowwise FST (value per dataset)
-    mean.rowwisefst <- mean(fst.pw.rowwise.mean$rowwise_mean_fst)
-    sd.rowwisefst <- sd(fst.pw.rowwise.mean$rowwise_mean_fst)
+    #if only two pops we'll get an NA here for the diagonal for the second, bc only one value total
+    #deal with dropping this erroneous NA
+    if(nrow(fst.pw.rowwise.mean) == 2){
+      mean.rowwisefst <- mean(fst.pw.rowwise.mean[1,2]$rowwise_mean_fst)
+      sd.rowwisefst <- "only_two_pops_total"
+    } else {
+      #mean of rowwise FST (value per dataset)
+      mean.rowwisefst <- mean(fst.pw.rowwise.mean$rowwise_mean_fst)
+      sd.rowwisefst <- sd(fst.pw.rowwise.mean$rowwise_mean_fst) 
+    }
   }
   
   #one to all FST (value per pop)
@@ -77,14 +84,30 @@ for (loop.iter in 1:length(file_list)) {
 }
 out <- out %>% filter(is.na(run_name)==F)
 
-#calc CVs
-out <- out %>% mutate(cv.rowwisefst = sd.rowwisefst/mean.rowwisefst,
-                      cv.1toallfst = sd.1toallfst/mean.1toallfst, 
-                      cv.pwp = sd.pwp/mean.pwp)
+#3 datasets have only 1 indiv per every unique location aka dummy pop
+#hierfstat returns 0 for global and pw WC FST when comparing 1 indiv to 1 indiv (regardless of their genotypes)
+#recoding these 0s to notes so we know what's up
+out$fst.global.wc[out$run_name=="bioprj_PRJNA559677_Caretta-caretta"] = "only_1indiv_per_every_pop"
+out$mean.rowwisefst[out$run_name=="bioprj_PRJNA559677_Caretta-caretta"] = "only_1indiv_per_every_pop"
+out$sd.rowwisefst[out$run_name=="bioprj_PRJNA559677_Caretta-caretta"] = "only_1indiv_per_every_pop"
+out$fst.global.wc[out$run_name=="bioprj_PRJNA480308_Rhizophora-mangle"] = "only_1indiv_per_every_pop"
+out$mean.rowwisefst[out$run_name=="bioprj_PRJNA480308_Rhizophora-mangle"] = "only_1indiv_per_every_pop"
+out$sd.rowwisefst[out$run_name=="bioprj_PRJNA480308_Rhizophora-mangle"] = "only_1indiv_per_every_pop"
+out$fst.global.wc[out$run_name=="bioprj_PRJNA379028_Porites-astreoides"] = "only_1indiv_per_every_pop"
+out$mean.rowwisefst[out$run_name=="bioprj_PRJNA379028_Porites-astreoides"] = "only_1indiv_per_every_pop"
+out$sd.rowwisefst[out$run_name=="bioprj_PRJNA379028_Porites-astreoides"] = "only_1indiv_per_every_pop"
 
 #save
 write.csv(out, "data/popgen/r80_FSTetc_stats-wide.csv", row.names = FALSE)
 
+
+
+#graveyard ----------
+
+#calc CVs
+out <- out %>% mutate(cv.rowwisefst = sd.rowwisefst/mean.rowwisefst,
+                      cv.1toallfst = sd.1toallfst/mean.1toallfst, 
+                      cv.pwp = sd.pwp/mean.pwp)
 
 # viz exploration
 out %>% ggplot(aes(x=mean.1toallfst, y=mean.rowwisefst)) + 
