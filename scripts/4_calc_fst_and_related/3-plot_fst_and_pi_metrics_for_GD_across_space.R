@@ -1,4 +1,6 @@
+#idea: analyse FST and pi metrics related to how GD is distributed across space
 
+#load libraries
 library(dplyr)
 library(tidyr)
 library(stringr)
@@ -42,7 +44,7 @@ df <- df %>%
 for(i in 3:ncol(df)) {
   df[,i] = as.numeric(df[,i])
 }
-#should be 18 NAs now in df
+#should be 21 NAs now in df
 sum(is.na(df))
 
 #calculate CV for all metrics
