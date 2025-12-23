@@ -78,6 +78,32 @@ nuisPreds <- preds[16:19]
 nuisPredNames <- predNames[16:19]
 
 ################################
+# visualizing diversity
+################################
+
+pdf(file="suppmat_diversity.pdf",width=8.5,height=11)
+	zsort <- order(z$div)
+	spNames <- gsub("_"," ",z$species)
+	s1 <- seq(1,length(spNames),by=2)
+	s2 <- seq(2,length(spNames),by=2)
+	plot(x=log(z$div)[zsort],y=1:nrow(z),
+		yaxt='n',ylab="",xlab="",xaxt='n',
+		col=z$newTaxCol[zsort],pch=19,
+		xlim=log(c(1.5e-4,7e-2)))
+		axis(side=1,log(c(seq(3e-4,3e-3,length.out=10),
+			seq(3e-3,3e-2,length.out=10))),labels=FALSE)
+		axis(side=1,at=log(3*c(1e-4,1e-3,1e-2,1e-1)),
+				labels=format(3*c(1e-4,1e-3,1e-2,1e-1),scientific=FALSE))
+		axis(side=3,log(c(seq(3e-4,3e-3,length.out=10),
+			seq(3e-3,3e-2,length.out=10))),labels=FALSE)
+		axis(side=3,at=log(3*c(1e-4,1e-3,1e-2,1e-1)),
+				labels=format(3*c(1e-4,1e-3,1e-2,1e-1),scientific=FALSE))
+		text(x=log(z$div)[zsort][s1],xpd=TRUE,y=s1,labels=spNames[zsort][s1],pos=2,col=z$newTaxCol[zsort][s1],cex=0.7)
+		text(x=log(z$div)[zsort][s2],xpd=TRUE,y=s2-0.2,labels=spNames[zsort][s2],pos=4,col=z$newTaxCol[zsort][s2],cex=0.7)
+		addPhylopics(unique(z$newTaxCol)[c(8,10,9,7,6,4,3,2,1,5)],
+				ysize=3.1,tipcols=z$newTaxCol,xleft=log(1.9e-4),ytop=90,dshift=4.5,legendshift=0.3,txt.cex=0.9,pos=4)
+dev.off()
+################################
 # analyze diversity with one biological predictor 
 #	and all the "nuisance" parameters
 ################################
@@ -98,7 +124,6 @@ pdf(file="predictor_effect_sizes.pdf",width=8,height=7)
 				 stdize=TRUE,
 				 multiPred=TRUE,
 				 qnt=1)
-
 	arrows(x0=-1.4,x1=-1.9,y0=-1,y1=-1,lwd=4,xpd=TRUE,col="coral3",length=0.1)
 		text(x=-1.6,y=-1.6,xpd=TRUE,labels="decreasing\ndiversity",col="coral3")
 	arrows(x0=1,x1=1.5,y0=-1,y1=-1,lwd=4,xpd=TRUE,col="deepskyblue4",length=0.1)
@@ -204,7 +229,7 @@ pdf(file="all_predictors.pdf",width=14,height=10)
 dev.off()
 
 ################################
-# visualize predictor corrleations
+# visualize predictor correlations
 ################################
 
 M <- cor(xx,use="pairwise.complete.obs",method="kendall")
@@ -220,15 +245,28 @@ dev.off()
 # visualize phylogenetic correlogram
 ################################
 
-load("phy_cgram.Robj")
+load("../phy_perm_cgram.Robj")
+r <- Reduce("cbind",lapply(permNullSims,"[[","r"))
+lowerCI <- apply(r,1,quantile,probs=0.025)
+upperCI <- apply(r,1,quantile,probs=0.975)
 pdf(file="phylo_correlogram.pdf",width=7,height=7)
-	plot(cgram,xlab="Phylogenetic distance (my)",show.test=FALSE)
-		legend(x="topright",
-				legend=c("mean correlation",
-						"95% confidence interval",
-						"null hypothesis"),
-						lty=c(1,2,1),
-						lwd=c(3,1,1))
+	plot(0,
+		xlim=c(0,max(cgram$res[,1])),ylim=c(-0.15,0.2),
+		type='n',
+		xlab="Phylogenetic distance (my)",ylab="Correlation")
+	invisible(lapply(permNullSims,function(x){
+		lines(x$d,x$r,col=adjustcolor(1,0.05))})) ; 
+	lines(cgram$res[,1],cgram$res[,4],col="red",lwd=3)
+	lines(cgram$res[,1],lowerCI,col="black",lwd=1.5,lty=2)
+	lines(cgram$res[,1],upperCI,col="black",lwd=1.5,lty=2)
+	legend(x="topright",
+			cex=1.25,
+			legend=c("permuted trait\nnull correlogram",
+		 			 "95% confidence interval",
+					  "observed correlogram"),
+			lty=c(1,2,1),
+			col=c(adjustcolor("black",0.5),"black","red"),
+			lwd=c(1.5,2,3))
 dev.off()
 ################################
 # report statistics for paper
@@ -243,12 +281,8 @@ if(FALSE){
 blom_k <- phytools::phylosig(sampPhy,z$div,test=TRUE)
 pagels_lambda <- phytools::phylosig(sampPhy,z$div,method="lambda",test=TRUE)
 	#plot(blom_k)
-
-
-
-load("../phy_cgram.Robj")
-#plot(cgram$sampPhy_cgram)
-
+# when does the correlogram become significant relative to the null?
+max(cgram$res[,1][which(cgram$res[,4]>upperCI)])
 
 # diversity statistics
 range(z$div)
@@ -259,7 +293,25 @@ C_inv <- solve(phyStr)
 1/(t(I) %*% C_inv %*% I) * t(I) %*% C_inv %*% z$div
 mean(solve(chol(phyStr)) %*% z$div)
 
+################################
+# report R^2 values
+################################
+load("../partB_outs.Robj")
+rangeR2l <- bayesR2(outs[[3]],latent=TRUE)
+plankR2l <- bayesR2(outs[[12]],latent=TRUE)
+mean(rangeR2l)
+quantile(rangeR2l,c(0.025,0.975))
+mean(plankR2l)
+quantile(plankR2l,c(0.025,0.975))
 
+
+
+################################
+# export effect sizes
+################################
+
+outTab <- reportEffectSizes(outs)
+cat(capture.output(outTab), file = 'effect_size_summary.txt', sep = '\n')
 # effect of range extent
 b <- extract(outs[[3]]$fit,"beta[1]",permute=FALSE,inc_warmup=FALSE)
 mean(b)

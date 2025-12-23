@@ -451,8 +451,8 @@ plotDens <- function(ymin=0,x,d,col,alpha=0.3,xmin=NULL,peakheight=1,qnt=1,logX=
 				col=adjustcolor(col,alpha),border=border)
 	if(show95ci){
 		xcoords_95ci <- quantile(x,c(0.025,0.975))
-		segments(x0=xcoords_95ci[1],y0=ymin,x1=xcoords_95ci[1],y1=ymin+yvec[which.min(abs(dx-xcoords_95ci[1]))],col="blue")
-		segments(x0=xcoords_95ci[2],y0=ymin,x1=xcoords_95ci[2],y1=ymin+yvec[which.min(abs(dx-xcoords_95ci[2]))],col="blue")
+		segments(x0=xcoords_95ci[1],y0=ymin,x1=xcoords_95ci[1],y1=ymin+yvec[which.min(abs(dx-xcoords_95ci[1]))],col="goldenrod1",lwd=1.5)
+		segments(x0=xcoords_95ci[2],y0=ymin,x1=xcoords_95ci[2],y1=ymin+yvec[which.min(abs(dx-xcoords_95ci[2]))],col="goldenrod1",lwd=1.5)
 	}
 }
 
@@ -536,14 +536,7 @@ highlightClade <- function(tree,dSp1,dSp2,col,x0=NULL,x1=NULL,y0=NULL,y1=NULL,ro
 								col=col,border=NA,aspcorrect=TRUE)
 }
 
-addPhylopics <- function(cladeCols,ysize=3.1,tipcols){
-	#recover()
-	xleft <- 170#83#90
-	ytop <- 44#60 #86
-	dshift <- 4.5
-	legendshift <- 65
-	txt.cex=1.1
-	pos=4
+addPhylopics <- function(cladeCols,ysize=3.1,tipcols,xleft=170,ytop=44,dshift=4.5,legendshift=65,txt.cex=1.1,pos=4){
 	mammal <- rphylopic::get_phylopic(uuid="44ee07ec-f829-49f9-b242-f4b92bb9cf73") #Halichoerus grypus
 		n_mammals <- length(which(tipcols==cladeCols[3]))
 	vasc_plant <- rphylopic::get_phylopic(uuid="bacc6a59-80d2-461c-92d4-83cabc91cc39") #Rhizophora mangle
@@ -847,4 +840,75 @@ simDiscreteViolPlot <- function(sim,out,sampCols,yRange,...){
 addMap2fig <- function(mapFig,xl,xr,yt,yb){
 	map_xy_ratio <- dim(mapFig)[2]/dim(mapFig)[1]
 	rasterImage(mapFig,xleft=xl,xright=xr,ytop=yt,ybottom=yb)
+}
+
+reportEffectSizes <- function(outs){
+#	recover()
+	preds <- names(outs)
+	betas <- lapply(outs,function(o){extract(o$fit,"beta[1]",permute=FALSE,inc_warmup=TRUE)})
+	means <- format(unlist(lapply(betas,mean)),scientific=TRUE,digits=4)
+	CIs <- lapply(betas,function(b){quantile(b,c(0.025,0.975))})
+	lows <- format(unlist(lapply(CIs,"[[",1)),scientific=TRUE,digits=4)
+	highs <- format(unlist(lapply(CIs,"[[",2)),scientific=TRUE,digits=4)
+	outTab <- data.frame(preds,means,lows,highs)
+	return(outTab)
+}
+
+# simulate a trait *without* phylogenetic signal
+#	and calculate the correlogram
+simNull <- function(n,tree,sd=1,n.points=30,ci.bs=100){
+	# simulate a trait from a normal
+	trait <- rnorm(n,mean=0,sd=sd)
+	# put tree and trait into phylo4d format, which phyloCorrelogram requires
+	tree4d <- phylobase::phylo4d(tree,tip.data=trait)
+	# run the correlogram
+	#	n.points is the number of temporal points to check
+	#	ci.bs is the number of bootstrap replicates used to calculate the confidence interval
+	cgram <- phylosignal::phyloCorrelogram(tree4d,n.points=n.points,ci.bs=ci.bs)
+	# cgram$res is a matrix w/ 4 columns:
+	#	column 1 is the temporal depth vector
+	#	column 4 is the correlation coefficient at that depth
+	return(list("d"=cgram$res[,1],"r"=cgram$res[,4]))
+}
+
+simPermNull <- function(n,tree,trait,n.points=30,ci.bs=100){
+	# permute tip traits
+	trait <- trait[sample(1:n,n,replace=FALSE)]
+	# put tree and permuted trait into phylo4d format, which phyloCorrelogram requires
+	tree4d <- phylobase::phylo4d(tree,tip.data=trait)
+	# run the correlogram
+	#	n.points is the number of temporal points to check
+	#	ci.bs is the number of bootstrap replicates used to calculate the confidence interval
+	cgram <- phylosignal::phyloCorrelogram(tree4d,n.points=n.points,ci.bs=ci.bs)
+	# cgram$res is a matrix w/ 4 columns:
+	#	column 1 is the temporal depth vector
+	#	column 4 is the correlation coefficient at that depth
+	return(list("d"=cgram$res[,1],"r"=cgram$res[,4]))
+}
+
+# Bayesian R2 per Gelman et al. 2017
+bayesR2 <- function(out,latent=FALSE){
+	# posterior distribution of R2
+	R2s <- numeric(length(get_logposterior(out$fit)[[1]])/2)
+	if(latent){
+		theta <- rstan::extract(out$fit,"theta")[[1]]
+		meanVec <- rstan::extract(out$fit,"meanVec")[[1]]
+		for(i in 1:length(R2s)){
+			var_fit <- var(meanVec[i,])
+			var_resid <- var(theta[i,]-meanVec[i,])
+			R2s[i] <- var_fit / (var_fit + var_resid)
+		}
+	} else {
+		# predicted mean of the beta
+		mu_pred <- rstan::extract(out$fit,"mu")[[1]]
+		# dispersion parameter
+		phi <- rstan::extract(out$fit,"phi")[[1]]
+		for(i in 1:length(R2s)){
+			mu_i <- mu_pred[i,]
+			var_pred <- var(mu_i)
+			var_resid <- mean(mu_i * (1-mu_i))/(1+phi[i])
+			R2s[i] <- var_pred/(var_pred + var_resid)
+		}	
+	}
+	return(R2s)
 }

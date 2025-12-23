@@ -14,7 +14,7 @@ gc()
 setwd("/Users/rachel/divdiv/")
 
 #load Spilhaus projection functions
-source("scripts/5_building_figures/spilhaus_functions.R") 
+source("spilhaus_functions.R") 
 
 
 
@@ -122,10 +122,10 @@ ggplot() +
 
 
 # get the genetic sample points ----------
-sites <- read.csv("data/final_genetic_latlongs.csv", header = T)
+sites <- read.csv("../../data/final_genetic_latlongs.csv", header = T)
 
 #add clade groups on for coloring
-taxcolorkey <- read.csv("/Users/rachel/divdiv/data/master_tax_color_key.csv") %>% mutate(species = gsub(" ","_",species))
+taxcolorkey <- read.csv("../../data/master_tax_color_key.csv") %>% mutate(species = gsub(" ","_",species))
 sites <- merge(sites, taxcolorkey, 
                by = "species", all.x = T)
 
@@ -167,7 +167,7 @@ ggplot() +
         plot.background = element_blank(),
         legend.position = "none")
 
-ggsave(paste("figures/world_map_genetic_pts-phy-Spilhaus-option1.png",sep="") , width = 15, height = 14.5, units = c("cm"))
+ggsave(paste("../../figures/world_map_genetic_pts-phy-Spilhaus-option1.png",sep="") , width = 15, height = 14.5, units = c("cm"))
 
 
 
@@ -197,7 +197,7 @@ ggplot() +
         plot.background = element_blank(),
         legend.position = "none")
 
-ggsave(paste("figures/world_map_genetic_pts-phy-Spilhaus-option2b.png",sep="") , width = 15, height = 14.5, units = c("cm"))
+ggsave(paste("../../figures/world_map_genetic_pts-phy-Spilhaus-option2b.png",sep="") , width = 15, height = 14.5, units = c("cm"))
 
 
 
@@ -229,7 +229,7 @@ ggplot() +
         plot.background = element_blank(),
         legend.position = "none")
 
-ggsave(paste("figures/world_map_genetic_pts-phy-Spilhaus-option3.png",sep="") , width = 15, height = 14.5, units = c("cm"))
+ggsave(paste("../../figures/world_map_genetic_pts-phy-Spilhaus-option3.png",sep="") , width = 15, height = 14.5, units = c("cm"))
 
 
 
@@ -261,7 +261,7 @@ ggplot() +
         plot.background = element_blank(),
         legend.position = "none")
 
-ggsave(paste("figures/world_map_genetic_pts-phy-Spilhaus-option4.png",sep="") , width = 15, height = 14.5, units = c("cm"))
+ggsave(paste("../../figures/world_map_genetic_pts-phy-Spilhaus-option4.png",sep="") , width = 15, height = 14.5, units = c("cm"))
 
 
 

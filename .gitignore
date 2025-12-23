@@ -8,3 +8,4 @@ analyses/*.pdf
 analyses/*.Robj
 *.Rout
 *.png
+*.key

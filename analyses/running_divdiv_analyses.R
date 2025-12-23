@@ -17,6 +17,8 @@ library(doParallel)
 library(foreach)
 library(phytools)
 library(phylosignal)
+library(phylobase)
+library(geiger)
 
 source("divdiv_analysis_functions.R")
 
@@ -84,7 +86,6 @@ bioPreds <- preds[1:14]
 bioPredNames <- predNames[1:14]
 nuisPreds <- preds[16:19]
 nuisPredNames <- predNames[16:19]
-
 
 ################################
 # analyze diversity with one predictor at a time
@@ -206,9 +207,37 @@ outs <- divdivAnalyses(z=z,X=x,
 vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partG",multiPred=TRUE,sampCols=sampCols)
 
 ################
-# analyze diversity with all predictors simultaneously
+# just nuisance parameters
+################
+
+x <- nuisPreds
+
+outs <- divdivAnalysis(z=z,x=x,y="div",
+					   phyStr=phyStr,mod=betaPhyReg,
+					   nIter=nIter,filterKeep=NULL)
+
+save(outs,file="partH_outs.Robj")
+
+################
+# phylogenetic correlogram
+################
+tree4d <- phylobase::phylo4d(sampPhy,tip.data=z$div) #_binary
+permNullSims <- lapply(1:500,function(i){simPermNull(n=nrow(z),tree=sampPhy,trait=z$div,n.points=275/2,ci.bs=100)})
+cgram <- phylosignal::phyloCorrelogram(tree4d,n.points=275/2,ci.bs=100)
+save(permNullSims,cgram,file="phy_perm_cgram.Robj")
+
+################
+# graveyard
 ################
 if(FALSE){
+phyDat <- z$div
+names(phyDat) <- sampPhy$tip.label
+sampPhy_binary <- multi2di(sampPhy)
+#phyFit <- geiger::fitContinuous(sampPhy_binary,phyDat,model="BM")
+#bmPar <- phyFit$opt$sigsq
+nullSims <- lapply(1:500,function(i){simNull(n=nrow(z),tree=sampPhy,sd=bmPar*sqrt(max(nodeHeights(sampPhy_binary))),n.points=275/2,ci.bs=100)})
+save(nullSims,permNullSims,cgram,file="phy_cgram.Robj")
+
 predSampCov <- cov(t(z[,bioPreds]),use="pairwise.complete.obs")
 predPCs <- prcomp(predSampCov)
 predPC
