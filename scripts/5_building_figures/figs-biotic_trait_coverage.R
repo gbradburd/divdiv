@@ -22,7 +22,7 @@ df <- read.csv("data/biotic/cleaned_numeric_biotic_traits.csv") %>%
 
 
 
-# SUPP FIGURE 1 - trait coverage by trait ------
+# SUPP FIGURE S5 - trait coverage by trait ------
 
 #calc trait coverage by trait
 total = nrow(df)
@@ -33,16 +33,16 @@ trtcov <- df %>% dplyr::select(-organism_biosamp) %>%
 names <- data.frame(trait = trtcov$trait, trait.clean = c("Benthicity","Body size",
                                                           "Iteroparity",
                                                           "Egg size","Pelagic larval duration",
-                                                          "Natal philopatry","Larval feeding",
+                                                          "Philopatry","Planktotrophy",
                                                           "Spawning","Planktonicity"))
 
 trtcov <- merge(trtcov, names, by = "trait", all.x = T, all.y = T) %>% 
   mutate(trait_ordered = factor(trait.clean, levels = c("Iteroparity",
-                                                        "Natal philopatry",
+                                                        "Philopatry",
                                                         "Spawning",
                                                         "Benthicity",
                                                         "Planktonicity",
-                                                        "Larval feeding",
+                                                        "Planktotrophy",
                                                         "Pelagic larval duration",
                                                         "Egg size",
                                                         "Body size"
