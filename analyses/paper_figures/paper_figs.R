@@ -19,6 +19,8 @@ library(phytools)
 library(phylosignal)
 library(vioplot)
 library(corrplot)
+library(cluster)
+library(vegan)
 
 source("../divdiv_analysis_functions.R")
 
@@ -103,6 +105,49 @@ pdf(file="suppmat_diversity.pdf",width=8.5,height=11)
 		addPhylopics(unique(z$newTaxCol)[c(8,10,9,7,6,4,3,2,1,5)],
 				ysize=3.1,tipcols=z$newTaxCol,xleft=log(1.9e-4),ytop=90,dshift=4.5,legendshift=0.3,txt.cex=0.9,pos=4)
 dev.off()
+
+divVar <- read.csv("../../data/popgen/r80_FSTetc_stats-wide.csv")
+reord <- match(z$run_name,divVar$run_name)
+divVar <- divVar[reord,]
+y_ticks <- c(0, 1e-7, 1e-6, 1e-5, 1e-4)
+y_transformed <- symlog(y_ticks)
+
+pdf(file="suppmat_diversity_variance.pdf",width=8.5,height=11)
+	dv <- divVar$sd.pwp
+	spNames <- gsub("-"," ",divVar$species)[zsort]
+	s0 <- 1:7
+	s1 <- seq(8,length(spNames)-8,by=2)
+	s2 <- seq(9,length(spNames)-8,by=2)
+	sOmega <- (length(spNames)-8):length(spNames)
+	zsort <- order(dv)
+	plot(x=symlog(dv[zsort]),y=1:length(dv),
+		yaxt='n',ylab="",xlab="",xaxt='n',
+		col=z$newTaxCol[zsort],pch=19)
+	axis(side=1,at=symlog(c(1e-8,1e-7,1e-6,1e-5,1e-4)),labels=c(1e-8,1e-7,1e-6,1e-5,1e-4))
+	axis(side=3,at=symlog(c(1e-8,1e-7,1e-6,1e-5,1e-4)),labels=c(1e-8,1e-7,1e-6,1e-5,1e-4))
+	text(x=symlog(dv)[zsort][s0],xpd=TRUE,y=s0,labels=spNames[zsort][s0],pos=4,col=z$newTaxCol[zsort][s0],cex=0.7)
+	text(x=symlog(dv)[zsort][s1],xpd=TRUE,y=s1,labels=spNames[zsort][s1],pos=2,col=z$newTaxCol[zsort][s1],cex=0.7)
+	text(x=symlog(dv)[zsort][s2],xpd=TRUE,y=s2-0.2,labels=spNames[zsort][s2],pos=4,col=z$newTaxCol[zsort][s2],cex=0.7)
+	text(x=symlog(dv)[zsort][sOmega],xpd=TRUE,y=sOmega,labels=spNames[zsort][sOmega],pos=2,col=z$newTaxCol[zsort][sOmega],cex=0.7)
+	mtext(side=1,cex=1.25,text="Standard deviation in diversity (symlog scale)",padj=4)
+	addPhylopics(unique(z$newTaxCol)[c(8,10,9,7,6,4,3,2,1,5)],
+			ysize=3.1,tipcols=z$newTaxCol,
+			xleft=symlog(1e-9),ytop=90,dshift=4.5,legendshift=0.3,txt.cex=0.9,pos=4)
+dev.off()
+
+pdf(file="suppmat_diversity_variance_relationship.pdf",width=8.5,height=8.5)
+	plot(x=symlog(dv),y=log(z$div),
+		ylab="diversity",xlab="standard variation of diversity across populations",#xaxt='n',yaxt='n',
+		col=z$newTaxCol,pch=19,yaxt='n',xaxt='n')
+		axis(side=2,log(c(seq(3e-4,3e-3,length.out=10),
+			seq(3e-3,3e-2,length.out=10))),labels=FALSE)
+		axis(side=2,at=log(3*c(1e-4,1e-3,1e-2,1e-1)),
+				labels=format(3*c(1e-4,1e-3,1e-2,1e-1),scientific=FALSE))
+		axis(side=1,at=symlog(c(1e-8,1e-7,1e-6,1e-5,1e-4,1e-3,1e-2,1e-1)),
+				labels=format(c(1e-8,1e-7,1e-6,1e-5,1e-4,1e-3,1e-2,1e-1),scientific=TRUE))
+dev.off()
+
+
 ################################
 # analyze diversity with one biological predictor 
 #	and all the "nuisance" parameters
@@ -240,6 +285,64 @@ pdf(file="predictor_corrs.pdf",width=6,height=6)
 	par(cex.axis=1.5,cex.lab=1.5)
 	corrplot(M,method="ellipse",diag=TRUE,type="lower",tl.col="black")
 dev.off()
+
+
+################################
+# explore trait "syndromes"
+################################
+
+traits <- xx
+row.names(traits) <- z$species
+# identify binary variables
+binary_vars <- c("Generational_Structure","ReturnToSpawningGround","isPlanktonic_atanypoint")
+
+# identify ordered categorical variables
+ranked_vars <- c("Spawning_mode","Larval_feeding","isBenthic")
+
+# identify continuous variables
+cont_vars <- c("meanlat.gbif", "n_ECOREGIONS.all", "PLD_point2",
+               "Log_BodySize", "Fecundity_EggSize", "max.95.sea.gbif.nrm")
+
+traits[binary_vars] <- lapply(traits[binary_vars], factor)
+traits[c(ranked_vars)] <- lapply(traits[c(ranked_vars)],function(x){factor(x, ordered = TRUE)})
+
+# calculate Gower distance
+gow <- daisy(traits,metric = "gower")
+
+# do principle coordinate analysis
+pcoa <- cmdscale(gow,k = min(10,nrow(traits)-1),eig = TRUE)
+var_exp <- pcoa$eig/sum(pcoa$eig[pcoa$eig > 0])
+scores <- pcoa$points
+
+# identify clusters via silhouette width, then cluster with PAM
+# 	(partitioning around medoids)
+sil_width <- sapply(2:8, function(k){cluster::pam(gow,k=k,diss=TRUE)$silinfo$avg.width})
+k_best <- (2:8)[which.max(sil_width)]
+clustering <- cluster::pam(gow, k = k_best, diss = TRUE)
+clusters <- clustering$clustering
+
+## 6. Plots -------------------------------------------------------------
+pdf(file="pcoa_taxcol.pdf",width=10,height=10)
+plot(scores[, 1], scores[, 2], col = z$newTaxCol, pch = 19,
+     xlab = "PCoA1", ylab = "PCoA2",
+     main = "Species trait syndromes (Gower distance + PCoA)")
+text(scores[, 1], scores[, 2], labels = rownames(traits), pos = 3, cex = 0.4,col = z$newTaxCol)
+dev.off()
+
+plot(scores[, 1], scores[, 2], col = clusters, pch = 19,
+     xlab = "PCoA1", ylab = "PCoA2",
+     main = "Species trait syndromes (Gower distance + PCoA)")
+text(scores[, 1], scores[, 2], labels = rownames(traits), pos = 3, cex = 0.6)
+
+
+# get trait loadings on PCoA axes
+fit <- envfit(scores[, 1:2], traits, permutations = 999, na.rm = TRUE)
+# R2 and p-value per trait
+print(fit)
+plot(scores[,1], scores[,2], col = clusters, pch = 19)
+# draws arrows for significant continuous traits,
+# and centroids for significant factors
+plot(fit, p.max = 0.05)             
 
 ################################
 # visualize phylogenetic correlogram
