@@ -21,6 +21,11 @@ methods <- read.csv("data/methodological/methodological_predictors-wide.csv") %>
   dplyr::select(run_name, n_samples, mean_raw_read_cnt, read_length, 
                 mean_locus_depth, littlem, bigm, n, mean_depth_snp_filtered, 
                 n.totalsnps)
+n.locales <- read.csv("data/final_genetic_latlongs.csv") %>% 
+  group_by(link,lat,lon) %>% summarise(n=n()) %>% 
+  group_by(link) %>% summarise(n.locales = n()) %>% 
+  mutate(run_name = paste0("bioprj_",link)) %>% 
+  dplyr::select(-link)
 
 biotic <- read.csv("data/biotic/cleaned_numeric_biotic_traits.csv") %>% dplyr::rename("species"="organism_biosamp") %>% 
   mutate(species = gsub(" ","_",species))
@@ -72,9 +77,9 @@ df <- merge(lat, ecor, by = "species", all = F)
 df <- merge(df, rangesize, by = "run_name", all = F)
 df <- merge(df, biotic, by = "species", all = F)
 df <- merge(df, methods, by = "run_name", all = F)
-df.preds <- df
 df <- merge(df, popgWM, by = "run_name", all = F)
 df <- merge(df, popgsummary, by = "run_name", all = F)
+df <- merge(df, n.locales, by = "run_name", all = F)
 #add colors for tax. groups (that match phy)
 df <- merge(df, taxcolorkey, by = "species", all = F)
 names(df)
