@@ -36,6 +36,10 @@ zCols <- zCols[-which(!zCols$species %in% gsub("_"," ",z$species)),]
 zCols <- zCols[match(gsub("_"," ",z$species),zCols$species),]
 z$newTaxCol <- zCols$cladecolor[match(gsub("_"," ",z$species),zCols$species)]
 
+# drop species with fewer than 3 unique locations
+gr2loc <- which(z$n.locales > 2)
+z <- z[gr2loc,]
+
 load("../../data/phylo/divdiv_phy_from_timetreebeta5.Robj")
 sampPhy <- ape::keep.tip(phy,gsub("_"," ",z$species))
 phyStr <- ape::vcv(sampPhy,corr=TRUE)
@@ -153,7 +157,7 @@ dev.off()
 #	and all the "nuisance" parameters
 ################################
 
-load("../partB_outs.Robj")
+load("../partI_outs.Robj")
 #paper figure
 pps <- getBetaPPS(db=outs[[3]]$db,fit=outs[[3]]$fit,nPPS=1e3,multiPred=TRUE)
 
@@ -321,7 +325,7 @@ k_best <- (2:8)[which.max(sil_width)]
 clustering <- cluster::pam(gow, k = k_best, diss = TRUE)
 clusters <- clustering$clustering
 
-## 6. Plots -------------------------------------------------------------
+# visualize PCoA clusters
 pdf(file="pcoa_taxcol.pdf",width=10,height=10)
 plot(scores[, 1], scores[, 2], col = z$newTaxCol, pch = 19,
      xlab = "PCoA1", ylab = "PCoA2",
@@ -334,15 +338,6 @@ plot(scores[, 1], scores[, 2], col = clusters, pch = 19,
      main = "Species trait syndromes (Gower distance + PCoA)")
 text(scores[, 1], scores[, 2], labels = rownames(traits), pos = 3, cex = 0.6)
 
-
-# get trait loadings on PCoA axes
-fit <- envfit(scores[, 1:2], traits, permutations = 999, na.rm = TRUE)
-# R2 and p-value per trait
-print(fit)
-plot(scores[,1], scores[,2], col = clusters, pch = 19)
-# draws arrows for significant continuous traits,
-# and centroids for significant factors
-plot(fit, p.max = 0.05)             
 
 ################################
 # visualize phylogenetic correlogram
@@ -399,7 +394,7 @@ mean(solve(chol(phyStr)) %*% z$div)
 ################################
 # report R^2 values
 ################################
-load("../partB_outs.Robj")
+load("../partI_outs.Robj")
 rangeR2l <- bayesR2(outs[[3]],latent=TRUE)
 plankR2l <- bayesR2(outs[[12]],latent=TRUE)
 mean(rangeR2l)
@@ -415,6 +410,7 @@ quantile(plankR2l,c(0.025,0.975))
 
 outTab <- reportEffectSizes(outs)
 cat(capture.output(outTab), file = 'effect_size_summary.txt', sep = '\n')
+cat(effect_summary_to_latex("effect_size_summary.txt",digits=2), file="latex_effect_table.txt",sep="\n")
 # effect of range extent
 b <- extract(outs[[3]]$fit,"beta[1]",permute=FALSE,inc_warmup=FALSE)
 mean(b)

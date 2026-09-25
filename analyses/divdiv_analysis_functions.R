@@ -248,8 +248,12 @@ colFunc <- function (x, cols, nCols, valRange){
 }
 
 checkSig <- function(beta){
-	sig <- 1-2*(abs(0.5-ecdf(beta)(0)))
-	sig <- ifelse(sig < 0.05,TRUE,FALSE)
+	quant <- quantile(beta,c(0.025,0.975))
+	if(0 > quant[1] & 0 < quant[2]){
+		sig <- FALSE
+	} else {
+		sig <- TRUE
+	}
 	return(sig)
 }
 
@@ -291,15 +295,15 @@ postBetaPlot <- function(outs,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,mult
 	}
 	yTxtCoords <- 0.6+c(1:nPredictors)+c(1:nPredictors)*0.05
 	yDnsCoords <- c(1:nPredictors)+c(1:nPredictors)*0.05
-	plot(0,type='n',xlim=range(betas)+c(-diff(range(betas))/4,diff(range(betas))/12),
+	plot(0,type='n',xlim=range(betas)+c(-diff(range(betas))/4,diff(range(betas))/8),
 		yaxt='n',xlab="Standardized effect size",ylab="",bty='n',ylim=c(0.9,(nPredictors+1)*1.10))
 		text(x=min(unlist(betas))-diff(range(betas))/4,y=yTxtCoords,labels=predNames[predOrder],srt=0,font=2,cex=1.3,pos=4)
-		abline(v=0,lty=2,lwd=0.5,col=adjustcolor(1,0.5))
 	invisible(
 		lapply(nPredictors:1,
 			function(i){
 				plotDens(ymin=yDnsCoords[i],x=betas[[predOrder[i]]],d=betaDens[[predOrder[i]]],col=cols[predOrder[i]],qnt=qnt,peakheight=0.5,alpha=1,border="black",show95ci=TRUE)
 			}))
+		abline(v=0,lty=2,lwd=0.5,col=adjustcolor(1,0.5))
 }
 
 postBetaPlot_allPreds <- function(outs,predNames,reorder=TRUE,cols=NULL,stdize=FALSE,qnt=1,...){
@@ -557,23 +561,23 @@ addPhylopics <- function(cladeCols,ysize=3.1,tipcols,xleft=170,ytop=44,dshift=4.
 	molluscs1 <- rphylopic::get_phylopic(uuid="90449630-774d-48dc-b16c-912b69825dee") #Pyroteuthis margaritifera
 	molluscs2 <- rphylopic::get_phylopic(uuid="6c2e67f0-14e7-4ba0-ba73-2420cacfa9a3") #Tricolia pullus
 		n_molluscs <- length(which(tipcols==cladeCols[6]))
-	rphylopic::add_phylopic_base(img=ray_finned_fishes,x=xleft,y=ytop, ysize =ysize-1.5,fill=cladeCols[1])
+	rphylopic::add_phylopic_base(img=ray_finned_fishes,x=xleft,y=ytop, height =ysize-1.5,fill=cladeCols[1])
 		text(x=xleft+legendshift,y=ytop,labels=sprintf("Ray-Finned fishes (n=%s)",n_ray_finned_fishes),pos=pos,cex=txt.cex)
-	rphylopic::add_phylopic_base(img=sauropsida,x=xleft,y=ytop-dshift, ysize =ysize,fill=cladeCols[2])
+	rphylopic::add_phylopic_base(img=sauropsida,x=xleft,y=ytop-dshift, height =ysize,fill=cladeCols[2])
 		text(x=xleft+legendshift,y=ytop-1*dshift,labels=sprintf("Birds and Reptiles (n=%s)",n_birds),pos=pos,cex=txt.cex)
-	rphylopic::add_phylopic_base(img=mammal,x=xleft,y=ytop-2*dshift, ysize = ysize,fill=cladeCols[3])
+	rphylopic::add_phylopic_base(img=mammal,x=xleft,y=ytop-2*dshift, height = ysize,fill=cladeCols[3])
 		text(x=xleft+legendshift,y=ytop-2*dshift,labels=sprintf("Mammals (n=%s)",n_mammals),pos=pos,cex=txt.cex)
-	rphylopic::add_phylopic_base(img=chondrichthyes,x=xleft,y=ytop-3*dshift, ysize =ysize,fill=cladeCols[4])
+	rphylopic::add_phylopic_base(img=chondrichthyes,x=xleft,y=ytop-3*dshift, height =ysize,fill=cladeCols[4])
 		text(x=xleft+legendshift,y=ytop-3*dshift,labels=sprintf("Cartilaginous fishes (n=%s)",n_cartilaginous_fishes),pos=pos,cex=txt.cex)
-	rphylopic::add_phylopic_base(img=echinoderms,x=xleft,y=ytop-4*dshift, ysize =ysize,fill=cladeCols[5])
+	rphylopic::add_phylopic_base(img=echinoderms,x=xleft,y=ytop-4*dshift, height =ysize,fill=cladeCols[5])
 		text(x=xleft+legendshift,y=ytop-4*dshift,labels=sprintf("Echinoderms (n=%s)",n_echinoderms),pos=pos,cex=txt.cex)
-	rphylopic::add_phylopic_base(img=molluscs1,x=xleft,y=ytop-5*dshift, ysize =ysize,fill=cladeCols[6])
+	rphylopic::add_phylopic_base(img=molluscs1,x=xleft,y=ytop-5*dshift, height =ysize,fill=cladeCols[6])
 		text(x=xleft+legendshift,y=ytop-5*dshift,labels=sprintf("Molluscs (n=%s)",n_molluscs),pos=pos,cex=txt.cex)
-	rphylopic::add_phylopic_base(img=crustacea,x=xleft,y=ytop-6*dshift, ysize =ysize,fill=cladeCols[7])
+	rphylopic::add_phylopic_base(img=crustacea,x=xleft,y=ytop-6*dshift, height =ysize,fill=cladeCols[7])
 		text(x=xleft+legendshift,y=ytop-6*dshift,labels=sprintf("Crustaceans (n=%s)",n_crustaceans),pos=pos,cex=txt.cex)
-	rphylopic::add_phylopic_base(img=cnidarians,x=xleft,y=ytop-7*dshift, ysize =ysize+1,fill=cladeCols[8])
+	rphylopic::add_phylopic_base(img=cnidarians,x=xleft,y=ytop-7*dshift, height =ysize+1,fill=cladeCols[8])
 		text(x=xleft+legendshift,y=ytop-7*dshift,labels=sprintf("Cnidarians (n=%s)",n_cnidarians),pos=pos,cex=txt.cex)
-	rphylopic::add_phylopic_base(img=vasc_plant,x=xleft,y=ytop-8*dshift, ysize =ysize+1,fill=cladeCols[9])
+	rphylopic::add_phylopic_base(img=vasc_plant,x=xleft,y=ytop-8*dshift, height =ysize+1,fill=cladeCols[9])
 		text(x=xleft+legendshift,y=ytop-8*dshift,labels=sprintf("Vascular plants (n=%s)",n_vasc_plants),pos=pos,cex=txt.cex)
 #	rphylopic::add_phylopic_base(img=ochrophyta,x=50,y=5,ysize=ysize,fill=cladeCols[10])
 	#rphylopic::add_phylopic_base(img=molluscs2,x=5,y=5,ysize=1,fill=cladeCols[1])
@@ -845,14 +849,112 @@ addMap2fig <- function(mapFig,xl,xr,yt,yb){
 reportEffectSizes <- function(outs){
 #	recover()
 	preds <- names(outs)
-	betas <- lapply(outs,function(o){extract(o$fit,"beta[1]",permute=FALSE,inc_warmup=TRUE)})
-	means <- format(unlist(lapply(betas,mean)),scientific=TRUE,digits=4)
+	betas <- lapply(outs,function(o){extract(o$fit,"beta[1]",permute=FALSE,inc_warmup=FALSE)})
+	means <- format(unlist(lapply(betas,mean)),scientific=TRUE,digits=2)
 	CIs <- lapply(betas,function(b){quantile(b,c(0.025,0.975))})
-	lows <- format(unlist(lapply(CIs,"[[",1)),scientific=TRUE,digits=4)
-	highs <- format(unlist(lapply(CIs,"[[",2)),scientific=TRUE,digits=4)
-	outTab <- data.frame(preds,means,lows,highs)
+	lows <- format(unlist(lapply(CIs,"[[",1)),scientific=TRUE,digits=2)
+	highs <- format(unlist(lapply(CIs,"[[",2)),scientific=TRUE,digits=2)
+	N <- unname(unlist(lapply(outs,function(o){o$db$N})))
+	outTab <- data.frame(preds,means,N,lows,highs)
 	return(outTab)
 }
+
+
+read_effect_summary <- function(file) {
+  lines <- readLines(file, warn = FALSE)
+  lines <- lines[nzchar(trimws(lines))]
+  toks  <- strsplit(trimws(lines), "\\s+")
+
+  ## Header lines are the ones whose last token is not a number
+  last   <- vapply(toks, function(t) t[length(t)], character(1))
+  is_hdr <- is.na(suppressWarnings(as.numeric(last)))
+  hdr_idx <- which(is_hdr)
+  ends    <- c(hdr_idx[-1] - 1, length(toks))
+
+  blocks <- vector("list", length(hdr_idx))
+  for (b in seq_along(hdr_idx)) {
+    cols <- toks[[hdr_idx[b]]]
+    rows <- toks[seq.int(hdr_idx[b] + 1, length.out = ends[b] - hdr_idx[b])]
+    m <- do.call(rbind, lapply(rows, function(r) r[seq_len(length(cols) + 1)]))
+    df <- as.data.frame(m[, -1, drop = FALSE], stringsAsFactors = FALSE)
+    names(df) <- cols
+    df$.row <- m[, 1]
+    blocks[[b]] <- df
+  }
+
+  out <- Reduce(function(x, y) merge(x, y, by = ".row", sort = FALSE), blocks)
+  rownames(out) <- out$.row
+  out$.row <- NULL
+
+  ## Convert every column that is fully numeric
+  for (nm in names(out)) {
+    num <- suppressWarnings(as.numeric(out[[nm]]))
+    if (!anyNA(num)) out[[nm]] <- num
+  }
+  out
+}
+
+effect_summary_to_latex <- function(file,out_file=NULL,significant=NULL,caption=NULL,label="tab:supptable_effectsizes",digits=2){
+  es <- read_effect_summary(file)
+  ## Raw predictor name -> display name and trait values (table order)
+  key <- data.frame(
+    pred = c("isBenthic", "Log_BodySize", "n_ECOREGIONS.all",
+             "Fecundity_EggSize", "Generational_Structure", "meanlat.gbif",
+             "PLD_point2", "ReturnToSpawningGround", "isPlanktonic_atanypoint",
+             "Larval_feeding", "Spawning_mode", "max.95.sea.gbif.nrm"),
+    label = c("Benthicity", "Body size", "Ecoregions", "Egg size",
+              "Iteroparity", "Latitude", "PLD",
+              "Philopatry", "Planktonicity", "Planktotrophy", "Spawning",
+              "Range extent"),
+    values = c("absent/intermediate/present", "continuous", "integer",
+               "continuous", "absent/present", "continuous", "continuous",
+               "absent/present", "absent/present",
+               "absent/intermediate/present", "absent/intermediate/present",
+               "continuous"),
+    stringsAsFactors = FALSE
+  )
+
+  missing <- setdiff(key$pred, rownames(es))
+  if (length(missing))
+    warning("Not found in summary, skipped: ", paste(missing, collapse = ", "))
+  key <- key[key$pred %in% rownames(es), ]
+  es  <- es[key$pred, ]
+
+  fmt <- function(x) formatC(x, format = "e", digits = digits)
+
+  sig <- ifelse(es$lows > 0 | es$highs < 0, "yes", "no")
+  if (!is.null(significant)) {
+    hit <- intersect(names(significant), key$pred)
+    sig[match(hit, key$pred)] <- significant[hit]
+  }
+
+  rows <- paste0(
+    formatC(key$label,  width = -23), " & ",
+    formatC(key$values, width = -27), " & ",
+    es$N, " & ", sig, " & ",
+    fmt(es$means), " (", fmt(es$lows), ", ", fmt(es$highs), ")\\\\"
+  )
+
+  tex <- c(
+    "\\begin{table}[htbp]",
+    "\\centering",
+    "\\begin{tabular}{|p{2.5cm}|p{4.75cm}|p{1cm}|p{2cm}|p{6cm}|}",
+    "\\hline",
+    paste0("\\textbf{Predictor} & \\textbf{Trait values} & ",
+           "\\textbf{n} & \\textbf{Significant} & ",
+           "\\textbf{Mean effect (95\\% CI)} \\\\"),
+    "\\hline",
+    as.vector(rbind(rows, "\\hline")),
+    "\\end{tabular}",
+    if (!is.null(caption)) paste0("\\caption{", caption, "}"),
+    paste0("\\label{", label, "}"),
+    "\\end{table}"
+  )
+
+  if (!is.null(out_file)) writeLines(tex, out_file) else writeLines(tex)
+  invisible(tex)
+}
+
 
 # simulate a trait *without* phylogenetic signal
 #	and calculate the correlogram

@@ -5,6 +5,11 @@ library(ggplot2)
 library(ncdf4)
 library(dplyr)
 library(tidyr)
+library(sf)
+library(terra)
+library(rnaturalearth)
+library(rnaturalearthdata)
+library(tidyterra)
 
 rm(list=ls())
 gc()
@@ -123,6 +128,10 @@ ggplot() +
 
 # get the genetic sample points ----------
 sites <- read.csv("../../data/final_genetic_latlongs.csv", header = T)
+z <- read.csv("../../data/master_df.csv")
+gr2locs <- which(z$n.locales > 2)
+gr2locSp <- z$species[gr2locs]
+sites <- sites[sites$species %in% gr2locSp,]
 
 #add clade groups on for coloring
 taxcolorkey <- read.csv("../../data/master_tax_color_key.csv") %>% mutate(species = gsub(" ","_",species))

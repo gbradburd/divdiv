@@ -1,0 +1,33 @@
+\begin{table}[htbp]
+\centering
+\begin{tabular}{|p{2.5cm}|p{4.75cm}|p{1cm}|p{2cm}|p{6cm}|}
+\hline
+\textbf{Predictor} & \textbf{Trait values} & \textbf{n} & \textbf{Significant} & \textbf{Mean effect (95\% CI)} \\
+\hline
+Benthicity              & absent/intermediate/present & 91 & no & -5.20e-02 (-4.10e-01, 2.60e-01)\\
+\hline
+Body size               & continuous                  & 91 & no & -5.40e-02 (-1.50e-01, 6.70e-02)\\
+\hline
+Ecoregions              & integer                     & 91 & yes & 6.00e-03 (1.10e-05, 1.20e-02)\\
+\hline
+Egg size                & continuous                  & 66 & no & -3.30e-03 (-1.50e-02, 8.10e-03)\\
+\hline
+Iteroparity             & absent/present              & 91 & no & -3.80e-01 (-9.70e-01, 1.80e-01)\\
+\hline
+Latitude                & continuous                  & 91 & no & -3.00e-03 (-1.20e-02, 6.80e-03)\\
+\hline
+PLD                     & continuous                  & 85 & no & -7.30e-04 (-4.70e-03, 3.20e-03)\\
+\hline
+Philopatry              & absent/present              & 87 & no & -4.20e-01 (-9.10e-01, 5.00e-02)\\
+\hline
+Planktonicity           & absent/present              & 91 & yes & 5.80e-01 (3.20e-02, 1.20e+00)\\
+\hline
+Planktotrophy           & absent/intermediate/present & 91 & no & 1.70e-01 (-8.90e-02, 4.20e-01)\\
+\hline
+Spawning                & absent/intermediate/present & 91 & no & 1.10e-01 (-7.00e-02, 3.10e-01)\\
+\hline
+Range extent            & continuous                  & 91 & yes & 5.20e-01 (1.60e-02, 9.60e-01)\\
+\hline
+\end{tabular}
+\label{tab:supptable_effectsizes}
+\end{table}

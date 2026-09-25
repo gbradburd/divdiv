@@ -86,7 +86,7 @@ bioPreds <- preds[1:14]
 bioPredNames <- predNames[1:14]
 nuisPreds <- preds[16:19]
 nuisPredNames <- predNames[16:19]
-
+if(FALSE){
 ################################
 # analyze diversity with one predictor at a time
 ################################
@@ -131,7 +131,6 @@ outs <- divdivAnalyses(z=z,X=x,
 						nNodes=nNodes,filterKeep=which(z$isCoral!=1),runNames="Larval_feeding")
 
 vizAllOuts(outs=outs,predNames="Larval_feeding",sampPhy=sampPhy,outName="partC",multiPred=TRUE,sampCols=sampCols)
-
 
 ################
 # diversity ~ pld + isBenthic
@@ -189,6 +188,7 @@ outs <- divdivAnalyses(z=z,X=x,
 
 vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partF",multiPred=TRUE,sampCols=sampCols)
 
+
 ################
 # analyze diversity with one biological predictor 
 #	and all the "nuisance" parameters
@@ -206,26 +206,58 @@ outs <- divdivAnalyses(z=z,X=x,
 
 vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partG",multiPred=TRUE,sampCols=sampCols)
 
+
 ################
 # just nuisance parameters
 ################
 
 x <- nuisPreds
 
-outs <- divdivAnalysis(z=z,x=x,y="div",
+outs <- divdivAnalysis(z=z,x=x,y="div",outName="partH",
 					   phyStr=phyStr,mod=betaPhyReg,
 					   nIter=nIter,filterKeep=NULL)
 
-save(outs,file="partH_outs.Robj")
+}
 
+################
+# just samples with >2 unique locations
+################
+
+gr2samp <- which(z$n.locales > 2)
+x <- lapply(1:length(bioPreds),function(i){c(bioPreds[i],nuisPreds)})
+
+outs <- divdivAnalyses(z=z,X=x,
+						y="div",phyStr=phyStr,mod=betaPhyReg,
+						outName="partI",nIter=5e4,parallel=TRUE,
+						nNodes=nNodes,filterKeep=gr2samp,runNames=bioPreds)
+
+vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partI",multiPred=TRUE,sampCols=sampCols)
+
+################
+# just samples with >3 unique locations
+################
+
+gr3samp <- which(z$n.locales > 3)
+x <- lapply(1:length(bioPreds),function(i){c(bioPreds[i],nuisPreds)})
+
+outs <- divdivAnalyses(z=z,X=x,
+						y="div",phyStr=phyStr,mod=betaPhyReg,
+						outName="partJ",nIter=5e4,parallel=TRUE,
+						nNodes=nNodes,filterKeep=gr3samp,runNames=bioPreds)
+
+vizAllOuts(outs=outs,predNames=predNames,sampPhy=sampPhy,outName="partJ",multiPred=TRUE,sampCols=sampCols)
+if(FALSE){
 ################
 # phylogenetic correlogram
 ################
-tree4d <- phylobase::phylo4d(sampPhy,tip.data=z$div) #_binary
-permNullSims <- lapply(1:500,function(i){simPermNull(n=nrow(z),tree=sampPhy,trait=z$div,n.points=275/2,ci.bs=100)})
+leq2samp <- which(z$n.locales <= 2)
+g2_sampPhy <- ape::drop.tip(sampPhy,gsub("_"," ",z$species)[leq2samp])
+g2_phyStr <- ape::vcv(g2_sampPhy,corr=TRUE)
+tree4d <- phylobase::phylo4d(g2_sampPhy,tip.data=z$div[-leq2samp]) #_binary
+permNullSims <- lapply(1:500,function(i){simPermNull(n=nrow(g2_phyStr),tree= g2_sampPhy,trait=z$div[-leq2samp],n.points=275/2,ci.bs=100)})
 cgram <- phylosignal::phyloCorrelogram(tree4d,n.points=275/2,ci.bs=100)
 save(permNullSims,cgram,file="phy_perm_cgram.Robj")
-
+}
 ################
 # graveyard
 ################
