@@ -380,7 +380,7 @@ blom_k <- phytools::phylosig(sampPhy,z$div,test=TRUE)
 pagels_lambda <- phytools::phylosig(sampPhy,z$div,method="lambda",test=TRUE)
 	#plot(blom_k)
 # when does the correlogram become significant relative to the null?
-max(cgram$res[,1][which(cgram$res[,4]>upperCI)])
+max(cgram$res[,1][which(cgram$res[,4]>upperCI)])/2
 
 # diversity statistics
 range(z$div)
@@ -431,6 +431,10 @@ b <- extract(outs[[4]]$fit,"beta[1]",permute=FALSE,inc_warmup=FALSE)
 mean(b)
 quantile(b,c(0.025,0.975))
 
-# correlation between ecoregions & range extent
-cor(z$n_ECOREGIONS.all,z$max.95.sea.gbif.nrm)
+# reported predictor correlations
+M["ecoregions","range extent"]
+M["range extent","planktonicity"]
+M["planktonicity","planktotrophy"]
+M["planktonicity","philopatry"]
+M["philopatry","planktotrophy"]
 }
