@@ -182,6 +182,12 @@ ggplot() +
 
 # get the genetic sample points and build heatmap of sampling intensity ----------
 sites <- read.csv("data/final_genetic_latlongs.csv", header = T)
+# ! note ! dropped bioprj_PRJNA646172_Bathyraja-aleutica and bioprj_PRJNA448430_Stegastes-leucorus
+# when responding to reviews, bc these datasets only had 2 sampled locations each
+nrow(sites)
+sites <- sites %>% filter(!link %in% c("PRJNA646172_Bathyraja-aleutica",
+                                       "PRJNA448430_Stegastes-leucorus"))
+nrow(sites)
 
 #project into spilhaus
 sites.prj = from_lonlat_to_spilhaus_xy(sites$lon, sites$lat)

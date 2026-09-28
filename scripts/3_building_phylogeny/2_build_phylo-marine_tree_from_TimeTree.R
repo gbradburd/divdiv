@@ -8,7 +8,10 @@
 
 #original code written/inspired by Bruce Martin
 
+#BiocManager::install("ggtree")
+
 #load libraries
+library(readxl)
 library(phytools)
 library(tidytree)
 library(dplyr)
@@ -27,11 +30,10 @@ setwd("/Users/rachel/divdiv")
 load('data/phylo/inputs_and_working/TimeTree_140K_NCBI_Taxon_IDs-withtaxizeinfo.Robj') #TimeTree plus tacked on df of looked up rank info/names from taxize
 missing.spp <- read.csv('data/phylo/inputs_and_working/missing_species_to_add_in.csv') #list of species not in TimeTree that we need to add in
 #get master spreadsheet from Drive of species we want / that are "in" analyses
-ourspp <- googledrive::shared_drive_find(pattern = "^divdiv$")
-ourspp <- googledrive::drive_ls(path = ourspp, pattern = "working_datasheets", recursive = FALSE)
-ourspp <- googledrive::drive_ls(path = ourspp, pattern = "working_list_marine_projects_with_10indivs-12-4-2020", recursive = FALSE)
-ourspp$name
-ourspp <- googlesheets4::range_read(ourspp, sheet = 1) %>% as.data.frame() %>% mutate(run_name = paste("bioprj_",link,sep=""))
+#note, used to link directly to working V of main trait/dataset tracking excel on shared Google Drive
+#updated code to refer to a local archived V of this spreadsheet now 
+ourspp <- readxl::read_excel("data/biotic/working_list_marine_projects_with_10indivs-12-4-2020.xlsx", sheet = 1) %>% 
+  mutate(run_name = paste("bioprj_",link,sep=""))
 #keep cols we want and only datasets that are "in"
 ourspp <- ourspp %>% 
   filter(grepl("yes|Yes",keepinrunning_YN)) %>%
@@ -364,11 +366,51 @@ tips<-dat$node[grepl("Pleocyemata",dat$suborder)]
 tips<-dat$node[grepl("Pandalus montagui|Polycheles aculeatus|Procaris ascensionis",dat$species)]
 tips<-dat$node[grepl("Oegopsina",dat$suborder)]
 tips<-dat$node[grepl("Teuthida",dat$order)] #plot at suborder
-mrca <- getMRCA(phy,tips)
+mrca <- ape::getMRCA(phy,tips)
 des <- getDescendants(phy,mrca)
 toplot <- dat[dat$node %in% des,]
 toplot <- keep.tip(phy,toplot$label)
 toplot$tip.label <- dat$suborder[match(toplot$tip.label,dat$label)]
 plot(toplot,cex=0.4)
 #end sandbox
+
+
+# !!! NOTE !!!! --------------
+
+#dropped bioprj_PRJNA646172_Bathyraja-aleutica and bioprj_PRJNA448430_Stegastes-leucorus
+#during revisions bc they only had 2 locations in each dataset.
+#had to update our values for which species fell into which categories
+#when we built our phylogenetic tree
+
+#bioprj_PRJNA448430_Stegastes-leucorus
+#note - need to run this chunk of code wiht version of phy that exists at line 56 aka "phy <- tree@phylo"
+tips<-dat$node[grepl("Stegastes",dat$genus)]
+mrca <- ape::getMRCA(phy,tips)
+des <- phytools::getDescendants(phy,mrca)
+toplot <- dat[dat$node %in% des,]
+toplot <- keep.tip(phy,toplot$label)
+toplot$tip.label <- dat$species[match(toplot$tip.label,dat$label)]
+plot(toplot,cex=0.4)
+#Stegastes beebi most closely related to tip 258452 aka Stegastes leucostictus
+#Stegastes leucorus most closely related to tip 161916 aka Stegastes variabilis
+#based on us looking in literature
+#we dropped Stegastes leucorus from our analyses, so now Stegastes beebi is only species in our analyses in this genus
+#so really now Stegastes beebi falls into the "assigned to TT genera tip, no other divdiv in this clade" category
+#rather than "assigned to closest relative, other divdiv sp in this clade" like it used to
+
+#bioprj_PRJNA646172_Bathyraja-aleutica
+tips<-dat$node[grepl("Bathyraja",dat$genus)] #only one total Bathyraja in TimeTree, Bathyraja parmifera
+tips<-dat$node[grepl("Bathyraja|Sphyrna",dat$genus)]
+mrca <- ape::getMRCA(phy,tips)
+des <- phytools::getDescendants(phy,mrca)
+toplot <- dat[dat$node %in% des,]
+toplot <- keep.tip(phy,toplot$label)
+toplot$tip.label <- dat$species[match(toplot$tip.label,dat$label)]
+plot(toplot,cex=0.4)
+#before, Bathyraja panthera and Bathyraja aleutica were both assigned to tip for 
+#Bathyraja parmifera as a polytomy.
+#we dropped Bathyraja aleutica from our analyses, so now Bathyraja panthera is only species in our analyses in this genus
+#so really now Bathyraja panthera falls into the "assigned to TT genera tip, no other divdiv in this clade" category
+#rather than "added new branch to TT as a polytomy" like it used to
+
 

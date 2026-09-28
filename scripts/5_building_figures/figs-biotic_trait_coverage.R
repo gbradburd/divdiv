@@ -19,10 +19,13 @@ df <- read.csv("data/biotic/cleaned_numeric_biotic_traits.csv") %>%
   dplyr::select(organism_biosamp, isBenthic, Body_Size, Generational_Structure, 
                 Fecundity_EggSize, PLD_point2, ReturnToSpawningGround,
                 Larval_feeding, Spawning_mode, isPlanktonic_atanypoint)
+# ! note ! dropped bioprj_PRJNA646172_Bathyraja-aleutica and bioprj_PRJNA448430_Stegastes-leucorus
+# when responding to reviews, bc these datasets only had 2 sampled locations each
+df <- df %>% filter(!organism_biosamp %in% c("Bathyraja aleutica","Stegastes leucorus"))
 
 
 
-# SUPP FIGURE S5 - trait coverage by trait ------
+# SUPP FIGURE SX - trait coverage by trait ------
 
 #calc trait coverage by trait
 total = nrow(df)
@@ -69,7 +72,7 @@ ggsave(paste0(figdir, "/biotic_trait_coverage-bytrait.pdf"), width = 8, height =
 
 
 
-# SUPP FIGURE 2 - trait coverage by species ------------
+# SUPP FIGURE SX - trait coverage by species ------------
 
 #calc trait cov by species
 spcov <- df %>%
