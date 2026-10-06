@@ -1,5 +1,14 @@
 #idea: save out final clean .csv of biotic traits used in end to include in suppmat
 
+# ! NOTE ! - in responding to reviews, two datasets, that each had only 2 locations sampled, 
+# were dropped. we did not update below files to drop those datasets, including the 
+# final_biotic_traits_for_suppmat-with-citation-numbers.csv file
+# because this would have required renumbering all of the trait references after dropping those 
+# associated with said 2 dropped datasets - to maintain the links between citation numbers in below .csv
+# and the Appendix of full text citations that those numbers refer to.
+# TLDR - there are two species and a handful of biotic trait citations that are still in the below
+# files but dropped from all final analyses and presented results.
+
 #load libraries
 library(dplyr)
 
