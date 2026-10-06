@@ -9,6 +9,10 @@
 # TLDR - there are two species and a handful of biotic trait citations that are still in the below
 # files but dropped from all final analyses and presented results.
 
+#two dropped species are:
+#Bathyraja aleutica
+#Stegastes leucorus
+
 #load libraries
 library(dplyr)
 
